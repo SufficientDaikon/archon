@@ -42,7 +42,7 @@ OMNISKILL is a **universal framework** for AI coding assistant skills, agents, a
 ### 1. Clone
 
 ```bash
-git clone https://github.com/tahaa/omniskill.git
+git clone https://github.com/SufficientDaikon/omniskill.git
 cd omniskill
 ```
 
@@ -168,14 +168,18 @@ python scripts/validate.py --all                # Validate everything
 
 ## 📖 Documentation
 
-- [Getting Started](docs/getting-started.md)
-- [Creating Skills](docs/creating-skills.md)
-- [Creating Bundles](docs/creating-bundles.md)
-- [Creating Agents](docs/creating-agents.md)
-- [Creating Pipelines](docs/creating-pipelines.md)
-- [Platform Guide](docs/platform-guide.md)
-- [Architecture](docs/architecture.md)
-- [FAQ](docs/faq.md)
+**🌐 [Browse the Full Documentation Site →](https://sufficientdaikon.github.io/omniskill/docs/getting-started.html)**
+
+| Guide | Description |
+| --- | --- |
+| [Getting Started](https://sufficientdaikon.github.io/omniskill/docs/getting-started.html) | Installation, setup, your first skill |
+| [Creating Skills](https://sufficientdaikon.github.io/omniskill/docs/creating-skills.html) | Skill anatomy, manifest, SKILL.md authoring |
+| [Creating Bundles](https://sufficientdaikon.github.io/omniskill/docs/creating-bundles.html) | Domain kits with meta-skill routing |
+| [Creating Agents](https://sufficientdaikon.github.io/omniskill/docs/creating-agents.html) | Agent personas, skill bindings, handoffs |
+| [Creating Pipelines](https://sufficientdaikon.github.io/omniskill/docs/creating-pipelines.html) | Multi-agent workflows with branching |
+| [Platform Guide](https://sufficientdaikon.github.io/omniskill/docs/platform-guide.html) | Claude Code, Copilot, Cursor, Windsurf, Antigravity |
+| [Architecture](https://sufficientdaikon.github.io/omniskill/docs/architecture.html) | Layered design, data flow, validation |
+| [FAQ](https://sufficientdaikon.github.io/omniskill/docs/faq.html) | Common questions answered |
 
 ---
 

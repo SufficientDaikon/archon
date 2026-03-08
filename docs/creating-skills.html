@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating Skills — OMNISKILL Documentation</title>
+    <meta
+      name="description"
+      content="Learn how to create powerful, reusable AI skills in OMNISKILL"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="doc-nav">
+      <a href="../index.html" class="nav-logo">OMNISKILL</a>
+      <a
+        href="https://github.com/SufficientDaikon/omniskill"
+        class="nav-github"
+        target="_blank"
+        >GitHub ↗</a
+      >
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">DOCUMENTATION</div>
+        <a href="getting-started.html" class="sidebar-link">Getting Started</a>
+        <a href="creating-skills.html" class="sidebar-link active"
+          >Creating Skills</a
+        >
+        <a href="creating-bundles.html" class="sidebar-link"
+          >Creating Bundles</a
+        >
+        <a href="creating-agents.html" class="sidebar-link">Creating Agents</a>
+        <a href="creating-pipelines.html" class="sidebar-link"
+          >Creating Pipelines</a
+        >
+        <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
+        <a href="architecture.html" class="sidebar-link">Architecture</a>
+        <a href="faq.html" class="sidebar-link">FAQ</a>
+      </div>
+      <div class="sidebar-section">
+        <a href="../index.html" class="sidebar-link back-link"
+          >← Back to Home</a
+        >
+      </div>
+    </aside>
+
+    <button
+      class="sidebar-toggle"
+      onclick="document.getElementById('sidebar').classList.toggle('open')"
+    >
+      ☰
+    </button>
+
+    <!-- Main Content -->
+    <main class="doc-content">
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="../index.html">Home</a>
+        <span class="separator">›</span>
+        <a href="getting-started.html">Documentation</a>
+        <span class="separator">›</span>
+        <span>Creating Skills</span>
+      </div>
+
+      <!-- Header -->
+      <div class="doc-header">
+        <span class="section-label">DOCUMENTATION</span>
+        <h1 class="doc-title">
+          Creating <span class="gradient-text">Skills</span>
+        </h1>
+        <p class="doc-subtitle">
+          Master the art of skill authoring. Build reusable, powerful AI
+          instructions that work across all platforms.
+        </p>
+      </div>
+
+      <!-- Skill Anatomy Section -->
+      <div class="content-section">
+        <h2>🧬 Skill Anatomy</h2>
+        <p>
+          Every OMNISKILL skill lives in its own directory under
+          <code>skills/</code> and follows this structure:
+        </p>
+
+        <div class="file-tree">
+          <div class="file-tree-item folder">
+            <span class="icon">📁</span> skills/my-skill/
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> SKILL.md
+            <span style="color: var(--text-muted)"
+              >— Instructions the AI agent follows</span
+            >
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> manifest.yaml
+            <span style="color: var(--text-muted)"
+              >— Metadata, triggers, dependencies</span
+            >
+          </div>
+          <div class="file-tree-item folder" style="padding-left: 24px">
+            <span class="icon">📁</span> resources/
+            <span style="color: var(--text-muted)">— Reference materials</span>
+          </div>
+          <div class="file-tree-item folder" style="padding-left: 24px">
+            <span class="icon">📁</span> examples/
+            <span style="color: var(--text-muted)">— Sample interactions</span>
+          </div>
+          <div class="file-tree-item folder" style="padding-left: 24px">
+            <span class="icon">📁</span> templates/
+            <span style="color: var(--text-muted)">— Output templates</span>
+          </div>
+          <div class="file-tree-item folder" style="padding-left: 24px">
+            <span class="icon">📁</span> tests/cases/
+            <span style="color: var(--text-muted)"
+              >— Validation test cases</span
+            >
+          </div>
+          <div class="file-tree-item folder" style="padding-left: 24px">
+            <span class="icon">📁</span> overrides/
+            <span style="color: var(--text-muted)"
+              >— Platform-specific overrides</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 1: manifest.yaml -->
+      <div class="content-section">
+        <h2>Step 1: manifest.yaml</h2>
+        <p>
+          The manifest declares everything about your skill except the
+          instructions themselves:
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">YAML</div>
+          <pre><code>name: my-awesome-skill
+version: 1.0.0
+description: "What this skill does in one sentence"
+author: your-name
+license: MIT
+
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+
+tags: [domain, category, keywords]
+
+triggers:
+  keywords: ["exact phrase 1", "exact phrase 2"]
+  patterns: ["pattern with * wildcards"]
+
+priority: P2</code></pre>
+        </div>
+
+        <h3>Trigger Design Tips</h3>
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <ul style="margin-bottom: 0">
+              <li>
+                <strong>Be specific</strong>: "create React component" is better
+                than "create component"
+              </li>
+              <li>
+                <strong>Avoid conflicts</strong>: Check existing skills'
+                triggers before choosing yours
+              </li>
+              <li>
+                <strong>Use patterns</strong>:
+                <code>"review * code"</code> matches "review Python code",
+                "review my code", etc.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: SKILL.md -->
+      <div class="content-section">
+        <h2>Step 2: SKILL.md</h2>
+        <p>
+          This is the instruction file the AI agent reads.
+          <strong>Required sections:</strong>
+        </p>
+
+        <h3>🎭 Identity</h3>
+        <p>Who is this skill? What's its role and personality?</p>
+        <div class="code-block">
+          <div class="code-label">MARKDOWN</div>
+          <pre><code># My Awesome Skill
+
+You are a **specialist** in [domain]. Your role is to [primary function]...
+
+## Core Identity
+- Expert in [area]
+- Focused on [goals]
+- Prioritizes [values]</code></pre>
+        </div>
+
+        <h3>🎯 When to Use</h3>
+        <p>
+          Trigger conditions, keywords, and anti-patterns (when NOT to use).
+        </p>
+        <div class="code-block">
+          <div class="code-label">MARKDOWN</div>
+          <pre><code>## When to Use
+
+Activate this skill when:
+- User asks to [scenario 1]
+- User mentions [keyword]
+- [Specific condition]
+
+Do NOT use this skill when:
+- [Anti-pattern 1]
+- [Out of scope scenario]</code></pre>
+        </div>
+
+        <h3>⚙️ Workflow</h3>
+        <p>Step-by-step process the agent follows.</p>
+        <div class="code-block">
+          <div class="code-label">MARKDOWN</div>
+          <pre><code>## Workflow
+
+1. **Analyze** — Understand the request
+2. **Plan** — Determine approach
+3. **Execute** — Perform the task
+4. **Validate** — Verify output quality
+5. **Document** — Create artifacts</code></pre>
+        </div>
+
+        <h3>📏 Rules</h3>
+        <p>DO and DON'T lists — guardrails for the agent.</p>
+        <div class="code-block">
+          <div class="code-label">MARKDOWN</div>
+          <pre><code>## Rules
+
+### DO:
+- Follow best practices for [domain]
+- Validate all inputs
+- Document decisions
+
+### DON'T:
+- Skip validation steps
+- Make assumptions about [X]
+- Proceed without confirmation</code></pre>
+        </div>
+
+        <h3>📦 Output Format</h3>
+        <p>What the skill produces, in what format, saved where.</p>
+        <div class="code-block">
+          <div class="code-label">MARKDOWN</div>
+          <pre><code>## Output Format
+
+Produce a [type of file] with:
+- Section A containing [content]
+- Section B containing [content]
+
+Save to: `output/[filename]`</code></pre>
+        </div>
+
+        <h3>🤝 Handoff</h3>
+        <p>What happens after the skill completes.</p>
+        <div class="code-block">
+          <div class="code-label">MARKDOWN</div>
+          <pre><code>## Handoff
+
+After completion:
+- Inform user that [artifact] is ready
+- Suggest next step: [action]
+- If part of pipeline, pass [artifact] to [next agent]</code></pre>
+        </div>
+      </div>
+
+      <!-- Step 3: Resources -->
+      <div class="content-section">
+        <h2>Step 3: Resources (Optional but Recommended)</h2>
+        <p>Add reference materials the agent can consult:</p>
+
+        <div class="file-tree">
+          <div class="file-tree-item folder">
+            <span class="icon">📁</span> resources/
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> cheat-sheet.md
+            <span style="color: var(--text-muted)"
+              >— Quick reference for the domain</span
+            >
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> style-guide.md
+            <span style="color: var(--text-muted)"
+              >— Standards the output should follow</span
+            >
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> decision-tree.md
+            <span style="color: var(--text-muted)"
+              >— Logic for complex decisions</span
+            >
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> lookup-table.md
+            <span style="color: var(--text-muted)"
+              >— Values to look up, not guess</span
+            >
+          </div>
+        </div>
+
+        <p>Declare resources in your manifest:</p>
+        <div class="code-block">
+          <div class="code-label">YAML</div>
+          <pre><code>resources:
+  - path: resources/cheat-sheet.md
+    type: cheat-sheet
+    load: always
+  - path: resources/style-guide.md
+    type: style-guide
+    load: on-demand</code></pre>
+        </div>
+      </div>
+
+      <!-- Step 4: Tests -->
+      <div class="content-section">
+        <h2>Step 4: Tests</h2>
+        <p>
+          Add test cases in <code>tests/cases/</code> to validate your skill:
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">tests/cases/basic.yaml</div>
+          <pre><code>name: "Basic skill test"
+input: "User prompt that should trigger this skill"
+expected:
+  contains: ["expected output pattern"]
+  not_contains: ["things that should NOT be in output"]
+  sections: ["required output sections"]
+
+---
+
+name: "Edge case test"
+input: "Complex scenario prompt"
+expected:
+  contains: ["specific behavior"]
+  format: "expected file format"</code></pre>
+        </div>
+
+        <div class="alert alert-success">
+          <div class="alert-icon">✓</div>
+          <div class="alert-content">
+            <div class="alert-title">Testing Best Practices</div>
+            <ul style="margin-bottom: 0">
+              <li>Test both happy path and edge cases</li>
+              <li>Validate trigger matching accuracy</li>
+              <li>Check output format compliance</li>
+              <li>Ensure resource loading works</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5: Validate -->
+      <div class="content-section">
+        <h2>Step 5: Validate</h2>
+        <p>Run the validation script to ensure your skill is well-formed:</p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> python scripts/validate.py skills/my-awesome-skill</pre>
+        </div>
+
+        <p>The validator checks:</p>
+        <ul>
+          <li>
+            <strong>manifest.yaml completeness</strong> and schema compliance
+          </li>
+          <li><strong>SKILL.md required sections</strong> are present</li>
+          <li>
+            <strong>Trigger uniqueness</strong> (no conflicts with other skills)
+          </li>
+          <li><strong>Resources exist</strong> and are accessible</li>
+          <li><strong>Tests are parseable</strong></li>
+        </ul>
+
+        <div class="alert alert-warning">
+          <div class="alert-icon">⚠️</div>
+          <div class="alert-content">
+            <div class="alert-title">Common Validation Errors</div>
+            <ul style="margin-bottom: 0">
+              <li>Missing required sections in SKILL.md</li>
+              <li>Trigger conflicts with existing skills</li>
+              <li>Referenced resources don't exist</li>
+              <li>Invalid YAML syntax in manifest</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 6: Platform Overrides -->
+      <div class="content-section">
+        <h2>Step 6: Platform Overrides (Optional)</h2>
+        <p>If your skill needs different behavior on specific platforms:</p>
+
+        <div class="file-tree">
+          <div class="file-tree-item folder">
+            <span class="icon">📁</span> overrides/
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> cursor.md
+            <span style="color: var(--text-muted)"
+              >— Cursor-specific instructions</span
+            >
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> windsurf.md
+            <span style="color: var(--text-muted)"
+              >— Windsurf-specific instructions</span
+            >
+          </div>
+        </div>
+
+        <p>
+          These are merged with the base SKILL.md during adapter transformation.
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">overrides/cursor.md</div>
+          <pre><code># Cursor-Specific Behavior
+
+## Additional Rules for Cursor
+- Use Cursor's native file navigation
+- Leverage Cursor's inline suggestions
+- Output format adjusted for .mdc rules</code></pre>
+        </div>
+      </div>
+
+      <!-- Best Practices Section -->
+      <div class="content-section">
+        <h2>✨ Best Practices</h2>
+
+        <h3>1. Single Responsibility</h3>
+        <p>
+          Each skill should do one thing exceptionally well. If your skill does
+          multiple unrelated things, split it into separate skills and compose
+          them with a bundle.
+        </p>
+
+        <h3>2. Clear Triggers</h3>
+        <p>
+          Make triggers specific enough to avoid false positives, but broad
+          enough to be useful. Test your triggers against real user prompts.
+        </p>
+
+        <h3>3. Comprehensive Resources</h3>
+        <p>
+          Don't rely on the AI's general knowledge for domain-specific facts.
+          Provide cheat sheets, lookup tables, and style guides.
+        </p>
+
+        <h3>4. Detailed Workflow</h3>
+        <p>
+          The more explicit your workflow, the more consistent the output. Don't
+          skip steps or leave things to interpretation.
+        </p>
+
+        <h3>5. Robust Testing</h3>
+        <p>
+          Test edge cases, not just happy paths. Your skill will encounter
+          unexpected inputs in the wild.
+        </p>
+
+        <h3>6. Document Decisions</h3>
+        <p>
+          If your skill makes choices (like selecting a framework or
+          architecture), document the decision-making process in resources.
+        </p>
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="doc-nav-footer">
+        <a href="getting-started.html" class="nav-link prev">
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">Getting Started</span>
+        </a>
+        <a href="creating-bundles.html" class="nav-link next">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">Creating Bundles</span>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>

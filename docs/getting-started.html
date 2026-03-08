@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting Started — OMNISKILL Documentation</title>
+    <meta
+      name="description"
+      content="Get started with OMNISKILL - installation, setup, and your first skill"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="doc-nav">
+      <a href="../index.html" class="nav-logo">OMNISKILL</a>
+      <a
+        href="https://github.com/SufficientDaikon/omniskill"
+        class="nav-github"
+        target="_blank"
+        >GitHub ↗</a
+      >
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">DOCUMENTATION</div>
+        <a href="getting-started.html" class="sidebar-link active"
+          >Getting Started</a
+        >
+        <a href="creating-skills.html" class="sidebar-link">Creating Skills</a>
+        <a href="creating-bundles.html" class="sidebar-link"
+          >Creating Bundles</a
+        >
+        <a href="creating-agents.html" class="sidebar-link">Creating Agents</a>
+        <a href="creating-pipelines.html" class="sidebar-link"
+          >Creating Pipelines</a
+        >
+        <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
+        <a href="architecture.html" class="sidebar-link">Architecture</a>
+        <a href="faq.html" class="sidebar-link">FAQ</a>
+      </div>
+      <div class="sidebar-section">
+        <a href="../index.html" class="sidebar-link back-link"
+          >← Back to Home</a
+        >
+      </div>
+    </aside>
+
+    <button
+      class="sidebar-toggle"
+      onclick="document.getElementById('sidebar').classList.toggle('open')"
+    >
+      ☰
+    </button>
+
+    <!-- Main Content -->
+    <main class="doc-content">
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="../index.html">Home</a>
+        <span class="separator">›</span>
+        <a href="getting-started.html">Documentation</a>
+        <span class="separator">›</span>
+        <span>Getting Started</span>
+      </div>
+
+      <!-- Header -->
+      <div class="doc-header">
+        <span class="section-label">DOCUMENTATION</span>
+        <h1 class="doc-title">
+          Getting Started with <span class="gradient-text">OMNISKILL</span>
+        </h1>
+        <p class="doc-subtitle">
+          Install OMNISKILL, set up your environment, and create your first
+          skill in minutes.
+        </p>
+      </div>
+
+      <!-- Prerequisites Section -->
+      <div class="content-section">
+        <h2>📋 Prerequisites</h2>
+        <p>Before installing OMNISKILL, make sure you have:</p>
+        <ul>
+          <li><strong>Git</strong> installed on your system</li>
+          <li><strong>Python 3.8+</strong> installed</li>
+          <li>
+            At least one supported AI coding assistant:
+            <ul>
+              <li>Claude Code</li>
+              <li>GitHub Copilot CLI</li>
+              <li>Cursor</li>
+              <li>Windsurf</li>
+              <li>Antigravity</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Installation Section -->
+      <div class="content-section">
+        <h2>⚡ Installation</h2>
+
+        <h3>Full Install (All Bundles, All Detected Platforms)</h3>
+        <p>
+          This is the recommended way to get started. OMNISKILL will auto-detect
+          your installed AI coding assistants and install everything you need.
+        </p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> git clone https://github.com/tahaa/omniskill.git
+<span class="prompt">$</span> cd omniskill
+<span class="prompt">$</span> python scripts/install.py</pre>
+        </div>
+
+        <h3>Install a Specific Bundle</h3>
+        <p>
+          If you only need certain domain kits, you can install specific
+          bundles:
+        </p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> python scripts/install.py --bundle web-dev-kit
+<span class="prompt">$</span> python scripts/install.py --bundle godot-kit</pre>
+        </div>
+
+        <h3>Install for a Specific Platform</h3>
+        <p>Target specific AI coding assistant platforms:</p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> python scripts/install.py --platform claude-code
+<span class="prompt">$</span> python scripts/install.py --platform cursor</pre>
+        </div>
+
+        <h3>Verify Installation</h3>
+        <p>Run the doctor script to verify everything is set up correctly:</p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> python scripts/doctor.py</pre>
+        </div>
+
+        <div class="alert alert-success">
+          <div class="alert-icon">✓</div>
+          <div class="alert-content">
+            <div class="alert-title">Installation Complete</div>
+            <p>
+              If the doctor script reports no issues, you're ready to start
+              using OMNISKILL!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- First Skill Section -->
+      <div class="content-section">
+        <h2>🚀 Your First Skill</h2>
+        <p>There are two ways to create your first skill:</p>
+
+        <h3>Option A: Use the Skill Factory (Recommended)</h3>
+        <p>
+          The easiest way to create a new skill is to tell your AI assistant:
+        </p>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <strong>Prompt:</strong> "Create a new skill for [your domain]"
+          </div>
+        </div>
+
+        <p>
+          This triggers the <strong>skill-factory pipeline</strong> which guides
+          you through the entire process interactively.
+        </p>
+
+        <h3>Option B: Manual Creation</h3>
+        <p>For more control, you can create a skill manually:</p>
+
+        <ol class="step-list">
+          <li class="step-item">
+            <div class="step-title">Copy the Template</div>
+            <div class="step-description">
+              Start by copying the skill template to your new skill directory.
+              <div class="terminal-block">
+                <pre><span class="prompt">$</span> cp -r skills/_template skills/my-skill</pre>
+              </div>
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-title">Edit manifest.yaml</div>
+            <div class="step-description">
+              Fill in the skill metadata including name, description, and
+              triggers.
+              <div class="code-block">
+                <div class="code-label">YAML</div>
+                <pre><code>name: my-skill
+version: 1.0.0
+description: "What your skill does"
+triggers:
+  keywords: ["trigger phrase"]</code></pre>
+              </div>
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-title">Write SKILL.md</div>
+            <div class="step-description">
+              Define the skill's identity, workflow, rules, and output format.
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-title">Validate Your Skill</div>
+            <div class="step-description">
+              Ensure your skill follows all conventions and has no conflicts.
+              <div class="terminal-block">
+                <pre><span class="prompt">$</span> python scripts/validate.py skills/my-skill</pre>
+              </div>
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-title">Install the Skill</div>
+            <div class="step-description">
+              Deploy your skill to your AI coding assistant platforms.
+              <div class="terminal-block">
+                <pre><span class="prompt">$</span> python scripts/install.py --skill my-skill</pre>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Using Bundles Section -->
+      <div class="content-section">
+        <h2>📦 Using Bundles</h2>
+        <p>
+          Bundles are domain kits that install multiple related skills at once:
+        </p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> # Install the web development kit
+<span class="prompt">$</span> python scripts/install.py --bundle web-dev-kit
+
+<span style="color: var(--text-muted);"># This installs: frontend-design, react-best-practices,
+# vercel-react-best-practices, web-design-guidelines, backend-development
+# Plus the web-fullstack-expert meta-skill that composes them</span></pre>
+        </div>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">ℹ️</div>
+          <div class="alert-content">
+            <div class="alert-title">What's a Meta-Skill?</div>
+            <p>
+              Bundles include a meta-skill that routes between constituent
+              skills and resolves conflicts. It acts as an intelligent
+              orchestrator for the domain.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Using Pipelines Section -->
+      <div class="content-section">
+        <h2>🔄 Using Pipelines</h2>
+        <p>
+          Pipelines are multi-agent workflows. Trigger them with natural
+          language:
+        </p>
+
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Prompt</th>
+              <th>Pipeline</th>
+              <th>What It Does</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>"Build feature X from scratch"</code></td>
+              <td>SDD Pipeline</td>
+              <td>Spec → Implement → Review</td>
+            </tr>
+            <tr>
+              <td><code>"Design feature X"</code></td>
+              <td>UX Pipeline</td>
+              <td>Research → Wireframe → Visual → Review</td>
+            </tr>
+            <tr>
+              <td><code>"Fix bug X"</code></td>
+              <td>Debug Pipeline</td>
+              <td>Investigate → Fix → Test → Review</td>
+            </tr>
+            <tr>
+              <td><code>"Create a new skill for X"</code></td>
+              <td>Skill Factory</td>
+              <td>Interactive skill creation workflow</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="alert alert-warning">
+          <div class="alert-icon">⚠️</div>
+          <div class="alert-content">
+            <div class="alert-title">Platform Support</div>
+            <p>
+              Pipeline support varies by platform. Claude Code and Copilot CLI
+              have full pipeline support, while other platforms may require
+              manual handoffs.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Next Steps Section -->
+      <div class="content-section">
+        <h2>🎯 Next Steps</h2>
+        <p>
+          Now that you have OMNISKILL installed, explore these guides to go
+          deeper:
+        </p>
+
+        <div class="platform-cards">
+          <a href="creating-skills.html" class="platform-item">
+            <span class="platform-emoji">⚡</span>
+            <h3>Creating Skills</h3>
+            <p>Deep dive into skill authoring</p>
+          </a>
+
+          <a href="creating-bundles.html" class="platform-item">
+            <span class="platform-emoji">📦</span>
+            <h3>Creating Bundles</h3>
+            <p>Group skills into domain kits</p>
+          </a>
+
+          <a href="creating-agents.html" class="platform-item">
+            <span class="platform-emoji">🤖</span>
+            <h3>Creating Agents</h3>
+            <p>Define formal agent personas</p>
+          </a>
+
+          <a href="platform-guide.html" class="platform-item">
+            <span class="platform-emoji">🔧</span>
+            <h3>Platform Guide</h3>
+            <p>Platform-specific setup details</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="doc-nav-footer">
+        <a href="../index.html" class="nav-link prev">
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">Home</span>
+        </a>
+        <a href="creating-skills.html" class="nav-link next">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">Creating Skills</span>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>

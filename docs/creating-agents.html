@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating Agents — OMNISKILL Documentation</title>
+    <meta
+      name="description"
+      content="Learn how to define formal agent personas with skill bindings and handoff protocols"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="doc-nav">
+      <a href="../index.html" class="nav-logo">OMNISKILL</a>
+      <a
+        href="https://github.com/SufficientDaikon/omniskill"
+        class="nav-github"
+        target="_blank"
+        >GitHub ↗</a
+      >
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">DOCUMENTATION</div>
+        <a href="getting-started.html" class="sidebar-link">Getting Started</a>
+        <a href="creating-skills.html" class="sidebar-link">Creating Skills</a>
+        <a href="creating-bundles.html" class="sidebar-link"
+          >Creating Bundles</a
+        >
+        <a href="creating-agents.html" class="sidebar-link active"
+          >Creating Agents</a
+        >
+        <a href="creating-pipelines.html" class="sidebar-link"
+          >Creating Pipelines</a
+        >
+        <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
+        <a href="architecture.html" class="sidebar-link">Architecture</a>
+        <a href="faq.html" class="sidebar-link">FAQ</a>
+      </div>
+      <div class="sidebar-section">
+        <a href="../index.html" class="sidebar-link back-link"
+          >← Back to Home</a
+        >
+      </div>
+    </aside>
+
+    <button
+      class="sidebar-toggle"
+      onclick="document.getElementById('sidebar').classList.toggle('open')"
+    >
+      ☰
+    </button>
+
+    <!-- Main Content -->
+    <main class="doc-content">
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="../index.html">Home</a>
+        <span class="separator">›</span>
+        <a href="getting-started.html">Documentation</a>
+        <span class="separator">›</span>
+        <span>Creating Agents</span>
+      </div>
+
+      <!-- Header -->
+      <div class="doc-header">
+        <span class="section-label">DOCUMENTATION</span>
+        <h1 class="doc-title">
+          Creating <span class="gradient-text">Agents</span>
+        </h1>
+        <p class="doc-subtitle">
+          Define formal agent personas that orchestrate skills, tools, and
+          handoff protocols to accomplish specific tasks.
+        </p>
+      </div>
+
+      <!-- What's an Agent Section -->
+      <div class="content-section">
+        <h2>🤖 What's an Agent?</h2>
+        <p>
+          An agent is an <strong>orchestration layer</strong> — a defined
+          persona that uses skills, tools, and handoff protocols to accomplish
+          specific types of tasks. Agents are the building blocks of pipelines.
+        </p>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <div class="alert-title">Skills vs Agents vs Pipelines</div>
+            <ul style="margin-bottom: 0">
+              <li>
+                <strong>Skills</strong>: Reusable instructions for specific
+                tasks (e.g., "create React component")
+              </li>
+              <li>
+                <strong>Agents</strong>: Personas that use skills and tools
+                (e.g., "Frontend Developer")
+              </li>
+              <li>
+                <strong>Pipelines</strong>: Multi-agent workflows (e.g., "Design
+                → Implement → Review")
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agent Structure Section -->
+      <div class="content-section">
+        <h2>🏗️ Agent Structure</h2>
+
+        <div class="file-tree">
+          <div class="file-tree-item folder">
+            <span class="icon">📁</span> agents/my-agent/
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> AGENT.md
+            <span style="color: var(--text-muted)"
+              >— Full agent definition</span
+            >
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> agent-manifest.yaml
+            <span style="color: var(--text-muted)"
+              >— Metadata, bindings, contracts</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Creating an Agent Section -->
+      <div class="content-section">
+        <h2>🚀 Creating an Agent</h2>
+
+        <h3>Step 1: Define agent-manifest.yaml</h3>
+        <p>
+          The agent manifest declares the agent's capabilities, skill bindings,
+          and contracts:
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">agent-manifest.yaml</div>
+          <pre><code>name: my-task-agent
+version: 1.0.0
+role: "Task Specialist"
+description: "Handles [type of task] with [approach]"
+
+persona:
+  tone: "professional, thorough"
+  style: "methodical, step-by-step"
+  identity: "specialist in [domain]"
+
+skill-bindings:
+  - skill: relevant-skill
+    trigger: "when user asks to do X"
+  - skill: another-skill
+    trigger: "when user needs Y"
+
+tool-access: [filesystem, github, terminal]
+
+handoff-targets:
+  - agent: next-agent
+    condition: "when task is complete"
+    artifact: "output file path"
+  - agent: reviewer-agent
+    condition: "for quality check"
+    artifact: "completed work"
+
+guardrails:
+  - "Never skip validation"
+  - "Always document decisions"
+  - "Confirm before destructive operations"
+
+input-contract:
+  type: "task description"
+  format: "free text or structured request"
+  required-fields: ["task", "context"]
+
+output-contract:
+  type: "completed artifact"
+  format: "depends on task"
+  deliverables: ["primary output", "documentation"]</code></pre>
+        </div>
+
+        <div class="alert alert-success">
+          <div class="alert-icon">✓</div>
+          <div class="alert-content">
+            <div class="alert-title">Persona Design Tips</div>
+            <ul style="margin-bottom: 0">
+              <li>
+                Define a clear <strong>tone</strong> that matches the agent's
+                role
+              </li>
+              <li>
+                Specify the agent's <strong>style</strong> of working
+                (methodical, creative, etc.)
+              </li>
+              <li>
+                Give the agent a strong <strong>identity</strong> that guides
+                decision-making
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Writing AGENT.md Section -->
+      <div class="content-section">
+        <h2>✍️ Step 2: Write AGENT.md</h2>
+        <p>
+          The AGENT.md file is the full agent definition.
+          <strong>Required sections:</strong>
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">AGENT.md</div>
+          <pre><code># My Task Agent
+
+## Core Identity
+
+You are a **Task Specialist** focused on [domain]. Your expertise lies in:
+- [Key capability 1]
+- [Key capability 2]
+- [Key capability 3]
+
+Your approach is methodical and thorough. You prioritize quality over speed.
+
+## When to Activate
+
+Activate this agent when:
+- User requests [specific type of work]
+- Pipeline step requires [agent role]
+- Handoff from [previous agent] with [artifact type]
+
+## Skills You Use
+
+You have access to these skills:
+- **relevant-skill**: Use when [condition]
+- **another-skill**: Use when [different condition]
+
+## Tools You Use
+
+You can access:
+- **Filesystem**: Read, write, and organize files
+- **GitHub**: Clone, commit, push, create PRs
+- **Terminal**: Run commands, scripts, and tools
+
+## Workflow
+
+1. **Understand Context**
+   - Read input artifact or user request
+   - Identify requirements and constraints
+   - Ask clarifying questions if needed
+
+2. **Plan Approach**
+   - Break down task into steps
+   - Determine which skills/tools to use
+   - Estimate complexity and time
+
+3. **Execute Task**
+   - Follow skill workflows
+   - Use tools as needed
+   - Document decisions inline
+
+4. **Validate Output**
+   - Verify completeness
+   - Check quality standards
+   - Run tests if applicable
+
+5. **Prepare Handoff**
+   - Package artifacts
+   - Write handoff notes
+   - Identify next agent (if in pipeline)
+
+## Guardrails
+
+### DO:
+- Validate all inputs before proceeding
+- Document why you made specific choices
+- Ask for confirmation on ambiguous points
+- Follow domain best practices
+
+### DON'T:
+- Skip validation steps
+- Make assumptions about requirements
+- Proceed without necessary information
+- Deviate from established standards
+
+## Input Contract
+
+I expect to receive:
+- **Type**: Task description or artifact from previous agent
+- **Format**: Structured request with context
+- **Required fields**: task, context, success criteria
+
+## Output Contract
+
+I will deliver:
+- **Primary artifact**: [what you produce]
+- **Documentation**: Decisions, rationale, next steps
+- **Handoff notes**: For the next agent (if applicable)
+
+## Handoff Protocol
+
+After completing my work:
+- If in a pipeline → Hand off to [next-agent] with [artifact]
+- If standalone → Report completion to user
+- If issues found → Hand off to [fallback-agent] for resolution</code></pre>
+        </div>
+      </div>
+
+      <!-- Skill Bindings Section -->
+      <div class="content-section">
+        <h2>🔗 Skill Bindings</h2>
+        <p>
+          Agents use skills to perform their work. Define clear bindings in the
+          manifest:
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">skill-bindings example</div>
+          <pre><code>skill-bindings:
+  # Primary skill for this agent's main function
+  - skill: frontend-design
+    trigger: "when user requests UI/UX work"
+    priority: 1
+  
+  # Supporting skill for complementary work
+  - skill: react-best-practices
+    trigger: "when implementing React components"
+    priority: 2
+  
+  # Fallback skill for edge cases
+  - skill: web-design-guidelines
+    trigger: "when design guidance is needed"
+    priority: 3</code></pre>
+        </div>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <div class="alert-title">Binding Priority</div>
+            <p>
+              When multiple skills could apply, the agent uses priority to
+              decide. Lower numbers = higher priority.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Handoff Targets Section -->
+      <div class="content-section">
+        <h2>🤝 Handoff Targets</h2>
+        <p>Agents can hand off work to other agents in multi-step workflows:</p>
+
+        <div class="code-block">
+          <div class="code-label">handoff-targets example</div>
+          <pre><code>handoff-targets:
+  # Normal success path
+  - agent: implementer-agent
+    condition: "when design is approved"
+    artifact: "ui-design/ directory"
+    message: "Design complete. Ready for implementation."
+  
+  # Quality assurance path
+  - agent: design-reviewer
+    condition: "for design review"
+    artifact: "ui-design/ directory"
+    message: "Design complete. Please review."
+  
+  # Error handling path
+  - agent: ux-research-agent
+    condition: "if requirements are unclear"
+    artifact: "research request"
+    message: "Need more user research before proceeding."</code></pre>
+        </div>
+      </div>
+
+      <!-- Validation Section -->
+      <div class="content-section">
+        <h2>✅ Step 3: Validate</h2>
+        <p>Run the validation script to ensure your agent is well-formed:</p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> python scripts/validate.py agents/my-task-agent</pre>
+        </div>
+
+        <p>The validator checks:</p>
+        <ul>
+          <li><strong>Agent manifest completeness</strong></li>
+          <li><strong>All referenced skills exist</strong></li>
+          <li><strong>Handoff targets are valid agents</strong></li>
+          <li><strong>Input/output contracts are well-defined</strong></li>
+          <li><strong>AGENT.md has required sections</strong></li>
+        </ul>
+      </div>
+
+      <!-- Example Agent Section -->
+      <div class="content-section">
+        <h2>🎯 Example: Spec Writer Agent</h2>
+        <p>Let's look at a real example from the SDD pipeline:</p>
+
+        <div class="code-block">
+          <div class="code-label">agents/spec-writer/agent-manifest.yaml</div>
+          <pre><code>name: spec-writer
+version: 1.0.0
+role: "Requirements Engineer"
+description: "Transforms high-level plans into comprehensive specifications"
+
+persona:
+  tone: "precise, thorough, unambiguous"
+  style: "structured, detailed, specification-focused"
+  identity: "requirements engineering specialist"
+
+skill-bindings:
+  - skill: spec-writing
+    trigger: "always"
+    priority: 1
+
+tool-access: [filesystem]
+
+handoff-targets:
+  - agent: implementer
+    condition: "when spec is complete and approved"
+    artifact: "spec.md file"
+  - agent: reviewer
+    condition: "for spec review before implementation"
+    artifact: "spec.md file"
+
+guardrails:
+  - "Never skip acceptance criteria"
+  - "Always define success metrics"
+  - "Be explicit about edge cases"
+
+input-contract:
+  type: "feature description"
+  format: "free text or structured plan"
+
+output-contract:
+  type: "comprehensive specification"
+  format: "markdown document"
+  deliverables: ["spec.md with all sections"]</code></pre>
+        </div>
+      </div>
+
+      <!-- Best Practices Section -->
+      <div class="content-section">
+        <h2>✨ Agent Best Practices</h2>
+
+        <h3>1. Clear Role Definition</h3>
+        <p>
+          The agent's role should be immediately obvious. Don't create "do
+          everything" agents.
+        </p>
+
+        <h3>2. Appropriate Skill Bindings</h3>
+        <p>
+          Bind only skills that are truly relevant to the agent's role. More
+          isn't better.
+        </p>
+
+        <h3>3. Explicit Contracts</h3>
+        <p>
+          Define exactly what input the agent expects and what output it
+          produces. No ambiguity.
+        </p>
+
+        <h3>4. Sensible Handoffs</h3>
+        <p>
+          Design handoff flows that match real workflows. Consider success
+          paths, review paths, and error paths.
+        </p>
+
+        <h3>5. Strong Guardrails</h3>
+        <p>
+          Prevent the agent from doing things that would compromise quality or
+          safety.
+        </p>
+
+        <h3>6. Consistent Persona</h3>
+        <p>
+          The agent's tone, style, and identity should be consistent across all
+          interactions.
+        </p>
+      </div>
+
+      <!-- Existing Agents Section -->
+      <div class="content-section">
+        <h2>🤖 Existing Agents</h2>
+        <p>OMNISKILL includes several pre-built agents for common workflows:</p>
+
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Agent</th>
+              <th>Role</th>
+              <th>Used In</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>spec-writer</code></td>
+              <td>Requirements Engineer</td>
+              <td>SDD Pipeline</td>
+            </tr>
+            <tr>
+              <td><code>implementer</code></td>
+              <td>Software Developer</td>
+              <td>SDD Pipeline</td>
+            </tr>
+            <tr>
+              <td><code>reviewer</code></td>
+              <td>Quality Reviewer</td>
+              <td>SDD Pipeline, UX Pipeline</td>
+            </tr>
+            <tr>
+              <td><code>ux-researcher</code></td>
+              <td>UX Research Specialist</td>
+              <td>UX Pipeline</td>
+            </tr>
+            <tr>
+              <td><code>ui-designer</code></td>
+              <td>Visual Designer</td>
+              <td>UX Pipeline</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          See the
+          <a
+            href="https://github.com/SufficientDaikon/omniskill/tree/main/agents"
+            >agents directory</a
+          >
+          for all available agents and their source code.
+        </p>
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="doc-nav-footer">
+        <a href="creating-bundles.html" class="nav-link prev">
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">Creating Bundles</span>
+        </a>
+        <a href="creating-pipelines.html" class="nav-link next">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">Creating Pipelines</span>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>

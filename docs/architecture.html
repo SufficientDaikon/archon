@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Architecture — OMNISKILL Documentation</title>
+    <meta
+      name="description"
+      content="Understand OMNISKILL's layered architecture and design principles"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="doc-nav">
+      <a href="../index.html" class="nav-logo">OMNISKILL</a>
+      <a
+        href="https://github.com/SufficientDaikon/omniskill"
+        class="nav-github"
+        target="_blank"
+        >GitHub ↗</a
+      >
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">DOCUMENTATION</div>
+        <a href="getting-started.html" class="sidebar-link">Getting Started</a>
+        <a href="creating-skills.html" class="sidebar-link">Creating Skills</a>
+        <a href="creating-bundles.html" class="sidebar-link"
+          >Creating Bundles</a
+        >
+        <a href="creating-agents.html" class="sidebar-link">Creating Agents</a>
+        <a href="creating-pipelines.html" class="sidebar-link"
+          >Creating Pipelines</a
+        >
+        <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
+        <a href="architecture.html" class="sidebar-link active">Architecture</a>
+        <a href="faq.html" class="sidebar-link">FAQ</a>
+      </div>
+      <div class="sidebar-section">
+        <a href="../index.html" class="sidebar-link back-link"
+          >← Back to Home</a
+        >
+      </div>
+    </aside>
+
+    <button
+      class="sidebar-toggle"
+      onclick="document.getElementById('sidebar').classList.toggle('open')"
+    >
+      ☰
+    </button>
+
+    <!-- Main Content -->
+    <main class="doc-content">
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="../index.html">Home</a>
+        <span class="separator">›</span>
+        <a href="getting-started.html">Documentation</a>
+        <span class="separator">›</span>
+        <span>Architecture</span>
+      </div>
+
+      <!-- Header -->
+      <div class="doc-header">
+        <span class="section-label">DOCUMENTATION</span>
+        <h1 class="doc-title">
+          OMNISKILL <span class="gradient-text">Architecture</span>
+        </h1>
+        <p class="doc-subtitle">
+          Understand the layered architecture, design principles, and data flow
+          that power OMNISKILL's universal approach.
+        </p>
+      </div>
+
+      <!-- Design Principles Section -->
+      <div class="content-section">
+        <h2>🎯 Design Principles</h2>
+        <p>
+          OMNISKILL is built on five core principles that guide every design
+          decision:
+        </p>
+
+        <ol class="step-list">
+          <li class="step-item">
+            <div class="step-title">Universal Format</div>
+            <div class="step-description">
+              Write once, deploy everywhere. Skills, agents, and pipelines are
+              defined in a universal format that adapters transform for each
+              platform.
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-title">Composability</div>
+            <div class="step-description">
+              Skills compose into bundles. Agents compose into pipelines.
+              Everything is designed to be combined and reused in new contexts.
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-title">Separation of Concerns</div>
+            <div class="step-description">
+              Skills contain knowledge. Agents provide orchestration. Pipelines
+              define workflows. Each layer has a clear, distinct responsibility.
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-title">Self-Improvement</div>
+            <div class="step-description">
+              The system uses its own tools to improve itself. The skill factory
+              creates skills. Pipelines improve pipelines. Agents maintain
+              agents.
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-title">Platform Agnostic</div>
+            <div class="step-description">
+              Platform differences are abstracted by adapters. Authors focus on
+              what skills do, not how each platform implements them.
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Layer Architecture Section -->
+      <div class="content-section">
+        <h2>🏗️ Layer Architecture</h2>
+        <p>
+          OMNISKILL uses a layered architecture where each layer builds on the
+          one below it:
+        </p>
+
+        <div class="arch-diagram">
+          <!-- Pipelines Layer -->
+          <div class="arch-layer">
+            <div class="arch-layer-box">PIPELINES</div>
+          </div>
+          <div class="arch-connector"></div>
+
+          <!-- Agents Layer -->
+          <div class="arch-layer">
+            <div class="arch-layer-box">AGENTS</div>
+          </div>
+          <div class="arch-connector"></div>
+
+          <!-- Bundles Layer -->
+          <div class="arch-layer">
+            <div class="arch-layer-box">BUNDLES</div>
+          </div>
+          <div class="arch-connector"></div>
+
+          <!-- Skills Layer -->
+          <div class="arch-layer">
+            <div class="arch-layer-box">SKILLS</div>
+          </div>
+          <div class="arch-connector"></div>
+
+          <!-- Adapters Layer -->
+          <div class="arch-layer">
+            <div class="arch-layer-box">ADAPTERS</div>
+          </div>
+          <div class="arch-connector"></div>
+
+          <!-- Platforms Layer -->
+          <div class="arch-layer">
+            <div class="arch-layer-box">PLATFORMS</div>
+          </div>
+        </div>
+
+        <h3>Layer Descriptions</h3>
+
+        <div class="code-block">
+          <pre><code>┌─────────────────────────────────────────────┐
+│                PIPELINES                     │
+│  (Multi-agent workflows with branching)      │
+├─────────────────────────────────────────────┤
+│                AGENTS                        │
+│  (Personas with skill bindings & handoffs)   │
+├─────────────────────────────────────────────┤
+│               BUNDLES                        │
+│  (Domain kits with meta-skill routing)       │
+├─────────────────────────────────────────────┤
+│               SKILLS                         │
+│  (Universal instructions + resources)        │
+├─────────────────────────────────────────────┤
+│              ADAPTERS                        │
+│  (Platform-specific transformations)         │
+├─────────────────────────────────────────────┤
+│     Claude Code │ Copilot │ Cursor │ ...     │
+└─────────────────────────────────────────────┘</code></pre>
+        </div>
+
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Layer</th>
+              <th>Purpose</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Pipelines</strong></td>
+              <td>Multi-step workflows</td>
+              <td>SDD Pipeline (spec → implement → review)</td>
+            </tr>
+            <tr>
+              <td><strong>Agents</strong></td>
+              <td>Orchestration personas</td>
+              <td>Spec Writer, Implementer, Reviewer</td>
+            </tr>
+            <tr>
+              <td><strong>Bundles</strong></td>
+              <td>Domain kits</td>
+              <td>web-dev-kit (5 skills + meta-skill)</td>
+            </tr>
+            <tr>
+              <td><strong>Skills</strong></td>
+              <td>Reusable instructions</td>
+              <td>react-best-practices, frontend-design</td>
+            </tr>
+            <tr>
+              <td><strong>Adapters</strong></td>
+              <td>Format transformers</td>
+              <td>claude-adapter, cursor-adapter</td>
+            </tr>
+            <tr>
+              <td><strong>Platforms</strong></td>
+              <td>AI coding assistants</td>
+              <td>Claude Code, Copilot CLI, Cursor, etc.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Data Flow Section -->
+      <div class="content-section">
+        <h2>🔄 Data Flow</h2>
+        <p>How a user request flows through the system:</p>
+
+        <div
+          style="
+            background: rgba(6, 6, 14, 0.8);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            margin: 24px 0;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+          "
+        >
+          <div style="margin-bottom: 16px">
+            <span style="color: var(--accent-cyan)">1. User Request</span> →
+            "Build feature X from scratch"
+          </div>
+          <div
+            style="
+              padding-left: 24px;
+              border-left: 2px solid var(--accent-blue);
+              margin-bottom: 16px;
+            "
+          >
+            ↓<br />
+            <span style="color: var(--accent-blue)">Trigger matching</span> →
+            Matches "sdd-pipeline"
+          </div>
+
+          <div style="margin-bottom: 16px">
+            <span style="color: var(--accent-purple)"
+              >2. Pipeline Activation</span
+            >
+            → SDD Pipeline starts
+          </div>
+          <div
+            style="
+              padding-left: 24px;
+              border-left: 2px solid var(--accent-purple);
+              margin-bottom: 16px;
+            "
+          >
+            ↓<br />
+            <span style="color: var(--accent-purple)">Step 1</span>: spec-writer
+            agent activated
+          </div>
+
+          <div style="margin-bottom: 16px">
+            <span style="color: var(--accent-pink)">3. Agent Selection</span> →
+            spec-writer loads
+          </div>
+          <div
+            style="
+              padding-left: 24px;
+              border-left: 2px solid var(--accent-pink);
+              margin-bottom: 16px;
+            "
+          >
+            ↓<br />
+            <span style="color: var(--accent-pink)">Skill binding</span> → Uses
+            "spec-writing" skill
+          </div>
+
+          <div style="margin-bottom: 16px">
+            <span style="color: var(--accent-cyan)">4. Skill Execution</span> →
+            Skill provides instructions
+          </div>
+          <div
+            style="
+              padding-left: 24px;
+              border-left: 2px solid var(--accent-cyan);
+              margin-bottom: 16px;
+            "
+          >
+            ↓<br />
+            <span style="color: var(--accent-cyan)">Resources loaded</span> →
+            spec-template.md, best-practices.md<br />
+            <span style="color: var(--accent-cyan)">AI model executes</span> →
+            Follows instructions + resources
+          </div>
+
+          <div style="margin-bottom: 16px">
+            <span style="color: var(--accent-green)">5. Output Generation</span>
+            → spec.md created
+          </div>
+          <div
+            style="
+              padding-left: 24px;
+              border-left: 2px solid var(--accent-green);
+              margin-bottom: 16px;
+            "
+          >
+            ↓<br />
+            <span style="color: var(--accent-green)">Validation</span> → Output
+            contract checked<br />
+            <span style="color: var(--accent-green)">Artifact saved</span> →
+            spec.md written to disk
+          </div>
+
+          <div>
+            <span style="color: var(--accent-orange)">6. Handoff</span> → Next
+            agent (implementer) receives spec.md
+          </div>
+        </div>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <div class="alert-title">Key Insight</div>
+            <p>
+              Each layer adds value without knowing about layers above it.
+              Skills don't know they're in a bundle. Bundles don't know they're
+              in a pipeline. This separation enables maximum reuse.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Validation Chain Section -->
+      <div class="content-section">
+        <h2>✅ Validation Chain</h2>
+        <p>How OMNISKILL ensures quality at every level:</p>
+
+        <div
+          style="
+            background: rgba(6, 6, 14, 0.8);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            margin: 24px 0;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+          "
+        >
+          <pre
+            style="margin: 0; color: var(--text-secondary)"
+          >manifest.yaml  →  <span style="color: var(--accent-cyan);">schema validation</span>  →  SKILL.md section check
+     ↓                                        ↓
+trigger check  →  <span style="color: var(--accent-blue);">uniqueness across repo</span>  →  resource existence
+     ↓                                        ↓
+composition  →  <span style="color: var(--accent-purple);">circular dependency check</span>  →  <span style="color: var(--accent-green);">PASS / FAIL</span></pre>
+        </div>
+
+        <h3>Validation Stages</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Stage</th>
+              <th>What's Checked</th>
+              <th>Why It Matters</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Schema</strong></td>
+              <td>YAML structure, required fields</td>
+              <td>Prevents malformed definitions</td>
+            </tr>
+            <tr>
+              <td><strong>Content</strong></td>
+              <td>Required sections, format</td>
+              <td>Ensures completeness</td>
+            </tr>
+            <tr>
+              <td><strong>Uniqueness</strong></td>
+              <td>Trigger conflicts, name collisions</td>
+              <td>Prevents ambiguous matching</td>
+            </tr>
+            <tr>
+              <td><strong>References</strong></td>
+              <td>Skills, agents, resources exist</td>
+              <td>Catches broken dependencies</td>
+            </tr>
+            <tr>
+              <td><strong>Composition</strong></td>
+              <td>Circular dependencies, loops</td>
+              <td>Ensures workflow validity</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Adapter System Section -->
+      <div class="content-section">
+        <h2>🔌 Adapter System</h2>
+        <p>
+          Adapters bridge the gap between universal skills and platform-specific
+          formats:
+        </p>
+
+        <h3>Adapter Responsibilities</h3>
+        <ul>
+          <li>
+            <strong>Format transformation</strong>: Convert SKILL.md to
+            platform-native format
+          </li>
+          <li>
+            <strong>Metadata handling</strong>: Extract and format trigger
+            keywords, tags, etc.
+          </li>
+          <li>
+            <strong>Resource packaging</strong>: Bundle resources in
+            platform-appropriate way
+          </li>
+          <li>
+            <strong>Override merging</strong>: Combine base skill with platform
+            overrides
+          </li>
+          <li>
+            <strong>Validation</strong>: Ensure output meets platform
+            requirements
+          </li>
+        </ul>
+
+        <h3>Adapter Pipeline</h3>
+        <div class="code-block">
+          <pre><code>Universal Skill (SKILL.md + manifest.yaml)
+         ↓
+    Load base content
+         ↓
+    Load platform override (if exists)
+         ↓
+    Merge base + override
+         ↓
+    Transform to platform format
+         ↓
+    Package resources
+         ↓
+    Validate output
+         ↓
+    Write to platform directory
+         ↓
+Platform-Specific Skill (e.g., .mdc for Cursor)</code></pre>
+        </div>
+
+        <div class="alert alert-success">
+          <div class="alert-icon">✓</div>
+          <div class="alert-content">
+            <div class="alert-title">Adding New Platforms</div>
+            <p>
+              To support a new platform, create an adapter in
+              <code>adapters/</code> that implements the standard adapter
+              interface. No changes to skills, bundles, agents, or pipelines
+              needed.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Self-Improvement Section -->
+      <div class="content-section">
+        <h2>♻️ Self-Improvement</h2>
+        <p>
+          OMNISKILL uses its own capabilities to maintain and improve itself:
+        </p>
+
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>What</th>
+              <th>Tool Used</th>
+              <th>How</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Create new skills</td>
+              <td>Skill Factory Pipeline</td>
+              <td>Interactive workflow guides skill creation</td>
+            </tr>
+            <tr>
+              <td>Improve existing skills</td>
+              <td>skill-improvement agent</td>
+              <td>Analyzes usage, suggests improvements</td>
+            </tr>
+            <tr>
+              <td>Test skills</td>
+              <td>Validation framework</td>
+              <td>Automated test cases for all skills</td>
+            </tr>
+            <tr>
+              <td>Document features</td>
+              <td>documentation-writer skill</td>
+              <td>Generates docs from code/manifests</td>
+            </tr>
+            <tr>
+              <td>Debug pipelines</td>
+              <td>Debug Pipeline</td>
+              <td>Investigates, diagnoses, fixes issues</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <div class="alert-title">Meta-Circular Evolution</div>
+            <p>
+              This self-improvement capability creates a positive feedback loop.
+              Better tools make it easier to create better tools, which make it
+              easier to create even better tools.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extensibility Section -->
+      <div class="content-section">
+        <h2>🔧 Extensibility Points</h2>
+        <p>OMNISKILL is designed to be extended at multiple levels:</p>
+
+        <h3>1. Skills</h3>
+        <p>Add new skills by copying the template and following the guide.</p>
+
+        <h3>2. Bundles</h3>
+        <p>Group related skills with a meta-skill for intelligent routing.</p>
+
+        <h3>3. Agents</h3>
+        <p>
+          Define new orchestration personas with skill bindings and handoff
+          protocols.
+        </p>
+
+        <h3>4. Pipelines</h3>
+        <p>
+          Compose agents into multi-step workflows with branching and loops.
+        </p>
+
+        <h3>5. Adapters</h3>
+        <p>Support new platforms by implementing the adapter interface.</p>
+
+        <h3>6. Validators</h3>
+        <p>Add custom validation rules for domain-specific requirements.</p>
+
+        <div class="code-block">
+          <div class="code-label">Extension Points</div>
+          <pre><code>skills/           ← Add new skills
+bundles/          ← Create domain kits
+agents/           ← Define orchestrators
+pipelines/        ← Build workflows
+adapters/         ← Support new platforms
+validators/       ← Custom validation
+schemas/          ← Define data structures</code></pre>
+        </div>
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="doc-nav-footer">
+        <a href="platform-guide.html" class="nav-link prev">
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">Platform Guide</span>
+        </a>
+        <a href="faq.html" class="nav-link next">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">FAQ</span>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>

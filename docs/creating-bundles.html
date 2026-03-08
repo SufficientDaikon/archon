@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating Bundles — OMNISKILL Documentation</title>
+    <meta
+      name="description"
+      content="Learn how to create domain kits with meta-skills that orchestrate multiple AI skills"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="doc-nav">
+      <a href="../index.html" class="nav-logo">OMNISKILL</a>
+      <a
+        href="https://github.com/SufficientDaikon/omniskill"
+        class="nav-github"
+        target="_blank"
+        >GitHub ↗</a
+      >
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">DOCUMENTATION</div>
+        <a href="getting-started.html" class="sidebar-link">Getting Started</a>
+        <a href="creating-skills.html" class="sidebar-link">Creating Skills</a>
+        <a href="creating-bundles.html" class="sidebar-link active"
+          >Creating Bundles</a
+        >
+        <a href="creating-agents.html" class="sidebar-link">Creating Agents</a>
+        <a href="creating-pipelines.html" class="sidebar-link"
+          >Creating Pipelines</a
+        >
+        <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
+        <a href="architecture.html" class="sidebar-link">Architecture</a>
+        <a href="faq.html" class="sidebar-link">FAQ</a>
+      </div>
+      <div class="sidebar-section">
+        <a href="../index.html" class="sidebar-link back-link"
+          >← Back to Home</a
+        >
+      </div>
+    </aside>
+
+    <button
+      class="sidebar-toggle"
+      onclick="document.getElementById('sidebar').classList.toggle('open')"
+    >
+      ☰
+    </button>
+
+    <!-- Main Content -->
+    <main class="doc-content">
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="../index.html">Home</a>
+        <span class="separator">›</span>
+        <a href="getting-started.html">Documentation</a>
+        <span class="separator">›</span>
+        <span>Creating Bundles</span>
+      </div>
+
+      <!-- Header -->
+      <div class="doc-header">
+        <span class="section-label">DOCUMENTATION</span>
+        <h1 class="doc-title">
+          Creating <span class="gradient-text">Bundles</span>
+        </h1>
+        <p class="doc-subtitle">
+          Build domain kits that group related skills with intelligent routing
+          and conflict resolution.
+        </p>
+      </div>
+
+      <!-- What's a Bundle Section -->
+      <div class="content-section">
+        <h2>📦 What's a Bundle?</h2>
+        <p>
+          A bundle is a <strong>domain kit</strong> — a collection of related
+          skills packaged together with a <strong>meta-skill</strong> that
+          orchestrates them. Bundles solve the problem of overlapping skills by
+          defining clear routing and priority.
+        </p>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <div class="alert-title">Why Use Bundles?</div>
+            <ul style="margin-bottom: 0">
+              <li>
+                <strong>Atomic operations</strong>: Install, update, or remove
+                entire domain kits at once
+              </li>
+              <li>
+                <strong>Conflict resolution</strong>: Meta-skill intelligently
+                routes between overlapping skills
+              </li>
+              <li>
+                <strong>Shared resources</strong>: All skills in a bundle can
+                access common reference materials
+              </li>
+              <li>
+                <strong>Cohesive experience</strong>: Skills work together
+                seamlessly instead of competing
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bundle Structure Section -->
+      <div class="content-section">
+        <h2>🏗️ Bundle Structure</h2>
+
+        <div class="file-tree">
+          <div class="file-tree-item folder">
+            <span class="icon">📁</span> bundles/my-kit/
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> bundle.yaml
+            <span style="color: var(--text-muted)">— Bundle manifest</span>
+          </div>
+          <div class="file-tree-item folder" style="padding-left: 24px">
+            <span class="icon">📁</span> meta-skill/
+            <span style="color: var(--text-muted)">— Composition skill</span>
+          </div>
+          <div class="file-tree-item file" style="padding-left: 48px">
+            <span class="icon">📄</span> SKILL.md
+            <span style="color: var(--text-muted)">— Routing logic</span>
+          </div>
+          <div class="file-tree-item file" style="padding-left: 48px">
+            <span class="icon">📄</span> manifest.yaml
+            <span style="color: var(--text-muted)">— Meta-skill metadata</span>
+          </div>
+          <div class="file-tree-item folder" style="padding-left: 24px">
+            <span class="icon">📁</span> shared-resources/
+            <span style="color: var(--text-muted)"
+              >— Resources for all skills</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Creating a Bundle Section -->
+      <div class="content-section">
+        <h2>🚀 Creating a Bundle</h2>
+
+        <h3>Step 1: Define bundle.yaml</h3>
+        <p>
+          The bundle manifest declares which skills are included and how
+          conflicts are resolved:
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">bundle.yaml</div>
+          <pre><code>name: my-domain-kit
+version: 1.0.0
+description: "Complete toolkit for [domain]"
+author: your-name
+
+skills:
+  - skill-a
+  - skill-b
+  - skill-c
+
+meta-skill: my-domain-expert
+
+dependencies: []
+
+conflict-resolution:
+  - when: "skill-a AND skill-b both match"
+    prefer: skill-a
+    reason: "skill-a is more specific for this case"
+  
+  - when: "skill-b AND skill-c both match"
+    prefer: skill-c
+    reason: "skill-c has higher accuracy for this scenario"</code></pre>
+        </div>
+
+        <div class="alert alert-warning">
+          <div class="alert-icon">⚠️</div>
+          <div class="alert-content">
+            <div class="alert-title">Skill Names Must Match</div>
+            <p>
+              The skills listed in <code>skills:</code> must match directory
+              names in the <code>skills/</code> folder. The validator will check
+              this.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Meta-Skill Section -->
+      <div class="content-section">
+        <h2>🧠 Step 2: Create the Meta-Skill</h2>
+        <p>
+          The meta-skill is the orchestrator. Its SKILL.md defines how to route
+          between constituent skills:
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">meta-skill/SKILL.md</div>
+          <pre><code># My Domain Expert
+
+You are a **meta-skill** that composes and routes between these skills:
+
+- **skill-a**: Use for [specific scenario A]
+- **skill-b**: Use for [specific scenario B]
+- **skill-c**: Use for [specific scenario C]
+
+## Core Identity
+
+You are an expert orchestrator for [domain]. Your job is to:
+1. Understand the user's request
+2. Determine which constituent skill(s) to invoke
+3. Coordinate between skills if multiple are needed
+4. Ensure coherent output
+
+## Routing Rules
+
+### Primary Routing
+1. If the request is about [X] → invoke **skill-a**
+2. If the request is about [Y] → invoke **skill-b**
+3. If the request is about [Z] → invoke **skill-c**
+
+### Composite Routing
+- If request requires both [X] and [Y] → invoke **skill-a** then **skill-b**
+- If ambiguous → ask user for clarification
+
+### Fallback
+- If no specific skill matches → use general knowledge with domain context
+
+## Conflict Resolution
+
+When multiple skills could handle a request:
+- Prefer **skill-a** for [specific condition]
+- Prefer **skill-b** for [different condition]
+- If truly ambiguous, present options to user
+
+## Shared Context
+
+All skills in this bundle have access to:
+- Shared resources in `shared-resources/`
+- Common style guide: [reference]
+- Domain standards: [reference]</code></pre>
+        </div>
+
+        <div class="alert alert-success">
+          <div class="alert-icon">✓</div>
+          <div class="alert-content">
+            <div class="alert-title">Meta-Skill Best Practices</div>
+            <ul style="margin-bottom: 0">
+              <li>Be explicit about routing conditions</li>
+              <li>Handle ambiguous cases gracefully</li>
+              <li>Document why certain skills are preferred</li>
+              <li>Provide fallback behavior</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Meta-Skill Manifest</h3>
+        <p>The meta-skill also needs its own manifest:</p>
+
+        <div class="code-block">
+          <div class="code-label">meta-skill/manifest.yaml</div>
+          <pre><code>name: my-domain-expert
+version: 1.0.0
+description: "Meta-skill that orchestrates the my-domain-kit bundle"
+author: your-name
+license: MIT
+
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+
+tags: [meta-skill, domain, orchestration]
+
+triggers:
+  keywords: ["domain task", "domain help"]
+  patterns: ["* for domain", "domain *"]
+
+priority: P1  # Meta-skills typically have high priority
+
+is-meta-skill: true
+bundle: my-domain-kit</code></pre>
+        </div>
+      </div>
+
+      <!-- Shared Resources Section -->
+      <div class="content-section">
+        <h2>📚 Step 3: Add Shared Resources</h2>
+        <p>
+          Resources in <code>shared-resources/</code> are available to all
+          skills in the bundle:
+        </p>
+
+        <div class="file-tree">
+          <div class="file-tree-item folder">
+            <span class="icon">📁</span> shared-resources/
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> domain-reference.md
+            <span style="color: var(--text-muted)"
+              >— Core domain knowledge</span
+            >
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> common-patterns.md
+            <span style="color: var(--text-muted)">— Reusable patterns</span>
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> style-guide.md
+            <span style="color: var(--text-muted)">— Output standards</span>
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> glossary.md
+            <span style="color: var(--text-muted)">— Domain terminology</span>
+          </div>
+        </div>
+
+        <div class="code-block">
+          <div class="code-label">shared-resources/domain-reference.md</div>
+          <pre><code># Domain Reference
+
+## Core Concepts
+- **Concept A**: Definition and usage
+- **Concept B**: Definition and usage
+
+## Best Practices
+1. Always [practice 1]
+2. Never [anti-pattern]
+3. Prefer [approach] over [alternative]
+
+## Common Pitfalls
+- **Pitfall 1**: Why it's bad and how to avoid
+- **Pitfall 2**: Why it's bad and how to avoid</code></pre>
+        </div>
+
+        <p>Skills can reference shared resources in their manifest:</p>
+        <div class="code-block">
+          <div class="code-label">skills/skill-a/manifest.yaml</div>
+          <pre><code>resources:
+  - path: ../../bundles/my-domain-kit/shared-resources/domain-reference.md
+    type: reference
+    load: always</code></pre>
+        </div>
+      </div>
+
+      <!-- Validation Section -->
+      <div class="content-section">
+        <h2>✅ Step 4: Validate</h2>
+        <p>Run the validation script to ensure your bundle is well-formed:</p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> python scripts/validate.py bundles/my-domain-kit</pre>
+        </div>
+
+        <p>The validator checks:</p>
+        <ul>
+          <li><strong>Bundle manifest completeness</strong></li>
+          <li>
+            <strong>All referenced skills exist</strong> in skills/ directory
+          </li>
+          <li><strong>Meta-skill is properly defined</strong></li>
+          <li><strong>No circular dependencies</strong> between bundles</li>
+          <li>
+            <strong>Conflict resolution rules</strong> reference valid skills
+          </li>
+          <li><strong>Shared resources are accessible</strong></li>
+        </ul>
+      </div>
+
+      <!-- Example Bundle Section -->
+      <div class="content-section">
+        <h2>🎯 Example: Web Dev Kit</h2>
+        <p>Let's look at a real example from OMNISKILL:</p>
+
+        <div class="code-block">
+          <div class="code-label">bundles/web-dev-kit/bundle.yaml</div>
+          <pre><code>name: web-dev-kit
+version: 1.0.0
+description: "Complete web development toolkit"
+author: omniskill
+
+skills:
+  - frontend-design
+  - react-best-practices
+  - vercel-react-best-practices
+  - web-design-guidelines
+  - backend-development
+
+meta-skill: web-fullstack-expert
+
+conflict-resolution:
+  - when: "react-best-practices AND vercel-react-best-practices both match"
+    prefer: vercel-react-best-practices
+    reason: "Vercel-specific practices override general React practices"
+  
+  - when: "frontend-design AND web-design-guidelines both match"
+    prefer: web-design-guidelines
+    reason: "web-design-guidelines is more comprehensive"</code></pre>
+        </div>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <div class="alert-title">Routing Logic</div>
+            <p>
+              The <code>web-fullstack-expert</code> meta-skill knows when to use
+              <code>frontend-design</code> for UI work,
+              <code>react-best-practices</code> for React code, and
+              <code>backend-development</code> for API work—and how to
+              coordinate them for full-stack features.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Installing Bundles Section -->
+      <div class="content-section">
+        <h2>🔧 Installing Your Bundle</h2>
+        <p>Once validated, install your bundle to all detected platforms:</p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> # Install the bundle
+<span class="prompt">$</span> python scripts/install.py --bundle my-domain-kit
+
+<span style="color: var(--text-muted);"># This installs:
+# - All constituent skills (skill-a, skill-b, skill-c)
+# - The meta-skill (my-domain-expert)
+# - Shared resources (accessible to all skills)</span></pre>
+        </div>
+
+        <h3>Bundle Operations</h3>
+        <div class="code-block">
+          <pre><code># Update an existing bundle
+python scripts/install.py --bundle my-domain-kit --update
+
+# Uninstall a bundle (removes all constituent skills)
+python scripts/install.py --bundle my-domain-kit --uninstall
+
+# List all available bundles
+python scripts/list-bundles.py</code></pre>
+        </div>
+      </div>
+
+      <!-- Best Practices Section -->
+      <div class="content-section">
+        <h2>✨ Bundle Best Practices</h2>
+
+        <h3>1. Cohesive Grouping</h3>
+        <p>
+          Bundle skills that belong to the same domain and naturally work
+          together. Don't create "kitchen sink" bundles.
+        </p>
+
+        <h3>2. Clear Meta-Skill Routing</h3>
+        <p>
+          The meta-skill's routing logic should be explicit and unambiguous.
+          Document edge cases.
+        </p>
+
+        <h3>3. Comprehensive Shared Resources</h3>
+        <p>
+          Put domain knowledge that ALL skills need in shared-resources. Avoid
+          duplicating content across individual skill resources.
+        </p>
+
+        <h3>4. Explicit Conflict Resolution</h3>
+        <p>
+          If skills have overlapping triggers, define clear precedence rules in
+          conflict-resolution.
+        </p>
+
+        <h3>5. Version Coordination</h3>
+        <p>
+          When updating a bundle, ensure all constituent skills are compatible
+          versions.
+        </p>
+
+        <h3>6. Test as a Unit</h3>
+        <p>
+          Test the bundle as a whole, not just individual skills. Verify routing
+          works correctly.
+        </p>
+      </div>
+
+      <!-- Existing Bundles Section -->
+      <div class="content-section">
+        <h2>📦 Existing Bundles</h2>
+        <p>
+          OMNISKILL includes several pre-built bundles you can use as
+          references:
+        </p>
+
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Bundle</th>
+              <th>Skills</th>
+              <th>Use Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>web-dev-kit</code></td>
+              <td>5 skills</td>
+              <td>Full-stack web development</td>
+            </tr>
+            <tr>
+              <td><code>godot-kit</code></td>
+              <td>4 skills</td>
+              <td>Godot game development</td>
+            </tr>
+            <tr>
+              <td><code>data-science-kit</code></td>
+              <td>6 skills</td>
+              <td>Data analysis and ML</td>
+            </tr>
+            <tr>
+              <td><code>devops-kit</code></td>
+              <td>5 skills</td>
+              <td>Infrastructure and deployment</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          See the
+          <a
+            href="https://github.com/SufficientDaikon/omniskill/tree/main/bundles"
+            >bundles directory</a
+          >
+          for all available bundles and their source code.
+        </p>
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="doc-nav-footer">
+        <a href="creating-skills.html" class="nav-link prev">
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">Creating Skills</span>
+        </a>
+        <a href="creating-agents.html" class="nav-link next">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">Creating Agents</span>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating Pipelines — OMNISKILL Documentation</title>
+    <meta
+      name="description"
+      content="Learn how to create multi-agent workflows with branching, loops, and resumability"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="doc-nav">
+      <a href="../index.html" class="nav-logo">OMNISKILL</a>
+      <a
+        href="https://github.com/SufficientDaikon/omniskill"
+        class="nav-github"
+        target="_blank"
+        >GitHub ↗</a
+      >
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">DOCUMENTATION</div>
+        <a href="getting-started.html" class="sidebar-link">Getting Started</a>
+        <a href="creating-skills.html" class="sidebar-link">Creating Skills</a>
+        <a href="creating-bundles.html" class="sidebar-link"
+          >Creating Bundles</a
+        >
+        <a href="creating-agents.html" class="sidebar-link">Creating Agents</a>
+        <a href="creating-pipelines.html" class="sidebar-link active"
+          >Creating Pipelines</a
+        >
+        <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
+        <a href="architecture.html" class="sidebar-link">Architecture</a>
+        <a href="faq.html" class="sidebar-link">FAQ</a>
+      </div>
+      <div class="sidebar-section">
+        <a href="../index.html" class="sidebar-link back-link"
+          >← Back to Home</a
+        >
+      </div>
+    </aside>
+
+    <button
+      class="sidebar-toggle"
+      onclick="document.getElementById('sidebar').classList.toggle('open')"
+    >
+      ☰
+    </button>
+
+    <!-- Main Content -->
+    <main class="doc-content">
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="../index.html">Home</a>
+        <span class="separator">›</span>
+        <a href="getting-started.html">Documentation</a>
+        <span class="separator">›</span>
+        <span>Creating Pipelines</span>
+      </div>
+
+      <!-- Header -->
+      <div class="doc-header">
+        <span class="section-label">DOCUMENTATION</span>
+        <h1 class="doc-title">
+          Creating <span class="gradient-text">Pipelines</span>
+        </h1>
+        <p class="doc-subtitle">
+          Design multi-agent workflows with branching logic, error handling, and
+          resumability.
+        </p>
+      </div>
+
+      <!-- What's a Pipeline Section -->
+      <div class="content-section">
+        <h2>🔄 What's a Pipeline?</h2>
+        <p>
+          A pipeline defines a <strong>multi-agent workflow</strong> — an
+          ordered sequence of agent steps where each step's output feeds into
+          the next. Pipelines support branching, loops, and resumability.
+        </p>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <div class="alert-title">Why Use Pipelines?</div>
+            <ul style="margin-bottom: 0">
+              <li>
+                <strong>Multi-step workflows</strong>: Break complex tasks into
+                manageable agent steps
+              </li>
+              <li>
+                <strong>Quality gates</strong>: Review and validate output
+                between steps
+              </li>
+              <li>
+                <strong>Error handling</strong>: Define what happens when a step
+                fails
+              </li>
+              <li>
+                <strong>Resumability</strong>: Save progress and resume from any
+                step
+              </li>
+              <li>
+                <strong>Composable agents</strong>: Reuse agents across
+                different pipelines
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pipeline Format Section -->
+      <div class="content-section">
+        <h2>📐 Pipeline Format</h2>
+        <p>
+          Pipelines are defined in YAML with a clear step-by-step structure:
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">pipelines/my-pipeline.yaml</div>
+          <pre><code>name: my-pipeline
+version: 1.0.0
+description: "What this pipeline accomplishes"
+trigger: "natural language pattern *"
+
+steps:
+  - name: step-one
+    agent: first-agent
+    input: "what this step receives"
+    output: "what this step produces"
+    on-failure: halt
+  
+  - name: step-two
+    agent: second-agent
+    input: "output from step:step-one"
+    output: "intermediate result"
+    on-failure: loop
+    loop-target: step-one
+    max-iterations: 3
+  
+  - name: step-three
+    agent: third-agent
+    input: "output from step:step-two"
+    output: "final result"
+    on-failure: halt
+
+resumable: true
+state-file: ".omniskill/pipeline-state.json"</code></pre>
+        </div>
+      </div>
+
+      <!-- Step Configuration Section -->
+      <div class="content-section">
+        <h2>⚙️ Step Configuration</h2>
+
+        <h3>Basic Step Properties</h3>
+        <div class="code-block">
+          <pre><code>- name: unique-step-name        # Unique identifier
+  agent: agent-name             # Which agent executes this step
+  input: "input description"    # What the agent receives
+  output: "output description"  # What the agent produces
+  on-failure: halt              # Error handling strategy</code></pre>
+        </div>
+
+        <h3>on-failure Options</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Behavior</th>
+              <th>Use When</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>halt</code></td>
+              <td>Stop the pipeline; report failure</td>
+              <td>Errors are unrecoverable</td>
+            </tr>
+            <tr>
+              <td><code>loop</code></td>
+              <td>Go back to <code>loop-target</code> step</td>
+              <td>Retry after fixing upstream issue</td>
+            </tr>
+            <tr>
+              <td><code>skip</code></td>
+              <td>Skip this step; continue to next</td>
+              <td>Step is optional</td>
+            </tr>
+            <tr>
+              <td><code>retry</code></td>
+              <td>Retry this same step</td>
+              <td>Transient failures</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Input References</h3>
+        <p>
+          Use <code>step:name</code> syntax to reference output from previous
+          steps:
+        </p>
+
+        <div class="code-block">
+          <pre><code># Single input reference
+input: "Spec from step:specify"
+
+# Multiple input references
+input: "Code from step:implement AND spec from step:specify"
+
+# Conditional input
+input: "If step:validate passed, use its output; else use step:implement output"</code></pre>
+        </div>
+
+        <div class="alert alert-warning">
+          <div class="alert-icon">⚠️</div>
+          <div class="alert-content">
+            <div class="alert-title">Step Dependencies</div>
+            <p>
+              A step can only reference outputs from steps that come
+              <strong>before</strong> it in the pipeline. The validator will
+              catch circular dependencies.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loop Configuration Section -->
+      <div class="content-section">
+        <h2>🔁 Loop Configuration</h2>
+        <p>When a step can fail and needs to retry from an earlier point:</p>
+
+        <div class="code-block">
+          <div class="code-label">Loop example</div>
+          <pre><code>steps:
+  - name: design
+    agent: ui-designer
+    input: "User requirements"
+    output: "UI design artifacts"
+    on-failure: halt
+  
+  - name: implement
+    agent: implementer
+    input: "Design from step:design"
+    output: "Implementation code"
+    on-failure: loop
+    loop-target: design        # Go back to design step
+    max-iterations: 3          # Maximum 3 attempts
+    loop-message: "Implementation failed. Revising design..."
+  
+  - name: test
+    agent: tester
+    input: "Code from step:implement"
+    output: "Test results"
+    on-failure: loop
+    loop-target: implement     # Go back to implement only
+    max-iterations: 5</code></pre>
+        </div>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <div class="alert-title">Loop Strategy</div>
+            <p>
+              Loops are powerful but can be expensive. Set
+              <code>max-iterations</code> carefully to avoid infinite loops
+              while allowing enough attempts to succeed.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branching Section -->
+      <div class="content-section">
+        <h2>🌳 Branching Logic</h2>
+        <p>Create conditional paths based on step outcomes:</p>
+
+        <div class="code-block">
+          <div class="code-label">Branching example</div>
+          <pre><code>steps:
+  - name: analyze
+    agent: analyzer
+    input: "Codebase"
+    output: "Analysis report"
+    on-failure: halt
+  
+  - name: decide
+    agent: decision-maker
+    input: "Report from step:analyze"
+    output: "Decision: refactor OR optimize OR accept"
+    on-failure: halt
+  
+  # Branch A: Refactor path
+  - name: refactor
+    agent: refactorer
+    input: "Code and report from step:analyze"
+    output: "Refactored code"
+    condition: "step:decide output == 'refactor'"
+    on-failure: halt
+  
+  # Branch B: Optimize path
+  - name: optimize
+    agent: optimizer
+    input: "Code and report from step:analyze"
+    output: "Optimized code"
+    condition: "step:decide output == 'optimize'"
+    on-failure: halt
+  
+  # Merge point: Both paths converge here
+  - name: validate
+    agent: validator
+    input: "Code from step:refactor OR step:optimize"
+    output: "Validation results"
+    on-failure: halt</code></pre>
+        </div>
+      </div>
+
+      <!-- Resumability Section -->
+      <div class="content-section">
+        <h2>💾 Resumability</h2>
+        <p>Enable pipeline resumption from any step:</p>
+
+        <div class="code-block">
+          <pre><code>resumable: true
+state-file: ".omniskill/my-pipeline-state.json"
+
+# State tracking configuration
+state-tracking:
+  save-frequency: "after-each-step"
+  include-artifacts: true
+  compress: true</code></pre>
+        </div>
+
+        <h3>Using Resumable Pipelines</h3>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> # Pipeline interrupted? Resume from where it left off
+<span class="prompt">$</span> python scripts/resume-pipeline.py my-pipeline
+
+<span class="prompt">$</span> # Or resume from a specific step
+<span class="prompt">$</span> python scripts/resume-pipeline.py my-pipeline --from-step implement
+
+<span class="prompt">$</span> # View pipeline state
+<span class="prompt">$</span> python scripts/pipeline-status.py my-pipeline</pre>
+        </div>
+
+        <div class="alert alert-success">
+          <div class="alert-icon">✓</div>
+          <div class="alert-content">
+            <div class="alert-title">When to Use Resumability</div>
+            <ul style="margin-bottom: 0">
+              <li>Long-running pipelines (>30 minutes)</li>
+              <li>Pipelines with expensive steps (API calls, builds, etc.)</li>
+              <li>Pipelines that require human approval at certain steps</li>
+              <li>Development/debugging of pipeline logic</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Example Pipeline Section -->
+      <div class="content-section">
+        <h2>🎯 Example: SDD Pipeline</h2>
+        <p>The Spec-Driven Development pipeline is a comprehensive example:</p>
+
+        <div class="code-block">
+          <div class="code-label">pipelines/sdd.yaml</div>
+          <pre><code>name: sdd-pipeline
+version: 1.0.0
+description: "Spec-Driven Development: Write spec, implement, review"
+trigger: "build feature * from scratch"
+
+steps:
+  - name: specify
+    agent: spec-writer
+    input: "Feature description from user"
+    output: "spec.md — Comprehensive specification"
+    on-failure: halt
+  
+  - name: review-spec
+    agent: reviewer
+    input: "Spec from step:specify"
+    output: "Approval or revision request"
+    on-failure: loop
+    loop-target: specify
+    max-iterations: 3
+    loop-message: "Spec needs revision. Iterating..."
+  
+  - name: implement
+    agent: implementer
+    input: "Approved spec from step:review-spec"
+    output: "Implementation code in src/"
+    on-failure: loop
+    loop-target: specify
+    max-iterations: 2
+    loop-message: "Implementation revealed spec gaps. Revising spec..."
+  
+  - name: review-impl
+    agent: reviewer
+    input: "Code from step:implement AND spec from step:specify"
+    output: "Compliance report"
+    on-failure: loop
+    loop-target: implement
+    max-iterations: 5
+    loop-message: "Implementation doesn't match spec. Fixing..."
+  
+  - name: finalize
+    agent: finalizer
+    input: "Approved implementation from step:review-impl"
+    output: "Final package with docs"
+    on-failure: halt
+
+resumable: true
+state-file: ".omniskill/sdd-pipeline-state.json"</code></pre>
+        </div>
+
+        <h3>Pipeline Flow Visualization</h3>
+        <div
+          style="
+            background: rgba(6, 6, 14, 0.8);
+            border: 1px solid var(--border-card);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            margin: 24px 0;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+          "
+        >
+          <div style="text-align: center; color: var(--accent-cyan)">
+            User Request<br />
+            ↓<br />
+            <span
+              style="
+                background: rgba(77, 124, 255, 0.15);
+                padding: 8px 16px;
+                border-radius: 6px;
+                color: var(--text-primary);
+              "
+              >spec-writer</span
+            ><br />
+            ↓<br />
+            <span
+              style="
+                background: rgba(168, 85, 247, 0.15);
+                padding: 8px 16px;
+                border-radius: 6px;
+                color: var(--text-primary);
+              "
+              >reviewer (spec)</span
+            ><br />
+            ↓ (if approved)<br />
+            <span
+              style="
+                background: rgba(236, 72, 153, 0.15);
+                padding: 8px 16px;
+                border-radius: 6px;
+                color: var(--text-primary);
+              "
+              >implementer</span
+            ><br />
+            ↓<br />
+            <span
+              style="
+                background: rgba(0, 212, 255, 0.15);
+                padding: 8px 16px;
+                border-radius: 6px;
+                color: var(--text-primary);
+              "
+              >reviewer (impl)</span
+            ><br />
+            ↓ (if passes)<br />
+            <span
+              style="
+                background: rgba(16, 185, 129, 0.15);
+                padding: 8px 16px;
+                border-radius: 6px;
+                color: var(--text-primary);
+              "
+              >finalizer</span
+            ><br />
+            ↓<br />
+            Complete ✓
+          </div>
+        </div>
+      </div>
+
+      <!-- Validation Section -->
+      <div class="content-section">
+        <h2>✅ Validation</h2>
+        <p>Validate your pipeline before deploying:</p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> python scripts/validate.py pipelines/my-pipeline.yaml</pre>
+        </div>
+
+        <p>The validator checks:</p>
+        <ul>
+          <li><strong>All referenced agents exist</strong></li>
+          <li><strong>No circular step dependencies</strong></li>
+          <li><strong>Loop targets are valid steps</strong></li>
+          <li><strong>Input references point to previous steps</strong></li>
+          <li><strong>Trigger patterns are unique</strong></li>
+          <li><strong>YAML syntax is valid</strong></li>
+        </ul>
+      </div>
+
+      <!-- Best Practices Section -->
+      <div class="content-section">
+        <h2>✨ Pipeline Best Practices</h2>
+
+        <h3>1. Clear Step Names</h3>
+        <p>
+          Use descriptive, action-oriented names: <code>specify</code>,
+          <code>implement</code>, <code>review-spec</code>
+        </p>
+
+        <h3>2. Appropriate Error Handling</h3>
+        <p>
+          Don't use <code>on-failure: skip</code> for critical steps. Use
+          <code>halt</code> for unrecoverable errors.
+        </p>
+
+        <h3>3. Bounded Loops</h3>
+        <p>
+          Always set <code>max-iterations</code> to prevent infinite loops.
+          Consider the cost of each iteration.
+        </p>
+
+        <h3>4. Quality Gates</h3>
+        <p>
+          Insert review steps at key points (after spec, after implementation,
+          before deployment).
+        </p>
+
+        <h3>5. Human-in-the-Loop</h3>
+        <p>
+          For critical decisions, include manual approval steps rather than full
+          automation.
+        </p>
+
+        <h3>6. State Management</h3>
+        <p>
+          For long pipelines, enable resumability. For short ones, keep it
+          simple.
+        </p>
+
+        <h3>7. Composable Agents</h3>
+        <p>
+          Design agents to be reusable across multiple pipelines, not
+          pipeline-specific.
+        </p>
+      </div>
+
+      <!-- Existing Pipelines Section -->
+      <div class="content-section">
+        <h2>🔄 Existing Pipelines</h2>
+        <p>OMNISKILL includes several pre-built pipelines:</p>
+
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Pipeline</th>
+              <th>Trigger</th>
+              <th>Steps</th>
+              <th>Use Case</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>sdd-pipeline</code></td>
+              <td>"build feature X"</td>
+              <td>5 steps</td>
+              <td>Spec-driven feature development</td>
+            </tr>
+            <tr>
+              <td><code>ux-pipeline</code></td>
+              <td>"design feature X"</td>
+              <td>7 steps</td>
+              <td>Complete UX workflow</td>
+            </tr>
+            <tr>
+              <td><code>debug-pipeline</code></td>
+              <td>"fix bug X"</td>
+              <td>4 steps</td>
+              <td>Investigate, fix, test, verify</td>
+            </tr>
+            <tr>
+              <td><code>skill-factory</code></td>
+              <td>"create skill for X"</td>
+              <td>6 steps</td>
+              <td>Interactive skill creation</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          See the
+          <a
+            href="https://github.com/SufficientDaikon/omniskill/tree/main/pipelines"
+            >pipelines directory</a
+          >
+          for all available pipelines and their source code.
+        </p>
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="doc-nav-footer">
+        <a href="creating-agents.html" class="nav-link prev">
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">Creating Agents</span>
+        </a>
+        <a href="platform-guide.html" class="nav-link next">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">Platform Guide</span>
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
