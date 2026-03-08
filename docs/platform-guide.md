@@ -70,3 +70,35 @@ skills/my-skill/overrides/
 ```
 
 Overrides are merged with the base `SKILL.md` during adapter transformation.
+
+## Creating New Platform Adapters
+
+To add support for a new AI coding assistant platform:
+
+> "Follow the add-adapter skill to create an adapter for [platform]"
+
+The `add-adapter` skill guides you through:
+1. Understanding the platform's skill/rule format
+2. Creating the adapter transformation logic
+3. Defining installation paths and conventions
+4. Testing the adapter
+5. Adding platform detection
+
+## SDK as an Alternative
+
+For programmatic integration, use the Python SDK instead of CLI scripts:
+
+```python
+from sdk.omniskill import OmniSkill
+
+os = OmniSkill()
+
+# Install to specific platform
+os.install(platform="cursor", bundle="web-dev-kit")
+
+# Validate all artifacts
+errors = os.validate()
+
+# Get platform info
+platforms = os.detect_platforms()
+```

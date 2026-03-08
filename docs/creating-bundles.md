@@ -77,6 +77,21 @@ shared-resources/
 python scripts/validate.py bundles/my-domain-kit
 ```
 
+## Self-Customization
+
+Instead of manually creating bundles, use the AI-guided approach:
+
+> "Follow the add-bundle skill to create a bundle for [domain]"
+
+The `add-bundle` skill guides you through:
+1. Identifying constituent skills
+2. Creating the bundle structure
+3. Writing the meta-skill
+4. Defining conflict resolution rules
+5. Validation and installation
+
 ## Existing Bundles
 
 See the [bundles directory](../bundles/) for all available bundles.
+
+The **meta-kit** bundle includes the self-customization skills (`add-skill`, `add-bundle`, `add-agent`, `add-adapter`, `rename-project`) for extending OMNISKILL.

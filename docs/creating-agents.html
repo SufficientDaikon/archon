@@ -546,6 +546,68 @@ output-contract:
         </p>
       </div>
 
+      <!-- Self-Customization Section -->
+      <div class="content-section">
+        <h2>🤖 Self-Customization</h2>
+        <p>
+          Use the AI-guided approach to create new agents:
+        </p>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <strong>Prompt:</strong> "Follow the add-agent skill to create an agent for [task type]"
+          </div>
+        </div>
+
+        <p>The <code>add-agent</code> skill provides step-by-step guidance for:</p>
+        <ul>
+          <li>Defining agent personas and identity</li>
+          <li>Configuring skill bindings</li>
+          <li>Setting up handoff protocols</li>
+          <li>Defining input/output contracts</li>
+          <li>Validation and testing</li>
+        </ul>
+      </div>
+
+      <!-- Special Agent Pattern Section -->
+      <div class="content-section">
+        <h2>🔀 Special Agent Pattern: The Routing Agent</h2>
+        <p>
+          The <strong>complexity-router</strong> is a special type of agent that runs before other agents. It demonstrates the routing agent pattern:
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">Routing Agent Workflow</div>
+          <pre><code>1. Classify incoming task complexity:
+   trivial → simple → moderate → complex → expert
+
+2. Route to optimal model tier:
+   fast/cheap → standard → premium
+
+3. Select appropriate skill/agent/pipeline
+
+4. Has P0 priority (runs first on every request)</code></pre>
+        </div>
+
+        <div class="alert alert-success">
+          <div class="alert-icon">✓</div>
+          <div class="alert-content">
+            <div class="alert-title">Routing Agent Benefits</div>
+            <ul style="margin-bottom: 0">
+              <li>Optimizes cost by using cheaper models for simple tasks</li>
+              <li>Improves quality by routing complex tasks to premium models</li>
+              <li>Reduces latency by using fast models for trivial tasks</li>
+              <li>Provides intelligent task classification before execution</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>
+          See <code>skills/complexity-router/resources/routing-table.md</code> for the full routing logic.
+        </p>
+      </div>
+
       <!-- Navigation Footer -->
       <div class="doc-nav-footer">
         <a href="creating-bundles.html" class="nav-link prev">

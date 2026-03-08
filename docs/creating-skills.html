@@ -484,6 +484,91 @@ expected:
         </p>
       </div>
 
+      <!-- Self-Customization Skills Section -->
+      <div class="content-section">
+        <h2>🤖 Self-Customization Skills</h2>
+        <p>
+          OMNISKILL includes AI-guided skills for creating new skills, bundles, and agents:
+        </p>
+
+        <h3>The <code>add-skill</code> Skill</h3>
+        <p>
+          Instead of manually following these steps, tell your AI assistant:
+        </p>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <strong>Prompt:</strong> "Follow the add-skill skill to create a new skill for [domain]"
+          </div>
+        </div>
+
+        <p>The <code>add-skill</code> skill provides:</p>
+        <ul>
+          <li>Interactive checklist guiding you through each step</li>
+          <li>Validation checks at each stage</li>
+          <li>Template generation</li>
+          <li>Trigger conflict detection</li>
+          <li>Automatic validation and installation</li>
+        </ul>
+
+        <h3>Example Advanced Skills</h3>
+        <p>
+          See these skills as examples of advanced patterns:
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">Advanced Skill Patterns</div>
+          <pre><code>skills/
+├── complexity-router/    # Classifies task complexity and routes 
+│                          # to optimal model tier
+└── knowledge-sources/    # Integrates external knowledge 
+                           # repositories</code></pre>
+        </div>
+
+        <div class="alert alert-success">
+          <div class="alert-icon">✓</div>
+          <div class="alert-content">
+            <div class="alert-title">Pattern to Study</div>
+            <p>
+              The <strong>complexity-router</strong> skill demonstrates how to build a routing skill with P0 priority that runs before all other skills.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Generator Tool Pattern Section -->
+      <div class="content-section">
+        <h2>⚙️ Generator Tool Pattern</h2>
+        <p>
+          For real-time status visualization, use the async generator pattern:
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">Python</div>
+          <pre><code>async def process_task():
+    yield {"status": "loading", "message": "Initializing..."}
+    # Do work
+    yield {"status": "processing", "message": "Analyzing code..."}
+    # More work
+    yield {"status": "done", "result": output}</code></pre>
+        </div>
+
+        <p>
+          This pattern enables the AI assistant to show live progress updates. See <code>skills/_template/resources/tool-pattern.md</code> for the full specification.
+        </p>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <div class="alert-title">When to Use</div>
+            <p>
+              Use the generator pattern for long-running tasks (>5 seconds) where users benefit from progress updates: code analysis, multi-file operations, API calls, etc.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <!-- Navigation Footer -->
       <div class="doc-nav-footer">
         <a href="getting-started.html" class="nav-link prev">

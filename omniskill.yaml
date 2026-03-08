@@ -6,15 +6,162 @@ version: 0.1.0
 description: "Universal AI Agent & Skills Framework — one repo, one format, every platform"
 author: tahaa
 license: MIT
-repository: https://github.com/tahaa/omniskill
+repository: https://github.com/SufficientDaikon/omniskill
 
 # All registered skills (alphabetical)
-skills: []
-  # Skills will be registered here as they are migrated/created
-  # Format: - name: skill-name
-  #           path: skills/skill-name
-  #           version: x.y.z
-  #           bundle: bundle-name-kit (optional)
+skills:
+  - name: add-adapter
+    path: skills/add-adapter
+    version: 1.0.0
+    tags: [self-customization, meta]
+  - name: add-agent
+    path: skills/add-agent
+    version: 1.0.0
+    tags: [self-customization, meta]
+  - name: add-bundle
+    path: skills/add-bundle
+    version: 1.0.0
+    tags: [self-customization, meta]
+  - name: add-skill
+    path: skills/add-skill
+    version: 1.0.0
+    tags: [self-customization, meta]
+  - name: backend-development
+    path: skills/backend-development
+    version: 1.0.0
+  - name: capacitor-best-practices
+    path: skills/capacitor-best-practices
+    version: 1.0.0
+  - name: complexity-router
+    path: skills/complexity-router
+    version: 1.0.0
+    tags: [routing, core]
+    priority: P0
+  - name: design-handoff
+    path: skills/design-handoff
+    version: 1.0.0
+  - name: design-review
+    path: skills/design-review
+    version: 1.0.0
+  - name: django-expert
+    path: skills/django-expert
+    version: 1.0.0
+  - name: django-framework
+    path: skills/django-framework
+    version: 1.0.0
+  - name: django-orm-patterns
+    path: skills/django-orm-patterns
+    version: 1.0.0
+  - name: django-rest-framework
+    path: skills/django-rest-framework
+    version: 1.0.0
+  - name: e2e-testing-patterns
+    path: skills/e2e-testing-patterns
+    version: 1.0.0
+  - name: fastmcp
+    path: skills/fastmcp
+    version: 1.0.0
+  - name: find-skills
+    path: skills/find-skills
+    version: 1.0.0
+  - name: frontend-design
+    path: skills/frontend-design
+    version: 1.0.0
+  - name: godot-best-practices
+    path: skills/godot-best-practices
+    version: 1.0.0
+  - name: godot-debugging
+    path: skills/godot-debugging
+    version: 1.0.0
+  - name: godot-gdscript-mastery
+    path: skills/godot-gdscript-mastery
+    version: 1.0.0
+  - name: godot-gdscript-patterns
+    path: skills/godot-gdscript-patterns
+    version: 1.0.0
+  - name: godot-particles
+    path: skills/godot-particles
+    version: 1.0.0
+  - name: implementer
+    path: skills/implementer
+    version: 1.0.0
+  - name: info-architecture
+    path: skills/info-architecture
+    version: 1.0.0
+  - name: knowledge-sources
+    path: skills/knowledge-sources
+    version: 1.0.0
+    tags: [knowledge, core]
+  - name: mcp-builder
+    path: skills/mcp-builder
+    version: 1.0.0
+  - name: mcp-server-index
+    path: skills/mcp-server-index
+    version: 1.0.0
+  - name: mobile-design
+    path: skills/mobile-design
+    version: 1.0.0
+  - name: omega-gdscript-expert
+    path: skills/omega-gdscript-expert
+    version: 1.0.0
+  - name: packager
+    path: skills/packager
+    version: 1.0.0
+  - name: prompt-architect
+    path: skills/prompt-architect
+    version: 1.0.0
+  - name: qa-test-planner
+    path: skills/qa-test-planner
+    version: 1.0.0
+  - name: react-best-practices
+    path: skills/react-best-practices
+    version: 1.0.0
+  - name: rename-project
+    path: skills/rename-project
+    version: 1.0.0
+    tags: [self-customization, meta]
+  - name: reviewer
+    path: skills/reviewer
+    version: 1.0.0
+  - name: skills-index
+    path: skills/skills-index
+    version: 1.0.0
+  - name: spec-writer
+    path: skills/spec-writer
+    version: 1.0.0
+  - name: systematic-debugging
+    path: skills/systematic-debugging
+    version: 1.0.0
+  - name: ui-ux-designer
+    path: skills/ui-ux-designer
+    version: 1.0.0
+  - name: ui-visual-design
+    path: skills/ui-visual-design
+    version: 1.0.0
+  - name: ux-interaction-design
+    path: skills/ux-interaction-design
+    version: 1.0.0
+  - name: ux-research
+    path: skills/ux-research
+    version: 1.0.0
+  - name: ux-test-suite
+    path: skills/ux-test-suite
+    version: 1.0.0
+  - name: vercel-react-best-practices
+    path: skills/vercel-react-best-practices
+    version: 1.0.0
+  - name: web-design-guidelines
+    path: skills/web-design-guidelines
+    version: 1.0.0
+  - name: webapp-testing
+    path: skills/webapp-testing
+    version: 1.0.0
+  - name: wireframing
+    path: skills/wireframing
+    version: 1.0.0
+  - name: writing-skills
+    path: skills/writing-skills
+    version: 1.0.0
 
 # All registered bundles
 bundles:

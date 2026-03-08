@@ -1,0 +1,98 @@
+# Knowledge Source Configuration Template
+
+# Copy this template to knowledge-sources/sources.yaml and customize
+
+# Global settings
+cache-dir: ~/.omniskill/knowledge-cache # Where synced content is stored
+max-cache-size: 1GB # Delete oldest content when exceeded
+log-file: ~/.omniskill/logs/sync.log # Sync operation logs
+
+# Source definitions
+sources:
+  # Example: GitHub documentation repository
+  - id: my-docs # Unique identifier (kebab-case)
+    type: github # Source type: github, local, url, api
+    repo: owner/repo # GitHub repository in owner/repo format
+    branch: main # Branch to sync (default: main)
+    content-path: docs # Optional: subdirectory to sync (default: entire repo)
+    auth: $GITHUB_TOKEN # Optional: environment variable for auth
+    sync-schedule: daily # manual | daily | weekly | on-commit
+    include: # Optional: file patterns to include
+      - "*.md"
+      - "*.yaml"
+      - "*.json"
+    exclude: # Optional: file patterns to exclude
+      - "**/node_modules/**"
+      - "**/.git/**"
+      - "**/build/**"
+
+  # Example: Local notes directory
+  - id: local-notes
+    type: local
+    path: ~/notes # Absolute path or ~-relative
+    watch: true # Watch for file changes (default: false)
+    sync-schedule: manual # For non-watched dirs
+    include:
+      - "*.md"
+      - "*.txt"
+    exclude:
+      - "**/.DS_Store"
+      - "**/drafts/**"
+
+  # Example: Documentation website
+  - id: reference-site
+    type: url
+    url: https://docs.example.com/
+    depth: 2 # Levels of links to follow (default: 0)
+    follow-external: false # Follow external domains (default: false)
+    sync-schedule: weekly
+    selectors: # Optional: CSS selectors for content extraction
+      include: ["main", "article", ".content"]
+      exclude: ["nav", "footer", ".sidebar", ".ad"]
+
+  # Example: API documentation
+  - id: api-docs
+    type: api
+    endpoint: https://api.example.com/openapi.json
+    method: GET # HTTP method (default: GET)
+    headers: # Request headers
+      Authorization: Bearer $API_TOKEN
+      Accept: application/json
+    transform: openapi-to-markdown # Transformation: openapi-to-markdown | json-to-markdown | graphql-to-markdown | custom
+    sync-schedule: daily
+
+# ===========================
+# Configuration Reference
+# ===========================
+
+# Sync schedules:
+#   - manual: Only sync on explicit command
+#   - daily: Sync once per day (configurable time)
+#   - weekly: Sync once per week (configurable day)
+#   - on-commit: For GitHub sources, sync when new commits detected
+
+# Source types:
+#   - github: Clone/pull from GitHub repositories
+#   - local: Sync from local filesystem directories
+#   - url: Fetch and convert web pages to markdown
+#   - api: Fetch from API endpoints and transform to markdown
+
+# Authentication:
+#   - Use environment variables (e.g., $GITHUB_TOKEN, $API_KEY)
+#   - Never hardcode credentials in this file
+#   - Set variables in shell profile or .env file
+
+# File patterns:
+#   - Use glob patterns: *.md, **/*.txt, **/test_*.py
+#   - ** matches any number of directories
+#   - * matches any characters except /
+
+# Cache location:
+#   - Default: ~/.omniskill/knowledge-cache/<source-id>/
+#   - Each source gets isolated directory
+#   - Metadata stored in frontmatter of cached files
+
+# Example usage after configuration:
+#   python scripts/admin.py --sync               # Sync all sources
+#   python scripts/admin.py --sync my-docs       # Sync specific source
+#   grep -r "search term" ~/.omniskill/knowledge-cache/  # Search cached content

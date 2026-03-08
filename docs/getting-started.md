@@ -81,9 +81,63 @@ Pipelines are multi-agent workflows. Trigger them with natural language:
 - **"Fix bug X"** → Debug Pipeline (investigate → fix → test → review)
 - **"Create a new skill for X"** → Skill Factory
 
+Behind the scenes, every request passes through the **Complexity Router** which classifies your task (trivial → simple → moderate → complex → expert) and routes it to the optimal model tier and skill/agent/pipeline.
+
+## Knowledge Sources
+
+OMNISKILL can tap into external knowledge repositories:
+
+- **GitHub repos** — Point to any public or private repository
+- **Local directories** — Reference your project docs, specs, or notes
+- **URLs** — Web documentation or API references
+- **APIs** — Dynamic data sources
+
+Knowledge sources use file-based search (grep/find/cat) — no vector databases or embeddings required. Configure sources in `templates/source-config.yaml` and sync them with:
+
+```bash
+python scripts/admin.py --sync
+```
+
+## Self-Customization
+
+OMNISKILL includes AI-guided skills for extending itself:
+
+- **`add-skill`** — Tell your AI: "Follow the add-skill skill to create a skill for [domain]"
+- **`add-bundle`** — AI-guided bundle creation with checklists
+- **`add-agent`** — AI-guided agent creation
+- **`add-adapter`** — Create adapters for new platforms
+- **`rename-project`** — Fork OMNISKILL and customize it for your organization
+
+These skills provide step-by-step guidance and validation checks.
+
+## Using the SDK
+
+For programmatic access, use the Python SDK:
+
+```python
+from sdk.omniskill import OmniSkill
+
+os = OmniSkill()
+
+# List available skills
+skills = os.list_skills()
+
+# Route a task to the right skill/agent
+route = os.route("Create a React component")
+
+# Sync knowledge sources
+os.sync_sources()
+
+# Health check
+report = os.health_check()
+```
+
 ## Next Steps
 
 - [Creating Skills](creating-skills.md) — Deep dive into skill authoring
 - [Creating Bundles](creating-bundles.md) — Group skills into installable kits
 - [Creating Agents](creating-agents.md) — Define formal agent definitions
+- [Creating Pipelines](creating-pipelines.md) — Build multi-agent workflows
+- [Architecture](architecture.md) — Understand the complexity router and knowledge sources
 - [Platform Guide](platform-guide.md) — Platform-specific setup details
+- [FAQ](faq.md) — Common questions about new features

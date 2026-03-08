@@ -84,43 +84,37 @@
         </p>
       </div>
 
-      <!-- Overview Section -->
+      <!-- Supported Platforms Section -->
       <div class="content-section">
         <h2>🌐 Supported Platforms</h2>
         <p>
-          OMNISKILL supports 5 AI coding assistant platforms through adapters
-          that transform universal skills into platform-specific formats.
+          OMNISKILL supports 5 AI coding assistant platforms through adapters.
         </p>
 
         <div class="platform-cards">
           <div class="platform-item">
             <span class="platform-emoji">🤖</span>
             <h3>Claude Code</h3>
-            <p>Full pipeline support</p>
           </div>
 
           <div class="platform-item">
             <span class="platform-emoji">💻</span>
             <h3>Copilot CLI</h3>
-            <p>Full pipeline support</p>
           </div>
 
           <div class="platform-item">
             <span class="platform-emoji">⚡</span>
             <h3>Cursor</h3>
-            <p>Skills + basic agents</p>
           </div>
 
           <div class="platform-item">
             <span class="platform-emoji">🌊</span>
             <h3>Windsurf</h3>
-            <p>Skills + basic agents</p>
           </div>
 
           <div class="platform-item">
             <span class="platform-emoji">🚀</span>
             <h3>Antigravity</h3>
-            <p>Skills + custom format</p>
           </div>
         </div>
       </div>
@@ -129,265 +123,35 @@
       <div class="content-section">
         <h2>🤖 Claude Code</h2>
 
-        <div class="alert alert-info">
-          <div class="alert-icon">💡</div>
-          <div class="alert-content">
-            <div class="alert-title">Full Platform Support</div>
-            <p>
-              Claude Code has native support for skills, agents, and pipelines.
-              All OMNISKILL features work out of the box.
-            </p>
-          </div>
-        </div>
+        <p><strong>Target:</strong> <code>~/.claude/skills/</code></p>
+        <p><strong>Format:</strong> Each skill becomes a <code>SKILL.md</code> file in a skill directory.</p>
 
-        <h3>Target Directory</h3>
-        <p><code>~/.claude/skills/</code></p>
-
-        <h3>Format</h3>
-        <p>
-          Each skill becomes a <code>SKILL.md</code> file in a skill directory
-          with optional resources.
-        </p>
-
-        <h3>Installation</h3>
         <div class="terminal-block">
-          <pre><span class="prompt">$</span> python scripts/install.py --platform claude-code
-
-<span style="color: var(--text-muted);"># Output:
-# ✓ Detected Claude Code at ~/.claude/
-# ✓ Installing 47 skills...
-# ✓ Installing 8 bundles...
-# ✓ Installing 12 agents...
-# ✓ Installing 4 pipelines...
-# ✓ Installation complete!</span></pre>
+          <pre><span class="prompt">$</span> python scripts/install.py --platform claude-code</pre>
         </div>
-
-        <h3>Features</h3>
-        <table class="doc-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Support</th>
-              <th>Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Skills</td>
-              <td><span style="color: var(--accent-green)">✓ Full</span></td>
-              <td>Native skill format</td>
-            </tr>
-            <tr>
-              <td>Bundles</td>
-              <td><span style="color: var(--accent-green)">✓ Full</span></td>
-              <td>Meta-skills work perfectly</td>
-            </tr>
-            <tr>
-              <td>Agents</td>
-              <td><span style="color: var(--accent-green)">✓ Full</span></td>
-              <td>Native agent support</td>
-            </tr>
-            <tr>
-              <td>Pipelines</td>
-              <td><span style="color: var(--accent-green)">✓ Full</span></td>
-              <td>Full workflow orchestration</td>
-            </tr>
-            <tr>
-              <td>Resumability</td>
-              <td><span style="color: var(--accent-green)">✓ Full</span></td>
-              <td>State persistence supported</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h3>Platform-Specific Tips</h3>
-        <ul>
-          <li>
-            Use natural language triggers — Claude Code has excellent semantic
-            matching
-          </li>
-          <li>
-            Pipeline handoffs are seamless — no manual intervention needed
-          </li>
-          <li>
-            Resources can include images and diagrams — Claude can interpret
-            them
-          </li>
-        </ul>
       </div>
 
-      <!-- Copilot CLI Section -->
+      <!-- GitHub Copilot CLI Section -->
       <div class="content-section">
         <h2>💻 GitHub Copilot CLI</h2>
 
-        <div class="alert alert-info">
-          <div class="alert-icon">💡</div>
-          <div class="alert-content">
-            <div class="alert-title">Full Platform Support</div>
-            <p>
-              Copilot CLI has comprehensive skill and agent support with
-              pipeline orchestration.
-            </p>
-          </div>
-        </div>
+        <p><strong>Target:</strong> <code>~/.copilot/skills/</code></p>
+        <p><strong>Format:</strong> Each skill becomes a <code>SKILL.md</code> file with optional front-matter.</p>
 
-        <h3>Target Directory</h3>
-        <p><code>~/.copilot/skills/</code></p>
-
-        <h3>Format</h3>
-        <p>
-          Each skill becomes a <code>SKILL.md</code> file with optional YAML
-          front-matter for metadata.
-        </p>
-
-        <h3>Installation</h3>
         <div class="terminal-block">
-          <pre><span class="prompt">$</span> python scripts/install.py --platform copilot-cli
-
-<span style="color: var(--text-muted);"># Output:
-# ✓ Detected Copilot CLI at ~/.copilot/
-# ✓ Installing skills with front-matter...
-# ✓ Configuring agent bindings...
-# ✓ Setting up pipeline triggers...
-# ✓ Installation complete!</span></pre>
+          <pre><span class="prompt">$</span> python scripts/install.py --platform copilot-cli</pre>
         </div>
-
-        <h3>Features</h3>
-        <table class="doc-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Support</th>
-              <th>Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Skills</td>
-              <td><span style="color: var(--accent-green)">✓ Full</span></td>
-              <td>Front-matter for metadata</td>
-            </tr>
-            <tr>
-              <td>Bundles</td>
-              <td><span style="color: var(--accent-green)">✓ Full</span></td>
-              <td>Meta-skills via front-matter</td>
-            </tr>
-            <tr>
-              <td>Agents</td>
-              <td><span style="color: var(--accent-green)">✓ Full</span></td>
-              <td>Agent definitions supported</td>
-            </tr>
-            <tr>
-              <td>Pipelines</td>
-              <td><span style="color: var(--accent-green)">✓ Full</span></td>
-              <td>Workflow orchestration</td>
-            </tr>
-            <tr>
-              <td>Resumability</td>
-              <td><span style="color: var(--accent-green)">✓ Full</span></td>
-              <td>State files in ~/.copilot/</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h3>Platform-Specific Tips</h3>
-        <ul>
-          <li>Trigger keywords are case-insensitive</li>
-          <li>Use <code>ghcs</code> command for skill invocation</li>
-          <li>Pipeline state is saved automatically between steps</li>
-        </ul>
       </div>
 
       <!-- Cursor Section -->
       <div class="content-section">
         <h2>⚡ Cursor</h2>
 
-        <div class="alert alert-warning">
-          <div class="alert-icon">⚠️</div>
-          <div class="alert-content">
-            <div class="alert-title">Skills + Basic Agents</div>
-            <p>
-              Cursor supports skills and basic agent definitions. Complex
-              pipelines require manual handoffs.
-            </p>
-          </div>
-        </div>
+        <p><strong>Target:</strong> <code>.cursor/rules/</code> (project-level) or global rules</p>
+        <p><strong>Format:</strong> Each skill becomes a <code>.mdc</code> rule file.</p>
 
-        <h3>Target Directory</h3>
-        <p>
-          <code>.cursor/rules/</code> (project-level) or global rules directory
-        </p>
-
-        <h3>Format</h3>
-        <p>Each skill becomes a <code>.mdc</code> rule file.</p>
-
-        <h3>Installation</h3>
         <div class="terminal-block">
-          <pre><span class="prompt">$</span> # Project-level installation
-<span class="prompt">$</span> python scripts/install.py --platform cursor --project-local
-
-<span style="color: var(--text-muted);"># OR global installation</span>
-<span class="prompt">$</span> python scripts/install.py --platform cursor --global</pre>
-        </div>
-
-        <h3>Features</h3>
-        <table class="doc-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Support</th>
-              <th>Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Skills</td>
-              <td><span style="color: var(--accent-green)">✓ Full</span></td>
-              <td>Compiled to .mdc rules</td>
-            </tr>
-            <tr>
-              <td>Bundles</td>
-              <td><span style="color: var(--accent-cyan)">○ Partial</span></td>
-              <td>Meta-skills work, no atomic ops</td>
-            </tr>
-            <tr>
-              <td>Agents</td>
-              <td><span style="color: var(--accent-cyan)">○ Partial</span></td>
-              <td>Basic agent definitions only</td>
-            </tr>
-            <tr>
-              <td>Pipelines</td>
-              <td><span style="color: var(--accent-orange)">△ Manual</span></td>
-              <td>Requires manual step execution</td>
-            </tr>
-            <tr>
-              <td>Resumability</td>
-              <td><span style="color: var(--text-muted)">✗ No</span></td>
-              <td>State must be managed manually</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h3>Platform-Specific Tips</h3>
-        <ul>
-          <li>Use project-level rules for project-specific skills</li>
-          <li>Global rules are good for universal utilities</li>
-          <li>Cursor's inline suggestions work well with skill outputs</li>
-          <li>For pipelines, manually invoke each agent in sequence</li>
-        </ul>
-
-        <h3>Platform Override Example</h3>
-        <div class="code-block">
-          <div class="code-label">skills/my-skill/overrides/cursor.md</div>
-          <pre><code># Cursor-Specific Behavior
-
-## Additional Instructions for Cursor
-
-When running in Cursor:
-- Use inline suggestions for code completion
-- Leverage Cursor's file navigation for multi-file changes
-- Output format optimized for .mdc rules
-- Use @-mentions for file references</code></pre>
+          <pre><span class="prompt">$</span> python scripts/install.py --platform cursor</pre>
         </div>
       </div>
 
@@ -395,188 +159,36 @@ When running in Cursor:
       <div class="content-section">
         <h2>🌊 Windsurf</h2>
 
-        <div class="alert alert-warning">
-          <div class="alert-icon">⚠️</div>
-          <div class="alert-content">
-            <div class="alert-title">Skills + Basic Agents</div>
-            <p>
-              Windsurf supports skills and basic agents. Pipeline orchestration
-              is manual.
-            </p>
-          </div>
-        </div>
+        <p><strong>Target:</strong> <code>.windsurfrules</code> or rules directory</p>
+        <p><strong>Format:</strong> Skills are compiled into rule format.</p>
 
-        <h3>Target Directory</h3>
-        <p><code>.windsurfrules</code> or rules directory</p>
-
-        <h3>Format</h3>
-        <p>Skills are compiled into Windsurf rule format.</p>
-
-        <h3>Installation</h3>
         <div class="terminal-block">
-          <pre><span class="prompt">$</span> python scripts/install.py --platform windsurf
-
-<span style="color: var(--text-muted);"># Output:
-# ✓ Detected Windsurf
-# ✓ Compiling skills to Windsurf format...
-# ✓ Installing to .windsurfrules
-# ✓ Installation complete!</span></pre>
+          <pre><span class="prompt">$</span> python scripts/install.py --platform windsurf</pre>
         </div>
-
-        <h3>Features</h3>
-        <table class="doc-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Support</th>
-              <th>Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Skills</td>
-              <td><span style="color: var(--accent-green)">✓ Full</span></td>
-              <td>Compiled to Windsurf format</td>
-            </tr>
-            <tr>
-              <td>Bundles</td>
-              <td><span style="color: var(--accent-cyan)">○ Partial</span></td>
-              <td>Skills installed together</td>
-            </tr>
-            <tr>
-              <td>Agents</td>
-              <td><span style="color: var(--accent-cyan)">○ Partial</span></td>
-              <td>Basic personas supported</td>
-            </tr>
-            <tr>
-              <td>Pipelines</td>
-              <td><span style="color: var(--accent-orange)">△ Manual</span></td>
-              <td>Manual step execution</td>
-            </tr>
-            <tr>
-              <td>Resumability</td>
-              <td><span style="color: var(--text-muted)">✗ No</span></td>
-              <td>Not supported</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h3>Platform-Specific Tips</h3>
-        <ul>
-          <li>
-            Windsurf has excellent context awareness — skills can be more
-            concise
-          </li>
-          <li>Use Windsurf's native file handling for multi-file operations</li>
-          <li>Override files can optimize for Windsurf's capabilities</li>
-        </ul>
       </div>
 
       <!-- Antigravity Section -->
       <div class="content-section">
         <h2>🚀 Antigravity</h2>
 
-        <div class="alert alert-warning">
-          <div class="alert-icon">⚠️</div>
-          <div class="alert-content">
-            <div class="alert-title">Skills + Custom Format</div>
-            <p>
-              Antigravity uses a unique skill format. OMNISKILL adapts skills
-              accordingly.
-            </p>
-          </div>
-        </div>
+        <p><strong>Target:</strong> <code>.antigravity/skills/</code></p>
+        <p><strong>Format:</strong> Each skill becomes a skill file in the expected format.</p>
 
-        <h3>Target Directory</h3>
-        <p><code>.antigravity/skills/</code></p>
-
-        <h3>Format</h3>
-        <p>Each skill becomes a skill file in Antigravity's expected format.</p>
-
-        <h3>Installation</h3>
         <div class="terminal-block">
-          <pre><span class="prompt">$</span> python scripts/install.py --platform antigravity
-
-<span style="color: var(--text-muted);"># Output:
-# ✓ Detected Antigravity
-# ✓ Adapting skills to Antigravity format...
-# ✓ Installing to .antigravity/skills/
-# ✓ Installation complete!</span></pre>
+          <pre><span class="prompt">$</span> python scripts/install.py --platform antigravity</pre>
         </div>
-
-        <h3>Features</h3>
-        <table class="doc-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Support</th>
-              <th>Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Skills</td>
-              <td><span style="color: var(--accent-green)">✓ Full</span></td>
-              <td>Adapted to Antigravity format</td>
-            </tr>
-            <tr>
-              <td>Bundles</td>
-              <td><span style="color: var(--accent-cyan)">○ Partial</span></td>
-              <td>Installed as skill sets</td>
-            </tr>
-            <tr>
-              <td>Agents</td>
-              <td><span style="color: var(--text-muted)">✗ No</span></td>
-              <td>Not supported yet</td>
-            </tr>
-            <tr>
-              <td>Pipelines</td>
-              <td><span style="color: var(--text-muted)">✗ No</span></td>
-              <td>Not supported yet</td>
-            </tr>
-            <tr>
-              <td>Resumability</td>
-              <td><span style="color: var(--text-muted)">✗ No</span></td>
-              <td>Not supported</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h3>Platform-Specific Tips</h3>
-        <ul>
-          <li>
-            Antigravity has unique capabilities — use platform overrides to
-            leverage them
-          </li>
-          <li>Skill format is different but adapters handle the conversion</li>
-          <li>Check Antigravity docs for platform-specific features</li>
-        </ul>
       </div>
 
-      <!-- Multi-Platform Installation Section -->
+      <!-- Multi-Platform Install Section -->
       <div class="content-section">
-        <h2>🌐 Multi-Platform Installation</h2>
-        <p>Install to all detected platforms at once:</p>
+        <h2>🌐 Multi-Platform Install</h2>
 
         <div class="terminal-block">
-          <pre><span class="prompt">$</span> # Auto-detect all installed platforms
+          <pre><span class="prompt">$</span> <span style="color: var(--text-muted);"># Auto-detect all installed platforms</span>
 <span class="prompt">$</span> python scripts/install.py
 
-<span style="color: var(--text-muted);"># Output:
-# ✓ Detected platforms: claude-code, cursor, copilot-cli
-# ✓ Installing to Claude Code...
-# ✓ Installing to Cursor...
-# ✓ Installing to Copilot CLI...
-# ✓ All platforms updated!</span></pre>
-        </div>
-
-        <h3>Target Specific Platforms</h3>
-        <div class="terminal-block">
-          <pre><span class="prompt">$</span> # Install to specific platforms only
-<span class="prompt">$</span> python scripts/install.py --platform claude-code --platform cursor
-
-<span style="color: var(--text-muted);"># Install a specific bundle to multiple platforms</span>
-<span class="prompt">$</span> python scripts/install.py --bundle web-dev-kit --platform claude-code --platform copilot-cli</pre>
+<span class="prompt">$</span> <span style="color: var(--text-muted);"># Install for specific platforms</span>
+<span class="prompt">$</span> python scripts/install.py --platform claude-code --platform cursor</pre>
         </div>
       </div>
 
@@ -584,50 +196,63 @@ When running in Cursor:
       <div class="content-section">
         <h2>🔧 Platform Overrides</h2>
         <p>
-          Skills can have platform-specific behavior via
-          <code>overrides/</code> directory:
+          Skills can have platform-specific behavior via <code>overrides/</code>:
         </p>
 
-        <div class="file-tree">
-          <div class="file-tree-item folder">
-            <span class="icon">📁</span> skills/my-skill/overrides/
-          </div>
-          <div class="file-tree-item file" style="padding-left: 24px">
-            <span class="icon">📄</span> cursor.md
-            <span style="color: var(--text-muted)"
-              >— Cursor-specific additions</span
-            >
-          </div>
-          <div class="file-tree-item file" style="padding-left: 24px">
-            <span class="icon">📄</span> windsurf.md
-            <span style="color: var(--text-muted)"
-              >— Windsurf-specific additions</span
-            >
-          </div>
-          <div class="file-tree-item file" style="padding-left: 24px">
-            <span class="icon">📄</span> antigravity.md
-            <span style="color: var(--text-muted)"
-              >— Antigravity-specific additions</span
-            >
-          </div>
+        <div class="code-block">
+          <pre><code>skills/my-skill/overrides/
+├── cursor.md       # Cursor-specific additions
+└── windsurf.md     # Windsurf-specific additions</code></pre>
         </div>
 
         <p>
           Overrides are merged with the base <code>SKILL.md</code> during
           adapter transformation.
         </p>
+      </div>
 
-        <div class="alert alert-success">
-          <div class="alert-icon">✓</div>
+      <!-- Creating New Platform Adapters Section -->
+      <div class="content-section">
+        <h2>🛠️ Creating New Platform Adapters</h2>
+        <p>To add support for a new AI coding assistant platform:</p>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
           <div class="alert-content">
-            <div class="alert-title">When to Use Overrides</div>
-            <ul style="margin-bottom: 0">
-              <li>Platform has unique capabilities you want to leverage</li>
-              <li>Platform has limitations that require workarounds</li>
-              <li>Output format needs to be different for the platform</li>
-              <li>Platform-specific tool or command usage</li>
-            </ul>
+            <div class="alert-title">Use the add-adapter skill</div>
+            <p>"Follow the add-adapter skill to create an adapter for [platform]"</p>
           </div>
+        </div>
+
+        <p>The <code>add-adapter</code> skill guides you through:</p>
+        <ol>
+          <li>Understanding the platform's skill/rule format</li>
+          <li>Creating the adapter transformation logic</li>
+          <li>Defining installation paths and conventions</li>
+          <li>Testing the adapter</li>
+          <li>Adding platform detection</li>
+        </ol>
+      </div>
+
+      <!-- SDK as an Alternative Section -->
+      <div class="content-section">
+        <h2>🐍 SDK as an Alternative</h2>
+        <p>For programmatic integration, use the Python SDK instead of CLI scripts:</p>
+
+        <div class="code-block">
+          <div class="code-label">Python SDK</div>
+          <pre><code>from sdk.omniskill import OmniSkill
+
+os = OmniSkill()
+
+# Install to specific platform
+os.install(platform="cursor", bundle="web-dev-kit")
+
+# Validate all artifacts
+errors = os.validate()
+
+# Get platform info
+platforms = os.detect_platforms()</code></pre>
         </div>
       </div>
 

@@ -161,6 +161,48 @@ state-file: ".omniskill/pipeline-state.json"</code></pre>
         </div>
       </div>
 
+      <!-- Complexity Router Pre-Step Section -->
+      <div class="content-section">
+        <h2>🔀 The Complexity Router Pre-Step</h2>
+        <p>
+          Before any pipeline executes, the <strong>complexity-router</strong> automatically runs as a pre-step:
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">Router Workflow</div>
+          <pre><code>1. Classification — Analyzes the request complexity
+   (trivial → simple → moderate → complex → expert)
+
+2. Model Selection — Chooses the optimal model tier
+   (fast/cheap → standard → premium)
+
+3. Pipeline Selection — Determines if this is the right 
+   pipeline or if a simpler/more complex one should be used</code></pre>
+        </div>
+
+        <p>This routing happens transparently. The router uses signals from:</p>
+        <ul>
+          <li>Task scope and dependencies</li>
+          <li>Required domain expertise</li>
+          <li>Expected output complexity</li>
+          <li>Time constraints</li>
+        </ul>
+
+        <div class="alert alert-success">
+          <div class="alert-icon">✓</div>
+          <div class="alert-content">
+            <div class="alert-title">Automatic Optimization</div>
+            <p>
+              The complexity router ensures that trivial tasks use fast/cheap models while complex tasks get routed to premium models—optimizing both cost and quality without manual configuration.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          See <code>skills/complexity-router/resources/complexity-signals.md</code> for the full classification criteria.
+        </p>
+      </div>
+
       <!-- Step Configuration Section -->
       <div class="content-section">
         <h2>⚙️ Step Configuration</h2>

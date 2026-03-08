@@ -86,92 +86,19 @@
       <div class="content-section">
         <h2>🌐 General</h2>
 
-        <div class="faq-list">
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              What platforms does OMNISKILL support?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                OMNISKILL supports 5 AI coding assistant platforms:
-                <ul>
-                  <li>
-                    <strong>Claude Code</strong> — Full support (skills, agents,
-                    pipelines)
-                  </li>
-                  <li><strong>GitHub Copilot CLI</strong> — Full support</li>
-                  <li><strong>Cursor</strong> — Skills + basic agents</li>
-                  <li><strong>Windsurf</strong> — Skills + basic agents</li>
-                  <li><strong>Antigravity</strong> — Skills only</li>
-                </ul>
-                See the <a href="platform-guide.html">Platform Guide</a> for
-                detailed capabilities.
-              </div>
-            </div>
-          </div>
+        <div class="faq-item">
+          <div class="faq-question">Q: What platforms does OMNISKILL support?</div>
+          <div class="faq-answer">A: Claude Code, GitHub Copilot CLI, Cursor, Windsurf, and Antigravity.</div>
+        </div>
 
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              Can I use just one bundle instead of everything?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                Yes! You can install specific bundles:
-                <div class="terminal-block" style="margin-top: 12px">
-                  <pre><span class="prompt">$</span> python scripts/install.py --bundle web-dev-kit</pre>
-                </div>
-                This installs only the skills in that bundle. You're not
-                required to install everything.
-              </div>
-            </div>
-          </div>
+        <div class="faq-item">
+          <div class="faq-question">Q: Can I use just one bundle instead of everything?</div>
+          <div class="faq-answer">A: Yes. <code>python scripts/install.py --bundle web-dev-kit</code> installs only that bundle.</div>
+        </div>
 
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              Do I need all 5 platforms installed?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                No. You need at least one supported platform, but not all of
-                them. The installer auto-detects what you have and installs only
-                to those platforms.
-                <div class="terminal-block" style="margin-top: 12px">
-                  <pre><span class="prompt">$</span> python scripts/install.py
-<span style="color: var(--text-muted);"># Detects: claude-code, cursor
-# Installs to those two only</span></pre>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              Is OMNISKILL free and open source?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                Yes! OMNISKILL is open source under the MIT license. You can use
-                it freely, modify it, and contribute improvements back to the
-                community.
-              </div>
-            </div>
-          </div>
+        <div class="faq-item">
+          <div class="faq-question">Q: Do I need all 5 platforms installed?</div>
+          <div class="faq-answer">A: No. You need at least one. The installer auto-detects what you have.</div>
         </div>
       </div>
 
@@ -179,114 +106,19 @@
       <div class="content-section">
         <h2>⚡ Skills</h2>
 
-        <div class="faq-list">
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              How do I create a new skill?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                Two ways:
-                <ol>
-                  <li>
-                    <strong>Recommended:</strong> Tell your AI assistant "create
-                    a new skill for [domain]" to use the skill factory pipeline.
-                  </li>
-                  <li>
-                    <strong>Manual:</strong> Copy
-                    <code>skills/_template/</code> to
-                    <code>skills/my-skill/</code> and follow the
-                    <a href="creating-skills.html">Creating Skills</a> guide.
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </div>
+        <div class="faq-item">
+          <div class="faq-question">Q: How do I create a new skill?</div>
+          <div class="faq-answer">A: Use the skill factory: tell your AI assistant "create a new skill for [domain]". Or copy <code>skills/_template/</code> manually.</div>
+        </div>
 
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              My skill's triggers conflict with another skill. What do I do?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                Three options:
-                <ul>
-                  <li>
-                    <strong>Make triggers more specific</strong>: "create React
-                    component" instead of "create component"
-                  </li>
-                  <li>
-                    <strong>Use patterns</strong>: "create * component in React"
-                    to be more targeted
-                  </li>
-                  <li>
-                    <strong>Create a bundle</strong>: Put both skills in a
-                    bundle with conflict-resolution rules in
-                    <code>bundle.yaml</code>
-                  </li>
-                </ul>
-                The validator will warn you about trigger conflicts during
-                validation.
-              </div>
-            </div>
-          </div>
+        <div class="faq-item">
+          <div class="faq-question">Q: My skill's triggers conflict with another skill. What do I do?</div>
+          <div class="faq-answer">A: Either make your triggers more specific, or put both skills in a bundle with conflict-resolution rules in the bundle.yaml.</div>
+        </div>
 
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              Can a skill inherit from another skill?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                Yes! Set <code>extends: parent-skill-name</code> in your
-                <code>manifest.yaml</code>. The child skill inherits the
-                parent's instructions and resources, which you can then override
-                or extend.
-                <div class="code-block" style="margin-top: 12px">
-                  <div class="code-label">manifest.yaml</div>
-                  <pre><code>name: advanced-react
-extends: react-best-practices
-description: "Extends react-best-practices with advanced patterns"</code></pre>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              How do I test my skill?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                Add test cases in <code>tests/cases/</code>:
-                <div class="code-block" style="margin-top: 12px">
-                  <div class="code-label">tests/cases/basic.yaml</div>
-                  <pre><code>name: "Basic skill test"
-input: "User prompt that should trigger this skill"
-expected:
-  contains: ["expected output"]
-  sections: ["required sections"]</code></pre>
-                </div>
-                Then run:
-                <code>python scripts/validate.py skills/my-skill</code>
-              </div>
-            </div>
-          </div>
+        <div class="faq-item">
+          <div class="faq-question">Q: Can a skill inherit from another skill?</div>
+          <div class="faq-answer">A: Yes. Set <code>extends: parent-skill-name</code> in your manifest.yaml.</div>
         </div>
       </div>
 
@@ -294,68 +126,9 @@ expected:
       <div class="content-section">
         <h2>📦 Bundles</h2>
 
-        <div class="faq-list">
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              What's the difference between a bundle and just installing
-              multiple skills?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                Bundles include a <strong>meta-skill</strong> that:
-                <ul>
-                  <li>Resolves conflicts when multiple skills match</li>
-                  <li>Routes between constituent skills intelligently</li>
-                  <li>Provides atomic install/update/uninstall operations</li>
-                  <li>Shares resources across all skills in the bundle</li>
-                </ul>
-                Without a bundle, skills operate independently with no
-                coordination.
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              Can I create a bundle with skills from different authors?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                Yes! The bundle's <code>bundle.yaml</code> just references skill
-                names. The skills can be from different authors. Your bundle
-                provides the orchestration layer via the meta-skill.
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              How do I update a bundle?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <div class="terminal-block">
-                  <pre><span class="prompt">$</span> # Update to latest version
-<span class="prompt">$</span> git pull origin main
-<span class="prompt">$</span> python scripts/install.py --bundle my-bundle --update
-
-<span style="color: var(--text-muted);"># This updates all constituent skills and the meta-skill</span></pre>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="faq-item">
+          <div class="faq-question">Q: What's the difference between a bundle and just installing multiple skills?</div>
+          <div class="faq-answer">A: Bundles include a meta-skill that resolves conflicts and routes between constituent skills. They also support atomic install/update/uninstall.</div>
         </div>
       </div>
 
@@ -363,123 +136,144 @@ expected:
       <div class="content-section">
         <h2>🔄 Pipelines</h2>
 
-        <div class="faq-list">
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              Can I create custom pipelines?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                Yes! Create a YAML file in <code>pipelines/</code> following the
-                pipeline schema. See
-                <a href="creating-pipelines.html">Creating Pipelines</a> for a
-                complete guide.
-                <div class="code-block" style="margin-top: 12px">
-                  <pre><code>name: my-pipeline
-steps:
-  - name: step-one
-    agent: first-agent
-    input: "user request"
-    output: "intermediate result"
-  - name: step-two
-    agent: second-agent
-    input: "output from step:step-one"
-    output: "final result"</code></pre>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="faq-item">
+          <div class="faq-question">Q: Can I create custom pipelines?</div>
+          <div class="faq-answer">A: Yes. Create a YAML file in <code>pipelines/</code> following the pipeline schema.</div>
+        </div>
 
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              What happens if a pipeline step fails?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                Depends on the step's <code>on-failure</code> setting:
-                <ul>
-                  <li>
-                    <strong>halt</strong>: Stop the pipeline and report failure
-                  </li>
-                  <li>
-                    <strong>loop</strong>: Go back to
-                    <code>loop-target</code> step and retry (up to
-                    <code>max-iterations</code>)
-                  </li>
-                  <li>
-                    <strong>skip</strong>: Skip this step and continue to the
-                    next
-                  </li>
-                  <li>
-                    <strong>retry</strong>: Retry this same step (up to
-                    <code>max-iterations</code>)
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+        <div class="faq-item">
+          <div class="faq-question">Q: What happens if a pipeline step fails?</div>
+          <div class="faq-answer">A: Depends on the step's <code>on-failure</code> setting: halt (stop), loop (retry from earlier step), skip, or retry.</div>
+        </div>
+      </div>
 
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              Can I resume a pipeline from where it left off?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                Yes, if the pipeline has <code>resumable: true</code>:
-                <div class="terminal-block" style="margin-top: 12px">
-                  <pre><span class="prompt">$</span> # Resume from last completed step
-<span class="prompt">$</span> python scripts/resume-pipeline.py my-pipeline
+      <!-- Complexity Router Section -->
+      <div class="content-section">
+        <h2>🧠 Complexity Router</h2>
 
-<span class="prompt">$</span> # Resume from specific step
-<span class="prompt">$</span> python scripts/resume-pipeline.py my-pipeline --from-step implement</pre>
-                </div>
-                State is saved in the <code>state-file</code> specified in the
-                pipeline YAML.
-              </div>
-            </div>
-          </div>
+        <div class="faq-item">
+          <div class="faq-question">Q: What is the complexity router?</div>
+          <div class="faq-answer">A: An automatic pre-step that classifies every request by complexity (trivial → simple → moderate → complex → expert), selects the optimal model tier, and routes to the right skill/agent/pipeline. It has P0 priority and runs before everything else.</div>
+        </div>
 
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              Do pipelines work on all platforms?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <ul>
-                  <li>
-                    <strong>Claude Code</strong>: Full pipeline support with
-                    automatic handoffs
-                  </li>
-                  <li><strong>Copilot CLI</strong>: Full pipeline support</li>
-                  <li>
-                    <strong>Cursor</strong>: Manual step execution required
-                  </li>
-                  <li>
-                    <strong>Windsurf</strong>: Manual step execution required
-                  </li>
-                  <li><strong>Antigravity</strong>: Not supported yet</li>
-                </ul>
-                See the <a href="platform-guide.html">Platform Guide</a> for
-                details.
-              </div>
-            </div>
-          </div>
+        <div class="faq-item">
+          <div class="faq-question">Q: Can I bypass the complexity router?</div>
+          <div class="faq-answer">A: Yes. Set <code>OMNISKILL_BYPASS_ROUTER=true</code> in your environment or use direct skill/agent invocation.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: How does the router classify complexity?</div>
+          <div class="faq-answer">A: It analyzes task scope, dependencies, required domain expertise, output complexity, and time constraints. See <code>skills/complexity-router/resources/complexity-signals.md</code>.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: What model tiers exist?</div>
+          <div class="faq-answer">A: Fast/cheap (for trivial/simple tasks), Standard (for moderate tasks), and Premium (for complex/expert tasks).</div>
+        </div>
+      </div>
+
+      <!-- Knowledge Sources Section -->
+      <div class="content-section">
+        <h2>📚 Knowledge Sources</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: What are knowledge sources?</div>
+          <div class="faq-answer">A: External knowledge repositories (GitHub repos, local directories, URLs, APIs) that skills can reference. They use file-based search — no vector databases or embeddings required.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: How do I add a knowledge source?</div>
+          <div class="faq-answer">A: Edit <code>templates/source-config.yaml</code> and run <code>python scripts/admin.py --sync</code>.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: What file types are supported?</div>
+          <div class="faq-answer">A: Markdown (.md), YAML (.yaml), JSON (.json), and plain text (.txt). Other file types are ignored during content normalization.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: How often are sources synced?</div>
+          <div class="faq-answer">A: By default, sources are synced daily. Run <code>python scripts/admin.py --sync</code> to trigger a manual sync.</div>
+        </div>
+      </div>
+
+      <!-- Self-Customization Skills Section -->
+      <div class="content-section">
+        <h2>🛠️ Self-Customization Skills</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: What are self-customization skills?</div>
+          <div class="faq-answer">A: AI-guided skills that help you extend OMNISKILL: <code>add-skill</code>, <code>add-bundle</code>, <code>add-agent</code>, <code>add-adapter</code>, and <code>rename-project</code>. Tell your AI assistant to "Follow the [skill-name] skill to..." and it will guide you through the process.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: Do I still need to follow the manual creation process?</div>
+          <div class="faq-answer">A: No. The self-customization skills automate validation, template generation, and installation. But you can still create things manually if you prefer.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: Can I customize the self-customization skills themselves?</div>
+          <div class="faq-answer">A: Yes. They're regular skills in <code>skills/add-*</code> and can be edited or extended.</div>
+        </div>
+      </div>
+
+      <!-- Prompt Library Section -->
+      <div class="content-section">
+        <h2>📝 Prompt Library</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: What's in the prompt library?</div>
+          <div class="faq-answer">A: Reusable prompt components: router prompts, system prompts, shared formatting rules, and persona templates. Located in <code>prompts/</code>.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: Can I customize prompts?</div>
+          <div class="faq-answer">A: Yes. Edit files in <code>prompts/</code> to change how OMNISKILL interacts with AI models.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: Are prompts platform-specific?</div>
+          <div class="faq-answer">A: No. Prompts are universal. Platform adapters handle any platform-specific formatting.</div>
+        </div>
+      </div>
+
+      <!-- SDK Section -->
+      <div class="content-section">
+        <h2>🔧 SDK</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: What is the OMNISKILL SDK?</div>
+          <div class="faq-answer">A: A Python library (<code>sdk/omniskill.py</code>) providing programmatic access to OMNISKILL functionality: list skills, route requests, install bundles, validate, sync sources, health checks.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: When should I use the SDK vs. CLI scripts?</div>
+          <div class="faq-answer">A: Use the SDK when integrating OMNISKILL into other Python tools or automation. Use CLI scripts for manual operations.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: Can I use the SDK from other languages?</div>
+          <div class="faq-answer">A: Not directly, but you can call it via subprocess or create language bindings.</div>
+        </div>
+      </div>
+
+      <!-- Admin Dashboard Section -->
+      <div class="content-section">
+        <h2>📊 Admin Dashboard</h2>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: What is the admin dashboard?</div>
+          <div class="faq-answer">A: A CLI tool (<code>scripts/admin.py</code>) for operational tasks: viewing stats, checking errors, managing knowledge sources, generating health reports.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: How do I see what skills are installed?</div>
+          <div class="faq-answer">A: Run <code>python scripts/admin.py --stats</code>.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">Q: How do I check for validation errors?</div>
+          <div class="faq-answer">A: Run <code>python scripts/admin.py --errors</code>.</div>
         </div>
       </div>
 
@@ -487,253 +281,9 @@ steps:
       <div class="content-section">
         <h2>🤝 Contributing</h2>
 
-        <div class="faq-list">
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              How do I contribute a new skill?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <ol>
-                  <li>Fork the OMNISKILL repository</li>
-                  <li>Create your skill in <code>skills/my-skill/</code></li>
-                  <li>
-                    Validate it:
-                    <code>python scripts/validate.py skills/my-skill</code>
-                  </li>
-                  <li>Test it on at least one platform</li>
-                  <li>Submit a pull request</li>
-                </ol>
-                See
-                <a
-                  href="https://github.com/SufficientDaikon/omniskill/blob/main/CONTRIBUTING.md"
-                  >CONTRIBUTING.md</a
-                >
-                for full guidelines.
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              Can I contribute to the adapter for my favorite platform?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                Absolutely! Adapter improvements are always welcome. Check
-                <code>adapters/</code> to see how existing adapters work, then
-                submit a PR with your improvements. <br /><br />
-                If you want to add support for a <em>new</em> platform, open an
-                issue first to discuss the approach.
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              Where should I report bugs or request features?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                Open an issue on the
-                <a
-                  href="https://github.com/SufficientDaikon/omniskill/issues"
-                  target="_blank"
-                  >GitHub repository</a
-                >. Use:
-                <ul>
-                  <li>
-                    🐛 Bug reports: Include platform, skill name, error message
-                  </li>
-                  <li>
-                    ✨ Feature requests: Describe the use case and expected
-                    behavior
-                  </li>
-                  <li>📖 Documentation: Point out what's unclear or missing</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Troubleshooting Section -->
-      <div class="content-section">
-        <h2>🔧 Troubleshooting</h2>
-
-        <div class="faq-list">
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              The installer says it can't find any platforms
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                The installer looks for platform directories:
-                <ul>
-                  <li><code>~/.claude/</code> for Claude Code</li>
-                  <li><code>~/.copilot/</code> for Copilot CLI</li>
-                  <li><code>.cursor/</code> for Cursor (project-level)</li>
-                  <li><code>.windsurfrules</code> for Windsurf</li>
-                  <li><code>.antigravity/</code> for Antigravity</li>
-                </ul>
-                Make sure you have at least one AI coding assistant installed
-                and configured.
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              A skill isn't triggering when I expect it to
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <ol>
-                  <li>
-                    Check the skill's triggers in <code>manifest.yaml</code>
-                  </li>
-                  <li>
-                    Try a more specific phrase that exactly matches a trigger
-                    keyword
-                  </li>
-                  <li>
-                    Check if another skill with higher priority is matching
-                    instead
-                  </li>
-                  <li>
-                    Verify the skill is installed:
-                    <code>python scripts/doctor.py</code>
-                  </li>
-                </ol>
-                Some platforms have better semantic matching (Claude Code) while
-                others need exact keywords (Cursor).
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              Validation is failing but I don't understand why
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                Run validation with verbose output:
-                <div class="terminal-block" style="margin-top: 12px">
-                  <pre><span class="prompt">$</span> python scripts/validate.py skills/my-skill --verbose</pre>
-                </div>
-                This shows detailed error messages including:
-                <ul>
-                  <li>Which section is missing or malformed</li>
-                  <li>Which trigger conflicts with what</li>
-                  <li>Which resource file can't be found</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div
-              class="faq-question"
-              onclick="this.parentElement.classList.toggle('open')"
-            >
-              Where can I get help?
-              <span class="faq-icon">▼</span>
-            </div>
-            <div class="faq-answer">
-              <div class="faq-answer-content">
-                <ul>
-                  <li>
-                    <strong>Documentation</strong>: Start with the
-                    <a href="getting-started.html">Getting Started</a> guide
-                  </li>
-                  <li>
-                    <strong>GitHub Issues</strong>: Search
-                    <a
-                      href="https://github.com/SufficientDaikon/omniskill/issues"
-                      target="_blank"
-                      >existing issues</a
-                    >
-                    or open a new one
-                  </li>
-                  <li>
-                    <strong>Examples</strong>: Look at existing skills in
-                    <code>skills/</code> for reference
-                  </li>
-                  <li>
-                    <strong>Community</strong>: Join the discussions on GitHub
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Still Have Questions Section -->
-      <div class="content-section">
-        <h2>💬 Still Have Questions?</h2>
-        <p>If you didn't find your answer here:</p>
-
-        <div class="platform-cards">
-          <a
-            href="https://github.com/SufficientDaikon/omniskill/issues"
-            target="_blank"
-            class="platform-item"
-          >
-            <span class="platform-emoji">💬</span>
-            <h3>Open an Issue</h3>
-            <p>Ask on GitHub</p>
-          </a>
-
-          <a
-            href="https://github.com/SufficientDaikon/omniskill"
-            target="_blank"
-            class="platform-item"
-          >
-            <span class="platform-emoji">📖</span>
-            <h3>Read the Code</h3>
-            <p>Examples in the repo</p>
-          </a>
-
-          <a
-            href="https://github.com/SufficientDaikon/omniskill/blob/main/CONTRIBUTING.md"
-            target="_blank"
-            class="platform-item"
-          >
-            <span class="platform-emoji">🤝</span>
-            <h3>Contribute</h3>
-            <p>Help improve docs</p>
-          </a>
-
-          <a href="getting-started.html" class="platform-item">
-            <span class="platform-emoji">🚀</span>
-            <h3>Getting Started</h3>
-            <p>Start from the beginning</p>
-          </a>
+        <div class="faq-item">
+          <div class="faq-question">Q: How do I contribute a new skill?</div>
+          <div class="faq-answer">A: See <a href="../CONTRIBUTING.md">CONTRIBUTING.md</a>. Fork, create your skill, validate, and submit a PR.</div>
         </div>
       </div>
 
@@ -751,13 +301,6 @@ steps:
     </main>
 
     <script>
-      // FAQ accordion functionality
-      document.querySelectorAll(".faq-question").forEach((question) => {
-        question.addEventListener("click", function () {
-          this.parentElement.classList.toggle("open");
-        });
-      });
-
       // Sidebar toggle for mobile
       function toggleSidebar() {
         document.getElementById("sidebar").classList.toggle("open");

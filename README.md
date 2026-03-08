@@ -7,7 +7,7 @@
 **One repo. One format. Every platform. Best-in-class.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/skills-41-blue)]()
+[![Skills](https://img.shields.io/badge/skills-48-blue)]()
 [![Bundles](https://img.shields.io/badge/bundles-8-green)]()
 [![Platforms](https://img.shields.io/badge/platforms-5-purple)]()
 
@@ -29,11 +29,17 @@ OMNISKILL is a **universal framework** for AI coding assistant skills, agents, a
 | 📦 **Bundles**          | Install domain kits (Godot, Web Dev, UX, Django...) as one unit         |
 | 🤖 **Formal Agents**    | Agents with personas, skill bindings, guardrails, and handoff protocols |
 | 🔄 **Pipelines**        | Multi-agent workflows (spec → implement → review)                       |
+| 🧠 **Complexity Router** | Smart routing — classifies tasks by complexity, routes to optimal model/agent |
+| 📚 **Knowledge Sources** | Pluggable knowledge base — GitHub repos, local dirs, URLs. File-based search, no vector DB |
+| 🔧 **Self-Customization** | AI-assisted skills that guide agents to create new skills, bundles, agents, and adapters |
+| 🎭 **Prompt Library**   | Organized prompt templates — router, system, personas (expert, quick, teacher) |
+| 🐍 **Python SDK**       | Programmatic access — `from sdk.omniskill import OmniSkill` |
 | 🏭 **Skill Factory**    | AI-powered pipeline to create new skills that meet quality standards    |
 | 🔌 **Cross-Platform**   | Adapters for Claude Code, Copilot CLI, Cursor, Windsurf, Antigravity    |
-| 📚 **Rich Resources**   | Cheat sheets, style guides, decision trees bundled with skills          |
+| 📖 **Rich Resources**   | Cheat sheets, style guides, decision trees bundled with skills          |
 | 🧪 **Validation**       | Schema-based validation for every skill, bundle, agent, and pipeline    |
 | 🔄 **Self-Improving**   | Uses its own pipelines to improve its own skills                        |
+| 🩺 **Admin Dashboard**  | Comprehensive health checks, stats, and diagnostics via CLI             |
 
 ---
 
@@ -93,17 +99,30 @@ python scripts/doctor.py               # Check installation health
 
 ```
 omniskill/
-├── skills/           # All individual skills (SKILL.md + manifest.yaml)
-│   └── _template/    # Skill template for new skills
+├── skills/           # 48 individual skills (SKILL.md + manifest.yaml)
+│   ├── _template/    # Skill template for new skills
+│   ├── complexity-router/  # 🧠 Smart task routing (NEW)
+│   ├── knowledge-sources/  # 📚 External knowledge management (NEW)
+│   ├── add-skill/    # 🔧 AI-assisted skill creation (NEW)
+│   ├── add-bundle/   # 🔧 AI-assisted bundle creation (NEW)
+│   ├── add-agent/    # 🔧 AI-assisted agent creation (NEW)
+│   ├── add-adapter/  # 🔧 AI-assisted adapter creation (NEW)
+│   ├── rename-project/ # 🔧 Fork & rename OMNISKILL (NEW)
+│   └── ...           # 41 domain skills
 ├── bundles/          # Domain bundles (bundle.yaml + meta-skill)
 ├── agents/           # Agent definitions (AGENT.md + agent-manifest.yaml)
-│   └── _template/    # Agent template
 ├── pipelines/        # Multi-agent workflow definitions
-├── prompts/          # Categorized prompt library
+├── prompts/          # 🎭 Prompt library — router, system, personas (NEW)
+│   ├── router.md     # Complexity classification prompts
+│   ├── system.md     # Master system prompt
+│   ├── shared.md     # Shared utilities & formatting
+│   └── personas/     # Expert, Quick, Teacher personas
+├── sdk/              # 🐍 Python SDK (NEW)
+│   └── omniskill.py  # Programmatic framework access
 ├── adapters/         # Cross-platform adapters (5 platforms)
-├── scripts/          # install, doctor, validate, migrate, update
+├── scripts/          # install, doctor, validate, migrate, update, admin
 ├── schemas/          # YAML validation schemas
-└── docs/             # Extended documentation
+└── docs/             # Beautiful HTML documentation site
 ```
 
 ---
@@ -156,12 +175,98 @@ See [`agents/_template/`](agents/_template/) for the full template.
 
 ---
 
-## 🧪 Validation
+## 🧪 Validation & Admin
 
 ```bash
 python scripts/validate.py skills/my-skill     # Validate one skill
 python scripts/validate.py bundles/my-kit       # Validate one bundle
 python scripts/validate.py --all                # Validate everything
+python scripts/admin.py --stats                 # Show framework statistics
+python scripts/admin.py --report                # Generate full health report
+```
+
+---
+
+## 🧠 Complexity Router
+
+Every incoming task is automatically classified by complexity and routed to the optimal model/agent:
+
+| Complexity | Model Tier | Routing |
+| --- | --- | --- |
+| **Trivial** | Fast (Haiku) | Direct answer, no skill needed |
+| **Simple** | Fast + Skill | Single skill activation |
+| **Moderate** | Standard + Resources | Skill with reference materials |
+| **Complex** | Premium + Agent | Multi-skill agent orchestration |
+| **Expert** | Premium + Pipeline | Full multi-agent pipeline |
+
+Cost optimization happens automatically — no manual rules to maintain.
+
+---
+
+## 📚 Knowledge Sources
+
+Plug any source into your knowledge base — no vector DB, no embeddings needed. File-based search with `grep`/`find`/`cat`.
+
+```yaml
+# sources config example
+sources:
+  - id: my-docs
+    type: github
+    repo: owner/repo
+    branch: main
+    content-path: docs
+  - id: local-notes
+    type: local
+    path: ~/notes
+  - id: reference
+    type: url
+    url: https://docs.example.com
+```
+
+---
+
+## 🔧 AI-Assisted Self-Customization
+
+OMNISKILL includes skills that guide AI agents through customizing the framework itself:
+
+| Skill | Purpose |
+| --- | --- |
+| `add-skill` | Step-by-step guide to create a new skill |
+| `add-bundle` | Create a new domain bundle with meta-skill |
+| `add-agent` | Define a new agent with skill bindings |
+| `add-adapter` | Add support for a new AI platform |
+| `rename-project` | Fork & fully rename OMNISKILL for custom use |
+
+Just tell your AI assistant: *"Follow the add-skill skill to create a new skill for [domain]"*
+
+---
+
+## 🎭 Prompt Library
+
+Organized prompt templates in `prompts/`:
+
+| Prompt | Purpose |
+| --- | --- |
+| `router.md` | Complexity classification system prompt |
+| `system.md` | Master OMNISKILL agent identity prompt |
+| `shared.md` | Response formatting, citations, error handling |
+| `personas/expert.md` | Deep, thorough analysis persona |
+| `personas/quick.md` | Concise, fast response persona |
+| `personas/teacher.md` | Step-by-step explanatory persona |
+
+---
+
+## 🐍 Python SDK
+
+```python
+from sdk.omniskill import OmniSkill
+
+os = OmniSkill()
+os.list_skills(tags=["web"])          # Filter skills by tag
+os.route("build a React dashboard")  # Complexity routing
+os.install(platform="cursor")        # Install to platform
+os.sync_sources()                    # Sync knowledge sources
+os.health_check()                    # Comprehensive diagnostics
 ```
 
 ---

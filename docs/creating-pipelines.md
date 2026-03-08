@@ -30,6 +30,22 @@ steps:
 resumable: true
 ```
 
+## The Complexity Router Pre-Step
+
+Before any pipeline executes, the **complexity-router** automatically runs as a pre-step:
+
+1. **Classification** — Analyzes the request complexity
+2. **Model Selection** — Chooses the optimal model tier
+3. **Pipeline Selection** — Determines if this is the right pipeline or if a simpler/more complex one should be used
+
+This routing happens transparently. The router uses signals from:
+- Task scope and dependencies
+- Required domain expertise
+- Expected output complexity
+- Time constraints
+
+See `skills/complexity-router/resources/complexity-signals.md` for the full classification criteria.
+
 ## Step Configuration
 
 ### on-failure options

@@ -127,3 +127,42 @@ overrides/windsurf.md   — Windsurf-specific instructions
 ```
 
 These are merged with the base SKILL.md during adapter transformation.
+
+## Self-Customization Skills
+
+OMNISKILL includes AI-guided skills for creating new skills, bundles, and agents:
+
+### The `add-skill` Skill
+
+Instead of manually following these steps, tell your AI assistant:
+
+> "Follow the add-skill skill to create a new skill for [domain]"
+
+The `add-skill` skill provides:
+- Interactive checklist guiding you through each step
+- Validation checks at each stage
+- Template generation
+- Trigger conflict detection
+- Automatic validation and installation
+
+### Example Advanced Skills
+
+See these skills as examples of advanced patterns:
+
+- **`complexity-router`** — Classifies task complexity and routes to optimal model tier
+- **`knowledge-sources`** — Integrates external knowledge repositories
+
+## Generator Tool Pattern
+
+For real-time status visualization, use the async generator pattern:
+
+```python
+async def process_task():
+    yield {"status": "loading", "message": "Initializing..."}
+    # Do work
+    yield {"status": "processing", "message": "Analyzing code..."}
+    # More work
+    yield {"status": "done", "result": output}
+```
+
+This pattern enables the AI assistant to show live progress updates. See `skills/_template/resources/tool-pattern.md` for the full specification.

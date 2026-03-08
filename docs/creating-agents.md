@@ -60,6 +60,25 @@ See [agents/\_template/AGENT.md](../agents/_template/AGENT.md) for the full temp
 python scripts/validate.py agents/my-task-agent
 ```
 
+## Self-Customization
+
+Use the AI-guided approach:
+
+> "Follow the add-agent skill to create an agent for [task type]"
+
+The `add-agent` skill provides step-by-step guidance for defining personas, skill bindings, and handoff protocols.
+
+## Special Agent Pattern: The Routing Agent
+
+The **complexity-router** is a special type of agent that runs before other agents. It:
+
+1. Classifies incoming tasks: trivial → simple → moderate → complex → expert
+2. Routes to the optimal model tier (fast/cheap → standard → premium)
+3. Selects the appropriate skill/agent/pipeline
+4. Has P0 priority (runs first on every request)
+
+See `skills/complexity-router/resources/routing-table.md` for the full routing logic.
+
 ## Existing Agents
 
 See the [agents directory](../agents/) for all available agents.
