@@ -1,0 +1,108 @@
+# OMNISKILL Pipeline Schema
+# Every pipeline YAML file MUST conform to this schema.
+
+schema_version: "1.0"
+description: "Validation schema for OMNISKILL pipeline definition files"
+
+required_fields:
+  name:
+    type: string
+    pattern: "^[a-z][a-z0-9-]*$"
+    description: "Unique kebab-case pipeline identifier"
+
+  version:
+    type: string
+    pattern: "^\\d+\\.\\d+\\.\\d+$"
+    description: "Semantic version"
+
+  description:
+    type: string
+    min_length: 10
+    description: "What this pipeline accomplishes"
+
+  trigger:
+    type: string
+    description: "Natural language trigger pattern (* for wildcards)"
+
+  steps:
+    type: list
+    min_items: 2
+    item_type: object
+    item_schema:
+      required:
+        name:
+          type: string
+          description: "Step identifier (used for referencing in later steps)"
+        agent:
+          type: string
+          description: "Agent to invoke for this step"
+          validation: "Agent must exist in repo"
+        input:
+          type: string
+          description: "What this step receives (can reference previous steps via 'step:name')"
+        output:
+          type: string
+          description: "What this step produces"
+        on-failure:
+          type: string
+          allowed_values: [halt, loop, skip, retry]
+          description: "What to do if this step fails"
+      optional:
+        loop-target:
+          type: string
+          description: "Step name to loop back to (required when on-failure is 'loop')"
+          validation: "Must reference a previous step name"
+        max-iterations:
+          type: integer
+          min: 1
+          max: 10
+          default: 3
+          description: "Max loop iterations before forced halt"
+        condition:
+          type: string
+          description: "Condition that must be true for this step to execute"
+        timeout:
+          type: string
+          description: "Max time for this step (e.g., '5m', '30m')"
+
+optional_fields:
+  resumable:
+    type: boolean
+    default: true
+    description: "Whether the pipeline can resume from last completed step"
+
+  artifact-persistence:
+    type: string
+    allowed_values: [session-state, project-dir, sdd-specs]
+    default: "session-state"
+    description: "Where intermediate artifacts are stored"
+
+  max-total-iterations:
+    type: integer
+    default: 20
+    description: "Safety limit for total step executions across all loops"
+
+  tags:
+    type: list
+    item_type: string
+    description: "Categorization tags"
+
+# Validation rules
+validation_rules:
+  - rule: "All agents referenced in steps must exist in the repo"
+    severity: error
+
+  - rule: "Step input references (step:name) must reference earlier steps"
+    severity: error
+
+  - rule: "loop-target must reference an earlier step when on-failure is 'loop'"
+    severity: error
+
+  - rule: "No circular loop chains (A loops to B loops to A)"
+    severity: error
+
+  - rule: "Pipeline must have at least one step with on-failure: halt to prevent infinite execution"
+    severity: warning
+
+  - rule: "max-iterations should be <= 5 for most steps"
+    severity: info

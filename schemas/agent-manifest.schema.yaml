@@ -1,0 +1,129 @@
+# OMNISKILL Agent Manifest Schema
+# Every agent's agent-manifest.yaml MUST conform to this schema.
+
+schema_version: "1.0"
+description: "Validation schema for OMNISKILL agent manifest files"
+
+required_fields:
+  name:
+    type: string
+    pattern: "^[a-z][a-z0-9-]*-agent$"
+    description: "Unique kebab-case identifier ending with '-agent'"
+
+  version:
+    type: string
+    pattern: "^\\d+\\.\\d+\\.\\d+$"
+    description: "Semantic version (MAJOR.MINOR.PATCH)"
+
+  role:
+    type: string
+    max_length: 100
+    description: "One-line role title (e.g., 'Specification Architect')"
+
+  description:
+    type: string
+    min_length: 10
+    max_length: 300
+    description: "What this agent does"
+
+  persona:
+    type: object
+    required_children:
+      tone:
+        type: string
+        description: "Comma-separated tone descriptors (e.g., 'thorough, precise, critical')"
+      style:
+        type: string
+        description: "Behavioral style (e.g., 'asks clarifying questions, never assumes')"
+      identity:
+        type: string
+        description: "Core identity statement (e.g., 'architect, not a coder')"
+
+  skill-bindings:
+    type: list
+    min_items: 1
+    item_type: object
+    item_schema:
+      required:
+        skill: { type: string, description: "Skill name to bind" }
+        trigger:
+          { type: string, description: "Comma-separated trigger phrases" }
+    validation: "All referenced skills must exist in repo"
+
+  input-contract:
+    type: object
+    required_children:
+      type:
+        {
+          type: string,
+          description: "What the agent expects (e.g., 'plan/idea')",
+        }
+      format:
+        {
+          type: string,
+          description: "Expected format (e.g., 'free text or structured plan')",
+        }
+
+  output-contract:
+    type: object
+    required_children:
+      type:
+        {
+          type: string,
+          description: "What the agent produces (e.g., 'specification')",
+        }
+      format:
+        {
+          type: string,
+          description: "Output format (e.g., 'markdown spec-template')",
+        }
+    optional_children:
+      location: { type: string, description: "Where the output is saved" }
+
+optional_fields:
+  tool-access:
+    type: list
+    item_type: string
+    description: "Tools/MCP servers the agent can use"
+
+  handoff-targets:
+    type: list
+    item_type: object
+    item_schema:
+      required:
+        agent: { type: string, description: "Target agent name" }
+        condition: { type: string, description: "When to hand off" }
+      optional:
+        artifact:
+          { type: string, description: "What to pass to the target agent" }
+    validation: "All target agents must exist in repo"
+
+  guardrails:
+    type: list
+    item_type: string
+    description: "Rules the agent must never violate"
+
+  model-preference:
+    type: string
+    description: "Preferred model tier (e.g., 'premium', 'standard', 'fast')"
+    allowed_values: [premium, standard, fast]
+
+# File structure validation
+required_files:
+  - "AGENT.md"
+  - "agent-manifest.yaml"
+
+# AGENT.md required sections
+agent_md_required_sections:
+  - "Identity" # Who this agent is
+  - "Persona" # Tone, style, behavior
+  - "Skill Bindings" # What skills it uses and when
+  - "Workflow" # How it processes requests
+  - "Guardrails" # What it must never do
+  - "Input Contract" # What it expects to receive
+  - "Output Contract" # What it produces
+  - "Handoff" # How it passes work to the next agent
+
+agent_md_optional_sections:
+  - "Tool Access" # Available tools
+  - "Examples" # Sample interactions

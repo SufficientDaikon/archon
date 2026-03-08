@@ -1,0 +1,46 @@
+# Full Product Pipeline — End-to-End Product Development
+# ux-pipeline → sdd-pipeline → testing
+
+name: full-product
+version: 1.0.0
+description: "Complete product development: UX design → spec-driven implementation → testing"
+trigger: "build product * end-to-end"
+tags: [full-stack, product, end-to-end]
+
+steps:
+  - name: ux-design
+    agent: ux-lifecycle-master-agent
+    input: "User's product vision and requirements"
+    output: "Complete UX package: research, wireframes, visual designs, handoff artifact"
+    on-failure: halt
+
+  - name: specify
+    agent: spec-writer-agent
+    input: "UX package from step:ux-design AND user's product requirements"
+    output: "Comprehensive technical specification"
+    on-failure: halt
+
+  - name: implement
+    agent: implementer-agent
+    input: "Specification from step:specify AND UX designs from step:ux-design"
+    output: "Implemented product code"
+    on-failure: halt
+
+  - name: review
+    agent: reviewer-agent
+    input: "Spec from step:specify AND code from step:implement"
+    output: "Implementation compliance report"
+    on-failure: loop
+    loop-target: implement
+    max-iterations: 3
+
+  - name: test
+    agent: qa-master-agent
+    input: "Code from step:implement AND spec from step:specify AND UX from step:ux-design"
+    output: "Comprehensive test results (E2E, accessibility, UX compliance)"
+    on-failure: loop
+    loop-target: implement
+    max-iterations: 2
+
+resumable: true
+artifact-persistence: project-dir

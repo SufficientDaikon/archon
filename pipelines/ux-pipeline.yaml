@@ -1,0 +1,44 @@
+# UX Pipeline — Full UX Design Lifecycle
+# ux-research → wireframe → ui-visual-design → design-review → design-handoff
+
+name: ux-pipeline
+version: 1.0.0
+description: "Full UX design lifecycle: research → wireframe → visual design → review → handoff"
+trigger: "design feature *"
+tags: [ux, design, lifecycle]
+
+steps:
+  - name: research
+    agent: ux-research-agent
+    input: "User's feature description or product idea"
+    output: "Research brief with personas, journeys, competitive analysis"
+    on-failure: halt
+
+  - name: wireframe
+    agent: wireframe-agent
+    input: "Research brief from step:research"
+    output: "Low-fidelity wireframes for all screens"
+    on-failure: halt
+
+  - name: visual-design
+    agent: ui-design-agent
+    input: "Wireframes from step:wireframe AND research from step:research"
+    output: "High-fidelity visual designs with design tokens"
+    on-failure: halt
+
+  - name: review
+    agent: design-reviewer-agent
+    input: "Designs from step:visual-design AND wireframes from step:wireframe"
+    output: "Design review report with scored verdicts"
+    on-failure: loop
+    loop-target: visual-design
+    max-iterations: 2
+
+  - name: handoff
+    agent: design-handoff-agent
+    input: "Approved designs from step:visual-design AND review from step:review"
+    output: "Implementation-ready design handoff artifact"
+    on-failure: halt
+
+resumable: true
+artifact-persistence: session-state

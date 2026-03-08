@@ -1,0 +1,140 @@
+# OMNISKILL Root Manifest
+# This file registers all skills, bundles, agents, and pipelines in the framework.
+
+name: omniskill
+version: 0.1.0
+description: "Universal AI Agent & Skills Framework — one repo, one format, every platform"
+author: tahaa
+license: MIT
+repository: https://github.com/tahaa/omniskill
+
+# All registered skills (alphabetical)
+skills: []
+  # Skills will be registered here as they are migrated/created
+  # Format: - name: skill-name
+  #           path: skills/skill-name
+  #           version: x.y.z
+  #           bundle: bundle-name-kit (optional)
+
+# All registered bundles
+bundles:
+  - name: godot-kit
+    path: bundles/godot-kit
+    skills:
+      [
+        godot-best-practices,
+        godot-debugging,
+        godot-gdscript-mastery,
+        godot-gdscript-patterns,
+        godot-particles,
+      ]
+
+  - name: web-dev-kit
+    path: bundles/web-dev-kit
+    skills:
+      [
+        frontend-design,
+        react-best-practices,
+        vercel-react-best-practices,
+        web-design-guidelines,
+        backend-development,
+      ]
+
+  - name: ux-design-kit
+    path: bundles/ux-design-kit
+    skills:
+      [
+        ui-ux-designer,
+        ui-visual-design,
+        ux-interaction-design,
+        ux-research,
+        ux-test-suite,
+        wireframing,
+        info-architecture,
+      ]
+
+  - name: django-kit
+    path: bundles/django-kit
+    skills:
+      [
+        django-expert,
+        django-framework,
+        django-orm-patterns,
+        django-rest-framework,
+      ]
+
+  - name: sdd-kit
+    path: bundles/sdd-kit
+    skills: [spec-writer, implementer, reviewer, design-handoff, design-review]
+
+  - name: testing-kit
+    path: bundles/testing-kit
+    skills:
+      [
+        e2e-testing-patterns,
+        qa-test-planner,
+        webapp-testing,
+        systematic-debugging,
+      ]
+
+  - name: mobile-kit
+    path: bundles/mobile-kit
+    skills: [mobile-design, capacitor-best-practices]
+
+  - name: meta-kit
+    path: bundles/meta-kit
+    skills:
+      [writing-skills, find-skills, skills-index, packager, prompt-architect]
+
+# All registered agents
+agents:
+  - name: spec-writer-agent
+    path: agents/spec-writer-agent
+  - name: implementer-agent
+    path: agents/implementer-agent
+  - name: reviewer-agent
+    path: agents/reviewer-agent
+  - name: debugger-agent
+    path: agents/debugger-agent
+  - name: ux-research-agent
+    path: agents/ux-research-agent
+  - name: ui-design-agent
+    path: agents/ui-design-agent
+  - name: qa-master-agent
+    path: agents/qa-master-agent
+
+# All registered pipelines
+pipelines:
+  - name: sdd-pipeline
+    path: pipelines/sdd-pipeline.yaml
+    trigger: "build feature * from scratch"
+  - name: ux-pipeline
+    path: pipelines/ux-pipeline.yaml
+    trigger: "design feature *"
+  - name: debug-pipeline
+    path: pipelines/debug-pipeline.yaml
+    trigger: "fix bug *"
+  - name: skill-factory
+    path: pipelines/skill-factory.yaml
+    trigger: "create a new skill for *"
+  - name: full-product
+    path: pipelines/full-product.yaml
+    trigger: "build product * end-to-end"
+
+# Supported platforms
+platforms:
+  - id: claude-code
+    adapter: adapters/claude-code
+    target: "~/.claude/skills/"
+  - id: copilot-cli
+    adapter: adapters/copilot-cli
+    target: "~/.copilot/skills/"
+  - id: cursor
+    adapter: adapters/cursor
+    target: ".cursor/rules/"
+  - id: windsurf
+    adapter: adapters/windsurf
+    target: ".windsurfrules"
+  - id: antigravity
+    adapter: adapters/antigravity
+    target: ".antigravity/skills/"

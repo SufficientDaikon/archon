@@ -1,0 +1,40 @@
+# Debug Pipeline — Systematic Bug Fixing
+# systematic-debugging → implementer → qa-test-planner → reviewer
+
+name: debug-pipeline
+version: 1.0.0
+description: "Systematic bug investigation → fix → test → review"
+trigger: "fix bug *"
+tags: [debugging, testing, fix]
+
+steps:
+  - name: investigate
+    agent: debugger-agent
+    input: "Bug description, error messages, reproduction steps"
+    output: "Root cause analysis with proposed fix strategy"
+    on-failure: halt
+
+  - name: fix
+    agent: implementer-agent
+    input: "Root cause analysis from step:investigate"
+    output: "Code fix implementing the proposed strategy"
+    on-failure: halt
+
+  - name: test
+    agent: qa-master-agent
+    input: "Code fix from step:fix AND root cause from step:investigate"
+    output: "Test plan and test results"
+    on-failure: loop
+    loop-target: fix
+    max-iterations: 3
+
+  - name: review
+    agent: reviewer-agent
+    input: "Fix from step:fix AND tests from step:test AND root cause from step:investigate"
+    output: "Code review report"
+    on-failure: loop
+    loop-target: fix
+    max-iterations: 2
+
+resumable: true
+artifact-persistence: session-state

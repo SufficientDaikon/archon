@@ -1,0 +1,92 @@
+# OMNISKILL Bundle Manifest Schema
+# Every bundle's bundle.yaml MUST conform to this schema.
+
+schema_version: "1.0"
+description: "Validation schema for OMNISKILL bundle manifest files"
+
+required_fields:
+  name:
+    type: string
+    pattern: "^[a-z][a-z0-9-]*-kit$"
+    description: "Unique kebab-case identifier ending with '-kit'"
+
+  version:
+    type: string
+    pattern: "^\\d+\\.\\d+\\.\\d+$"
+    description: "Semantic version (MAJOR.MINOR.PATCH)"
+
+  description:
+    type: string
+    min_length: 10
+    max_length: 200
+    description: "Human-readable purpose of the bundle"
+
+  author:
+    type: string
+    description: "Creator identifier"
+
+  skills:
+    type: list
+    min_items: 2
+    item_type: string
+    description: "Ordered list of constituent skill names (all must exist in repo)"
+    validation: "Every listed skill must exist in skills/ directory"
+
+  meta-skill:
+    type: string
+    description: "Name of the composition meta-skill that orchestrates the bundle"
+    validation: "meta-skill/ directory must exist in this bundle with SKILL.md and manifest.yaml"
+
+optional_fields:
+  dependencies:
+    type: list
+    item_type: string
+    description: "Other bundles this depends on (must exist in repo)"
+    validation: "No circular dependencies allowed"
+
+  conflict-resolution:
+    type: list
+    item_type: object
+    description: "Rules for resolving overlapping skill triggers"
+    item_schema:
+      required:
+        when: { type: string, description: "Condition description" }
+        prefer: { type: string, description: "Skill name to prefer" }
+      optional:
+        reason: { type: string, description: "Why this preference exists" }
+
+  shared-resources:
+    type: list
+    item_type: object
+    item_schema:
+      required:
+        path: { type: string, description: "Relative path to shared resource" }
+      optional:
+        description: { type: string }
+
+# Directory structure validation
+required_structure:
+  - "bundle.yaml"
+  - "meta-skill/"
+  - "meta-skill/SKILL.md"
+  - "meta-skill/manifest.yaml"
+
+optional_structure:
+  - "shared-resources/"
+
+# Validation rules
+validation_rules:
+  - rule: "All skills in the skills list must exist in the repo's skills/ directory"
+    severity: error
+
+  - rule: "meta-skill must have valid SKILL.md and manifest.yaml"
+    severity: error
+
+  - rule: "No circular dependencies between bundles"
+    severity: error
+
+  - rule: "Shared resources must be accessible to all skills in the bundle"
+    severity: warning
+
+  - rule: "Conflict resolution should cover all known trigger overlaps"
+    severity: warning
