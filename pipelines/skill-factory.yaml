@@ -1,9 +1,9 @@
 # Skill Factory Pipeline — Create New Skills
-# prompt-architect → spec-writer → implementer → writing-skills → reviewer
+# prompt-architect → spec-writer → [context-curator] → implementer → writing-skills → reviewer
 
 name: skill-factory
-version: 1.0.0
-description: "Guided skill creation: design → specify → implement → validate → review"
+version: 1.1.0
+description: "Guided skill creation: design → specify → context curation → implement → validate → review"
 trigger: "create a new skill for *"
 tags: [meta, skill-creation, factory]
 
@@ -20,9 +20,15 @@ steps:
     output: "Skill specification with all sections defined"
     on-failure: halt
 
+  - name: curate-for-implement
+    agent: context-curator-agent
+    input: "Specification from step:specify AND prompt design from step:design"
+    output: "Curated context brief for implementer (spec, OMNISKILL skill format requirements)"
+    on-failure: skip
+
   - name: implement
     agent: implementer-agent
-    input: "Skill specification from step:specify"
+    input: "Context brief from step:curate-for-implement OR skill specification from step:specify"
     output: "Complete skill directory (SKILL.md, manifest.yaml, resources/, examples/, tests/)"
     on-failure: halt
 

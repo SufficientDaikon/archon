@@ -7,8 +7,9 @@
 **One repo. One format. Every platform. Best-in-class.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/skills-48-blue)]()
+[![Skills](https://img.shields.io/badge/skills-49-blue)]()
 [![Bundles](https://img.shields.io/badge/bundles-8-green)]()
+[![Agents](https://img.shields.io/badge/agents-8-orange)]()
 [![Platforms](https://img.shields.io/badge/platforms-5-purple)]()
 
 _Write skills once. Run them on Claude Code, Copilot CLI, Cursor, Windsurf, and Antigravity._
@@ -76,7 +77,7 @@ python scripts/doctor.py               # Check installation health
 | **web-dev-kit**   | 5 skills | Frontend, React, backend, design guidelines            |
 | **ux-design-kit** | 7 skills | Full UX pipeline: research → wireframe → visual → test |
 | **django-kit**    | 4 skills | Django framework, ORM, REST APIs                       |
-| **sdd-kit**       | 5 skills | Spec-Driven Development: spec → implement → review     |
+| **sdd-kit**       | 6 skills | Spec-Driven Development: spec → implement → review + context curation |
 | **testing-kit**   | 4 skills | E2E testing, QA planning, debugging                    |
 | **mobile-kit**    | 2 skills | Mobile design, Capacitor best practices                |
 | **meta-kit**      | 5 skills | Skill creation, discovery, packaging, prompts          |
@@ -87,11 +88,11 @@ python scripts/doctor.py               # Check installation health
 
 | Pipeline           | Flow                                             | Trigger                        |
 | ------------------ | ------------------------------------------------ | ------------------------------ |
-| **sdd-pipeline**   | spec-writer → implementer → reviewer             | "build feature X from scratch" |
-| **ux-pipeline**    | research → wireframe → visual → review → handoff | "design feature X"             |
-| **debug-pipeline** | debug → implement → test → review                | "fix bug X"                    |
-| **skill-factory**  | prompt → spec → implement → validate → review    | "create a new skill for X"     |
-| **full-product**   | ux-pipeline → sdd-pipeline → testing             | "build product X end-to-end"   |
+| **sdd-pipeline**   | spec-writer → **context-curator** → implementer → **context-curator** → reviewer | "build feature X from scratch" |
+| **ux-pipeline**    | research → **context-curator** → wireframe → **context-curator** → visual → review → handoff | "design feature X"             |
+| **debug-pipeline** | debug → **context-curator** → implement → test → review                | "fix bug X"                    |
+| **skill-factory**  | prompt → spec → **context-curator** → implement → validate → review    | "create a new skill for X"     |
+| **full-product**   | ux-pipeline → **context-curator** → sdd-pipeline → testing             | "build product X end-to-end"   |
 
 ---
 
@@ -102,6 +103,7 @@ omniskill/
 ├── skills/           # 48 individual skills (SKILL.md + manifest.yaml)
 │   ├── _template/    # Skill template for new skills
 │   ├── complexity-router/  # 🧠 Smart task routing (NEW)
+│   ├── context-curator/   # 🔗 Pipeline context management (NEW)
 │   ├── knowledge-sources/  # 📚 External knowledge management (NEW)
 │   ├── add-skill/    # 🔧 AI-assisted skill creation (NEW)
 │   ├── add-bundle/   # 🔧 AI-assisted bundle creation (NEW)

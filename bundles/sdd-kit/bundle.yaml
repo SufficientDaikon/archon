@@ -8,6 +8,7 @@ skills:
   - reviewer
   - design-handoff
   - design-review
+  - context-curator
 meta-skill: sdd-pipeline-expert
 dependencies: []
 conflict-resolution:
@@ -26,3 +27,6 @@ conflict-resolution:
   - when: "Design quality review"
     prefer: design-review
     reason: "Evaluates design artifacts against phase-specific criteria"
+  - when: "Pipeline handoff, context curation, or pipeline state management"
+    prefer: context-curator
+    reason: "Manages context flow between pipeline phases with validation and budget tracking"

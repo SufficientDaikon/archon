@@ -1,9 +1,9 @@
 # Debug Pipeline — Systematic Bug Fixing
-# systematic-debugging → implementer → qa-test-planner → reviewer
+# systematic-debugging → [context-curator] → implementer → qa-test-planner → reviewer
 
 name: debug-pipeline
-version: 1.0.0
-description: "Systematic bug investigation → fix → test → review"
+version: 1.1.0
+description: "Systematic bug investigation → context curation → fix → test → review"
 trigger: "fix bug *"
 tags: [debugging, testing, fix]
 
@@ -14,9 +14,15 @@ steps:
     output: "Root cause analysis with proposed fix strategy"
     on-failure: halt
 
+  - name: curate-for-fix
+    agent: context-curator-agent
+    input: "Root cause analysis from step:investigate"
+    output: "Curated context brief for implementer (root cause, affected files, fix strategy)"
+    on-failure: skip
+
   - name: fix
     agent: implementer-agent
-    input: "Root cause analysis from step:investigate"
+    input: "Context brief from step:curate-for-fix OR root cause analysis from step:investigate"
     output: "Code fix implementing the proposed strategy"
     on-failure: halt
 

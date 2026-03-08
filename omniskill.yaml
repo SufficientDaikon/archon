@@ -2,7 +2,7 @@
 # This file registers all skills, bundles, agents, and pipelines in the framework.
 
 name: omniskill
-version: 0.1.0
+version: 0.2.0
 description: "Universal AI Agent & Skills Framework — one repo, one format, every platform"
 author: tahaa
 license: MIT
@@ -37,6 +37,11 @@ skills:
     version: 1.0.0
     tags: [routing, core]
     priority: P0
+  - name: context-curator
+    path: skills/context-curator
+    version: 1.0.0
+    tags: [context-management, pipeline-orchestration, handoff-validation]
+    priority: P1
   - name: design-handoff
     path: skills/design-handoff
     version: 1.0.0
@@ -212,7 +217,7 @@ bundles:
 
   - name: sdd-kit
     path: bundles/sdd-kit
-    skills: [spec-writer, implementer, reviewer, design-handoff, design-review]
+    skills: [spec-writer, implementer, reviewer, design-handoff, design-review, context-curator]
 
   - name: testing-kit
     path: bundles/testing-kit
@@ -249,6 +254,8 @@ agents:
     path: agents/ui-design-agent
   - name: qa-master-agent
     path: agents/qa-master-agent
+  - name: context-curator-agent
+    path: agents/context-curator-agent
 
 # All registered pipelines
 pipelines:
