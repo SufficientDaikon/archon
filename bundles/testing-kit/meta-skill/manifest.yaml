@@ -1,0 +1,21 @@
+name: qa-master
+type: meta-skill
+version: 1.0.0
+description: "Meta-coordinator for QA and testing that routes E2E patterns, test planning, webapp testing, and systematic debugging with mandatory debug-first enforcement"
+author: tahaa
+coordinates:
+  - e2e-testing-patterns
+  - qa-test-planner
+  - webapp-testing
+  - systematic-debugging
+trigger-keywords:
+  - testing
+  - QA
+  - E2E
+  - bug
+  - debug
+  - test plan
+routing-strategy: "debug-first-with-layer-routing"
+supports-multi-skill: true
+enforces-debug-first: true
+framework-aware: true

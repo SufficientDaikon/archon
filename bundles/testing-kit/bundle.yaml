@@ -1,0 +1,24 @@
+name: testing-kit
+version: 1.0.0
+description: "Comprehensive testing toolkit with E2E patterns, QA planning, webapp testing automation, and systematic debugging methodology"
+author: tahaa
+skills:
+  - e2e-testing-patterns
+  - qa-test-planner
+  - webapp-testing
+  - systematic-debugging
+meta-skill: qa-master
+dependencies: []
+conflict-resolution:
+  - when: "Implementing E2E tests with Playwright or Cypress"
+    prefer: e2e-testing-patterns
+    reason: "Master E2E testing patterns with framework-specific best practices"
+  - when: "Creating test plans, test cases, or bug reports"
+    prefer: qa-test-planner
+    reason: "Generates comprehensive test plans and manual test cases for QA engineers"
+  - when: "Testing local web applications or debugging UI behavior"
+    prefer: webapp-testing
+    reason: "Automates web testing with Playwright, screenshots, and browser logs"
+  - when: "Debugging any bug, test failure, or unexpected behavior"
+    prefer: systematic-debugging
+    reason: "Four-phase debugging framework ensuring root cause investigation before fixes"

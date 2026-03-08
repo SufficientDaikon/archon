@@ -1,0 +1,16 @@
+name: mobile-kit
+version: 1.0.0
+description: "Mobile development toolkit with mobile-first design principles and Capacitor app development best practices"
+author: tahaa
+skills:
+  - mobile-design
+  - capacitor-best-practices
+meta-skill: mobile-expert
+dependencies: []
+conflict-resolution:
+  - when: "Mobile UI/UX design decisions or touch interaction patterns"
+    prefer: mobile-design
+    reason: "Specialized in mobile-first design doctrine for iOS and Android"
+  - when: "Capacitor project setup, plugin usage, or native integration"
+    prefer: capacitor-best-practices
+    reason: "Expert in Capacitor app development, plugins, and deployment"

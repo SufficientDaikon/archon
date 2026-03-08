@@ -1,0 +1,16 @@
+name: mobile-expert
+type: meta-skill
+version: 1.0.0
+description: "Meta-coordinator for mobile development that routes between mobile-first design and Capacitor implementation"
+author: tahaa
+coordinates:
+  - mobile-design
+  - capacitor-best-practices
+trigger-keywords:
+  - mobile
+  - iOS
+  - Android
+  - touch
+  - Capacitor
+routing-strategy: "design-vs-implementation"
+supports-multi-skill: true

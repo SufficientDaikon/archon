@@ -1,0 +1,11 @@
+name: mcp-server-index
+version: 1.0.0
+description: "RAG-indexed registry of configured MCP servers, available tools, and dispatch rules for Godot development workflows."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["mcp", "integration", "model-context-protocol"]
+triggers:
+  keywords: []
+  patterns: []
+priority: P3

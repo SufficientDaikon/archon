@@ -1,0 +1,33 @@
+name: ux-design-kit
+version: 1.0.0
+description: "Complete UX/UI design lifecycle toolkit covering research, information architecture, wireframing, visual design, interaction design, and usability testing"
+author: tahaa
+skills:
+  - ui-ux-designer
+  - ui-visual-design
+  - ux-interaction-design
+  - ux-research
+  - ux-test-suite
+  - wireframing
+  - info-architecture
+meta-skill: ux-design-expert
+dependencies: []
+conflict-resolution:
+  - when: "Starting a new design project"
+    prefer: ux-research
+    reason: "Always begin with user research, personas, and journey mapping"
+  - when: "Defining site structure or navigation"
+    prefer: info-architecture
+    reason: "Specialized in sitemaps, content strategy, and IA documents"
+  - when: "Creating low-fidelity layouts"
+    prefer: wireframing
+    reason: "Produces grayscale, layout-focused wireframes with responsive annotations"
+  - when: "Designing visual aesthetics"
+    prefer: ui-visual-design
+    reason: "Expert in color theory, typography, design tokens, and hero sections"
+  - when: "Defining component states and interactions"
+    prefer: ux-interaction-design
+    reason: "Specialized in micro-interactions, state machines, and transition specifications"
+  - when: "Testing usability"
+    prefer: ux-test-suite
+    reason: "Comprehensive task completion testing, cognitive load heuristics, and usability scoring"

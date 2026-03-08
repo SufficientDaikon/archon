@@ -1,0 +1,20 @@
+name: meta-agent
+type: meta-skill
+version: 1.0.0
+description: "Meta-coordinator for meta-development that routes skill creation, discovery, packaging, and prompt engineering"
+author: tahaa
+coordinates:
+  - writing-skills
+  - find-skills
+  - skills-index
+  - packager
+  - prompt-architect
+trigger-keywords:
+  - skill creation
+  - skill discovery
+  - packaging
+  - prompt engineering
+  - meta-development
+routing-strategy: "action-based"
+supports-multi-skill: true
+recursive: true

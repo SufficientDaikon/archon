@@ -1,0 +1,25 @@
+name: godot-kit
+version: 1.0.0
+description: "Comprehensive Godot 4.x game development toolkit with GDScript mastery, debugging, performance optimization, and particle effects"
+author: tahaa
+skills:
+  - godot-best-practices
+  - godot-debugging
+  - godot-gdscript-mastery
+  - godot-gdscript-patterns
+  - godot-particles
+meta-skill: omega-gdscript-expert
+dependencies: []
+conflict-resolution:
+  - when: "Code review or establishing project standards"
+    prefer: godot-gdscript-mastery
+    reason: "Focuses on static typing, signal architecture, and code quality patterns"
+  - when: "Fixing errors, crashes, or unexpected behavior"
+    prefer: godot-debugging
+    reason: "Expert in error interpretation and troubleshooting techniques"
+  - when: "Creating visual effects or particle systems"
+    prefer: godot-particles
+    reason: "Specialized in GPU particle systems and ParticleProcessMaterial"
+  - when: "Learning GDScript or implementing game mechanics"
+    prefer: godot-gdscript-patterns
+    reason: "Comprehensive patterns for signals, state machines, and game systems"

@@ -1,0 +1,22 @@
+name: web-fullstack-expert
+type: meta-skill
+version: 1.0.0
+description: "Meta-coordinator for full-stack web development that routes frontend, React, Next.js, backend, and UX compliance requests"
+author: tahaa
+coordinates:
+  - frontend-design
+  - react-best-practices
+  - vercel-react-best-practices
+  - web-design-guidelines
+  - backend-development
+trigger-keywords:
+  - web development
+  - frontend
+  - backend
+  - React
+  - Next.js
+  - API
+  - fullstack
+routing-strategy: "layer-based-with-technology-detection"
+supports-multi-skill: true
+framework-aware: true

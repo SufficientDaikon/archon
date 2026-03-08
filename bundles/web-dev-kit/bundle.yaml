@@ -1,0 +1,25 @@
+name: web-dev-kit
+version: 1.0.0
+description: "Full-stack web development toolkit with React, Next.js, frontend design, backend architecture, and UX guidelines"
+author: tahaa
+skills:
+  - frontend-design
+  - react-best-practices
+  - vercel-react-best-practices
+  - web-design-guidelines
+  - backend-development
+meta-skill: web-fullstack-expert
+dependencies: []
+conflict-resolution:
+  - when: "React or Next.js performance optimization"
+    prefer: vercel-react-best-practices
+    reason: "Specialized Vercel Engineering performance patterns for React/Next.js"
+  - when: "Building new UI components or pages"
+    prefer: frontend-design
+    reason: "Creates production-grade interfaces with high design quality"
+  - when: "Reviewing existing UI for accessibility or compliance"
+    prefer: web-design-guidelines
+    reason: "Comprehensive Web Interface Guidelines auditing"
+  - when: "API design or backend architecture"
+    prefer: backend-development
+    reason: "Specialized in backend patterns, database design, and microservices"

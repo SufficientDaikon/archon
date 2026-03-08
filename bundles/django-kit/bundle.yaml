@@ -1,0 +1,24 @@
+name: django-kit
+version: 1.0.0
+description: "Complete Django development toolkit with ORM patterns, REST API creation, admin customization, and authentication systems"
+author: tahaa
+skills:
+  - django-expert
+  - django-framework
+  - django-orm-patterns
+  - django-rest-framework
+meta-skill: django-master
+dependencies: []
+conflict-resolution:
+  - when: "Database queries, models, or relationships"
+    prefer: django-orm-patterns
+    reason: "Specialized in models, QuerySets, and database relationships"
+  - when: "Building REST APIs with serializers and viewsets"
+    prefer: django-rest-framework
+    reason: "Expert in DRF serializers, viewsets, routers, and API authentication"
+  - when: "General Django architecture or batteries-included features"
+    prefer: django-framework
+    reason: "Comprehensive coverage of Django's built-in features (admin, auth, forms)"
+  - when: "Expert-level Django consulting or complex scenarios"
+    prefer: django-expert
+    reason: "High-level Django expertise for architecture and advanced patterns"

@@ -7,7 +7,7 @@
 **One repo. One format. Every platform. Best-in-class.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/skills-35%2B-blue)]()
+[![Skills](https://img.shields.io/badge/skills-41-blue)]()
 [![Bundles](https://img.shields.io/badge/bundles-8-green)]()
 [![Platforms](https://img.shields.io/badge/platforms-5-purple)]()
 

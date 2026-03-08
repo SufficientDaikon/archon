@@ -1,0 +1,29 @@
+name: ux-design-expert
+type: meta-skill
+version: 1.0.0
+description: "Meta-coordinator for UX/UI design lifecycle that orchestrates research, IA, wireframing, visual design, interaction design, and testing phases"
+author: tahaa
+coordinates:
+  - ui-ux-designer
+  - ui-visual-design
+  - ux-interaction-design
+  - ux-research
+  - ux-test-suite
+  - wireframing
+  - info-architecture
+trigger-keywords:
+  - UX
+  - UI
+  - design
+  - user experience
+  - interface design
+  - usability
+routing-strategy: "lifecycle-phase-based"
+supports-multi-skill: true
+lifecycle-phases:
+  - research
+  - information-architecture
+  - wireframing
+  - visual-design
+  - interaction-design
+  - testing

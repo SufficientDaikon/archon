@@ -1,0 +1,11 @@
+name: design-review
+version: 1.0.0
+description: "Design critique and review methodology including heuristic evaluation, consistency checking, accessibility compliance, and visual quality assessment. Use when reviewing design artifacts, evaluating UI quality, or auditing design compliance."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["design", "ui-ux", "spec-driven-development", "architecture"]
+triggers:
+  keywords: []
+  patterns: []
+priority: P2

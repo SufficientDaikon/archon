@@ -1,0 +1,11 @@
+name: ui-visual-design
+version: 1.0.0
+description: "Visual design mastery including color theory, typography systems, visual hierarchy, hero section patterns, page section patterns, design tokens, and modern design trends. Use when creating visual designs, building design systems, designing hero sections, or establishing design tokens."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["design", "ui-ux", "best-practices", "architecture"]
+triggers:
+  keywords: ["creating visual designs, building design systems, designing hero sections, or establishing design tokens"]
+  patterns: []
+priority: P2
