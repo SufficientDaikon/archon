@@ -9,6 +9,7 @@ import type {
   Pipeline,
   Bundle,
   Platform,
+  Synapse,
   SkillCategory,
 } from "./types";
 
@@ -78,6 +79,24 @@ export function getAllBundles(): Bundle[] {
 
 export function getBundleBySlug(slug: string): Bundle | undefined {
   return registry.bundles.find((b) => b.slug === slug);
+}
+
+// --- Synapses ---
+export function getAllSynapses(): Synapse[] {
+  return registry.synapses || [];
+}
+
+export function getSynapseBySlug(slug: string): Synapse | undefined {
+  return (registry.synapses || []).find((s) => s.slug === slug);
+}
+
+export function getAllSynapseSlugs(): string[] {
+  return (registry.synapses || []).map((s) => s.slug);
+}
+
+export function getSynapseCategories(): string[] {
+  const types = new Set((registry.synapses || []).map((s) => s.synapseType));
+  return Array.from(types);
 }
 
 // --- Platforms ---

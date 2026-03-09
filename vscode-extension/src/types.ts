@@ -148,6 +148,30 @@ export interface BundleListData {
   total: number;
 }
 
+// ─── Synapses ───────────────────────────────────────────────────────────────
+
+export interface SynapsePhase {
+  name: string;
+  timing: "pre-task" | "active" | "post-task";
+  description: string;
+}
+
+export interface Synapse {
+  name: string;
+  version: string;
+  description: string;
+  synapse_type: "core" | "optional";
+  tags: string[];
+  firing_phases: SynapsePhase[];
+  path: string;
+}
+
+export interface SynapseListData {
+  type: string;
+  count: number;
+  items: Synapse[];
+}
+
 // ─── Health / Doctor ────────────────────────────────────────────────────────
 
 export interface PlatformHealth {

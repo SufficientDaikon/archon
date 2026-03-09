@@ -223,3 +223,79 @@ class BaseAdapter(ABC):
             target_parent: Parent directory of target installation
         """
         pass
+
+    # ── Synapse support ─────────────────────────────────────────
+
+    def read_synapse(self, synapse_path: Path) -> Tuple[str, Dict]:
+        """
+        Reads SYNAPSE.md and manifest.yaml from a synapse directory.
+        
+        Args:
+            synapse_path: Path to synapse directory
+            
+        Returns:
+            Tuple of (synapse_md_content, manifest_dict)
+        """
+        synapse_md_path = synapse_path / "SYNAPSE.md"
+        manifest_path = synapse_path / "manifest.yaml"
+        
+        if not synapse_md_path.exists():
+            raise FileNotFoundError(f"SYNAPSE.md not found in {synapse_path}")
+        
+        if not manifest_path.exists():
+            raise FileNotFoundError(f"manifest.yaml not found in {synapse_path}")
+        
+        with open(synapse_md_path, 'r', encoding='utf-8') as f:
+            synapse_content = f.read()
+        
+        with open(manifest_path, 'r', encoding='utf-8') as f:
+            manifest = yaml.safe_load(f)
+        
+        return synapse_content, manifest
+
+    def get_synapse_target_path(self, synapse_name: str, target_dir: Optional[Path] = None) -> Path:
+        """
+        Returns the platform-specific installation path for a synapse.
+        Installs to _synapses/ subdirectory within the platform's skill target.
+        
+        Args:
+            synapse_name: Name of the synapse
+            target_dir: Optional override for target directory
+            
+        Returns:
+            Path where the synapse SYNAPSE.md should be installed
+        """
+        skill_target = self.get_target_path("_placeholder", target_dir)
+        base_dir = skill_target.parent.parent  # Up from skill_name/SKILL.md to skills dir
+        return base_dir / "_synapses" / synapse_name / "SYNAPSE.md"
+
+    def install_synapse(self, synapse_path: Path, target_dir: Optional[Path] = None) -> bool:
+        """
+        Full install flow for a single synapse.
+        
+        Args:
+            synapse_path: Path to synapse directory
+            target_dir: Optional override for target directory
+            
+        Returns:
+            True if installation succeeded, False otherwise
+        """
+        try:
+            content, manifest = self.read_synapse(synapse_path)
+            synapse_name = manifest.get('name', synapse_path.name)
+            
+            target_path = self.get_synapse_target_path(synapse_name, target_dir)
+            self.write_output(content, target_path)
+            
+            # Copy resources
+            resources_src = synapse_path / "resources"
+            if resources_src.exists() and resources_src.is_dir():
+                resources_dst = target_path.parent / "resources"
+                self.copy_directory(resources_src, resources_dst)
+            
+            print(f"✅ Installed synapse {synapse_name} to {target_path}")
+            return True
+            
+        except Exception as e:
+            print(f"❌ Failed to install synapse from {synapse_path}: {e}")
+            return False

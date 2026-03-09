@@ -6,6 +6,7 @@ version: 1.1.0
 description: "End-to-end Spec-Driven Development: plan → specification → context curation → implementation → context curation → review"
 trigger: "build feature * from scratch"
 tags: [sdd, development, core]
+synapse-mode: enabled
 
 steps:
   - name: specify
@@ -13,6 +14,7 @@ steps:
     input: "User's plan, idea, or feature description"
     output: "Comprehensive specification document"
     on-failure: halt
+    synapse-checkpoint: true
 
   - name: curate-for-implement
     agent: context-curator-agent
@@ -25,6 +27,7 @@ steps:
     input: "Context brief from step:curate-for-implement OR specification from step:specify"
     output: "Implemented code matching the specification"
     on-failure: halt
+    synapse-checkpoint: true
 
   - name: curate-for-review
     agent: context-curator-agent
@@ -39,6 +42,7 @@ steps:
     on-failure: loop
     loop-target: implement
     max-iterations: 3
+    synapse-checkpoint: true
 
 resumable: true
 artifact-persistence: sdd-specs

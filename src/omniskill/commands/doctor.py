@@ -59,6 +59,7 @@ def doctor_cmd() -> None:
     agents_count = 0
     bundles_count = 0
     pipelines_count = 0
+    synapses_count = 0
     version = "unknown"
 
     try:
@@ -69,6 +70,7 @@ def doctor_cmd() -> None:
         agents_count = len(reg.agents)
         bundles_count = len(reg.bundles)
         pipelines_count = len(reg.pipelines)
+        synapses_count = len(reg.synapses)
         version = reg.version
     except FileNotFoundError:
         issues.append({
@@ -142,6 +144,7 @@ def doctor_cmd() -> None:
                     "agents": agents_count,
                     "bundles": bundles_count,
                     "pipelines": pipelines_count,
+                    "synapses": synapses_count,
                 },
                 "platforms": platform_statuses,
                 "installed_components": total_installed,
@@ -194,6 +197,7 @@ def doctor_cmd() -> None:
     console.print(f"  Agents:    {agents_count}")
     console.print(f"  Bundles:   {bundles_count}")
     console.print(f"  Pipelines: {pipelines_count}")
+    console.print(f"  Synapses:  {synapses_count}")
     console.print(f"  Installed: {total_installed} record(s)")
     console.print()
 

@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating Synapses — OMNISKILL Documentation</title>
+    <meta
+      name="description"
+      content="Learn how to create cognitive synapses that enhance agent reasoning in OMNISKILL"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="doc-nav">
+      <a href="../index.html" class="nav-logo">OMNISKILL</a>
+      <a
+        href="https://github.com/SufficientDaikon/omniskill"
+        class="nav-github"
+        target="_blank"
+        >GitHub ↗</a
+      >
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">DOCUMENTATION</div>
+        <a href="getting-started.html" class="sidebar-link">Getting Started</a>
+        <a href="creating-skills.html" class="sidebar-link">Creating Skills</a>
+        <a href="creating-agents.html" class="sidebar-link">Creating Agents</a>
+        <a href="creating-synapses.html" class="sidebar-link active"
+          >Creating Synapses</a
+        >
+        <a href="creating-bundles.html" class="sidebar-link"
+          >Creating Bundles</a
+        >
+        <a href="creating-pipelines.html" class="sidebar-link"
+          >Creating Pipelines</a
+        >
+        <a href="cli-guide.html" class="sidebar-link">CLI Guide</a>
+        <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
+        <a href="architecture.html" class="sidebar-link">Architecture</a>
+        <a href="faq.html" class="sidebar-link">FAQ</a>
+      </div>
+      <div class="sidebar-section">
+        <a href="../index.html" class="sidebar-link back-link"
+          >← Back to Home</a
+        >
+      </div>
+    </aside>
+
+    <button
+      class="sidebar-toggle"
+      onclick="document.getElementById('sidebar').classList.toggle('open')"
+    >
+      ☰
+    </button>
+
+    <!-- Main Content -->
+    <main class="doc-content">
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="../index.html">Home</a>
+        <span class="separator">›</span>
+        <a href="getting-started.html">Documentation</a>
+        <span class="separator">›</span>
+        <span>Creating Synapses</span>
+      </div>
+
+      <!-- Header -->
+      <div class="doc-header">
+        <span class="section-label">DOCUMENTATION</span>
+        <h1 class="doc-title">
+          Creating <span class="gradient-text">Synapses</span>
+        </h1>
+        <p class="doc-subtitle">
+          Build cognitive capabilities that enhance agent reasoning. Synapses add
+          structured thinking layers — planning, monitoring, and reflection —
+          that fire automatically during task execution.
+        </p>
+      </div>
+
+      <!-- Synapse Anatomy Section -->
+      <div class="content-section">
+        <h2>🧬 Synapse Anatomy</h2>
+        <p>
+          Every OMNISKILL synapse lives in its own directory under
+          <code>synapses/</code> and follows this structure:
+        </p>
+
+        <div class="file-tree">
+          <div class="file-tree-item folder">
+            <span class="icon">📁</span> synapses/my-synapse/
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> SYNAPSE.md
+            <span style="color: var(--text-muted)"
+              >— Instructions the AI agent follows</span
+            >
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> manifest.yaml
+            <span style="color: var(--text-muted)"
+              >— Metadata, firing phases, type</span
+            >
+          </div>
+          <div class="file-tree-item folder" style="padding-left: 24px">
+            <span class="icon">📁</span> resources/
+            <span style="color: var(--text-muted)"
+              >— Rubrics, templates, heuristics</span
+            >
+          </div>
+        </div>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <strong>Skills vs Synapses:</strong> Skills define
+            <em>what</em> an agent does (task-specific instructions). Synapses
+            define <em>how</em> an agent thinks (cognitive enhancements that
+            layer on top of any task).
+          </div>
+        </div>
+      </div>
+
+      <!-- Core vs Optional Types -->
+      <div class="content-section">
+        <h2>🏷️ Core vs Optional Types</h2>
+        <p>
+          Every synapse has a <code>synapse-type</code> that determines how it
+          binds to agents:
+        </p>
+
+        <h3>Core Synapses</h3>
+        <p>
+          Core synapses are <strong>auto-injected into all agents</strong>. They
+          fire for every task, scaling effort to complexity. Use core for
+          fundamental cognitive capabilities every agent benefits from.
+        </p>
+        <div class="code-block">
+          <div class="code-label">YAML</div>
+          <pre><code>synapse-type: core
+# Auto-injected — every agent gets this synapse</code></pre>
+        </div>
+
+        <h3>Optional Synapses</h3>
+        <p>
+          Optional synapses are <strong>bound per-agent</strong>. They only fire
+          when explicitly included in an agent's configuration. Use optional for
+          specialized cognitive patterns relevant to specific roles.
+        </p>
+        <div class="code-block">
+          <div class="code-label">YAML</div>
+          <pre><code>synapse-type: optional
+# Only fires when an agent explicitly binds this synapse</code></pre>
+        </div>
+
+        <div class="alert alert-warning">
+          <div class="alert-icon">⚠️</div>
+          <div class="alert-content">
+            <div class="alert-title">Choose Wisely</div>
+            <p>
+              Core synapses add overhead to <em>every</em> agent interaction.
+              Only mark a synapse as core if it genuinely benefits all agents.
+              When in doubt, start with optional.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SYNAPSE.md Format -->
+      <div class="content-section">
+        <h2>Step 1: SYNAPSE.md</h2>
+        <p>
+          This is the instruction file the AI agent reads.
+          <strong>Required sections:</strong>
+        </p>
+
+        <h3>🎭 Identity</h3>
+        <p>
+          Who is this synapse? What cognitive capability does it provide?
+        </p>
+        <div class="code-block">
+          <div class="code-label">MARKDOWN</div>
+          <pre><code># My Synapse
+
+## Identity
+
+**Name:** My Synapse
+**Type:** core | optional
+**Version:** 1.0.0
+**Author:** your-name
+
+Describe the cognitive capability this synapse provides.
+What aspect of thinking does it enhance? Why does it matter?</code></pre>
+        </div>
+
+        <h3>🎯 When Active</h3>
+        <p>
+          When does this synapse fire? Core synapses fire for every agent task.
+          Optional synapses fire only when bound.
+        </p>
+        <div class="code-block">
+          <div class="code-label">MARKDOWN</div>
+          <pre><code>## When Active
+
+- **Activation:** always-on | binding-activated
+- **Phases:** 3 firing phases
+
+Describe the conditions under which this synapse activates
+and how it scales effort to task complexity.</code></pre>
+        </div>
+
+        <h3>🔥 Firing Phases</h3>
+        <p>
+          The core of a synapse — structured phases that fire at specific points
+          during task execution. Each phase has timing, instructions, and an
+          output format.
+        </p>
+        <div class="code-block">
+          <div class="code-label">MARKDOWN</div>
+          <pre><code>## Firing Phases
+
+### Phase 1 — PLAN (Pre-Fire)
+
+**Timing:** Before starting ANY task.
+
+**Instructions:**
+
+1. Step one of this phase
+2. Step two of this phase
+
+**Output Format:**
+
+```
+### 🧠 My Synapse — PLAN
+- **Dimension 1:** [value]
+- **Dimension 2:** [value]
+```</code></pre>
+        </div>
+
+        <h3>📏 Rules</h3>
+        <p>DO and DON'T lists — guardrails for the synapse behavior.</p>
+        <div class="code-block">
+          <div class="code-label">MARKDOWN</div>
+          <pre><code>## Rules
+
+### DO:
+- Be honest about uncertainty
+- Scale monitoring effort to task complexity
+- Justify every rating with evidence
+
+### DON'T:
+- Skip phases when under time pressure
+- Hide uncertainty to appear more capable
+- Produce output longer than the actual task</code></pre>
+        </div>
+
+        <h3>📦 Output Format</h3>
+        <p>
+          Describe the internal reasoning artifacts this synapse produces. These
+          are <strong>thinking artifacts</strong>, not work artifacts.
+        </p>
+        <div class="code-block">
+          <div class="code-label">MARKDOWN</div>
+          <pre><code>## Output Format
+
+This synapse produces internal reasoning artifacts:
+
+| Phase | Artifact | Purpose |
+|-------|----------|---------|
+| PLAN  | Planning assessment | Ensures readiness before work |
+| MONITOR | Confidence tags | Communicates certainty |
+| REFLECT | Reflection summary | Self-assessment for quality |
+
+These artifacts are embedded in the agent's output stream.</code></pre>
+        </div>
+
+        <h3>🤝 Resources</h3>
+        <p>
+          Reference table of supporting materials the synapse can consult.
+        </p>
+        <div class="code-block">
+          <div class="code-label">MARKDOWN</div>
+          <pre><code>## Resources
+
+| Resource | Type | Description |
+|----------|------|-------------|
+| resources/rubric.md | rubric | Calibrated scale with criteria |
+| resources/template.md | template | Structured output template |
+| resources/heuristic.md | heuristic | Detection heuristics |</code></pre>
+        </div>
+      </div>
+
+      <!-- Step 2: manifest.yaml -->
+      <div class="content-section">
+        <h2>Step 2: manifest.yaml</h2>
+        <p>
+          The manifest declares everything about your synapse except the
+          instructions themselves:
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">YAML</div>
+          <pre><code>name: my-synapse
+version: 1.0.0
+description: "What cognitive capability this synapse provides"
+author: your-name
+synapse-type: core   # core | optional
+license: MIT
+
+firing-phases:
+  - name: PLAN
+    timing: pre-task
+    description: "Assess complexity and select strategy"
+
+  - name: MONITOR
+    timing: active
+    description: "Track confidence and detect stuck loops"
+
+  - name: REFLECT
+    timing: post-task
+    description: "Self-score quality and capture lessons"
+
+tags:
+  - reasoning
+  - metacognition
+
+# Optional: Supporting reference materials
+resources:
+  - path: resources/rubric.md
+    type: rubric
+    load: always
+    description: "Calibrated confidence scale"
+
+  - path: resources/template.md
+    type: template
+    load: always
+    description: "Structured output template"
+
+# Optional: Restrict to specific platforms
+# platforms:
+#   - claude-code
+#   - copilot-cli
+#   - cursor
+#   - windsurf
+#   - antigravity</code></pre>
+        </div>
+
+        <h3>Manifest Field Reference</h3>
+
+        <h4>Required Fields</h4>
+        <ul>
+          <li>
+            <strong><code>name</code></strong> — Unique kebab-case identifier
+            (<code>^[a-z][a-z0-9-]*$</code>)
+          </li>
+          <li>
+            <strong><code>version</code></strong> — Semantic version
+            (<code>MAJOR.MINOR.PATCH</code>)
+          </li>
+          <li>
+            <strong><code>description</code></strong> — Human-readable purpose
+            (10–200 characters)
+          </li>
+          <li>
+            <strong><code>author</code></strong> — Creator identifier
+          </li>
+          <li>
+            <strong><code>synapse-type</code></strong> —
+            <code>core</code> (auto-injected) or <code>optional</code>
+            (per-agent binding)
+          </li>
+          <li>
+            <strong><code>firing-phases</code></strong> — List of phase objects
+            (at least one required), each with <code>name</code>,
+            <code>timing</code>, and <code>description</code>
+          </li>
+          <li>
+            <strong><code>tags</code></strong> — Categorization tags for
+            discovery (at least one)
+          </li>
+        </ul>
+
+        <h4>Optional Fields</h4>
+        <ul>
+          <li>
+            <strong><code>license</code></strong> — License identifier (defaults
+            to MIT)
+          </li>
+          <li>
+            <strong><code>platforms</code></strong> — Supported platforms:
+            <code>claude-code</code>, <code>copilot-cli</code>,
+            <code>cursor</code>, <code>windsurf</code>,
+            <code>antigravity</code> (defaults to all)
+          </li>
+          <li>
+            <strong><code>resources</code></strong> — List of resource objects
+            with <code>path</code>, <code>type</code> (<code>rubric</code>,
+            <code>template</code>, <code>heuristic</code>,
+            <code>reference</code>, <code>cheat-sheet</code>),
+            <code>load</code> (<code>always</code> or
+            <code>on-demand</code>), and optional <code>description</code>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Firing Phase Design -->
+      <div class="content-section">
+        <h2>🔥 Firing Phase Design</h2>
+        <p>
+          Firing phases are the heart of a synapse. Each phase fires at a
+          specific point relative to task execution:
+        </p>
+
+        <h3>Pre-Task Phases</h3>
+        <p>
+          Fire <strong>before</strong> the agent starts working. Use for
+          planning, readiness assessment, strategy selection, and risk
+          prediction.
+        </p>
+        <div class="code-block">
+          <div class="code-label">YAML</div>
+          <pre><code>- name: PLAN
+  timing: pre-task
+  description: "Assess complexity, inventory knowledge, select strategy"</code></pre>
+        </div>
+
+        <h3>Active Phases</h3>
+        <p>
+          Fire <strong>during</strong> task execution at major decision points.
+          Use for confidence tagging, progress checking, stuck detection, and
+          assumption tracking.
+        </p>
+        <div class="code-block">
+          <div class="code-label">YAML</div>
+          <pre><code>- name: MONITOR
+  timing: active
+  description: "Tag confidence on decisions, detect stuck loops"</code></pre>
+        </div>
+
+        <h3>Post-Task Phases</h3>
+        <p>
+          Fire <strong>after</strong> the agent completes work. Use for quality
+          self-scoring, lessons learned, gap disclosure, and reflection.
+        </p>
+        <div class="code-block">
+          <div class="code-label">YAML</div>
+          <pre><code>- name: REFLECT
+  timing: post-task
+  description: "Self-score quality, capture lessons, disclose gaps"</code></pre>
+        </div>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <div class="alert-title">Phase Design Tips</div>
+            <ul style="margin-bottom: 0">
+              <li>
+                <strong>Not all three timings are required</strong> — a synapse
+                can have just a pre-task phase, or just active + post-task
+              </li>
+              <li>
+                <strong>Scale to complexity</strong> — phases should be
+                lightweight for routine tasks, detailed for complex ones
+              </li>
+              <li>
+                <strong>Define clear output formats</strong> — each phase should
+                produce a structured, recognizable output block
+              </li>
+              <li>
+                <strong>Keep phases independent</strong> — each phase should
+                work even if a previous phase was skipped
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resource Files -->
+      <div class="content-section">
+        <h2>Step 3: Resources (Optional but Recommended)</h2>
+        <p>
+          Add reference materials the synapse can consult during firing phases:
+        </p>
+
+        <div class="file-tree">
+          <div class="file-tree-item folder">
+            <span class="icon">📁</span> resources/
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> confidence-rubric.md
+            <span style="color: var(--text-muted)"
+              >— Calibrated scale with evidence criteria</span
+            >
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> reflection-template.md
+            <span style="color: var(--text-muted)"
+              >— Structured template for post-task output</span
+            >
+          </div>
+          <div class="file-tree-item file" style="padding-left: 24px">
+            <span class="icon">📄</span> stuck-detection.md
+            <span style="color: var(--text-muted)"
+              >— Heuristics for recognizing stuck loops</span
+            >
+          </div>
+        </div>
+
+        <p>Declare resources in your manifest:</p>
+        <div class="code-block">
+          <div class="code-label">YAML</div>
+          <pre><code>resources:
+  - path: resources/confidence-rubric.md
+    type: rubric
+    load: always
+    description: "Calibrated confidence scale with evidence criteria"
+  - path: resources/reflection-template.md
+    type: template
+    load: always
+  - path: resources/stuck-detection.md
+    type: heuristic
+    load: always</code></pre>
+        </div>
+
+        <h3>Resource Types</h3>
+        <ul>
+          <li>
+            <strong><code>rubric</code></strong> — Scoring scales with criteria
+            for each level
+          </li>
+          <li>
+            <strong><code>template</code></strong> — Structured output templates
+            the synapse fills in
+          </li>
+          <li>
+            <strong><code>heuristic</code></strong> — Decision-making rules and
+            detection patterns
+          </li>
+          <li>
+            <strong><code>reference</code></strong> — General reference
+            materials for the domain
+          </li>
+          <li>
+            <strong><code>cheat-sheet</code></strong> — Quick-reference guides
+            for common patterns
+          </li>
+        </ul>
+      </div>
+
+      <!-- Step 4: Validate -->
+      <div class="content-section">
+        <h2>Step 4: Validate</h2>
+        <p>Run the validation script to ensure your synapse is well-formed:</p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> python scripts/validate.py synapses/my-synapse</pre>
+        </div>
+
+        <p>The validator checks:</p>
+        <ul>
+          <li>
+            <strong>manifest.yaml completeness</strong> and schema compliance
+            against <code>schemas/synapse-manifest.schema.yaml</code>
+          </li>
+          <li><strong>SYNAPSE.md required sections</strong> are present:
+            Identity, When Active, Firing Phases, Rules, Output Format
+          </li>
+          <li>
+            <strong>Firing phase timings</strong> are valid
+            (<code>pre-task</code>, <code>active</code>,
+            <code>post-task</code>)
+          </li>
+          <li><strong>Resources exist</strong> and are accessible</li>
+          <li><strong>Name uniqueness</strong> across all synapses</li>
+        </ul>
+
+        <div class="alert alert-warning">
+          <div class="alert-icon">⚠️</div>
+          <div class="alert-content">
+            <div class="alert-title">Common Validation Errors</div>
+            <ul style="margin-bottom: 0">
+              <li>Missing required sections in SYNAPSE.md</li>
+              <li>Invalid <code>synapse-type</code> (must be <code>core</code> or <code>optional</code>)</li>
+              <li>Invalid <code>timing</code> value in firing phases</li>
+              <li>Referenced resources don't exist</li>
+              <li>Invalid YAML syntax in manifest</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tutorial Section -->
+      <div class="content-section">
+        <h2>🛠️ Tutorial: Create a New Synapse</h2>
+        <p>
+          Follow these steps to create a synapse from scratch. We'll build a
+          "risk-assessment" synapse that helps agents evaluate and mitigate risks
+          during task execution.
+        </p>
+
+        <h3>1. Copy the Template</h3>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> cp -r synapses/_template synapses/risk-assessment</pre>
+        </div>
+
+        <h3>2. Edit manifest.yaml</h3>
+        <div class="code-block">
+          <div class="code-label">synapses/risk-assessment/manifest.yaml</div>
+          <pre><code>name: risk-assessment
+version: 1.0.0
+description: "Structured risk evaluation — identify, score, and mitigate risks before and during task execution"
+author: your-name
+synapse-type: optional
+license: MIT
+
+firing-phases:
+  - name: IDENTIFY
+    timing: pre-task
+    description: "Scan the task for potential risks and failure modes"
+
+  - name: EVALUATE
+    timing: active
+    description: "Score risks as they materialize during execution"
+
+  - name: REVIEW
+    timing: post-task
+    description: "Assess which risks materialized and document mitigations"
+
+tags:
+  - risk
+  - safety
+  - quality
+
+resources:
+  - path: resources/risk-matrix.md
+    type: rubric
+    load: always
+    description: "Probability × impact scoring matrix"</code></pre>
+        </div>
+
+        <h3>3. Write SYNAPSE.md</h3>
+        <div class="code-block">
+          <div class="code-label">synapses/risk-assessment/SYNAPSE.md</div>
+          <pre><code># Risk Assessment Synapse
+
+## Identity
+
+**Name:** Risk Assessment
+**Type:** Optional
+**Version:** 1.0.0
+**Author:** your-name
+
+Structured risk evaluation for agent tasks. Identifies potential
+failure modes, scores their likelihood and impact, and tracks
+mitigations throughout execution.
+
+## When Active
+
+- **Activation:** Binding-activated (optional synapse)
+- **Phases:** 3 firing phases — IDENTIFY, EVALUATE, REVIEW
+
+## Firing Phases
+
+### Phase 1 — IDENTIFY (Pre-Fire)
+
+**Timing:** Before starting the task.
+
+**Instructions:**
+
+1. List all potential failure modes
+2. Score each risk: probability (1-5) × impact (1-5)
+3. Identify the top 3 risks by score
+4. Propose a mitigation for each top risk
+
+**Output Format:**
+
+```
+### ⚠️ Risk Assessment — IDENTIFY
+| Risk | Probability | Impact | Score | Mitigation |
+|------|-------------|--------|-------|------------|
+| ...  | ...         | ...    | ...   | ...        |
+```
+
+### Phase 2 — EVALUATE (Active-Fire)
+
+**Timing:** At each major decision point.
+
+**Instructions:**
+
+1. Check if any identified risk is materializing
+2. If yes, activate the planned mitigation
+3. Log any new risks discovered during execution
+
+### Phase 3 — REVIEW (Post-Fire)
+
+**Timing:** After completing the task.
+
+**Instructions:**
+
+1. Which risks materialized? Were mitigations effective?
+2. Any surprise risks not identified in Phase 1?
+3. Lessons learned for future risk identification
+
+## Rules
+
+### DO:
+- Be specific about failure modes
+- Use the probability × impact matrix from resources
+- Update risk scores as new information emerges
+
+### DON'T:
+- List vague, generic risks
+- Ignore low-probability high-impact risks
+- Skip the review phase
+
+## Output Format
+
+| Phase | Artifact | Purpose |
+|-------|----------|---------|
+| IDENTIFY | Risk register | Catalogues risks before work begins |
+| EVALUATE | Risk alerts | Flags materializing risks mid-task |
+| REVIEW | Risk report | Post-mortem on risk management |
+
+## Resources
+
+| Resource | Type | Description |
+|----------|------|-------------|
+| resources/risk-matrix.md | rubric | Probability × impact scoring matrix |</code></pre>
+        </div>
+
+        <h3>4. Add Resources</h3>
+        <p>Create the supporting resource files referenced in your manifest:</p>
+        <div class="code-block">
+          <div class="code-label">synapses/risk-assessment/resources/risk-matrix.md</div>
+          <pre><code># Risk Scoring Matrix
+
+## Probability Scale
+- 1 = Very unlikely (< 5%)
+- 2 = Unlikely (5–20%)
+- 3 = Possible (20–50%)
+- 4 = Likely (50–80%)
+- 5 = Very likely (> 80%)
+
+## Impact Scale
+- 1 = Negligible — cosmetic issues only
+- 2 = Minor — small rework needed
+- 3 = Moderate — significant rework
+- 4 = Major — blocks progress or causes failures
+- 5 = Critical — data loss, security breach, or complete failure
+
+## Risk Score = Probability × Impact
+- 1–5: Low risk (monitor)
+- 6–12: Medium risk (mitigate)
+- 13–25: High risk (address before proceeding)</code></pre>
+        </div>
+
+        <h3>5. Validate</h3>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> python scripts/validate.py synapses/risk-assessment</pre>
+        </div>
+
+        <div class="alert alert-success">
+          <div class="alert-icon">✓</div>
+          <div class="alert-content">
+            <div class="alert-title">Success!</div>
+            <p>
+              Your synapse is ready. If it's a core synapse, it will auto-inject
+              into all agents. If optional, bind it to specific agents in their
+              configuration.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Best Practices Section -->
+      <div class="content-section">
+        <h2>✨ Best Practices</h2>
+
+        <h3>1. Start Optional</h3>
+        <p>
+          Begin with <code>synapse-type: optional</code> and test with specific
+          agents before promoting to core. Core synapses add overhead to every
+          interaction.
+        </p>
+
+        <h3>2. Design Clear Output Formats</h3>
+        <p>
+          Each firing phase should produce a recognizable, structured output
+          block with an emoji prefix (e.g., <code>🧠</code>,
+          <code>⚠️</code>) so users can identify synapse output at a glance.
+        </p>
+
+        <h3>3. Scale to Complexity</h3>
+        <p>
+          Synapses should be lightweight for routine tasks and detailed for
+          complex ones. Include instructions for how the agent should gauge task
+          complexity and adjust effort.
+        </p>
+
+        <h3>4. Keep Phases Independent</h3>
+        <p>
+          Each phase should function even if a previous phase was skipped or
+          produced minimal output. Don't create hard dependencies between phases.
+        </p>
+
+        <h3>5. Provide Rich Resources</h3>
+        <p>
+          Rubrics, templates, and heuristics give the synapse concrete criteria
+          to work with instead of relying on vague instructions.
+        </p>
+
+        <h3>6. Study the Metacognition Synapse</h3>
+        <p>
+          The built-in <code>synapses/metacognition/</code> synapse is the
+          reference implementation. Study its SYNAPSE.md, manifest.yaml, and
+          resources for patterns to follow.
+        </p>
+      </div>
+
+      <!-- Example Synapse Section -->
+      <div class="content-section">
+        <h2>📖 Example: Metacognition Synapse</h2>
+        <p>
+          The built-in metacognition synapse demonstrates all synapse patterns.
+          It's a core synapse with three phases:
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">synapses/metacognition/manifest.yaml</div>
+          <pre><code>name: metacognition
+version: 1.0.0
+description: "Structured self-awareness for agents — plan before acting, monitor confidence during execution, reflect on quality after completion"
+author: tahaa
+synapse-type: core
+license: MIT
+
+firing-phases:
+  - name: PLAN
+    timing: pre-task
+    description: "Assess complexity, inventory knowledge, select strategy, define exit criteria"
+
+  - name: MONITOR
+    timing: active
+    description: "Tag confidence on decisions, check progress, detect stuck loops, track assumptions"
+
+  - name: REFLECT
+    timing: post-task
+    description: "Self-score quality, capture lessons learned, disclose known gaps and uncertainties"
+
+tags:
+  - metacognition
+  - reasoning
+  - self-awareness
+  - core
+
+resources:
+  - path: resources/confidence-rubric.md
+    type: rubric
+    load: always
+    description: "Calibrated confidence scale with evidence criteria for each level"
+
+  - path: resources/reflection-template.md
+    type: template
+    load: always
+    description: "Structured template for Phase 3 reflection output"
+
+  - path: resources/stuck-detection.md
+    type: heuristic
+    load: always
+    description: "Heuristics for recognizing stuck loops and when to pivot"</code></pre>
+        </div>
+
+        <div class="alert alert-success">
+          <div class="alert-icon">✓</div>
+          <div class="alert-content">
+            <div class="alert-title">Pattern to Study</div>
+            <p>
+              The <strong>metacognition</strong> synapse demonstrates how to
+              build a core synapse with all three firing phase timings, rich
+              resource files, and clear output formats for each phase.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="doc-nav-footer">
+        <a href="creating-agents.html" class="nav-link prev">
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">Creating Agents</span>
+        </a>
+        <a href="creating-bundles.html" class="nav-link next">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">Creating Bundles</span>
+        </a>
+      </div>
+    </main>
+
+    <script>
+      // Scroll reveal animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".reveal, .content-section").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Sidebar active state based on current page
+      const currentPage = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".sidebar-link").forEach((link) => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        }
+      });
+    </script>
+  </body>
+</html>

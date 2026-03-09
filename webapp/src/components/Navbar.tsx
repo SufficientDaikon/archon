@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/agents/", label: "Agents" },
   { href: "/pipelines/", label: "Pipelines" },
   { href: "/bundles/", label: "Bundles" },
+  { href: "/synapses/", label: "Synapses" },
   { href: "/docs/", label: "Docs" },
 ];
 

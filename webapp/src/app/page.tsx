@@ -36,6 +36,12 @@ const features = [
       "Write once, use everywhere — Claude Code, Copilot CLI, Cursor, Windsurf, and Antigravity.",
   },
   {
+    icon: "🧠",
+    title: "Cognitive Synapses",
+    description:
+      "Enhance HOW agents think — metacognition, confidence calibration, stuck detection, and structured reflection.",
+  },
+  {
     icon: "📋",
     title: "Spec-Driven Dev (SDD)",
     description:
@@ -114,7 +120,7 @@ export default function HomePage() {
       {/* Stats Bar */}
       <section className="relative px-4 sm:px-6 lg:px-8 py-12 border-y border-white/10 bg-white/[0.02]">
         <div className="mx-auto max-w-5xl">
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-6 sm:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-4">
             {[
               {
                 value: stats.skills,
@@ -140,6 +146,11 @@ export default function HomePage() {
                 value: stats.platforms,
                 label: "Platforms",
                 color: "text-green-400",
+              },
+              {
+                value: stats.synapses,
+                label: "Synapses",
+                color: "text-violet-400",
               },
             ].map((stat) => (
               <div key={stat.label} className="text-center">

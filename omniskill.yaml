@@ -257,6 +257,13 @@ agents:
   - name: context-curator-agent
     path: agents/context-curator-agent
 
+# All registered synapses
+synapses:
+  - name: metacognition
+    path: synapses/metacognition
+    version: 1.0.0
+    type: core
+
 # All registered pipelines
 pipelines:
   - name: sdd-pipeline

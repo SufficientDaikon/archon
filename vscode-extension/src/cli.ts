@@ -330,6 +330,11 @@ export async function listBundles() {
   return execCli<import("./types").BundleListData>("list", ["bundles"]);
 }
 
+/** List all synapses */
+export async function listSynapses() {
+  return execCli<import("./types").SynapseListData>("list", ["synapses"]);
+}
+
 /** Get skill details */
 export async function getSkillInfo(skillName: string) {
   return execCli<import("./types").SkillDetailData>("info", [skillName]);

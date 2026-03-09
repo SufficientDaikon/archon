@@ -72,6 +72,7 @@ OMNISKILL is a **universal framework** for AI coding assistant skills, agents, a
 | 🔌 **Cross-Platform**   | Adapters for Claude Code, Copilot CLI, Cursor, Windsurf, Antigravity    |
 | 📖 **Rich Resources**   | Cheat sheets, style guides, decision trees bundled with skills          |
 | 🧪 **Validation**       | Schema-based validation for every skill, bundle, agent, and pipeline    |
+| 🧠 **Cognitive Synapses** | Enhance HOW agents think — metacognition, confidence calibration, structured reflection |
 | 🔄 **Self-Improving**   | Uses its own pipelines to improve its own skills                        |
 | 🩺 **Admin Dashboard**  | Comprehensive health checks, stats, and diagnostics via CLI             |
 
@@ -129,6 +130,20 @@ python scripts/doctor.py               # Check installation health
 
 ---
 
+## 🧠 Synapses
+
+Synapses are **cognitive capabilities** that enhance HOW agents think, not WHAT they do. Unlike skills (domain methodologies), synapses shape the agent's reasoning process itself.
+
+| Synapse            | Type | Firing Phases           | Description                                       |
+| ------------------ | ---- | ----------------------- | ------------------------------------------------- |
+| **metacognition**  | core | PLAN → MONITOR → REFLECT | Structured self-awareness: plan before acting, tag confidence, reflect on quality |
+
+**Core synapses** fire automatically for every agent. **Optional synapses** require explicit binding.
+
+> 📖 Creating custom synapses: [docs/creating-synapses.md](docs/creating-synapses.md)
+
+---
+
 ## 📁 Directory Structure
 
 ```
@@ -147,6 +162,9 @@ omniskill/
 ├── bundles/          # Domain bundles (bundle.yaml + meta-skill)
 ├── agents/           # Agent definitions (AGENT.md + agent-manifest.yaml)
 ├── pipelines/        # Multi-agent workflow definitions
+├── synapses/         # 🧠 Cognitive synapses (SYNAPSE.md + manifest.yaml)
+│   ├── _template/    # Synapse template for new synapses
+│   └── metacognition/ # Core synapse — thinking about thinking
 ├── prompts/          # 🎭 Prompt library — router, system, personas (NEW)
 │   ├── router.md     # Complexity classification prompts
 │   ├── system.md     # Master system prompt

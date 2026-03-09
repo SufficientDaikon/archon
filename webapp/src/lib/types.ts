@@ -66,6 +66,23 @@ export interface Platform {
   target: string;
 }
 
+export interface SynapsePhase {
+  name: string;
+  timing: "pre-task" | "active" | "post-task";
+  description: string;
+}
+
+export interface Synapse {
+  name: string;
+  slug: string;
+  description: string;
+  synapseType: "core" | "optional";
+  version: string;
+  tags: string[];
+  firingPhases: SynapsePhase[];
+  agents: string[]; // agents that use this synapse
+}
+
 export interface Registry {
   meta: {
     name: string;
@@ -78,11 +95,13 @@ export interface Registry {
   pipelines: Pipeline[];
   bundles: Bundle[];
   platforms: Platform[];
+  synapses: Synapse[];
   stats: {
     skills: number;
     agents: number;
     pipelines: number;
     bundles: number;
     platforms: number;
+    synapses: number;
   };
 }

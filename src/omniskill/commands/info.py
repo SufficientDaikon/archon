@@ -44,6 +44,8 @@ def info_cmd(
         manifest = reg.load_bundle_manifest(comp)
     elif comp_type == "pipeline":
         manifest = reg.load_pipeline_manifest(comp)
+    elif comp_type == "synapse":
+        manifest = reg.load_synapse_manifest(comp)
     else:
         manifest = {}
 
@@ -85,6 +87,11 @@ def info_cmd(
     elif comp_type == "pipeline":
         data["trigger"] = getattr(comp, "trigger", "")
         data["steps"] = getattr(comp, "steps", [])
+    elif comp_type == "synapse":
+        data["synapse_type"] = getattr(comp, "synapse_type", "")
+        data["tags"] = getattr(comp, "tags", [])
+        data["firing_phases"] = getattr(comp, "firing_phases", [])
+        data["author"] = getattr(comp, "author", "")
 
     if is_json():
         print_json(json_envelope(command="info", data=data))
@@ -117,6 +124,17 @@ def info_cmd(
         keywords = triggers.get("keywords", [])
         if keywords:
             console.print(f"  [bold]Triggers:[/bold]    {', '.join(keywords[:5])}")
+
+    # Synapse-specific fields
+    if data.get("synapse_type"):
+        console.print(f"  [bold]Synapse Type:[/bold] {data['synapse_type']}")
+    if data.get("firing_phases"):
+        console.print(f"\n  [bold]Firing Phases ({len(data['firing_phases'])}):[/bold]")
+        for phase in data["firing_phases"]:
+            phase_name = phase.get("name", "?")
+            timing = phase.get("timing", "?")
+            desc = phase.get("description", "")
+            console.print(f"    🧠 {phase_name} ({timing}): {desc}")
 
     # Bundle skills
     if data.get("skills"):

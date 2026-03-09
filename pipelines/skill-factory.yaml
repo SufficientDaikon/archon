@@ -6,6 +6,7 @@ version: 1.1.0
 description: "Guided skill creation: design → specify → context curation → implement → validate → review"
 trigger: "create a new skill for *"
 tags: [meta, skill-creation, factory]
+synapse-mode: enabled
 
 steps:
   - name: design
@@ -13,12 +14,14 @@ steps:
     input: "User's domain description and skill requirements"
     output: "Optimized skill prompt structure and trigger design"
     on-failure: halt
+    synapse-checkpoint: true
 
   - name: specify
     agent: spec-writer-agent
     input: "Prompt design from step:design"
     output: "Skill specification with all sections defined"
     on-failure: halt
+    synapse-checkpoint: true
 
   - name: curate-for-implement
     agent: context-curator-agent
@@ -31,6 +34,7 @@ steps:
     input: "Context brief from step:curate-for-implement OR skill specification from step:specify"
     output: "Complete skill directory (SKILL.md, manifest.yaml, resources/, examples/, tests/)"
     on-failure: halt
+    synapse-checkpoint: true
 
   - name: validate
     agent: skill-validator-agent
@@ -39,6 +43,7 @@ steps:
     on-failure: loop
     loop-target: implement
     max-iterations: 3
+    synapse-checkpoint: true
 
   - name: review
     agent: reviewer-agent
@@ -47,6 +52,7 @@ steps:
     on-failure: loop
     loop-target: implement
     max-iterations: 2
+    synapse-checkpoint: true
 
 resumable: true
 artifact-persistence: project-dir

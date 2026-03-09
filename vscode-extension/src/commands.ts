@@ -13,11 +13,13 @@ import { SkillsTreeProvider } from "./views/skillsTree";
 import { AgentsTreeProvider } from "./views/agentsTree";
 import { PipelinesTreeProvider } from "./views/pipelinesTree";
 import { BundlesTreeProvider } from "./views/bundlesTree";
+import { SynapsesTreeProvider } from "./views/synapsesTree";
 import { DashboardPanel } from "./webviews/dashboardPanel";
 import { SkillDetailPanel } from "./webviews/skillDetailPanel";
+import { SynapseDetailPanel } from "./webviews/synapseDetailPanel";
 import { HealthPanel } from "./webviews/healthPanel";
 import { StatusBarManager } from "./statusBar";
-import type { Skill, Agent, Pipeline, PipelineRunData } from "./types";
+import type { Skill, Agent, Pipeline, PipelineRunData, Synapse } from "./types";
 
 /**
  * Register all OMNISKILL commands.
@@ -28,6 +30,7 @@ export function registerCommands(
   agentsTree: AgentsTreeProvider,
   pipelinesTree: PipelinesTreeProvider,
   bundlesTree: BundlesTreeProvider,
+  synapsesTree: SynapsesTreeProvider,
   statusBar: StatusBarManager,
 ): void {
   const register = (
@@ -604,6 +607,13 @@ export function registerCommands(
   register("omniskill.refreshAgents", () => agentsTree.refresh());
   register("omniskill.refreshPipelines", () => pipelinesTree.refresh());
   register("omniskill.refreshBundles", () => bundlesTree.refresh());
+  register("omniskill.refreshSynapses", () => synapsesTree.refresh());
+  register("omniskill.showSynapseDetail", async (...args: unknown[]) => {
+    const synapse = args[0] as Synapse;
+    if (synapse && synapse.name) {
+      await SynapseDetailPanel.show(synapse);
+    }
+  });
   register("omniskill.refreshDashboard", () => {
     // Placeholder for dashboard refresh
   });

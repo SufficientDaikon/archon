@@ -86,6 +86,11 @@ optional_fields:
     item_type: string
     description: "Tools/MCP servers the agent can use"
 
+  synapse-bindings:
+    type: list
+    item_type: string
+    description: "Optional synapse names to bind to this agent (core synapses are auto-injected)"
+
   handoff-targets:
     type: list
     item_type: object

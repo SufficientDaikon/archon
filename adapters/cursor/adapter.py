@@ -22,21 +22,24 @@ class CursorAdapter(BaseAdapter):
     def get_target_path(self, skill_name: str, target_dir: Optional[Path] = None) -> Path:
         """
         Returns .cursor/rules/{skill-name}.mdc
-        
-        Args:
-            skill_name: Name of the skill
-            target_dir: Optional override for target directory
-            
-        Returns:
-            Path where the skill should be installed
         """
         if target_dir:
             base_dir = target_dir
         else:
-            # Cursor rules are project-specific, so use current directory
             base_dir = Path.cwd() / ".cursor" / "rules"
         
         return base_dir / f"{skill_name}.mdc"
+    
+    def get_synapse_target_path(self, synapse_name: str, target_dir: Optional[Path] = None) -> Path:
+        """
+        Returns .cursor/rules/_synapses/{synapse-name}/SYNAPSE.md
+        """
+        if target_dir:
+            base_dir = target_dir
+        else:
+            base_dir = Path.cwd() / ".cursor" / "rules"
+        
+        return base_dir / "_synapses" / synapse_name / "SYNAPSE.md"
     
     def transform_content(self, content: str, manifest: Dict) -> str:
         """

@@ -10,7 +10,8 @@
     "agents": 8,
     "pipelines": 5,
     "bundles": 8,
-    "platforms": 5
+    "platforms": 5,
+    "synapses": 1
   },
   "platforms": [
     {
@@ -1406,6 +1407,43 @@
       ],
       "skillCount": 5,
       "category": "Meta"
+    }
+  ],
+  "synapses": [
+    {
+      "name": "metacognition",
+      "slug": "metacognition",
+      "description": "Structured self-awareness for agents — plan before acting, monitor confidence during execution, reflect on quality after completion",
+      "synapseType": "core",
+      "version": "1.0.0",
+      "tags": ["metacognition", "reasoning", "self-awareness", "core"],
+      "firingPhases": [
+        {
+          "name": "PLAN",
+          "timing": "pre-task",
+          "description": "Assess complexity, inventory knowledge, select strategy, define exit criteria"
+        },
+        {
+          "name": "MONITOR",
+          "timing": "active",
+          "description": "Tag confidence on decisions, check progress, detect stuck loops, track assumptions"
+        },
+        {
+          "name": "REFLECT",
+          "timing": "post-task",
+          "description": "Self-score quality, capture lessons learned, disclose known gaps and uncertainties"
+        }
+      ],
+      "agents": [
+        "spec-writer-agent",
+        "implementer-agent",
+        "reviewer-agent",
+        "debugger-agent",
+        "ux-research-agent",
+        "ui-design-agent",
+        "qa-master-agent",
+        "context-curator-agent"
+      ]
     }
   ]
 }

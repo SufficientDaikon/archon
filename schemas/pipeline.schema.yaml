@@ -64,12 +64,22 @@ required_fields:
         timeout:
           type: string
           description: "Max time for this step (e.g., '5m', '30m')"
+        synapse-checkpoint:
+          type: boolean
+          default: false
+          description: "When true, captures synapse REFLECT output as a step artifact"
 
 optional_fields:
   resumable:
     type: boolean
     default: true
     description: "Whether the pipeline can resume from last completed step"
+
+  synapse-mode:
+    type: string
+    allowed_values: [enabled, disabled, checkpoints-only]
+    default: "enabled"
+    description: "Controls synapse behavior: enabled (default), disabled, or checkpoints-only"
 
   artifact-persistence:
     type: string

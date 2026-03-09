@@ -1,0 +1,105 @@
+# OMNISKILL Synapse Manifest Schema
+# Every synapse's manifest.yaml MUST conform to this schema.
+
+schema_version: "1.0"
+description: "Validation schema for OMNISKILL synapse manifest files"
+
+required_fields:
+  name:
+    type: string
+    pattern: "^[a-z][a-z0-9-]*$"
+    description: "Unique kebab-case synapse identifier"
+
+  version:
+    type: string
+    pattern: "^\\d+\\.\\d+\\.\\d+$"
+    description: "Semantic version (MAJOR.MINOR.PATCH)"
+
+  description:
+    type: string
+    min_length: 10
+    max_length: 200
+    description: "Human-readable purpose of the synapse"
+
+  author:
+    type: string
+    description: "Creator identifier"
+
+  synapse-type:
+    type: string
+    allowed_values: [core, optional]
+    description: "core = auto-injected into all agents; optional = bound per-agent"
+
+  firing-phases:
+    type: list
+    min_items: 1
+    item_type: object
+    item_schema:
+      required:
+        name:
+          type: string
+          description: "Phase identifier (e.g., PLAN, MONITOR, REFLECT)"
+        timing:
+          type: string
+          allowed_values: [pre-task, active, post-task]
+          description: "When this phase fires relative to task execution"
+        description:
+          type: string
+          description: "What this phase does"
+
+  tags:
+    type: list
+    min_items: 1
+    item_type: string
+    description: "Categorization tags for discovery"
+
+optional_fields:
+  license:
+    type: string
+    default: "MIT"
+
+  platforms:
+    type: list
+    item_type: string
+    allowed_values: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+    description: "Supported platforms (defaults to all if omitted)"
+
+  resources:
+    type: list
+    item_type: object
+    item_schema:
+      required:
+        path: { type: string, description: "Relative path to resource file" }
+        type:
+          {
+            type: string,
+            allowed_values:
+              [rubric, template, heuristic, reference, cheat-sheet],
+          }
+        load:
+          {
+            type: string,
+            allowed_values: [always, on-demand],
+            default: "always",
+          }
+      optional:
+        description: { type: string }
+
+# File structure validation
+required_files:
+  - "SYNAPSE.md"
+  - "manifest.yaml"
+
+optional_directories:
+  - "resources/"
+
+# SYNAPSE.md required sections
+synapse_md_required_sections:
+  - "Identity"
+  - "When Active"
+  - "Firing Phases"
+  - "Rules"
+  - "Output Format"
+
+synapse_md_optional_sections:
+  - "Resources"

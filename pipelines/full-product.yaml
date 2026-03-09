@@ -6,6 +6,7 @@ version: 1.1.0
 description: "Complete product development: UX design → context curation → spec-driven implementation → testing"
 trigger: "build product * end-to-end"
 tags: [full-stack, product, end-to-end]
+synapse-mode: enabled
 
 steps:
   - name: ux-design
@@ -13,6 +14,7 @@ steps:
     input: "User's product vision and requirements"
     output: "Complete UX package: research, wireframes, visual designs, handoff artifact"
     on-failure: halt
+    synapse-checkpoint: true
 
   - name: curate-for-spec
     agent: context-curator-agent
@@ -25,6 +27,7 @@ steps:
     input: "Context brief from step:curate-for-spec OR UX package from step:ux-design AND user's product requirements"
     output: "Comprehensive technical specification"
     on-failure: halt
+    synapse-checkpoint: true
 
   - name: curate-for-implement
     agent: context-curator-agent
@@ -37,6 +40,7 @@ steps:
     input: "Context brief from step:curate-for-implement OR specification from step:specify AND UX designs from step:ux-design"
     output: "Implemented product code"
     on-failure: halt
+    synapse-checkpoint: true
 
   - name: curate-for-review
     agent: context-curator-agent
@@ -51,6 +55,7 @@ steps:
     on-failure: loop
     loop-target: implement
     max-iterations: 3
+    synapse-checkpoint: true
 
   - name: test
     agent: qa-master-agent
@@ -59,6 +64,7 @@ steps:
     on-failure: loop
     loop-target: implement
     max-iterations: 2
+    synapse-checkpoint: true
 
 resumable: true
 artifact-persistence: project-dir

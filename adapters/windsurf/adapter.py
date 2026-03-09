@@ -22,21 +22,25 @@ class WindsurfAdapter(BaseAdapter):
     def get_target_path(self, skill_name: str, target_dir: Optional[Path] = None) -> Path:
         """
         Returns .windsurfrules (single file for all skills)
-        
-        Args:
-            skill_name: Name of the skill (not used, but required by interface)
-            target_dir: Optional override for target directory
-            
-        Returns:
-            Path to the .windsurfrules file
         """
         if target_dir:
             base_dir = target_dir
         else:
-            # Windsurf rules are project-specific, so use current directory
             base_dir = Path.cwd()
         
         return base_dir / ".windsurfrules"
+    
+    def get_synapse_target_path(self, synapse_name: str, target_dir: Optional[Path] = None) -> Path:
+        """
+        Returns .windsurf/_synapses/{synapse-name}/SYNAPSE.md
+        Windsurf synapses go in a separate directory since .windsurfrules is a single file.
+        """
+        if target_dir:
+            base_dir = target_dir
+        else:
+            base_dir = Path.cwd() / ".windsurf"
+        
+        return base_dir / "_synapses" / synapse_name / "SYNAPSE.md"
     
     def transform_content(self, content: str, manifest: Dict) -> str:
         """

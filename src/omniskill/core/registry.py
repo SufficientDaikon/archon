@@ -64,6 +64,19 @@ class Pipeline:
     _manifest: dict | None = field(default=None, repr=False)
 
 
+@dataclass
+class Synapse:
+    name: str
+    path: str
+    version: str = "1.0.0"
+    synapse_type: str = "core"
+    description: str = ""
+    author: str = ""
+    tags: list[str] = field(default_factory=list)
+    firing_phases: list[dict] = field(default_factory=list)
+    _manifest: dict | None = field(default=None, repr=False)
+
+
 # ── Registry class ──────────────────────────────────────────────
 
 class Registry:
@@ -76,6 +89,7 @@ class Registry:
         self.agents: list[Agent] = []
         self.bundles: list[Bundle] = []
         self.pipelines: list[Pipeline] = []
+        self.synapses: list[Synapse] = []
         self.platforms_config: list[dict] = []
         self.name: str = ""
         self.version: str = ""
@@ -132,6 +146,15 @@ class Registry:
                 trigger=entry.get("trigger", ""),
             ))
 
+        # Synapses
+        for entry in self._raw.get("synapses", []):
+            self.synapses.append(Synapse(
+                name=entry["name"],
+                path=entry.get("path", f"synapses/{entry['name']}"),
+                version=entry.get("version", "1.0.0"),
+                synapse_type=entry.get("type", "core"),
+            ))
+
         # Platforms
         self.platforms_config = self._raw.get("platforms", [])
         self._loaded = True
@@ -170,6 +193,13 @@ class Registry:
                 return p
         return None
 
+    def find_synapse(self, name: str) -> Synapse | None:
+        self.ensure_loaded()
+        for syn in self.synapses:
+            if syn.name == name:
+                return syn
+        return None
+
     def find_component(self, name: str) -> tuple[str, Any] | None:
         """Find any component by name. Returns (type, component) or None."""
         self.ensure_loaded()
@@ -185,6 +215,9 @@ class Registry:
         p = self.find_pipeline(name)
         if p:
             return ("pipeline", p)
+        syn = self.find_synapse(name)
+        if syn:
+            return ("synapse", syn)
         return None
 
     def similar_names(self, query: str, limit: int = 5) -> list[str]:
@@ -195,6 +228,7 @@ class Registry:
             + [a.name for a in self.agents]
             + [b.name for b in self.bundles]
             + [p.name for p in self.pipelines]
+            + [syn.name for syn in self.synapses]
         )
         query_lower = query.lower()
         scored: list[tuple[float, str]] = []
@@ -291,6 +325,26 @@ class Registry:
         pipeline.description = pipeline._manifest.get("description", pipeline.description)
         pipeline.steps = pipeline._manifest.get("steps", pipeline.steps)
         return pipeline._manifest
+
+    def load_synapse_manifest(self, synapse: Synapse) -> dict:
+        """Load and cache the full manifest.yaml for a synapse."""
+        if synapse._manifest is not None:
+            return synapse._manifest
+        manifest_path = self.root / synapse.path / "manifest.yaml"
+        if manifest_path.exists():
+            try:
+                with open(manifest_path, "r", encoding="utf-8") as fh:
+                    synapse._manifest = yaml.safe_load(fh) or {}
+            except Exception:
+                synapse._manifest = {}
+        else:
+            synapse._manifest = {}
+        synapse.description = synapse._manifest.get("description", synapse.description)
+        synapse.author = synapse._manifest.get("author", synapse.author)
+        synapse.tags = synapse._manifest.get("tags", synapse.tags) or synapse.tags
+        synapse.synapse_type = synapse._manifest.get("synapse-type", synapse.synapse_type)
+        synapse.firing_phases = synapse._manifest.get("firing-phases", synapse.firing_phases)
+        return synapse._manifest
 
 
 # Need os for commonprefix in similar_names

@@ -57,6 +57,10 @@
         {
           "id": "omniskill-bundles",
           "name": "Bundles"
+        },
+        {
+          "id": "omniskill-synapses",
+          "name": "Synapses"
         }
       ]
     },
@@ -145,6 +149,16 @@
         "command": "omniskill.refreshBundles",
         "title": "Refresh Bundles",
         "icon": "$(refresh)"
+      },
+      {
+        "command": "omniskill.refreshSynapses",
+        "title": "Refresh Synapses",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "omniskill.showSynapseDetail",
+        "title": "OMNISKILL: Show Synapse Detail",
+        "icon": "$(brain)"
       }
     ],
     "menus": {
@@ -172,6 +186,11 @@
         {
           "command": "omniskill.refreshBundles",
           "when": "view == omniskill-bundles",
+          "group": "navigation"
+        },
+        {
+          "command": "omniskill.refreshSynapses",
+          "when": "view == omniskill-synapses",
           "group": "navigation"
         }
       ],

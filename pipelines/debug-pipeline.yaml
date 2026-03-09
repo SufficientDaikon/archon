@@ -6,6 +6,7 @@ version: 1.1.0
 description: "Systematic bug investigation → context curation → fix → test → review"
 trigger: "fix bug *"
 tags: [debugging, testing, fix]
+synapse-mode: enabled
 
 steps:
   - name: investigate
@@ -13,6 +14,7 @@ steps:
     input: "Bug description, error messages, reproduction steps"
     output: "Root cause analysis with proposed fix strategy"
     on-failure: halt
+    synapse-checkpoint: true
 
   - name: curate-for-fix
     agent: context-curator-agent
@@ -25,6 +27,7 @@ steps:
     input: "Context brief from step:curate-for-fix OR root cause analysis from step:investigate"
     output: "Code fix implementing the proposed strategy"
     on-failure: halt
+    synapse-checkpoint: true
 
   - name: test
     agent: qa-master-agent
@@ -33,6 +36,7 @@ steps:
     on-failure: loop
     loop-target: fix
     max-iterations: 3
+    synapse-checkpoint: true
 
   - name: review
     agent: reviewer-agent
@@ -41,6 +45,7 @@ steps:
     on-failure: loop
     loop-target: fix
     max-iterations: 2
+    synapse-checkpoint: true
 
 resumable: true
 artifact-persistence: session-state

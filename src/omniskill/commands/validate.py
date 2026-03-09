@@ -220,6 +220,70 @@ def _validate_bundle(bundle_dir: Path, root: Path) -> dict:
     return result
 
 
+def _validate_synapse(synapse_dir: Path, root: Path) -> dict:
+    """Validate a single synapse directory."""
+    result = {"path": str(synapse_dir.relative_to(root)), "errors": [], "warnings": [], "status": "passed"}
+
+    manifest_path = synapse_dir / "manifest.yaml"
+    synapse_md_path = synapse_dir / "SYNAPSE.md"
+
+    if not manifest_path.exists():
+        result["errors"].append("manifest.yaml not found")
+        result["status"] = "failed"
+        return result
+
+    try:
+        with open(manifest_path, "r", encoding="utf-8") as fh:
+            manifest = yaml.safe_load(fh) or {}
+    except Exception as exc:
+        result["errors"].append(f"YAML parse error: {exc}")
+        result["status"] = "failed"
+        return result
+
+    # Schema validation
+    schema_path = root / "schemas" / "synapse-manifest.schema.yaml"
+    if schema_path.exists():
+        with open(schema_path, "r", encoding="utf-8") as fh:
+            schema = yaml.safe_load(fh) or {}
+        for field_name, field_schema in schema.get("required_fields", {}).items():
+            if field_name not in manifest:
+                result["errors"].append(f"Required field missing: {field_name}")
+            else:
+                result["errors"].extend(_validate_field(field_name, manifest[field_name], field_schema))
+
+    # Validate SYNAPSE.md
+    if not synapse_md_path.exists():
+        result["errors"].append("SYNAPSE.md not found")
+    else:
+        try:
+            content = synapse_md_path.read_text(encoding="utf-8")
+        except Exception:
+            content = ""
+
+        if schema_path.exists():
+            with open(schema_path, "r", encoding="utf-8") as fh:
+                schema = yaml.safe_load(fh) or {}
+            for section in schema.get("synapse_md_required_sections", []):
+                pattern = rf"(?i)^#+\s*{re.escape(section)}"
+                if not re.search(pattern, content, re.MULTILINE):
+                    result["warnings"].append(f"SYNAPSE.md: missing recommended section '{section}'")
+
+        if not content.strip():
+            result["errors"].append("SYNAPSE.md is empty")
+
+    # Validate resource references
+    for res in manifest.get("resources", []):
+        res_path = synapse_dir / res.get("path", "")
+        if not res_path.exists():
+            result["warnings"].append(f"Resource not found: {res.get('path', '?')}")
+
+    if result["errors"]:
+        result["status"] = "failed"
+    elif result["warnings"]:
+        result["status"] = "warnings"
+    return result
+
+
 # ── Command ─────────────────────────────────────────────────────
 
 def validate_cmd(
@@ -239,14 +303,16 @@ def validate_cmd(
             print_error(f"Path not found: {p}")
             raise typer.Exit(1)
 
-        if (p / "manifest.yaml").exists():
+        if (p / "SYNAPSE.md").exists():
+            results.append(_validate_synapse(p, root))
+        elif (p / "manifest.yaml").exists():
             results.append(_validate_skill(p, root))
         elif (p / "agent-manifest.yaml").exists():
             results.append(_validate_agent(p, root))
         elif (p / "bundle.yaml").exists():
             results.append(_validate_bundle(p, root))
         else:
-            print_error(f"Not a valid skill, agent, or bundle directory: {p}")
+            print_error(f"Not a valid skill, agent, bundle, or synapse directory: {p}")
             raise typer.Exit(1)
     else:
         # FR-037: Validate entire registry
@@ -273,6 +339,13 @@ def validate_cmd(
             for d in sorted(bundles_dir.iterdir()):
                 if d.is_dir() and (d / "bundle.yaml").exists():
                     results.append(_validate_bundle(d, root))
+
+        # Synapses
+        synapses_dir = root / "synapses"
+        if synapses_dir.exists():
+            for d in sorted(synapses_dir.iterdir()):
+                if d.is_dir() and d.name != "_template" and (d / "manifest.yaml").exists():
+                    results.append(_validate_synapse(d, root))
 
     # ── Output ──────────────────────────────────────────────────
 

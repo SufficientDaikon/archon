@@ -19,6 +19,7 @@ import { SkillsTreeProvider } from "./views/skillsTree";
 import { AgentsTreeProvider } from "./views/agentsTree";
 import { PipelinesTreeProvider } from "./views/pipelinesTree";
 import { BundlesTreeProvider } from "./views/bundlesTree";
+import { SynapsesTreeProvider } from "./views/synapsesTree";
 import { StatusBarManager } from "./statusBar";
 import { registerCommands } from "./commands";
 
@@ -38,6 +39,7 @@ export async function activate(
   const agentsTree = new AgentsTreeProvider();
   const pipelinesTree = new PipelinesTreeProvider();
   const bundlesTree = new BundlesTreeProvider();
+  const synapsesTree = new SynapsesTreeProvider();
 
   context.subscriptions.push(
     vscode.window.registerTreeDataProvider("omniskill-skills", skillsTree),
@@ -47,6 +49,7 @@ export async function activate(
       pipelinesTree,
     ),
     vscode.window.registerTreeDataProvider("omniskill-bundles", bundlesTree),
+    vscode.window.registerTreeDataProvider("omniskill-synapses", synapsesTree),
   );
 
   // ─── Status Bar ─────────────────────────────────────────────────────
@@ -60,6 +63,7 @@ export async function activate(
     agentsTree,
     pipelinesTree,
     bundlesTree,
+    synapsesTree,
     statusBar,
   );
 
@@ -76,6 +80,7 @@ export async function activate(
         agentsTree.refresh();
         pipelinesTree.refresh();
         bundlesTree.refresh();
+        synapsesTree.refresh();
         output.appendLine("CLI path changed — refreshing all views.");
       }
       if (e.affectsConfiguration("omniskill.contextBudgetWarning")) {

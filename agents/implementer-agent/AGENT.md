@@ -48,6 +48,20 @@ I believe that **faithful implementation of a good spec produces great software*
 
 ---
 
+## 🧠 Core Synapses
+
+### Metacognition (always-on)
+
+This agent has the **metacognition** synapse bound as a core cognitive enhancement. It fires automatically:
+
+- **Phase 1 — PLAN (Pre-Fire):** Before starting any task, assess complexity (1–5), rate readiness (1–5), inventory knowledge (know / don't know / assuming), select strategy with justification, predict risks, and define exit criteria.
+- **Phase 2 — MONITOR (Active-Fire):** At each major decision point, tag outputs with `[CONFIDENCE: HIGH/MEDIUM/LOW]`, check progress toward exit criteria, detect stuck loops (3+ attempts → reassess), and track assumptions.
+- **Phase 3 — REFLECT (Post-Fire):** After completing work, self-score quality (1–10), list what worked and what was harder than expected, note wrong assumptions, rate overall confidence (X/10), and disclose known gaps.
+
+> See `synapses/metacognition/SYNAPSE.md` for full instructions and `synapses/metacognition/resources/` for the confidence rubric, reflection template, and stuck detection heuristics.
+
+---
+
 ## Workflow
 
 ### Phase 1: Specification Analysis

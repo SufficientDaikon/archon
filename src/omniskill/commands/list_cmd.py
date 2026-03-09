@@ -12,7 +12,7 @@ from omniskill.utils.output import (
 )
 
 
-COMPONENT_TYPES = ["skills", "agents", "bundles", "pipelines"]
+COMPONENT_TYPES = ["skills", "agents", "bundles", "pipelines", "synapses"]
 
 
 def list_cmd(
@@ -48,6 +48,8 @@ def list_cmd(
         _list_bundles(reg)
     elif ct == "pipelines":
         _list_pipelines(reg)
+    elif ct == "synapses":
+        _list_synapses(reg)
 
 
 # ── Summary ─────────────────────────────────────────────────────
@@ -58,6 +60,7 @@ def _show_summary(reg: Registry) -> None:
         "agents": len(reg.agents),
         "bundles": len(reg.bundles),
         "pipelines": len(reg.pipelines),
+        "synapses": len(reg.synapses),
     }
 
     if is_json():
@@ -71,12 +74,14 @@ def _show_summary(reg: Registry) -> None:
     console.print(f"  🤖 Agents:    [bold cyan]{data['agents']}[/bold cyan]")
     console.print(f"  📚 Bundles:   [bold cyan]{data['bundles']}[/bold cyan]")
     console.print(f"  🔗 Pipelines: [bold cyan]{data['pipelines']}[/bold cyan]")
+    console.print(f"  🧠 Synapses:  [bold cyan]{data['synapses']}[/bold cyan]")
     console.print()
     console.print("[muted]Use:[/muted]")
     console.print("  omniskill list skills      — list all skills")
     console.print("  omniskill list agents      — list all agents")
     console.print("  omniskill list bundles     — list all bundles")
     console.print("  omniskill list pipelines   — list all pipelines")
+    console.print("  omniskill list synapses    — list all synapses")
     console.print()
 
 
@@ -188,6 +193,35 @@ def _list_pipelines(reg: Registry) -> None:
     table = make_table(
         f"Pipelines ({len(rows)})",
         [("Name", "bold"), ("Version", "cyan"), ("Steps", ""), ("Trigger", "dim"), ("Description", "")],
+        rows,
+    )
+    console.print()
+    console.print(table)
+    console.print()
+
+
+# ── Synapses ────────────────────────────────────────────────────
+
+def _list_synapses(reg: Registry) -> None:
+    rows_data = []
+    for syn in reg.synapses:
+        reg.load_synapse_manifest(syn)
+        rows_data.append({
+            "name": syn.name,
+            "version": syn.version,
+            "type": syn.synapse_type,
+            "tags": ", ".join(syn.tags[:3]) if syn.tags else "",
+            "description": (syn.description[:60] + "\u2026") if len(syn.description) > 60 else syn.description,
+        })
+
+    if is_json():
+        print_json(json_envelope(command="list", data={"type": "synapses", "count": len(rows_data), "items": rows_data}))
+        return
+
+    rows = [[r["name"], r["version"], r["type"], r["tags"], r["description"]] for r in rows_data]
+    table = make_table(
+        f"Synapses ({len(rows)})",
+        [("Name", "bold"), ("Version", "cyan"), ("Type", ""), ("Tags", "dim"), ("Description", "")],
         rows,
     )
     console.print()
