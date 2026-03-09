@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Node.js
+node_modules/
+.next/
+out/
+
+# VS Code Extension
+vscode-extension/dist/
+*.vsix
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# Env
+.env
+.env.local
+
+# Tasks
+tasks.md

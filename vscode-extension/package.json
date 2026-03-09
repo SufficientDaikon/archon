@@ -1,0 +1,262 @@
+{
+  "name": "omniskill",
+  "displayName": "OMNISKILL — AI Agent Framework",
+  "description": "Visual interface for the OMNISKILL universal AI agent & skills framework. Browse 49+ skills, run pipelines, invoke agents, and monitor health — all from VS Code.",
+  "version": "0.1.0",
+  "publisher": "sufficientdaikon",
+  "license": "MIT",
+  "icon": "resources/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SufficientDaikon/omniskill"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "AI",
+    "Machine Learning",
+    "Other"
+  ],
+  "keywords": [
+    "omniskill",
+    "ai",
+    "agents",
+    "skills",
+    "pipelines",
+    "spec-driven-development"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "omniskill-sidebar",
+          "title": "OMNISKILL",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "omniskill-sidebar": [
+        {
+          "id": "omniskill-skills",
+          "name": "Skills Explorer"
+        },
+        {
+          "id": "omniskill-agents",
+          "name": "Agents"
+        },
+        {
+          "id": "omniskill-pipelines",
+          "name": "Pipelines"
+        },
+        {
+          "id": "omniskill-bundles",
+          "name": "Bundles"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "omniskill.initialize",
+        "title": "OMNISKILL: Initialize",
+        "icon": "$(rocket)"
+      },
+      {
+        "command": "omniskill.installSkill",
+        "title": "OMNISKILL: Install Skill",
+        "icon": "$(add)"
+      },
+      {
+        "command": "omniskill.installBundle",
+        "title": "OMNISKILL: Install Bundle",
+        "icon": "$(package)"
+      },
+      {
+        "command": "omniskill.uninstallComponent",
+        "title": "OMNISKILL: Uninstall Component",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "omniskill.runPipeline",
+        "title": "OMNISKILL: Run Pipeline",
+        "icon": "$(play)"
+      },
+      {
+        "command": "omniskill.showDashboard",
+        "title": "OMNISKILL: Show Dashboard",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "omniskill.runDoctor",
+        "title": "OMNISKILL: Run Doctor",
+        "icon": "$(heart)"
+      },
+      {
+        "command": "omniskill.validateWorkspace",
+        "title": "OMNISKILL: Validate Workspace",
+        "icon": "$(check)"
+      },
+      {
+        "command": "omniskill.searchSkills",
+        "title": "OMNISKILL: Search Skills",
+        "icon": "$(search)"
+      },
+      {
+        "command": "omniskill.adminDashboard",
+        "title": "OMNISKILL: Admin Dashboard",
+        "icon": "$(gear)"
+      },
+      {
+        "command": "omniskill.update",
+        "title": "OMNISKILL: Update",
+        "icon": "$(cloud-download)"
+      },
+      {
+        "command": "omniskill.openSettings",
+        "title": "OMNISKILL: Open Settings",
+        "icon": "$(settings-gear)"
+      },
+      {
+        "command": "omniskill.showContextBudget",
+        "title": "OMNISKILL: Show Context Budget",
+        "icon": "$(graph)"
+      },
+      {
+        "command": "omniskill.refreshSkills",
+        "title": "Refresh Skills",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "omniskill.refreshAgents",
+        "title": "Refresh Agents",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "omniskill.refreshPipelines",
+        "title": "Refresh Pipelines",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "omniskill.refreshBundles",
+        "title": "Refresh Bundles",
+        "icon": "$(refresh)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "omniskill.refreshSkills",
+          "when": "view == omniskill-skills",
+          "group": "navigation"
+        },
+        {
+          "command": "omniskill.searchSkills",
+          "when": "view == omniskill-skills",
+          "group": "navigation"
+        },
+        {
+          "command": "omniskill.refreshAgents",
+          "when": "view == omniskill-agents",
+          "group": "navigation"
+        },
+        {
+          "command": "omniskill.refreshPipelines",
+          "when": "view == omniskill-pipelines",
+          "group": "navigation"
+        },
+        {
+          "command": "omniskill.refreshBundles",
+          "when": "view == omniskill-bundles",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "omniskill.installSkill",
+          "when": "view == omniskill-skills && viewItem == skill-not-installed",
+          "group": "inline"
+        },
+        {
+          "command": "omniskill.uninstallComponent",
+          "when": "view == omniskill-skills && viewItem == skill-installed",
+          "group": "inline"
+        },
+        {
+          "command": "omniskill.installBundle",
+          "when": "view == omniskill-bundles && viewItem =~ /^bundle/",
+          "group": "inline"
+        },
+        {
+          "command": "omniskill.runPipeline",
+          "when": "view == omniskill-pipelines && viewItem == pipeline",
+          "group": "inline"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "OMNISKILL",
+      "properties": {
+        "omniskill.cliPath": {
+          "type": "string",
+          "default": "omniskill",
+          "description": "Path to the OMNISKILL CLI executable. Use 'omniskill' if it's in your PATH, or provide an absolute path."
+        },
+        "omniskill.defaultPlatform": {
+          "type": "string",
+          "default": "auto",
+          "enum": [
+            "auto",
+            "claude-code",
+            "copilot-cli",
+            "cursor",
+            "windsurf",
+            "antigravity"
+          ],
+          "enumDescriptions": [
+            "Auto-detect platform from environment",
+            "Claude Code (Anthropic)",
+            "GitHub Copilot CLI",
+            "Cursor Editor",
+            "Windsurf IDE",
+            "Antigravity Platform"
+          ],
+          "description": "Default platform adapter for skill installation."
+        },
+        "omniskill.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show OMNISKILL pipeline status and context budget in the status bar."
+        },
+        "omniskill.autoRefreshDashboard": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically refresh the Pipeline Dashboard during active pipeline runs."
+        },
+        "omniskill.contextBudgetWarning": {
+          "type": "number",
+          "default": 75,
+          "minimum": 10,
+          "maximum": 100,
+          "description": "Context budget usage percentage at which to show a warning (yellow). Red warning shows at 90%."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "node esbuild.config.mjs",
+    "watch": "node esbuild.config.mjs --watch",
+    "lint": "tsc --noEmit",
+    "package": "npx @vscode/vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.5.0"
+  }
+}

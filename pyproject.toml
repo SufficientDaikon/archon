@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "omniskill"
+version = "0.2.0"
+description = "Universal AI Agent & Skills Framework — CLI for managing skills, agents, bundles, and pipelines across AI coding platforms"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+    { name = "tahaa" },
+]
+keywords = ["ai", "skills", "agents", "cli", "omniskill", "copilot", "cursor", "claude"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Build Tools",
+]
+dependencies = [
+    "typer>=0.9.0",
+    "rich>=13.0",
+    "pyyaml>=6.0",
+    "platformdirs>=3.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/SufficientDaikon/omniskill"
+Repository = "https://github.com/SufficientDaikon/omniskill"
+Issues = "https://github.com/SufficientDaikon/omniskill/issues"
+
+[project.scripts]
+omniskill = "omniskill.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/omniskill"]
