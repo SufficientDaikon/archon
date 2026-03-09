@@ -1,0 +1,209 @@
+# Batch SDD State — Google ADK Improvements
+# This file tracks progress across sessions. Updated after each plan completion.
+# Location: ~/.omniskill/batch-runs/google-adk-improvements/state.yaml
+
+batch:
+  name: "Google ADK Improvements"
+  pipeline: batch-sdd-pipeline
+  plans_dir: "c:\\Users\\tahaa\\.copilot\\ideas\\google-adk-ideas"
+  omniskill_root: "c:\\Users\\tahaa\\omniskill"
+  created: "2026-03-09"
+  last_updated: "2026-03-09"
+  total_plans: 12
+  completed: 0
+  in_progress: null
+  status: not-started  # not-started | in-progress | paused | completed
+
+sprints:
+  sprint-1:
+    name: "Quick Wins (Foundation)"
+    status: pending
+    plans:
+      - id: "03"
+        name: "llms.txt Generation"
+        file: "03-llms-txt-generation.md"
+        priority: "quick-win"
+        effort: "easy"
+        status: pending          # pending | in-progress | spec-done | implemented | reviewed | completed | failed
+        started_at: null
+        completed_at: null
+        current_step: null       # specify | curate | implement | review | done
+        spec_path: null
+        report_path: null
+        commit_hash: null
+        notes: null
+
+      - id: "05"
+        name: "Agent Cards"
+        file: "05-agent-cards.md"
+        priority: "medium"
+        effort: "easy"
+        status: pending
+        started_at: null
+        completed_at: null
+        current_step: null
+        spec_path: null
+        report_path: null
+        commit_hash: null
+        notes: null
+
+      - id: "12"
+        name: "Integration Catalog"
+        file: "12-integration-catalog.md"
+        priority: "medium-high"
+        effort: "medium"
+        status: pending
+        started_at: null
+        completed_at: null
+        current_step: null
+        spec_path: null
+        report_path: null
+        commit_hash: null
+        notes: null
+
+  sprint-2:
+    name: "Core Power (Framework)"
+    status: pending
+    plans:
+      - id: "01"
+        name: "Hooks System"
+        file: "01-hooks-system.md"
+        priority: "high"
+        effort: "medium"
+        status: pending
+        started_at: null
+        completed_at: null
+        current_step: null
+        spec_path: null
+        report_path: null
+        commit_hash: null
+        notes: null
+
+      - id: "04"
+        name: "Context Compaction Synapse"
+        file: "04-context-compaction-synapse.md"
+        priority: "high"
+        effort: "medium"
+        status: pending
+        started_at: null
+        completed_at: null
+        current_step: null
+        spec_path: null
+        report_path: null
+        commit_hash: null
+        notes: null
+
+      - id: "02"
+        name: "Evaluation Framework"
+        file: "02-evaluation-framework.md"
+        priority: "high"
+        effort: "hard"
+        status: pending
+        started_at: null
+        completed_at: null
+        current_step: null
+        spec_path: null
+        report_path: null
+        commit_hash: null
+        notes: null
+
+  sprint-3:
+    name: "Production Polish (Data)"
+    status: pending
+    plans:
+      - id: "08"
+        name: "Artifact System"
+        file: "08-artifact-system.md"
+        priority: "medium"
+        effort: "medium"
+        status: pending
+        started_at: null
+        completed_at: null
+        current_step: null
+        spec_path: null
+        report_path: null
+        commit_hash: null
+        notes: null
+
+      - id: "06"
+        name: "State & Memory"
+        file: "06-state-and-memory.md"
+        priority: "medium"
+        effort: "hard"
+        status: pending
+        started_at: null
+        completed_at: null
+        current_step: null
+        spec_path: null
+        report_path: null
+        commit_hash: null
+        notes: null
+
+  sprint-4:
+    name: "UX & Scale (Future)"
+    status: pending
+    plans:
+      - id: "10"
+        name: "Streaming & Real-Time"
+        file: "10-streaming-realtime.md"
+        priority: "medium"
+        effort: "medium-hard"
+        status: pending
+        started_at: null
+        completed_at: null
+        current_step: null
+        spec_path: null
+        report_path: null
+        commit_hash: null
+        notes: null
+
+      - id: "11"
+        name: "Multi-Language SDK"
+        file: "11-multi-language-sdk.md"
+        priority: "medium"
+        effort: "hard"
+        status: pending
+        started_at: null
+        completed_at: null
+        current_step: null
+        spec_path: null
+        report_path: null
+        commit_hash: null
+        notes: null
+
+      - id: "09"
+        name: "Visual Builder"
+        file: "09-visual-builder.md"
+        priority: "low"
+        effort: "hard"
+        status: pending
+        started_at: null
+        completed_at: null
+        current_step: null
+        spec_path: null
+        report_path: null
+        commit_hash: null
+        notes: null
+
+      - id: "07"
+        name: "A2A Protocol"
+        file: "07-a2a-protocol.md"
+        priority: "low"
+        effort: "very-hard"
+        status: pending
+        started_at: null
+        completed_at: null
+        current_step: null
+        spec_path: null
+        report_path: null
+        commit_hash: null
+        notes: null
+
+# Session history — tracks which sessions worked on what
+sessions: []
+# Example entry:
+#   - session_id: "abc-123"
+#     started: "2026-03-10T10:00:00Z"
+#     plans_worked: ["03", "05"]
+#     plans_completed: ["03"]
+#     handoff_generated: true

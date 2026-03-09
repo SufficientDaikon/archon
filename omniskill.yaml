@@ -281,6 +281,9 @@ pipelines:
   - name: full-product
     path: pipelines/full-product.yaml
     trigger: "build product * end-to-end"
+  - name: batch-sdd-pipeline
+    path: pipelines/batch-sdd-pipeline.yaml
+    trigger: "batch implement plans in *"
 
 # Supported platforms
 platforms:
