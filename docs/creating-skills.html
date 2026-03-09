@@ -43,6 +43,7 @@
         <a href="creating-pipelines.html" class="sidebar-link"
           >Creating Pipelines</a
         >
+        <a href="cli-guide.html" class="sidebar-link">CLI Guide</a>
         <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
         <a href="architecture.html" class="sidebar-link">Architecture</a>
         <a href="faq.html" class="sidebar-link">FAQ</a>
@@ -488,7 +489,8 @@ expected:
       <div class="content-section">
         <h2>🤖 Self-Customization Skills</h2>
         <p>
-          OMNISKILL includes AI-guided skills for creating new skills, bundles, and agents:
+          OMNISKILL includes AI-guided skills for creating new skills, bundles,
+          and agents:
         </p>
 
         <h3>The <code>add-skill</code> Skill</h3>
@@ -499,7 +501,8 @@ expected:
         <div class="alert alert-info">
           <div class="alert-icon">💡</div>
           <div class="alert-content">
-            <strong>Prompt:</strong> "Follow the add-skill skill to create a new skill for [domain]"
+            <strong>Prompt:</strong> "Follow the add-skill skill to create a new
+            skill for [domain]"
           </div>
         </div>
 
@@ -513,9 +516,7 @@ expected:
         </ul>
 
         <h3>Example Advanced Skills</h3>
-        <p>
-          See these skills as examples of advanced patterns:
-        </p>
+        <p>See these skills as examples of advanced patterns:</p>
 
         <div class="code-block">
           <div class="code-label">Advanced Skill Patterns</div>
@@ -531,7 +532,9 @@ expected:
           <div class="alert-content">
             <div class="alert-title">Pattern to Study</div>
             <p>
-              The <strong>complexity-router</strong> skill demonstrates how to build a routing skill with P0 priority that runs before all other skills.
+              The <strong>complexity-router</strong> skill demonstrates how to
+              build a routing skill with P0 priority that runs before all other
+              skills.
             </p>
           </div>
         </div>
@@ -555,7 +558,9 @@ expected:
         </div>
 
         <p>
-          This pattern enables the AI assistant to show live progress updates. See <code>skills/_template/resources/tool-pattern.md</code> for the full specification.
+          This pattern enables the AI assistant to show live progress updates.
+          See <code>skills/_template/resources/tool-pattern.md</code> for the
+          full specification.
         </p>
 
         <div class="alert alert-info">
@@ -563,7 +568,9 @@ expected:
           <div class="alert-content">
             <div class="alert-title">When to Use</div>
             <p>
-              Use the generator pattern for long-running tasks (>5 seconds) where users benefit from progress updates: code analysis, multi-file operations, API calls, etc.
+              Use the generator pattern for long-running tasks (>5 seconds)
+              where users benefit from progress updates: code analysis,
+              multi-file operations, API calls, etc.
             </p>
           </div>
         </div>
@@ -584,23 +591,26 @@ expected:
 
     <script>
       // Scroll reveal animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      document.querySelectorAll('.reveal, .content-section').forEach(el => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".reveal, .content-section").forEach((el) => {
         observer.observe(el);
       });
 
       // Sidebar active state based on current page
-      const currentPage = window.location.pathname.split('/').pop();
-      document.querySelectorAll('.sidebar-link').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-          link.classList.add('active');
+      const currentPage = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".sidebar-link").forEach((link) => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
         }
       });
     </script>

@@ -41,6 +41,7 @@
         <a href="creating-pipelines.html" class="sidebar-link"
           >Creating Pipelines</a
         >
+        <a href="cli-guide.html" class="sidebar-link">CLI Guide</a>
         <a href="platform-guide.html" class="sidebar-link active"
           >Platform Guide</a
         >
@@ -124,7 +125,10 @@
         <h2>🤖 Claude Code</h2>
 
         <p><strong>Target:</strong> <code>~/.claude/skills/</code></p>
-        <p><strong>Format:</strong> Each skill becomes a <code>SKILL.md</code> file in a skill directory.</p>
+        <p>
+          <strong>Format:</strong> Each skill becomes a
+          <code>SKILL.md</code> file in a skill directory.
+        </p>
 
         <div class="terminal-block">
           <pre><span class="prompt">$</span> python scripts/install.py --platform claude-code</pre>
@@ -136,7 +140,10 @@
         <h2>💻 GitHub Copilot CLI</h2>
 
         <p><strong>Target:</strong> <code>~/.copilot/skills/</code></p>
-        <p><strong>Format:</strong> Each skill becomes a <code>SKILL.md</code> file with optional front-matter.</p>
+        <p>
+          <strong>Format:</strong> Each skill becomes a
+          <code>SKILL.md</code> file with optional front-matter.
+        </p>
 
         <div class="terminal-block">
           <pre><span class="prompt">$</span> python scripts/install.py --platform copilot-cli</pre>
@@ -147,8 +154,14 @@
       <div class="content-section">
         <h2>⚡ Cursor</h2>
 
-        <p><strong>Target:</strong> <code>.cursor/rules/</code> (project-level) or global rules</p>
-        <p><strong>Format:</strong> Each skill becomes a <code>.mdc</code> rule file.</p>
+        <p>
+          <strong>Target:</strong> <code>.cursor/rules/</code> (project-level)
+          or global rules
+        </p>
+        <p>
+          <strong>Format:</strong> Each skill becomes a <code>.mdc</code> rule
+          file.
+        </p>
 
         <div class="terminal-block">
           <pre><span class="prompt">$</span> python scripts/install.py --platform cursor</pre>
@@ -159,7 +172,10 @@
       <div class="content-section">
         <h2>🌊 Windsurf</h2>
 
-        <p><strong>Target:</strong> <code>.windsurfrules</code> or rules directory</p>
+        <p>
+          <strong>Target:</strong> <code>.windsurfrules</code> or rules
+          directory
+        </p>
         <p><strong>Format:</strong> Skills are compiled into rule format.</p>
 
         <div class="terminal-block">
@@ -172,7 +188,10 @@
         <h2>🚀 Antigravity</h2>
 
         <p><strong>Target:</strong> <code>.antigravity/skills/</code></p>
-        <p><strong>Format:</strong> Each skill becomes a skill file in the expected format.</p>
+        <p>
+          <strong>Format:</strong> Each skill becomes a skill file in the
+          expected format.
+        </p>
 
         <div class="terminal-block">
           <pre><span class="prompt">$</span> python scripts/install.py --platform antigravity</pre>
@@ -196,7 +215,8 @@
       <div class="content-section">
         <h2>🔧 Platform Overrides</h2>
         <p>
-          Skills can have platform-specific behavior via <code>overrides/</code>:
+          Skills can have platform-specific behavior via
+          <code>overrides/</code>:
         </p>
 
         <div class="code-block">
@@ -220,7 +240,9 @@
           <div class="alert-icon">💡</div>
           <div class="alert-content">
             <div class="alert-title">Use the add-adapter skill</div>
-            <p>"Follow the add-adapter skill to create an adapter for [platform]"</p>
+            <p>
+              "Follow the add-adapter skill to create an adapter for [platform]"
+            </p>
           </div>
         </div>
 
@@ -237,7 +259,10 @@
       <!-- SDK as an Alternative Section -->
       <div class="content-section">
         <h2>🐍 SDK as an Alternative</h2>
-        <p>For programmatic integration, use the Python SDK instead of CLI scripts:</p>
+        <p>
+          For programmatic integration, use the Python SDK instead of CLI
+          scripts:
+        </p>
 
         <div class="code-block">
           <div class="code-label">Python SDK</div>
@@ -258,9 +283,9 @@ platforms = os.detect_platforms()</code></pre>
 
       <!-- Navigation Footer -->
       <div class="doc-nav-footer">
-        <a href="creating-pipelines.html" class="nav-link prev">
+        <a href="cli-guide.html" class="nav-link prev">
           <span class="nav-label">← Previous</span>
-          <span class="nav-title">Creating Pipelines</span>
+          <span class="nav-title">CLI Guide</span>
         </a>
         <a href="architecture.html" class="nav-link next">
           <span class="nav-label">Next →</span>
@@ -271,23 +296,26 @@ platforms = os.detect_platforms()</code></pre>
 
     <script>
       // Scroll reveal animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      document.querySelectorAll('.reveal, .content-section').forEach(el => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".reveal, .content-section").forEach((el) => {
         observer.observe(el);
       });
 
       // Sidebar active state based on current page
-      const currentPage = window.location.pathname.split('/').pop();
-      document.querySelectorAll('.sidebar-link').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-          link.classList.add('active');
+      const currentPage = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".sidebar-link").forEach((link) => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
         }
       });
     </script>

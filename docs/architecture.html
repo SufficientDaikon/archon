@@ -41,6 +41,7 @@
         <a href="creating-pipelines.html" class="sidebar-link"
           >Creating Pipelines</a
         >
+        <a href="cli-guide.html" class="sidebar-link">CLI Guide</a>
         <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
         <a href="architecture.html" class="sidebar-link active">Architecture</a>
         <a href="faq.html" class="sidebar-link">FAQ</a>
@@ -88,8 +89,12 @@
         <div class="alert-content">
           <div class="alert-title">Inspiration</div>
           <p>
-            Inspired by <a href="https://vercel.com/templates/ai" target="_blank">Vercel's Knowledge Agent Template</a>
-            — extended with complexity routing, knowledge source integration, and self-customization capabilities.
+            Inspired by
+            <a href="https://vercel.com/templates/ai" target="_blank"
+              >Vercel's Knowledge Agent Template</a
+            >
+            — extended with complexity routing, knowledge source integration,
+            and self-customization capabilities.
           </p>
         </div>
       </div>
@@ -105,9 +110,7 @@
         <ol class="step-list">
           <li class="step-item">
             <div class="step-title">Universal Format</div>
-            <div class="step-description">
-              Write once, deploy everywhere.
-            </div>
+            <div class="step-description">Write once, deploy everywhere.</div>
           </li>
 
           <li class="step-item">
@@ -194,13 +197,18 @@
 
         <ol class="step-list">
           <li class="step-item">
-            <div class="step-title">User request → Complexity Router classifies task</div>
+            <div class="step-title">
+              User request → Complexity Router classifies task
+            </div>
           </li>
           <li class="step-item">
             <div class="step-title">Router decision</div>
             <div class="step-description">
               <ul>
-                <li>Complexity level: trivial → simple → moderate → complex → expert</li>
+                <li>
+                  Complexity level: trivial → simple → moderate → complex →
+                  expert
+                </li>
                 <li>Model tier: fast/cheap → standard → premium</li>
                 <li>Target: skill, agent, or pipeline</li>
               </ul>
@@ -212,19 +220,27 @@
           </li>
           <li class="step-item">
             <div class="step-title">Agent/Pipeline execution</div>
-            <div class="step-description">Selects skill(s) based on trigger matching.</div>
+            <div class="step-description">
+              Selects skill(s) based on trigger matching.
+            </div>
           </li>
           <li class="step-item">
             <div class="step-title">Skill execution</div>
-            <div class="step-description">Provides instructions + resources + knowledge to the AI model.</div>
+            <div class="step-description">
+              Provides instructions + resources + knowledge to the AI model.
+            </div>
           </li>
           <li class="step-item">
             <div class="step-title">Output</div>
-            <div class="step-description">Formatted per skill's output contract.</div>
+            <div class="step-description">
+              Formatted per skill's output contract.
+            </div>
           </li>
           <li class="step-item">
             <div class="step-title">Handoff</div>
-            <div class="step-description">Passed to next agent in pipeline (if applicable).</div>
+            <div class="step-description">
+              Passed to next agent in pipeline (if applicable).
+            </div>
           </li>
         </ol>
 
@@ -248,19 +264,40 @@
         <h3>Prompt Library (<code>prompts/</code>)</h3>
         <p>Reusable prompt components used throughout the system:</p>
         <ul>
-          <li><strong><code>router.md</code></strong> — Complexity classification prompts</li>
-          <li><strong><code>system.md</code></strong> — Master OMNISKILL system prompt</li>
-          <li><strong><code>shared.md</code></strong> — Common formatting, citations, error handling</li>
-          <li><strong><code>personas/*.md</code></strong> — Persona-specific prompt templates</li>
+          <li>
+            <strong><code>router.md</code></strong> — Complexity classification
+            prompts
+          </li>
+          <li>
+            <strong><code>system.md</code></strong> — Master OMNISKILL system
+            prompt
+          </li>
+          <li>
+            <strong><code>shared.md</code></strong> — Common formatting,
+            citations, error handling
+          </li>
+          <li>
+            <strong><code>personas/*.md</code></strong> — Persona-specific
+            prompt templates
+          </li>
         </ul>
 
         <h3>Knowledge Sources (<code>skills/knowledge-sources/</code>)</h3>
         <p>External knowledge integration layer:</p>
         <ul>
-          <li><strong>File-based search</strong> — grep, find, cat (no vector DB required)</li>
-          <li><strong>Content normalization</strong> — keeps .md, .yaml, .json, .txt</li>
+          <li>
+            <strong>File-based search</strong> — grep, find, cat (no vector DB
+            required)
+          </li>
+          <li>
+            <strong>Content normalization</strong> — keeps .md, .yaml, .json,
+            .txt
+          </li>
           <li><strong>Sync system</strong> — keeps sources up to date</li>
-          <li><strong>Config template</strong> — <code>templates/source-config.yaml</code></li>
+          <li>
+            <strong>Config template</strong> —
+            <code>templates/source-config.yaml</code>
+          </li>
         </ul>
 
         <h3>SDK Access Layer (<code>sdk/omniskill.py</code>)</h3>
@@ -317,23 +354,26 @@ composition  →  circular dependency check  →  PASS / FAIL</code></pre>
 
     <script>
       // Scroll reveal animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      document.querySelectorAll('.reveal, .content-section').forEach(el => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".reveal, .content-section").forEach((el) => {
         observer.observe(el);
       });
 
       // Sidebar active state based on current page
-      const currentPage = window.location.pathname.split('/').pop();
-      document.querySelectorAll('.sidebar-link').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-          link.classList.add('active');
+      const currentPage = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".sidebar-link").forEach((link) => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
         }
       });
     </script>

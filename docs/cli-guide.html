@@ -1,0 +1,1400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CLI Guide — OMNISKILL Documentation</title>
+    <meta
+      name="description"
+      content="Complete command-line reference for the OMNISKILL CLI — installation, commands, configuration, and workflows."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="doc-nav">
+      <a href="../index.html" class="nav-logo">OMNISKILL</a>
+      <a
+        href="https://github.com/SufficientDaikon/omniskill"
+        class="nav-github"
+        target="_blank"
+        >GitHub ↗</a
+      >
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">DOCUMENTATION</div>
+        <a href="getting-started.html" class="sidebar-link">Getting Started</a>
+        <a href="creating-skills.html" class="sidebar-link">Creating Skills</a>
+        <a href="creating-bundles.html" class="sidebar-link"
+          >Creating Bundles</a
+        >
+        <a href="creating-agents.html" class="sidebar-link">Creating Agents</a>
+        <a href="creating-pipelines.html" class="sidebar-link"
+          >Creating Pipelines</a
+        >
+        <a href="cli-guide.html" class="sidebar-link active">CLI Guide</a>
+        <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
+        <a href="architecture.html" class="sidebar-link">Architecture</a>
+        <a href="faq.html" class="sidebar-link">FAQ</a>
+      </div>
+      <div class="sidebar-section">
+        <a href="../index.html" class="sidebar-link back-link"
+          >← Back to Home</a
+        >
+      </div>
+    </aside>
+
+    <button
+      class="sidebar-toggle"
+      onclick="document.getElementById('sidebar').classList.toggle('open')"
+    >
+      ☰
+    </button>
+
+    <!-- Main Content -->
+    <main class="doc-content">
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="../index.html">Home</a>
+        <span class="separator">›</span>
+        <a href="getting-started.html">Documentation</a>
+        <span class="separator">›</span>
+        <span>CLI Guide</span>
+      </div>
+
+      <!-- Header -->
+      <div class="doc-header">
+        <span class="section-label">REFERENCE</span>
+        <h1 class="doc-title">
+          CLI Guide for <span class="gradient-text">OMNISKILL</span>
+        </h1>
+        <p class="doc-subtitle">
+          Complete command-line reference — installation, all 13 commands,
+          configuration, JSON output, and common workflows.
+        </p>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- INSTALLATION -->
+      <!-- ============================================================ -->
+      <div class="content-section">
+        <h2>⚡ Installation</h2>
+
+        <h3>From PyPI (Recommended)</h3>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> pip install omniskill</pre>
+        </div>
+
+        <h3>From Source</h3>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> git clone https://github.com/SufficientDaikon/omniskill.git
+<span class="prompt">$</span> cd omniskill
+<span class="prompt">$</span> pip install -e .</pre>
+        </div>
+
+        <h3>Verify Installation</h3>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill --version
+omniskill v1.0.0</pre>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- QUICK START -->
+      <!-- ============================================================ -->
+      <div class="content-section">
+        <h2>🚀 Quick Start</h2>
+        <p>Get up and running in 60 seconds:</p>
+
+        <ol class="step-list">
+          <li class="step-item">
+            <div class="step-title">Initialize</div>
+            <div class="step-description">
+              Detect platforms and create your config.
+              <div class="terminal-block">
+                <pre><span class="prompt">$</span> omniskill init</pre>
+              </div>
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-title">Install Everything</div>
+            <div class="step-description">
+              Deploy all skills and bundles to every detected platform.
+              <div class="terminal-block">
+                <pre><span class="prompt">$</span> omniskill install --all</pre>
+              </div>
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-title">Verify</div>
+            <div class="step-description">
+              Run the health check to confirm everything is working.
+              <div class="terminal-block">
+                <pre><span class="prompt">$</span> omniskill doctor</pre>
+              </div>
+            </div>
+          </li>
+        </ol>
+
+        <div class="alert alert-success">
+          <div class="alert-icon">✓</div>
+          <div class="alert-content">
+            <div class="alert-title">Ready to Go</div>
+            <p>
+              Your AI coding assistants now have access to all OMNISKILL skills,
+              agents, and pipelines.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- GLOBAL FLAGS -->
+      <!-- ============================================================ -->
+      <div class="content-section">
+        <h2>🏳️ Global Flags</h2>
+        <p>These flags work with every command:</p>
+
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Flag</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>--json</code></td>
+              <td>
+                Output results as structured JSON (see
+                <a href="#json-output">JSON Output</a>)
+              </td>
+            </tr>
+            <tr>
+              <td><code>--quiet</code></td>
+              <td>Suppress all non-essential output; only show errors</td>
+            </tr>
+            <tr>
+              <td><code>--verbose</code></td>
+              <td>Show detailed debug-level output</td>
+            </tr>
+            <tr>
+              <td><code>--version</code></td>
+              <td>Print the OMNISKILL version and exit</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill doctor --json          <span style="color: var(--text-muted)"># Machine-readable output for CI</span>
+<span class="prompt">$</span> omniskill install --all --quiet   <span style="color: var(--text-muted)"># Silent operation for scripts</span>
+<span class="prompt">$</span> omniskill install --skill react-best-practices --verbose  <span style="color: var(--text-muted)"># Debug</span>
+<span class="prompt">$</span> omniskill --version               <span style="color: var(--text-muted)"># Check installed version</span></pre>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- COMMAND REFERENCE -->
+      <!-- ============================================================ -->
+      <div class="content-section">
+        <h2>📖 Command Reference</h2>
+        <p>
+          OMNISKILL ships with <strong>13 commands</strong>. Each section below
+          shows usage, options, and real-world examples.
+        </p>
+
+        <!-- ─── omniskill init ─── -->
+        <h3 id="cmd-init"><code>omniskill init</code></h3>
+        <p>
+          Initialize OMNISKILL in the current environment. Creates the
+          <code>~/.omniskill/</code> config directory, detects installed
+          platforms, and writes a default <code>config.yaml</code>.
+        </p>
+
+        <h4>Usage</h4>
+        <div class="code-block">
+          <div class="code-label">BASH</div>
+          <pre><code>omniskill init [--platform &lt;name&gt;]</code></pre>
+        </div>
+
+        <h4>Options</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>--platform &lt;name&gt;</code></td>
+              <td>
+                Skip auto-detection and initialize for a specific platform
+                (<code>claude-code</code>, <code>copilot-cli</code>,
+                <code>cursor</code>, <code>windsurf</code>,
+                <code>antigravity</code>)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Example</h4>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill init
+✓ Detected platforms: claude-code, copilot-cli, cursor
+✓ Created ~/.omniskill/config.yaml
+✓ OMNISKILL initialized successfully
+
+<span class="prompt">$</span> omniskill init --platform cursor
+✓ Initialized for platform: cursor
+✓ Created ~/.omniskill/config.yaml</pre>
+        </div>
+
+        <!-- ─── omniskill install ─── -->
+        <h3 id="cmd-install"><code>omniskill install</code></h3>
+        <p>Install skills, bundles, or everything to one or more platforms.</p>
+
+        <h4>Usage</h4>
+        <div class="code-block">
+          <div class="code-label">BASH</div>
+          <pre><code>omniskill install [--skill &lt;name&gt;] [--bundle &lt;name&gt;] [--all] [--platform &lt;name&gt;] [--force]</code></pre>
+        </div>
+
+        <h4>Options</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>--skill &lt;name&gt;</code></td>
+              <td>Install a single skill by name</td>
+            </tr>
+            <tr>
+              <td><code>--bundle &lt;name&gt;</code></td>
+              <td>Install a bundle (domain kit) by name</td>
+            </tr>
+            <tr>
+              <td><code>--all</code></td>
+              <td>Install all available skills and bundles</td>
+            </tr>
+            <tr>
+              <td><code>--platform &lt;name&gt;</code></td>
+              <td>Target a specific platform (default: all detected)</td>
+            </tr>
+            <tr>
+              <td><code>--force</code></td>
+              <td>Overwrite existing installations without prompting</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Examples</h4>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill install --skill react-best-practices
+✓ Installed react-best-practices to claude-code
+✓ Installed react-best-practices to copilot-cli
+✓ Installed react-best-practices to cursor
+Installed 1 skill to 3 platforms
+
+<span class="prompt">$</span> omniskill install --bundle web-dev-kit
+✓ Installing web-dev-kit (5 skills + 1 meta-skill)...
+  ✓ frontend-design
+  ✓ react-best-practices
+  ✓ vercel-react-best-practices
+  ✓ web-design-guidelines
+  ✓ backend-development
+  ✓ web-fullstack-expert (meta-skill)
+Installed 6 skills to 3 platforms
+
+<span class="prompt">$</span> omniskill install --all
+✓ Installing 42 skills, 6 bundles to 3 platforms...
+Done in 4.2s
+
+<span class="prompt">$</span> omniskill install --skill godot-best-practices --platform cursor --force
+✓ Installed godot-best-practices to cursor (overwritten)</pre>
+        </div>
+
+        <!-- ─── omniskill uninstall ─── -->
+        <h3 id="cmd-uninstall"><code>omniskill uninstall</code></h3>
+        <p>Remove an installed skill or bundle from one or more platforms.</p>
+
+        <h4>Usage</h4>
+        <div class="code-block">
+          <div class="code-label">BASH</div>
+          <pre><code>omniskill uninstall &lt;name&gt; [--platform &lt;name&gt;] [--force]</code></pre>
+        </div>
+
+        <h4>Options</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>&lt;name&gt;</code></td>
+              <td>
+                <strong>Required.</strong> Name of the skill or bundle to remove
+              </td>
+            </tr>
+            <tr>
+              <td><code>--platform &lt;name&gt;</code></td>
+              <td>Remove from a specific platform only (default: all)</td>
+            </tr>
+            <tr>
+              <td><code>--force</code></td>
+              <td>Skip confirmation prompt</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Example</h4>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill uninstall godot-best-practices
+⚠ This will remove godot-best-practices from 3 platforms. Continue? [y/N] y
+✓ Removed godot-best-practices from claude-code
+✓ Removed godot-best-practices from copilot-cli
+✓ Removed godot-best-practices from cursor
+Uninstalled 1 skill from 3 platforms
+
+<span class="prompt">$</span> omniskill uninstall web-dev-kit --platform cursor --force
+✓ Removed web-dev-kit (6 skills) from cursor</pre>
+        </div>
+
+        <!-- ─── omniskill doctor ─── -->
+        <h3 id="cmd-doctor"><code>omniskill doctor</code></h3>
+        <p>
+          Run a comprehensive health check. Inspects config files, platform
+          connections, skill integrity, and version status.
+        </p>
+
+        <h4>Usage</h4>
+        <div class="code-block">
+          <div class="code-label">BASH</div>
+          <pre><code>omniskill doctor [--json]</code></pre>
+        </div>
+
+        <h4>Options</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>--json</code></td>
+              <td>Output results as structured JSON</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Example</h4>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill doctor
+OMNISKILL Doctor v1.0.0
+──────────────────────────────
+
+Configuration
+  ✓ Config file exists          ~/.omniskill/config.yaml
+  ✓ Config file valid           YAML syntax OK
+
+Platforms
+  ✓ claude-code                 ~/.claude/AGENTS.md found
+  ✓ copilot-cli                 ~/.copilot/ found
+  ✓ cursor                      ~/.cursor/rules/ found
+  ✗ windsurf                    Not detected
+  ✗ antigravity                 Not detected
+
+Skills
+  ✓ 42 skills installed         0 conflicts detected
+  ✓ 6 bundles installed         All meta-skills present
+  ✓ All manifests valid         0 schema errors
+
+Version
+  ✓ Up to date                  v1.0.0 (latest)
+
+──────────────────────────────
+Result: 11 passed, 2 skipped, 0 failed</pre>
+        </div>
+
+        <!-- ─── omniskill validate ─── -->
+        <h3 id="cmd-validate"><code>omniskill validate</code></h3>
+        <p>
+          Validate a skill, bundle, agent, or pipeline against the OMNISKILL
+          schema. Use before committing or opening a PR.
+        </p>
+
+        <h4>Usage</h4>
+        <div class="code-block">
+          <div class="code-label">BASH</div>
+          <pre><code>omniskill validate [path] [--json]</code></pre>
+        </div>
+
+        <h4>Options</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>[path]</code></td>
+              <td>
+                Path to a skill/bundle/agent/pipeline directory (default:
+                validate all)
+              </td>
+            </tr>
+            <tr>
+              <td><code>--json</code></td>
+              <td>Output results as structured JSON</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Examples</h4>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill validate skills/my-new-skill
+Validating skills/my-new-skill...
+  ✓ manifest.yaml              Schema valid
+  ✓ SKILL.md                   All required sections present
+  ✓ Triggers                   No conflicts with existing skills
+  ✓ Resources                  All referenced files exist
+Result: PASS (4/4 checks)
+
+<span class="prompt">$</span> omniskill validate
+Validating 42 skills, 6 bundles, 8 agents, 4 pipelines...
+  ✓ 42 skills valid
+  ✓ 6 bundles valid
+  ✓ 8 agents valid
+  ✓ 4 pipelines valid
+Result: PASS (60/60 checks)</pre>
+        </div>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill validate skills/broken-skill --json
+{
+  "status": "fail",
+  "command": "validate",
+  "version": "1.0.0",
+  "data": {
+    "path": "skills/broken-skill",
+    "checks": 4,
+    "passed": 2,
+    "failed": 2,
+    "errors": [
+      "manifest.yaml: missing required field 'description'",
+      "SKILL.md: missing section '## When to Use'"
+    ]
+  },
+  "errors": []
+}</pre>
+        </div>
+
+        <!-- ─── omniskill list ─── -->
+        <h3 id="cmd-list"><code>omniskill list</code></h3>
+        <p>List installed skills, agents, bundles, or pipelines.</p>
+
+        <h4>Usage</h4>
+        <div class="code-block">
+          <div class="code-label">BASH</div>
+          <pre><code>omniskill list [skills|agents|bundles|pipelines] [--json]</code></pre>
+        </div>
+
+        <h4>Options</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>skills</code></td>
+              <td>List only skills (default if no sub-command given)</td>
+            </tr>
+            <tr>
+              <td><code>agents</code></td>
+              <td>List only agents</td>
+            </tr>
+            <tr>
+              <td><code>bundles</code></td>
+              <td>List only bundles</td>
+            </tr>
+            <tr>
+              <td><code>pipelines</code></td>
+              <td>List only pipelines</td>
+            </tr>
+            <tr>
+              <td><code>--json</code></td>
+              <td>Output results as structured JSON</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Examples</h4>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill list skills
+OMNISKILL Skills (42 installed)
+───────────────────────────────
+  backend-development          v1.0.0   [web, api, database]
+  capacitor-best-practices     v1.0.0   [mobile, capacitor]
+  django-expert                v1.0.0   [python, django]
+  frontend-design              v1.0.0   [web, ui, css]
+  godot-best-practices         v1.0.0   [gamedev, godot]
+  react-best-practices         v1.0.0   [web, react]
+  ...</pre>
+        </div>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill list bundles
+OMNISKILL Bundles (6 installed)
+───────────────────────────────
+  godot-kit                    5 skills    Godot game development
+  web-dev-kit                  5 skills    Full-stack web development
+  django-kit                   4 skills    Django web framework
+  mobile-kit                   3 skills    Mobile app development
+  ux-design-kit                6 skills    UX/UI design pipeline
+  devops-kit                   3 skills    DevOps and infrastructure</pre>
+        </div>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill list agents --json
+{
+  "status": "ok",
+  "command": "list",
+  "version": "1.0.0",
+  "data": {
+    "type": "agents",
+    "count": 8,
+    "items": [
+      { "name": "spec-writer",  "version": "1.0.0", "description": "Transforms plans into specs" },
+      { "name": "implementer",  "version": "1.0.0", "description": "Implements from specifications" }
+    ]
+  },
+  "errors": []
+}</pre>
+        </div>
+
+        <!-- ─── omniskill search ─── -->
+        <h3 id="cmd-search"><code>omniskill search</code></h3>
+        <p>Search the OMNISKILL registry by keyword.</p>
+
+        <h4>Usage</h4>
+        <div class="code-block">
+          <div class="code-label">BASH</div>
+          <pre><code>omniskill search &lt;query&gt; [--json]</code></pre>
+        </div>
+
+        <h4>Options</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>&lt;query&gt;</code></td>
+              <td>
+                <strong>Required.</strong> Search term — matches name,
+                description, tags, and triggers
+              </td>
+            </tr>
+            <tr>
+              <td><code>--json</code></td>
+              <td>Output results as structured JSON</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Example</h4>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill search react
+Search results for "react" (4 matches)
+───────────────────────────────────────
+  react-best-practices         skill    React hooks, patterns, and optimization
+  vercel-react-best-practices  skill    Next.js and React performance from Vercel
+  frontend-design              skill    Production-grade frontend interfaces
+  web-dev-kit                  bundle   Includes react-best-practices + 4 more
+
+<span class="prompt">$</span> omniskill search "game dev"
+Search results for "game dev" (3 matches)
+─────────────────────────────────────────
+  godot-best-practices         skill    Godot 4.x GDScript best practices
+  godot-gdscript-patterns      skill    Master Godot 4 GDScript patterns
+  godot-kit                    bundle   Complete Godot game development kit</pre>
+        </div>
+
+        <!-- ─── omniskill info ─── -->
+        <h3 id="cmd-info"><code>omniskill info</code></h3>
+        <p>
+          Show detailed information about a skill, bundle, agent, or pipeline.
+        </p>
+
+        <h4>Usage</h4>
+        <div class="code-block">
+          <div class="code-label">BASH</div>
+          <pre><code>omniskill info &lt;name&gt; [--json]</code></pre>
+        </div>
+
+        <h4>Options</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>&lt;name&gt;</code></td>
+              <td><strong>Required.</strong> Name of the item to inspect</td>
+            </tr>
+            <tr>
+              <td><code>--json</code></td>
+              <td>Output results as structured JSON</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Example</h4>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill info react-best-practices
+react-best-practices
+━━━━━━━━━━━━━━━━━━━━
+  Type:         skill
+  Version:      1.0.0
+  Author:       omniskill-team
+  License:      MIT
+  Platforms:    claude-code, copilot-cli, cursor, windsurf, antigravity
+  Tags:         web, react, hooks, performance
+  Priority:     P2
+  Description:  React development guidelines with hooks, component
+                patterns, state management, and performance optimization.
+
+  Triggers:
+    Keywords:   "react component", "react hooks", "use state"
+    Patterns:   "create * react *", "optimize react *"
+
+  Dependencies: none
+  Bundle:       web-dev-kit
+
+  Installed:    Yes (3 platforms)</pre>
+        </div>
+
+        <!-- ─── omniskill pipeline ─── -->
+        <h3 id="cmd-pipeline"><code>omniskill pipeline</code></h3>
+        <p>Run or check the status of multi-agent pipelines.</p>
+
+        <h4>Usage</h4>
+        <div class="code-block">
+          <div class="code-label">BASH</div>
+          <pre><code>omniskill pipeline run &lt;name&gt; [--project &lt;name&gt;]
+omniskill pipeline status [--project &lt;name&gt;]</code></pre>
+        </div>
+
+        <h4>Sub-commands</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Sub-command</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>run &lt;name&gt;</code></td>
+              <td>Start a pipeline by name</td>
+            </tr>
+            <tr>
+              <td><code>status</code></td>
+              <td>Show status of running / completed pipelines</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Options</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>--project &lt;name&gt;</code></td>
+              <td>Associate the pipeline run with a project name</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Examples</h4>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill pipeline run sdd --project my-feature
+✓ Starting SDD pipeline for project "my-feature"
+  Phase 1/3: spec-writer        ▶ Running...
+  Phase 2/3: implementer        ○ Pending
+  Phase 3/3: reviewer           ○ Pending
+
+<span class="prompt">$</span> omniskill pipeline status --project my-feature
+Pipeline: sdd (my-feature)
+──────────────────────────
+  Phase 1/3: spec-writer        ✓ Complete    (2m 14s)
+  Phase 2/3: implementer        ▶ Running     (1m 03s)
+  Phase 3/3: reviewer           ○ Pending
+
+<span class="prompt">$</span> omniskill pipeline status
+Active Pipelines
+────────────────
+  sdd (my-feature)              Phase 2/3    implementer     Running
+  ux-lifecycle (redesign)       Phase 5/7    ui-design       Running</pre>
+        </div>
+
+        <!-- ─── omniskill update ─── -->
+        <h3 id="cmd-update"><code>omniskill update</code></h3>
+        <p>Check for and apply updates to OMNISKILL.</p>
+
+        <h4>Usage</h4>
+        <div class="code-block">
+          <div class="code-label">BASH</div>
+          <pre><code>omniskill update [--check]</code></pre>
+        </div>
+
+        <h4>Options</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>--check</code></td>
+              <td>Only check for updates without applying them</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Example</h4>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill update --check
+Current version: v1.0.0
+Latest version:  v1.1.0
+Update available! Run `omniskill update` to install.
+
+<span class="prompt">$</span> omniskill update
+Updating OMNISKILL v1.0.0 → v1.1.0...
+  ✓ Downloaded v1.1.0
+  ✓ Updated CLI
+  ✓ Migrated config (no changes needed)
+  ✓ Re-validated installed skills
+Update complete! Run `omniskill doctor` to verify.</pre>
+        </div>
+
+        <!-- ─── omniskill migrate ─── -->
+        <h3 id="cmd-migrate"><code>omniskill migrate</code></h3>
+        <p>
+          Migrate legacy OMNISKILL skill files (pre-v1.0) to the current format.
+        </p>
+
+        <h4>Usage</h4>
+        <div class="code-block">
+          <div class="code-label">BASH</div>
+          <pre><code>omniskill migrate &lt;path&gt; [--in-place]</code></pre>
+        </div>
+
+        <h4>Options</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>&lt;path&gt;</code></td>
+              <td>
+                <strong>Required.</strong> Path to the skill or directory to
+                migrate
+              </td>
+            </tr>
+            <tr>
+              <td><code>--in-place</code></td>
+              <td>
+                Overwrite originals instead of creating
+                <code>.migrated</code> copies
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Example</h4>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill migrate skills/old-skill
+Migrating skills/old-skill...
+  ✓ manifest.yaml → manifest.yaml.migrated    Added 'platforms' field
+  ✓ SKILL.md → SKILL.md.migrated              Added 'When to Use' section
+Migration preview complete. Review .migrated files, then run with --in-place.
+
+<span class="prompt">$</span> omniskill migrate skills/old-skill --in-place
+Migrating skills/old-skill (in-place)...
+  ✓ manifest.yaml              Added 'platforms' field
+  ✓ SKILL.md                   Added 'When to Use' section
+Migration complete! Run `omniskill validate skills/old-skill` to verify.</pre>
+        </div>
+
+        <!-- ─── omniskill admin ─── -->
+        <h3 id="cmd-admin"><code>omniskill admin</code></h3>
+        <p>
+          Administrative utilities — sync knowledge sources, rebuild indexes,
+          and manage the registry.
+        </p>
+
+        <h4>Usage</h4>
+        <div class="code-block">
+          <div class="code-label">BASH</div>
+          <pre><code>omniskill admin</code></pre>
+        </div>
+
+        <h4>Example</h4>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill admin
+OMNISKILL Admin
+───────────────
+  1. Sync knowledge sources
+  2. Rebuild skill index
+  3. Clear platform caches
+  4. Export installation report
+  5. Reset configuration
+
+Select an option [1-5]:</pre>
+        </div>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <div class="alert-title">Non-interactive usage</div>
+            <p>
+              Pipe a selection for scripted environments:
+              <code>echo 1 | omniskill admin</code>
+            </p>
+          </div>
+        </div>
+
+        <!-- ─── omniskill config ─── -->
+        <h3 id="cmd-config"><code>omniskill config</code></h3>
+        <p>Read or write OMNISKILL configuration values.</p>
+
+        <h4>Usage</h4>
+        <div class="code-block">
+          <div class="code-label">BASH</div>
+          <pre><code>omniskill config [key] [value] [--list]</code></pre>
+        </div>
+
+        <h4>Options</h4>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>[key]</code></td>
+              <td>Configuration key to read or set (dot-notation supported)</td>
+            </tr>
+            <tr>
+              <td><code>[value]</code></td>
+              <td>New value to assign to the key</td>
+            </tr>
+            <tr>
+              <td><code>--list</code></td>
+              <td>Show all configuration key-value pairs</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Example</h4>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill config --list
+home             = ~/.omniskill
+platforms        = claude-code, copilot-cli, cursor
+default_bundle   = web-dev-kit
+auto_update      = true
+json_output      = false
+
+<span class="prompt">$</span> omniskill config platforms
+claude-code, copilot-cli, cursor
+
+<span class="prompt">$</span> omniskill config auto_update false
+✓ Set auto_update = false</pre>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- EXIT CODES -->
+      <!-- ============================================================ -->
+      <div class="content-section">
+        <h2>🔢 Exit Codes</h2>
+
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Meaning</th>
+              <th>Used By</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>0</code></td>
+              <td>
+                <strong>Success</strong> — command completed without errors
+              </td>
+              <td>All commands</td>
+            </tr>
+            <tr>
+              <td><code>1</code></td>
+              <td>
+                <strong>Error</strong> — runtime failure, missing dependency,
+                etc.
+              </td>
+              <td>All commands</td>
+            </tr>
+            <tr>
+              <td><code>2</code></td>
+              <td>
+                <strong>Validation failure</strong> — one or more checks failed
+              </td>
+              <td><code>validate</code>, <code>doctor</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <div class="alert-title">CI/CD Tip</div>
+            <p>
+              Use exit codes in your pipeline:
+              <code>omniskill validate || echo "Validation failed!"</code>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- CONFIGURATION -->
+      <!-- ============================================================ -->
+      <div class="content-section">
+        <h2>⚙️ Configuration</h2>
+
+        <h3>Config File</h3>
+        <p>
+          OMNISKILL stores configuration in
+          <code>~/.omniskill/config.yaml</code>:
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">YAML</div>
+          <pre><code># ~/.omniskill/config.yaml
+home: ~/.omniskill
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+default_bundle: web-dev-kit
+auto_update: true
+json_output: false
+log_level: info</code></pre>
+        </div>
+
+        <h3>Environment Variables</h3>
+        <p>Environment variables override config file values:</p>
+
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Description</th>
+              <th>Default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>OMNISKILL_HOME</code></td>
+              <td>Override the OMNISKILL home directory</td>
+              <td><code>~/.omniskill</code></td>
+            </tr>
+            <tr>
+              <td><code>OMNISKILL_PLATFORM</code></td>
+              <td>Force a specific platform (skip auto-detection)</td>
+              <td><em>auto-detected</em></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> OMNISKILL_HOME=/opt/omniskill omniskill doctor   <span style="color: var(--text-muted)"># Custom home dir</span>
+<span class="prompt">$</span> OMNISKILL_PLATFORM=cursor omniskill install --all  <span style="color: var(--text-muted)"># Force platform</span></pre>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- PLATFORM DETECTION -->
+      <!-- ============================================================ -->
+      <div class="content-section">
+        <h2>🔍 Platform Detection</h2>
+        <p>
+          OMNISKILL auto-detects installed AI coding assistants by checking for
+          platform-specific files and directories:
+        </p>
+
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Detection Method</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Claude Code</strong></td>
+              <td>
+                Checks for <code>~/.claude/</code> directory and
+                <code>AGENTS.md</code>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Copilot CLI</strong></td>
+              <td>Checks for <code>~/.copilot/</code> directory</td>
+            </tr>
+            <tr>
+              <td><strong>Cursor</strong></td>
+              <td>Checks for <code>~/.cursor/rules/</code> directory</td>
+            </tr>
+            <tr>
+              <td><strong>Windsurf</strong></td>
+              <td>
+                Checks for <code>~/.windsurf/</code> or
+                <code>~/.codeium/windsurf/</code>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Antigravity</strong></td>
+              <td>Checks for <code>~/.antigravity/</code> directory</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>How It Works</h3>
+        <ol>
+          <li>
+            On <code>omniskill init</code>, the CLI scans your system for each
+            platform's indicator files.
+          </li>
+          <li>
+            Detected platforms are saved to
+            <code>~/.omniskill/config.yaml</code>.
+          </li>
+          <li>
+            On <code>omniskill install</code>, skills are deployed to each
+            detected platform using the appropriate adapter.
+          </li>
+          <li>
+            Each adapter transforms a universal OMNISKILL skill into the
+            platform's native format.
+          </li>
+        </ol>
+
+        <h3>Override Detection</h3>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill install --all --platform claude-code   <span style="color: var(--text-muted)"># Flag override</span>
+<span class="prompt">$</span> export OMNISKILL_PLATFORM=cursor                  <span style="color: var(--text-muted)"># Env var override</span>
+<span class="prompt">$</span> omniskill install --all</pre>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- JSON OUTPUT -->
+      <!-- ============================================================ -->
+      <div class="content-section" id="json-output">
+        <h2>📋 JSON Output</h2>
+        <p>
+          When the <code>--json</code> flag is passed, all commands output a
+          structured JSON envelope:
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">JSON</div>
+          <pre><code>{
+  "status": "ok",
+  "command": "doctor",
+  "version": "1.0.0",
+  "data": {
+    "checks_passed": 11,
+    "checks_failed": 0,
+    "checks_skipped": 2,
+    "platforms": ["claude-code", "copilot-cli", "cursor"]
+  },
+  "errors": []
+}</code></pre>
+        </div>
+
+        <h3>Envelope Fields</h3>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>status</code></td>
+              <td>
+                <code>"ok"</code> | <code>"fail"</code> | <code>"error"</code>
+              </td>
+              <td>Overall result</td>
+            </tr>
+            <tr>
+              <td><code>command</code></td>
+              <td><code>string</code></td>
+              <td>The command that was executed</td>
+            </tr>
+            <tr>
+              <td><code>version</code></td>
+              <td><code>string</code></td>
+              <td>OMNISKILL CLI version</td>
+            </tr>
+            <tr>
+              <td><code>data</code></td>
+              <td><code>object</code></td>
+              <td>Command-specific payload</td>
+            </tr>
+            <tr>
+              <td><code>errors</code></td>
+              <td><code>array</code></td>
+              <td>List of error messages (empty on success)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Error Envelope</h3>
+        <div class="code-block">
+          <div class="code-label">JSON</div>
+          <pre><code>{
+  "status": "error",
+  "command": "install",
+  "version": "1.0.0",
+  "data": null,
+  "errors": [
+    "Skill 'nonexistent-skill' not found in registry"
+  ]
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- SHELL COMPLETIONS -->
+      <!-- ============================================================ -->
+      <div class="content-section">
+        <h2>🐚 Shell Completions</h2>
+        <p>Enable tab-completion for your shell:</p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill --install-completion   <span style="color: var(--text-muted)"># Auto-detects bash, zsh, fish, PowerShell</span>
+
+<span style="color: var(--text-muted)"># Then restart your shell or source the completion file</span>
+<span class="prompt">$</span> source ~/.bashrc   <span style="color: var(--text-muted)"># bash</span>
+<span class="prompt">$</span> source ~/.zshrc    <span style="color: var(--text-muted)"># zsh</span></pre>
+        </div>
+
+        <p>
+          After installation, tab-complete commands, options, skill names, and
+          bundle names:
+        </p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill ins&lt;TAB&gt;
+install
+
+<span class="prompt">$</span> omniskill install --sk&lt;TAB&gt;
+--skill
+
+<span class="prompt">$</span> omniskill install --skill react&lt;TAB&gt;
+react-best-practices</pre>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- COMMON WORKFLOWS -->
+      <!-- ============================================================ -->
+      <div class="content-section">
+        <h2>🔄 Common Workflows</h2>
+
+        <h3>Install a Bundle</h3>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill install --bundle web-dev-kit
+<span class="prompt">$</span> omniskill doctor</pre>
+        </div>
+
+        <h3>Validate Before a PR</h3>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill validate
+<span style="color: var(--text-muted)"># Exit code 0 = all good, 2 = validation failure</span></pre>
+        </div>
+
+        <h3>Check Installation Health</h3>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill doctor --json | jq '.data.checks_failed'
+0</pre>
+        </div>
+
+        <h3>Search and Install</h3>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill search "django"
+<span class="prompt">$</span> omniskill info django-expert
+<span class="prompt">$</span> omniskill install --skill django-expert</pre>
+        </div>
+
+        <h3>Run a Pipeline</h3>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill pipeline run sdd --project new-feature
+<span class="prompt">$</span> omniskill pipeline status --project new-feature</pre>
+        </div>
+
+        <h3>Update OMNISKILL</h3>
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> omniskill update --check
+<span class="prompt">$</span> omniskill update
+<span class="prompt">$</span> omniskill doctor</pre>
+        </div>
+      </div>
+
+      <!-- ============================================================ -->
+      <!-- NEXT STEPS -->
+      <!-- ============================================================ -->
+      <div class="content-section">
+        <h2>🎯 Next Steps</h2>
+        <p>Now that you know the CLI, explore these guides to go deeper:</p>
+
+        <div class="platform-cards">
+          <a href="getting-started.html" class="platform-item">
+            <span class="platform-emoji">🚀</span>
+            <h3>Getting Started</h3>
+            <p>First-time setup and installation</p>
+          </a>
+
+          <a href="creating-skills.html" class="platform-item">
+            <span class="platform-emoji">⚡</span>
+            <h3>Creating Skills</h3>
+            <p>Author your own custom skills</p>
+          </a>
+
+          <a href="creating-bundles.html" class="platform-item">
+            <span class="platform-emoji">📦</span>
+            <h3>Creating Bundles</h3>
+            <p>Package skills into domain kits</p>
+          </a>
+
+          <a href="creating-agents.html" class="platform-item">
+            <span class="platform-emoji">🤖</span>
+            <h3>Creating Agents</h3>
+            <p>Define formal agent definitions</p>
+          </a>
+
+          <a href="creating-pipelines.html" class="platform-item">
+            <span class="platform-emoji">🔄</span>
+            <h3>Creating Pipelines</h3>
+            <p>Build multi-agent workflows</p>
+          </a>
+
+          <a href="platform-guide.html" class="platform-item">
+            <span class="platform-emoji">🔧</span>
+            <h3>Platform Guide</h3>
+            <p>Platform-specific details</p>
+          </a>
+
+          <a href="architecture.html" class="platform-item">
+            <span class="platform-emoji">🏗️</span>
+            <h3>Architecture</h3>
+            <p>Complexity router &amp; knowledge sources</p>
+          </a>
+
+          <a href="faq.html" class="platform-item">
+            <span class="platform-emoji">❓</span>
+            <h3>FAQ</h3>
+            <p>Common questions &amp; troubleshooting</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="doc-nav-footer">
+        <a href="creating-pipelines.html" class="nav-link prev">
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">Creating Pipelines</span>
+        </a>
+        <a href="platform-guide.html" class="nav-link next">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">Platform Guide</span>
+        </a>
+      </div>
+    </main>
+
+    <script>
+      // Scroll reveal animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".reveal, .content-section").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Sidebar active state based on current page
+      const currentPage = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".sidebar-link").forEach((link) => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        }
+      });
+    </script>
+  </body>
+</html>

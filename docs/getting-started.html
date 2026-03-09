@@ -43,6 +43,7 @@
         <a href="creating-pipelines.html" class="sidebar-link"
           >Creating Pipelines</a
         >
+        <a href="cli-guide.html" class="sidebar-link">CLI Guide</a>
         <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
         <a href="architecture.html" class="sidebar-link">Architecture</a>
         <a href="faq.html" class="sidebar-link">FAQ</a>
@@ -308,27 +309,36 @@ triggers:
           </tbody>
         </table>
 
-        <p style="margin-top: 1.5rem;">
-          Behind the scenes, every request passes through the <strong>Complexity Router</strong> which classifies your task (trivial → simple → moderate → complex → expert) and routes it to the optimal model tier and skill/agent/pipeline.
+        <p style="margin-top: 1.5rem">
+          Behind the scenes, every request passes through the
+          <strong>Complexity Router</strong> which classifies your task (trivial
+          → simple → moderate → complex → expert) and routes it to the optimal
+          model tier and skill/agent/pipeline.
         </p>
       </div>
 
       <!-- Knowledge Sources Section -->
       <div class="content-section">
         <h2>📚 Knowledge Sources</h2>
-        <p>
-          OMNISKILL can tap into external knowledge repositories:
-        </p>
+        <p>OMNISKILL can tap into external knowledge repositories:</p>
 
         <ul>
-          <li><strong>GitHub repos</strong> — Point to any public or private repository</li>
-          <li><strong>Local directories</strong> — Reference your project docs, specs, or notes</li>
+          <li>
+            <strong>GitHub repos</strong> — Point to any public or private
+            repository
+          </li>
+          <li>
+            <strong>Local directories</strong> — Reference your project docs,
+            specs, or notes
+          </li>
           <li><strong>URLs</strong> — Web documentation or API references</li>
           <li><strong>APIs</strong> — Dynamic data sources</li>
         </ul>
 
         <p>
-          Knowledge sources use file-based search (grep/find/cat) — no vector databases or embeddings required. Configure sources in <code>templates/source-config.yaml</code> and sync them with:
+          Knowledge sources use file-based search (grep/find/cat) — no vector
+          databases or embeddings required. Configure sources in
+          <code>templates/source-config.yaml</code> and sync them with:
         </p>
 
         <div class="terminal-block">
@@ -339,29 +349,37 @@ triggers:
       <!-- Self-Customization Section -->
       <div class="content-section">
         <h2>🔧 Self-Customization</h2>
-        <p>
-          OMNISKILL includes AI-guided skills for extending itself:
-        </p>
+        <p>OMNISKILL includes AI-guided skills for extending itself:</p>
 
         <ul>
-          <li><strong><code>add-skill</code></strong> — Tell your AI: "Follow the add-skill skill to create a skill for [domain]"</li>
-          <li><strong><code>add-bundle</code></strong> — AI-guided bundle creation with checklists</li>
-          <li><strong><code>add-agent</code></strong> — AI-guided agent creation</li>
-          <li><strong><code>add-adapter</code></strong> — Create adapters for new platforms</li>
-          <li><strong><code>rename-project</code></strong> — Fork OMNISKILL and customize it for your organization</li>
+          <li>
+            <strong><code>add-skill</code></strong> — Tell your AI: "Follow the
+            add-skill skill to create a skill for [domain]"
+          </li>
+          <li>
+            <strong><code>add-bundle</code></strong> — AI-guided bundle creation
+            with checklists
+          </li>
+          <li>
+            <strong><code>add-agent</code></strong> — AI-guided agent creation
+          </li>
+          <li>
+            <strong><code>add-adapter</code></strong> — Create adapters for new
+            platforms
+          </li>
+          <li>
+            <strong><code>rename-project</code></strong> — Fork OMNISKILL and
+            customize it for your organization
+          </li>
         </ul>
 
-        <p>
-          These skills provide step-by-step guidance and validation checks.
-        </p>
+        <p>These skills provide step-by-step guidance and validation checks.</p>
       </div>
 
       <!-- Using the SDK Section -->
       <div class="content-section">
         <h2>💻 Using the SDK</h2>
-        <p>
-          For programmatic access, use the Python SDK:
-        </p>
+        <p>For programmatic access, use the Python SDK:</p>
 
         <div class="code-block">
           <div class="code-label">Python</div>
@@ -451,23 +469,26 @@ report = os.health_check()</code></pre>
 
     <script>
       // Scroll reveal animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      document.querySelectorAll('.reveal, .content-section').forEach(el => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".reveal, .content-section").forEach((el) => {
         observer.observe(el);
       });
 
       // Sidebar active state based on current page
-      const currentPage = window.location.pathname.split('/').pop();
-      document.querySelectorAll('.sidebar-link').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-          link.classList.add('active');
+      const currentPage = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".sidebar-link").forEach((link) => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
         }
       });
     </script>

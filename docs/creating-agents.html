@@ -43,6 +43,7 @@
         <a href="creating-pipelines.html" class="sidebar-link"
           >Creating Pipelines</a
         >
+        <a href="cli-guide.html" class="sidebar-link">CLI Guide</a>
         <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
         <a href="architecture.html" class="sidebar-link">Architecture</a>
         <a href="faq.html" class="sidebar-link">FAQ</a>
@@ -549,18 +550,19 @@ output-contract:
       <!-- Self-Customization Section -->
       <div class="content-section">
         <h2>🤖 Self-Customization</h2>
-        <p>
-          Use the AI-guided approach to create new agents:
-        </p>
+        <p>Use the AI-guided approach to create new agents:</p>
 
         <div class="alert alert-info">
           <div class="alert-icon">💡</div>
           <div class="alert-content">
-            <strong>Prompt:</strong> "Follow the add-agent skill to create an agent for [task type]"
+            <strong>Prompt:</strong> "Follow the add-agent skill to create an
+            agent for [task type]"
           </div>
         </div>
 
-        <p>The <code>add-agent</code> skill provides step-by-step guidance for:</p>
+        <p>
+          The <code>add-agent</code> skill provides step-by-step guidance for:
+        </p>
         <ul>
           <li>Defining agent personas and identity</li>
           <li>Configuring skill bindings</li>
@@ -574,7 +576,8 @@ output-contract:
       <div class="content-section">
         <h2>🔀 Special Agent Pattern: The Routing Agent</h2>
         <p>
-          The <strong>complexity-router</strong> is a special type of agent that runs before other agents. It demonstrates the routing agent pattern:
+          The <strong>complexity-router</strong> is a special type of agent that
+          runs before other agents. It demonstrates the routing agent pattern:
         </p>
 
         <div class="code-block">
@@ -596,7 +599,9 @@ output-contract:
             <div class="alert-title">Routing Agent Benefits</div>
             <ul style="margin-bottom: 0">
               <li>Optimizes cost by using cheaper models for simple tasks</li>
-              <li>Improves quality by routing complex tasks to premium models</li>
+              <li>
+                Improves quality by routing complex tasks to premium models
+              </li>
               <li>Reduces latency by using fast models for trivial tasks</li>
               <li>Provides intelligent task classification before execution</li>
             </ul>
@@ -604,7 +609,9 @@ output-contract:
         </div>
 
         <p>
-          See <code>skills/complexity-router/resources/routing-table.md</code> for the full routing logic.
+          See
+          <code>skills/complexity-router/resources/routing-table.md</code> for
+          the full routing logic.
         </p>
       </div>
 
@@ -623,23 +630,26 @@ output-contract:
 
     <script>
       // Scroll reveal animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      document.querySelectorAll('.reveal, .content-section').forEach(el => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".reveal, .content-section").forEach((el) => {
         observer.observe(el);
       });
 
       // Sidebar active state based on current page
-      const currentPage = window.location.pathname.split('/').pop();
-      document.querySelectorAll('.sidebar-link').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-          link.classList.add('active');
+      const currentPage = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".sidebar-link").forEach((link) => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
         }
       });
     </script>

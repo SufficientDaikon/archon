@@ -18,6 +18,39 @@ _Write skills once. Run them on Claude Code, Copilot CLI, Cursor, Windsurf, and 
 
 ---
 
+## 🚀 Get OMNISKILL
+
+### CLI (Recommended)
+```bash
+pip install omniskill        # Install from PyPI
+omniskill init               # Auto-detect your AI platforms
+omniskill install --all      # Install all 49 skills
+omniskill doctor             # Verify everything works
+```
+
+> 📖 Full command reference: [CLI Guide](docs/cli-guide.md)
+
+### VS Code Extension
+Works in **VS Code**, **Cursor**, and **Windsurf**.
+
+Install from the VS Code Marketplace → search "OMNISKILL"
+
+Features: Skill Explorer sidebar, Pipeline Dashboard, Health Report, 17 commands via Command Palette.
+
+> 📖 Extension docs: [vscode-extension/README.md](vscode-extension/README.md)
+
+### Web App
+Browse skills, agents, and pipelines at [omniskill.dev](https://omniskill.dev) *(coming soon)*
+
+Or run locally:
+```bash
+cd webapp && npm install && npm run dev
+```
+
+> 📖 Web app docs: [webapp/README.md](webapp/README.md)
+
+---
+
 ## What is OMNISKILL?
 
 OMNISKILL is a **universal framework** for AI coding assistant skills, agents, and workflows. It solves the fragmentation problem: instead of maintaining separate skill files for every AI tool, you write once in a universal format and deploy everywhere.

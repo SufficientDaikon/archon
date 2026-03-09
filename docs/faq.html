@@ -41,6 +41,7 @@
         <a href="creating-pipelines.html" class="sidebar-link"
           >Creating Pipelines</a
         >
+        <a href="cli-guide.html" class="sidebar-link">CLI Guide</a>
         <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
         <a href="architecture.html" class="sidebar-link">Architecture</a>
         <a href="faq.html" class="sidebar-link active">FAQ</a>
@@ -93,7 +94,8 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: Claude Code, GitHub Copilot CLI, Cursor, Windsurf, and Antigravity.
+              A: Claude Code, GitHub Copilot CLI, Cursor, Windsurf, and
+              Antigravity.
             </div>
           </div>
         </div>
@@ -105,7 +107,9 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: Yes. <code>python scripts/install.py --bundle web-dev-kit</code> installs only that bundle.
+              A: Yes.
+              <code>python scripts/install.py --bundle web-dev-kit</code>
+              installs only that bundle.
             </div>
           </div>
         </div>
@@ -117,7 +121,8 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: No. You need at least one. The installer auto-detects what you have.
+              A: No. You need at least one. The installer auto-detects what you
+              have.
             </div>
           </div>
         </div>
@@ -134,7 +139,9 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: Use the skill factory: tell your AI assistant "create a new skill for [domain]". Or copy <code>skills/_template/</code> manually.
+              A: Use the skill factory: tell your AI assistant "create a new
+              skill for [domain]". Or copy
+              <code>skills/_template/</code> manually.
             </div>
           </div>
         </div>
@@ -146,7 +153,8 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: Either make your triggers more specific, or put both skills in a bundle with conflict-resolution rules in the bundle.yaml.
+              A: Either make your triggers more specific, or put both skills in
+              a bundle with conflict-resolution rules in the bundle.yaml.
             </div>
           </div>
         </div>
@@ -158,7 +166,8 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: Yes. Set <code>extends: parent-skill-name</code> in your manifest.yaml.
+              A: Yes. Set <code>extends: parent-skill-name</code> in your
+              manifest.yaml.
             </div>
           </div>
         </div>
@@ -170,12 +179,15 @@
 
         <div class="faq-item">
           <div class="faq-question">
-            Q: What's the difference between a bundle and just installing multiple skills?
+            Q: What's the difference between a bundle and just installing
+            multiple skills?
             <span class="faq-icon">▼</span>
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: Bundles include a meta-skill that resolves conflicts and routes between constituent skills. They also support atomic install/update/uninstall.
+              A: Bundles include a meta-skill that resolves conflicts and routes
+              between constituent skills. They also support atomic
+              install/update/uninstall.
             </div>
           </div>
         </div>
@@ -192,7 +204,8 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: Yes. Create a YAML file in <code>pipelines/</code> following the pipeline schema.
+              A: Yes. Create a YAML file in <code>pipelines/</code> following
+              the pipeline schema.
             </div>
           </div>
         </div>
@@ -204,7 +217,8 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: Depends on the step's <code>on-failure</code> setting: halt (stop), loop (retry from earlier step), skip, or retry.
+              A: Depends on the step's <code>on-failure</code> setting: halt
+              (stop), loop (retry from earlier step), skip, or retry.
             </div>
           </div>
         </div>
@@ -221,7 +235,11 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: An automatic pre-step that classifies every request by complexity (trivial → simple → moderate → complex → expert), selects the optimal model tier, and routes to the right skill/agent/pipeline. It has P0 priority and runs before everything else.
+              A: An automatic pre-step that classifies every request by
+              complexity (trivial → simple → moderate → complex → expert),
+              selects the optimal model tier, and routes to the right
+              skill/agent/pipeline. It has P0 priority and runs before
+              everything else.
             </div>
           </div>
         </div>
@@ -233,7 +251,8 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: Yes. Set <code>OMNISKILL_BYPASS_ROUTER=true</code> in your environment or use direct skill/agent invocation.
+              A: Yes. Set <code>OMNISKILL_BYPASS_ROUTER=true</code> in your
+              environment or use direct skill/agent invocation.
             </div>
           </div>
         </div>
@@ -245,7 +264,11 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: It analyzes task scope, dependencies, required domain expertise, output complexity, and time constraints. See <code>skills/complexity-router/resources/complexity-signals.md</code>.
+              A: It analyzes task scope, dependencies, required domain
+              expertise, output complexity, and time constraints. See
+              <code
+                >skills/complexity-router/resources/complexity-signals.md</code
+              >.
             </div>
           </div>
         </div>
@@ -257,7 +280,8 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: Fast/cheap (for trivial/simple tasks), Standard (for moderate tasks), and Premium (for complex/expert tasks).
+              A: Fast/cheap (for trivial/simple tasks), Standard (for moderate
+              tasks), and Premium (for complex/expert tasks).
             </div>
           </div>
         </div>
@@ -274,7 +298,9 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: External knowledge repositories (GitHub repos, local directories, URLs, APIs) that skills can reference. They use file-based search — no vector databases or embeddings required.
+              A: External knowledge repositories (GitHub repos, local
+              directories, URLs, APIs) that skills can reference. They use
+              file-based search — no vector databases or embeddings required.
             </div>
           </div>
         </div>
@@ -286,7 +312,8 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: Edit <code>templates/source-config.yaml</code> and run <code>python scripts/admin.py --sync</code>.
+              A: Edit <code>templates/source-config.yaml</code> and run
+              <code>python scripts/admin.py --sync</code>.
             </div>
           </div>
         </div>
@@ -298,7 +325,8 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: Markdown (.md), YAML (.yaml), JSON (.json), and plain text (.txt). Other file types are ignored during content normalization.
+              A: Markdown (.md), YAML (.yaml), JSON (.json), and plain text
+              (.txt). Other file types are ignored during content normalization.
             </div>
           </div>
         </div>
@@ -310,7 +338,9 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: By default, sources are synced daily. Run <code>python scripts/admin.py --sync</code> to trigger a manual sync.
+              A: By default, sources are synced daily. Run
+              <code>python scripts/admin.py --sync</code> to trigger a manual
+              sync.
             </div>
           </div>
         </div>
@@ -327,7 +357,12 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: AI-guided skills that help you extend OMNISKILL: <code>add-skill</code>, <code>add-bundle</code>, <code>add-agent</code>, <code>add-adapter</code>, and <code>rename-project</code>. Tell your AI assistant to "Follow the [skill-name] skill to..." and it will guide you through the process.
+              A: AI-guided skills that help you extend OMNISKILL:
+              <code>add-skill</code>, <code>add-bundle</code>,
+              <code>add-agent</code>, <code>add-adapter</code>, and
+              <code>rename-project</code>. Tell your AI assistant to "Follow the
+              [skill-name] skill to..." and it will guide you through the
+              process.
             </div>
           </div>
         </div>
@@ -339,7 +374,9 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: No. The self-customization skills automate validation, template generation, and installation. But you can still create things manually if you prefer.
+              A: No. The self-customization skills automate validation, template
+              generation, and installation. But you can still create things
+              manually if you prefer.
             </div>
           </div>
         </div>
@@ -351,7 +388,8 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: Yes. They're regular skills in <code>skills/add-*</code> and can be edited or extended.
+              A: Yes. They're regular skills in <code>skills/add-*</code> and
+              can be edited or extended.
             </div>
           </div>
         </div>
@@ -368,7 +406,9 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: Reusable prompt components: router prompts, system prompts, shared formatting rules, and persona templates. Located in <code>prompts/</code>.
+              A: Reusable prompt components: router prompts, system prompts,
+              shared formatting rules, and persona templates. Located in
+              <code>prompts/</code>.
             </div>
           </div>
         </div>
@@ -380,7 +420,8 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: Yes. Edit files in <code>prompts/</code> to change how OMNISKILL interacts with AI models.
+              A: Yes. Edit files in <code>prompts/</code> to change how
+              OMNISKILL interacts with AI models.
             </div>
           </div>
         </div>
@@ -392,7 +433,8 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: No. Prompts are universal. Platform adapters handle any platform-specific formatting.
+              A: No. Prompts are universal. Platform adapters handle any
+              platform-specific formatting.
             </div>
           </div>
         </div>
@@ -409,7 +451,9 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: A Python library (<code>sdk/omniskill.py</code>) providing programmatic access to OMNISKILL functionality: list skills, route requests, install bundles, validate, sync sources, health checks.
+              A: A Python library (<code>sdk/omniskill.py</code>) providing
+              programmatic access to OMNISKILL functionality: list skills, route
+              requests, install bundles, validate, sync sources, health checks.
             </div>
           </div>
         </div>
@@ -421,7 +465,8 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: Use the SDK when integrating OMNISKILL into other Python tools or automation. Use CLI scripts for manual operations.
+              A: Use the SDK when integrating OMNISKILL into other Python tools
+              or automation. Use CLI scripts for manual operations.
             </div>
           </div>
         </div>
@@ -433,7 +478,8 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: Not directly, but you can call it via subprocess or create language bindings.
+              A: Not directly, but you can call it via subprocess or create
+              language bindings.
             </div>
           </div>
         </div>
@@ -450,7 +496,9 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: A CLI tool (<code>scripts/admin.py</code>) for operational tasks: viewing stats, checking errors, managing knowledge sources, generating health reports.
+              A: A CLI tool (<code>scripts/admin.py</code>) for operational
+              tasks: viewing stats, checking errors, managing knowledge sources,
+              generating health reports.
             </div>
           </div>
         </div>
@@ -491,7 +539,8 @@
           </div>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              A: See <a href="../CONTRIBUTING.md">CONTRIBUTING.md</a>. Fork, create your skill, validate, and submit a PR.
+              A: See <a href="../CONTRIBUTING.md">CONTRIBUTING.md</a>. Fork,
+              create your skill, validate, and submit a PR.
             </div>
           </div>
         </div>
@@ -512,30 +561,33 @@
 
     <script>
       // FAQ accordion
-      document.querySelectorAll('.faq-question').forEach(q => {
-        q.addEventListener('click', () => {
-          q.parentElement.classList.toggle('open');
+      document.querySelectorAll(".faq-question").forEach((q) => {
+        q.addEventListener("click", () => {
+          q.parentElement.classList.toggle("open");
         });
       });
 
       // Scroll reveal animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      document.querySelectorAll('.reveal, .content-section').forEach(el => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".reveal, .content-section").forEach((el) => {
         observer.observe(el);
       });
 
       // Sidebar active state based on current page
-      const currentPage = window.location.pathname.split('/').pop();
-      document.querySelectorAll('.sidebar-link').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-          link.classList.add('active');
+      const currentPage = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".sidebar-link").forEach((link) => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
         }
       });
     </script>

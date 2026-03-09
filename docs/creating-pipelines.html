@@ -41,6 +41,7 @@
         <a href="creating-pipelines.html" class="sidebar-link active"
           >Creating Pipelines</a
         >
+        <a href="cli-guide.html" class="sidebar-link">CLI Guide</a>
         <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
         <a href="architecture.html" class="sidebar-link">Architecture</a>
         <a href="faq.html" class="sidebar-link">FAQ</a>
@@ -165,7 +166,8 @@ state-file: ".omniskill/pipeline-state.json"</code></pre>
       <div class="content-section">
         <h2>🔀 The Complexity Router Pre-Step</h2>
         <p>
-          Before any pipeline executes, the <strong>complexity-router</strong> automatically runs as a pre-step:
+          Before any pipeline executes, the
+          <strong>complexity-router</strong> automatically runs as a pre-step:
         </p>
 
         <div class="code-block">
@@ -193,13 +195,17 @@ state-file: ".omniskill/pipeline-state.json"</code></pre>
           <div class="alert-content">
             <div class="alert-title">Automatic Optimization</div>
             <p>
-              The complexity router ensures that trivial tasks use fast/cheap models while complex tasks get routed to premium models—optimizing both cost and quality without manual configuration.
+              The complexity router ensures that trivial tasks use fast/cheap
+              models while complex tasks get routed to premium models—optimizing
+              both cost and quality without manual configuration.
             </p>
           </div>
         </div>
 
         <p>
-          See <code>skills/complexity-router/resources/complexity-signals.md</code> for the full classification criteria.
+          See
+          <code>skills/complexity-router/resources/complexity-signals.md</code>
+          for the full classification criteria.
         </p>
       </div>
 
@@ -662,32 +668,35 @@ state-file: ".omniskill/sdd-pipeline-state.json"</code></pre>
           <span class="nav-label">← Previous</span>
           <span class="nav-title">Creating Agents</span>
         </a>
-        <a href="platform-guide.html" class="nav-link next">
+        <a href="cli-guide.html" class="nav-link next">
           <span class="nav-label">Next →</span>
-          <span class="nav-title">Platform Guide</span>
+          <span class="nav-title">CLI Guide</span>
         </a>
       </div>
     </main>
 
     <script>
       // Scroll reveal animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-      
-      document.querySelectorAll('.reveal, .content-section').forEach(el => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".reveal, .content-section").forEach((el) => {
         observer.observe(el);
       });
 
       // Sidebar active state based on current page
-      const currentPage = window.location.pathname.split('/').pop();
-      document.querySelectorAll('.sidebar-link').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-          link.classList.add('active');
+      const currentPage = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".sidebar-link").forEach((link) => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
         }
       });
     </script>
