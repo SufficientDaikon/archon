@@ -1,0 +1,94 @@
+# Deviation Log Schema
+# Tracks every deviation from spec/plan during pipeline execution
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "Archon Deviation Log Schema"
+version: "1.0.0"
+description: "Standard format for recording and tracking deviations from specifications"
+
+type: object
+required:
+  - pipeline
+  - deviations
+properties:
+  pipeline:
+    type: string
+    description: "Pipeline name where deviations occurred"
+
+  state-id:
+    type: string
+    description: "Pipeline state ID for traceability"
+
+  deviations:
+    type: array
+    items:
+      type: object
+      required:
+        - id
+        - timestamp
+        - step
+        - what
+        - why
+        - severity
+        - status
+      properties:
+        id:
+          type: string
+          pattern: "^DEV-[0-9]{3}$"
+          description: "Deviation identifier (DEV-001, DEV-002, ...)"
+
+        timestamp:
+          type: string
+          format: date-time
+          description: "When the deviation was identified"
+
+        step:
+          type: string
+          description: "Pipeline step where deviation occurred"
+
+        agent:
+          type: string
+          description: "Agent that identified or caused the deviation"
+
+        what:
+          type: string
+          description: "Exact description of deviation from spec/plan"
+
+        why:
+          type: string
+          description: "Technical justification (must be technical, not convenience)"
+
+        impact:
+          type: string
+          description: "What does this deviation affect?"
+
+        alternatives-considered:
+          type: array
+          items:
+            type: string
+          description: "Other options that were evaluated"
+
+        severity:
+          type: string
+          enum:
+            - critical
+            - major
+            - minor
+          description: "Impact severity of the deviation"
+
+        status:
+          type: string
+          enum:
+            - requested
+            - approved
+            - denied
+            - implemented
+          description: "Current status of the deviation request"
+
+        approved-by:
+          type: string
+          description: "Who approved the deviation (human or escalation agent)"
+
+        resolution:
+          type: string
+          description: "How the deviation was ultimately handled"

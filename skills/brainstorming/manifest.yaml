@@ -1,0 +1,6 @@
+name: brainstorming
+description: "Design-first collaborative workflow for features and components. Use when creating features, building components, adding functionality, or any creative work before implementation."
+version: "2.0.0"
+author: tahaa
+category: development-workflow
+tags: [design, planning, brainstorming, specification, creative, entry-point]

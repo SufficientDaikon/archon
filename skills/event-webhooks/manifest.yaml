@@ -1,0 +1,36 @@
+name: event-webhooks
+version: 1.0.0
+description: "Event-driven webhook dispatch with template payloads, SSRF protection, and parallel delivery"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - webhooks
+  - events
+  - notifications
+  - security
+  - api
+
+triggers:
+  keywords:
+    - "add webhooks"
+    - "webhook system"
+    - "event notifications"
+    - "webhook dispatch"
+  patterns:
+    - "add * webhook*"
+    - "notify * on events"
+
+priority: P2
+
+resources:
+  - path: resources/webhook-patterns.md
+    type: reference
+    load: on-demand

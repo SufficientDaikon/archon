@@ -1,0 +1,36 @@
+name: claude-plugin-archetype
+version: 1.0.0
+description: "Scaffold complete Claude Code plugins with MCP servers, commands, agents, and skills"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - claude
+  - plugin
+  - mcp
+  - agents
+  - commands
+
+triggers:
+  keywords:
+    - "claude plugin"
+    - "build a plugin"
+    - "mcp plugin"
+    - "claude code plugin"
+  patterns:
+    - "create * plugin for claude"
+    - "build * claude * extension"
+
+priority: P2
+
+resources:
+  - path: resources/plugin-scaffold.md
+    type: reference
+    load: on-demand

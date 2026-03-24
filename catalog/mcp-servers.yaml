@@ -1,0 +1,354 @@
+# Archon MCP Server Integration Catalog
+# Curated list of MCP servers for AI coding assistants.
+# See: docs/integration-catalog.md for full documentation.
+#
+# FR-CAT-001 through FR-CAT-005
+
+schema_version: "1.0"
+
+servers:
+  # ── Core ────────────────────────────────────────────────────────
+
+  - name: filesystem
+    package: "@modelcontextprotocol/server-filesystem"
+    category: core
+    description: "Read, write, and manage local files and directories via MCP"
+    install-command: "npx -y @modelcontextprotocol/server-filesystem"
+    server-type: stdio
+    args-template: ["npx", "-y", "@modelcontextprotocol/server-filesystem", "/path/to/allowed/dir"]
+    required-env: []
+    recommended-for:
+      skills: [backend-development, frontend-design]
+      agents: [implementer-agent]
+      bundles: [web-dev-kit, django-kit]
+    tags: [files, filesystem, read, write, directory]
+    docs-url: "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem"
+
+  - name: fetch
+    package: "@modelcontextprotocol/server-fetch"
+    category: core
+    description: "HTTP fetch — retrieve web content and API responses via MCP"
+    install-command: "npx -y @modelcontextprotocol/server-fetch"
+    server-type: stdio
+    args-template: ["npx", "-y", "@modelcontextprotocol/server-fetch"]
+    required-env: []
+    recommended-for:
+      skills: [backend-development]
+      agents: []
+      bundles: [web-dev-kit]
+    tags: [http, fetch, web, api, request]
+    docs-url: "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch"
+
+  - name: memory
+    package: "@modelcontextprotocol/server-memory"
+    category: core
+    description: "Persistent key-value memory store across sessions for context retention"
+    install-command: "npx -y @modelcontextprotocol/server-memory"
+    server-type: stdio
+    args-template: ["npx", "-y", "@modelcontextprotocol/server-memory"]
+    required-env: []
+    recommended-for:
+      skills: [context-curator]
+      agents: [context-curator-agent]
+      bundles: [sdd-kit]
+    tags: [memory, persistence, context, key-value, storage]
+    docs-url: "https://github.com/modelcontextprotocol/servers/tree/main/src/memory"
+
+  # ── Development ─────────────────────────────────────────────────
+
+  - name: github
+    package: "@modelcontextprotocol/server-github"
+    category: development
+    description: "GitHub integration — repos, issues, PRs, code search via GitHub API"
+    install-command: "npx -y @modelcontextprotocol/server-github"
+    server-type: stdio
+    args-template: ["npx", "-y", "@modelcontextprotocol/server-github"]
+    required-env:
+      - name: GITHUB_TOKEN
+        description: "Personal access token with repo scope"
+    recommended-for:
+      skills: [backend-development]
+      agents: [implementer-agent]
+      bundles: [web-dev-kit]
+    tags: [git, github, version-control, code-review, issues, pull-requests]
+    docs-url: "https://github.com/modelcontextprotocol/servers/tree/main/src/github"
+
+  - name: git
+    package: "@modelcontextprotocol/server-git"
+    category: development
+    description: "Local git operations — diff, log, blame, status, and branch management"
+    install-command: "npx -y @modelcontextprotocol/server-git"
+    server-type: stdio
+    args-template: ["npx", "-y", "@modelcontextprotocol/server-git"]
+    required-env: []
+    recommended-for:
+      skills: [backend-development, systematic-debugging]
+      agents: [implementer-agent, debugger-agent]
+      bundles: [web-dev-kit, sdd-kit]
+    tags: [git, version-control, diff, log, blame]
+    docs-url: "https://github.com/modelcontextprotocol/servers/tree/main/src/git"
+
+  - name: gitlab
+    package: "@modelcontextprotocol/server-gitlab"
+    category: development
+    description: "GitLab integration — repos, merge requests, CI pipelines, and issues"
+    install-command: "npx -y @modelcontextprotocol/server-gitlab"
+    server-type: stdio
+    args-template: ["npx", "-y", "@modelcontextprotocol/server-gitlab"]
+    required-env:
+      - name: GITLAB_TOKEN
+        description: "GitLab personal access token"
+      - name: GITLAB_API_URL
+        description: "GitLab API base URL (e.g., https://gitlab.com/api/v4)"
+    recommended-for:
+      skills: [backend-development]
+      agents: []
+      bundles: []
+    tags: [git, gitlab, merge-requests, ci, version-control]
+    docs-url: "https://github.com/modelcontextprotocol/servers/tree/main/src/gitlab"
+
+  - name: linear
+    package: "@modelcontextprotocol/server-linear"
+    category: development
+    description: "Linear issue tracking — create and manage issues, projects, and cycles"
+    install-command: "npx -y @modelcontextprotocol/server-linear"
+    server-type: stdio
+    args-template: ["npx", "-y", "@modelcontextprotocol/server-linear"]
+    required-env:
+      - name: LINEAR_API_KEY
+        description: "Linear API key for authentication"
+    recommended-for:
+      skills: []
+      agents: []
+      bundles: []
+    tags: [linear, issues, project-management, tracking]
+    docs-url: "https://github.com/modelcontextprotocol/servers"
+
+  - name: sentry
+    package: "@modelcontextprotocol/server-sentry"
+    category: development
+    description: "Sentry error tracking — query issues, events, releases, and stack traces"
+    install-command: "npx -y @modelcontextprotocol/server-sentry"
+    server-type: stdio
+    args-template: ["npx", "-y", "@modelcontextprotocol/server-sentry"]
+    required-env:
+      - name: SENTRY_AUTH_TOKEN
+        description: "Sentry authentication token"
+    recommended-for:
+      skills: [systematic-debugging]
+      agents: [debugger-agent]
+      bundles: [testing-kit]
+    tags: [sentry, errors, debugging, monitoring, observability]
+    docs-url: "https://github.com/modelcontextprotocol/servers"
+
+  - name: docker
+    package: "@modelcontextprotocol/server-docker"
+    category: development
+    description: "Docker container and image management — build, run, inspect containers"
+    install-command: "npx -y @modelcontextprotocol/server-docker"
+    server-type: stdio
+    args-template: ["npx", "-y", "@modelcontextprotocol/server-docker"]
+    required-env: []
+    recommended-for:
+      skills: [backend-development]
+      agents: []
+      bundles: [django-kit]
+    tags: [docker, containers, images, devops, deployment]
+    docs-url: "https://github.com/modelcontextprotocol/servers"
+
+  # ── Database ────────────────────────────────────────────────────
+
+  - name: postgres
+    package: "@modelcontextprotocol/server-postgres"
+    category: database
+    description: "PostgreSQL query execution, schema inspection, and database management"
+    install-command: "npx -y @modelcontextprotocol/server-postgres"
+    server-type: stdio
+    args-template: ["npx", "-y", "@modelcontextprotocol/server-postgres", "postgresql://localhost/mydb"]
+    required-env:
+      - name: POSTGRES_CONNECTION_STRING
+        description: "PostgreSQL connection URI (e.g., postgresql://user:pass@host/db)"
+    recommended-for:
+      skills: [django-expert, django-orm-patterns, backend-development]
+      agents: []
+      bundles: [django-kit]
+    tags: [postgres, postgresql, database, sql, query]
+    docs-url: "https://github.com/modelcontextprotocol/servers/tree/main/src/postgres"
+
+  - name: sqlite
+    package: "@modelcontextprotocol/server-sqlite"
+    category: database
+    description: "SQLite database querying, table management, and data inspection"
+    install-command: "npx -y @modelcontextprotocol/server-sqlite"
+    server-type: stdio
+    args-template: ["npx", "-y", "@modelcontextprotocol/server-sqlite", "/path/to/database.db"]
+    required-env: []
+    recommended-for:
+      skills: [backend-development]
+      agents: []
+      bundles: []
+    tags: [sqlite, database, sql, query, lightweight]
+    docs-url: "https://github.com/modelcontextprotocol/servers/tree/main/src/sqlite"
+
+  - name: redis
+    package: "@modelcontextprotocol/server-redis"
+    category: database
+    description: "Redis key-value store operations — get, set, scan, and cache management"
+    install-command: "npx -y @modelcontextprotocol/server-redis"
+    server-type: stdio
+    args-template: ["npx", "-y", "@modelcontextprotocol/server-redis", "redis://localhost:6379"]
+    required-env:
+      - name: REDIS_URL
+        description: "Redis connection URL (e.g., redis://localhost:6379)"
+    recommended-for:
+      skills: [backend-development]
+      agents: []
+      bundles: [django-kit]
+    tags: [redis, cache, key-value, database, nosql]
+    docs-url: "https://github.com/modelcontextprotocol/servers"
+
+  # ── Research ────────────────────────────────────────────────────
+
+  - name: brave-search
+    package: "@modelcontextprotocol/server-brave-search"
+    category: research
+    description: "Web search powered by Brave Search API — query the web from your agent"
+    install-command: "npx -y @modelcontextprotocol/server-brave-search"
+    server-type: stdio
+    args-template: ["npx", "-y", "@modelcontextprotocol/server-brave-search"]
+    required-env:
+      - name: BRAVE_API_KEY
+        description: "Brave Search API key"
+    recommended-for:
+      skills: [knowledge-sources, ux-research]
+      agents: [ux-research-agent]
+      bundles: [ux-design-kit]
+    tags: [search, web, brave, research, knowledge]
+    docs-url: "https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search"
+
+  - name: exa
+    package: "@exa/mcp-exa"
+    category: research
+    description: "AI-powered web search and content retrieval via Exa for deep research"
+    install-command: "npx -y @exa/mcp-exa"
+    server-type: stdio
+    args-template: ["npx", "-y", "@exa/mcp-exa"]
+    required-env:
+      - name: EXA_API_KEY
+        description: "Exa API key for AI-powered search"
+    recommended-for:
+      skills: [knowledge-sources, ux-research]
+      agents: [ux-research-agent]
+      bundles: []
+    tags: [search, ai, research, web, content, knowledge]
+    docs-url: "https://docs.exa.ai"
+
+  - name: puppeteer
+    package: "@modelcontextprotocol/server-puppeteer"
+    category: research
+    description: "Browser automation — screenshots, scraping, form filling, and testing"
+    install-command: "npx -y @modelcontextprotocol/server-puppeteer"
+    server-type: stdio
+    args-template: ["npx", "-y", "@modelcontextprotocol/server-puppeteer"]
+    required-env: []
+    recommended-for:
+      skills: [e2e-testing-patterns, webapp-testing, ux-test-suite]
+      agents: [qa-master-agent]
+      bundles: [testing-kit]
+    tags: [browser, automation, screenshots, scraping, testing, puppeteer]
+    docs-url: "https://github.com/modelcontextprotocol/servers/tree/main/src/puppeteer"
+
+  # ── Design ──────────────────────────────────────────────────────
+
+  - name: figma
+    package: "@anthropic/mcp-server-figma"
+    category: design
+    description: "Read Figma designs — inspect components, styles, layout, and export assets"
+    install-command: "npx -y @anthropic/mcp-server-figma"
+    server-type: stdio
+    args-template: ["npx", "-y", "@anthropic/mcp-server-figma"]
+    required-env:
+      - name: FIGMA_ACCESS_TOKEN
+        description: "Figma personal access token"
+    recommended-for:
+      skills: [frontend-design, ui-visual-design, design-handoff, ui-ux-designer]
+      agents: [ui-design-agent]
+      bundles: [ux-design-kit]
+    tags: [figma, design, ui, ux, components, layout]
+    docs-url: "https://github.com/anthropics/mcp-server-figma"
+
+  # ── AI ──────────────────────────────────────────────────────────
+
+  - name: sequential-thinking
+    package: "@modelcontextprotocol/server-sequential-thinking"
+    category: ai
+    description: "Step-by-step reasoning and chain-of-thought processing for complex tasks"
+    install-command: "npx -y @modelcontextprotocol/server-sequential-thinking"
+    server-type: stdio
+    args-template: ["npx", "-y", "@modelcontextprotocol/server-sequential-thinking"]
+    required-env: []
+    recommended-for:
+      skills: [complexity-router, spec-writer]
+      agents: [spec-writer-agent]
+      bundles: [sdd-kit]
+    tags: [reasoning, chain-of-thought, thinking, ai, logic]
+    docs-url: "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking"
+
+  # ── Cloud ───────────────────────────────────────────────────────
+
+  - name: aws
+    package: "@aws/mcp-server-aws"
+    category: cloud
+    description: "AWS service operations — S3 storage, Lambda functions, EC2 instances"
+    install-command: "npx -y @aws/mcp-server-aws"
+    server-type: stdio
+    args-template: ["npx", "-y", "@aws/mcp-server-aws"]
+    required-env:
+      - name: AWS_ACCESS_KEY_ID
+        description: "AWS access key ID"
+      - name: AWS_SECRET_ACCESS_KEY
+        description: "AWS secret access key"
+      - name: AWS_REGION
+        description: "AWS region (e.g., us-east-1)"
+    recommended-for:
+      skills: [backend-development]
+      agents: []
+      bundles: []
+    tags: [aws, cloud, s3, lambda, ec2, infrastructure]
+    docs-url: "https://github.com/aws/mcp-server-aws"
+
+  - name: gcp
+    package: "@google/mcp-server-gcp"
+    category: cloud
+    description: "Google Cloud Platform resource management — GCS, Cloud Run, BigQuery"
+    install-command: "npx -y @google/mcp-server-gcp"
+    server-type: stdio
+    args-template: ["npx", "-y", "@google/mcp-server-gcp"]
+    required-env:
+      - name: GOOGLE_APPLICATION_CREDENTIALS
+        description: "Path to GCP service account JSON key file"
+    recommended-for:
+      skills: [backend-development]
+      agents: []
+      bundles: []
+    tags: [gcp, google-cloud, cloud, infrastructure, bigquery]
+    docs-url: "https://github.com/google/mcp-server-gcp"
+
+  # ── Communication ───────────────────────────────────────────────
+
+  - name: slack
+    package: "@modelcontextprotocol/server-slack"
+    category: communication
+    description: "Slack messaging — send messages, search channels, read threads"
+    install-command: "npx -y @modelcontextprotocol/server-slack"
+    server-type: stdio
+    args-template: ["npx", "-y", "@modelcontextprotocol/server-slack"]
+    required-env:
+      - name: SLACK_BOT_TOKEN
+        description: "Slack Bot User OAuth token (xoxb-...)"
+    recommended-for:
+      skills: []
+      agents: []
+      bundles: []
+    tags: [slack, messaging, communication, channels, chat]
+    docs-url: "https://github.com/modelcontextprotocol/servers/tree/main/src/slack"

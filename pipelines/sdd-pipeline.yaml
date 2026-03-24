@@ -1,0 +1,48 @@
+# SDD Pipeline — Spec-Driven Development
+# spec-writer → [context-curator] → implementer → [context-curator] → reviewer
+
+name: sdd-pipeline
+version: 1.1.0
+description: "End-to-end Spec-Driven Development: plan → specification → context curation → implementation → context curation → review"
+trigger: "build feature * from scratch"
+tags: [sdd, development, core]
+synapse-mode: enabled
+
+steps:
+  - name: specify
+    agent: spec-writer-agent
+    input: "User's plan, idea, or feature description"
+    output: "Comprehensive specification document"
+    on-failure: halt
+    synapse-checkpoint: true
+
+  - name: curate-for-implement
+    agent: context-curator-agent
+    input: "Specification from step:specify"
+    output: "Curated context brief for implementer (filtered, chunked by user story)"
+    on-failure: skip
+
+  - name: implement
+    agent: implementer-agent
+    input: "Context brief from step:curate-for-implement OR specification from step:specify"
+    output: "Implemented code matching the specification"
+    on-failure: halt
+    synapse-checkpoint: true
+
+  - name: curate-for-review
+    agent: context-curator-agent
+    input: "Code from step:implement AND specification from step:specify"
+    output: "Curated context brief for reviewer (spec ref, completion report, deviations, test results)"
+    on-failure: skip
+
+  - name: review
+    agent: reviewer-agent
+    input: "Context brief from step:curate-for-review OR specification from step:specify AND code from step:implement"
+    output: "Compliance review report"
+    on-failure: loop
+    loop-target: implement
+    max-iterations: 3
+    synapse-checkpoint: true
+
+resumable: true
+artifact-persistence: sdd-specs

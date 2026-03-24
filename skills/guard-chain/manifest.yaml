@@ -1,0 +1,50 @@
+name: guard-chain
+version: 1.0.0
+description: "Layered request validation pipelines where each guard can short-circuit with a typed error response"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - security
+  - api
+  - middleware
+  - validation
+  - authentication
+
+triggers:
+  keywords:
+    - "guard chain"
+    - "API middleware"
+    - "request validation"
+    - "auth guard"
+    - "rate limiting"
+    - "route protection"
+    - "middleware pipeline"
+  patterns:
+    - "add * guard*"
+    - "protect * route*"
+    - "add * middleware*"
+    - "rate limit * API*"
+
+priority: P1
+
+source-dissection: "prompts.chat"
+source-repo: "https://github.com/f/prompts.chat"
+source-files:
+  - "src/app/api/prompts/route.ts"
+  - "src/app/api/*/route.ts"
+
+composes:
+  - error-handling-architecture
+
+resources:
+  - path: resources/guard-patterns.md
+    type: reference
+    load: on-demand

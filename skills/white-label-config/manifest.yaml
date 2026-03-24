@@ -1,0 +1,36 @@
+name: white-label-config
+version: 1.0.0
+description: "Typed defineConfig() pattern with branding, feature flags, and runtime env overrides"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - white-label
+  - configuration
+  - self-hosting
+  - feature-flags
+  - branding
+
+triggers:
+  keywords:
+    - "white label"
+    - "self-hostable"
+    - "defineConfig"
+    - "feature flags"
+  patterns:
+    - "make * self-hostable"
+    - "add * branding config"
+
+priority: P2
+
+resources:
+  - path: resources/config-patterns.md
+    type: reference
+    load: on-demand

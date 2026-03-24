@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Architecture — Archon v3.0 Documentation</title>
+    <meta
+      name="description"
+      content="Understand Archon v3.0's 6-layer architecture, runtime contracts, and design principles"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="doc-nav">
+      <a href="../index.html" class="nav-logo">Archon</a>
+      <a
+        href="https://github.com/SufficientDaikon/archon"
+        class="nav-github"
+        target="_blank"
+        >GitHub ↗</a
+      >
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">DOCUMENTATION</div>
+        <a href="getting-started.html" class="sidebar-link">Getting Started</a>
+        <a href="creating-skills.html" class="sidebar-link">Creating Skills</a>
+        <a href="creating-agents.html" class="sidebar-link">Creating Agents</a>
+        <a href="creating-synapses.html" class="sidebar-link"
+          >Creating Synapses</a
+        >
+        <a href="creating-bundles.html" class="sidebar-link"
+          >Creating Bundles</a
+        >
+        <a href="creating-pipelines.html" class="sidebar-link"
+          >Creating Pipelines</a
+        >
+        <a href="cli-guide.html" class="sidebar-link">CLI Guide</a>
+        <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
+        <a href="architecture.html" class="sidebar-link active">Architecture</a>
+        <a href="migration-v3.html" class="sidebar-link">Migration v3</a>
+        <a href="faq.html" class="sidebar-link">FAQ</a>
+        <a href="llms-txt.html" class="sidebar-link">llms.txt</a>
+        <a href="agent-cards.html" class="sidebar-link">Agent Cards</a>
+        <a href="integration-catalog.html" class="sidebar-link">Integration Catalog</a>
+      </div>
+      <div class="sidebar-section">
+        <a href="../index.html" class="sidebar-link back-link"
+          >← Back to Home</a
+        >
+      </div>
+    </aside>
+
+    <button
+      class="sidebar-toggle"
+      onclick="document.getElementById('sidebar').classList.toggle('open')"
+    >
+      ☰
+    </button>
+
+    <!-- Main Content -->
+    <main class="doc-content">
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="../index.html">Home</a>
+        <span class="separator">›</span>
+        <a href="getting-started.html">Documentation</a>
+        <span class="separator">›</span>
+        <span>Architecture</span>
+      </div>
+
+      <!-- Header -->
+      <div class="doc-header">
+        <span class="section-label">DOCUMENTATION</span>
+        <h1 class="doc-title">
+          Archon v3.0 <span class="gradient-text">Architecture</span>
+        </h1>
+        <p class="doc-subtitle">
+          Understand the 6-layer architecture, runtime contracts, and data flow
+          that power Archon v3.0's universal approach.
+        </p>
+      </div>
+
+      <!-- Vercel Credit -->
+      <div class="alert alert-info">
+        <div class="alert-icon">💡</div>
+        <div class="alert-content">
+          <div class="alert-title">Inspiration</div>
+          <p>
+            Inspired by
+            <a href="https://vercel.com/templates/ai" target="_blank"
+              >Vercel's Knowledge Agent Template</a
+            >
+            — extended with complexity routing, knowledge source integration,
+            and self-customization capabilities.
+          </p>
+        </div>
+      </div>
+
+      <!-- Design Principles Section -->
+      <div class="content-section">
+        <h2>🎯 Design Principles</h2>
+        <p>
+          Archon is built on six core principles that guide every design
+          decision:
+        </p>
+
+        <ol class="step-list">
+          <li class="step-item">
+            <div class="step-title">Universal Format</div>
+            <div class="step-description">Write once, deploy everywhere.</div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-title">Composability</div>
+            <div class="step-description">
+              Skills compose into bundles; agents compose into pipelines.
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-title">Separation of Concerns</div>
+            <div class="step-description">
+              Skills = knowledge, Agents = orchestration, Pipelines = workflow.
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-title">Self-Improvement</div>
+            <div class="step-description">
+              The system uses its own tools to improve itself.
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-title">Platform Agnostic</div>
+            <div class="step-description">
+              Adapters handle platform differences.
+            </div>
+          </li>
+
+          <li class="step-item">
+            <div class="step-title">Intelligent Routing</div>
+            <div class="step-description">
+              Complexity-based task classification and model selection.
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Layer Architecture Section -->
+      <div class="content-section">
+        <h2>🏗️ Layer Architecture</h2>
+        <p>
+          Archon uses a layered architecture with a complexity router at the
+          top and SDK/CLI at the bottom:
+        </p>
+
+        <div class="code-block">
+          <pre><code>                    USER REQUEST
+                         ↓
+         ┌───────────────────────────────┐
+         │   COMPLEXITY ROUTER (P0)      │  ← Prompt Library
+         │  (Task classification + model  │
+         │   selection + routing logic)   │
+         └───────────────────────────────┘
+                         ↓
+┌─────────────────────────────────────────────┐
+│          RUNTIME CONTRACTS (v3)              │
+│  (Sessions, policy engine, telemetry,       │
+│   replay determinism, MCP trust routing)    │
+├─────────────────────────────────────────────┤
+│                PIPELINES                     │
+│  (Multi-agent workflows with branching)      │
+├─────────────────────────────────────────────┤
+│                AGENTS                        │
+│  (Personas with skill bindings &amp; handoffs)   │
+├─────────────────────────────────────────────┤
+│              SYNAPSES                        │
+│  (Cognitive enhancements — how agents think) │
+├─────────────────────────────────────────────┤
+│               BUNDLES                        │
+│  (Domain kits with meta-skill routing)       │
+├─────────────────────────────────────────────┤
+│               SKILLS                         │  ← Knowledge Sources
+│  (Universal instructions + resources)        │     (GitHub, local,
+├─────────────────────────────────────────────┤      URLs, APIs)
+│              ADAPTERS                        │
+│  (Platform-specific transformations)         │
+├─────────────────────────────────────────────┤
+│     Claude Code │ Copilot │ Cursor │ ...     │
+└─────────────────────────────────────────────┘
+                         ↓
+                    SDK / CLI</code></pre>
+        </div>
+      </div>
+
+      <!-- Data Flow Section -->
+      <div class="content-section">
+        <h2>🔄 Data Flow</h2>
+        <p>How a user request flows through the system:</p>
+
+        <ol class="step-list">
+          <li class="step-item">
+            <div class="step-title">
+              User request → Complexity Router classifies task
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-title">Router decision</div>
+            <div class="step-description">
+              <ul>
+                <li>
+                  Complexity level: trivial → simple → moderate → complex →
+                  expert
+                </li>
+                <li>Model tier: fast/cheap → standard → premium</li>
+                <li>Target: skill, agent, or pipeline</li>
+              </ul>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-title">Knowledge source lookup (if needed)</div>
+            <div class="step-description">Fetches external docs/data.</div>
+          </li>
+          <li class="step-item">
+            <div class="step-title">Agent/Pipeline execution</div>
+            <div class="step-description">
+              Selects skill(s) based on trigger matching.
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-title">Skill execution</div>
+            <div class="step-description">
+              Provides instructions + resources + knowledge to the AI model.
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-title">Output</div>
+            <div class="step-description">
+              Formatted per skill's output contract.
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-title">Handoff</div>
+            <div class="step-description">
+              Passed to next agent in pipeline (if applicable).
+            </div>
+          </li>
+        </ol>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <div class="alert-title">Key Insight</div>
+            <p>
+              The complexity router is the first step in every request — it
+              classifies the task before anything else happens, ensuring the
+              right model and routing path are selected.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cross-Cutting Concerns Section -->
+      <div class="content-section">
+        <h2>🔀 Cross-Cutting Concerns</h2>
+
+        <h3>Prompt Library (<code>prompts/</code>)</h3>
+        <p>Reusable prompt components used throughout the system:</p>
+        <ul>
+          <li>
+            <strong><code>router.md</code></strong> — Complexity classification
+            prompts
+          </li>
+          <li>
+            <strong><code>system.md</code></strong> — Master Archon system
+            prompt
+          </li>
+          <li>
+            <strong><code>shared.md</code></strong> — Common formatting,
+            citations, error handling
+          </li>
+          <li>
+            <strong><code>personas/*.md</code></strong> — Persona-specific
+            prompt templates
+          </li>
+        </ul>
+
+        <h3>Knowledge Sources (<code>skills/knowledge-sources/</code>)</h3>
+        <p>External knowledge integration layer:</p>
+        <ul>
+          <li>
+            <strong>File-based search</strong> — grep, find, cat (no vector DB
+            required)
+          </li>
+          <li>
+            <strong>Content normalization</strong> — keeps .md, .yaml, .json,
+            .txt
+          </li>
+          <li><strong>Sync system</strong> — keeps sources up to date</li>
+          <li>
+            <strong>Config template</strong> —
+            <code>templates/source-config.yaml</code>
+          </li>
+        </ul>
+
+        <h3>SDK Access Layer (<code>sdk/archon.py</code>)</h3>
+        <p>Programmatic interface to Archon:</p>
+        <div class="code-block">
+          <pre><code>class Archon:
+    def list_skills() -&gt; List[Skill]
+    def list_bundles() -&gt; List[Bundle]
+    def get_skill(name: str) -&gt; Skill
+    def route(request: str) -&gt; Route
+    def install(platform: str, bundle: str)
+    def validate() -&gt; List[Error]
+    def sync_sources()
+    def health_check() -&gt; Report</code></pre>
+        </div>
+
+        <h3>Admin Dashboard (<code>scripts/admin.py</code>)</h3>
+        <p>Operational tooling:</p>
+        <ul>
+          <li><code>--stats</code> — Framework statistics</li>
+          <li><code>--errors</code> — Validation error report</li>
+          <li><code>--sources</code> — Knowledge source status</li>
+          <li><code>--sync</code> — Trigger source sync</li>
+          <li><code>--report</code> — Full health report</li>
+        </ul>
+      </div>
+
+      <!-- Layer 6: Runtime Contracts (v3) Section -->
+      <div class="content-section">
+        <h2>🛡️ Layer 6: Runtime Contracts (v3.0)</h2>
+        <p>
+          New in v3.0 — Layer 6 wraps the entire runtime with enforced contracts.
+          No tool executes without a policy decision, no session transitions without
+          state machine validation, and no completion claim without evidence.
+        </p>
+
+        <h3>Session Lifecycle</h3>
+        <p>
+          The <code>SessionManager</code> enforces an 8-state lifecycle with strict
+          transition rules. Invalid transitions raise <code>InvalidTransitionError</code>.
+        </p>
+        <div class="code-block">
+          <pre><code>created → active → waiting_tool → active
+                 → waiting_permission → active
+                 → idle → active
+                 → error → recovering → active
+                 → archived (terminal)</code></pre>
+        </div>
+        <p>
+          Every event is logged with a correlation ID that links sessions to
+          pipeline traces.
+        </p>
+
+        <h3>Central Policy Engine</h3>
+        <p>
+          The <code>PolicyEngine</code> gates every tool invocation through 4 checks:
+        </p>
+        <ol class="step-list">
+          <li class="step-item">
+            <div class="step-title">Schema Validation</div>
+            <div class="step-description">Tool arguments checked against registered schemas.</div>
+          </li>
+          <li class="step-item">
+            <div class="step-title">Permission Rules</div>
+            <div class="step-description">Evaluated in order; first match wins.</div>
+          </li>
+          <li class="step-item">
+            <div class="step-title">Trust Tier Precedence</div>
+            <div class="step-description">builtin &gt; verified &gt; community &gt; untrusted</div>
+          </li>
+          <li class="step-item">
+            <div class="step-title">Decision Artifact</div>
+            <div class="step-description">Machine-readable <code>PolicyDecision</code> with rationale.</div>
+          </li>
+        </ol>
+        <p>
+          Default action is <strong>deny</strong> — tools must have an explicit allow rule.
+          Denied decisions are queryable and replayable from the audit log.
+        </p>
+
+        <h3>Telemetry &amp; Replay</h3>
+        <p>
+          The <code>TelemetryCollector</code> normalizes all events to versioned envelopes:
+        </p>
+        <div class="code-block">
+          <pre><code>TelemetryEnvelope:
+  envelope_id: tel-xxxxxxxxxxxx
+  schema_version: 3.0.0
+  event_type: policy_decision | session_start | ...
+  correlation_id: corr-xxxxxxxxxxxx
+  source: {component, session_id, pipeline_name, step_name}
+  payload: {...}
+  retention_class: standard | audit</code></pre>
+        </div>
+        <p>
+          The <code>ReplayHarness</code> captures session snapshots and compares
+          checksums for determinism — timestamps are excluded so structure-only
+          comparison works across environments.
+        </p>
+
+        <h3>MCP Trust Routing</h3>
+        <p>
+          The <code>MCPConnectorManager</code> routes to MCP servers by capability
+          and trust tier:
+        </p>
+        <ul>
+          <li>Connectors register with trust tier and capabilities</li>
+          <li>Routing selects the highest-trust healthy connector for a capability</li>
+          <li>Unhealthy connectors are excluded automatically</li>
+          <li>Routing is deterministic (same inputs → same output)</li>
+        </ul>
+
+        <h3>v3 Contract Schemas</h3>
+        <p>Six new schemas define the wire format for all v3 contracts:</p>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Schema</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>session.schema.yaml</code></td>
+              <td>Session lifecycle states and transitions</td>
+            </tr>
+            <tr>
+              <td><code>tool-invocation.schema.yaml</code></td>
+              <td>Tool call with required policy decision</td>
+            </tr>
+            <tr>
+              <td><code>permission.schema.yaml</code></td>
+              <td>Permission rules with trust tiers</td>
+            </tr>
+            <tr>
+              <td><code>hook-event.schema.yaml</code></td>
+              <td>Normalized hook bus events</td>
+            </tr>
+            <tr>
+              <td><code>telemetry-envelope.schema.yaml</code></td>
+              <td>Versioned telemetry format</td>
+            </tr>
+            <tr>
+              <td><code>context-handoff.schema.yaml</code></td>
+              <td>Phase handoff with pinned constraints and evidence</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Release Gates</h3>
+        <p>
+          The <code>ReleaseGateValidator</code> validates 6 hard gates before any release:
+        </p>
+        <ol class="step-list">
+          <li class="step-item">
+            <div class="step-title">SchemaAndContracts</div>
+            <div class="step-description">All v3 schemas present and version 3.x</div>
+          </li>
+          <li class="step-item">
+            <div class="step-title">PolicyAndSecurity</div>
+            <div class="step-description">Policy engine and permission schema present</div>
+          </li>
+          <li class="step-item">
+            <div class="step-title">ReplayDeterminism</div>
+            <div class="step-description">Telemetry module and replay tests present</div>
+          </li>
+          <li class="step-item">
+            <div class="step-title">ContextIntegrity</div>
+            <div class="step-description">Handoff schema enforces pinned_constraints and evidence_links</div>
+          </li>
+          <li class="step-item">
+            <div class="step-title">PromptQuality</div>
+            <div class="step-description">Prompt files present, schema validator functional</div>
+          </li>
+          <li class="step-item">
+            <div class="step-title">MigrationReadiness</div>
+            <div class="step-description">Migration dry-run passes with zero blockers</div>
+          </li>
+        </ol>
+        <p>
+          All 6 must pass and the weighted score must reach 90+ for a GO recommendation.
+        </p>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <div class="alert-title">v3 Migration</div>
+            <p>
+              v3 is purely additive — all v2 skills, agents, pipelines, and schemas
+              continue to work without modification. See the
+              <a href="migration-v3.html">Migration v3 Guide</a> for upgrade details.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Validation Chain Section -->
+      <div class="content-section">
+        <h2>✅ Validation Chain</h2>
+        <p>How Archon ensures quality at every level:</p>
+
+        <div class="code-block">
+          <pre><code>manifest.yaml  →  schema validation  →  SKILL.md section check
+     ↓                                        ↓
+trigger check  →  uniqueness across repo  →  resource existence
+     ↓                                        ↓
+composition  →  circular dependency check  →  PASS / FAIL</code></pre>
+        </div>
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="doc-nav-footer">
+        <a href="platform-guide.html" class="nav-link prev">
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">Platform Guide</span>
+        </a>
+        <a href="faq.html" class="nav-link next">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">FAQ</span>
+        </a>
+      </div>
+    </main>
+
+    <script>
+      // Scroll reveal animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".reveal, .content-section").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Sidebar active state based on current page
+      const currentPage = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".sidebar-link").forEach((link) => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        }
+      });
+    </script>
+  </body>
+</html>

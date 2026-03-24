@@ -1,0 +1,46 @@
+# Archon Synapse Manifest — Metacognition
+# Core synapse: auto-injected into all agent contexts.
+
+name: metacognition
+version: "2.0.0"
+description: "Structured self-awareness for agents — plan before acting, monitor confidence during execution, reflect on quality after completion"
+stuck-loop-detection: true
+complexity-scaling: true
+author: tahaa
+synapse-type: core
+license: MIT
+
+firing-phases:
+  - name: PLAN
+    timing: pre-task
+    description: "Assess complexity, inventory knowledge, select strategy, define exit criteria"
+
+  - name: MONITOR
+    timing: active
+    description: "Tag confidence on decisions, check progress, detect stuck loops, track assumptions"
+
+  - name: REFLECT
+    timing: post-task
+    description: "Self-score quality, capture lessons learned, disclose known gaps and uncertainties"
+
+tags:
+  - metacognition
+  - reasoning
+  - self-awareness
+  - core
+
+resources:
+  - path: resources/confidence-rubric.md
+    type: rubric
+    load: always
+    description: "Calibrated confidence scale with evidence criteria for each level"
+
+  - path: resources/reflection-template.md
+    type: template
+    load: always
+    description: "Structured template for Phase 3 reflection output"
+
+  - path: resources/stuck-detection.md
+    type: heuristic
+    load: always
+    description: "Heuristics for recognizing stuck loops and when to pivot"

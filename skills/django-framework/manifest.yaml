@@ -1,0 +1,11 @@
+name: django-framework
+version: 1.0.0
+description: "Skill: django-framework"
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["django", "python", "backend", "web-framework"]
+triggers:
+  keywords: ["django", "python", "views", "models", "templates"]
+  patterns: []
+priority: P2

@@ -1,0 +1,48 @@
+name: prisma-orm-patterns
+version: 1.0.0
+description: "Database schema design, query optimization, and ORM configuration with Prisma for production applications"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - database
+  - prisma
+  - orm
+  - schema-design
+  - query-optimization
+
+triggers:
+  keywords:
+    - "prisma"
+    - "database schema"
+    - "ORM"
+    - "prisma client"
+    - "database queries"
+    - "soft deletion"
+    - "database indexes"
+    - "prisma migration"
+  patterns:
+    - "design * schema*"
+    - "add * prisma*"
+    - "optimize * quer*"
+    - "create * model*"
+
+priority: P1
+
+source-dissection: "prompts.chat"
+source-repo: "https://github.com/f/prompts.chat"
+
+composes:
+  - backend-development
+
+resources:
+  - path: resources/prisma-reference.md
+    type: reference
+    load: on-demand

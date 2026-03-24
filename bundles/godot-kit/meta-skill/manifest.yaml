@@ -1,0 +1,20 @@
+name: omega-gdscript-expert
+type: meta-skill
+version: 1.0.0
+description: "Meta-coordinator for Godot 4.x development that routes requests to specialized Godot skills based on task type"
+author: tahaa
+coordinates:
+  - godot-best-practices
+  - godot-debugging
+  - godot-gdscript-mastery
+  - godot-gdscript-patterns
+  - godot-particles
+trigger-keywords:
+  - godot
+  - gdscript
+  - game development
+  - godot 4
+  - game engine
+routing-strategy: "decision-tree"
+supports-multi-skill: true
+mcp-aware: true

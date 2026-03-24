@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Platform Guide — Archon Documentation</title>
+    <meta
+      name="description"
+      content="Platform-specific setup and configuration for Claude Code, Copilot CLI, Cursor, Windsurf, and Antigravity"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="doc-nav">
+      <a href="../index.html" class="nav-logo">Archon</a>
+      <a
+        href="https://github.com/SufficientDaikon/archon"
+        class="nav-github"
+        target="_blank"
+        >GitHub ↗</a
+      >
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">DOCUMENTATION</div>
+        <a href="getting-started.html" class="sidebar-link">Getting Started</a>
+        <a href="creating-skills.html" class="sidebar-link">Creating Skills</a>
+        <a href="creating-agents.html" class="sidebar-link">Creating Agents</a>
+        <a href="creating-synapses.html" class="sidebar-link"
+          >Creating Synapses</a
+        >
+        <a href="creating-bundles.html" class="sidebar-link"
+          >Creating Bundles</a
+        >
+        <a href="creating-pipelines.html" class="sidebar-link"
+          >Creating Pipelines</a
+        >
+        <a href="cli-guide.html" class="sidebar-link">CLI Guide</a>
+        <a href="platform-guide.html" class="sidebar-link active"
+          >Platform Guide</a
+        >
+        <a href="architecture.html" class="sidebar-link">Architecture</a>
+        <a href="migration-v3.html" class="sidebar-link">Migration v3</a>
+        <a href="faq.html" class="sidebar-link">FAQ</a>
+        <a href="llms-txt.html" class="sidebar-link">llms.txt</a>
+        <a href="agent-cards.html" class="sidebar-link">Agent Cards</a>
+        <a href="integration-catalog.html" class="sidebar-link">Integration Catalog</a>
+      </div>
+      <div class="sidebar-section">
+        <a href="../index.html" class="sidebar-link back-link"
+          >← Back to Home</a
+        >
+      </div>
+    </aside>
+
+    <button
+      class="sidebar-toggle"
+      onclick="document.getElementById('sidebar').classList.toggle('open')"
+    >
+      ☰
+    </button>
+
+    <!-- Main Content -->
+    <main class="doc-content">
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="../index.html">Home</a>
+        <span class="separator">›</span>
+        <a href="getting-started.html">Documentation</a>
+        <span class="separator">›</span>
+        <span>Platform Guide</span>
+      </div>
+
+      <!-- Header -->
+      <div class="doc-header">
+        <span class="section-label">DOCUMENTATION</span>
+        <h1 class="doc-title">
+          Platform <span class="gradient-text">Guide</span>
+        </h1>
+        <p class="doc-subtitle">
+          Platform-specific setup, configuration, and capabilities for all 5
+          supported AI coding assistants.
+        </p>
+      </div>
+
+      <!-- Supported Platforms Section -->
+      <div class="content-section">
+        <h2>🌐 Supported Platforms</h2>
+        <p>
+          Archon supports 5 AI coding assistant platforms through adapters.
+        </p>
+
+        <div class="platform-cards">
+          <div class="platform-item">
+            <span class="platform-emoji">🤖</span>
+            <h3>Claude Code</h3>
+          </div>
+
+          <div class="platform-item">
+            <span class="platform-emoji">💻</span>
+            <h3>Copilot CLI</h3>
+          </div>
+
+          <div class="platform-item">
+            <span class="platform-emoji">⚡</span>
+            <h3>Cursor</h3>
+          </div>
+
+          <div class="platform-item">
+            <span class="platform-emoji">🌊</span>
+            <h3>Windsurf</h3>
+          </div>
+
+          <div class="platform-item">
+            <span class="platform-emoji">🚀</span>
+            <h3>Antigravity</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Claude Code Section -->
+      <div class="content-section">
+        <h2>🤖 Claude Code</h2>
+
+        <p><strong>Target:</strong> <code>~/.claude/skills/</code></p>
+        <p>
+          <strong>Format:</strong> Each skill becomes a
+          <code>SKILL.md</code> file in a skill directory.
+        </p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> python scripts/install.py --platform claude-code</pre>
+        </div>
+      </div>
+
+      <!-- GitHub Copilot CLI Section -->
+      <div class="content-section">
+        <h2>💻 GitHub Copilot CLI</h2>
+
+        <p><strong>Target:</strong> <code>~/.copilot/skills/</code></p>
+        <p>
+          <strong>Format:</strong> Each skill becomes a
+          <code>SKILL.md</code> file with optional front-matter.
+        </p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> python scripts/install.py --platform copilot-cli</pre>
+        </div>
+      </div>
+
+      <!-- Cursor Section -->
+      <div class="content-section">
+        <h2>⚡ Cursor</h2>
+
+        <p>
+          <strong>Target:</strong> <code>.cursor/rules/</code> (project-level)
+          or global rules
+        </p>
+        <p>
+          <strong>Format:</strong> Each skill becomes a <code>.mdc</code> rule
+          file.
+        </p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> python scripts/install.py --platform cursor</pre>
+        </div>
+      </div>
+
+      <!-- Windsurf Section -->
+      <div class="content-section">
+        <h2>🌊 Windsurf</h2>
+
+        <p>
+          <strong>Target:</strong> <code>.windsurfrules</code> or rules
+          directory
+        </p>
+        <p><strong>Format:</strong> Skills are compiled into rule format.</p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> python scripts/install.py --platform windsurf</pre>
+        </div>
+      </div>
+
+      <!-- Antigravity Section -->
+      <div class="content-section">
+        <h2>🚀 Antigravity</h2>
+
+        <p><strong>Target:</strong> <code>.antigravity/skills/</code></p>
+        <p>
+          <strong>Format:</strong> Each skill becomes a skill file in the
+          expected format.
+        </p>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> python scripts/install.py --platform antigravity</pre>
+        </div>
+      </div>
+
+      <!-- Multi-Platform Install Section -->
+      <div class="content-section">
+        <h2>🌐 Multi-Platform Install</h2>
+
+        <div class="terminal-block">
+          <pre><span class="prompt">$</span> <span style="color: var(--text-muted);"># Auto-detect all installed platforms</span>
+<span class="prompt">$</span> python scripts/install.py
+
+<span class="prompt">$</span> <span style="color: var(--text-muted);"># Install for specific platforms</span>
+<span class="prompt">$</span> python scripts/install.py --platform claude-code --platform cursor</pre>
+        </div>
+      </div>
+
+      <!-- Platform Overrides Section -->
+      <div class="content-section">
+        <h2>🔧 Platform Overrides</h2>
+        <p>
+          Skills can have platform-specific behavior via
+          <code>overrides/</code>:
+        </p>
+
+        <div class="code-block">
+          <pre><code>skills/my-skill/overrides/
+├── cursor.md       # Cursor-specific additions
+└── windsurf.md     # Windsurf-specific additions</code></pre>
+        </div>
+
+        <p>
+          Overrides are merged with the base <code>SKILL.md</code> during
+          adapter transformation.
+        </p>
+      </div>
+
+      <!-- Creating New Platform Adapters Section -->
+      <div class="content-section">
+        <h2>🛠️ Creating New Platform Adapters</h2>
+        <p>To add support for a new AI coding assistant platform:</p>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">💡</div>
+          <div class="alert-content">
+            <div class="alert-title">Use the add-adapter skill</div>
+            <p>
+              "Follow the add-adapter skill to create an adapter for [platform]"
+            </p>
+          </div>
+        </div>
+
+        <p>The <code>add-adapter</code> skill guides you through:</p>
+        <ol>
+          <li>Understanding the platform's skill/rule format</li>
+          <li>Creating the adapter transformation logic</li>
+          <li>Defining installation paths and conventions</li>
+          <li>Testing the adapter</li>
+          <li>Adding platform detection</li>
+        </ol>
+      </div>
+
+      <!-- SDK as an Alternative Section -->
+      <div class="content-section">
+        <h2>🐍 SDK as an Alternative</h2>
+        <p>
+          For programmatic integration, use the Python SDK instead of CLI
+          scripts:
+        </p>
+
+        <div class="code-block">
+          <div class="code-label">Python SDK</div>
+          <pre><code>from sdk.archon import Archon
+
+os = Archon()
+
+# Install to specific platform
+os.install(platform="cursor", bundle="web-dev-kit")
+
+# Validate all artifacts
+errors = os.validate()
+
+# Get platform info
+platforms = os.detect_platforms()</code></pre>
+        </div>
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="doc-nav-footer">
+        <a href="cli-guide.html" class="nav-link prev">
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">CLI Guide</span>
+        </a>
+        <a href="architecture.html" class="nav-link next">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">Architecture</span>
+        </a>
+      </div>
+    </main>
+
+    <script>
+      // Scroll reveal animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".reveal, .content-section").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Sidebar active state based on current page
+      const currentPage = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".sidebar-link").forEach((link) => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+name: security-kit
+version: 1.0.0
+description: "Defense-in-depth security patterns: guard chains, SSRF protection, error handling, and structured logging"
+author: tahaa
+skills:
+  - guard-chain
+  - event-webhooks
+  - error-handling-architecture
+  - structured-logging
+meta-skill: security-expert
+dependencies: []
+conflict-resolution:
+  - when: "Building API routes with auth + validation"
+    prefer: guard-chain
+    reason: "Composes auth, validation, and rate limiting into single pipeline"
+  - when: "Webhook dispatch security (SSRF, HMAC)"
+    prefer: event-webhooks
+    reason: "Specialized SSRF prevention and HMAC signing patterns"
+  - when: "Designing error response format and boundaries"
+    prefer: error-handling-architecture
+    reason: "Comprehensive error taxonomy and graceful degradation"
+  - when: "Setting up JSON logging and request correlation"
+    prefer: structured-logging
+    reason: "Pino-based structured logging with environment awareness"

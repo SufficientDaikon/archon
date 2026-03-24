@@ -1,0 +1,11 @@
+name: packager
+version: 1.0.0
+description: "Use when packaging, sharing, or publishing Copilot CLI agents, skills, templates, or SDD artifacts as shareable git repos. Triggers on tasks involving sharing, publishing, packaging, exporting, or distributing custom agents and skills. Also triggers when user says package this, share this, make a repo for this, or publish my agents."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: []
+triggers:
+  keywords: ["package this", "share this", "make a repo for this", "publish my agents", "sharing", "publishing", "packaging", "exporting", "or distributing custom agents and skills"]
+  patterns: []
+priority: P3

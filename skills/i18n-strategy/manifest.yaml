@@ -1,0 +1,37 @@
+name: i18n-strategy
+version: 1.0.0
+description: "Design internationalization systems with namespace-driven translations, ICU format, locale routing, and type-safe keys"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - i18n
+  - internationalization
+  - localization
+  - translations
+  - next-intl
+
+triggers:
+  keywords:
+    - "i18n"
+    - "internationalization"
+    - "locale"
+    - "translation"
+    - "next-intl"
+    - "react-intl"
+    - "multi-language"
+  patterns:
+    - "add * i18n*"
+    - "internationalize *"
+    - "translate * app*"
+
+source-dissection: "prompts.chat"
+
+priority: P1

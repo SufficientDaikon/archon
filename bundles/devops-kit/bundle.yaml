@@ -1,0 +1,16 @@
+name: devops-kit
+version: 1.0.0
+description: "Production deployment: containerization, structured logging, and observability"
+author: tahaa
+skills:
+  - docker-production-build
+  - structured-logging
+meta-skill: devops-expert
+dependencies: []
+conflict-resolution:
+  - when: "Building Docker images for production deployment"
+    prefer: docker-production-build
+    reason: "Multi-stage builds, standalone output, security hardening"
+  - when: "Setting up application logging and monitoring"
+    prefer: structured-logging
+    reason: "Pino JSON logging with request correlation"

@@ -1,0 +1,11 @@
+name: writing-skills
+version: 1.0.0
+description: "Use when creating new skills, editing existing skills, or verifying skills work before deployment"
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: []
+triggers:
+  keywords: ["creating new skills, editing existing skills, or verifying skills work before deployment"]
+  patterns: []
+priority: P1

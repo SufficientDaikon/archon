@@ -1,0 +1,41 @@
+# Archon Synapse Manifest — Template
+# Copy this directory and fill in the [PLACEHOLDER] values.
+
+name: "[PLACEHOLDER: kebab-case-name]"
+version: "1.0.0"
+description: "[PLACEHOLDER: 10-200 character description of this synapse's cognitive purpose]"
+author: "[PLACEHOLDER: author]"
+synapse-type: "[PLACEHOLDER: core | optional]"
+license: MIT
+
+firing-phases:
+  - name: "[PLACEHOLDER: PHASE_NAME]"
+    timing: "pre-task"
+    description: "[PLACEHOLDER: What this phase does]"
+
+  - name: "[PLACEHOLDER: PHASE_NAME]"
+    timing: "active"
+    description: "[PLACEHOLDER: What this phase does]"
+
+  - name: "[PLACEHOLDER: PHASE_NAME]"
+    timing: "post-task"
+    description: "[PLACEHOLDER: What this phase does]"
+
+tags:
+  - "[PLACEHOLDER: tag1]"
+  - "[PLACEHOLDER: tag2]"
+
+# Optional: Supporting reference materials
+resources:
+  - path: "resources/[PLACEHOLDER].md"
+    type: "[PLACEHOLDER: rubric | template | heuristic | reference | cheat-sheet]"
+    load: always
+    description: "[PLACEHOLDER: What this resource provides]"
+
+# Optional: Restrict to specific platforms (defaults to all)
+# platforms:
+#   - claude-code
+#   - copilot-cli
+#   - cursor
+#   - windsurf
+#   - antigravity

@@ -1,0 +1,11 @@
+name: fastmcp
+version: 1.0.0
+description: "| Build MCP servers in Python with FastMCP framework to expose tools, resources, and prompts to LLMs. Supports storage backends (memory/disk/Redis), middleware, OAuth Proxy, OpenAPI integration, and FastMCP Cloud deployment. Use when: creating MCP servers, defining tools or resources, implementing OAuth authentication, configuring storage backends for tokens/cache, adding middleware for logging/rate limiting, deploying to FastMCP Cloud, or troubleshooting module-level server, storage, lifespan, middleware order, circular imports, or OAuth errors."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["mcp", "integration", "model-context-protocol"]
+triggers:
+  keywords: []
+  patterns: []
+priority: P2

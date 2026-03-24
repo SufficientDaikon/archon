@@ -1,0 +1,6 @@
+name: using-git-worktrees
+description: "Git worktree isolation for feature development. Use when starting feature work, experiments, or any multi-file changes that need workspace isolation."
+version: "2.0.0"
+author: tahaa
+category: development-workflow
+tags: [git, worktree, isolation, branching, feature-development]

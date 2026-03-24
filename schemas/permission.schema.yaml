@@ -1,0 +1,100 @@
+# Archon v3 Permission Schema
+# Defines trust-based permission model for tool and hook execution.
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "Archon Permission Schema"
+version: "3.0.0"
+description: "Permission definitions, trust tiers, and decision audit trail"
+
+type: object
+required:
+  - permissions
+properties:
+  permissions:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      required:
+        - id
+        - scope
+        - trust_tier
+        - action
+      properties:
+        id:
+          type: string
+          pattern: "^perm-[a-z][a-z0-9-]+$"
+          description: "Permission identifier"
+
+        scope:
+          type: string
+          enum:
+            - tool
+            - hook
+            - agent
+            - mcp
+            - pipeline
+            - file_system
+          description: "What this permission governs"
+
+        trust_tier:
+          type: string
+          enum:
+            - builtin
+            - verified
+            - community
+            - untrusted
+          description: "Trust level (builtin > verified > community > untrusted)"
+
+        action:
+          type: string
+          enum: [allow, deny, prompt, escalate]
+          description: "Default action for this permission"
+
+        conditions:
+          type: array
+          items:
+            type: object
+            required:
+              - field
+              - operator
+              - value
+            properties:
+              field:
+                type: string
+              operator:
+                type: string
+                enum: [eq, neq, in, not_in, matches, gt, lt]
+              value: {}
+          description: "Conditions that must all be true"
+
+        audit_required:
+          type: boolean
+          default: true
+          description: "Whether decisions must be logged"
+
+  decision_log:
+    type: array
+    items:
+      type: object
+      required:
+        - timestamp
+        - permission_id
+        - action_taken
+        - principal
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        permission_id:
+          type: string
+        action_taken:
+          type: string
+          enum: [allow, deny, escalate]
+        principal:
+          type: string
+          description: "Who/what requested this action"
+        rationale:
+          type: string
+        session_id:
+          type: string

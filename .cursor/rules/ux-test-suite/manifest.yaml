@@ -1,0 +1,11 @@
+name: ux-test-suite
+version: 1.0.0
+description: "UX testing patterns including task completion testing, error recovery testing, usability scoring, cognitive load heuristics, and flow testing methodology. Use when testing user flows, evaluating usability, or creating UX test plans."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["design", "ui-ux", "testing", "quality-assurance", "best-practices"]
+triggers:
+  keywords: ["testing user flows, evaluating usability, or creating UX test plans"]
+  patterns: []
+priority: P2

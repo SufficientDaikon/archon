@@ -1,0 +1,119 @@
+# Archon v3 Session Schema
+# Defines the session lifecycle contract for runtime orchestration.
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "Archon Session Schema"
+version: "3.0.0"
+description: "Session lifecycle state, transitions, and constraints for v3 runtime"
+
+type: object
+required:
+  - session_id
+  - status
+  - created_at
+  - pipeline_name
+properties:
+  session_id:
+    type: string
+    pattern: "^sess-[a-f0-9]{8,}$"
+    description: "Unique session identifier"
+
+  status:
+    type: string
+    enum:
+      - created
+      - active
+      - waiting_tool
+      - waiting_permission
+      - idle
+      - recovering
+      - archived
+      - error
+    description: "Current session lifecycle state"
+
+  created_at:
+    type: string
+    format: date-time
+    description: "ISO 8601 creation timestamp"
+
+  updated_at:
+    type: string
+    format: date-time
+    description: "ISO 8601 last-update timestamp"
+
+  pipeline_name:
+    type: string
+    description: "Pipeline bound to this session"
+
+  correlation_id:
+    type: string
+    pattern: "^corr-[a-f0-9]{8,}$"
+    description: "Trace correlation ID linking session to pipeline events"
+
+  objective:
+    type: string
+    description: "Primary objective for this session"
+
+  pinned_constraints:
+    type: array
+    items:
+      type: string
+    description: "Constraints that must survive context compression"
+
+  accumulated_state:
+    type: object
+    properties:
+      decisions:
+        type: array
+        items:
+          type: string
+      constraints:
+        type: array
+        items:
+          type: string
+      tech_stack:
+        type: array
+        items:
+          type: string
+      context_briefs:
+        type: array
+        items:
+          type: object
+          required:
+            - timestamp
+            - brief
+          properties:
+            timestamp:
+              type: string
+              format: date-time
+            brief:
+              type: string
+    description: "Accumulated state that grows, never shrinks"
+
+  recovery_policy:
+    type: object
+    properties:
+      max_retries:
+        type: integer
+        minimum: 0
+        maximum: 10
+        default: 3
+      backoff_strategy:
+        type: string
+        enum: [none, linear, exponential]
+        default: "exponential"
+      preserve_on_crash:
+        type: boolean
+        default: true
+    description: "Recovery behavior on session failure"
+
+# Valid state transitions
+state_transitions:
+  created: [active]
+  active: [waiting_tool, waiting_permission, idle, recovering, error, archived]
+  waiting_tool: [active, error]
+  waiting_permission: [active, error]
+  idle: [active, archived]
+  recovering: [active, error, archived]
+  error: [recovering, archived]
+  archived: []

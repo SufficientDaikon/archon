@@ -1,0 +1,11 @@
+name: design-handoff
+version: 1.0.0
+description: "Design handoff protocols including artifact format standards, lifecycle state management, inter-agent communication, and quality gate procedures. Use when managing design lifecycle state, coordinating between agents, or formatting handoff artifacts."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["design", "ui-ux", "architecture"]
+triggers:
+  keywords: []
+  patterns: []
+priority: P2

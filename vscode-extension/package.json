@@ -1,0 +1,281 @@
+{
+  "name": "archon",
+  "displayName": "Archon — AI Agent Framework",
+  "description": "Visual interface for the Archon universal AI agent & skills framework. Browse 49+ skills, run pipelines, invoke agents, and monitor health — all from VS Code.",
+  "version": "0.1.0",
+  "publisher": "sufficientdaikon",
+  "license": "MIT",
+  "icon": "resources/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SufficientDaikon/archon"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "AI",
+    "Machine Learning",
+    "Other"
+  ],
+  "keywords": [
+    "archon",
+    "ai",
+    "agents",
+    "skills",
+    "pipelines",
+    "spec-driven-development"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "archon-sidebar",
+          "title": "Archon",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "archon-sidebar": [
+        {
+          "id": "archon-skills",
+          "name": "Skills Explorer"
+        },
+        {
+          "id": "archon-agents",
+          "name": "Agents"
+        },
+        {
+          "id": "archon-pipelines",
+          "name": "Pipelines"
+        },
+        {
+          "id": "archon-bundles",
+          "name": "Bundles"
+        },
+        {
+          "id": "archon-synapses",
+          "name": "Synapses"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "archon.initialize",
+        "title": "Archon: Initialize",
+        "icon": "$(rocket)"
+      },
+      {
+        "command": "archon.installSkill",
+        "title": "Archon: Install Skill",
+        "icon": "$(add)"
+      },
+      {
+        "command": "archon.installBundle",
+        "title": "Archon: Install Bundle",
+        "icon": "$(package)"
+      },
+      {
+        "command": "archon.uninstallComponent",
+        "title": "Archon: Uninstall Component",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "archon.runPipeline",
+        "title": "Archon: Run Pipeline",
+        "icon": "$(play)"
+      },
+      {
+        "command": "archon.showDashboard",
+        "title": "Archon: Show Dashboard",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "archon.runDoctor",
+        "title": "Archon: Run Doctor",
+        "icon": "$(heart)"
+      },
+      {
+        "command": "archon.validateWorkspace",
+        "title": "Archon: Validate Workspace",
+        "icon": "$(check)"
+      },
+      {
+        "command": "archon.searchSkills",
+        "title": "Archon: Search Skills",
+        "icon": "$(search)"
+      },
+      {
+        "command": "archon.adminDashboard",
+        "title": "Archon: Admin Dashboard",
+        "icon": "$(gear)"
+      },
+      {
+        "command": "archon.update",
+        "title": "Archon: Update",
+        "icon": "$(cloud-download)"
+      },
+      {
+        "command": "archon.openSettings",
+        "title": "Archon: Open Settings",
+        "icon": "$(settings-gear)"
+      },
+      {
+        "command": "archon.showContextBudget",
+        "title": "Archon: Show Context Budget",
+        "icon": "$(graph)"
+      },
+      {
+        "command": "archon.refreshSkills",
+        "title": "Refresh Skills",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "archon.refreshAgents",
+        "title": "Refresh Agents",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "archon.refreshPipelines",
+        "title": "Refresh Pipelines",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "archon.refreshBundles",
+        "title": "Refresh Bundles",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "archon.refreshSynapses",
+        "title": "Refresh Synapses",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "archon.showSynapseDetail",
+        "title": "Archon: Show Synapse Detail",
+        "icon": "$(brain)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "archon.refreshSkills",
+          "when": "view == archon-skills",
+          "group": "navigation"
+        },
+        {
+          "command": "archon.searchSkills",
+          "when": "view == archon-skills",
+          "group": "navigation"
+        },
+        {
+          "command": "archon.refreshAgents",
+          "when": "view == archon-agents",
+          "group": "navigation"
+        },
+        {
+          "command": "archon.refreshPipelines",
+          "when": "view == archon-pipelines",
+          "group": "navigation"
+        },
+        {
+          "command": "archon.refreshBundles",
+          "when": "view == archon-bundles",
+          "group": "navigation"
+        },
+        {
+          "command": "archon.refreshSynapses",
+          "when": "view == archon-synapses",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "archon.installSkill",
+          "when": "view == archon-skills && viewItem == skill-not-installed",
+          "group": "inline"
+        },
+        {
+          "command": "archon.uninstallComponent",
+          "when": "view == archon-skills && viewItem == skill-installed",
+          "group": "inline"
+        },
+        {
+          "command": "archon.installBundle",
+          "when": "view == archon-bundles && viewItem =~ /^bundle/",
+          "group": "inline"
+        },
+        {
+          "command": "archon.runPipeline",
+          "when": "view == archon-pipelines && viewItem == pipeline",
+          "group": "inline"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Archon",
+      "properties": {
+        "archon.cliPath": {
+          "type": "string",
+          "default": "archon",
+          "description": "Path to the Archon CLI executable. Use 'archon' if it's in your PATH, or provide an absolute path."
+        },
+        "archon.defaultPlatform": {
+          "type": "string",
+          "default": "auto",
+          "enum": [
+            "auto",
+            "claude-code",
+            "copilot-cli",
+            "cursor",
+            "windsurf",
+            "antigravity"
+          ],
+          "enumDescriptions": [
+            "Auto-detect platform from environment",
+            "Claude Code (Anthropic)",
+            "GitHub Copilot CLI",
+            "Cursor Editor",
+            "Windsurf IDE",
+            "Antigravity Platform"
+          ],
+          "description": "Default platform adapter for skill installation."
+        },
+        "archon.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show Archon pipeline status and context budget in the status bar."
+        },
+        "archon.autoRefreshDashboard": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically refresh the Pipeline Dashboard during active pipeline runs."
+        },
+        "archon.contextBudgetWarning": {
+          "type": "number",
+          "default": 75,
+          "minimum": 10,
+          "maximum": 100,
+          "description": "Context budget usage percentage at which to show a warning (yellow). Red warning shows at 90%."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "node esbuild.config.mjs",
+    "watch": "node esbuild.config.mjs --watch",
+    "lint": "tsc --noEmit",
+    "package": "npx @vscode/vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.5.0"
+  }
+}

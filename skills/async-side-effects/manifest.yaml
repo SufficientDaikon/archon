@@ -1,0 +1,38 @@
+name: async-side-effects
+version: 1.0.0
+description: "Design fire-and-forget side effect pipelines with Promise.allSettled, timeout protection, and per-effect error isolation"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - async
+  - side-effects
+  - fire-and-forget
+  - background-tasks
+  - error-isolation
+
+triggers:
+  keywords:
+    - "fire-and-forget"
+    - "background task"
+    - "side effect"
+    - "Promise.allSettled"
+    - "webhook dispatch"
+    - "async pipeline"
+    - "non-blocking"
+  patterns:
+    - "dispatch * background*"
+    - "fire-and-forget *"
+    - "async * side effect*"
+
+extends: [event-webhooks]
+source-dissection: "prompts.chat"
+
+priority: P1

@@ -1,0 +1,49 @@
+# Archon Synapse Manifest — Sequential Thinking
+# Core synapse: auto-injected into all agent contexts.
+
+name: sequential-thinking
+version: "1.0.0"
+description: "Chain-of-thought reasoning protocol — forces DECOMPOSE → REASON → VALIDATE → SYNTHESIZE with mandatory thinking traces and stuck-loop detection"
+author: tahaa
+synapse-type: core
+license: MIT
+
+firing-phases:
+  - name: DECOMPOSE
+    timing: pre-task
+    description: "Break task into numbered, dependency-ordered steps with complexity estimates"
+
+  - name: REASON
+    timing: per-step
+    description: "For each step: consider approaches, evaluate trade-offs, choose with justification, execute, record"
+
+  - name: VALIDATE
+    timing: per-step
+    description: "After each step: check result against evidence, constraints, side effects; assign confidence"
+
+  - name: SYNTHESIZE
+    timing: post-task
+    description: "Combine step conclusions, check consistency, identify gaps, form final answer"
+
+tags:
+  - sequential-thinking
+  - chain-of-thought
+  - reasoning
+  - decomposition
+  - core
+
+resources:
+  - path: resources/decomposition-patterns.md
+    type: templates
+    load: on-demand
+    description: "Common decomposition templates for feature, bug, review, refactoring tasks"
+
+  - path: resources/reasoning-templates.md
+    type: templates
+    load: on-demand
+    description: "Structured reasoning templates for decisions, investigations, error analysis"
+
+  - path: resources/validation-checklist.md
+    type: checklist
+    load: always
+    description: "Per-step validation checklist ensuring evidence-based conclusions"

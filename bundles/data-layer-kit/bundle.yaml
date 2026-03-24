@@ -1,0 +1,24 @@
+name: data-layer-kit
+version: 1.0.0
+description: "Database architecture: ORM patterns, schema design, query optimization, content integrity, and singleton management"
+author: tahaa
+skills:
+  - prisma-orm-patterns
+  - singleton-patterns
+  - content-deduplication
+  - backend-development
+meta-skill: data-layer-expert
+dependencies: []
+conflict-resolution:
+  - when: "Database schema design and query patterns"
+    prefer: prisma-orm-patterns
+    reason: "Start with schema, then build API layer on top"
+  - when: "Database client connection management"
+    prefer: singleton-patterns
+    reason: "globalThis singleton prevents connection exhaustion"
+  - when: "Content fingerprinting and similarity detection"
+    prefer: content-deduplication
+    reason: "Specialized dedup algorithms and threshold configuration"
+  - when: "API design on top of data layer"
+    prefer: backend-development
+    reason: "Guard chain and API contract patterns"

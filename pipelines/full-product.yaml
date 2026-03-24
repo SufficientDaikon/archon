@@ -1,0 +1,70 @@
+# Full Product Pipeline — End-to-End Product Development
+# ux-pipeline → [context-curator] → sdd-pipeline → [context-curator] → testing
+
+name: full-product
+version: 1.1.0
+description: "Complete product development: UX design → context curation → spec-driven implementation → testing"
+trigger: "build product * end-to-end"
+tags: [full-stack, product, end-to-end]
+synapse-mode: enabled
+
+steps:
+  - name: ux-design
+    agent: ux-lifecycle-master-agent
+    input: "User's product vision and requirements"
+    output: "Complete UX package: research, wireframes, visual designs, handoff artifact"
+    on-failure: halt
+    synapse-checkpoint: true
+
+  - name: curate-for-spec
+    agent: context-curator-agent
+    input: "UX package from step:ux-design"
+    output: "Curated context brief for spec-writer (design decisions, constraints, user flows)"
+    on-failure: skip
+
+  - name: specify
+    agent: spec-writer-agent
+    input: "Context brief from step:curate-for-spec OR UX package from step:ux-design AND user's product requirements"
+    output: "Comprehensive technical specification"
+    on-failure: halt
+    synapse-checkpoint: true
+
+  - name: curate-for-implement
+    agent: context-curator-agent
+    input: "Specification from step:specify AND UX designs from step:ux-design"
+    output: "Curated context brief for implementer (spec chunked by story, design references)"
+    on-failure: skip
+
+  - name: implement
+    agent: implementer-agent
+    input: "Context brief from step:curate-for-implement OR specification from step:specify AND UX designs from step:ux-design"
+    output: "Implemented product code"
+    on-failure: halt
+    synapse-checkpoint: true
+
+  - name: curate-for-review
+    agent: context-curator-agent
+    input: "Code from step:implement AND spec from step:specify"
+    output: "Curated context brief for reviewer"
+    on-failure: skip
+
+  - name: review
+    agent: reviewer-agent
+    input: "Context brief from step:curate-for-review OR spec from step:specify AND code from step:implement"
+    output: "Implementation compliance report"
+    on-failure: loop
+    loop-target: implement
+    max-iterations: 3
+    synapse-checkpoint: true
+
+  - name: test
+    agent: qa-master-agent
+    input: "Code from step:implement AND spec from step:specify AND UX from step:ux-design"
+    output: "Comprehensive test results (E2E, accessibility, UX compliance)"
+    on-failure: loop
+    loop-target: implement
+    max-iterations: 2
+    synapse-checkpoint: true
+
+resumable: true
+artifact-persistence: project-dir

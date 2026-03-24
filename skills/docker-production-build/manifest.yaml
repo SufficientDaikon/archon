@@ -1,0 +1,12 @@
+name: docker-production-build
+version: 1.0.0
+description: "Build minimal secure production Docker images with multi-stage builds, standalone output, and process management"
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: [docker, containerization, devops, production]
+triggers:
+  keywords: ["Dockerfile", "docker build", "multi-stage", "standalone output", "container", "production image", "docker-compose"]
+  patterns: ["create * Dockerfile*", "optimize * docker*", "containerize *"]
+source-dissection: "prompts.chat"
+priority: P2

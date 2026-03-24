@@ -1,0 +1,11 @@
+name: implementer
+version: 1.0.0
+description: "Use when implementing features from a specification. Triggers on tasks involving spec-driven implementation, building from requirements, task breakdown execution, TDD from acceptance criteria, or when the user asks to implement the spec, build from spec, or execute the implementation plan."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["spec-driven-development"]
+triggers:
+  keywords: ["implement the spec", "build from spec", "execute the implementation plan", "implementing features from a specification", "spec-driven implementation", "building from requirements", "task breakdown execution", "TDD from acceptance criteria", "the user asks to "implement the spec"", ""build from spec"", "or "execute the implementation plan""]
+  patterns: []
+priority: P1

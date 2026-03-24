@@ -1,0 +1,11 @@
+name: ux-research
+version: 1.0.0
+description: "UX research methodology including persona creation, journey mapping, competitive analysis, and research synthesis. Use when conducting user research, creating personas, mapping user journeys, or analyzing competitors."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["design", "ui-ux"]
+triggers:
+  keywords: ["conducting user research, creating personas, mapping user journeys, or analyzing competitors"]
+  patterns: []
+priority: P2

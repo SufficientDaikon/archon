@@ -1,0 +1,156 @@
+# Guardrails Schema
+# Defines machine-readable format for agent guardrails
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "Archon Guardrails Schema"
+version: "1.0.0"
+description: "Machine-readable guardrail definitions for agents and pipelines"
+
+type: object
+required:
+  - guardrails
+properties:
+  guardrails:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      required:
+        - id
+        - type
+        - rule
+        - severity
+      properties:
+        id:
+          type: string
+          pattern: "^[a-z][a-z0-9-]+$"
+          description: "Unique guardrail identifier (kebab-case)"
+
+        type:
+          type: string
+          enum:
+            - must-always
+            - must-never
+            - should-prefer
+            - should-avoid
+          description: |
+            must-always: Absolute requirement — violation halts execution
+            must-never: Absolute prohibition — violation halts execution
+            should-prefer: Strong recommendation — violation logs warning
+            should-avoid: Soft prohibition — violation logs info
+
+        rule:
+          type: string
+          maxLength: 200
+          description: "Clear, actionable rule statement"
+
+        description:
+          type: string
+          description: "Extended explanation of why this guardrail exists"
+
+        severity:
+          type: string
+          enum:
+            - critical
+            - major
+            - minor
+          description: |
+            critical: Violation is a showstopper — HALT immediately
+            major: Violation must be fixed before proceeding
+            minor: Violation should be logged and addressed
+
+        iron-law:
+          type: integer
+          minimum: 1
+          maximum: 10
+          description: "Which Iron Law this guardrail enforces (1-10)"
+
+        on-violation:
+          type: object
+          required:
+            - action
+          properties:
+            action:
+              type: string
+              enum:
+                - halt
+                - warn
+                - log
+                - retry
+                - escalate
+              description: "What to do when guardrail is violated"
+            message:
+              type: string
+              description: "Message to display on violation"
+            max-retries:
+              type: integer
+              minimum: 1
+              maximum: 5
+              description: "For retry action — max retry attempts"
+
+        examples:
+          type: array
+          items:
+            type: object
+            properties:
+              violation:
+                type: string
+                description: "Example of a violation"
+              correction:
+                type: string
+                description: "How to correct the violation"
+
+# --- Validation Gate Schema (for pipeline steps) ---
+
+definitions:
+  validation-gate:
+    type: object
+    description: "Validation requirements for pipeline step transitions"
+    properties:
+      expected-artifacts:
+        type: array
+        items:
+          type: object
+          required:
+            - path-pattern
+          properties:
+            path-pattern:
+              type: string
+              description: "Glob pattern for expected artifact file"
+            description:
+              type: string
+              description: "What this artifact should contain"
+        description: "Files that must exist after step completion"
+
+      required-sections:
+        type: array
+        items:
+          type: string
+        description: "Markdown headings that must be present in artifacts"
+
+      min-word-count:
+        type: integer
+        minimum: 1
+        description: "Minimum word count for primary artifact (prevents empty outputs)"
+
+      compliance-threshold:
+        type: number
+        minimum: 0
+        maximum: 100
+        description: "Minimum compliance percentage to proceed (for review steps)"
+
+      custom-validators:
+        type: array
+        items:
+          type: object
+          required:
+            - name
+            - check
+          properties:
+            name:
+              type: string
+              description: "Validator name"
+            check:
+              type: string
+              description: "Python expression or function name for custom validation"
+        description: "Custom validation rules"

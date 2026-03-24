@@ -1,0 +1,88 @@
+# Archon v3 Telemetry Envelope Schema
+# Versioned envelope for all runtime telemetry events.
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "Archon Telemetry Envelope Schema"
+version: "3.0.0"
+description: "Normalized telemetry envelope for observability, replay, and audit"
+
+type: object
+required:
+  - envelope_id
+  - schema_version
+  - event_type
+  - timestamp
+  - source
+properties:
+  envelope_id:
+    type: string
+    pattern: "^tel-[a-f0-9]{8,}$"
+    description: "Unique envelope identifier"
+
+  schema_version:
+    type: string
+    pattern: "^\\d+\\.\\d+\\.\\d+$"
+    description: "Envelope schema version for forward compatibility"
+
+  event_type:
+    type: string
+    description: "Telemetry event classification"
+
+  timestamp:
+    type: string
+    format: date-time
+
+  source:
+    type: object
+    required:
+      - component
+    properties:
+      component:
+        type: string
+      session_id:
+        type: string
+      pipeline_name:
+        type: string
+      step_name:
+        type: string
+      agent:
+        type: string
+      host:
+        type: string
+
+  correlation_id:
+    type: string
+
+  parent_id:
+    type: string
+    description: "Parent envelope for causal ordering"
+
+  payload:
+    type: object
+    description: "Event-specific telemetry data"
+
+  metrics:
+    type: object
+    properties:
+      duration_ms:
+        type: integer
+        minimum: 0
+      token_count:
+        type: integer
+        minimum: 0
+      memory_bytes:
+        type: integer
+        minimum: 0
+    description: "Quantitative metrics for this event"
+
+  tags:
+    type: object
+    additionalProperties:
+      type: string
+    description: "Key-value tags for filtering and grouping"
+
+  retention_class:
+    type: string
+    enum: [ephemeral, standard, audit, permanent]
+    default: "standard"
+    description: "Data retention classification"

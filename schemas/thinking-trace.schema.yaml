@@ -1,0 +1,184 @@
+# Thinking Trace Schema
+# Standardized format for machine-readable reasoning traces
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "Archon Thinking Trace Schema"
+version: "1.0.0"
+description: "JSON format for structured reasoning traces produced by sequential thinking"
+
+type: object
+required:
+  - task
+  - complexity
+  - phases
+properties:
+  task:
+    type: string
+    description: "Task description"
+
+  complexity:
+    type: string
+    enum:
+      - trivial
+      - simple
+      - moderate
+      - complex
+      - expert
+    description: "Task complexity level"
+
+  phases:
+    type: object
+    required:
+      - decompose
+    properties:
+      decompose:
+        type: object
+        required:
+          - goal
+          - steps
+        properties:
+          goal:
+            type: string
+            description: "What 'done' looks like"
+          steps:
+            type: array
+            minItems: 1
+            items:
+              type: object
+              required:
+                - number
+                - description
+                - complexity
+              properties:
+                number:
+                  type: integer
+                  minimum: 1
+                description:
+                  type: string
+                complexity:
+                  type: string
+                  enum: [trivial, moderate, complex]
+                depends-on:
+                  type: array
+                  items:
+                    type: integer
+                  description: "Step numbers this step depends on"
+
+      reason:
+        type: array
+        description: "Reasoning traces per step"
+        items:
+          type: object
+          required:
+            - step
+            - thinking
+            - conclusion
+            - confidence
+          properties:
+            step:
+              type: integer
+              description: "Step number from decomposition"
+            thinking:
+              type: string
+              description: "Full reasoning trace"
+            approaches-considered:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  pros:
+                    type: array
+                    items:
+                      type: string
+                  cons:
+                    type: array
+                    items:
+                      type: string
+            chosen-approach:
+              type: string
+              description: "Selected approach with justification"
+            conclusion:
+              type: string
+              description: "Result of this reasoning step"
+            confidence:
+              type: string
+              enum: [high, medium, low]
+            evidence:
+              type: string
+              description: "Fresh evidence supporting the conclusion"
+
+      validate:
+        type: array
+        description: "Validation results per step"
+        items:
+          type: object
+          required:
+            - step
+            - expected
+            - actual
+            - passed
+            - confidence
+          properties:
+            step:
+              type: integer
+            expected:
+              type: string
+            actual:
+              type: string
+            passed:
+              type: boolean
+            side-effects:
+              type: string
+            confidence:
+              type: string
+              enum: [high, medium, low]
+
+      synthesize:
+        type: object
+        properties:
+          step-conclusions:
+            type: array
+            items:
+              type: string
+          consistency:
+            type: string
+            description: "Are all conclusions consistent?"
+          gaps:
+            type: array
+            items:
+              type: string
+            description: "Unanswered questions"
+          final-answer:
+            type: string
+          overall-confidence:
+            type: string
+            enum: [high, medium, low]
+          assumptions:
+            type: array
+            items:
+              type: string
+            description: "Unverified assumptions"
+
+  metadata:
+    type: object
+    properties:
+      agent:
+        type: string
+        description: "Agent that produced this trace"
+      pipeline:
+        type: string
+        description: "Pipeline context (if any)"
+      step:
+        type: string
+        description: "Pipeline step context (if any)"
+      duration-ms:
+        type: integer
+        description: "Total reasoning time in milliseconds"
+      branch-count:
+        type: integer
+        description: "Number of reasoning branches taken"
+      stuck-loop-count:
+        type: integer
+        description: "Number of stuck-loop detections"

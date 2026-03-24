@@ -1,0 +1,36 @@
+name: template-variables
+version: 1.0.0
+description: "Multi-format template variable detection, normalization, and compilation"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - templates
+  - variables
+  - text-processing
+  - parsing
+  - interpolation
+
+triggers:
+  keywords:
+    - "template variables"
+    - "variable detection"
+    - "text interpolation"
+    - "template system"
+  patterns:
+    - "detect * variables"
+    - "fill * placeholders"
+
+priority: P2
+
+resources:
+  - path: resources/variable-formats.md
+    type: reference
+    load: on-demand

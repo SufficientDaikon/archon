@@ -1,0 +1,60 @@
+# Dissect-to-Skill Pipeline — DDE (Dissection-Driven Enhancement)
+# dissector → spec-writer → implementer → reviewer
+
+name: dissect-to-skill
+version: 1.0.0
+description: "Transform a codebase dissection into production-ready Archon skills using the DDE methodology"
+trigger: "dissect codebase * into skills"
+tags: [dde, dissection, skill-creation, meta]
+synapse-mode: enabled
+
+steps:
+  - name: dissect
+    agent: dissector-agent
+    input: "Target codebase path or dissection documents"
+    output: "Pattern catalog: extracted patterns, anti-patterns, and architectural decisions"
+    on-failure: halt
+    synapse-checkpoint: true
+    description: "DISSECT + CATALOG — analyze codebase, extract reusable patterns, catalog with metadata"
+
+  - name: diff
+    agent: context-curator-agent
+    input: "Pattern catalog from step:dissect AND existing skills inventory"
+    output: "Gap analysis: new patterns not covered by existing skills, enhancement opportunities"
+    on-failure: halt
+    description: "DIFF — compare extracted patterns against current skill coverage"
+
+  - name: specify
+    agent: spec-writer-agent
+    input: "Gap analysis from step:diff"
+    output: "Skill specifications for each new or upgraded skill (9-section template)"
+    on-failure: halt
+    synapse-checkpoint: true
+    description: "SPECIFY — write full skill specs using 9-section Archon template"
+
+  - name: implement
+    agent: implementer-agent
+    input: "Skill specifications from step:specify"
+    output: "SKILL.md + manifest.yaml for each new skill"
+    on-failure: halt
+    description: "IMPLEMENT — create skill files following the 9-section format"
+
+  - name: validate
+    agent: reviewer-agent
+    input: "Implemented skills from step:implement AND specifications from step:specify"
+    output: "Compliance report — gold (9/9) verification for each skill"
+    on-failure: loop
+    loop-target: implement
+    max-iterations: 2
+    synapse-checkpoint: true
+    description: "VALIDATE — run compliance check, ensure gold tier"
+
+  - name: register
+    agent: context-curator-agent
+    input: "Validated skills from step:validate"
+    output: "Updated archon.yaml, bundle assignments, composition graph"
+    on-failure: halt
+    description: "REGISTER + COMPOSE — add to archon.yaml, wire composes/extends"
+
+resumable: true
+artifact-persistence: dde-dissections

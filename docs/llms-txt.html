@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>llms.txt — Archon Documentation</title>
+    <meta
+      name="description"
+      content="Machine-readable framework index for AI assistants — the llms.txt convention in Archon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="doc-nav">
+      <a href="../index.html" class="nav-logo">Archon</a>
+      <a
+        href="https://github.com/SufficientDaikon/archon"
+        class="nav-github"
+        target="_blank"
+        >GitHub ↗</a
+      >
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">DOCUMENTATION</div>
+        <a href="getting-started.html" class="sidebar-link">Getting Started</a>
+        <a href="creating-skills.html" class="sidebar-link">Creating Skills</a>
+        <a href="creating-agents.html" class="sidebar-link">Creating Agents</a>
+        <a href="creating-synapses.html" class="sidebar-link"
+          >Creating Synapses</a
+        >
+        <a href="creating-bundles.html" class="sidebar-link"
+          >Creating Bundles</a
+        >
+        <a href="creating-pipelines.html" class="sidebar-link"
+          >Creating Pipelines</a
+        >
+        <a href="cli-guide.html" class="sidebar-link">CLI Guide</a>
+        <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
+        <a href="architecture.html" class="sidebar-link">Architecture</a>
+        <a href="migration-v3.html" class="sidebar-link">Migration v3</a>
+        <a href="faq.html" class="sidebar-link">FAQ</a>
+        <a href="llms-txt.html" class="sidebar-link active">llms.txt</a>
+        <a href="agent-cards.html" class="sidebar-link">Agent Cards</a>
+        <a href="integration-catalog.html" class="sidebar-link">Integration Catalog</a>
+      </div>
+      <div class="sidebar-section">
+        <a href="../index.html" class="sidebar-link back-link"
+          >← Back to Home</a
+        >
+      </div>
+    </aside>
+
+    <button
+      class="sidebar-toggle"
+      onclick="document.getElementById('sidebar').classList.toggle('open')"
+    >
+      ☰
+    </button>
+
+    <!-- Main Content -->
+    <main class="doc-content">
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="../index.html">Home</a>
+        <span class="separator">›</span>
+        <a href="getting-started.html">Documentation</a>
+        <span class="separator">›</span>
+        <span>llms.txt</span>
+      </div>
+
+      <!-- Header -->
+      <div class="doc-header">
+        <span class="section-label">DOCUMENTATION</span>
+        <h1 class="doc-title">
+          <span class="gradient-text">llms.txt</span>
+        </h1>
+        <p class="doc-subtitle">
+          Machine-readable framework index for AI assistants — following the
+          <a href="https://llmstxt.org/" target="_blank">llms.txt convention</a>.
+        </p>
+      </div>
+
+      <!-- What is llms.txt -->
+      <div class="content-section">
+        <h2>📄 What is llms.txt?</h2>
+        <p>
+          <a href="https://llmstxt.org/" target="_blank">llms.txt</a> is an
+          emerging convention that provides a machine-readable index of a
+          project's documentation. It lets Large Language Models (and any tool
+          that works with them) instantly understand a project's purpose,
+          structure, and capabilities — without crawling dozens of files.
+        </p>
+        <p>
+          Archon generates <strong>two</strong> files:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>Purpose</th>
+              <th>Size</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>llms.txt</code></td>
+              <td>Concise index — skill names, agent roles, pipeline chains, bundle contents</td>
+              <td>~10–15 KB</td>
+            </tr>
+            <tr>
+              <td><code>llms-full.txt</code></td>
+              <td>Complete dump — every SKILL.md, AGENT.md, SYNAPSE.md, pipeline YAML, bundle YAML, and docs page</td>
+              <td>~500 KB – 3 MB</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- What Archon Generates -->
+      <div class="content-section">
+        <h2>🧩 What Archon Generates</h2>
+
+        <h3>Concise Index (<code>llms.txt</code>)</h3>
+        <ul>
+          <li><strong>Header</strong> — framework name, version, repository URL, docs URL, license</li>
+          <li><strong>Skills</strong> — all 83 skills with one-line descriptions</li>
+          <li><strong>Agents</strong> — all 10 agents with roles and descriptions</li>
+          <li><strong>Synapses</strong> — cognitive enhancement modules with type and description</li>
+          <li><strong>Pipelines</strong> — multi-agent workflows with trigger phrases and step chains</li>
+          <li><strong>Bundles</strong> — domain kits with descriptions and skill lists</li>
+          <li><strong>Documentation</strong> — links to all docs pages</li>
+          <li><strong>Installation</strong> — quick-start instructions</li>
+          <li><strong>Links</strong> — repository, docs site, link to <code>llms-full.txt</code></li>
+        </ul>
+
+        <h3>Full Dump (<code>llms-full.txt</code>)</h3>
+        <p>
+          Contains the <strong>complete text content</strong> of every component
+          file: README.md, archon.yaml, every SKILL.md, AGENT.md,
+          SYNAPSE.md, pipeline YAML, bundle.yaml, and documentation page.
+        </p>
+      </div>
+
+      <!-- How to Generate -->
+      <div class="content-section">
+        <h2>⚡ How to Generate</h2>
+
+        <h3>CLI Command (recommended)</h3>
+        <pre><code># Generate both files (default)
+archon generate llms-txt
+
+# Generate only the concise index
+archon generate llms-txt --concise
+
+# Generate only the full dump
+archon generate llms-txt --full
+
+# Write to a custom directory
+archon generate llms-txt --output ./dist/
+
+# JSON output (for scripting)
+archon --json generate llms-txt
+
+# Verbose output
+archon --verbose generate llms-txt</code></pre>
+
+        <h3>Standalone Script</h3>
+        <p>
+          Works without the <code>archon</code> package installed — only
+          requires Python 3.10+ and PyYAML:
+        </p>
+        <pre><code># Generate both files
+python scripts/generate-llms-txt.py
+
+# Concise only
+python scripts/generate-llms-txt.py --concise
+
+# Full only
+python scripts/generate-llms-txt.py --full
+
+# Custom output directory
+python scripts/generate-llms-txt.py --output ./dist/</code></pre>
+      </div>
+
+      <!-- Deployment -->
+      <div class="content-section">
+        <h2>🚀 Deployment</h2>
+        <p>
+          When you push to the <code>master</code> branch, GitHub Actions
+          automatically generates and deploys both files. After deployment:
+        </p>
+        <ul>
+          <li><code>https://sufficientdaikon.github.io/archon/llms.txt</code></li>
+          <li><code>https://sufficientdaikon.github.io/archon/llms-full.txt</code></li>
+        </ul>
+      </div>
+
+      <!-- Validation -->
+      <div class="content-section">
+        <h2>✅ Validation</h2>
+        <p>Check whether your local files are up to date:</p>
+        <pre><code># Via CLI
+archon validate --check-llms-txt
+
+# Via standalone script
+python scripts/validate.py --check-llms-txt</code></pre>
+        <p>
+          The staleness check is <strong>warning-only</strong> — it never causes
+          validation failures.
+        </p>
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="doc-nav-footer">
+        <a href="faq.html" class="nav-link prev">
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">FAQ</span>
+        </a>
+        <a href="agent-cards.html" class="nav-link next">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">Agent Cards</span>
+        </a>
+      </div>
+    </main>
+
+    <script>
+      // Scroll reveal animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".reveal, .content-section").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Sidebar active state based on current page
+      const currentPage = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".sidebar-link").forEach((link) => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        }
+      });
+    </script>
+  </body>
+</html>

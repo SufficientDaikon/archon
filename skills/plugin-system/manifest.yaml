@@ -1,0 +1,35 @@
+name: plugin-system
+version: 1.0.0
+description: "Typed Map-based plugin architecture with interface contracts and config-driven activation"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - plugin-system
+  - extensibility
+  - architecture
+  - typescript
+  - registry
+
+triggers:
+  keywords:
+    - "add plugin system"
+    - "make it extensible"
+    - "plugin architecture"
+  patterns:
+    - "add * plugin*"
+    - "extensible * system"
+
+priority: P2
+
+resources:
+  - path: resources/plugin-patterns.md
+    type: reference
+    load: on-demand

@@ -1,0 +1,11 @@
+name: info-architecture
+version: 1.0.0
+description: "Information architecture patterns including sitemaps, navigation design, content strategy, user flows, and screen inventories. Use when organizing content structure, designing navigation, creating sitemaps, or mapping user flows."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["best-practices", "architecture"]
+triggers:
+  keywords: ["organizing content structure, designing navigation, creating sitemaps, or mapping user flows"]
+  patterns: []
+priority: P2

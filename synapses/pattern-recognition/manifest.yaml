@@ -1,0 +1,128 @@
+# Archon Synapse Manifest — Pattern Recognition
+# Opt-in synapse: detects design patterns in code and maps them to Archon skills.
+
+name: pattern-recognition
+version: "1.0.0"
+description: "Intelligent code-scanning synapse that detects known design patterns and maps them to relevant Archon skills for guided implementation"
+author: tahaa
+synapse-type: optional
+license: MIT
+
+firing-phases:
+  - name: DETECT
+    timing: active
+    description: "Scan code for structural pattern signatures against the pattern registry"
+
+  - name: SUGGEST
+    timing: active
+    description: "Surface matched Archon skill with confidence rating and recommended action"
+
+  - name: APPLY
+    timing: active
+    description: "Load confirmed skill into context and activate its rules as constraints"
+
+tags:
+  - pattern-recognition
+  - code-analysis
+  - skill-discovery
+  - composition
+
+pattern-registry:
+  - signature: "Map-based registry, register/get/has methods"
+    pattern: plugin-registry
+    skill: plugin-system
+
+  - signature: "{{variable}} template interpolation"
+    pattern: template-variables
+    skill: template-variables
+
+  - signature: "builder()/with*()/build() chaining"
+    pattern: fluent-builder
+    skill: fluent-builder
+
+  - signature: "middleware[], next() chains, use() registration"
+    pattern: guard-chain
+    skill: guard-chain
+
+  - signature: "globalThis singleton, module-scoped instance"
+    pattern: singleton
+    skill: singleton-patterns
+
+  - signature: "Promise.allSettled, fire-and-forget dispatch"
+    pattern: async-side-effects
+    skill: async-side-effects
+
+  - signature: "prisma model queries and relations"
+    pattern: prisma-orm
+    skill: prisma-orm-patterns
+
+  - signature: "webhook dispatch, event emitters, callback POST"
+    pattern: event-webhooks
+    skill: event-webhooks
+
+  - signature: "next/dynamic, React.lazy, dynamic import()"
+    pattern: lazy-import
+    skill: lazy-import-patterns
+
+  - signature: "use server, async Server Components"
+    pattern: server-components
+    skill: server-component-patterns
+
+  - signature: "content fingerprinting, dedup, similarity scoring"
+    pattern: content-dedup
+    skill: content-deduplication
+
+  - signature: "pino, structured JSON logging, correlation IDs"
+    pattern: structured-logging
+    skill: structured-logging
+
+  - signature: "multi-stage Dockerfile, standalone output"
+    pattern: docker-production
+    skill: docker-production-build
+
+  - signature: "describe/it/expect/vi.mock test blocks"
+    pattern: vitest-testing
+    skill: vitest-unit-patterns
+
+  - signature: "intl, t(), locale routing, messages JSON"
+    pattern: i18n
+    skill: i18n-strategy
+
+  - signature: "content scoring, flagging, moderation queues"
+    pattern: content-moderation
+    skill: content-moderation-pipeline
+
+  - signature: "white-label config, tenant themes, brand overrides"
+    pattern: white-label
+    skill: white-label-config
+
+  - signature: "YAML prompt definitions, prompt chaining"
+    pattern: yaml-prompts
+    skill: yaml-prompt-library
+
+  - signature: "SDK alongside app, shared types, monorepo client"
+    pattern: sdk-beside-app
+    skill: sdk-beside-app
+
+  - signature: "error boundaries, error classes, centralized handling"
+    pattern: error-architecture
+    skill: error-handling-architecture
+
+  - signature: "playwright/test, cy., page objects, E2E selectors"
+    pattern: e2e-testing
+    skill: e2e-testing-patterns
+
+related-synapses:
+  - metacognition
+  - security-awareness
+
+resources:
+  - path: resources/pattern-registry.md
+    type: reference
+    load: on-demand
+    description: "Complete pattern-to-skill mapping with signature definitions and code examples"
+
+  - path: resources/detection-heuristics.md
+    type: heuristic
+    load: on-demand
+    description: "Rules for scoring detection confidence and avoiding false positives"

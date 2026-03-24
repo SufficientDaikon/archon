@@ -1,0 +1,38 @@
+name: vitest-unit-patterns
+version: 1.0.0
+description: "Design fast isolated unit tests with Vitest including mock strategies, route handler testing, and React hook testing"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - testing
+  - vitest
+  - unit-tests
+  - mocking
+  - coverage
+
+triggers:
+  keywords:
+    - "vitest"
+    - "unit test"
+    - "vi.mock"
+    - "test coverage"
+    - "mock strategy"
+    - "renderHook"
+    - "test isolation"
+  patterns:
+    - "write * unit test*"
+    - "test * with vitest*"
+    - "mock * in test*"
+
+composes: [e2e-testing-patterns]
+source-dissection: "prompts.chat"
+
+priority: P1

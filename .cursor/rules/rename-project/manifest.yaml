@@ -1,0 +1,33 @@
+# Rename Project Manifest
+
+name: rename-project
+version: 1.0.0
+description: "Complete guide for forking and renaming Archon for custom use"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - meta
+  - fork
+  - rename
+  - rebrand
+  - customization
+
+triggers:
+  keywords:
+    - "rename this project"
+    - "fork archon"
+    - "rebrand framework"
+    - "customize project name"
+  patterns:
+    - "rename * to *"
+    - "fork as *"
+
+priority: P3

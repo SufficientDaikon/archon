@@ -1,0 +1,11 @@
+name: godot-best-practices
+version: 1.0.0
+description: "Skill: godot-best-practices"
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["godot", "game-dev", "gdscript"]
+triggers:
+  keywords: []
+  patterns: []
+priority: P2

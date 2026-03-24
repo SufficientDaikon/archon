@@ -1,0 +1,11 @@
+name: django-rest-framework
+version: 1.0.0
+description: "Use when Django REST Framework for building APIs with serializers, viewsets, and authentication. Use when creating RESTful APIs. allowed-tools: - Bash - Read"
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["django", "python", "backend", "web-framework"]
+triggers:
+  keywords: ["Django REST Framework for building APIs with serializers, viewsets, and authentication"]
+  patterns: []
+priority: P2

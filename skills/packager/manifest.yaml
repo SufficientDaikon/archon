@@ -1,0 +1,11 @@
+name: packager
+version: 1.0.0
+description: "Package, share, or publish agents, skills, templates, and SDD artifacts as shareable git repos."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: []
+triggers:
+  keywords: ["package this", "share this", "make a repo for this", "publish my agents", "sharing", "publishing", "packaging", "exporting", "or distributing custom agents and skills"]
+  patterns: []
+priority: P3

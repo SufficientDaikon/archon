@@ -1,0 +1,45 @@
+# Skill Upgrade Pipeline — Stub-to-Gold
+# context-curator → spec-writer → implementer → reviewer
+
+name: skill-upgrade
+version: 1.0.0
+description: "Upgrade an existing stub or bronze skill to gold (9/9) compliance"
+trigger: "upgrade skill * to gold"
+tags: [quality, upgrade, compliance, meta]
+synapse-mode: enabled
+
+steps:
+  - name: assess
+    agent: context-curator-agent
+    input: "Target skill path"
+    output: "Current compliance score, missing sections, existing content analysis"
+    on-failure: halt
+    description: "Read existing SKILL.md and manifest.yaml, run compliance check, identify gaps"
+
+  - name: specify-upgrade
+    agent: spec-writer-agent
+    input: "Assessment from step:assess AND 9-section template reference"
+    output: "Upgrade specification: content to add/rewrite for each missing section"
+    on-failure: halt
+    synapse-checkpoint: true
+    description: "Define exactly what content each missing section needs"
+
+  - name: rewrite
+    agent: implementer-agent
+    input: "Upgrade spec from step:specify-upgrade AND existing skill content"
+    output: "Rewritten SKILL.md (9/9 sections) + updated manifest.yaml"
+    on-failure: halt
+    description: "Rewrite skill to full 9-section format, preserving valuable existing content"
+
+  - name: verify
+    agent: reviewer-agent
+    input: "Rewritten skill from step:rewrite AND upgrade spec from step:specify-upgrade"
+    output: "Gold compliance verification report"
+    on-failure: loop
+    loop-target: rewrite
+    max-iterations: 2
+    synapse-checkpoint: true
+    description: "Verify 9/9 score, check content quality, confirm manifest completeness"
+
+resumable: true
+artifact-persistence: skill-upgrades

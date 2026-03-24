@@ -1,0 +1,12 @@
+name: singleton-patterns
+version: 1.0.0
+description: "Manage module-level state in serverless environments using globalThis singletons, initialization guards, and connection pooling"
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: [singleton, design-patterns, serverless, connection-pooling]
+triggers:
+  keywords: ["singleton", "globalThis", "connection pool", "initialization guard", "module cache", "PrismaClient singleton"]
+  patterns: ["create * singleton*", "prevent * connection*", "reuse * client*"]
+source-dissection: "prompts.chat"
+priority: P3

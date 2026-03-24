@@ -1,0 +1,77 @@
+# Archon v3 Hook Event Schema
+# Standardizes all hook lifecycle events for the hook bus.
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "Archon Hook Event Schema"
+version: "3.0.0"
+description: "Normalized event format for all hook bus communications"
+
+type: object
+required:
+  - event_id
+  - event_type
+  - timestamp
+  - source
+properties:
+  event_id:
+    type: string
+    pattern: "^evt-[a-f0-9]{8,}$"
+    description: "Unique event identifier"
+
+  event_type:
+    type: string
+    enum:
+      - session_start
+      - session_end
+      - pre_step
+      - post_step
+      - on_failure
+      - on_deviation
+      - policy_decision
+      - tool_invocation
+      - context_handoff
+      - recovery_attempt
+    description: "Hook event type"
+
+  timestamp:
+    type: string
+    format: date-time
+
+  source:
+    type: object
+    required:
+      - component
+    properties:
+      component:
+        type: string
+        description: "Component that emitted this event"
+      session_id:
+        type: string
+      pipeline_name:
+        type: string
+      step_name:
+        type: string
+      agent:
+        type: string
+
+  correlation_id:
+    type: string
+    description: "Trace correlation ID"
+
+  parent_event_id:
+    type: string
+    description: "Parent event for causal chain tracking"
+
+  payload:
+    type: object
+    description: "Event-specific data"
+
+  severity:
+    type: string
+    enum: [debug, info, warning, error, critical]
+    default: "info"
+
+  schema_version:
+    type: string
+    default: "3.0.0"
+    description: "Schema version for forward compatibility"

@@ -1,0 +1,36 @@
+name: yaml-prompt-library
+version: 1.0.0
+description: "YAML-based prompt storage with structured messages, variables, and test data"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - prompts
+  - yaml
+  - ai
+  - templates
+  - prompt-engineering
+
+triggers:
+  keywords:
+    - "yaml prompts"
+    - "prompt library"
+    - "prompt templates"
+    - "store prompts as yaml"
+  patterns:
+    - "externalize * prompts"
+    - "create * prompt library"
+
+priority: P2
+
+resources:
+  - path: resources/prompt-yaml-schema.md
+    type: reference
+    load: on-demand

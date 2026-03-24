@@ -1,0 +1,11 @@
+name: wireframing
+version: 1.0.0
+description: "Wireframing patterns including layout grids, content blocks, responsive breakpoints, and page layout patterns for landing pages, dashboards, and forms. Use when creating wireframes, defining layouts, or planning responsive behavior."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["best-practices"]
+triggers:
+  keywords: ["creating wireframes, defining layouts, or planning responsive behavior"]
+  patterns: []
+priority: P2

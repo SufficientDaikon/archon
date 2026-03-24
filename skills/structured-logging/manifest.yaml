@@ -1,0 +1,12 @@
+name: structured-logging
+version: 1.0.0
+description: "Design structured JSON logging with Pino, request correlation, environment-aware formatting, and sensitive data redaction"
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: [logging, observability, pino, structured-logs]
+triggers:
+  keywords: ["structured logging", "pino", "winston", "log levels", "request correlation", "observability", "JSON logs"]
+  patterns: ["set up * logging*", "configure * logger*", "add * observability*"]
+source-dissection: "prompts.chat"
+priority: P1

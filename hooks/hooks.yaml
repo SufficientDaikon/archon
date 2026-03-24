@@ -1,0 +1,61 @@
+# Hook System Configuration
+# Defines which hooks fire at each lifecycle event
+
+version: "1.0.0"
+description: "Archon hook system — lifecycle event handlers for pipeline enforcement"
+
+hooks:
+  session-start:
+    enabled: true
+    handler: hooks/session_start.py
+    description: "Injects discipline rules (anti-rationalization, sequential thinking) at session start"
+    timeout: 5
+    on-error: warn
+
+  pre-step:
+    enabled: true
+    handler: hooks/pre_step.py
+    description: "Validates prerequisites before each pipeline step executes"
+    timeout: 10
+    on-error: halt
+    config:
+      validate-artifacts: true
+      check-guardrails: true
+      inject-context: true
+
+  post-step:
+    enabled: true
+    handler: hooks/post_step.py
+    description: "Validates outputs after each pipeline step completes"
+    timeout: 10
+    on-error: halt
+    config:
+      validate-artifacts: true
+      check-quality-gates: true
+      update-state: true
+      trigger-audit: true
+
+  on-failure:
+    enabled: true
+    handler: hooks/on_failure.py
+    description: "Handles failures — retry, loop, escalate, or halt"
+    timeout: 15
+    on-error: halt
+    config:
+      max-retries: 3
+      escalation-agent: debugger
+      auto-recovery: true
+
+  on-deviation:
+    enabled: true
+    handler: hooks/on_deviation.py
+    description: "Handles deviation protocol — STOP → DOCUMENT → ASK → LOG"
+    timeout: 30
+    on-error: halt
+
+# Global hook settings
+settings:
+  hooks-directory: hooks/
+  log-all-events: true
+  log-file: "~/.copilot/.archon/hooks.log"
+  strict-mode: true  # halt on any hook error (production default)

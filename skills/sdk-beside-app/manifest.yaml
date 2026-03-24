@@ -1,0 +1,37 @@
+name: sdk-beside-app
+version: 1.0.0
+description: "Extract core logic from a web app into a standalone publishable npm package with CLI"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - sdk
+  - npm
+  - monorepo
+  - typescript
+  - packaging
+
+triggers:
+  keywords:
+    - "extract SDK"
+    - "npm package"
+    - "sdk beside app"
+    - "publish package"
+    - "create SDK"
+  patterns:
+    - "extract * into a package"
+    - "create * npm package"
+
+priority: P2
+
+resources:
+  - path: resources/sdk-scaffold.md
+    type: reference
+    load: on-demand

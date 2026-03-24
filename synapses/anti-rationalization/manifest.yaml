@@ -1,0 +1,50 @@
+# Archon Synapse Manifest — Anti-Rationalization
+# Core synapse: auto-injected into all agent contexts.
+
+name: anti-rationalization
+version: "1.0.0"
+description: "Discipline engine preventing agents from rationalizing shortcuts — enforces 10 Iron Laws, detects forbidden phrases, audits compliance"
+author: tahaa
+synapse-type: core
+license: MIT
+
+firing-phases:
+  - name: DETECT
+    timing: continuous
+    description: "Monitor reasoning for rationalization patterns, red flag thoughts, and forbidden phrases"
+
+  - name: ENFORCE
+    timing: on-violation
+    description: "STOP → IDENTIFY → QUOTE → CORRECT → RESUME when rationalization is detected"
+
+  - name: AUDIT
+    timing: post-task
+    description: "Review all decisions against Iron Laws, verify claims, score discipline 1-10"
+
+tags:
+  - anti-rationalization
+  - discipline
+  - guardrails
+  - iron-laws
+  - core
+
+resources:
+  - path: resources/iron-laws.md
+    type: reference
+    load: always
+    description: "Complete Iron Laws with examples and edge cases"
+
+  - path: resources/rationalization-tables.md
+    type: reference
+    load: always
+    description: "All rationalization tables with counter-arguments"
+
+  - path: resources/red-flags.md
+    type: checklist
+    load: always
+    description: "Quick-reference red flag thoughts checklist"
+
+  - path: resources/forbidden-phrases.md
+    type: reference
+    load: always
+    description: "Forbidden phrases with replacement alternatives"

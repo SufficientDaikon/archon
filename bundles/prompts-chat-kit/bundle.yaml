@@ -1,0 +1,35 @@
+# prompts-chat-kit Bundle
+# 10 skills extracted from the prompts.chat codebase dissection
+
+name: prompts-chat-kit
+version: 1.0.0
+description: "Architecture patterns extracted from prompts.chat — the world's largest open-source AI prompt library"
+author: tahaa
+license: MIT
+source: "https://github.com/f/prompts.chat"
+
+skills:
+  - plugin-system
+  - fluent-builder
+  - content-quality-gate
+  - template-variables
+  - white-label-config
+  - claude-plugin-archetype
+  - yaml-prompt-library
+  - event-webhooks
+  - content-deduplication
+  - sdk-beside-app
+
+tags:
+  - architecture
+  - patterns
+  - typescript
+  - nextjs
+  - extracted
+
+# When to use this bundle:
+# - Building a platform with extensible plugins
+# - Creating self-hostable / white-label applications
+# - Building AI-powered content tools with quality gates
+# - Designing SDKs alongside web applications
+# - Integrating with Claude Code via plugins

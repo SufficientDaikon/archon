@@ -1,0 +1,38 @@
+name: server-component-patterns
+version: 1.0.0
+description: "Design RSC architectures with minimal client boundaries, streaming, Suspense, and Server Actions for Next.js App Router"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - react
+  - server-components
+  - nextjs
+  - rsc
+  - streaming
+
+triggers:
+  keywords:
+    - "server component"
+    - "use client"
+    - "RSC"
+    - "App Router"
+    - "Suspense"
+    - "streaming"
+    - "server actions"
+  patterns:
+    - "design * server component*"
+    - "split * server * client*"
+    - "optimize * client boundary*"
+
+extends: [react-best-practices]
+source-dissection: "prompts.chat"
+
+priority: P1

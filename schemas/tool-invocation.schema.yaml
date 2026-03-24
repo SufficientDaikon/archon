@@ -1,0 +1,92 @@
+# Archon v3 Tool Invocation Schema
+# Defines the contract for every tool call through the policy engine.
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "Archon Tool Invocation Schema"
+version: "3.0.0"
+description: "Tool invocation request and response contract for policy-gated execution"
+
+type: object
+required:
+  - invocation_id
+  - tool_name
+  - session_id
+  - timestamp
+  - policy_decision
+properties:
+  invocation_id:
+    type: string
+    pattern: "^inv-[a-f0-9]{8,}$"
+    description: "Unique invocation identifier"
+
+  tool_name:
+    type: string
+    description: "Name of tool being invoked"
+
+  session_id:
+    type: string
+    description: "Session context for this invocation"
+
+  correlation_id:
+    type: string
+    description: "Trace correlation ID"
+
+  timestamp:
+    type: string
+    format: date-time
+    description: "Invocation timestamp"
+
+  arguments:
+    type: object
+    description: "Tool arguments (validated against tool schema before execution)"
+
+  policy_decision:
+    type: object
+    required:
+      - action
+      - rationale
+    properties:
+      action:
+        type: string
+        enum: [allow, deny, escalate]
+        description: "Policy engine decision"
+      rationale:
+        type: string
+        description: "Human-readable reason for the decision"
+      policy_id:
+        type: string
+        description: "Policy rule that triggered this decision"
+      evidence_links:
+        type: array
+        items:
+          type: string
+        description: "References to supporting evidence"
+
+  result:
+    type: object
+    properties:
+      status:
+        type: string
+        enum: [success, failure, timeout, denied]
+      output:
+        type: object
+        description: "Tool output payload"
+      duration_ms:
+        type: integer
+        minimum: 0
+      error:
+        type: string
+        description: "Error message if status is failure"
+
+  schema_validation:
+    type: object
+    properties:
+      args_valid:
+        type: boolean
+      output_valid:
+        type: boolean
+      errors:
+        type: array
+        items:
+          type: string
+    description: "Pre/post schema validation results"

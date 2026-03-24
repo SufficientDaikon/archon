@@ -1,0 +1,146 @@
+# Archon Skill Manifest Schema
+# Every skill's manifest.yaml MUST conform to this schema.
+
+schema_version: "1.0"
+description: "Validation schema for Archon skill manifest files"
+
+required_fields:
+  name:
+    type: string
+    pattern: "^[a-z][a-z0-9-]*$"
+    description: "Unique kebab-case skill identifier"
+
+  version:
+    type: string
+    pattern: "^\\d+\\.\\d+\\.\\d+$"
+    description: "Semantic version (MAJOR.MINOR.PATCH)"
+
+  description:
+    type: string
+    min_length: 10
+    max_length: 200
+    description: "Human-readable purpose of the skill"
+
+  author:
+    type: string
+    description: "Creator identifier"
+
+  platforms:
+    type: list
+    min_items: 1
+    allowed_values: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+    description: "Supported AI coding assistant platforms"
+
+  tags:
+    type: list
+    min_items: 1
+    item_type: string
+    description: "Categorization tags for discovery"
+
+  triggers:
+    type: object
+    required_children:
+      keywords:
+        type: list
+        min_items: 1
+        item_type: string
+        description: "Exact phrases that activate this skill"
+    optional_children:
+      patterns:
+        type: list
+        item_type: string
+        description: "Glob-style patterns that activate this skill (use * for wildcards)"
+
+  priority:
+    type: string
+    allowed_values: [P1, P2, P3]
+    description: "P1=MVP/core, P2=important, P3=nice-to-have"
+
+optional_fields:
+  license:
+    type: string
+    default: "MIT"
+
+  extends:
+    type: string
+    description: "Parent skill name to inherit from (must exist in repo)"
+    validation: "Referenced skill must exist"
+
+  composes:
+    type: list
+    item_type: string
+    description: "List of skill names to merge (all must exist in repo)"
+    validation: "All referenced skills must exist; no circular deps"
+
+  mcp-dependencies:
+    type: list
+    item_type: string
+    description: "MCP servers required by this skill"
+
+  resources:
+    type: list
+    item_type: object
+    item_schema:
+      required:
+        path: { type: string, description: "Relative path to resource file" }
+        type:
+          {
+            type: string,
+            allowed_values:
+              [
+                cheat-sheet,
+                reference,
+                decision-tree,
+                lookup-table,
+                style-guide,
+                example,
+              ],
+          }
+        load:
+          {
+            type: string,
+            allowed_values: [always, on-demand],
+            default: "always",
+          }
+      optional:
+        description: { type: string }
+        max-tokens:
+          {
+            type: integer,
+            description: "Max tokens to load; truncate if exceeded",
+          }
+
+  tests:
+    type: list
+    item_type: object
+    item_schema:
+      required:
+        path: { type: string, description: "Relative path to test case file" }
+
+# File structure validation
+required_files:
+  - "SKILL.md"
+  - "manifest.yaml"
+
+optional_directories:
+  - "resources/"
+  - "examples/"
+  - "templates/"
+  - "tests/"
+  - "tests/cases/"
+  - "scripts/"
+  - "overrides/"
+
+# SKILL.md required sections
+skill_md_required_sections:
+  - "Identity" # Who is this skill? Role and persona
+  - "When to Use" # Trigger conditions and keywords
+  - "Workflow" # Step-by-step process
+  - "Rules" # DO and DON'T lists
+  - "Output Format" # What the skill produces
+  - "Handoff" # What happens after the skill completes
+
+skill_md_optional_sections:
+  - "Resources" # Index of available reference materials
+  - "Examples" # Sample interactions
+  - "Platform Notes" # Platform-specific behavior notes

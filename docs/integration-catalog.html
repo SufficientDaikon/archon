@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Integration Catalog — Archon Documentation</title>
+    <meta
+      name="description"
+      content="MCP Server Integration Catalog — browse, search, and configure MCP servers for Archon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="doc-nav">
+      <a href="../index.html" class="nav-logo">Archon</a>
+      <a
+        href="https://github.com/SufficientDaikon/archon"
+        class="nav-github"
+        target="_blank"
+        >GitHub ↗</a
+      >
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">DOCUMENTATION</div>
+        <a href="getting-started.html" class="sidebar-link">Getting Started</a>
+        <a href="creating-skills.html" class="sidebar-link">Creating Skills</a>
+        <a href="creating-agents.html" class="sidebar-link">Creating Agents</a>
+        <a href="creating-synapses.html" class="sidebar-link"
+          >Creating Synapses</a
+        >
+        <a href="creating-bundles.html" class="sidebar-link"
+          >Creating Bundles</a
+        >
+        <a href="creating-pipelines.html" class="sidebar-link"
+          >Creating Pipelines</a
+        >
+        <a href="cli-guide.html" class="sidebar-link">CLI Guide</a>
+        <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
+        <a href="architecture.html" class="sidebar-link">Architecture</a>
+        <a href="migration-v3.html" class="sidebar-link">Migration v3</a>
+        <a href="faq.html" class="sidebar-link">FAQ</a>
+        <a href="llms-txt.html" class="sidebar-link">llms.txt</a>
+        <a href="agent-cards.html" class="sidebar-link">Agent Cards</a>
+        <a href="integration-catalog.html" class="sidebar-link active"
+          >Integration Catalog</a
+        >
+      </div>
+      <div class="sidebar-section">
+        <a href="../index.html" class="sidebar-link back-link"
+          >← Back to Home</a
+        >
+      </div>
+    </aside>
+
+    <button
+      class="sidebar-toggle"
+      onclick="document.getElementById('sidebar').classList.toggle('open')"
+    >
+      ☰
+    </button>
+
+    <!-- Main Content -->
+    <main class="doc-content">
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="../index.html">Home</a>
+        <span class="separator">›</span>
+        <a href="getting-started.html">Documentation</a>
+        <span class="separator">›</span>
+        <span>Integration Catalog</span>
+      </div>
+
+      <!-- Header -->
+      <div class="doc-header">
+        <span class="section-label">DOCUMENTATION</span>
+        <h1 class="doc-title">
+          <span class="gradient-text">Integration Catalog</span>
+        </h1>
+        <p class="doc-subtitle">
+          A curated catalog of MCP servers — browse, search, and auto-configure
+          integrations for your AI coding platform.
+        </p>
+      </div>
+
+      <!-- Overview -->
+      <div class="content-section">
+        <h2>🔌 What is the Integration Catalog?</h2>
+        <p>
+          The <strong>MCP Server Integration Catalog</strong> is a curated
+          collection of Model Context Protocol servers that work with Archon
+          skills, agents, and bundles. It ships as a YAML data file
+          (<code>catalog/mcp-servers.yaml</code>) with ~20 vetted entries
+          spanning 8 categories.
+        </p>
+        <p>The catalog enables:</p>
+        <ul>
+          <li>
+            <strong>Discovery</strong> — Browse and search available MCP servers
+            from the CLI.
+          </li>
+          <li>
+            <strong>Recommendations</strong> — Get server suggestions based on
+            your installed skills and bundles.
+          </li>
+          <li>
+            <strong>Auto-configuration</strong> — Generate platform-specific MCP
+            config files (Copilot CLI, Claude Code, Cursor).
+          </li>
+          <li>
+            <strong>Dependency auditing</strong> — Check if your skills' MCP
+            dependencies are satisfied.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Quick Start -->
+      <div class="content-section">
+        <h2>⚡ Quick Start</h2>
+        <pre><code># Browse all available servers
+archon catalog list
+
+# Search for database servers
+archon catalog search database
+
+# Install GitHub server for Copilot CLI
+archon catalog install github --platform copilot-cli
+
+# Check if all dependencies are satisfied
+archon catalog check</code></pre>
+      </div>
+
+      <!-- Categories -->
+      <div class="content-section">
+        <h2>📂 Server Categories</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Example Servers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>core</code></td>
+              <td>Essential utilities</td>
+              <td>filesystem, fetch, memory</td>
+            </tr>
+            <tr>
+              <td><code>development</code></td>
+              <td>Dev tools & version control</td>
+              <td>github, git, gitlab, docker</td>
+            </tr>
+            <tr>
+              <td><code>database</code></td>
+              <td>Database access</td>
+              <td>postgres, sqlite, redis</td>
+            </tr>
+            <tr>
+              <td><code>research</code></td>
+              <td>Web search & automation</td>
+              <td>brave-search, exa, puppeteer</td>
+            </tr>
+            <tr>
+              <td><code>design</code></td>
+              <td>Design tools</td>
+              <td>figma</td>
+            </tr>
+            <tr>
+              <td><code>ai</code></td>
+              <td>AI capabilities</td>
+              <td>sequential-thinking</td>
+            </tr>
+            <tr>
+              <td><code>cloud</code></td>
+              <td>Cloud providers</td>
+              <td>aws, gcp</td>
+            </tr>
+            <tr>
+              <td><code>communication</code></td>
+              <td>Messaging platforms</td>
+              <td>slack</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CLI Reference -->
+      <div class="content-section">
+        <h2>🖥️ CLI Reference</h2>
+
+        <h3><code>archon catalog list</code></h3>
+        <p>
+          Lists all servers in a formatted table. Use
+          <code>--category</code> to filter.
+        </p>
+        <pre><code>archon catalog list
+archon catalog list --category database
+archon catalog list --json</code></pre>
+
+        <h3><code>archon catalog search &lt;query&gt;</code></h3>
+        <p>
+          Search by keyword, tag, or description. Results scored by relevance
+          (name &gt; tags &gt; description).
+        </p>
+        <pre><code>archon catalog search git
+archon catalog search "version control"</code></pre>
+
+        <h3><code>archon catalog info &lt;server&gt;</code></h3>
+        <p>
+          Show full details: package, environment variables, recommendations,
+          install command.
+        </p>
+        <pre><code>archon catalog info github
+archon catalog info postgres</code></pre>
+
+        <h3><code>archon catalog recommend</code></h3>
+        <p>
+          Get personalized recommendations based on installed skills and bundles.
+        </p>
+        <pre><code>archon catalog recommend</code></pre>
+
+        <h3><code>archon catalog install &lt;server&gt;</code></h3>
+        <p>
+          Generate and merge MCP config for a platform. If no
+          <code>--platform</code> flag, targets all detected platforms.
+        </p>
+        <pre><code>archon catalog install github
+archon catalog install github --platform copilot-cli
+archon catalog install postgres --platform claude-code</code></pre>
+
+        <h3><code>archon catalog check</code></h3>
+        <p>
+          Audit MCP config against skills' <code>mcp-dependencies</code>.
+          Reports missing servers with remediation commands.
+        </p>
+        <pre><code>archon catalog check
+archon catalog check --json</code></pre>
+      </div>
+
+      <!-- Platform Config Formats -->
+      <div class="content-section">
+        <h2>🔧 Platform Config Formats</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Config Path</th>
+              <th>Root Key</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Copilot CLI</td>
+              <td><code>~/.copilot/mcp-config.json</code></td>
+              <td><code>servers</code></td>
+            </tr>
+            <tr>
+              <td>Claude Code</td>
+              <td><code>~/.claude/mcp.json</code></td>
+              <td><code>mcpServers</code></td>
+            </tr>
+            <tr>
+              <td>Cursor</td>
+              <td><code>.cursor/mcp.json</code></td>
+              <td><code>mcpServers</code></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Each server entry in the config file has <code>command</code>,
+          <code>args</code>, and optionally <code>env</code> fields:
+        </p>
+        <pre><code>{
+  "servers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": { "GITHUB_TOKEN": "YOUR_GITHUB_TOKEN_HERE" }
+    }
+  }
+}</code></pre>
+      </div>
+
+      <!-- How Recommendations Work -->
+      <div class="content-section">
+        <h2>🎯 How Recommendations Work</h2>
+        <p>Two strategies are used:</p>
+        <ol>
+          <li>
+            <strong>Dependency scanning</strong> — Loads all installed skills'
+            manifests and collects their <code>mcp-dependencies</code> lists.
+            Each dependency is matched against catalog server names.
+          </li>
+          <li>
+            <strong>Reverse matching</strong> — Each catalog server has a
+            <code>recommended-for</code> field. The system checks which
+            referenced skills, agents, and bundles are in your registry.
+          </li>
+        </ol>
+      </div>
+
+      <!-- Adding Custom Servers -->
+      <div class="content-section">
+        <h2>➕ Adding a Custom Server</h2>
+        <ol>
+          <li>
+            Edit <code>catalog/mcp-servers.yaml</code>
+          </li>
+          <li>
+            Add a new entry following the format (unique kebab-case
+            <code>name</code>, valid <code>category</code>, etc.)
+          </li>
+          <li>
+            Run <code>archon validate</code> to check for errors
+          </li>
+          <li>
+            Run <code>archon catalog info &lt;name&gt;</code> to verify
+          </li>
+        </ol>
+      </div>
+
+      <!-- Troubleshooting -->
+      <div class="content-section">
+        <h2>🔍 Troubleshooting</h2>
+        <ul>
+          <li>
+            <strong>"MCP catalog not found"</strong> — Run from the Archon
+            root directory or set <code>Archon_ROOT</code>.
+          </li>
+          <li>
+            <strong>"Existing config is not valid JSON"</strong> — Fix the
+            platform config file manually or delete it.
+          </li>
+          <li>
+            <strong>Environment variable warnings</strong> — Set the required
+            variables in your shell profile; placeholders are used until then.
+          </li>
+          <li>
+            <strong>"Server already configured"</strong> — Re-running install
+            is a safe no-op; it won't duplicate entries.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="doc-nav-footer">
+        <a href="agent-cards.html" class="nav-link prev">
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">Agent Cards</span>
+        </a>
+        <a href="faq.html" class="nav-link next">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">FAQ</span>
+        </a>
+      </div>
+    </main>
+
+    <script>
+      // Scroll reveal animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".reveal, .content-section").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Sidebar active state based on current page
+      const currentPage = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".sidebar-link").forEach((link) => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        }
+      });
+    </script>
+  </body>
+</html>

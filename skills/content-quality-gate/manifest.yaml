@@ -1,0 +1,36 @@
+name: content-quality-gate
+version: 1.0.0
+description: "Two-tier content validation with rule-based checks and optional AI-powered analysis"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - quality
+  - validation
+  - content
+  - ai
+  - rules-engine
+
+triggers:
+  keywords:
+    - "quality gate"
+    - "content validation"
+    - "quality check"
+    - "validate content"
+  patterns:
+    - "check * quality"
+    - "validate * content"
+
+priority: P2
+
+resources:
+  - path: resources/quality-rules.md
+    type: reference
+    load: on-demand

@@ -1,0 +1,11 @@
+name: react-best-practices
+version: 1.0.0
+description: "React development guidelines with hooks, component patterns, state management, and performance optimization."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["react", "frontend", "javascript", "best-practices"]
+triggers:
+  keywords: []
+  patterns: []
+priority: P2

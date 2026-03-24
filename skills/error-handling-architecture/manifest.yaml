@@ -1,0 +1,47 @@
+name: error-handling-architecture
+version: 1.0.0
+description: "Layered error handling with error taxonomy, typed classes, React boundaries, and graceful degradation"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - error-handling
+  - architecture
+  - react
+  - api
+  - reliability
+
+triggers:
+  keywords:
+    - "error handling"
+    - "error boundary"
+    - "structured errors"
+    - "error codes"
+    - "graceful degradation"
+    - "error taxonomy"
+    - "API errors"
+  patterns:
+    - "handle * error*"
+    - "add * error boundary*"
+    - "design * error*"
+    - "graceful * degradation*"
+
+priority: P1
+
+source-dissection: "prompts.chat"
+source-repo: "https://github.com/f/prompts.chat"
+
+composes:
+  - structured-logging
+
+resources:
+  - path: resources/error-patterns.md
+    type: reference
+    load: on-demand

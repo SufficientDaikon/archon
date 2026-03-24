@@ -1,0 +1,45 @@
+name: Plan Quality
+
+on:
+  push:
+    paths:
+      - 'plans/**'
+      - '.github/workflows/plan-quality.yml'
+  pull_request:
+    paths:
+      - 'plans/**'
+      - '.github/workflows/plan-quality.yml'
+
+jobs:
+  validate-plans:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install xmlschema
+
+      - name: Validate XML package
+        run: |
+          python "plans/scripts/validate_plan_package.py" \
+            --dir "plans" \
+            --xsd "plans/schema/archon-plan-package.xsd"
+
+      - name: Lint plan quality
+        run: |
+          python "plans/scripts/lint_plans.py" --dir "plans"
+
+      - name: Generate derivative artifacts
+        run: |
+          python "plans/scripts/plan_to_issues.py" \
+            --backlog "plans/09-implementation-backlog.xml" \
+            --out "plans/generated/issues"
+          python "plans/scripts/build_risk_dashboard.py" \
+            --snapshots "plans/data/risk-snapshots.json" \
+            --out "plans/dashboards/risk-burndown.html"

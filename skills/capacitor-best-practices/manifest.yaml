@@ -1,0 +1,11 @@
+name: capacitor-best-practices
+version: 1.0.0
+description: "Best practices for Capacitor app development including project structure, plugin usage, performance optimization, security, and deployment."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["mobile", "capacitor", "hybrid-apps", "spec-driven-development", "best-practices", "architecture"]
+triggers:
+  keywords: ["capacitor", "mobile", "hybrid", "ionic", "native"]
+  patterns: []
+priority: P2

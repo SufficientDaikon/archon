@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Cards — Archon Documentation</title>
+    <meta
+      name="description"
+      content="Machine-readable agent cards for discovery, selection, and programmatic consumption in Archon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="doc-nav">
+      <a href="../index.html" class="nav-logo">Archon</a>
+      <a
+        href="https://github.com/SufficientDaikon/archon"
+        class="nav-github"
+        target="_blank"
+        >GitHub ↗</a
+      >
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">DOCUMENTATION</div>
+        <a href="getting-started.html" class="sidebar-link">Getting Started</a>
+        <a href="creating-skills.html" class="sidebar-link">Creating Skills</a>
+        <a href="creating-agents.html" class="sidebar-link">Creating Agents</a>
+        <a href="creating-synapses.html" class="sidebar-link"
+          >Creating Synapses</a
+        >
+        <a href="creating-bundles.html" class="sidebar-link"
+          >Creating Bundles</a
+        >
+        <a href="creating-pipelines.html" class="sidebar-link"
+          >Creating Pipelines</a
+        >
+        <a href="cli-guide.html" class="sidebar-link">CLI Guide</a>
+        <a href="platform-guide.html" class="sidebar-link">Platform Guide</a>
+        <a href="architecture.html" class="sidebar-link">Architecture</a>
+        <a href="migration-v3.html" class="sidebar-link">Migration v3</a>
+        <a href="faq.html" class="sidebar-link">FAQ</a>
+        <a href="llms-txt.html" class="sidebar-link">llms.txt</a>
+        <a href="agent-cards.html" class="sidebar-link active">Agent Cards</a>
+        <a href="integration-catalog.html" class="sidebar-link">Integration Catalog</a>
+      </div>
+      <div class="sidebar-section">
+        <a href="../index.html" class="sidebar-link back-link"
+          >← Back to Home</a
+        >
+      </div>
+    </aside>
+
+    <button
+      class="sidebar-toggle"
+      onclick="document.getElementById('sidebar').classList.toggle('open')"
+    >
+      ☰
+    </button>
+
+    <!-- Main Content -->
+    <main class="doc-content">
+      <!-- Breadcrumbs -->
+      <div class="breadcrumbs">
+        <a href="../index.html">Home</a>
+        <span class="separator">›</span>
+        <a href="getting-started.html">Documentation</a>
+        <span class="separator">›</span>
+        <span>Agent Cards</span>
+      </div>
+
+      <!-- Header -->
+      <div class="doc-header">
+        <span class="section-label">DOCUMENTATION</span>
+        <h1 class="doc-title">
+          <span class="gradient-text">Agent Cards</span>
+        </h1>
+        <p class="doc-subtitle">
+          Machine-readable metadata cards for every Archon agent — enabling
+          discovery, selection, and programmatic consumption.
+        </p>
+      </div>
+
+      <!-- What are Agent Cards -->
+      <div class="content-section">
+        <h2>🃏 What are Agent Cards?</h2>
+        <p>
+          Every Archon agent carries a structured <strong>Agent Card</strong>
+          in its <code>agent-manifest.yaml</code>. The card describes the
+          agent's capabilities, input/output modalities, cost tier, token
+          estimates, and quality metrics in a machine-readable format.
+        </p>
+        <p>Agent Cards enable:</p>
+        <ul>
+          <li>
+            <strong>Discovery</strong> — External systems (web UIs, LLM
+            routers, IDE extensions) can find agents and their capabilities from
+            a single JSON index.
+          </li>
+          <li>
+            <strong>Selection</strong> — When multiple agents could handle a
+            task, card metadata enables automated or user-assisted agent
+            selection.
+          </li>
+          <li>
+            <strong>Observability</strong> — Token usage estimates and quality
+            metrics per agent enable cost optimization.
+          </li>
+          <li>
+            <strong>Ecosystem</strong> — A standardized card format makes agents
+            portable across frameworks.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card Schema -->
+      <div class="content-section">
+        <h2>📋 Card Schema</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Type</th>
+              <th>Required</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>capabilities</code></td>
+              <td>object</td>
+              <td>✅</td>
+              <td>Boolean flags for agent capabilities</td>
+            </tr>
+            <tr>
+              <td><code>capabilities.streaming</code></td>
+              <td>boolean</td>
+              <td>✅</td>
+              <td>Supports streaming output</td>
+            </tr>
+            <tr>
+              <td><code>capabilities.multi-turn</code></td>
+              <td>boolean</td>
+              <td>✅</td>
+              <td>Supports multi-turn conversations</td>
+            </tr>
+            <tr>
+              <td><code>capabilities.file-output</code></td>
+              <td>boolean</td>
+              <td>✅</td>
+              <td>Produces file artifacts</td>
+            </tr>
+            <tr>
+              <td><code>capabilities.self-evaluation</code></td>
+              <td>boolean</td>
+              <td>✅</td>
+              <td>Validates own output quality</td>
+            </tr>
+            <tr>
+              <td><code>capabilities.context-aware</code></td>
+              <td>boolean</td>
+              <td>✅</td>
+              <td>Uses prior context from the pipeline</td>
+            </tr>
+            <tr>
+              <td><code>skills-provided</code></td>
+              <td>list</td>
+              <td>✅</td>
+              <td>Skills this agent provides (min 1 item)</td>
+            </tr>
+            <tr>
+              <td><code>input-modes</code></td>
+              <td>list[string]</td>
+              <td>✅</td>
+              <td>MIME types the agent accepts</td>
+            </tr>
+            <tr>
+              <td><code>output-modes</code></td>
+              <td>list[string]</td>
+              <td>✅</td>
+              <td>MIME types the agent produces</td>
+            </tr>
+            <tr>
+              <td><code>cost-tier</code></td>
+              <td>string</td>
+              <td>✅</td>
+              <td><code>fast</code> | <code>standard</code> | <code>premium</code></td>
+            </tr>
+            <tr>
+              <td><code>avg-tokens</code></td>
+              <td>object</td>
+              <td>✅</td>
+              <td>Token usage estimates (<code>input</code> and <code>output</code> integers)</td>
+            </tr>
+            <tr>
+              <td><code>quality-metrics</code></td>
+              <td>object | null</td>
+              <td>❌</td>
+              <td>Evaluation metrics (null = not yet evaluated)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Example Card -->
+      <div class="content-section">
+        <h2>📝 Example Card</h2>
+        <pre><code>card:
+  capabilities:
+    streaming: false
+    multi-turn: true
+    file-output: true
+    self-evaluation: true
+    context-aware: true
+  skills-provided:
+    - id: requirements-engineering
+      name: Requirements Engineering
+      description: "Transforms ambiguous ideas into crystal-clear, testable specifications"
+      tags: [specification, requirements, acceptance-criteria]
+  input-modes:
+    - "text/plain"
+    - "text/markdown"
+  output-modes:
+    - "text/markdown"
+  cost-tier: standard
+  avg-tokens:
+    input: 2000
+    output: 8000
+  quality-metrics: null</code></pre>
+      </div>
+
+      <!-- Generating agent-cards.json -->
+      <div class="content-section">
+        <h2>⚡ Generating agent-cards.json</h2>
+        <p>
+          The <code>agent-cards.json</code> file is an auto-generated JSON index
+          of all agent cards. It's deployed alongside <code>llms.txt</code>
+          during GitHub Actions builds.
+        </p>
+
+        <h3>CLI Command (recommended)</h3>
+        <pre><code># Generate agent-cards.json at the repo root
+archon generate agent-cards
+
+# Write to a custom directory
+archon generate agent-cards --output ./dist/
+
+# JSON output (for scripting)
+archon --json generate agent-cards</code></pre>
+
+        <h3>Standalone Script</h3>
+        <p>
+          Works without the <code>archon</code> package installed — only
+          requires Python 3.10+ and PyYAML:
+        </p>
+        <pre><code>python scripts/generate-agent-cards.py
+python scripts/generate-agent-cards.py --output ./dist/</code></pre>
+      </div>
+
+      <!-- CLI Reference -->
+      <div class="content-section">
+        <h2>🖥️ CLI Reference</h2>
+
+        <h3>Summary Table</h3>
+        <pre><code>archon cards</code></pre>
+        <p>
+          Displays a Rich table of all agents with their name, role, capability
+          badges (⚡🔄📄🔍🧠), and cost tier (color-coded).
+        </p>
+
+        <h3>Single Agent Detail</h3>
+        <pre><code>archon cards spec-writer-agent</code></pre>
+        <p>
+          Displays a detailed panel with all card fields for the named agent.
+        </p>
+
+        <h3>JSON Export</h3>
+        <pre><code>archon cards --json</code></pre>
+        <p>Outputs a JSON envelope with all card data.</p>
+
+        <h3>Validate Cards</h3>
+        <pre><code>archon cards --validate</code></pre>
+        <p>
+          Validates every agent's card section against the schema. Exits with
+          code 0 on success, code 2 on failure.
+        </p>
+
+        <h3>Freshness Check</h3>
+        <pre><code>archon validate --check-agent-cards</code></pre>
+        <p>
+          Checks whether <code>agent-cards.json</code> is up to date with
+          current manifests.
+        </p>
+      </div>
+
+      <!-- Using Cards Programmatically -->
+      <div class="content-section">
+        <h2>🔌 Using Cards Programmatically</h2>
+        <p>
+          The generated <code>agent-cards.json</code> file can be consumed by
+          any tool that reads JSON:
+        </p>
+        <pre><code>// JavaScript
+const cards = await fetch("agent-cards.json").then(r => r.json());
+const premiumAgents = cards.agents.filter(
+  a => a.card?.["cost-tier"] === "premium"
+);</code></pre>
+        <pre><code># Python
+import json
+with open("agent-cards.json") as f:
+    data = json.load(f)
+for agent in data["agents"]:
+    if agent["card"] and agent["card"]["cost-tier"] == "fast":
+        print(f"Fast agent: {agent['name']}")</code></pre>
+      </div>
+
+      <!-- Adding Cards -->
+      <div class="content-section">
+        <h2>➕ Adding Cards to Your Agent</h2>
+        <ol>
+          <li>
+            Open your agent's <code>agent-manifest.yaml</code>
+          </li>
+          <li>
+            Add a <code>card:</code> section at the end (see the
+            <a href="../agents/_template/agent-manifest.yaml">template</a>)
+          </li>
+          <li>Fill in accurate values based on your agent's actual capabilities</li>
+          <li>
+            Run <code>archon cards --validate</code> to verify
+          </li>
+        </ol>
+        <p>
+          The card section is <strong>optional</strong> — agents without it
+          continue to work normally. However, cards are recommended for
+          discoverability and programmatic consumption.
+        </p>
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="doc-nav-footer">
+        <a href="llms-txt.html" class="nav-link prev">
+          <span class="nav-label">← Previous</span>
+          <span class="nav-title">llms.txt</span>
+        </a>
+        <a href="../index.html" class="nav-link next">
+          <span class="nav-label">Next →</span>
+          <span class="nav-title">Back to Home</span>
+        </a>
+      </div>
+    </main>
+
+    <script>
+      // Scroll reveal animations
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document.querySelectorAll(".reveal, .content-section").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Sidebar active state based on current page
+      const currentPage = window.location.pathname.split("/").pop();
+      document.querySelectorAll(".sidebar-link").forEach((link) => {
+        if (link.getAttribute("href") === currentPage) {
+          link.classList.add("active");
+        }
+      });
+    </script>
+  </body>
+</html>

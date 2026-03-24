@@ -1,0 +1,11 @@
+name: ux-interaction-design
+version: 1.0.0
+description: "UX interaction design patterns including micro-interactions, UI state machines, transition specifications, form UX, animation principles, and feedback patterns. Use when designing interactions, defining component states, or specifying animations."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["design", "ui-ux", "spec-driven-development", "best-practices", "architecture"]
+triggers:
+  keywords: []
+  patterns: []
+priority: P2

@@ -1,0 +1,21 @@
+name: sdd-pipeline-expert
+type: meta-skill
+version: 1.0.0
+description: "Meta-coordinator for Spec-Driven Development lifecycle orchestrating specification, implementation, and review phases with quality gates"
+author: tahaa
+coordinates:
+  - spec-writer
+  - implementer
+  - reviewer
+  - design-handoff
+  - design-review
+trigger-keywords:
+  - spec-driven development
+  - SDD
+  - specification
+  - implementation
+  - compliance review
+routing-strategy: "sequential-pipeline-with-quality-gates"
+supports-multi-skill: true
+enforces-quality-gates: true
+stateful: true

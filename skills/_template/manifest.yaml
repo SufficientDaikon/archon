@@ -1,0 +1,60 @@
+# Skill Manifest Template
+# Copy this file to your skill directory and fill in all required fields.
+# See schemas/skill-manifest.schema.yaml for the full schema.
+
+# REQUIRED FIELDS
+name: your-skill-name # Unique kebab-case identifier
+version: 1.0.0 # Semantic version (MAJOR.MINOR.PATCH)
+description: "Brief description of what this skill does (10-200 chars)"
+author: tahaa # Creator identifier
+license: MIT
+
+# Platforms this skill supports
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+# Tags for discovery and categorization
+tags:
+  - tag1
+  - tag2
+  - tag3
+
+# Trigger conditions — how this skill gets activated
+triggers:
+  keywords:
+    - "exact phrase that activates this skill"
+    - "another trigger phrase"
+  patterns:
+    - "pattern with * wildcards"
+
+# Priority level: P1=core/MVP, P2=important, P3=nice-to-have
+priority: P2
+
+# OPTIONAL FIELDS
+
+# Inherit from a parent skill (uncomment to use)
+# extends: parent-skill-name
+
+# Compose multiple skills (uncomment to use)
+# composes:
+#   - skill-name-1
+#   - skill-name-2
+
+# MCP server dependencies (uncomment to use)
+# mcp-dependencies:
+#   - github
+#   - filesystem
+
+# Resources loaded into agent context
+# resources:
+#   - path: resources/cheat-sheet.md
+#     type: cheat-sheet          # cheat-sheet | reference | decision-tree | lookup-table | style-guide | example
+#     load: always               # always | on-demand
+
+# Test cases
+# tests:
+#   - path: tests/cases/basic.yaml

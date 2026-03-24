@@ -1,0 +1,6 @@
+name: requesting-code-review
+description: "Structured code review request process with two-stage review enforcement. Use when completing tasks, features, or before merging branches."
+version: "2.0.0"
+author: tahaa
+category: development-workflow
+tags: [code-review, quality-gate, review-request, merge, two-stage]

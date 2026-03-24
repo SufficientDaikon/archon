@@ -1,0 +1,87 @@
+# Batch SDD Pipeline — Sequential Feature Implementation
+# Reads a directory of plan files and runs the SDD pipeline on each one.
+# Tracks progress in a state file for cross-session continuity.
+
+name: batch-sdd-pipeline
+version: 1.0.0
+description: "Batch execution of SDD pipeline across multiple feature plans with cross-session state tracking"
+trigger: "batch implement plans in *"
+tags: [sdd, batch, automation, meta]
+synapse-mode: enabled
+
+# Configuration
+config:
+  plans-dir: null        # Set at runtime (e.g., ~/.copilot/ideas/google-adk-ideas/)
+  state-file: null       # Set at runtime (e.g., ~/.archon/batch-runs/<name>/state.yaml)
+  sprint-order: true     # Process in sprint order from roadmap
+  auto-commit: true      # Git commit after each plan completion
+  auto-handoff: true     # Generate handoff prompt when session capacity low
+
+# Per-plan steps (SDD pipeline embedded)
+steps:
+  - name: load-state
+    agent: context-curator-agent
+    input: "Read state file at {state-file}. Identify the next plan with status 'pending'. Read the plan file."
+    output: "Selected plan content + batch context (what's been done, what's next)"
+    on-failure: halt
+
+  - name: specify
+    agent: spec-writer-agent
+    input: "Plan content from step:load-state — transform this improvement plan into a full implementation specification"
+    output: "Comprehensive specification document saved to ~/.copilot/sdd/specs/<plan-id>/"
+    on-failure: halt
+    synapse-checkpoint: true
+
+  - name: curate-for-implement
+    agent: context-curator-agent
+    input: "Specification from step:specify"
+    output: "Curated context brief for implementer (filtered, chunked by user story)"
+    on-failure: skip
+
+  - name: implement
+    agent: implementer-agent
+    input: "Context brief from step:curate-for-implement OR specification from step:specify"
+    output: "Implemented code matching the specification"
+    on-failure: halt
+    synapse-checkpoint: true
+
+  - name: curate-for-review
+    agent: context-curator-agent
+    input: "Code from step:implement AND specification from step:specify"
+    output: "Curated context brief for reviewer"
+    on-failure: skip
+
+  - name: review
+    agent: reviewer-agent
+    input: "Context brief from step:curate-for-review OR specification + code"
+    output: "Compliance review report"
+    on-failure: loop
+    loop-target: implement
+    max-iterations: 3
+    synapse-checkpoint: true
+
+  - name: update-state
+    agent: context-curator-agent
+    input: "Review results from step:review. Update state file: mark plan as completed, record spec/report paths, update timestamps."
+    output: "Updated state file + git commit if auto-commit enabled"
+    on-failure: halt
+
+  - name: handoff-check
+    agent: context-curator-agent
+    input: "Check remaining session capacity. If low, generate handoff prompt for next session. If capacity remains, signal to process next plan."
+    output: "Either: handoff prompt file OR signal to loop to step:load-state for next plan"
+    on-failure: skip
+
+resumable: true
+artifact-persistence: batch-sdd
+
+# Cross-session state
+state:
+  tracking-file: "{state-file}"
+  format: yaml
+  fields:
+    - current_plan_id
+    - current_step
+    - plans_completed
+    - plans_remaining
+    - last_session_id

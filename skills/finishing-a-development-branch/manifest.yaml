@@ -1,0 +1,6 @@
+name: finishing-a-development-branch
+description: "Structured branch completion with merge/PR/keep/discard options and cleanup. Use when implementation is complete, tests pass, and work needs to be integrated."
+version: "2.0.0"
+author: tahaa
+category: development-workflow
+tags: [git, merge, branch-management, cleanup, integration, closing]

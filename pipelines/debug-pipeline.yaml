@@ -1,0 +1,51 @@
+# Debug Pipeline — Systematic Bug Fixing
+# systematic-debugging → [context-curator] → implementer → qa-test-planner → reviewer
+
+name: debug-pipeline
+version: 1.1.0
+description: "Systematic bug investigation → context curation → fix → test → review"
+trigger: "fix bug *"
+tags: [debugging, testing, fix]
+synapse-mode: enabled
+
+steps:
+  - name: investigate
+    agent: debugger-agent
+    input: "Bug description, error messages, reproduction steps"
+    output: "Root cause analysis with proposed fix strategy"
+    on-failure: halt
+    synapse-checkpoint: true
+
+  - name: curate-for-fix
+    agent: context-curator-agent
+    input: "Root cause analysis from step:investigate"
+    output: "Curated context brief for implementer (root cause, affected files, fix strategy)"
+    on-failure: skip
+
+  - name: fix
+    agent: implementer-agent
+    input: "Context brief from step:curate-for-fix OR root cause analysis from step:investigate"
+    output: "Code fix implementing the proposed strategy"
+    on-failure: halt
+    synapse-checkpoint: true
+
+  - name: test
+    agent: qa-master-agent
+    input: "Code fix from step:fix AND root cause from step:investigate"
+    output: "Test plan and test results"
+    on-failure: loop
+    loop-target: fix
+    max-iterations: 3
+    synapse-checkpoint: true
+
+  - name: review
+    agent: reviewer-agent
+    input: "Fix from step:fix AND tests from step:test AND root cause from step:investigate"
+    output: "Code review report"
+    on-failure: loop
+    loop-target: fix
+    max-iterations: 2
+    synapse-checkpoint: true
+
+resumable: true
+artifact-persistence: session-state

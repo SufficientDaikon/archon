@@ -1,0 +1,493 @@
+# Archon Root Manifest
+# This file registers all skills, bundles, agents, and pipelines in the framework.
+
+name: archon
+version: 1.0.0
+description: "Archon — The Virtuoso Engine for AI Agents. Universal skills framework with enforced guardrails, cognitive synapses, and pipeline orchestration."
+author: tahaa
+license: MIT
+repository: https://github.com/SufficientDaikon/archon
+
+# All registered skills (alphabetical)
+skills:
+  - name: add-adapter
+    path: skills/add-adapter
+    version: 1.0.0
+    tags: [self-customization, meta]
+  - name: add-agent
+    path: skills/add-agent
+    version: 1.0.0
+    tags: [self-customization, meta]
+  - name: add-bundle
+    path: skills/add-bundle
+    version: 1.0.0
+    tags: [self-customization, meta]
+  - name: add-skill
+    path: skills/add-skill
+    version: 1.0.0
+    tags: [self-customization, meta]
+  - name: async-side-effects
+    path: skills/async-side-effects
+    version: 1.0.0
+    tags: [async, side-effects, fire-and-forget, background-tasks]
+  - name: backend-development
+    path: skills/backend-development
+    version: 2.0.0
+    tags: [backend, api, architecture, guard-chain]
+  - name: brainstorming
+    path: skills/brainstorming
+  - name: capacitor-best-practices
+    path: skills/capacitor-best-practices
+    version: 1.0.0
+    tags: [mobile, capacitor, cross-platform, ionic]
+  - name: claude-plugin-archetype
+    path: skills/claude-plugin-archetype
+    version: 1.0.0
+    tags: [claude, plugin, mcp]
+  - name: content-deduplication
+    path: skills/content-deduplication
+    version: 1.0.0
+    tags: [deduplication, similarity, text-processing]
+  - name: content-moderation-pipeline
+    path: skills/content-moderation-pipeline
+    version: 1.0.0
+    tags: [moderation, trust-safety, content-quality, flagging]
+  - name: content-quality-gate
+    path: skills/content-quality-gate
+    version: 1.0.0
+    tags: [quality, validation, ai]
+  - name: complexity-router
+    path: skills/complexity-router
+    version: 1.0.0
+    tags: [routing, core]
+    priority: P0
+  - name: context-curator
+    path: skills/context-curator
+    version: 1.0.0
+    tags: [context-management, pipeline-orchestration, handoff-validation]
+    priority: P1
+  - name: design-handoff
+    path: skills/design-handoff
+    version: 2.0.0
+    tags: [design, handoff, lifecycle, quality-gates]
+  - name: design-review
+    path: skills/design-review
+    version: 1.0.0
+  - name: django-expert
+    path: skills/django-expert
+    version: 1.0.0
+  - name: django-framework
+    path: skills/django-framework
+    version: 1.0.0
+  - name: django-orm-patterns
+    path: skills/django-orm-patterns
+    version: 1.0.0
+  - name: django-rest-framework
+    path: skills/django-rest-framework
+    version: 1.0.0
+  - name: dispatching-parallel-agents
+    path: skills/dispatching-parallel-agents
+  - name: docker-production-build
+    path: skills/docker-production-build
+    version: 1.0.0
+    tags: [docker, containerization, devops, production]
+  - name: e2e-testing-patterns
+    path: skills/e2e-testing-patterns
+    version: 1.0.0
+  - name: error-handling-architecture
+    path: skills/error-handling-architecture
+    version: 1.0.0
+    tags: [error-handling, architecture, reliability]
+  - name: event-webhooks
+    path: skills/event-webhooks
+    version: 1.0.0
+    tags: [webhooks, events, security]
+  - name: executing-plans
+    path: skills/executing-plans
+  - name: fastmcp
+    path: skills/fastmcp
+    version: 1.0.0
+  - name: find-skills
+    path: skills/find-skills
+    version: 1.0.0
+  - name: finishing-a-development-branch
+    path: skills/finishing-a-development-branch
+  - name: fluent-builder
+    path: skills/fluent-builder
+    version: 1.0.0
+    tags: [builder-pattern, fluent-api, design-patterns]
+  - name: frontend-design
+    path: skills/frontend-design
+    version: 1.0.0
+  - name: guard-chain
+    path: skills/guard-chain
+    version: 1.0.0
+    tags: [security, api, middleware, authentication]
+  - name: godot-best-practices
+    path: skills/godot-best-practices
+    version: 1.0.0
+  - name: godot-debugging
+    path: skills/godot-debugging
+    version: 1.0.0
+  - name: godot-gdscript-mastery
+    path: skills/godot-gdscript-mastery
+    version: 1.0.0
+  - name: godot-gdscript-patterns
+    path: skills/godot-gdscript-patterns
+    version: 1.0.0
+  - name: godot-particles
+    path: skills/godot-particles
+    version: 1.0.0
+  - name: i18n-strategy
+    path: skills/i18n-strategy
+    version: 1.0.0
+    tags: [i18n, internationalization, localization, translations]
+  - name: implementer
+    path: skills/implementer
+    version: 1.0.0
+  - name: info-architecture
+    path: skills/info-architecture
+    version: 1.0.0
+  - name: knowledge-sources
+    path: skills/knowledge-sources
+    version: 1.0.0
+    tags: [knowledge, core]
+  - name: lazy-import-patterns
+    path: skills/lazy-import-patterns
+    version: 1.0.0
+    tags: [code-splitting, performance, dynamic-import, bundle-optimization]
+  - name: mcp-builder
+    path: skills/mcp-builder
+    version: 1.0.0
+  - name: mcp-server-index
+    path: skills/mcp-server-index
+    version: 1.0.0
+  - name: mobile-design
+    path: skills/mobile-design
+    version: 1.0.0
+  - name: omega-gdscript-expert
+    path: skills/omega-gdscript-expert
+    version: 1.0.0
+  - name: packager
+    path: skills/packager
+    version: 1.0.0
+  - name: plugin-system
+    path: skills/plugin-system
+    version: 1.0.0
+    tags: [plugin-system, extensibility, architecture]
+  - name: prisma-orm-patterns
+    path: skills/prisma-orm-patterns
+    version: 1.0.0
+    tags: [database, prisma, orm, schema-design]
+  - name: prompt-architect
+    path: skills/prompt-architect
+    version: 1.0.0
+  - name: qa-test-planner
+    path: skills/qa-test-planner
+    version: 1.0.0
+  - name: react-best-practices
+    path: skills/react-best-practices
+    version: 1.0.0
+  - name: receiving-code-review
+    path: skills/receiving-code-review
+  - name: requesting-code-review
+    path: skills/requesting-code-review
+  - name: rename-project
+    path: skills/rename-project
+    version: 1.0.0
+    tags: [self-customization, meta]
+  - name: reviewer
+    path: skills/reviewer
+    version: 1.0.0
+  - name: sdk-beside-app
+    path: skills/sdk-beside-app
+    version: 1.0.0
+    tags: [sdk, npm, monorepo, packaging]
+  - name: server-component-patterns
+    path: skills/server-component-patterns
+    version: 1.0.0
+    tags: [react, server-components, nextjs, rsc, streaming]
+  - name: singleton-patterns
+    path: skills/singleton-patterns
+    version: 1.0.0
+    tags: [singleton, design-patterns, serverless, connection-pooling]
+  - name: skills-index
+    path: skills/skills-index
+    version: 1.0.0
+  - name: spec-writer
+    path: skills/spec-writer
+    version: 1.0.0
+  - name: structured-logging
+    path: skills/structured-logging
+    version: 1.0.0
+    tags: [logging, observability, pino, structured-logs]
+  - name: subagent-driven-development
+    path: skills/subagent-driven-development
+  - name: systematic-debugging
+    path: skills/systematic-debugging
+    version: 1.0.0
+  - name: template-variables
+    path: skills/template-variables
+    version: 1.0.0
+    tags: [templates, variables, text-processing]
+  - name: test-driven-development
+    path: skills/test-driven-development
+  - name: ui-ux-designer
+    path: skills/ui-ux-designer
+    version: 1.0.0
+  - name: ui-visual-design
+    path: skills/ui-visual-design
+    version: 1.0.0
+  - name: ux-interaction-design
+    path: skills/ux-interaction-design
+    version: 1.0.0
+  - name: ux-research
+    path: skills/ux-research
+    version: 1.0.0
+  - name: ux-test-suite
+    path: skills/ux-test-suite
+    version: 1.0.0
+  - name: using-git-worktrees
+    path: skills/using-git-worktrees
+  - name: using-superpowers
+    path: skills/using-superpowers
+  - name: vercel-react-best-practices
+    path: skills/vercel-react-best-practices
+    version: 1.0.0
+  - name: vitest-unit-patterns
+    path: skills/vitest-unit-patterns
+    version: 1.0.0
+    tags: [testing, vitest, unit-tests, mocking, coverage]
+  - name: verification-before-completion
+    path: skills/verification-before-completion
+  - name: web-design-guidelines
+    path: skills/web-design-guidelines
+    version: 1.0.0
+  - name: white-label-config
+    path: skills/white-label-config
+    version: 1.0.0
+    tags: [white-label, configuration, feature-flags]
+  - name: webapp-testing
+    path: skills/webapp-testing
+    version: 1.0.0
+  - name: wireframing
+    path: skills/wireframing
+    version: 1.0.0
+  - name: writing-plans
+    path: skills/writing-plans
+  - name: writing-skills
+    path: skills/writing-skills
+    version: 1.0.0
+  - name: yaml-prompt-library
+    path: skills/yaml-prompt-library
+    version: 1.0.0
+    tags: [prompts, yaml, ai, prompt-engineering]
+
+# All registered bundles
+bundles:
+  - name: godot-kit
+    path: bundles/godot-kit
+    skills:
+      [
+        godot-best-practices,
+        godot-debugging,
+        godot-gdscript-mastery,
+        godot-gdscript-patterns,
+        godot-particles,
+      ]
+
+  - name: web-dev-kit
+    path: bundles/web-dev-kit
+    skills:
+      [
+        frontend-design,
+        react-best-practices,
+        vercel-react-best-practices,
+        server-component-patterns,
+        web-design-guidelines,
+        backend-development,
+        i18n-strategy,
+        error-handling-architecture,
+        guard-chain,
+        prisma-orm-patterns,
+      ]
+
+  - name: ux-design-kit
+    path: bundles/ux-design-kit
+    skills:
+      [
+        ui-ux-designer,
+        ui-visual-design,
+        ux-interaction-design,
+        ux-research,
+        ux-test-suite,
+        wireframing,
+        info-architecture,
+      ]
+
+  - name: django-kit
+    path: bundles/django-kit
+    skills:
+      [
+        django-expert,
+        django-framework,
+        django-orm-patterns,
+        django-rest-framework,
+      ]
+
+  - name: sdd-kit
+    path: bundles/sdd-kit
+    skills: [spec-writer, implementer, reviewer, design-handoff, design-review, context-curator]
+
+  - name: testing-kit
+    path: bundles/testing-kit
+    skills:
+      [
+        vitest-unit-patterns,
+        e2e-testing-patterns,
+        qa-test-planner,
+        webapp-testing,
+        systematic-debugging,
+      ]
+
+  - name: mobile-kit
+    path: bundles/mobile-kit
+    skills: [mobile-design, capacitor-best-practices]
+
+  - name: meta-kit
+    path: bundles/meta-kit
+    skills:
+      [writing-skills, find-skills, skills-index, packager, prompt-architect]
+
+  - name: prompts-chat-kit
+    path: bundles/prompts-chat-kit
+    skills:
+      [
+        plugin-system,
+        fluent-builder,
+        content-quality-gate,
+        template-variables,
+        white-label-config,
+        claude-plugin-archetype,
+        yaml-prompt-library,
+        event-webhooks,
+        content-deduplication,
+        sdk-beside-app,
+        guard-chain,
+        error-handling-architecture,
+        prisma-orm-patterns,
+        async-side-effects,
+        content-moderation-pipeline,
+        lazy-import-patterns,
+        singleton-patterns,
+      ]
+
+  - name: security-kit
+    path: bundles/security-kit
+    skills:
+      [
+        guard-chain,
+        event-webhooks,
+        error-handling-architecture,
+        structured-logging,
+      ]
+
+  - name: data-layer-kit
+    path: bundles/data-layer-kit
+    skills:
+      [
+        prisma-orm-patterns,
+        singleton-patterns,
+        content-deduplication,
+        backend-development,
+      ]
+
+  - name: devops-kit
+    path: bundles/devops-kit
+    skills: [docker-production-build, structured-logging]
+
+# All registered agents
+agents:
+  - name: spec-writer-agent
+    path: agents/spec-writer-agent
+  - name: implementer-agent
+    path: agents/implementer-agent
+  - name: reviewer-agent
+    path: agents/reviewer-agent
+  - name: debugger-agent
+    path: agents/debugger-agent
+  - name: ux-research-agent
+    path: agents/ux-research-agent
+  - name: ui-design-agent
+    path: agents/ui-design-agent
+  - name: qa-master-agent
+    path: agents/qa-master-agent
+  - name: context-curator-agent
+    path: agents/context-curator-agent
+  - name: dissector-agent
+    path: agents/dissector-agent
+
+# All registered synapses
+synapses:
+  - name: metacognition
+    path: synapses/metacognition
+    version: 1.0.0
+    type: core
+  - name: anti-rationalization
+    path: synapses/anti-rationalization
+    version: 1.0.0
+    type: core
+  - name: sequential-thinking
+    path: synapses/sequential-thinking
+    version: 1.0.0
+    type: core
+
+# All registered pipelines
+pipelines:
+  - name: sdd-pipeline
+    path: pipelines/sdd-pipeline.yaml
+    trigger: "build feature * from scratch"
+  - name: ux-pipeline
+    path: pipelines/ux-pipeline.yaml
+    trigger: "design feature *"
+  - name: debug-pipeline
+    path: pipelines/debug-pipeline.yaml
+    trigger: "fix bug *"
+  - name: skill-factory
+    path: pipelines/skill-factory.yaml
+    trigger: "create a new skill for *"
+  - name: full-product
+    path: pipelines/full-product.yaml
+    trigger: "build product * end-to-end"
+  - name: batch-sdd-pipeline
+    path: pipelines/batch-sdd-pipeline.yaml
+    trigger: "batch implement plans in *"
+  - name: dissect-to-skill
+    path: pipelines/dissect-to-skill.yaml
+    trigger: "dissect codebase * into skills"
+  - name: skill-upgrade
+    path: pipelines/skill-upgrade.yaml
+    trigger: "upgrade skill * to gold"
+
+# Supported platforms
+platforms:
+  - id: claude-code
+    adapter: adapters/claude-code
+    target: "~/.claude/skills/"
+  - id: copilot-cli
+    adapter: adapters/copilot-cli
+    target: "~/.copilot/skills/"
+  - id: cursor
+    adapter: adapters/cursor
+    target: ".cursor/rules/"
+  - id: windsurf
+    adapter: adapters/windsurf
+    target: ".windsurfrules"
+  - id: antigravity
+    adapter: adapters/antigravity
+    target: ".antigravity/skills/"
+
+# MCP Server Integration Catalog
+catalog:
+  path: catalog/mcp-servers.yaml
+  schema: schemas/mcp-catalog.schema.yaml

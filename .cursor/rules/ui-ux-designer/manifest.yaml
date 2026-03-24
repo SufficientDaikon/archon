@@ -1,0 +1,11 @@
+name: ui-ux-designer
+version: 1.0.0
+description: "UI/UX 设计师专家，精通界面设计、交互设计、用户体验和设计系统"
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["design", "ui-ux"]
+triggers:
+  keywords: []
+  patterns: []
+priority: P2

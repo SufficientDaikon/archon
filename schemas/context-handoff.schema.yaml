@@ -1,0 +1,146 @@
+# Archon v3 Context Handoff Schema
+# Defines the handoff packet contract for context lifecycle management.
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "Archon Context Handoff Schema"
+version: "3.0.0"
+description: "Structured handoff packet for phase transitions, preserving signal density"
+
+type: object
+required:
+  - handoff_id
+  - objective
+  - completed_changes
+  - pinned_constraints
+  - evidence_links
+  - next_actions
+properties:
+  handoff_id:
+    type: string
+    pattern: "^hoff-[a-f0-9]{8,}$"
+    description: "Unique handoff identifier"
+
+  objective:
+    type: string
+    minLength: 10
+    description: "Current objective being handed off"
+
+  completed_changes:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      required:
+        - description
+        - artifact_path
+      properties:
+        description:
+          type: string
+        artifact_path:
+          type: string
+        verification:
+          type: string
+          enum: [tested, reviewed, unverified]
+          default: "unverified"
+    description: "What was accomplished in this phase"
+
+  open_risks:
+    type: array
+    items:
+      type: object
+      required:
+        - description
+        - severity
+        - owner
+        - next_action
+      properties:
+        description:
+          type: string
+        severity:
+          type: string
+          enum: [critical, major, minor]
+        owner:
+          type: string
+        next_action:
+          type: string
+    description: "Unresolved risks (every risk must have owner and next action)"
+
+  decisions_and_rationale:
+    type: array
+    items:
+      type: object
+      required:
+        - decision
+        - rationale
+      properties:
+        decision:
+          type: string
+        rationale:
+          type: string
+        alternatives_considered:
+          type: array
+          items:
+            type: string
+    description: "Decisions made with justification"
+
+  pinned_constraints:
+    type: array
+    minItems: 1
+    items:
+      type: string
+    description: "Non-negotiable constraints that must survive compression"
+
+  evidence_links:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      required:
+        - type
+        - reference
+      properties:
+        type:
+          type: string
+          enum: [test_output, log, artifact, metric, approval]
+        reference:
+          type: string
+    description: "Tool-produced evidence backing completion claims"
+
+  next_actions:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      required:
+        - action
+        - priority
+      properties:
+        action:
+          type: string
+        priority:
+          type: string
+          enum: [P0, P1, P2]
+        blocked_by:
+          type: string
+    description: "Ordered next steps for the successor"
+
+  context_checksum:
+    type: string
+    description: "SHA-256 of serialized handoff for integrity verification"
+
+  compression_metadata:
+    type: object
+    properties:
+      original_token_count:
+        type: integer
+      compressed_token_count:
+        type: integer
+      dropped_items:
+        type: array
+        items:
+          type: string
+      retained_non_negotiables:
+        type: array
+        items:
+          type: string
+    description: "Metadata about context compression applied"

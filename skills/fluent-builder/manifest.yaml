@@ -1,0 +1,36 @@
+name: fluent-builder
+version: 1.0.0
+description: "Design chainable type-safe builder APIs for complex object construction"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - builder-pattern
+  - fluent-api
+  - typescript
+  - design-patterns
+  - method-chaining
+
+triggers:
+  keywords:
+    - "fluent builder"
+    - "chainable API"
+    - "builder pattern"
+    - "method chaining"
+  patterns:
+    - "create * builder"
+    - "fluent * API"
+
+priority: P2
+
+resources:
+  - path: resources/builder-reference.md
+    type: reference
+    load: on-demand

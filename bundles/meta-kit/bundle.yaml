@@ -1,0 +1,28 @@
+name: meta-kit
+version: 1.0.0
+description: "Meta-development toolkit for creating skills, discovering capabilities, packaging agents, and engineering prompts"
+author: tahaa
+skills:
+  - writing-skills
+  - find-skills
+  - skills-index
+  - packager
+  - prompt-architect
+meta-skill: meta-agent
+dependencies: []
+conflict-resolution:
+  - when: "Creating, editing, or verifying skills"
+    prefer: writing-skills
+    reason: "Specialized in skill creation, testing, and deployment"
+  - when: "Discovering or installing new skills"
+    prefer: find-skills
+    reason: "Helps users find and install agent skills based on needs"
+  - when: "Looking up available skills or routing decisions"
+    prefer: skills-index
+    reason: "Master index of all installed skills with routing guidance"
+  - when: "Packaging or sharing agents, skills, or SDD artifacts"
+    prefer: packager
+    reason: "Creates shareable git repos with professional documentation"
+  - when: "Prompt engineering or optimization"
+    prefer: prompt-architect
+    reason: "Research-backed prompt engineering with 7 frameworks"

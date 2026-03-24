@@ -1,0 +1,6 @@
+name: writing-plans
+description: "TDD-sized task breakdown for implementation plans. Use when you have a spec or requirements for a multi-step task, before touching any code."
+version: "2.0.0"
+author: tahaa
+category: development-workflow
+tags: [planning, task-breakdown, tdd, implementation-plan, architecture]

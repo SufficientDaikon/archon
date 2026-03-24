@@ -1,0 +1,19 @@
+name: django-master
+type: meta-skill
+version: 1.0.0
+description: "Meta-coordinator for Django development that routes ORM, REST API, framework features, and architecture decisions"
+author: tahaa
+coordinates:
+  - django-expert
+  - django-framework
+  - django-orm-patterns
+  - django-rest-framework
+trigger-keywords:
+  - django
+  - python web framework
+  - ORM
+  - REST API
+  - DRF
+routing-strategy: "layer-based"
+supports-multi-skill: true
+file-aware: true

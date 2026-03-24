@@ -1,0 +1,11 @@
+name: web-design-guidelines
+version: 1.0.0
+description: "Review UI code for Web Interface Guidelines compliance. Use when asked to review my UI, check accessibility, audit design, review UX, or check my site against best practices."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["design", "ui-ux", "spec-driven-development", "best-practices", "architecture"]
+triggers:
+  keywords: ["review my UI", "check accessibility", "audit design", "review UX", "check my site against best practices"]
+  patterns: []
+priority: P2

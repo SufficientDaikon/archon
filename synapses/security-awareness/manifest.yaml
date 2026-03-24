@@ -1,0 +1,40 @@
+name: security-awareness
+version: 1.0.0
+type: cross-cutting
+author: tahaa
+
+description: "Cross-cutting security synapse that fires during code-producing tasks to inject OWASP-aware security checks into agent reasoning"
+
+activation:
+  triggers:
+    - "code touches API routes, auth, database, or external services"
+    - "agent produces code handling user input"
+    - "webhook or external URL dispatch"
+  excludes:
+    - "documentation tasks"
+    - "specification-only tasks"
+    - "design tasks"
+
+phases:
+  - name: SCAN
+    timing: during-production
+    description: "Check input boundaries, auth chain, output safety, and data handling"
+  - name: FLAG
+    timing: post-production
+    description: "Review all fetch/query/template/file/redirect calls for known vulnerability patterns"
+
+related-skills:
+  - guard-chain
+  - error-handling-architecture
+  - structured-logging
+  - event-webhooks
+
+related-agent: security-reviewer-agent
+
+owasp-coverage:
+  - A01-broken-access-control
+  - A03-injection
+  - A05-security-misconfiguration
+  - A07-auth-failures
+  - A09-logging-failures
+  - A10-ssrf

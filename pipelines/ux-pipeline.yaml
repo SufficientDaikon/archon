@@ -1,0 +1,62 @@
+# UX Pipeline — Full UX Design Lifecycle
+# ux-research → [context-curator] → wireframe → [context-curator] → ui-visual-design → design-review → design-handoff
+
+name: ux-pipeline
+version: 1.1.0
+description: "Full UX design lifecycle: research → context curation → wireframe → context curation → visual design → review → handoff"
+trigger: "design feature *"
+tags: [ux, design, lifecycle]
+synapse-mode: enabled
+
+steps:
+  - name: research
+    agent: ux-research-agent
+    input: "User's feature description or product idea"
+    output: "Research brief with personas, journeys, competitive analysis"
+    on-failure: halt
+    synapse-checkpoint: true
+
+  - name: curate-for-wireframe
+    agent: context-curator-agent
+    input: "Research brief from step:research"
+    output: "Curated context brief for wireframe agent (key insights, personas, user flows)"
+    on-failure: skip
+
+  - name: wireframe
+    agent: wireframe-agent
+    input: "Context brief from step:curate-for-wireframe OR research brief from step:research"
+    output: "Low-fidelity wireframes for all screens"
+    on-failure: halt
+    synapse-checkpoint: true
+
+  - name: curate-for-visual
+    agent: context-curator-agent
+    input: "Wireframes from step:wireframe AND research from step:research"
+    output: "Curated context brief for UI design (wireframe layouts, design constraints, brand direction)"
+    on-failure: skip
+
+  - name: visual-design
+    agent: ui-design-agent
+    input: "Context brief from step:curate-for-visual OR wireframes from step:wireframe AND research from step:research"
+    output: "High-fidelity visual designs with design tokens"
+    on-failure: halt
+    synapse-checkpoint: true
+
+  - name: review
+    agent: design-reviewer-agent
+    input: "Designs from step:visual-design AND wireframes from step:wireframe"
+    output: "Design review report with scored verdicts"
+    on-failure: loop
+    loop-target: visual-design
+    max-iterations: 2
+    synapse-checkpoint: true
+
+  - name: handoff
+    agent: design-handoff-agent
+    input: "Approved designs from step:visual-design AND review from step:review"
+    output: "Implementation-ready design handoff artifact"
+    on-failure: halt
+    synapse-checkpoint: true
+
+resumable: true
+artifact-persistence: session-state

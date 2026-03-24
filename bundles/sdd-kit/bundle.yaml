@@ -1,0 +1,32 @@
+name: sdd-kit
+version: 1.0.0
+description: "Spec-Driven Development toolkit for writing specifications, implementing from specs, reviewing compliance, and managing design handoffs"
+author: tahaa
+skills:
+  - spec-writer
+  - implementer
+  - reviewer
+  - design-handoff
+  - design-review
+  - context-curator
+meta-skill: sdd-pipeline-expert
+dependencies: []
+conflict-resolution:
+  - when: "Creating specifications from requirements"
+    prefer: spec-writer
+    reason: "Specialized in transforming plans into implementable specifications"
+  - when: "Implementing code from specifications"
+    prefer: implementer
+    reason: "Executes spec-driven implementation section by section with TDD"
+  - when: "Reviewing implementation against spec"
+    prefer: reviewer
+    reason: "Produces compliance reports comparing implementation to specification"
+  - when: "Design artifact handoff or lifecycle management"
+    prefer: design-handoff
+    reason: "Manages design lifecycle states and inter-agent communication"
+  - when: "Design quality review"
+    prefer: design-review
+    reason: "Evaluates design artifacts against phase-specific criteria"
+  - when: "Pipeline handoff, context curation, or pipeline state management"
+    prefer: context-curator
+    reason: "Manages context flow between pipeline phases with validation and budget tracking"

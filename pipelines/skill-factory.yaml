@@ -1,0 +1,58 @@
+# Skill Factory Pipeline — Create New Skills
+# prompt-architect → spec-writer → [context-curator] → implementer → writing-skills → reviewer
+
+name: skill-factory
+version: 1.1.0
+description: "Guided skill creation: design → specify → context curation → implement → validate → review"
+trigger: "create a new skill for *"
+tags: [meta, skill-creation, factory]
+synapse-mode: enabled
+
+steps:
+  - name: design
+    agent: prompt-architect-agent
+    input: "User's domain description and skill requirements"
+    output: "Optimized skill prompt structure and trigger design"
+    on-failure: halt
+    synapse-checkpoint: true
+
+  - name: specify
+    agent: spec-writer-agent
+    input: "Prompt design from step:design"
+    output: "Skill specification with all sections defined"
+    on-failure: halt
+    synapse-checkpoint: true
+
+  - name: curate-for-implement
+    agent: context-curator-agent
+    input: "Specification from step:specify AND prompt design from step:design"
+    output: "Curated context brief for implementer (spec, Archon skill format requirements)"
+    on-failure: skip
+
+  - name: implement
+    agent: implementer-agent
+    input: "Context brief from step:curate-for-implement OR skill specification from step:specify"
+    output: "Complete skill directory (SKILL.md, manifest.yaml, resources/, examples/, tests/)"
+    on-failure: halt
+    synapse-checkpoint: true
+
+  - name: validate
+    agent: skill-validator-agent
+    input: "Implemented skill from step:implement"
+    output: "Validation report (manifest check, structure check, trigger uniqueness)"
+    on-failure: loop
+    loop-target: implement
+    max-iterations: 3
+    synapse-checkpoint: true
+
+  - name: review
+    agent: reviewer-agent
+    input: "Skill from step:implement AND validation from step:validate AND spec from step:specify"
+    output: "Final review report"
+    on-failure: loop
+    loop-target: implement
+    max-iterations: 2
+    synapse-checkpoint: true
+
+resumable: true
+artifact-persistence: project-dir

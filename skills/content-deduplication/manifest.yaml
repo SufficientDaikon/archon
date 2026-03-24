@@ -1,0 +1,36 @@
+name: content-deduplication
+version: 1.0.0
+description: "Text similarity detection and deduplication with normalization and configurable thresholds"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - deduplication
+  - similarity
+  - text-processing
+  - content
+  - algorithms
+
+triggers:
+  keywords:
+    - "find duplicates"
+    - "deduplication"
+    - "content similarity"
+    - "remove duplicates"
+  patterns:
+    - "detect * duplicates"
+    - "deduplicate * content"
+
+priority: P2
+
+resources:
+  - path: resources/similarity-algorithms.md
+    type: reference
+    load: on-demand

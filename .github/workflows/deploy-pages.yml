@@ -1,0 +1,69 @@
+# Deploy Archon documentation to GitHub Pages
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Generate llms.txt
+        run: python scripts/generate-llms-txt.py
+
+      - name: Generate agent-cards.json
+        run: python scripts/generate-agent-cards.py
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build site
+        run: |
+          mkdir -p _site
+          # Copy root landing page
+          cp index.html _site/
+          # Copy documentation
+          cp -r docs _site/docs
+          # Copy llms.txt files
+          cp llms.txt _site/
+          cp llms-full.txt _site/
+          # Copy agent cards
+          cp agent-cards.json _site/
+          # Add .nojekyll to prevent Jekyll processing
+          touch _site/.nojekyll
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

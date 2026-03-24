@@ -1,0 +1,77 @@
+# Agent Manifest Template
+# Copy this file to your agent directory and fill in all required fields.
+# See schemas/agent-manifest.schema.yaml for the full schema.
+
+# REQUIRED FIELDS
+name: your-agent-name-agent # Unique kebab-case, must end with '-agent'
+version: 1.0.0 # Semantic version
+role: "One-Line Role Title" # e.g., "Specification Architect"
+description: "What this agent does (10-300 chars)"
+
+# Agent personality and behavior
+persona:
+  tone: "thorough, precise, critical"
+  style: "asks clarifying questions, never assumes"
+  identity: "architect, not a coder"
+
+# Which skills this agent uses and when
+skill-bindings:
+  - skill: skill-name-1
+    trigger: "trigger phrase 1, trigger phrase 2"
+  - skill: skill-name-2
+    trigger: "trigger phrase 3"
+
+# What this agent expects as input
+input-contract:
+  type: "plan/idea/bug report/etc."
+  format: "free text or structured document"
+
+# What this agent produces
+output-contract:
+  type: "specification/code/review report/etc."
+  format: "markdown/code/HTML"
+  location: "where/output/is/saved"
+
+# OPTIONAL FIELDS
+
+# Tools and MCP servers available to this agent
+# tool-access:
+#   - filesystem
+#   - github
+
+# Agents this agent can hand off to
+# handoff-targets:
+#   - agent: next-agent-name
+#     condition: "when this agent completes successfully"
+#     artifact: "path to output file"
+
+# Inviolable rules
+# guardrails:
+#   - "Never do X"
+#   - "Always do Y"
+
+# Preferred model tier
+# model-preference: standard    # premium | standard | fast
+
+# Agent Card (recommended) — machine-readable metadata for discovery and routing
+# card:
+#   capabilities:
+#     streaming: false          # Supports streaming output
+#     multi-turn: false         # Supports multi-turn conversations
+#     file-output: false        # Produces file artifacts
+#     self-evaluation: false    # Validates own output quality
+#     context-aware: false      # Uses prior pipeline context
+#   skills-provided:
+#     - id: your-skill-id
+#       name: "Your Skill Name"
+#       description: "What this skill does"
+#       tags: [tag1, tag2]
+#   input-modes:
+#     - "text/plain"
+#   output-modes:
+#     - "text/markdown"
+#   cost-tier: standard          # fast | standard | premium
+#   avg-tokens:
+#     input: 2000
+#     output: 4000
+#   quality-metrics: null        # Populated by evaluation tools

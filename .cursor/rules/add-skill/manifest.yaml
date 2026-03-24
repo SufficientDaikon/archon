@@ -1,0 +1,33 @@
+# Add Skill Manifest
+
+name: add-skill
+version: 1.0.0
+description: "AI-assisted guide for creating new Archon skills from templates"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - meta
+  - skill-creation
+  - self-customization
+  - templates
+  - validation
+
+triggers:
+  keywords:
+    - "create a new skill"
+    - "add a skill for"
+    - "make a skill that"
+    - "skill factory"
+  patterns:
+    - "create * skill"
+    - "add skill for *"
+
+priority: P1

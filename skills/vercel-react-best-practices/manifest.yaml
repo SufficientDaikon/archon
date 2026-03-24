@@ -1,0 +1,11 @@
+name: vercel-react-best-practices
+version: 1.0.0
+description: "React and Next.js performance optimization guidelines from Vercel Engineering. Use when writing, reviewing, or refactoring React/Next.js code."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["react", "frontend", "javascript", "spec-driven-development", "best-practices"]
+triggers:
+  keywords: ["React components"]
+  patterns: []
+priority: P2

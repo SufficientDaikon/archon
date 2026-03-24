@@ -1,0 +1,6 @@
+name: using-superpowers
+description: "Meta-gatekeeper that forces skill checking before every agent response. Use when starting any task, responding to any message, or when unsure which skill applies."
+version: "2.0.0"
+author: tahaa
+category: enforcement
+tags: [meta, gatekeeper, skill-routing, enforcement, core]

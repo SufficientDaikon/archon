@@ -1,0 +1,11 @@
+name: prompt-architect
+version: 1.0.0
+description: "Analyzes and transforms prompts using 7 research-backed frameworks (CO-STAR, RISEN, RISE-IE, RISE-IX, TIDD-EC, RTF, Chain of Thought, Chain of Density). Provides framework recommendations, asks targeted questions, and structures prompts for maximum effectiveness. Use when users need expert prompt engineering guidance."
+author: tahaa
+license: MIT
+platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
+tags: ["architecture"]
+triggers:
+  keywords: []
+  patterns: []
+priority: P2
