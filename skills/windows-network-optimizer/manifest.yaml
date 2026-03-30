@@ -1,0 +1,33 @@
+name: windows-network-optimizer
+version: 1.0.0
+description: "Windows 11 network and system performance optimizer — DNS, NIC tuning, TCP/IP registry, MMCSS, services, telemetry, power plan, and Defender tuning via PowerShell."
+author: archon
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+
+tags:
+  - windows
+  - network
+  - optimization
+  - performance
+  - registry
+  - powershell
+
+triggers:
+  keywords:
+    - "optimize network"
+    - "slow internet"
+    - "network performance"
+    - "Windows optimization"
+    - "TCP tuning"
+    - "DNS optimization"
+  patterns:
+    - "optimize * network*"
+    - "fix * slow * internet"
+    - "tune * Windows"
+
+priority: P1

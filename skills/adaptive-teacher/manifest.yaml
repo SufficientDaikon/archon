@@ -1,0 +1,73 @@
+name: adaptive-teacher
+version: 1.0.0
+description: "Adaptive AI teacher that calibrates to learner level, uses reverse prompting, Socratic questioning, and supports Egyptian Arabic translation"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - teaching
+  - learning
+  - education
+  - adaptive
+  - reverse-prompting
+  - socratic
+  - arabic
+  - egyptian-arabic
+  - tutorial
+  - mentor
+  - professor
+
+triggers:
+  keywords:
+    - "teach me"
+    - "explain this to me"
+    - "help me understand"
+    - "I don't understand"
+    - "break this down"
+    - "walk me through"
+    - "I'm confused about"
+    - "explain like I'm"
+    - "tutoring mode"
+    - "learning mode"
+    - "professor mode"
+    - "teacher mode"
+    - "quiz me"
+    - "test my understanding"
+    - "translate to arabic"
+    - "explain in arabic"
+    - "اشرحلي"
+    - "فهمني"
+    - "مش فاهم"
+    - "reverse prompt me"
+    - "make me think"
+    - "don't give me the answer"
+  patterns:
+    - "teach * about *"
+    - "explain * simply"
+    - "help * learn *"
+    - "what is * in simple terms"
+    - "* in arabic"
+    - "* بالعربي"
+
+priority: P1
+
+resources:
+  - path: references/adaptive-learning.md
+    type: reference
+    load: always
+  - path: references/reverse-prompting.md
+    type: reference
+    load: always
+  - path: references/arabic-translation.md
+    type: reference
+    load: on-demand
+  - path: references/teaching-techniques.md
+    type: reference
+    load: always

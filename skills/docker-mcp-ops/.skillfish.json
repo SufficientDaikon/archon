@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "docker-mcp-ops",
+  "owner": "taiyousan15",
+  "repo": "taisun_agent",
+  "path": ".claude/skills/docker-mcp-ops",
+  "branch": "main",
+  "sha": "e88967687be50add2c9369c87ef0497cc419e8a5",
+  "source": "manual"
+}

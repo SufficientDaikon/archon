@@ -1,0 +1,46 @@
+name: pr-quality-agent
+version: 1.0.0
+description: "Self-reviewing PR quality agent — audits, rewrites, and iterates PR bodies to production-grade standards with citations, scope honesty, and visual hierarchy"
+author: archon
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+
+tags:
+  - pr
+  - pull-request
+  - code-review
+  - github
+  - open-source
+  - documentation
+  - quality
+
+triggers:
+  keywords:
+    - "review my PR"
+    - "improve PR body"
+    - "PR quality"
+    - "make this PR perfect"
+    - "audit PR"
+    - "upgrade PR"
+    - "rewrite PR body"
+    - "PR standards"
+    - "pr-quality-agent"
+  patterns:
+    - "gh pr edit"
+    - "PR body"
+    - "pull request description"
+
+priority: P1
+
+resources:
+  - path: resources/audit-checklist.md
+    type: cheat-sheet
+    load: on-demand
+  - path: resources/templates.md
+    type: reference
+    load: on-demand

@@ -1,0 +1,27 @@
+name: docker-build
+version: 1.0.0
+description: "Docker image building with proper tagging, cache busting, git SHA tracking, and registry verification."
+author: archon
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+
+tags:
+  - docker
+  - containerization
+  - devops
+  - ci-cd
+
+triggers:
+  keywords:
+    - "docker build"
+    - "build image"
+    - "container"
+  patterns:
+    - "build * docker *"
+    - "docker * image"
+
+priority: P2

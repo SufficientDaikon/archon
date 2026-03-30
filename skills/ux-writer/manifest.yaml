@@ -1,0 +1,37 @@
+name: ux-writer
+version: 1.0.0
+description: "UX Writer — portfolio copy, hero headlines, project descriptions, CTAs, taglines, and bio copy. Anti-slop rules, specificity tests, and voice calibration formulas."
+author: archon
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - ux-writing
+  - copywriting
+  - portfolio
+  - anti-slop
+  - archon-forge
+  - core
+
+triggers:
+  keywords:
+    - "hero headline"
+    - "project description"
+    - "CTA copy"
+    - "tagline"
+    - "bio"
+    - "portfolio copy"
+    - "rewrite copy"
+  patterns:
+    - "COPY:*"
+    - "write * copy"
+    - "rewrite * headline"
+    - "fix * CTA"
+
+priority: P1

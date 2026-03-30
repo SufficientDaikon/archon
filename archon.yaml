@@ -10,6 +10,19 @@ repository: https://github.com/SufficientDaikon/archon
 
 # All registered skills (alphabetical)
 skills:
+  - name: archon-scout
+    path: skills/archon-scout
+    version: 1.0.0
+    tags: [research, intelligence, archon-forge, core]
+    priority: P1
+  - name: astro-islands-expert
+    path: skills/astro-islands-expert
+    version: 1.0.0
+    tags: [astro, islands, multi-framework, hydration]
+  - name: adaptive-teacher
+    path: skills/adaptive-teacher
+    version: 1.0.0
+    tags: [teaching, learning, adaptive, socratic, arabic]
   - name: add-adapter
     path: skills/add-adapter
     version: 1.0.0
@@ -73,6 +86,14 @@ skills:
   - name: design-review
     path: skills/design-review
     version: 1.0.0
+  - name: docker-build
+    path: skills/docker-build
+    version: 1.0.0
+    tags: [docker, containerization, devops, ci-cd]
+  - name: docker-mcp-ops
+    path: skills/docker-mcp-ops
+    version: 1.0.0
+    tags: [docker, mcp, container-ops, devops]
   - name: django-expert
     path: skills/django-expert
     version: 1.0.0
@@ -104,6 +125,11 @@ skills:
     tags: [webhooks, events, security]
   - name: executing-plans
     path: skills/executing-plans
+  - name: eyes
+    path: skills/eyes
+    version: 1.0.0
+    tags: [vision, image-generation, visual-qa, gemini, multimodal]
+    priority: P1
   - name: fastmcp
     path: skills/fastmcp
     version: 1.0.0
@@ -123,6 +149,10 @@ skills:
     path: skills/guard-chain
     version: 1.0.0
     tags: [security, api, middleware, authentication]
+  - name: github-markdown-mastery
+    path: skills/github-markdown-mastery
+    version: 1.0.0
+    tags: [github, markdown, mermaid, badges, pr, documentation]
   - name: godot-best-practices
     path: skills/godot-best-practices
     version: 1.0.0
@@ -168,6 +198,15 @@ skills:
   - name: omega-gdscript-expert
     path: skills/omega-gdscript-expert
     version: 1.0.0
+  - name: pr-quality-agent
+    path: skills/pr-quality-agent
+    version: 1.0.0
+    tags: [pr, github, quality, documentation]
+    priority: P1
+  - name: pr-to-course
+    path: skills/pr-to-course
+    version: 1.0.0
+    tags: [documentation, course, pr, interactive, teaching]
   - name: packager
     path: skills/packager
     version: 1.0.0
@@ -238,6 +277,11 @@ skills:
   - name: ui-visual-design
     path: skills/ui-visual-design
     version: 1.0.0
+  - name: ux-writer
+    path: skills/ux-writer
+    version: 1.0.0
+    tags: [ux-writing, copywriting, portfolio, archon-forge, core]
+    priority: P1
   - name: ux-interaction-design
     path: skills/ux-interaction-design
     version: 1.0.0
@@ -270,6 +314,18 @@ skills:
   - name: webapp-testing
     path: skills/webapp-testing
     version: 1.0.0
+  - name: windows-error-debugger
+    path: skills/windows-error-debugger
+    version: 1.0.0
+    tags: [windows, debugging, bsod, crash, drivers, powershell]
+  - name: windows-network-optimizer
+    path: skills/windows-network-optimizer
+    version: 1.0.0
+    tags: [windows, network, optimization, performance, powershell]
+  - name: windows-registry-editor
+    path: skills/windows-registry-editor
+    version: 1.0.0
+    tags: [windows, registry, optimization, gaming, privacy, powershell]
   - name: wireframing
     path: skills/wireframing
     version: 1.0.0
@@ -404,7 +460,19 @@ bundles:
 
   - name: devops-kit
     path: bundles/devops-kit
-    skills: [docker-production-build, structured-logging]
+    skills: [docker-production-build, docker-build, docker-mcp-ops, structured-logging]
+
+  - name: windows-kit
+    path: bundles/windows-kit
+    skills: [windows-error-debugger, windows-network-optimizer, windows-registry-editor]
+
+  - name: orchestration-kit
+    path: bundles/orchestration-kit
+    skills: [complexity-router, context-curator, archon-scout]
+
+  - name: github-kit
+    path: bundles/github-kit
+    skills: [github-markdown-mastery, pr-quality-agent]
 
 # All registered agents
 agents:

@@ -1,0 +1,15 @@
+name: github-kit
+version: 1.0.0
+description: "GitHub documentation and PR quality toolkit — Markdown mastery, Mermaid diagrams, badges, and self-reviewing PR agent"
+author: archon
+skills:
+  - github-markdown-mastery
+  - pr-quality-agent
+dependencies: []
+conflict-resolution:
+  - when: "Writing Markdown, README, or using GitHub-specific features"
+    prefer: github-markdown-mastery
+    reason: "Complete GFM reference with Mermaid, badges, alerts, and 63 allowed HTML elements"
+  - when: "Writing or reviewing PR body quality"
+    prefer: pr-quality-agent
+    reason: "7-rule audit pipeline with citations, scope honesty, and visual hierarchy"

@@ -8,10 +8,11 @@
 
 [![Version](https://img.shields.io/badge/version-1.0.0-brightgreen)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/skills-83-blue)]()
+[![Skills](https://img.shields.io/badge/skills-96-blue)]()
 [![Agents](https://img.shields.io/badge/agents-10-orange)]()
 [![Synapses](https://img.shields.io/badge/synapses-5-blueviolet)]()
 [![Pipelines](https://img.shields.io/badge/pipelines-8-red)]()
+[![Bundles](https://img.shields.io/badge/bundles-15-teal)]()
 [![Tests](https://img.shields.io/badge/tests-513-success)]()
 [![Platforms](https://img.shields.io/badge/platforms-5-purple)]()
 
@@ -23,7 +24,7 @@
 
 Archon is the universal AI agent skills framework that solves three problems no one else does: **skills that transfer across platforms** without rewrites, **cognitive synapses** that make agents plan before they code, and **guardrails with Iron Laws** that agents cannot rationalize away.
 
-83 skills. 10 agents. 5 cognitive synapses. 8 resumable pipelines. 513 tests. MIT licensed. Works on Claude Code, Cursor, Copilot CLI, Windsurf, and Antigravity.
+96 skills. 10 agents. 5 cognitive synapses. 8 resumable pipelines. 15 bundles. 513 tests. MIT licensed. Works on Claude Code, Cursor, Copilot CLI, Windsurf, and Antigravity.
 
 ```bash
 pip install archon && archon init && archon doctor
@@ -51,7 +52,7 @@ Archon uses a 6-layer architecture. Each layer builds on the one below. Skills a
 
 | Layer | Purpose |
 | --- | --- |
-| **Skills & Knowledge** | 83 skills, 14 bundles, prompt library, knowledge sources |
+| **Skills & Knowledge** | 96 skills, 15 bundles, prompt library, knowledge sources |
 | **Agents & Personas** | 10 agents with formal personas, handoff contracts, quality gates |
 | **Synapses & Cognition** | 5 cognitive synapses that shape HOW agents reason |
 | **Pipelines & Orchestration** | 8 pipelines with execution, context curation, failure recovery |
@@ -60,8 +61,8 @@ Archon uses a 6-layer architecture. Each layer builds on the one below. Skills a
 
 ```
 archon/
-  skills/        83 skills (SKILL.md + manifest.yaml + resources)
-  bundles/       14 domain bundles (bundle.yaml + meta-skill)
+  skills/        96 skills (SKILL.md + manifest.yaml + resources)
+  bundles/       15 domain bundles (bundle.yaml + meta-skill)
   agents/        10 agent definitions (AGENT.md + agent-manifest.yaml)
   pipelines/     8 multi-agent workflows
   synapses/      5 cognitive synapses (SYNAPSE.md + manifest.yaml)
@@ -88,7 +89,7 @@ archon doctor        # Verify everything works
 Install skills to your platform:
 
 ```bash
-archon install --all                          # All 83 skills
+archon install --all                          # All 96 skills
 archon install --bundle godot-kit             # Just Godot skills
 archon install --skill backend-development    # Single skill
 ```
@@ -153,7 +154,10 @@ Every agent has `guardrail-enforcement: strict`, formal skill bindings, and hand
 | **prompts-chat-kit** | 17 | Plugin system, quality gates, webhooks, SDK |
 | **security-kit** | 4 | Guard chain, webhooks, error handling, logging |
 | **data-layer-kit** | 4 | Prisma ORM, singletons, deduplication |
-| **devops-kit** | 2 | Docker, structured logging |
+| **devops-kit** | 4 | Docker builds, container ops, structured logging |
+| **windows-kit** | 3 | Crash debugging, network optimization, registry management |
+| **orchestration-kit** | 3 | Complexity routing, context management, deep research |
+| **github-kit** | 2 | Markdown mastery, PR quality enforcement |
 
 ---
 

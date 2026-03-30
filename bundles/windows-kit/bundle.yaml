@@ -1,0 +1,19 @@
+name: windows-kit
+version: 1.0.0
+description: "Windows system administration toolkit — crash debugging, network optimization, and registry management via PowerShell"
+author: archon
+skills:
+  - windows-error-debugger
+  - windows-network-optimizer
+  - windows-registry-editor
+dependencies: []
+conflict-resolution:
+  - when: "PC crash, BSOD, or system stability issue"
+    prefer: windows-error-debugger
+    reason: "5-phase crash investigation pipeline with Event Log analysis and knowledge base"
+  - when: "Slow internet or network performance"
+    prefer: windows-network-optimizer
+    reason: "DNS, NIC, TCP/IP, MMCSS, and service tuning"
+  - when: "Registry tweaks, optimization presets, or performance tuning"
+    prefer: windows-registry-editor
+    reason: "6 curated presets with safety rules and mandatory backups"

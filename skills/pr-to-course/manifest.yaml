@@ -1,0 +1,46 @@
+# PR-to-Course Skill Manifest
+name: pr-to-course
+version: 1.0.0
+description: "Transforms GitHub PRs into beautiful single-page interactive HTML courses that explain the problem, solution, and code changes"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - documentation
+  - course
+  - pr
+  - interactive
+  - html
+  - teaching
+  - visualization
+
+triggers:
+  keywords:
+    - "create a course from this PR"
+    - "turn this PR into a course"
+    - "make an interactive course"
+    - "build a PR course"
+    - "pr to course"
+    - "document this PR as a course"
+    - "explain this PR visually"
+  patterns:
+    - "* course * PR *"
+    - "* interactive * documentation *"
+    - "* teach * PR *"
+
+priority: P2
+
+resources:
+  - path: references/design-system.md
+    type: reference
+    load: on-demand
+  - path: references/interactive-elements.md
+    type: reference
+    load: on-demand

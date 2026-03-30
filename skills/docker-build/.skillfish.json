@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "docker-build",
+  "owner": "lobbi-docs",
+  "repo": "claude",
+  "path": ".claude/skills/docker-build",
+  "branch": "main",
+  "sha": "1e26fa4768296ae38812abc2ab2b3e509e106ae2",
+  "source": "manual"
+}

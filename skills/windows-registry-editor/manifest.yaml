@@ -1,0 +1,44 @@
+name: windows-registry-editor
+version: 1.0.0
+description: "Windows Registry editor and optimizer — CRUD operations, backup/export, search, 6 optimization presets (network, gaming, privacy, performance, input-latency), safety-first approach."
+author: archon
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+
+tags:
+  - windows
+  - registry
+  - optimization
+  - powershell
+  - gaming
+  - performance
+  - privacy
+
+triggers:
+  keywords:
+    - "registry"
+    - "registry editor"
+    - "registry optimization"
+    - "registry preset"
+    - "regedit"
+  patterns:
+    - "edit * registry*"
+    - "optimize * registry*"
+    - "apply * preset*"
+
+priority: P1
+
+resources:
+  - path: references/safety-rules.md
+    type: reference
+    load: always
+  - path: references/optimization-presets.md
+    type: reference
+    load: on-demand
+  - path: references/presets/network-deep.md
+    type: reference
+    load: on-demand

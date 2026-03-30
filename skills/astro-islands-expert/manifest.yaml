@@ -1,0 +1,38 @@
+name: astro-islands-expert
+version: 1.0.0
+description: "Astro 5/6 islands architecture expert — multi-framework selection (React, Svelte, Vue, SolidJS), hydration directives, nanostores cross-framework state, performance budgets."
+author: archon
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - astro
+  - islands
+  - multi-framework
+  - react
+  - svelte
+  - vue
+  - solidjs
+  - hydration
+  - nanostores
+
+triggers:
+  keywords:
+    - "astro component"
+    - "astro island"
+    - "hydration directive"
+    - "framework selection"
+    - "client:load"
+    - "client:visible"
+    - "nanostores"
+  patterns:
+    - "create * astro *"
+    - "add * component"
+
+priority: P1

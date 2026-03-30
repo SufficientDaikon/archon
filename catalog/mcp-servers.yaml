@@ -334,6 +334,49 @@ servers:
     tags: [gcp, google-cloud, cloud, infrastructure, bigquery]
     docs-url: "https://github.com/google/mcp-server-gcp"
 
+  # ── Design & Visual ─────────────────────────────────────────────
+
+  - name: stitch
+    package: "stitch"
+    category: design
+    description: "Google AI design tool — generate UI screens, create design systems, generate variants"
+    server-type: http
+    required-env: []
+    recommended-for:
+      skills: [frontend-design, ui-visual-design, artifact-protocol]
+      agents: [ui-design-agent]
+      bundles: [ux-design-kit]
+    tags: [design, ui, screens, google-ai, stitch, prototyping]
+    docs-url: "https://stitch.withgoogle.com"
+
+  - name: awwwards-scraper
+    package: "custom"
+    category: design
+    description: "Award-winning portfolio gallery scraper — browse, analyze, and extract CSS from Awwwards-winning sites"
+    server-type: stdio
+    args-template: ["python", "tools/awwwards_server.py"]
+    required-env: []
+    recommended-for:
+      skills: [frontend-design, ui-visual-design, artifact-protocol, ux-research]
+      agents: [ui-design-agent, ux-research-agent]
+      bundles: [ux-design-kit]
+    tags: [awwwards, design, css, portfolio, inspiration, scraper]
+    docs-url: ""
+    notes: "Custom FastMCP server. Requires Python + playwright."
+
+  - name: astro-docs
+    package: "astro-docs"
+    category: development
+    description: "Official Astro documentation MCP — search and query Astro 5/6 docs"
+    server-type: http
+    required-env: []
+    recommended-for:
+      skills: [astro-islands-expert, frontend-design]
+      agents: [implementer-agent]
+      bundles: [web-dev-kit]
+    tags: [astro, docs, documentation, frontend, islands]
+    docs-url: "https://mcp.docs.astro.build/mcp"
+
   # ── Communication ───────────────────────────────────────────────
 
   - name: slack

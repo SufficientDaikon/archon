@@ -1,0 +1,27 @@
+name: docker-mcp-ops
+version: 1.0.0
+description: "Docker container operations via MCP tools — state inspection, log reading, service management with safety checks."
+author: archon
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+
+tags:
+  - docker
+  - mcp
+  - container-ops
+  - devops
+
+triggers:
+  keywords:
+    - "docker container"
+    - "docker logs"
+    - "docker ps"
+  patterns:
+    - "check * container*"
+    - "docker * service*"
+
+priority: P2

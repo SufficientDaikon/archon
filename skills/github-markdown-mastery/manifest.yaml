@@ -1,0 +1,46 @@
+name: github-markdown-mastery
+version: 1.0.0
+description: "Complete GitHub Markdown reference — GFM syntax, Mermaid diagrams, LaTeX math, alerts, shields.io badges, dark-mode images, PR body patterns, and 63 allowed HTML elements."
+author: archon
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - github
+  - markdown
+  - mermaid
+  - badges
+  - pr
+  - documentation
+
+triggers:
+  keywords:
+    - "github markdown"
+    - "mermaid diagram"
+    - "PR body"
+    - "README"
+    - "badges"
+    - "github alerts"
+  patterns:
+    - "write * PR *"
+    - "create * README *"
+    - "add * badge*"
+
+priority: P1
+
+resources:
+  - path: badges-reference.md
+    type: cheat-sheet
+    load: on-demand
+  - path: mermaid-reference.md
+    type: cheat-sheet
+    load: on-demand
+  - path: pr-patterns.md
+    type: reference
+    load: on-demand

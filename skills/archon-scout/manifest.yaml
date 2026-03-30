@@ -1,0 +1,36 @@
+name: archon-scout
+version: 1.0.0
+description: "Scout Intelligence Pipeline — deep multi-source research with parallel web fetching, evidence validation, and synthesis into actionable briefs."
+author: archon
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - research
+  - intelligence
+  - web-fetching
+  - evidence-validation
+  - archon-forge
+  - core
+
+triggers:
+  keywords:
+    - "research"
+    - "find the best approach"
+    - "competitive analysis"
+    - "library comparison"
+    - "technical landscape"
+  patterns:
+    - "research *"
+    - "find the best * for"
+    - "compare * vs *"
+
+priority: P1
+
+resources: []

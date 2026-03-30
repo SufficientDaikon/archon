@@ -1,0 +1,51 @@
+name: windows-error-debugger
+version: 1.0.0
+description: "Systematic Windows crash investigation and repair — Event Log analysis, minidump debugging, driver health checks, fix scripting, and growing knowledge base per machine."
+author: archon
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+
+tags:
+  - windows
+  - debugging
+  - bsod
+  - crash
+  - drivers
+  - event-log
+  - powershell
+
+triggers:
+  keywords:
+    - "BSOD"
+    - "blue screen"
+    - "crash"
+    - "system error"
+    - "bugcheck"
+    - "minidump"
+    - "driver failure"
+    - "Windows froze"
+    - "PC crashed"
+  patterns:
+    - "why did * crash"
+    - "fix * blue screen"
+    - "debug * BSOD"
+
+priority: P1
+
+resources:
+  - path: knowledge-base/machine-profile.md
+    type: reference
+    load: always
+  - path: knowledge-base/resolved-issues.md
+    type: reference
+    load: always
+  - path: knowledge-base/driver-watchlist.md
+    type: reference
+    load: on-demand
+  - path: knowledge-base/recurring-patterns.md
+    type: reference
+    load: on-demand

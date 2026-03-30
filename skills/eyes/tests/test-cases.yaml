@@ -1,0 +1,41 @@
+# Eyes Skill — Test Cases
+
+## Test 1: Prompt Enhancement
+- **Input:** Simple prompt "a robot in a city"
+- **Expected:** Agent expands to 5-component formula with subject, action, environment, composition, style
+- **Pass criteria:** All 5 components present, each with specific details (not vague)
+
+## Test 2: Image Generation
+- **Input:** "Generate a hero background for a dark portfolio"
+- **Expected:** Agent generates image and reports file path, alt-text, dimensions
+- **Pass criteria:** Image file exists, > 0 bytes, correct aspect ratio, alt-text provided
+
+## Test 3: Image Analysis
+- **Input:** Screenshot + "Check for visual bugs"
+- **Expected:** Structured findings with severity levels
+- **Pass criteria:** At least one finding, severity tagged, score provided
+
+## Test 4: Image Editing
+- **Input:** Existing image + "Make it darker"
+- **Expected:** New image saved (original not overwritten), edit description provided
+- **Pass criteria:** New file created, original untouched, changes described
+
+## Test 5: Alt Text Generation
+- **Input:** Image file + "Generate alt text"
+- **Expected:** Concise description ≤ 125 characters
+- **Pass criteria:** Text ≤ 125 chars, describes actual content, no hallucination
+
+## Test 6: Preset Usage
+- **Input:** "Use the hero preset"
+- **Expected:** Correct preset prompt used without modification, image generated
+- **Pass criteria:** Preset prompt matched exactly, --raw flag applied (no enhancement on presets)
+
+## Test 7: Missing API Key
+- **Input:** Generation request without GEMINI_API_KEY set
+- **Expected:** Clear error message with setup instructions
+- **Pass criteria:** Error mentions aistudio.google.com/apikey, does not crash
+
+## Test 8: Design System Integration
+- **Input:** "Generate image for The Forensic Monolith design system"
+- **Expected:** Prompt includes correct color tokens (#00F0FF, #0e0e0e), style keywords
+- **Pass criteria:** Hex colors present, "clinical" or "forensic" in prompt

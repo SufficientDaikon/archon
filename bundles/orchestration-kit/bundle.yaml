@@ -1,0 +1,19 @@
+name: orchestration-kit
+version: 1.0.0
+description: "Core orchestration layer — complexity routing, context window management, and evidence-based research for multi-agent workflows"
+author: archon
+skills:
+  - complexity-router
+  - context-curator
+  - archon-scout
+dependencies: []
+conflict-resolution:
+  - when: "Classifying task complexity or choosing agents"
+    prefer: complexity-router
+    reason: "Auto-classifies into 5 tiers with optimal agent/model routing"
+  - when: "Context window pressure or phase transitions"
+    prefer: context-curator
+    reason: "Manages 1M token window with compression and session persistence"
+  - when: "Research needed before building"
+    prefer: archon-scout
+    reason: "Evidence-validated research with source citation and conflict resolution"

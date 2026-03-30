@@ -1,0 +1,63 @@
+name: eyes
+version: 1.0.0
+description: "Visual intelligence synapse — gives any agent the ability to see, generate, edit, and reason about images using Google Gemini"
+author: tahaa
+license: MIT
+
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+
+tags:
+  - vision
+  - image-generation
+  - visual-qa
+  - gemini
+  - multimodal
+  - screenshot-analysis
+  - alt-text
+  - design
+  - eyes
+
+triggers:
+  keywords:
+    - "generate image"
+    - "generate visual"
+    - "analyze screenshot"
+    - "visual QA"
+    - "describe this image"
+    - "create mockup"
+    - "edit image"
+    - "alt text"
+    - "caption image"
+    - "see this"
+    - "look at this"
+    - "what does this look like"
+    - "design visual"
+    - "hero background"
+    - "project image"
+  patterns:
+    - "generate * image*"
+    - "create * visual*"
+    - "analyze * screenshot*"
+    - "see * image*"
+    - "edit * image*"
+    - "what does * look like"
+
+priority: P1
+
+mcp-dependencies: []
+
+resources:
+  - path: resources/prompt-formulas.md
+    type: reference
+    load: on-demand
+  - path: resources/presets.md
+    type: lookup-table
+    load: on-demand
+  - path: resources/gemini-api-reference.md
+    type: cheat-sheet
+    load: on-demand
