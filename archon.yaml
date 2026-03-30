@@ -494,6 +494,8 @@ agents:
     path: agents/context-curator-agent
   - name: dissector-agent
     path: agents/dissector-agent
+  - name: security-reviewer-agent
+    path: agents/security-reviewer-agent
 
 # All registered synapses
 synapses:

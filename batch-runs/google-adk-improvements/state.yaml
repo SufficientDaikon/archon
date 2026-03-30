@@ -5,8 +5,8 @@
 batch:
   name: "Google ADK Improvements"
   pipeline: batch-sdd-pipeline
-  plans_dir: "c:\\Users\\tahaa\\.copilot\\ideas\\google-adk-ideas"
-  archon_root: "c:\\Users\\tahaa\\archon"
+  plans_dir: "~/.copilot\\ideas\\google-adk-ideas"
+  archon_root: "/path/to/archon"
   created: "2026-03-09"
   last_updated: "2026-03-10"
   total_plans: 12
@@ -28,8 +28,8 @@ sprints:
         started_at: "2026-03-10T01:36:00Z"
         completed_at: "2026-03-10T02:00:00Z"
         current_step: done
-        spec_path: "c:\\Users\\tahaa\\.copilot\\sdd\\specs\\archon-03-llms-txt\\spec.md"
-        report_path: "c:\\Users\\tahaa\\.copilot\\sdd\\reports\\archon-03-llms-txt\\review.md"
+        spec_path: "~/.copilot\\sdd\\specs\\archon-03-llms-txt\\spec.md"
+        report_path: "~/.copilot\\sdd\\reports\\archon-03-llms-txt\\review.md"
         commit_hash: "075296e"
         notes: "96% compliance, APPROVED. 4 minor cosmetic issues (title casing, blank lines). 61 skills, 9 agents, 1 synapse, 6 pipelines, 8 bundles indexed."
 
@@ -42,8 +42,8 @@ sprints:
         started_at: "2026-03-10T02:00:00Z"
         completed_at: "2026-03-10T02:30:00Z"
         current_step: done
-        spec_path: "c:\\Users\\tahaa\\.copilot\\sdd\\specs\\archon-05-agent-cards\\spec.md"
-        report_path: "c:\\Users\\tahaa\\.copilot\\sdd\\reports\\archon-05-agent-cards\\review.md"
+        spec_path: "~/.copilot\\sdd\\specs\\archon-05-agent-cards\\spec.md"
+        report_path: "~/.copilot\\sdd\\reports\\archon-05-agent-cards\\review.md"
         commit_hash: "e6dd027"
         notes: "97% compliance, APPROVED. 9/9 agents enhanced. CLI: cards, generate agent-cards. 38 files changed."
 
@@ -56,8 +56,8 @@ sprints:
         started_at: "2026-03-10T02:30:00Z"
         completed_at: "2026-03-10T03:00:00Z"
         current_step: done
-        spec_path: "c:\\Users\\tahaa\\.copilot\\sdd\\specs\\archon-12-integration-catalog\\spec.md"
-        report_path: "c:\\Users\\tahaa\\.copilot\\sdd\\reports\\archon-12-integration-catalog\\review.md"
+        spec_path: "~/.copilot\\sdd\\specs\\archon-12-integration-catalog\\spec.md"
+        report_path: "~/.copilot\\sdd\\reports\\archon-12-integration-catalog\\review.md"
         commit_hash: "22dd584"
         notes: "97% compliance, APPROVED. 20 MCP servers cataloged, 6 CLI commands, platform config generation. 25 files changed."
 

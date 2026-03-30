@@ -157,7 +157,7 @@ These are banned. Zero exceptions. If you're about to write one of these, stop.
 - Vague scale: "worked on large-scale projects" (how large? what scale?)
 - Undifferentiated claims: "proficient in React, TypeScript, Node.js..." (this is a skills list, not copy)
 - Defensive humility: "I'm still learning but..." — never qualify competence in portfolio copy
-- Fake modesty: "just a developer from Cairo" — you are not "just" anything
+- Fake modesty: "just a developer from [City]" — you are not "just" anything
 - Promissory copy: "I will help you achieve..." (you haven't done it yet in the reader's mind)
 
 ---
@@ -335,7 +335,7 @@ SENTENCE 3 — Scale, status, or outcome
 - One line, factual
 - Sets expectation for what happens
 - Examples:
-  - "Response within 24h. Cairo timezone (UTC+2)."
+  - "Response within 24h. [City] timezone (UTC+N)."
   - "[email] — direct line."
   - "LinkedIn: [handle]. Open to opportunities in [domain]."
 
@@ -343,7 +343,7 @@ SENTENCE 3 — Scale, status, or outcome
 
 ### Taglines and Identity Statements
 
-**Purpose:** One sentence that differentiates. If you deleted the name, would it still be clearly Ahmed's?
+**Purpose:** One sentence that differentiates. If you deleted the name, would it still be clearly yours?
 
 **Rules:**
 - Must pass the Specificity Test at maximum difficulty
@@ -381,7 +381,7 @@ SENTENCE 3 — Scale, status, or outcome
 **Rules:**
 - No career timeline as the structure ("In 2020 I started... In 2022 I...")
 - No list of technologies masquerading as a bio
-- Must reveal something about *how* Ahmed thinks, not just what he's done
+- Must reveal something about *how* the person thinks, not just what they've done
 - Avoid false intimacy ("I'm a passionate human being who loves...")
 - The dry humor is earned through specificity, not jokes
 

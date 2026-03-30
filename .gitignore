@@ -5,6 +5,7 @@ __pycache__/
 dist/
 build/
 *.egg
+.pytest_cache/
 
 # Node.js
 node_modules/

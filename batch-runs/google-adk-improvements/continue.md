@@ -21,7 +21,7 @@ You are executing the **Archon Batch SDD Pipeline**. Your job is to find the nex
 
 Read the batch state file:
 ```
-c:\Users\tahaa\archon\batch-runs\google-adk-improvements\state.yaml
+/path/to/archon\batch-runs\google-adk-improvements\state.yaml
 ```
 
 Find the first plan with `status: pending` or `status: in-progress` (resume if interrupted).
@@ -31,12 +31,12 @@ Note which sprint it belongs to.
 
 Read the plan file from:
 ```
-c:\Users\tahaa\.copilot\ideas\google-adk-ideas\{plan-file}
+~/.copilot\ideas\google-adk-ideas\{plan-file}
 ```
 
 Also read the master roadmap for context:
 ```
-c:\Users\tahaa\.copilot\ideas\google-adk-ideas\00-master-roadmap.md
+~/.copilot\ideas\google-adk-ideas\00-master-roadmap.md
 ```
 
 **Update state.yaml**: Set the plan's `status: in-progress`, `current_step: specify`, `started_at: <now>`.
@@ -45,7 +45,7 @@ c:\Users\tahaa\.copilot\ideas\google-adk-ideas\00-master-roadmap.md
 
 Use the **spec-writer** agent (or invoke the `spec-writer` skill) to transform the plan into a comprehensive implementation specification.
 
-**Input**: The plan file content + Archon repo context at `c:\Users\tahaa\archon\`
+**Input**: The plan file content + Archon repo context at `/path/to/archon\`
 **Output**: Full spec saved to `~/.copilot/sdd/specs/archon-<plan-id>/spec.md`
 
 The spec must include:
@@ -62,7 +62,7 @@ The spec must include:
 Use the **implementer** agent (or invoke the `implementer` skill) to build everything from the spec.
 
 **Input**: The spec from Step 2 + Archon codebase
-**Output**: All files created/modified in `c:\Users\tahaa\archon\`
+**Output**: All files created/modified in `/path/to/archon\`
 
 Implementation rules:
 - Follow the spec section by section
@@ -86,7 +86,7 @@ If review score >= 80%: Proceed to Step 5.
 
 1. **Git commit** all changes:
    ```bash
-   cd c:\Users\tahaa\archon
+   cd /path/to/archon
    git add -A
    git commit -m "feat: implement <plan-name> (batch-sdd plan <plan-id>)"
    git push origin master
@@ -107,16 +107,16 @@ If review score >= 80%: Proceed to Step 5.
 
 **If running low on context** (you'll know — responses get slow, you're losing track):
 - Generate a handoff summary
-- Save it to `c:\Users\tahaa\archon\batch-runs\google-adk-improvements\handoff.md`
+- Save it to `/path/to/archon\batch-runs\google-adk-improvements\handoff.md`
 - Tell the user: "Session capacity reached. Start a new session and paste the auto-continue prompt again."
 
 ### Important Context
 
-- **Archon repo**: `c:\Users\tahaa\archon\` (git remote: SufficientDaikon/archon)
-- **Plans directory**: `c:\Users\tahaa\.copilot\ideas\google-adk-ideas\`
-- **State file**: `c:\Users\tahaa\archon\batch-runs\google-adk-improvements\state.yaml`
-- **SDD specs go to**: `c:\Users\tahaa\.copilot\sdd\specs\archon-<plan-id>\`
-- **SDD reports go to**: `c:\Users\tahaa\.copilot\sdd\reports\archon-<plan-id>\`
+- **Archon repo**: `/path/to/archon\` (git remote: SufficientDaikon/archon)
+- **Plans directory**: `~/.copilot\ideas\google-adk-ideas\`
+- **State file**: `/path/to/archon\batch-runs\google-adk-improvements\state.yaml`
+- **SDD specs go to**: `~/.copilot\sdd\specs\archon-<plan-id>\`
+- **SDD reports go to**: `~/.copilot\sdd\reports\archon-<plan-id>\`
 - **The framework has**: 61 skills, 8 agents, 1 synapse, 6 pipelines, 8 bundles
 - **Existing components**: Python CLI, VS Code extension, Next.js webapp, GitHub Pages docs
 - **Git branch**: master

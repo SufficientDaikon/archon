@@ -13,7 +13,7 @@ This directory contains batch SDD pipeline executions — automated processing o
 
 ### Start a batch run
 ```
-Read and follow the instructions at c:\Users\tahaa\archon\batch-runs\google-adk-improvements\continue.md
+Read and follow the instructions at /path/to/archon\batch-runs\google-adk-improvements\continue.md
 ```
 
 ### Check progress

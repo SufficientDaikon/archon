@@ -25,7 +25,7 @@
 1. Start a new Copilot CLI session
 2. Paste the auto-continue prompt:
    ```
-   Read and follow the instructions at c:\Users\tahaa\archon\batch-runs\google-adk-improvements\continue.md
+   Read and follow the instructions at /path/to/archon\batch-runs\google-adk-improvements\continue.md
    ```
 3. The agent will automatically pick up where this session left off
 
