@@ -57,6 +57,10 @@ skills:
     path: skills/claude-plugin-archetype
     version: 1.0.0
     tags: [claude, plugin, mcp]
+  - name: codebase-to-course
+    path: skills/codebase-to-course
+    version: 1.0.0
+    tags: [teaching, course, codebase, interactive, html, visualization]
   - name: content-deduplication
     path: skills/content-deduplication
     version: 1.0.0
@@ -207,6 +211,10 @@ skills:
     path: skills/pr-to-course
     version: 1.0.0
     tags: [documentation, course, pr, interactive, teaching]
+  - name: research-paper-to-course
+    path: skills/research-paper-to-course
+    version: 1.0.0
+    tags: [teaching, research, paper, academic, course, interactive]
   - name: packager
     path: skills/packager
     version: 1.0.0
@@ -393,7 +401,15 @@ bundles:
 
   - name: sdd-kit
     path: bundles/sdd-kit
-    skills: [spec-writer, implementer, reviewer, design-handoff, design-review, context-curator]
+    skills:
+      [
+        spec-writer,
+        implementer,
+        reviewer,
+        design-handoff,
+        design-review,
+        context-curator,
+      ]
 
   - name: testing-kit
     path: bundles/testing-kit
@@ -460,11 +476,22 @@ bundles:
 
   - name: devops-kit
     path: bundles/devops-kit
-    skills: [docker-production-build, docker-build, docker-mcp-ops, structured-logging]
+    skills:
+      [
+        docker-production-build,
+        docker-build,
+        docker-mcp-ops,
+        structured-logging,
+      ]
 
   - name: windows-kit
     path: bundles/windows-kit
-    skills: [windows-error-debugger, windows-network-optimizer, windows-registry-editor]
+    skills:
+      [
+        windows-error-debugger,
+        windows-network-optimizer,
+        windows-registry-editor,
+      ]
 
   - name: orchestration-kit
     path: bundles/orchestration-kit
@@ -473,6 +500,16 @@ bundles:
   - name: github-kit
     path: bundles/github-kit
     skills: [github-markdown-mastery, pr-quality-agent]
+
+  - name: teaching-kit
+    path: bundles/teaching-kit
+    skills:
+      [
+        adaptive-teacher,
+        codebase-to-course,
+        research-paper-to-course,
+        pr-to-course,
+      ]
 
 # All registered agents
 agents:
@@ -496,6 +533,8 @@ agents:
     path: agents/dissector-agent
   - name: security-reviewer-agent
     path: agents/security-reviewer-agent
+  - name: university-professor-agent
+    path: agents/university-professor-agent
 
 # All registered synapses
 synapses:
@@ -509,6 +548,14 @@ synapses:
     type: core
   - name: sequential-thinking
     path: synapses/sequential-thinking
+    version: 1.0.0
+    type: core
+  - name: pattern-recognition
+    path: synapses/pattern-recognition
+    version: 1.0.0
+    type: core
+  - name: security-awareness
+    path: synapses/security-awareness
     version: 1.0.0
     type: core
 

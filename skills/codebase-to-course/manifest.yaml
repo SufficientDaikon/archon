@@ -1,0 +1,37 @@
+name: codebase-to-course
+version: 1.0.0
+description: "Transforms any codebase into a beautiful, single-page interactive HTML course that teaches how the code works through visual explanations, animations, quizzes, and plain-English code translations. Designed for 'vibe coders' who build with AI but want to understand what they're building."
+author: zarazhangrui
+license: MIT
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+tags:
+  - teaching
+  - course
+  - codebase
+  - interactive
+  - html
+  - education
+  - visualization
+  - vibe-coding
+triggers:
+  keywords:
+    - codebase-to-course
+    - code-to-course
+    - teach-codebase
+    - explain-codebase
+    - codebase-walkthrough
+  patterns:
+    - "turn this codebase into a course"
+    - "create a course from this code"
+    - "teach me this codebase"
+    - "explain this project"
+    - "make an interactive walkthrough"
+priority: P2
+resources:
+  - references/design-system.md
+  - references/interactive-elements.md

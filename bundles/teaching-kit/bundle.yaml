@@ -1,0 +1,28 @@
+name: teaching-kit
+version: 1.0.0
+description: "Complete teaching and education toolkit with adaptive tutoring, interactive course generation from codebases, research papers, and pull requests. ADHD-friendly pedagogy with anti-hallucination guardrails."
+author: tahaa
+skills:
+  - adaptive-teacher
+  - codebase-to-course
+  - research-paper-to-course
+  - pr-to-course
+meta-agent: university-professor-agent
+dependencies:
+  - research-paper-to-course requires codebase-to-course (shared design system)
+conflict-resolution:
+  - when: "Live tutoring or concept explanation"
+    prefer: adaptive-teacher
+    reason: "Real-time level calibration, Socratic questioning, and reverse prompting for interactive teaching"
+  - when: "Creating a course from a repository or codebase"
+    prefer: codebase-to-course
+    reason: "Specialized in analyzing code structure and generating visual walkthroughs"
+  - when: "Creating a course from an academic research paper"
+    prefer: research-paper-to-course
+    reason: "Specialized in equation translation, assumption auditing, and results comparison"
+  - when: "Creating a course from a pull request"
+    prefer: pr-to-course
+    reason: "Specialized in before/after visualization, behavior matrices, and PR-specific elements"
+  - when: "Teaching with Egyptian Arabic"
+    prefer: adaptive-teacher
+    reason: "Full Egyptian colloquial Arabic support with technical code-switching"

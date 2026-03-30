@@ -1,0 +1,44 @@
+name: research-paper-to-course
+version: 1.0.0
+description: "Transforms academic research papers (arXiv, journals, conference proceedings) into interactive single-page HTML courses that teach the core ideas, methodology, and implications without requiring the reader's prior domain expertise. Handles PDFs, LaTeX source, and web-hosted papers."
+author: tahaa
+license: MIT
+composes:
+  - codebase-to-course
+platforms:
+  - claude-code
+  - copilot-cli
+  - cursor
+  - windsurf
+  - antigravity
+tags:
+  - teaching
+  - research
+  - paper
+  - academic
+  - course
+  - interactive
+  - html
+  - education
+  - arxiv
+  - science
+triggers:
+  keywords:
+    - research-paper-to-course
+    - paper-to-course
+    - teach-paper
+    - explain-paper
+    - paper-course
+    - arxiv-course
+    - research-course
+  patterns:
+    - "turn this paper into a course"
+    - "create a course from this paper"
+    - "teach me this paper"
+    - "explain this research"
+    - "make this paper interactive"
+    - "break down this paper"
+    - "paper walkthrough"
+priority: P2
+resources:
+  - references/academic-elements.md

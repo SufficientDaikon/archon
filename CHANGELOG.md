@@ -12,24 +12,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Archon v1.0.0 is the universal AI agent skills framework with enforced discipline.
 
 **Core Framework**
-- 96 universal skills in a standardized format (SKILL.md + manifest.yaml + resources)
-- 15 domain bundles (Godot, Web Dev, UX, Django, SDD, Testing, Mobile, Meta, Prompts, Security, Data Layer, DevOps, Windows, Orchestration, GitHub)
-- 10 formal agents with personas, skill bindings, guardrails, and handoff protocols
+
+- 98 universal skills in a standardized format (SKILL.md + manifest.yaml + resources)
+- 16 domain bundles (Godot, Web Dev, UX, Django, SDD, Testing, Mobile, Meta, Prompts, Security, Data Layer, DevOps, Windows, Orchestration, GitHub, Teaching)
+- 11 formal agents with personas, skill bindings, guardrails, and handoff protocols
 - 8 resumable multi-agent pipelines with failure recovery and context curation
 - 5 cognitive synapses (metacognition, anti-rationalization, sequential-thinking, security-awareness, pattern-recognition)
 - 5 lifecycle hooks enforcing discipline at runtime
 
 **Architecture**
+
 - 6-layer architecture: Skills -> Agents -> Synapses -> Pipelines -> Guardrails -> Runtime
 - Session state machine with policy engine and telemetry
 - MCP trust routing and agent card system
 - 15 validation schemas
 
 **Platform Support**
+
 - Claude Code, Copilot CLI, Cursor, Windsurf, Antigravity
 - Platform-specific adapters with write-once-deploy-everywhere model
 
 **Developer Experience**
+
 - Full CLI: init, install, doctor, validate, search, info, pipeline, admin, cards
 - Python SDK with programmatic access to all framework capabilities
 - 513 automated tests
