@@ -1,6 +1,6 @@
 name: codebase-to-course
 version: 1.0.0
-description: "Transforms any codebase into a beautiful, single-page interactive HTML course that teaches how the code works through visual explanations, animations, quizzes, and plain-English code translations. Designed for 'vibe coders' who build with AI but want to understand what they're building."
+description: "Transforms any codebase into a single-page interactive HTML course with visual explanations, animations, quizzes, and plain-English code translations"
 author: zarazhangrui
 license: MIT
 platforms:

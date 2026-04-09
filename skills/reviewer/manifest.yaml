@@ -6,6 +6,6 @@ license: MIT
 platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["spec-driven-development"]
 triggers:
-  keywords: ["review against spec", "verify implementation", "spec compliance review", "implementation verification", "quality auditing", "user asks to "review against spec" or "verify implementation""]
+  keywords: ["review against spec", "verify implementation", "spec compliance review", "implementation verification", "quality auditing"]
   patterns: []
 priority: P1

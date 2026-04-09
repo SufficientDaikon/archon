@@ -26,6 +26,7 @@ required_fields:
     max_length: 300
     description: "What this agent does"
 
+optional_fields:
   persona:
     type: object
     required_children:
@@ -80,7 +81,6 @@ required_fields:
     optional_children:
       location: { type: string, description: "Where the output is saved" }
 
-optional_fields:
   tool-access:
     type: list
     item_type: string

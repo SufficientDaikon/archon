@@ -4,7 +4,7 @@ description: "Use when creating new skills, editing existing skills, or verifyin
 author: tahaa
 license: MIT
 platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
-tags: []
+tags: [skill-authoring, creation, verification]
 triggers:
   keywords: ["creating new skills, editing existing skills, or verifying skills work before deployment"]
   patterns: []

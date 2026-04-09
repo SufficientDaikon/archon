@@ -340,6 +340,7 @@ servers:
     package: "stitch"
     category: design
     description: "Google AI design tool — generate UI screens, create design systems, generate variants"
+    install-command: "npx -y stitch"
     server-type: http
     required-env: []
     recommended-for:
@@ -353,6 +354,7 @@ servers:
     package: "custom"
     category: design
     description: "Award-winning portfolio gallery scraper — browse, analyze, and extract CSS from Awwwards-winning sites"
+    install-command: "python tools/awwwards_server.py"
     server-type: stdio
     args-template: ["python", "tools/awwwards_server.py"]
     required-env: []
@@ -368,6 +370,7 @@ servers:
     package: "astro-docs"
     category: development
     description: "Official Astro documentation MCP — search and query Astro 5/6 docs"
+    install-command: "npx -y astro-docs"
     server-type: http
     required-env: []
     recommended-for:

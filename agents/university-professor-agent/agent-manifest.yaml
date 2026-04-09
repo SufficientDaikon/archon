@@ -74,10 +74,10 @@ guardrails:
       on-violation: halt
     - rule: "Create text walls (>3 sentences without visual break)"
       severity: major
-      on-violation: rewrite
+      on-violation: warn
     - rule: "Reuse a metaphor across concepts"
       severity: major
-      on-violation: rewrite
+      on-violation: warn
     - rule: "Skip the honesty section in courses"
       severity: critical
       on-violation: halt
@@ -89,10 +89,10 @@ guardrails:
       on-violation: halt
     - rule: "Treat silence as understanding — short answers mean confusion, probe deeper"
       severity: major
-      on-violation: rewrite
+      on-violation: warn
     - rule: "Use filler confidence language"
       severity: major
-      on-violation: rewrite
+      on-violation: warn
     - rule: "Skip logic gates before responding"
       severity: critical
       on-violation: halt
@@ -120,7 +120,7 @@ guardrails:
       on-violation: halt
     - rule: "Respect ADHD accommodations in all output"
       severity: critical
-      on-violation: rewrite
+      on-violation: halt
     - rule: "Calibrate level per-topic, not globally"
       severity: major
       on-violation: warn

@@ -4,7 +4,7 @@ description: "Package, share, or publish agents, skills, templates, and SDD arti
 author: tahaa
 license: MIT
 platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
-tags: []
+tags: [packaging, sharing, publishing, distribution]
 triggers:
   keywords: ["package this", "share this", "make a repo for this", "publish my agents", "sharing", "publishing", "packaging", "exporting", "or distributing custom agents and skills"]
   patterns: []

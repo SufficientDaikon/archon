@@ -6,6 +6,6 @@ license: MIT
 platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["spec-driven-development"]
 triggers:
-  keywords: ["write a spec", "create a specification", "turn this plan into a spec", "requirements engineering", "spec creation", "user story writing", "acceptance criteria definition", "the user asks to "write a spec"", ""create a specification"", "or "turn this plan into a spec""]
+  keywords: ["write a spec", "create a specification", "turn this plan into a spec", "requirements engineering", "spec creation", "user story writing", "acceptance criteria definition"]
   patterns: []
 priority: P1

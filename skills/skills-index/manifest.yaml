@@ -4,7 +4,7 @@ description: "Master index of all installed agent skills. Consult this to know w
 author: tahaa
 license: MIT
 platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
-tags: []
+tags: [index, catalog, registry, discovery]
 triggers:
   keywords: ["skills", "index", "catalog", "registry", "lookup"]
   patterns: []

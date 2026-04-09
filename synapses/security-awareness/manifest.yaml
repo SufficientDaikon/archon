@@ -1,9 +1,23 @@
 name: security-awareness
 version: 1.0.0
-type: cross-cutting
+synapse-type: core
 author: tahaa
 
 description: "Cross-cutting security synapse that fires during code-producing tasks to inject OWASP-aware security checks into agent reasoning"
+
+firing-phases:
+  - name: SCAN
+    timing: active
+    description: "Check input boundaries, auth chain, output safety, and data handling"
+  - name: FLAG
+    timing: post-task
+    description: "Review all fetch/query/template/file/redirect calls for known vulnerability patterns"
+
+tags:
+  - security
+  - owasp
+  - vulnerability-detection
+  - code-review
 
 activation:
   triggers:
@@ -14,14 +28,6 @@ activation:
     - "documentation tasks"
     - "specification-only tasks"
     - "design tasks"
-
-phases:
-  - name: SCAN
-    timing: during-production
-    description: "Check input boundaries, auth chain, output safety, and data handling"
-  - name: FLAG
-    timing: post-production
-    description: "Review all fetch/query/template/file/redirect calls for known vulnerability patterns"
 
 related-skills:
   - guard-chain

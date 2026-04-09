@@ -516,7 +516,7 @@ def _validate_catalog(root: Path) -> dict:
 
         # Optional: server-type
         stype = entry.get("server-type")
-        if stype is not None and stype not in ("stdio", "sse"):
+        if stype is not None and stype not in ("stdio", "sse", "http"):
             result["errors"].append(f"{prefix}.server-type: '{stype}' not in [stdio, sse]")
 
     if result["errors"]:
