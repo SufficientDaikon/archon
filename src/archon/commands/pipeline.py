@@ -18,7 +18,8 @@ pipeline_app = typer.Typer(help="Run and manage pipelines.", no_args_is_help=Tru
 
 ARCHON_ROOT = Path(__file__).parent.parent.parent.parent
 HOOKS_DIR = ARCHON_ROOT / "hooks"
-STATE_DIR = Path.home() / ".copilot" / ".archon" / "pipeline-states"
+from archon.utils.paths import get_archon_home
+STATE_DIR = get_archon_home() / "pipeline-states"
 PIPELINES_DIR = ARCHON_ROOT / "pipelines"
 
 
@@ -113,13 +114,29 @@ def pipeline_run(
         if not is_json():
             console.print(
                 f"  [bold]Phase {step_index + 1}/{step_count}:[/bold] "
-                f"{step_name} → {step_agent}"
+                f"{step_name} -> {step_agent}"
             )
 
-        result = executor._default_step_handler(step_config, None)
+        # Build a lightweight state proxy from context for the real handler
+        state_dict = context.get("state", {})
+
+        class _StateProxy:
+            def __init__(self, d):
+                self.accumulated = d.get("accumulated", {})
+                self.steps = d.get("steps", [])
+                self.project_dir = context.get("project_dir", ".")
+
+        result = executor._default_step_handler(step_config, _StateProxy(state_dict))
 
         if not is_json():
-            console.print(f"    {_icon(result.status.value)} {step_name} — {result.status.value}")
+            icon = _icon(result.status.value)
+            console.print(f"    {icon} {step_name} -- {result.status.value}")
+            if result.artifacts:
+                for a in result.artifacts:
+                    console.print(f"      -> {a}")
+            if result.errors:
+                for e in result.errors:
+                    print_warning(f"      {e}")
 
         return result
 

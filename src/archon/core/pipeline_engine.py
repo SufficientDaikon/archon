@@ -119,10 +119,13 @@ class PipelineExecutor:
         self,
         hooks_dir: Path | None = None,
         state_dir: Path | None = None,
+        simulation: bool = False,
     ):
         self.hooks_dir = hooks_dir or ARCHON_ROOT / "hooks"
-        self.state_dir = state_dir or Path.home() / ".copilot" / ".archon" / "pipeline-states"
+        from archon.utils.paths import get_archon_home
+        self.state_dir = state_dir or get_archon_home() / "pipeline-states"
         self.state_dir.mkdir(parents=True, exist_ok=True)
+        self.simulation = simulation
 
         self._hooks: dict[str, Callable] = {}
         self._load_hooks()
@@ -368,13 +371,140 @@ class PipelineExecutor:
         return state.to_dict()
 
     def _default_step_handler(self, step_config: dict[str, Any], state: Any) -> StepResult:
-        """Default step handler — marks step as completed (simulation mode)."""
+        """Execute a pipeline step by dispatching to the named agent via Claude Code CLI.
+
+        Resolves the agent's AGENT.md, constructs a prompt with the agent's
+        instructions plus accumulated pipeline state, and dispatches via
+        ``claude --print -p <prompt>``.
+
+        In simulation mode (``self.simulation=True``), marks steps as completed
+        immediately without executing anything -- useful for tests and dry runs.
+        """
         step_name = step_config.get("name", "unknown")
-        return StepResult(
-            step_name=step_name,
-            status=StepStatus.COMPLETED,
-            artifacts=[step_config.get("output", "")],
-        )
+
+        # Simulation mode: mark completed without doing work
+        if self.simulation:
+            return StepResult(
+                step_name=step_name,
+                status=StepStatus.COMPLETED,
+                artifacts=[step_config.get("output", "")],
+            )
+
+        import json
+        import subprocess
+
+        step_name = step_config.get("name", "unknown")
+        agent_name = step_config.get("agent", "")
+
+        if not agent_name:
+            return StepResult(
+                step_name=step_name,
+                status=StepStatus.FAILED,
+                errors=["No agent specified for step"],
+            )
+
+        # Resolve agent AGENT.md
+        agent_dir = ARCHON_ROOT / "agents" / agent_name
+        agent_md = agent_dir / "AGENT.md"
+
+        if not agent_md.exists():
+            return StepResult(
+                step_name=step_name,
+                status=StepStatus.FAILED,
+                errors=[f"Agent '{agent_name}' not found at {agent_dir}"],
+            )
+
+        agent_instructions = agent_md.read_text(encoding="utf-8")
+        step_input = step_config.get("input", "")
+        step_output_desc = step_config.get("output", "")
+
+        # Build context from accumulated state
+        context_payload = ""
+        if hasattr(state, "accumulated"):
+            context_payload = json.dumps(state.accumulated, indent=2, default=str)
+
+        # Gather previous step artifacts
+        prev_artifacts = ""
+        if hasattr(state, "steps") and state.steps:
+            artifact_lines = []
+            for prev in state.steps:
+                if prev.get("status") == "completed" and prev.get("artifacts"):
+                    artifact_lines.append(
+                        f"- {prev['step_name']}: {', '.join(prev['artifacts'])}"
+                    )
+            if artifact_lines:
+                prev_artifacts = "\n".join(artifact_lines)
+
+        # Construct the prompt
+        prompt_parts = [
+            f"# Agent: {agent_name}",
+            "",
+            agent_instructions,
+            "",
+            f"# Step: {step_name}",
+            f"## Input\n{step_input}",
+            f"## Expected Output\n{step_output_desc}",
+        ]
+        if context_payload:
+            prompt_parts.append(f"## Accumulated Context\n```json\n{context_payload}\n```")
+        if prev_artifacts:
+            prompt_parts.append(f"## Previous Step Artifacts\n{prev_artifacts}")
+
+        prompt = "\n\n".join(prompt_parts)
+
+        # Resolve project directory
+        project_dir = "."
+        if hasattr(state, "project_dir"):
+            project_dir = state.project_dir
+
+        # Execute via Claude Code CLI
+        try:
+            result = subprocess.run(
+                ["claude", "--print", "-p", prompt],
+                capture_output=True,
+                text=True,
+                timeout=600,
+                cwd=project_dir,
+            )
+
+            if result.returncode != 0:
+                stderr_snippet = result.stderr[:500] if result.stderr else "no stderr"
+                return StepResult(
+                    step_name=step_name,
+                    status=StepStatus.FAILED,
+                    errors=[f"Claude CLI exited with code {result.returncode}: {stderr_snippet}"],
+                )
+
+            # Write output artifact to project dir
+            artifacts = []
+            if result.stdout:
+                output_dir = Path(project_dir) / ".archon" / "artifacts"
+                output_dir.mkdir(parents=True, exist_ok=True)
+                out_file = output_dir / f"{step_name}-output.md"
+                out_file.write_text(result.stdout, encoding="utf-8")
+                artifacts.append(str(out_file))
+
+            return StepResult(
+                step_name=step_name,
+                status=StepStatus.COMPLETED,
+                artifacts=artifacts,
+            )
+
+        except subprocess.TimeoutExpired:
+            return StepResult(
+                step_name=step_name,
+                status=StepStatus.FAILED,
+                errors=["Agent execution timed out (600s)"],
+            )
+        except FileNotFoundError:
+            return StepResult(
+                step_name=step_name,
+                status=StepStatus.FAILED,
+                errors=[
+                    "Claude Code CLI not found. "
+                    "Install with: npm install -g @anthropic-ai/claude-code"
+                ],
+            )
 
     def _handle_failure(
         self,

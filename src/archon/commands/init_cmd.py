@@ -1,7 +1,12 @@
-"""``archon init`` — first-time setup (US-1, FR-009 through FR-012)."""
+"""``archon init`` — first-time setup (US-1, FR-009 through FR-012).
+
+Detects platforms, creates configuration, and installs the Virtuoso Engine
+(cognitive kernel + all synapses) to detected platforms.
+"""
 
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Optional
 
 import typer
@@ -10,11 +15,12 @@ from archon.core.config import (
     is_initialized, load_config, save_config, VALID_KEYS,
 )
 from archon.core.platform import detect_platforms
+from archon.core.virtuoso import install_virtuoso, get_virtuoso_xml_path
 from archon.utils.output import (
     console, print_success, print_warning, print_info, print_error,
     is_json, json_envelope, print_json,
 )
-from archon.utils.paths import get_archon_home, get_config_path
+from archon.utils.paths import get_archon_home, get_config_path, get_archon_root
 
 
 def init_cmd(
@@ -70,6 +76,25 @@ def init_cmd(
     # FR-009: Save configuration
     save_config(cfg)
 
+    # ── Install Virtuoso Engine ──────────────────────────────────
+    archon_root = get_archon_root()
+    virtuoso_results: dict = {"installed": False, "synapses": 0}
+
+    if detected:
+        virtuoso_xml = get_virtuoso_xml_path(archon_root)
+        if virtuoso_xml.exists():
+            for p in detected:
+                if p.skills_target is not None:
+                    # Determine the platform's parent dir for CLAUDE.md
+                    claude_dir = p.skills_target.parent
+                    ok = install_virtuoso(archon_root, p.skills_target, claude_dir)
+                    if ok:
+                        virtuoso_results["installed"] = True
+        else:
+            if not is_json():
+                print_warning("Virtuoso engine not found — skipping cognitive kernel install.")
+                print_info(f"Expected at: {virtuoso_xml}")
+
     # ── Output ──────────────────────────────────────────────────
 
     if is_json():
@@ -83,6 +108,7 @@ def init_cmd(
                     for p in detected
                 ],
                 "default_platform": cfg["default_platform"],
+                "virtuoso": virtuoso_results,
             },
         ))
         return
@@ -100,6 +126,12 @@ def init_cmd(
             console.print(f"  {icon} [bold]{p.name}[/bold] ({p.id}) — {p.scope}")
             if p.installed_skills:
                 console.print(f"     {len(p.installed_skills)} skill(s) already installed")
+
+        if virtuoso_results["installed"]:
+            console.print()
+            console.print("[bold]Virtuoso Engine:[/bold]")
+            console.print("  🧠 Cognitive kernel installed (skills/virtuoso/SKILL.md)")
+            console.print("  🧠 5 synapses installed (skills/_synapses/)")
     else:
         print_warning("No AI platforms detected.")
         console.print("  Supported platforms: claude-code, copilot-cli, cursor, windsurf, antigravity")

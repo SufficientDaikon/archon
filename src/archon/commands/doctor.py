@@ -202,6 +202,71 @@ def doctor_cmd() -> None:
             status["healthy"] = p.detected
         platform_statuses.append(status)
 
+    # ── Virtuoso Engine checks ────────────────────────────────────
+    virtuoso_ok = False
+    virtuoso_version = "not installed"
+    synapses_installed = 0
+    agent_library_count = 0
+
+    for p in detected:
+        if p.skills_target:
+            # Check Virtuoso SKILL.md
+            virtuoso_skill = p.skills_target / "virtuoso" / "SKILL.md"
+            if virtuoso_skill.exists():
+                virtuoso_ok = True
+                content = virtuoso_skill.read_text(encoding="utf-8")
+                import re as _re_v
+                ver_match = _re_v.search(r'version="([^"]+)"', content)
+                if ver_match:
+                    virtuoso_version = ver_match.group(1)
+            else:
+                issues.append({
+                    "severity": "warning",
+                    "message": f"Virtuoso engine not installed for {p.name}.",
+                    "remediation": "Run: archon init --force",
+                })
+
+            # Check synapses
+            synapses_dir = p.skills_target / "_synapses"
+            if synapses_dir.exists():
+                synapses_installed = sum(
+                    1 for d in synapses_dir.iterdir()
+                    if d.is_dir() and not d.name.startswith("_") and (d / "SYNAPSE.md").exists()
+                )
+            if synapses_installed < 5:
+                issues.append({
+                    "severity": "warning",
+                    "message": f"Only {synapses_installed}/5 synapses installed.",
+                    "remediation": "Run: archon init --force",
+                })
+            break  # Only check first detected platform
+
+    # Check agent-library
+    from pathlib import Path as _Path
+    agent_library = _Path.home() / ".claude" / "agent-library"
+    if agent_library.exists():
+        agent_library_count = sum(1 for f in agent_library.glob("*.md") if not f.name.startswith("_"))
+
+    # Check agent-router MCP
+    agent_router_ok = False
+    try:
+        import json as _json
+        settings_path = _Path.home() / ".claude" / "settings.json"
+        if settings_path.exists():
+            settings = _json.loads(settings_path.read_text(encoding="utf-8"))
+            mcp_servers = settings.get("mcpServers", {})
+            if "agent-router" in mcp_servers:
+                agent_router_ok = True
+    except Exception:
+        pass
+
+    if not agent_router_ok and agent_library_count > 0:
+        issues.append({
+            "severity": "info",
+            "message": "Agent-router MCP server not registered but agent-library exists.",
+            "remediation": "Register agent-router in ~/.claude/settings.json mcpServers.",
+        })
+
     # ── Installation records check ──────────────────────────────
     records = get_install_records()
     total_installed = len(records)
@@ -238,6 +303,13 @@ def doctor_cmd() -> None:
                         "missing_dependencies": catalog_missing_deps,
                         "missing_details": catalog_missing_details,
                     },
+                },
+                "virtuoso": {
+                    "installed": virtuoso_ok,
+                    "version": virtuoso_version,
+                    "synapses_installed": synapses_installed,
+                    "agent_library_count": agent_library_count,
+                    "agent_router_registered": agent_router_ok,
                 },
                 "platforms": platform_statuses,
                 "installed_components": total_installed,
@@ -294,6 +366,17 @@ def doctor_cmd() -> None:
     console.print(f"  Synapses:    {synapses_count}")
     console.print(f"  MCP Catalog: {catalog_entries} server(s)" + (" ✓" if catalog_ok else " (not loaded)"))
     console.print(f"  Installed:   {total_installed} record(s)")
+    console.print()
+
+    # Virtuoso Engine status
+    console.print("[bold]Virtuoso Engine:[/bold]")
+    if virtuoso_ok:
+        console.print(f"  🧠 Engine:       v{virtuoso_version} ✓")
+    else:
+        console.print("  ❌ Engine:       not installed")
+    console.print(f"  🧠 Synapses:     {synapses_installed}/5")
+    console.print(f"  📚 Agent Library: {agent_library_count} agent(s)")
+    console.print(f"  🔌 Agent Router: {'✓ registered' if agent_router_ok else '❌ not registered'}")
     console.print()
 
     # Issues (FR-025, FR-026)
