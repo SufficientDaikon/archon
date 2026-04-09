@@ -6,6 +6,7 @@ skills:
   - complexity-router
   - context-curator
   - archon-scout
+meta-skill: orchestration-expert
 dependencies: []
 conflict-resolution:
   - when: "Classifying task complexity or choosing agents"

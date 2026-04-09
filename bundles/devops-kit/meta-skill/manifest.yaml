@@ -1,0 +1,21 @@
+name: devops-expert
+type: meta-skill
+version: 1.0.0
+description: "Meta-coordinator for production deployment orchestrating containerization, structured logging, and observability pipelines"
+author: tahaa
+coordinates:
+  - docker-production-build
+  - structured-logging
+trigger-keywords:
+  - deployment
+  - Docker
+  - containerization
+  - logging
+  - observability
+  - production build
+  - monitoring
+  - Pino
+routing-strategy: "deployment-pipeline"
+supports-multi-skill: true
+enforces-quality-gates: true
+stateful: true

@@ -1,0 +1,25 @@
+name: security-expert
+type: meta-skill
+version: 1.0.0
+description: "Meta-coordinator for defense-in-depth security orchestrating guard chains, SSRF protection, error handling architecture, and structured logging for security observability"
+author: tahaa
+coordinates:
+  - guard-chain
+  - event-webhooks
+  - error-handling-architecture
+  - structured-logging
+trigger-keywords:
+  - security
+  - authentication
+  - authorization
+  - guard chain
+  - SSRF
+  - webhook security
+  - error handling
+  - error boundary
+  - security logging
+  - defense in depth
+routing-strategy: "defense-in-depth-layered"
+supports-multi-skill: true
+enforces-quality-gates: true
+stateful: true

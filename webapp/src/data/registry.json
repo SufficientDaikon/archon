@@ -1,1337 +1,1224 @@
 {
   "meta": {
     "name": "archon",
-    "version": "0.2.0",
-    "description": "Universal AI Agent & Skills Framework — one repo, one format, every platform",
+    "version": "1.0.0",
+    "description": "Archon â€” The Virtuoso Engine for AI Agents. Universal skills framework with enforced guardrails, cognitive synapses, and pipeline orchestration.",
     "repository": "https://github.com/SufficientDaikon/archon"
   },
   "stats": {
-    "skills": 49,
-    "agents": 8,
-    "pipelines": 5,
-    "bundles": 8,
+    "skills": 98,
+    "agents": 17,
+    "pipelines": 8,
+    "bundles": 16,
     "platforms": 5,
-    "synapses": 1
+    "synapses": 5
   },
   "platforms": [
     {
       "id": "claude-code",
       "name": "Claude Code",
-      "icon": "⚡",
+      "icon": "lightning",
       "target": "~/.claude/skills/"
     },
     {
       "id": "copilot-cli",
       "name": "Copilot CLI",
-      "icon": "🤖",
+      "icon": "robot",
       "target": "~/.copilot/skills/"
     },
     {
       "id": "cursor",
       "name": "Cursor",
-      "icon": "🎯",
+      "icon": "target",
       "target": ".cursor/rules/"
     },
     {
       "id": "windsurf",
       "name": "Windsurf",
-      "icon": "🌊",
+      "icon": "wave",
       "target": ".windsurfrules"
     },
     {
       "id": "antigravity",
       "name": "Antigravity",
-      "icon": "🚀",
+      "icon": "orbit",
       "target": ".antigravity/skills/"
     }
   ],
   "skills": [
     {
-      "name": "add-adapter",
-      "slug": "add-adapter",
-      "description": "AI-assisted guide for creating platform adapters to transform Archon format into platform-native configurations.",
-      "category": "Meta",
-      "tags": [
-        "meta",
-        "adapter-creation",
-        "self-customization",
-        "platform-integration"
-      ],
-      "priority": "P3",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "name": "archon-scout",
+      "path": "skills/archon-scout",
       "version": "1.0.0",
-      "bundles": [],
-      "pipelines": []
+      "tags": [
+        "research",
+        "intelligence",
+        "archon-forge",
+        "core"
+      ],
+      "priority": "P1"
+    },
+    {
+      "name": "astro-islands-expert",
+      "path": "skills/astro-islands-expert",
+      "version": "1.0.0",
+      "tags": [
+        "astro",
+        "islands",
+        "multi-framework",
+        "hydration"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "adaptive-teacher",
+      "path": "skills/adaptive-teacher",
+      "version": "1.0.0",
+      "tags": [
+        "teaching",
+        "learning",
+        "adaptive",
+        "socratic",
+        "arabic"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "add-adapter",
+      "path": "skills/add-adapter",
+      "version": "1.0.0",
+      "tags": [
+        "self-customization",
+        "meta"
+      ],
+      "priority": "P2"
     },
     {
       "name": "add-agent",
-      "slug": "add-agent",
-      "description": "AI-assisted guide for creating specialized agent definitions with personas, roles, and skill bindings.",
-      "category": "Meta",
-      "tags": [
-        "meta",
-        "agent-creation",
-        "self-customization",
-        "persona",
-        "orchestration"
-      ],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/add-agent",
       "version": "1.0.0",
-      "bundles": [],
-      "pipelines": []
+      "tags": [
+        "self-customization",
+        "meta"
+      ],
+      "priority": "P2"
     },
     {
       "name": "add-bundle",
-      "slug": "add-bundle",
-      "description": "AI-assisted guide for creating new skill bundles with shared resources and curated combinations.",
-      "category": "Meta",
-      "tags": ["meta", "bundle-creation", "self-customization", "skill-groups"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/add-bundle",
       "version": "1.0.0",
-      "bundles": [],
-      "pipelines": []
+      "tags": [
+        "self-customization",
+        "meta"
+      ],
+      "priority": "P2"
     },
     {
       "name": "add-skill",
-      "slug": "add-skill",
-      "description": "AI-assisted guide for creating new Archon skills from templates with validation and best practices.",
-      "category": "Meta",
-      "tags": [
-        "meta",
-        "skill-creation",
-        "self-customization",
-        "templates",
-        "validation"
-      ],
-      "priority": "P1",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/add-skill",
       "version": "1.0.0",
-      "bundles": [],
-      "pipelines": ["skill-factory"]
+      "tags": [
+        "self-customization",
+        "meta"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "async-side-effects",
+      "path": "skills/async-side-effects",
+      "version": "1.0.0",
+      "tags": [
+        "async",
+        "side-effects",
+        "fire-and-forget",
+        "background-tasks"
+      ],
+      "priority": "P2"
     },
     {
       "name": "backend-development",
-      "slug": "backend-development",
-      "description": "Backend API design, database architecture, microservices patterns, and test-driven development expertise.",
-      "category": "Development",
-      "tags": ["backend", "api", "best-practices", "architecture"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
+      "path": "skills/backend-development",
+      "version": "2.0.0",
+      "tags": [
+        "backend",
+        "api",
+        "architecture",
+        "guard-chain"
       ],
+      "priority": "P2"
+    },
+    {
+      "name": "brainstorming",
+      "path": "skills/brainstorming",
       "version": "1.0.0",
-      "bundles": ["web-dev-kit"],
-      "pipelines": []
+      "tags": [
+        "workflow",
+        "ideation",
+        "creativity"
+      ],
+      "priority": "P2"
     },
     {
       "name": "capacitor-best-practices",
-      "slug": "capacitor-best-practices",
-      "description": "Best practices for Capacitor hybrid app development including project structure, plugin usage, and performance optimization.",
-      "category": "Development",
+      "path": "skills/capacitor-best-practices",
+      "version": "1.0.0",
       "tags": [
         "mobile",
         "capacitor",
-        "hybrid-apps",
-        "best-practices",
-        "architecture"
+        "cross-platform",
+        "ionic"
       ],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "priority": "P2"
+    },
+    {
+      "name": "claude-plugin-archetype",
+      "path": "skills/claude-plugin-archetype",
       "version": "1.0.0",
-      "bundles": ["mobile-kit"],
-      "pipelines": []
+      "tags": [
+        "claude",
+        "plugin",
+        "mcp"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "codebase-to-course",
+      "path": "skills/codebase-to-course",
+      "version": "1.0.0",
+      "tags": [
+        "teaching",
+        "course",
+        "codebase",
+        "interactive",
+        "html",
+        "visualization"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "content-deduplication",
+      "path": "skills/content-deduplication",
+      "version": "1.0.0",
+      "tags": [
+        "deduplication",
+        "similarity",
+        "text-processing"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "content-moderation-pipeline",
+      "path": "skills/content-moderation-pipeline",
+      "version": "1.0.0",
+      "tags": [
+        "moderation",
+        "trust-safety",
+        "content-quality",
+        "flagging"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "content-quality-gate",
+      "path": "skills/content-quality-gate",
+      "version": "1.0.0",
+      "tags": [
+        "quality",
+        "validation",
+        "ai"
+      ],
+      "priority": "P2"
     },
     {
       "name": "complexity-router",
-      "slug": "complexity-router",
-      "description": "Intelligent task classification and routing engine for optimal model/agent selection and cost optimization.",
-      "category": "Meta",
+      "path": "skills/complexity-router",
+      "version": "1.0.0",
       "tags": [
         "routing",
-        "classification",
-        "cost-optimization",
-        "model-selection",
-        "orchestration"
+        "core"
       ],
-      "priority": "P0",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
-      "version": "1.0.0",
-      "bundles": [],
-      "pipelines": []
+      "priority": "P0"
     },
     {
       "name": "context-curator",
-      "slug": "context-curator",
-      "description": "Universal context curation for multi-agent pipeline handoffs — summarization, role-based filtering, smart chunking, and state management.",
-      "category": "SDD",
+      "path": "skills/context-curator",
+      "version": "1.0.0",
       "tags": [
         "context-management",
         "pipeline-orchestration",
-        "handoff-validation",
-        "multi-agent"
+        "handoff-validation"
       ],
-      "priority": "P1",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
-      "version": "1.0.0",
-      "bundles": ["sdd-kit"],
-      "pipelines": [
-        "sdd-pipeline",
-        "ux-pipeline",
-        "debug-pipeline",
-        "skill-factory",
-        "full-product"
-      ]
+      "priority": "P1"
     },
     {
       "name": "design-handoff",
-      "slug": "design-handoff",
-      "description": "Design handoff protocols including artifact format standards, lifecycle state management, and quality gate procedures.",
-      "category": "UX/Design",
-      "tags": ["design", "ui-ux", "architecture", "handoff"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
+      "path": "skills/design-handoff",
+      "version": "2.0.0",
+      "tags": [
+        "design",
+        "handoff",
+        "lifecycle",
+        "quality-gates"
       ],
-      "version": "1.0.0",
-      "bundles": ["sdd-kit"],
-      "pipelines": ["ux-pipeline"]
+      "priority": "P2"
     },
     {
       "name": "design-review",
-      "slug": "design-review",
-      "description": "Design critique and review methodology — heuristic evaluation, consistency checking, accessibility compliance, and visual quality assessment.",
-      "category": "UX/Design",
-      "tags": ["design", "ui-ux", "spec-driven-development", "architecture"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/design-review",
       "version": "1.0.0",
-      "bundles": ["sdd-kit"],
-      "pipelines": ["ux-pipeline"]
+      "tags": [
+        "ux",
+        "design",
+        "review",
+        "quality"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "docker-build",
+      "path": "skills/docker-build",
+      "version": "1.0.0",
+      "tags": [
+        "docker",
+        "containerization",
+        "devops",
+        "ci-cd"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "docker-mcp-ops",
+      "path": "skills/docker-mcp-ops",
+      "version": "1.0.0",
+      "tags": [
+        "docker",
+        "mcp",
+        "container-ops",
+        "devops"
+      ],
+      "priority": "P2"
     },
     {
       "name": "django-expert",
-      "slug": "django-expert",
-      "description": "Expert-level Django development for robust Python web applications with ORM, admin, authentication, and best practices.",
-      "category": "Django",
-      "tags": ["django", "python", "backend", "web-framework"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/django-expert",
       "version": "1.0.0",
-      "bundles": ["django-kit"],
-      "pipelines": []
-    },
-    {
-      "name": "django-framework",
-      "slug": "django-framework",
-      "description": "Core Django framework patterns — MVT architecture, URL routing, template system, middleware, and project structure.",
-      "category": "Django",
-      "tags": ["django", "python", "backend", "web-framework"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
-      "version": "1.0.0",
-      "bundles": ["django-kit"],
-      "pipelines": []
-    },
-    {
-      "name": "django-orm-patterns",
-      "slug": "django-orm-patterns",
-      "description": "Django ORM patterns with models, queries, relationships, migrations, and database-driven application best practices.",
-      "category": "Django",
       "tags": [
         "django",
         "python",
-        "backend",
-        "web-framework",
-        "best-practices"
+        "backend"
       ],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "priority": "P2"
+    },
+    {
+      "name": "django-framework",
+      "path": "skills/django-framework",
       "version": "1.0.0",
-      "bundles": ["django-kit"],
-      "pipelines": []
+      "tags": [
+        "django",
+        "python",
+        "backend"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "django-orm-patterns",
+      "path": "skills/django-orm-patterns",
+      "version": "1.0.0",
+      "tags": [
+        "django",
+        "python",
+        "orm",
+        "database"
+      ],
+      "priority": "P2"
     },
     {
       "name": "django-rest-framework",
-      "slug": "django-rest-framework",
-      "description": "Django REST Framework for building APIs with serializers, viewsets, authentication, permissions, and pagination.",
-      "category": "Django",
-      "tags": ["django", "python", "backend", "web-framework", "api"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/django-rest-framework",
       "version": "1.0.0",
-      "bundles": ["django-kit"],
-      "pipelines": []
+      "tags": [
+        "django",
+        "python",
+        "rest",
+        "api"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "dispatching-parallel-agents",
+      "path": "skills/dispatching-parallel-agents",
+      "version": "1.0.0",
+      "tags": [
+        "workflow",
+        "agents",
+        "parallel",
+        "orchestration"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "docker-production-build",
+      "path": "skills/docker-production-build",
+      "version": "1.0.0",
+      "tags": [
+        "docker",
+        "containerization",
+        "devops",
+        "production"
+      ],
+      "priority": "P2"
     },
     {
       "name": "e2e-testing-patterns",
-      "slug": "e2e-testing-patterns",
-      "description": "Master end-to-end testing with Playwright and Cypress — page objects, fixtures, network mocking, and reliable test suites.",
-      "category": "Testing",
-      "tags": ["testing", "quality-assurance", "playwright", "cypress"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/e2e-testing-patterns",
       "version": "1.0.0",
-      "bundles": ["testing-kit"],
-      "pipelines": []
+      "tags": [
+        "testing",
+        "e2e",
+        "playwright",
+        "cypress"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "error-handling-architecture",
+      "path": "skills/error-handling-architecture",
+      "version": "1.0.0",
+      "tags": [
+        "error-handling",
+        "architecture",
+        "reliability"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "event-webhooks",
+      "path": "skills/event-webhooks",
+      "version": "1.0.0",
+      "tags": [
+        "webhooks",
+        "events",
+        "security"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "executing-plans",
+      "path": "skills/executing-plans",
+      "version": "1.0.0",
+      "tags": [
+        "workflow",
+        "execution",
+        "plans"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "eyes",
+      "path": "skills/eyes",
+      "version": "1.0.0",
+      "tags": [
+        "vision",
+        "image-generation",
+        "visual-qa",
+        "gemini",
+        "multimodal"
+      ],
+      "priority": "P1"
     },
     {
       "name": "fastmcp",
-      "slug": "fastmcp",
-      "description": "Build MCP servers in Python with FastMCP framework — expose tools, resources, and prompts to LLMs via Model Context Protocol.",
-      "category": "Development",
-      "tags": ["mcp", "integration", "model-context-protocol", "python"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/fastmcp",
       "version": "1.0.0",
-      "bundles": [],
-      "pipelines": []
+      "tags": [
+        "mcp",
+        "tooling",
+        "python",
+        "server"
+      ],
+      "priority": "P2"
     },
     {
       "name": "find-skills",
-      "slug": "find-skills",
-      "description": "Helps users discover and install the right agent skills by analyzing their questions and matching capabilities.",
-      "category": "Meta",
-      "tags": ["discovery", "search", "skill-matching"],
-      "priority": "P1",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/find-skills",
       "version": "1.0.0",
-      "bundles": ["meta-kit"],
-      "pipelines": []
+      "tags": [
+        "meta",
+        "discovery",
+        "skills"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "finishing-a-development-branch",
+      "path": "skills/finishing-a-development-branch",
+      "version": "1.0.0",
+      "tags": [
+        "workflow",
+        "git",
+        "branching"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "fluent-builder",
+      "path": "skills/fluent-builder",
+      "version": "1.0.0",
+      "tags": [
+        "builder-pattern",
+        "fluent-api",
+        "design-patterns"
+      ],
+      "priority": "P2"
     },
     {
       "name": "frontend-design",
-      "slug": "frontend-design",
-      "description": "Create distinctive, production-grade frontend interfaces with high design quality, responsive layouts, and modern CSS.",
-      "category": "UX/Design",
-      "tags": [
-        "design",
-        "ui-ux",
-        "frontend",
-        "web-development",
-        "architecture"
-      ],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/frontend-design",
       "version": "1.0.0",
-      "bundles": ["web-dev-kit"],
-      "pipelines": []
+      "tags": [
+        "frontend",
+        "design",
+        "web",
+        "ui"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "guard-chain",
+      "path": "skills/guard-chain",
+      "version": "1.0.0",
+      "tags": [
+        "security",
+        "api",
+        "middleware",
+        "authentication"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "github-markdown-mastery",
+      "path": "skills/github-markdown-mastery",
+      "version": "1.0.0",
+      "tags": [
+        "github",
+        "markdown",
+        "mermaid",
+        "badges",
+        "pr",
+        "documentation"
+      ],
+      "priority": "P2"
     },
     {
       "name": "godot-best-practices",
-      "slug": "godot-best-practices",
-      "description": "Godot 4 best practices — naming conventions, type hints, node references, signals, resources, and project structure.",
-      "category": "Godot",
-      "tags": ["godot", "game-dev", "gdscript", "best-practices"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/godot-best-practices",
       "version": "1.0.0",
-      "bundles": ["godot-kit"],
-      "pipelines": []
+      "tags": [
+        "godot",
+        "game-dev",
+        "gdscript"
+      ],
+      "priority": "P2"
     },
     {
       "name": "godot-debugging",
-      "slug": "godot-debugging",
-      "description": "Expert Godot debugging — error interpretation, common bugs, troubleshooting techniques, and performance profiling.",
-      "category": "Godot",
-      "tags": ["godot", "game-dev", "gdscript", "debugging", "troubleshooting"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/godot-debugging",
       "version": "1.0.0",
-      "bundles": ["godot-kit"],
-      "pipelines": []
+      "tags": [
+        "godot",
+        "game-dev",
+        "debugging"
+      ],
+      "priority": "P2"
     },
     {
       "name": "godot-gdscript-mastery",
-      "slug": "godot-gdscript-mastery",
-      "description": "Advanced GDScript mastery — language features, advanced patterns, optimization, and idiomatic Godot 4 coding.",
-      "category": "Godot",
-      "tags": ["godot", "game-dev", "gdscript", "advanced"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/godot-gdscript-mastery",
       "version": "1.0.0",
-      "bundles": ["godot-kit"],
-      "pipelines": []
+      "tags": [
+        "godot",
+        "game-dev",
+        "gdscript"
+      ],
+      "priority": "P2"
     },
     {
       "name": "godot-gdscript-patterns",
-      "slug": "godot-gdscript-patterns",
-      "description": "Master Godot 4 GDScript patterns — signals, scenes, state machines, object pooling, and optimization techniques.",
-      "category": "Godot",
-      "tags": ["godot", "game-dev", "gdscript", "best-practices", "patterns"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/godot-gdscript-patterns",
       "version": "1.0.0",
-      "bundles": ["godot-kit"],
-      "pipelines": []
+      "tags": [
+        "godot",
+        "game-dev",
+        "gdscript",
+        "patterns"
+      ],
+      "priority": "P2"
     },
     {
       "name": "godot-particles",
-      "slug": "godot-particles",
-      "description": "Godot particle systems — GPU/CPU particles, visual effects, particle materials, and performance-optimized VFX.",
-      "category": "Godot",
-      "tags": ["godot", "game-dev", "gdscript", "particles", "vfx"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/godot-particles",
       "version": "1.0.0",
-      "bundles": ["godot-kit"],
-      "pipelines": []
+      "tags": [
+        "godot",
+        "game-dev",
+        "particles",
+        "vfx"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "i18n-strategy",
+      "path": "skills/i18n-strategy",
+      "version": "1.0.0",
+      "tags": [
+        "i18n",
+        "internationalization",
+        "localization",
+        "translations"
+      ],
+      "priority": "P2"
     },
     {
       "name": "implementer",
-      "slug": "implementer",
-      "description": "Spec-driven implementation — TDD precision, incremental building, acceptance criteria testing, and deviation handling.",
-      "category": "SDD",
-      "tags": ["spec-driven-development", "implementation", "tdd"],
-      "priority": "P1",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/implementer",
       "version": "1.0.0",
-      "bundles": ["sdd-kit"],
-      "pipelines": [
-        "sdd-pipeline",
-        "debug-pipeline",
-        "skill-factory",
-        "full-product"
-      ]
+      "tags": [
+        "sdd",
+        "development",
+        "implementation",
+        "tdd"
+      ],
+      "priority": "P2"
     },
     {
       "name": "info-architecture",
-      "slug": "info-architecture",
-      "description": "Information architecture — sitemaps, navigation design, content strategy, user flows, and screen inventories.",
-      "category": "UX/Design",
-      "tags": ["best-practices", "architecture", "information-architecture"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/info-architecture",
       "version": "1.0.0",
-      "bundles": ["ux-design-kit"],
-      "pipelines": []
+      "tags": [
+        "ux",
+        "information-architecture",
+        "navigation"
+      ],
+      "priority": "P2"
     },
     {
       "name": "knowledge-sources",
-      "slug": "knowledge-sources",
-      "description": "Pluggable knowledge base manager — sync and search external content sources, documentation, and reference materials.",
-      "category": "Meta",
-      "tags": [
-        "knowledge-base",
-        "content-sync",
-        "external-docs",
-        "search",
-        "integration"
-      ],
-      "priority": "P1",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/knowledge-sources",
       "version": "1.0.0",
-      "bundles": [],
-      "pipelines": []
+      "tags": [
+        "knowledge",
+        "core"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "lazy-import-patterns",
+      "path": "skills/lazy-import-patterns",
+      "version": "1.0.0",
+      "tags": [
+        "code-splitting",
+        "performance",
+        "dynamic-import",
+        "bundle-optimization"
+      ],
+      "priority": "P2"
     },
     {
       "name": "mcp-builder",
-      "slug": "mcp-builder",
-      "description": "Guide for creating high-quality MCP (Model Context Protocol) servers with proper tool definitions and error handling.",
-      "category": "Development",
-      "tags": ["mcp", "integration", "model-context-protocol", "architecture"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/mcp-builder",
       "version": "1.0.0",
-      "bundles": [],
-      "pipelines": []
+      "tags": [
+        "mcp",
+        "tooling",
+        "server",
+        "integration"
+      ],
+      "priority": "P2"
     },
     {
       "name": "mcp-server-index",
-      "slug": "mcp-server-index",
-      "description": "RAG-indexed registry of configured MCP servers, available tools, and dispatch rules for intelligent routing.",
-      "category": "Development",
-      "tags": ["mcp", "integration", "model-context-protocol", "registry"],
-      "priority": "P3",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/mcp-server-index",
       "version": "1.0.0",
-      "bundles": [],
-      "pipelines": []
+      "tags": [
+        "mcp",
+        "tooling",
+        "index",
+        "catalog"
+      ],
+      "priority": "P2"
     },
     {
       "name": "mobile-design",
-      "slug": "mobile-design",
-      "description": "Mobile-first design and engineering doctrine for iOS and Android — touch targets, gestures, platform conventions.",
-      "category": "UX/Design",
-      "tags": ["design", "ui-ux", "mobile", "ios", "android"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/mobile-design",
       "version": "1.0.0",
-      "bundles": ["mobile-kit"],
-      "pipelines": []
+      "tags": [
+        "mobile",
+        "design",
+        "responsive",
+        "ui"
+      ],
+      "priority": "P2"
     },
     {
       "name": "omega-gdscript-expert",
-      "slug": "omega-gdscript-expert",
-      "description": "Meta Godot/GDScript skill composing all Godot skills with MCP routing and self-evaluation for stable, high-performance code.",
-      "category": "Godot",
-      "tags": ["godot", "game-dev", "gdscript", "meta", "composite"],
-      "priority": "P3",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/omega-gdscript-expert",
       "version": "1.0.0",
-      "bundles": [],
-      "pipelines": []
+      "tags": [
+        "godot",
+        "game-dev",
+        "gdscript",
+        "expert"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "pr-quality-agent",
+      "path": "skills/pr-quality-agent",
+      "version": "1.0.0",
+      "tags": [
+        "pr",
+        "github",
+        "quality",
+        "documentation"
+      ],
+      "priority": "P1"
+    },
+    {
+      "name": "pr-to-course",
+      "path": "skills/pr-to-course",
+      "version": "1.0.0",
+      "tags": [
+        "documentation",
+        "course",
+        "pr",
+        "interactive",
+        "teaching"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "research-paper-to-course",
+      "path": "skills/research-paper-to-course",
+      "version": "1.0.0",
+      "tags": [
+        "teaching",
+        "research",
+        "paper",
+        "academic",
+        "course",
+        "interactive"
+      ],
+      "priority": "P2"
     },
     {
       "name": "packager",
-      "slug": "packager",
-      "description": "Package, share, and publish Copilot CLI agents, skills, and templates as distributable repositories.",
-      "category": "Meta",
-      "tags": ["packaging", "distribution", "sharing"],
-      "priority": "P3",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/packager",
       "version": "1.0.0",
-      "bundles": ["meta-kit"],
-      "pipelines": []
+      "tags": [
+        "meta",
+        "packaging",
+        "distribution"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "plugin-system",
+      "path": "skills/plugin-system",
+      "version": "1.0.0",
+      "tags": [
+        "plugin-system",
+        "extensibility",
+        "architecture"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "prisma-orm-patterns",
+      "path": "skills/prisma-orm-patterns",
+      "version": "1.0.0",
+      "tags": [
+        "database",
+        "prisma",
+        "orm",
+        "schema-design"
+      ],
+      "priority": "P2"
     },
     {
       "name": "prompt-architect",
-      "slug": "prompt-architect",
-      "description": "Analyzes and transforms prompts using 7 research-backed frameworks for maximum AI effectiveness.",
-      "category": "Meta",
-      "tags": ["architecture", "prompt-engineering", "optimization"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/prompt-architect",
       "version": "1.0.0",
-      "bundles": ["meta-kit"],
-      "pipelines": ["skill-factory"]
+      "tags": [
+        "prompt-engineering",
+        "meta",
+        "frameworks"
+      ],
+      "priority": "P2"
     },
     {
       "name": "qa-test-planner",
-      "slug": "qa-test-planner",
-      "description": "Generate comprehensive test plans, manual test cases, regression suites, and structured bug reports.",
-      "category": "Testing",
-      "tags": ["testing", "quality-assurance", "architecture", "test-planning"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/qa-test-planner",
       "version": "1.0.0",
-      "bundles": ["testing-kit"],
-      "pipelines": []
+      "tags": [
+        "testing",
+        "qa",
+        "test-planning"
+      ],
+      "priority": "P2"
     },
     {
       "name": "react-best-practices",
-      "slug": "react-best-practices",
-      "description": "React development guidelines — hooks, component patterns, state management, performance optimization, and testing.",
-      "category": "Development",
-      "tags": ["react", "frontend", "javascript", "best-practices"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/react-best-practices",
       "version": "1.0.0",
-      "bundles": ["web-dev-kit"],
-      "pipelines": []
-    },
-    {
-      "name": "rename-project",
-      "slug": "rename-project",
-      "description": "Complete guide for forking and renaming Archon for custom branding and organizational use.",
-      "category": "Meta",
-      "tags": ["meta", "fork", "rename", "rebrand", "customization"],
-      "priority": "P3",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
-      "version": "1.0.0",
-      "bundles": [],
-      "pipelines": []
-    },
-    {
-      "name": "reviewer",
-      "slug": "reviewer",
-      "description": "Spec compliance verification — gap identification, acceptance criteria validation, evidence-based compliance reporting.",
-      "category": "SDD",
-      "tags": ["spec-driven-development", "review", "compliance"],
-      "priority": "P1",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
-      "version": "1.0.0",
-      "bundles": ["sdd-kit"],
-      "pipelines": [
-        "sdd-pipeline",
-        "debug-pipeline",
-        "skill-factory",
-        "full-product"
-      ]
-    },
-    {
-      "name": "skills-index",
-      "slug": "skills-index",
-      "description": "Master index of all installed agent skills with metadata, categories, and quick-reference lookup.",
-      "category": "Meta",
-      "tags": ["index", "registry", "catalog"],
-      "priority": "P3",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
-      "version": "1.0.0",
-      "bundles": ["meta-kit"],
-      "pipelines": []
-    },
-    {
-      "name": "spec-writer",
-      "slug": "spec-writer",
-      "description": "Transform plans and ideas into comprehensive, implementable specifications with testable acceptance criteria.",
-      "category": "SDD",
-      "tags": ["spec-driven-development", "requirements", "specifications"],
-      "priority": "P1",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
-      "version": "1.0.0",
-      "bundles": ["sdd-kit"],
-      "pipelines": ["sdd-pipeline", "skill-factory", "full-product"]
-    },
-    {
-      "name": "systematic-debugging",
-      "slug": "systematic-debugging",
-      "description": "Four-phase debugging framework — Symptom → Context → Hypotheses → Solution. Root cause before fix.",
-      "category": "Testing",
-      "tags": ["debugging", "troubleshooting", "root-cause-analysis"],
-      "priority": "P1",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
-      "version": "1.0.0",
-      "bundles": ["testing-kit"],
-      "pipelines": ["debug-pipeline"]
-    },
-    {
-      "name": "ui-ux-designer",
-      "slug": "ui-ux-designer",
-      "description": "Full-spectrum UI/UX designer — interface design, interaction design, user experience, and design system expertise.",
-      "category": "UX/Design",
-      "tags": ["design", "ui-ux", "interface", "experience"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
-      "version": "1.0.0",
-      "bundles": ["ux-design-kit"],
-      "pipelines": []
-    },
-    {
-      "name": "ui-visual-design",
-      "slug": "ui-visual-design",
-      "description": "Visual design mastery — color theory, typography systems, visual hierarchy, hero sections, design tokens, and modern trends.",
-      "category": "UX/Design",
-      "tags": ["design", "ui-ux", "best-practices", "architecture", "visual"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
-      "version": "1.0.0",
-      "bundles": ["ux-design-kit"],
-      "pipelines": ["ux-pipeline"]
-    },
-    {
-      "name": "ux-interaction-design",
-      "slug": "ux-interaction-design",
-      "description": "UX interaction patterns — micro-interactions, state machines, transitions, form UX, animation, and feedback patterns.",
-      "category": "UX/Design",
-      "tags": ["design", "ui-ux", "interaction", "animation", "patterns"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
-      "version": "1.0.0",
-      "bundles": ["ux-design-kit"],
-      "pipelines": []
-    },
-    {
-      "name": "ux-research",
-      "slug": "ux-research",
-      "description": "UX research methodology — persona creation, journey mapping, competitive analysis, and research synthesis.",
-      "category": "UX/Design",
-      "tags": ["design", "ui-ux", "research", "personas", "user-journeys"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
-      "version": "1.0.0",
-      "bundles": ["ux-design-kit"],
-      "pipelines": ["ux-pipeline"]
-    },
-    {
-      "name": "ux-test-suite",
-      "slug": "ux-test-suite",
-      "description": "UX testing patterns — task completion, error recovery, usability scoring, cognitive load heuristics, and flow testing.",
-      "category": "UX/Design",
-      "tags": [
-        "design",
-        "ui-ux",
-        "testing",
-        "quality-assurance",
-        "best-practices"
-      ],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
-      "version": "1.0.0",
-      "bundles": ["ux-design-kit"],
-      "pipelines": []
-    },
-    {
-      "name": "vercel-react-best-practices",
-      "slug": "vercel-react-best-practices",
-      "description": "React and Next.js performance optimization guidelines from Vercel Engineering — SSR, ISR, edge functions.",
-      "category": "Development",
       "tags": [
         "react",
         "frontend",
-        "javascript",
-        "best-practices",
-        "nextjs",
-        "vercel"
+        "web"
       ],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "priority": "P2"
+    },
+    {
+      "name": "receiving-code-review",
+      "path": "skills/receiving-code-review",
       "version": "1.0.0",
-      "bundles": ["web-dev-kit"],
-      "pipelines": []
+      "tags": [
+        "workflow",
+        "code-review",
+        "process"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "requesting-code-review",
+      "path": "skills/requesting-code-review",
+      "version": "1.0.0",
+      "tags": [
+        "workflow",
+        "code-review",
+        "process"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "rename-project",
+      "path": "skills/rename-project",
+      "version": "1.0.0",
+      "tags": [
+        "self-customization",
+        "meta"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "reviewer",
+      "path": "skills/reviewer",
+      "version": "1.0.0",
+      "tags": [
+        "sdd",
+        "review",
+        "compliance",
+        "quality"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "sdk-beside-app",
+      "path": "skills/sdk-beside-app",
+      "version": "1.0.0",
+      "tags": [
+        "sdk",
+        "npm",
+        "monorepo",
+        "packaging"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "server-component-patterns",
+      "path": "skills/server-component-patterns",
+      "version": "1.0.0",
+      "tags": [
+        "react",
+        "server-components",
+        "nextjs",
+        "rsc",
+        "streaming"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "singleton-patterns",
+      "path": "skills/singleton-patterns",
+      "version": "1.0.0",
+      "tags": [
+        "singleton",
+        "design-patterns",
+        "serverless",
+        "connection-pooling"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "skills-index",
+      "path": "skills/skills-index",
+      "version": "1.0.0",
+      "tags": [
+        "meta",
+        "index",
+        "discovery"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "spec-writer",
+      "path": "skills/spec-writer",
+      "version": "1.0.0",
+      "tags": [
+        "sdd",
+        "specification",
+        "architecture"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "structured-logging",
+      "path": "skills/structured-logging",
+      "version": "1.0.0",
+      "tags": [
+        "logging",
+        "observability",
+        "pino",
+        "structured-logs"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "subagent-driven-development",
+      "path": "skills/subagent-driven-development",
+      "version": "1.0.0",
+      "tags": [
+        "workflow",
+        "agents",
+        "development"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "systematic-debugging",
+      "path": "skills/systematic-debugging",
+      "version": "1.0.0",
+      "tags": [
+        "testing",
+        "debugging",
+        "root-cause"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "template-variables",
+      "path": "skills/template-variables",
+      "version": "1.0.0",
+      "tags": [
+        "templates",
+        "variables",
+        "text-processing"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "test-driven-development",
+      "path": "skills/test-driven-development",
+      "version": "1.0.0",
+      "tags": [
+        "testing",
+        "tdd",
+        "workflow"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "ui-ux-designer",
+      "path": "skills/ui-ux-designer",
+      "version": "1.0.0",
+      "tags": [
+        "ux",
+        "design",
+        "ui",
+        "visual"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "ui-visual-design",
+      "path": "skills/ui-visual-design",
+      "version": "1.0.0",
+      "tags": [
+        "ux",
+        "design",
+        "visual",
+        "ui"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "ux-writer",
+      "path": "skills/ux-writer",
+      "version": "1.0.0",
+      "tags": [
+        "ux-writing",
+        "copywriting",
+        "portfolio",
+        "archon-forge",
+        "core"
+      ],
+      "priority": "P1"
+    },
+    {
+      "name": "ux-interaction-design",
+      "path": "skills/ux-interaction-design",
+      "version": "1.0.0",
+      "tags": [
+        "ux",
+        "interaction",
+        "design",
+        "animation"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "ux-research",
+      "path": "skills/ux-research",
+      "version": "1.0.0",
+      "tags": [
+        "ux",
+        "research",
+        "user-testing"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "ux-test-suite",
+      "path": "skills/ux-test-suite",
+      "version": "1.0.0",
+      "tags": [
+        "ux",
+        "testing",
+        "usability"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "using-git-worktrees",
+      "path": "skills/using-git-worktrees",
+      "version": "1.0.0",
+      "tags": [
+        "workflow",
+        "git",
+        "worktrees"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "using-superpowers",
+      "path": "skills/using-superpowers",
+      "version": "1.0.0",
+      "tags": [
+        "workflow",
+        "meta",
+        "agent-capabilities"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "vercel-react-best-practices",
+      "path": "skills/vercel-react-best-practices",
+      "version": "1.0.0",
+      "tags": [
+        "react",
+        "vercel",
+        "nextjs",
+        "frontend"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "vitest-unit-patterns",
+      "path": "skills/vitest-unit-patterns",
+      "version": "1.0.0",
+      "tags": [
+        "testing",
+        "vitest",
+        "unit-tests",
+        "mocking",
+        "coverage"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "verification-before-completion",
+      "path": "skills/verification-before-completion",
+      "version": "1.0.0",
+      "tags": [
+        "workflow",
+        "verification",
+        "quality"
+      ],
+      "priority": "P2"
     },
     {
       "name": "web-design-guidelines",
-      "slug": "web-design-guidelines",
-      "description": "Review UI code for Web Interface Guidelines compliance — accessibility, consistency, responsive behavior.",
-      "category": "UX/Design",
-      "tags": [
-        "design",
-        "ui-ux",
-        "best-practices",
-        "architecture",
-        "compliance"
-      ],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/web-design-guidelines",
       "version": "1.0.0",
-      "bundles": [],
-      "pipelines": []
+      "tags": [
+        "frontend",
+        "design",
+        "web",
+        "guidelines"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "white-label-config",
+      "path": "skills/white-label-config",
+      "version": "1.0.0",
+      "tags": [
+        "white-label",
+        "configuration",
+        "feature-flags"
+      ],
+      "priority": "P2"
     },
     {
       "name": "webapp-testing",
-      "slug": "webapp-testing",
-      "description": "Toolkit for interacting with and testing local web applications using Playwright — assertions, screenshots, automation.",
-      "category": "Testing",
-      "tags": ["testing", "quality-assurance", "playwright", "automation"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/webapp-testing",
       "version": "1.0.0",
-      "bundles": ["testing-kit"],
-      "pipelines": []
+      "tags": [
+        "testing",
+        "web",
+        "playwright",
+        "browser"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "windows-error-debugger",
+      "path": "skills/windows-error-debugger",
+      "version": "1.0.0",
+      "tags": [
+        "windows",
+        "debugging",
+        "bsod",
+        "crash",
+        "drivers",
+        "powershell"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "windows-network-optimizer",
+      "path": "skills/windows-network-optimizer",
+      "version": "1.0.0",
+      "tags": [
+        "windows",
+        "network",
+        "optimization",
+        "performance",
+        "powershell"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "windows-registry-editor",
+      "path": "skills/windows-registry-editor",
+      "version": "1.0.0",
+      "tags": [
+        "windows",
+        "registry",
+        "optimization",
+        "gaming",
+        "privacy",
+        "powershell"
+      ],
+      "priority": "P2"
     },
     {
       "name": "wireframing",
-      "slug": "wireframing",
-      "description": "Wireframing patterns — layout grids, content blocks, responsive breakpoints, and low-fidelity page layouts.",
-      "category": "UX/Design",
-      "tags": ["best-practices", "wireframing", "layout", "responsive"],
-      "priority": "P2",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/wireframing",
       "version": "1.0.0",
-      "bundles": ["ux-design-kit"],
-      "pipelines": ["ux-pipeline"]
+      "tags": [
+        "ux",
+        "design",
+        "wireframe",
+        "layout"
+      ],
+      "priority": "P2"
+    },
+    {
+      "name": "writing-plans",
+      "path": "skills/writing-plans",
+      "version": "1.0.0",
+      "tags": [
+        "workflow",
+        "planning",
+        "documentation"
+      ],
+      "priority": "P2"
     },
     {
       "name": "writing-skills",
-      "slug": "writing-skills",
-      "description": "Create, edit, and verify Archon skills — best practices for skill authoring and quality assurance.",
-      "category": "Meta",
-      "tags": ["skill-authoring", "quality", "verification"],
-      "priority": "P1",
-      "platforms": [
-        "claude-code",
-        "copilot-cli",
-        "cursor",
-        "windsurf",
-        "antigravity"
-      ],
+      "path": "skills/writing-skills",
       "version": "1.0.0",
-      "bundles": ["meta-kit"],
-      "pipelines": ["skill-factory"]
-    }
-  ],
-  "agents": [
-    {
-      "name": "Context Curator",
-      "slug": "context-curator-agent",
-      "role": "Context Architect",
-      "emoji": "🧹",
-      "persona": "Universal context curator who distills phase artifacts into optimized, role-aware context briefs for pipeline handoffs. Ensures clean context flows between agents.",
-      "skills": ["context-curator"],
-      "philosophy": "Clean context in, clean work out. An agent that starts with noise produces noise.",
-      "workflowPhase": "Orchestration"
+      "tags": [
+        "meta",
+        "skill-creation",
+        "authoring"
+      ],
+      "priority": "P2"
     },
     {
-      "name": "Debugger",
-      "slug": "debugger-agent",
-      "role": "Debug Investigator",
-      "emoji": "🔍",
-      "persona": "Systematic root cause analyst who follows a rigorous four-phase framework: Symptom → Context → Hypotheses → Solution. Never jumps to fixes.",
-      "skills": ["systematic-debugging"],
-      "philosophy": "A fix without understanding is just tomorrow's bug. Investigation before implementation.",
-      "workflowPhase": "Investigation"
-    },
-    {
-      "name": "Implementer",
-      "slug": "implementer-agent",
-      "role": "Implementation Engineer",
-      "emoji": "🔨",
-      "persona": "Disciplined developer executing specs with TDD precision, building section-by-section with continuous verification. The spec is the contract.",
-      "skills": ["implementer"],
-      "philosophy": "The spec is the contract. My job is to honor that contract exactly — nothing more, nothing less.",
-      "workflowPhase": "Implementation"
-    },
-    {
-      "name": "QA Master",
-      "slug": "qa-master-agent",
-      "role": "QA Engineer",
-      "emoji": "🧪",
-      "persona": "Comprehensive QA engineer ensuring quality through E2E testing, test planning, and systematic validation across the full testing pyramid.",
-      "skills": ["e2e-testing-patterns", "qa-test-planner", "webapp-testing"],
-      "philosophy": "Quality is not an act, it is a habit. Test early, test often, test thoroughly.",
-      "workflowPhase": "Testing"
-    },
-    {
-      "name": "Reviewer",
-      "slug": "reviewer-agent",
-      "role": "Compliance Reviewer",
-      "emoji": "📋",
-      "persona": "Meticulous auditor verifying implementation compliance against specifications with objective, evidence-based verification. Read-only — never modifies code.",
-      "skills": ["reviewer", "design-review"],
-      "philosophy": "I am the guardian between implementation and deployment. My job is to catch gaps before they reach production.",
-      "workflowPhase": "Review"
-    },
-    {
-      "name": "Spec Writer",
-      "slug": "spec-writer-agent",
-      "role": "Specification Architect",
-      "emoji": "📝",
-      "persona": "Requirements engineer transforming ambiguous ideas into crystal-clear, implementable specifications with 100% testable acceptance criteria.",
-      "skills": ["spec-writer", "prompt-architect"],
-      "philosophy": "A perfect specification makes implementation trivial. An ambiguous specification makes implementation impossible.",
-      "workflowPhase": "Specification"
-    },
-    {
-      "name": "UI Designer",
-      "slug": "ui-design-agent",
-      "role": "Visual Designer",
-      "emoji": "🎨",
-      "persona": "Visual design specialist creating beautiful, production-grade interfaces with design tokens, component libraries, and accessible responsive implementations.",
-      "skills": ["ui-visual-design", "frontend-design"],
-      "philosophy": "Design is not just what it looks like. Design is how it works. But it better look damn good while doing it.",
-      "workflowPhase": "Visual Design"
-    },
-    {
-      "name": "UX Researcher",
-      "slug": "ux-research-agent",
-      "role": "UX Researcher",
-      "emoji": "🔬",
-      "persona": "User-centered researcher uncovering user needs through personas, journey mapping, and competitive analysis. Never assumes — validates with data.",
-      "skills": ["ux-research"],
-      "philosophy": "Design without research is just art. Research transforms guesses into validated user needs.",
-      "workflowPhase": "Research"
-    }
-  ],
-  "pipelines": [
-    {
-      "name": "SDD Pipeline",
-      "slug": "sdd-pipeline",
-      "description": "End-to-end Spec-Driven Development: plan → specification → context curation → implementation → review",
-      "trigger": "build feature * from scratch",
-      "version": "1.1.0",
-      "steps": [
-        {
-          "name": "Specify",
-          "agent": "Spec Writer",
-          "description": "Transform user's plan into comprehensive specification"
-        },
-        {
-          "name": "Curate Context",
-          "agent": "Context Curator",
-          "description": "Distill spec into optimized context for implementer"
-        },
-        {
-          "name": "Implement",
-          "agent": "Implementer",
-          "description": "Build the feature with TDD, section by section"
-        },
-        {
-          "name": "Curate for Review",
-          "agent": "Context Curator",
-          "description": "Prepare review context with code + spec mapping"
-        },
-        {
-          "name": "Review",
-          "agent": "Reviewer",
-          "description": "Verify compliance against specification"
-        }
-      ]
-    },
-    {
-      "name": "UX Pipeline",
-      "slug": "ux-pipeline",
-      "description": "Full UX design lifecycle: research → wireframes → visual design → review → handoff",
-      "trigger": "design feature *",
-      "version": "1.1.0",
-      "steps": [
-        {
-          "name": "Research",
-          "agent": "UX Researcher",
-          "description": "Create personas, journey maps, competitive analysis"
-        },
-        {
-          "name": "Curate for Wireframe",
-          "agent": "Context Curator",
-          "description": "Distill research insights for wireframing"
-        },
-        {
-          "name": "Wireframe",
-          "agent": "UI Designer",
-          "description": "Create low-fidelity wireframes from research"
-        },
-        {
-          "name": "Curate for Visual",
-          "agent": "Context Curator",
-          "description": "Prepare design context with wireframes + research"
-        },
-        {
-          "name": "Visual Design",
-          "agent": "UI Designer",
-          "description": "Create high-fidelity designs with design tokens"
-        },
-        {
-          "name": "Review",
-          "agent": "Reviewer",
-          "description": "Design review against wireframes and research"
-        },
-        {
-          "name": "Handoff",
-          "agent": "Implementer",
-          "description": "Create implementation-ready design handoff"
-        }
-      ]
-    },
-    {
-      "name": "Debug Pipeline",
-      "slug": "debug-pipeline",
-      "description": "Systematic bug investigation → root cause analysis → fix → test → review",
-      "trigger": "fix bug *",
-      "version": "1.1.0",
-      "steps": [
-        {
-          "name": "Investigate",
-          "agent": "Debugger",
-          "description": "Systematic root cause analysis and hypothesis testing"
-        },
-        {
-          "name": "Curate for Fix",
-          "agent": "Context Curator",
-          "description": "Distill root cause and affected files for fix"
-        },
-        {
-          "name": "Fix",
-          "agent": "Implementer",
-          "description": "Implement targeted fix based on root cause"
-        },
-        {
-          "name": "Test",
-          "agent": "QA Master",
-          "description": "Verify fix and run regression tests"
-        },
-        {
-          "name": "Review",
-          "agent": "Reviewer",
-          "description": "Code review of fix against root cause analysis"
-        }
-      ]
-    },
-    {
-      "name": "Skill Factory",
-      "slug": "skill-factory",
-      "description": "Guided skill creation: design prompt → specify → implement → validate → review",
-      "trigger": "create a new skill for *",
-      "version": "1.1.0",
-      "steps": [
-        {
-          "name": "Design Prompt",
-          "agent": "Spec Writer",
-          "description": "Design optimized skill prompt structure"
-        },
-        {
-          "name": "Specify",
-          "agent": "Spec Writer",
-          "description": "Create detailed skill specification"
-        },
-        {
-          "name": "Curate Context",
-          "agent": "Context Curator",
-          "description": "Prepare Archon format requirements"
-        },
-        {
-          "name": "Implement",
-          "agent": "Implementer",
-          "description": "Build complete skill directory"
-        },
-        {
-          "name": "Validate",
-          "agent": "QA Master",
-          "description": "Validate manifest, structure, trigger uniqueness"
-        },
-        {
-          "name": "Review",
-          "agent": "Reviewer",
-          "description": "Final quality review of skill"
-        }
-      ]
-    },
-    {
-      "name": "Full Product",
-      "slug": "full-product",
-      "description": "Complete product development: UX design → specification → implementation → testing → review",
-      "trigger": "build product * end-to-end",
-      "version": "1.1.0",
-      "steps": [
-        {
-          "name": "UX Design",
-          "agent": "UX Researcher",
-          "description": "Complete UX package: research, wireframes, designs"
-        },
-        {
-          "name": "Curate for Spec",
-          "agent": "Context Curator",
-          "description": "Distill design decisions for specification"
-        },
-        {
-          "name": "Specify",
-          "agent": "Spec Writer",
-          "description": "Create comprehensive technical specification"
-        },
-        {
-          "name": "Curate for Build",
-          "agent": "Context Curator",
-          "description": "Chunk spec by story with design references"
-        },
-        {
-          "name": "Implement",
-          "agent": "Implementer",
-          "description": "Build the product from specification"
-        },
-        {
-          "name": "Curate for Review",
-          "agent": "Context Curator",
-          "description": "Prepare review context with full artifacts"
-        },
-        {
-          "name": "Review",
-          "agent": "Reviewer",
-          "description": "Verify implementation against spec"
-        },
-        {
-          "name": "Test",
-          "agent": "QA Master",
-          "description": "E2E, accessibility, and UX compliance tests"
-        }
-      ]
+      "name": "yaml-prompt-library",
+      "path": "skills/yaml-prompt-library",
+      "version": "1.0.0",
+      "tags": [
+        "prompts",
+        "yaml",
+        "ai",
+        "prompt-engineering"
+      ],
+      "priority": "P2"
     }
   ],
   "bundles": [
     {
-      "name": "Django Kit",
-      "slug": "django-kit",
-      "description": "Complete Django development toolkit — ORM patterns, REST APIs, authentication, and framework best practices.",
-      "skills": [
-        "django-expert",
-        "django-framework",
-        "django-orm-patterns",
-        "django-rest-framework"
-      ],
-      "skillCount": 4,
-      "category": "Django"
-    },
-    {
-      "name": "Godot Kit",
-      "slug": "godot-kit",
-      "description": "Full Godot 4 game development suite — GDScript mastery, patterns, particles, debugging, and best practices.",
+      "name": "godot-kit",
+      "path": "bundles/godot-kit",
       "skills": [
         "godot-best-practices",
         "godot-debugging",
         "godot-gdscript-mastery",
         "godot-gdscript-patterns",
         "godot-particles"
-      ],
-      "skillCount": 5,
-      "category": "Godot"
+      ]
     },
     {
-      "name": "UX Design Kit",
-      "slug": "ux-design-kit",
-      "description": "Complete UX/UI design pipeline — research, wireframing, visual design, interaction patterns, and testing.",
+      "name": "web-dev-kit",
+      "path": "bundles/web-dev-kit",
+      "skills": [
+        "frontend-design",
+        "react-best-practices",
+        "vercel-react-best-practices",
+        "server-component-patterns",
+        "web-design-guidelines",
+        "backend-development",
+        "i18n-strategy",
+        "error-handling-architecture",
+        "guard-chain",
+        "prisma-orm-patterns"
+      ]
+    },
+    {
+      "name": "ux-design-kit",
+      "path": "bundles/ux-design-kit",
       "skills": [
         "ui-ux-designer",
         "ui-visual-design",
@@ -1340,28 +1227,21 @@
         "ux-test-suite",
         "wireframing",
         "info-architecture"
-      ],
-      "skillCount": 7,
-      "category": "UX/Design"
+      ]
     },
     {
-      "name": "Web Dev Kit",
-      "slug": "web-dev-kit",
-      "description": "Modern web development stack — React, Next.js, frontend design, backend patterns, and Vercel optimization.",
+      "name": "django-kit",
+      "path": "bundles/django-kit",
       "skills": [
-        "frontend-design",
-        "react-best-practices",
-        "vercel-react-best-practices",
-        "web-design-guidelines",
-        "backend-development"
-      ],
-      "skillCount": 5,
-      "category": "Development"
+        "django-expert",
+        "django-framework",
+        "django-orm-patterns",
+        "django-rest-framework"
+      ]
     },
     {
-      "name": "SDD Kit",
-      "slug": "sdd-kit",
-      "description": "Spec-Driven Development complete workflow — write specs, implement with TDD, review for compliance, and manage handoffs.",
+      "name": "sdd-kit",
+      "path": "bundles/sdd-kit",
       "skills": [
         "spec-writer",
         "implementer",
@@ -1369,81 +1249,270 @@
         "design-handoff",
         "design-review",
         "context-curator"
-      ],
-      "skillCount": 6,
-      "category": "SDD"
+      ]
     },
     {
-      "name": "Testing Kit",
-      "slug": "testing-kit",
-      "description": "Comprehensive testing toolkit — E2E patterns, test planning, webapp automation, and systematic debugging.",
+      "name": "testing-kit",
+      "path": "bundles/testing-kit",
       "skills": [
+        "vitest-unit-patterns",
         "e2e-testing-patterns",
         "qa-test-planner",
         "webapp-testing",
         "systematic-debugging"
-      ],
-      "skillCount": 4,
-      "category": "Testing"
+      ]
     },
     {
-      "name": "Mobile Kit",
-      "slug": "mobile-kit",
-      "description": "Mobile development essentials — mobile-first design doctrine and Capacitor hybrid app best practices.",
-      "skills": ["mobile-design", "capacitor-best-practices"],
-      "skillCount": 2,
-      "category": "Development"
+      "name": "mobile-kit",
+      "path": "bundles/mobile-kit",
+      "skills": [
+        "mobile-design",
+        "capacitor-best-practices"
+      ]
     },
     {
-      "name": "Meta Kit",
-      "slug": "meta-kit",
-      "description": "Archon power tools — skill discovery, authoring, packaging, prompt engineering, and the skills index.",
+      "name": "meta-kit",
+      "path": "bundles/meta-kit",
       "skills": [
         "writing-skills",
         "find-skills",
         "skills-index",
         "packager",
         "prompt-architect"
-      ],
-      "skillCount": 5,
-      "category": "Meta"
+      ]
+    },
+    {
+      "name": "prompts-chat-kit",
+      "path": "bundles/prompts-chat-kit",
+      "skills": [
+        "plugin-system",
+        "fluent-builder",
+        "content-quality-gate",
+        "template-variables",
+        "white-label-config",
+        "claude-plugin-archetype",
+        "yaml-prompt-library",
+        "event-webhooks",
+        "content-deduplication",
+        "sdk-beside-app",
+        "guard-chain",
+        "error-handling-architecture",
+        "prisma-orm-patterns",
+        "async-side-effects",
+        "content-moderation-pipeline",
+        "lazy-import-patterns",
+        "singleton-patterns"
+      ]
+    },
+    {
+      "name": "security-kit",
+      "path": "bundles/security-kit",
+      "skills": [
+        "guard-chain",
+        "event-webhooks",
+        "error-handling-architecture",
+        "structured-logging"
+      ]
+    },
+    {
+      "name": "data-layer-kit",
+      "path": "bundles/data-layer-kit",
+      "skills": [
+        "prisma-orm-patterns",
+        "singleton-patterns",
+        "content-deduplication",
+        "backend-development"
+      ]
+    },
+    {
+      "name": "devops-kit",
+      "path": "bundles/devops-kit",
+      "skills": [
+        "docker-production-build",
+        "docker-build",
+        "docker-mcp-ops",
+        "structured-logging"
+      ]
+    },
+    {
+      "name": "windows-kit",
+      "path": "bundles/windows-kit",
+      "skills": [
+        "windows-error-debugger",
+        "windows-network-optimizer",
+        "windows-registry-editor"
+      ]
+    },
+    {
+      "name": "orchestration-kit",
+      "path": "bundles/orchestration-kit",
+      "skills": [
+        "complexity-router",
+        "context-curator",
+        "archon-scout"
+      ]
+    },
+    {
+      "name": "github-kit",
+      "path": "bundles/github-kit",
+      "skills": [
+        "github-markdown-mastery",
+        "pr-quality-agent"
+      ]
+    },
+    {
+      "name": "teaching-kit",
+      "path": "bundles/teaching-kit",
+      "skills": [
+        "adaptive-teacher",
+        "codebase-to-course",
+        "research-paper-to-course",
+        "pr-to-course"
+      ]
+    }
+  ],
+  "agents": [
+    {
+      "name": "spec-writer-agent",
+      "path": "agents/spec-writer-agent"
+    },
+    {
+      "name": "implementer-agent",
+      "path": "agents/implementer-agent"
+    },
+    {
+      "name": "reviewer-agent",
+      "path": "agents/reviewer-agent"
+    },
+    {
+      "name": "debugger-agent",
+      "path": "agents/debugger-agent"
+    },
+    {
+      "name": "ux-research-agent",
+      "path": "agents/ux-research-agent"
+    },
+    {
+      "name": "ui-design-agent",
+      "path": "agents/ui-design-agent"
+    },
+    {
+      "name": "qa-master-agent",
+      "path": "agents/qa-master-agent"
+    },
+    {
+      "name": "context-curator-agent",
+      "path": "agents/context-curator-agent"
+    },
+    {
+      "name": "dissector-agent",
+      "path": "agents/dissector-agent"
+    },
+    {
+      "name": "security-reviewer-agent",
+      "path": "agents/security-reviewer-agent"
+    },
+    {
+      "name": "university-professor-agent",
+      "path": "agents/university-professor-agent"
+    },
+    {
+      "name": "wireframe-agent",
+      "path": "agents/wireframe-agent"
+    },
+    {
+      "name": "design-reviewer-agent",
+      "path": "agents/design-reviewer-agent"
+    },
+    {
+      "name": "design-handoff-agent",
+      "path": "agents/design-handoff-agent"
+    },
+    {
+      "name": "prompt-architect-agent",
+      "path": "agents/prompt-architect-agent"
+    },
+    {
+      "name": "skill-validator-agent",
+      "path": "agents/skill-validator-agent"
+    },
+    {
+      "name": "ux-lifecycle-master-agent",
+      "path": "agents/ux-lifecycle-master-agent"
+    }
+  ],
+  "pipelines": [
+    {
+      "name": "sdd-pipeline",
+      "path": "pipelines/sdd-pipeline.yaml",
+      "trigger": "build feature * from scratch"
+    },
+    {
+      "name": "ux-pipeline",
+      "path": "pipelines/ux-pipeline.yaml",
+      "trigger": "design feature *"
+    },
+    {
+      "name": "debug-pipeline",
+      "path": "pipelines/debug-pipeline.yaml",
+      "trigger": "fix bug *"
+    },
+    {
+      "name": "skill-factory",
+      "path": "pipelines/skill-factory.yaml",
+      "trigger": "create a new skill for *"
+    },
+    {
+      "name": "full-product",
+      "path": "pipelines/full-product.yaml",
+      "trigger": "build product * end-to-end"
+    },
+    {
+      "name": "batch-sdd-pipeline",
+      "path": "pipelines/batch-sdd-pipeline.yaml",
+      "trigger": "batch implement plans in *"
+    },
+    {
+      "name": "dissect-to-skill",
+      "path": "pipelines/dissect-to-skill.yaml",
+      "trigger": "dissect codebase * into skills"
+    },
+    {
+      "name": "skill-upgrade",
+      "path": "pipelines/skill-upgrade.yaml",
+      "trigger": "upgrade skill * to gold"
     }
   ],
   "synapses": [
     {
       "name": "metacognition",
-      "slug": "metacognition",
-      "description": "Structured self-awareness for agents — plan before acting, monitor confidence during execution, reflect on quality after completion",
-      "synapseType": "core",
+      "path": "synapses/metacognition",
       "version": "1.0.0",
-      "tags": ["metacognition", "reasoning", "self-awareness", "core"],
-      "firingPhases": [
-        {
-          "name": "PLAN",
-          "timing": "pre-task",
-          "description": "Assess complexity, inventory knowledge, select strategy, define exit criteria"
-        },
-        {
-          "name": "MONITOR",
-          "timing": "active",
-          "description": "Tag confidence on decisions, check progress, detect stuck loops, track assumptions"
-        },
-        {
-          "name": "REFLECT",
-          "timing": "post-task",
-          "description": "Self-score quality, capture lessons learned, disclose known gaps and uncertainties"
-        }
-      ],
-      "agents": [
-        "spec-writer-agent",
-        "implementer-agent",
-        "reviewer-agent",
-        "debugger-agent",
-        "ux-research-agent",
-        "ui-design-agent",
-        "qa-master-agent",
-        "context-curator-agent"
-      ]
+      "type": "core"
+    },
+    {
+      "name": "anti-rationalization",
+      "path": "synapses/anti-rationalization",
+      "version": "1.0.0",
+      "type": "core"
+    },
+    {
+      "name": "sequential-thinking",
+      "path": "synapses/sequential-thinking",
+      "version": "1.0.0",
+      "type": "core"
+    },
+    {
+      "name": "pattern-recognition",
+      "path": "synapses/pattern-recognition",
+      "version": "1.0.0",
+      "type": "core"
+    },
+    {
+      "name": "security-awareness",
+      "path": "synapses/security-awareness",
+      "version": "1.0.0",
+      "type": "core"
     }
   ]
 }

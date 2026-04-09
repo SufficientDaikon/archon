@@ -1,8 +1,8 @@
 {
   "name": "archon",
   "displayName": "Archon — AI Agent Framework",
-  "description": "Visual interface for the Archon universal AI agent & skills framework. Browse 49+ skills, run pipelines, invoke agents, and monitor health — all from VS Code.",
-  "version": "0.1.0",
+  "description": "Visual interface for the Archon universal AI agent & skills framework. Browse 98+ skills, run pipelines, invoke agents, and monitor health -- all from VS Code.",
+  "version": "1.0.0",
   "publisher": "sufficientdaikon",
   "license": "MIT",
   "icon": "resources/icon.png",
@@ -159,6 +159,26 @@
         "command": "archon.showSynapseDetail",
         "title": "Archon: Show Synapse Detail",
         "icon": "$(brain)"
+      },
+      {
+        "command": "archon.showSkillDetail",
+        "title": "Archon: Show Skill Detail",
+        "icon": "$(info)"
+      },
+      {
+        "command": "archon.showAgentDetail",
+        "title": "Archon: Show Agent Detail",
+        "icon": "$(info)"
+      },
+      {
+        "command": "archon.invokeAgent",
+        "title": "Archon: Invoke Agent",
+        "icon": "$(play)"
+      },
+      {
+        "command": "archon.refreshDashboard",
+        "title": "Archon: Refresh Dashboard",
+        "icon": "$(refresh)"
       }
     ],
     "menus": {

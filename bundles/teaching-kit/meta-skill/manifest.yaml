@@ -1,0 +1,25 @@
+name: teaching-expert
+type: meta-skill
+version: 1.0.0
+description: "Meta-coordinator for adaptive teaching orchestrating live tutoring, codebase-to-course generation, research paper courses, and PR-based learning with ADHD-friendly delivery"
+author: tahaa
+coordinates:
+  - adaptive-teacher
+  - codebase-to-course
+  - research-paper-to-course
+  - pr-to-course
+trigger-keywords:
+  - teaching
+  - tutoring
+  - course
+  - learn
+  - explain
+  - codebase walkthrough
+  - research paper
+  - PR review learning
+  - adaptive learning
+  - ADHD-friendly
+routing-strategy: "content-source-routing"
+supports-multi-skill: true
+enforces-quality-gates: true
+stateful: true

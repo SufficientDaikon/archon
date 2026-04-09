@@ -1,0 +1,23 @@
+name: orchestration-expert
+type: meta-skill
+version: 1.0.0
+description: "Meta-coordinator for multi-agent orchestration managing complexity classification, context window budgets, and evidence-based research across workflows"
+author: archon
+coordinates:
+  - complexity-router
+  - context-curator
+  - archon-scout
+trigger-keywords:
+  - orchestration
+  - complexity
+  - routing
+  - context window
+  - context management
+  - research
+  - multi-agent
+  - task classification
+  - evidence gathering
+routing-strategy: "assess-then-orchestrate"
+supports-multi-skill: true
+enforces-quality-gates: true
+stateful: true

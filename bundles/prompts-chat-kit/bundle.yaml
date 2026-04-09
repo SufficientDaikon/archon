@@ -19,6 +19,7 @@ skills:
   - event-webhooks
   - content-deduplication
   - sdk-beside-app
+meta-skill: prompts-chat-expert
 
 tags:
   - architecture

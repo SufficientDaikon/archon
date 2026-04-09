@@ -1,0 +1,25 @@
+name: data-layer-expert
+type: meta-skill
+version: 1.0.0
+description: "Meta-coordinator for data layer architecture orchestrating ORM patterns, schema design, connection management, content integrity, and API construction"
+author: tahaa
+coordinates:
+  - prisma-orm-patterns
+  - singleton-patterns
+  - content-deduplication
+  - backend-development
+trigger-keywords:
+  - database
+  - schema design
+  - ORM
+  - Prisma
+  - query optimization
+  - data layer
+  - singleton
+  - deduplication
+  - content integrity
+  - backend API
+routing-strategy: "layered-bottom-up"
+supports-multi-skill: true
+enforces-quality-gates: true
+stateful: true

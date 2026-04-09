@@ -1,0 +1,22 @@
+name: github-expert
+type: meta-skill
+version: 1.0.0
+description: "Meta-coordinator for GitHub documentation and PR quality orchestrating Markdown mastery, Mermaid diagrams, badges, and self-reviewing PR workflows"
+author: archon
+coordinates:
+  - github-markdown-mastery
+  - pr-quality-agent
+trigger-keywords:
+  - GitHub
+  - Markdown
+  - pull request
+  - PR review
+  - Mermaid
+  - badges
+  - README
+  - documentation
+  - GFM
+routing-strategy: "content-type-routing"
+supports-multi-skill: true
+enforces-quality-gates: true
+stateful: true

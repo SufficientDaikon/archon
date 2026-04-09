@@ -6,6 +6,7 @@ skills:
   - windows-error-debugger
   - windows-network-optimizer
   - windows-registry-editor
+meta-skill: windows-expert
 dependencies: []
 conflict-resolution:
   - when: "PC crash, BSOD, or system stability issue"

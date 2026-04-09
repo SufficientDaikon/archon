@@ -1,0 +1,23 @@
+name: windows-expert
+type: meta-skill
+version: 1.0.0
+description: "Meta-coordinator for Windows system administration orchestrating crash debugging, network optimization, and registry management via PowerShell"
+author: archon
+coordinates:
+  - windows-error-debugger
+  - windows-network-optimizer
+  - windows-registry-editor
+trigger-keywords:
+  - Windows
+  - BSOD
+  - crash
+  - network optimization
+  - registry
+  - PowerShell
+  - system administration
+  - performance tuning
+  - Event Log
+routing-strategy: "symptom-based-triage"
+supports-multi-skill: true
+enforces-quality-gates: true
+stateful: true

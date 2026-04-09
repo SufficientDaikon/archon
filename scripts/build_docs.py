@@ -36,9 +36,9 @@ MERMAID_MAPS = {
     end
     block:L3["Layer 3: PIPELINE LAYER\\nsdd | ux | debug | skill-factory | full-product"]:1
     end
-    block:L2["Layer 2: SKILL LAYER\\n48+ skills, each with manifest.yaml"]:1
+    block:L2["Layer 2: SKILL LAYER\\n98 skills, each with manifest.yaml"]:1
     end
-    block:L1["Layer 1: AGENT LAYER\\n9 agents with guardrails & manifests"]:1
+    block:L1["Layer 1: AGENT LAYER\\n17 agents with guardrails & manifests"]:1
     end
     block:L0["Layer 0: BOOTSTRAP & DISCIPLINE\\nHooks, synapses, anti-rationalization"]:1
     end
@@ -921,13 +921,13 @@ INDEX_CONTENT = """<!DOCTYPE html>
 <body>
     <div class="hero">
         <div class="hero-icon">⚡</div>
-        <h1>Archon v2.0</h1>
-        <p>Enforced Intelligence Framework — 61 skills, 9 agents, 6 pipelines, all with runtime guardrails</p>
+        <h1>Archon v1.0</h1>
+        <p>Enforced Intelligence Framework — 98 skills, 17 agents, 8 pipelines, all with runtime guardrails</p>
         <div class="hero-badges">
-            <span class="badge badge-green">v2.0.0</span>
-            <span class="badge badge-blue">61 Skills</span>
-            <span class="badge badge-purple">9 Agents</span>
-            <span class="badge badge-orange">5 Pipelines</span>
+            <span class="badge badge-green">v1.0.0</span>
+            <span class="badge badge-blue">98 Skills</span>
+            <span class="badge badge-purple">17 Agents</span>
+            <span class="badge badge-orange">8 Pipelines</span>
         </div>
     </div>
 

@@ -1,0 +1,32 @@
+name: prompts-chat-expert
+type: meta-skill
+version: 1.0.0
+description: "Meta-coordinator for prompts.chat architecture patterns orchestrating plugin systems, fluent builders, content quality gates, template engines, white-label config, and SDK design"
+author: tahaa
+coordinates:
+  - plugin-system
+  - fluent-builder
+  - content-quality-gate
+  - template-variables
+  - white-label-config
+  - claude-plugin-archetype
+  - yaml-prompt-library
+  - event-webhooks
+  - content-deduplication
+  - sdk-beside-app
+trigger-keywords:
+  - prompts.chat
+  - plugin system
+  - fluent builder
+  - quality gate
+  - template variables
+  - white-label
+  - Claude plugin
+  - prompt library
+  - webhooks
+  - SDK
+  - platform architecture
+routing-strategy: "pattern-based-composition"
+supports-multi-skill: true
+enforces-quality-gates: true
+stateful: true

@@ -1,13 +1,13 @@
 name: teaching-kit
 version: 1.0.0
-description: "Complete teaching and education toolkit with adaptive tutoring, interactive course generation from codebases, research papers, and pull requests. ADHD-friendly pedagogy with anti-hallucination guardrails."
+description: "Teaching toolkit with adaptive tutoring, interactive course generation from codebases, papers, and PRs. ADHD-friendly with anti-hallucination guardrails."
 author: tahaa
 skills:
   - adaptive-teacher
   - codebase-to-course
   - research-paper-to-course
   - pr-to-course
-meta-agent: university-professor-agent
+meta-skill: teaching-expert
 dependencies:
   - research-paper-to-course requires codebase-to-course (shared design system)
 conflict-resolution:

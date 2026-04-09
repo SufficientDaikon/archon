@@ -5,6 +5,7 @@ author: archon
 skills:
   - github-markdown-mastery
   - pr-quality-agent
+meta-skill: github-expert
 dependencies: []
 conflict-resolution:
   - when: "Writing Markdown, README, or using GitHub-specific features"
