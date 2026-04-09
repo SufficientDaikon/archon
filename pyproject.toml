@@ -1,6 +1,6 @@
 [build-system]
 requires = ["hatchling"]
-build-backend = "hatchling.backends"
+build-backend = "hatchling.build"
 
 [project]
 name = "archon"
@@ -20,6 +20,12 @@ classifiers = [
     "Topic :: Software Development :: Libraries",
 ]
 keywords = ["ai", "agents", "skills", "archon", "virtuoso", "claude", "cursor", "windsurf"]
+dependencies = [
+    "typer>=0.9.0",
+    "pyyaml>=6.0",
+    "rich>=13.0",
+    "platformdirs>=4.0",
+]
 
 [project.urls]
 Homepage = "https://github.com/SufficientDaikon/archon"

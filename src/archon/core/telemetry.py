@@ -206,7 +206,8 @@ class ReplayHarness:
     """
 
     def __init__(self, snapshots_dir: Path | None = None):
-        self.snapshots_dir = snapshots_dir or Path.home() / ".copilot" / ".archon" / "snapshots"
+        from archon.utils.paths import get_archon_home
+        self.snapshots_dir = snapshots_dir or get_archon_home() / "snapshots"
 
     def capture(
         self,

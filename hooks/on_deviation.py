@@ -99,7 +99,8 @@ def _log_deviation(deviation: dict[str, Any]) -> None:
     """Write deviation to log file."""
     import json
 
-    log_dir = Path.home() / ".copilot" / ".archon" / "deviations"
+    from archon.utils.paths import get_archon_home
+    log_dir = get_archon_home() / "deviations"
     log_dir.mkdir(parents=True, exist_ok=True)
 
     log_file = log_dir / f"{deviation['pipeline']}-deviations.jsonl"

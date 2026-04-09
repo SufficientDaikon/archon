@@ -21,7 +21,7 @@ class PipelineState:
     Manages persistent state for a pipeline execution.
 
     State is accumulated (grows, never shrinks) and persisted as JSON
-    at ~/.copilot/.archon/pipeline-states/
+    at ~/.archon/pipeline-states/
     """
 
     def __init__(
@@ -70,7 +70,8 @@ class PipelineState:
     @classmethod
     def load(cls, state_id: str, state_dir: Path | None = None) -> PipelineState | None:
         """Load pipeline state from disk."""
-        state_dir = state_dir or Path.home() / ".copilot" / ".archon" / "pipeline-states"
+        from archon.utils.paths import get_archon_home
+        state_dir = state_dir or get_archon_home() / "pipeline-states"
         state_file = state_dir / f"{state_id}.json"
 
         if not state_file.exists():
@@ -95,7 +96,8 @@ class PipelineState:
 
     def save(self, state_dir: Path | None = None) -> Path:
         """Persist state to disk as JSON."""
-        state_dir = state_dir or self._state_dir or Path.home() / ".copilot" / ".archon" / "pipeline-states"
+        from archon.utils.paths import get_archon_home
+        state_dir = state_dir or self._state_dir or get_archon_home() / "pipeline-states"
         self._state_dir = state_dir
         state_dir.mkdir(parents=True, exist_ok=True)
 

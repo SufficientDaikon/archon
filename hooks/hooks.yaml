@@ -57,5 +57,5 @@ hooks:
 settings:
   hooks-directory: hooks/
   log-all-events: true
-  log-file: "~/.copilot/.archon/hooks.log"
+  log-file: "~/.archon/hooks.log"
   strict-mode: true  # halt on any hook error (production default)

@@ -481,7 +481,7 @@ class Archon:
 
         executor = PipelineExecutor(
             hooks_dir=self.root / 'hooks',
-            state_dir=Path.home() / '.copilot' / '.archon' / 'pipeline-states',
+            state_dir=Path.home() / '.archon' / 'pipeline-states',
         )
         pipeline = executor.load_pipeline(name)
         return executor.execute(pipeline, project_dir=project_dir, config=config)
@@ -525,7 +525,7 @@ class Archon:
         Returns:
             List of pipeline state summaries
         """
-        state_dir = Path.home() / '.copilot' / '.archon' / 'pipeline-states'
+        state_dir = Path.home() / '.archon' / 'pipeline-states'
         if not state_dir.exists():
             return []
 

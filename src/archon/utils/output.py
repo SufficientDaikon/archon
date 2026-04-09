@@ -6,6 +6,7 @@ and common UI components (tables, panels, progress bars) used across commands.
 
 from __future__ import annotations
 
+import io
 import json
 import os
 import sys
@@ -34,8 +35,26 @@ _THEME = Theme({
 # Respect NO_COLOR (https://no-color.org/)
 _no_color = "NO_COLOR" in os.environ
 
-console = Console(theme=_THEME, no_color=_no_color)
-err_console = Console(stderr=True, theme=_THEME, no_color=_no_color)
+
+def _safe_file(stream: Any) -> Any:
+    """Wrap a stream in a UTF-8 TextIOWrapper when its encoding can't
+    handle Unicode glyphs (common on Windows cp1252 consoles)."""
+    encoding = getattr(stream, "encoding", "utf-8") or "utf-8"
+    try:
+        "\u2705\U0001f9e0\u2139".encode(encoding)
+        return stream
+    except (UnicodeEncodeError, LookupError):
+        return io.TextIOWrapper(
+            stream.buffer, encoding="utf-8", errors="replace", line_buffering=True,
+        )
+
+
+console = Console(
+    theme=_THEME, no_color=_no_color, file=_safe_file(sys.stdout),
+)
+err_console = Console(
+    stderr=True, theme=_THEME, no_color=_no_color, file=_safe_file(sys.stderr),
+)
 
 # ── Global state set by CLI callbacks ───────────────────────────
 

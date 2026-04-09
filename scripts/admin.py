@@ -13,7 +13,7 @@ from datetime import datetime
 # Add parent dir to path to import SDK
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from sdk.archon import Archon
+from sdk import Archon
 
 
 # ANSI color codes for terminal output

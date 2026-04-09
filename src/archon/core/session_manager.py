@@ -247,7 +247,8 @@ class Session:
 
     def save(self, state_dir: Path | None = None) -> Path:
         """Persist session to disk."""
-        state_dir = state_dir or Path.home() / ".copilot" / ".archon" / "sessions"
+        from archon.utils.paths import get_archon_home
+        state_dir = state_dir or get_archon_home() / "sessions"
         state_dir.mkdir(parents=True, exist_ok=True)
 
         self.updated_at = datetime.now(timezone.utc).isoformat()
@@ -260,7 +261,8 @@ class Session:
     @classmethod
     def load(cls, session_id: str, state_dir: Path | None = None) -> Session | None:
         """Load session from disk."""
-        state_dir = state_dir or Path.home() / ".copilot" / ".archon" / "sessions"
+        from archon.utils.paths import get_archon_home
+        state_dir = state_dir or get_archon_home() / "sessions"
         path = state_dir / f"{session_id}.json"
 
         if not path.exists():
