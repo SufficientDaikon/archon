@@ -13,9 +13,9 @@ from pathlib import Path
 
 import pytest
 
-from src.archon.core.session_manager import Session, SessionStatus
-from src.archon.core.policy_engine import PolicyEngine, PermissionRule
-from src.archon.core.telemetry import (
+from archon.core.session_manager import Session, SessionStatus
+from archon.core.policy_engine import PolicyEngine, PermissionRule
+from archon.core.telemetry import (
     ReplayHarness,
     ReplaySnapshot,
     TelemetryCollector,
@@ -329,7 +329,7 @@ class TestStressFailureInjection:
 
     def test_double_archive_rejected(self):
         """Cannot transition out of archived state."""
-        from src.archon.core.session_manager import InvalidTransitionError
+        from archon.core.session_manager import InvalidTransitionError
         s = Session.create("test", "pipe")
         s.activate()
         s.complete()

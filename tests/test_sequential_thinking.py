@@ -149,7 +149,7 @@ class TestAllCoreSynapses:
             manifest = yaml.safe_load(f)
         synapses = manifest.get("synapses", [])
         core_synapses = [s for s in synapses if s.get("type") == "core"]
-        assert len(core_synapses) == 3
+        assert len(core_synapses) == 5
 
     def test_all_synapse_dirs_exist(self):
         with open(ARCHON_ROOT / "archon.yaml") as f:

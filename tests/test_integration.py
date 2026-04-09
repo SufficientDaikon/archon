@@ -33,6 +33,7 @@ class TestEndToEndPipelineFlow:
             executor = PipelineExecutor(
                 hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
+                simulation=True,
             )
             pipeline = executor.load_pipeline("sdd-pipeline")
 
@@ -69,6 +70,7 @@ class TestEndToEndPipelineFlow:
             executor = PipelineExecutor(
                 hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
+                simulation=True,
             )
             pipeline = executor.load_pipeline("sdd-pipeline")
             result = executor.execute(pipeline, project_dir=tmpdir)
@@ -91,6 +93,7 @@ class TestEndToEndPipelineFlow:
             executor = PipelineExecutor(
                 hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
+                simulation=True,
             )
             pipeline = executor.load_pipeline("sdd-pipeline")
 
@@ -164,35 +167,33 @@ class TestSDKIntegration:
     """Test SDK pipeline methods."""
 
     def test_sdk_health_check_includes_synapses(self):
-        sdk_path = ARCHON_ROOT / "sdk"
-        sys.path.insert(0, str(sdk_path.parent))
-        from sdk.archon import Archon
+        from sdk import Archon
 
         os_sdk = Archon(root_path=ARCHON_ROOT)
         health = os_sdk.health_check()
         assert "synapses_count" in health
-        assert health["synapses_count"] >= 3
+        assert health["synapses_count"] >= 5
 
     def test_sdk_list_synapses(self):
-        from sdk.archon import Archon
+        from sdk import Archon
 
         os_sdk = Archon(root_path=ARCHON_ROOT)
         synapses = os_sdk.list_synapses()
-        assert len(synapses) >= 3
+        assert len(synapses) >= 5
         names = [s["name"] for s in synapses]
         assert "anti-rationalization" in names
         assert "sequential-thinking" in names
         assert "metacognition" in names
 
     def test_sdk_get_core_synapses(self):
-        from sdk.archon import Archon
+        from sdk import Archon
 
         os_sdk = Archon(root_path=ARCHON_ROOT)
         core = os_sdk.get_core_synapses()
         assert len(core) >= 3
 
     def test_sdk_version(self):
-        from sdk.archon import Archon
+        from sdk import Archon
 
         os_sdk = Archon(root_path=ARCHON_ROOT)
         health = os_sdk.health_check()

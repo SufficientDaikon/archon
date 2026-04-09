@@ -13,7 +13,7 @@ from pathlib import Path
 
 import pytest
 
-from src.archon.core.migration import (
+from archon.core.migration import (
     MigrationRunner,
     ReleaseGateValidator,
     ReleaseScorecard,

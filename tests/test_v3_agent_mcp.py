@@ -13,7 +13,7 @@ from pathlib import Path
 
 import pytest
 
-from src.archon.core.agent_mcp import (
+from archon.core.agent_mcp import (
     AgentCapabilityProfile,
     MCPConnector,
     MCPConnectorManager,

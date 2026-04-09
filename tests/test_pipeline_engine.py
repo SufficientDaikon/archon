@@ -109,6 +109,7 @@ class TestPipelineExecutor:
             executor = PipelineExecutor(
                 hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
+                simulation=True,
             )
             assert executor.hooks_dir.exists()
 
@@ -119,6 +120,7 @@ class TestPipelineExecutor:
             executor = PipelineExecutor(
                 hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
+                simulation=True,
             )
             with pytest.raises(FileNotFoundError):
                 executor.load_pipeline("nonexistent-pipeline")
@@ -131,6 +133,7 @@ class TestPipelineExecutor:
             executor = PipelineExecutor(
                 hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
+                simulation=True,
             )
             pipeline = executor.load_pipeline("sdd-pipeline")
             result = executor.execute(pipeline, project_dir=tmpdir)
@@ -160,6 +163,7 @@ class TestPipelineExecutor:
             executor = PipelineExecutor(
                 hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
+                simulation=True,
             )
             pipeline = executor.load_pipeline("sdd-pipeline")
             result = executor.execute(
@@ -195,6 +199,7 @@ class TestPipelineExecutor:
             executor = PipelineExecutor(
                 hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
+                simulation=True,
             )
             pipeline = executor.load_pipeline("sdd-pipeline")
             result = executor.execute(

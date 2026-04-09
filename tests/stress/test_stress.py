@@ -53,6 +53,7 @@ class TestLargePipeline:
             executor = PipelineExecutor(
                 hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
+                simulation=True,
             )
             result = executor.execute(pipeline, project_dir=tmpdir, step_handler=handler)
 
@@ -101,6 +102,7 @@ class TestCascadingFailures:
             executor = PipelineExecutor(
                 hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
+                simulation=True,
             )
             result = executor.execute(
                 pipeline, project_dir=tmpdir, step_handler=failing_at_5

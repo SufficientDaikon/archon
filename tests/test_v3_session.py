@@ -13,7 +13,7 @@ from pathlib import Path
 
 import pytest
 
-from src.archon.core.session_manager import (
+from archon.core.session_manager import (
     InvalidTransitionError,
     Session,
     SessionStatus,

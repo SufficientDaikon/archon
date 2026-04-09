@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import pytest
 
-from src.archon.core.policy_engine import (
+from archon.core.policy_engine import (
     PermissionRule,
     PolicyDecision,
     PolicyEngine,
