@@ -131,7 +131,7 @@ def doctor_cmd() -> None:
         issues.append({
             "severity": "warning",
             "message": "No AI platforms detected.",
-            "remediation": "Install at least one supported platform (Claude Code, Copilot CLI, Cursor, etc.).",
+            "remediation": "Install Claude Code and ensure ~/.claude/ exists, then run: archon init",
         })
 
     # ── MCP Catalog checks (FR-CAT-040 through FR-CAT-044) ─────

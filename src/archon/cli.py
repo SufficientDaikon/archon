@@ -44,7 +44,7 @@ def main(
     quiet: bool = typer.Option(False, "--quiet", "-q", help="Suppress non-error output."),
     verbose: bool = typer.Option(False, "--verbose", "-v", help="Increase output detail."),
 ) -> None:
-    """Archon — manage skills, agents, bundles & pipelines across AI platforms."""
+    """Archon — manage skills, agents, bundles & pipelines for Claude Code."""
     set_output_flags(json_flag=json_output, quiet=quiet, verbose=verbose)
 
 
@@ -60,7 +60,6 @@ from archon.commands.search import search_cmd          # noqa: E402
 from archon.commands.info import info_cmd              # noqa: E402
 from archon.commands.pipeline import pipeline_app      # noqa: E402
 from archon.commands.update import update_cmd          # noqa: E402
-from archon.commands.migrate import migrate_cmd        # noqa: E402
 from archon.commands.admin import admin_cmd            # noqa: E402
 from archon.commands.config import config_cmd          # noqa: E402
 from archon.commands.generate import generate_app      # noqa: E402
@@ -77,7 +76,6 @@ app.command("search", help="Search components by keyword, tag, or description.")
 app.command("info", help="Show detailed information about a component.")(info_cmd)
 app.add_typer(pipeline_app, name="pipeline", help="Run and manage pipelines.")
 app.command("update", help="Check for or apply Archon updates.")(update_cmd)
-app.command("migrate", help="Convert legacy skill formats to Archon format.")(migrate_cmd)
 app.command("admin", help="Administration dashboard with aggregate statistics.")(admin_cmd)
 app.command("config", help="Get or set configuration values.")(config_cmd)
 app.add_typer(generate_app, name="generate", help="Generate framework artifacts.")

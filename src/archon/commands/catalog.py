@@ -289,7 +289,7 @@ def catalog_install_cmd(
     server: str = typer.Argument(..., help="Server name to install (e.g., github)."),
     platform: Optional[str] = typer.Option(
         None, "--platform", "-p",
-        help="Target platform (copilot-cli, claude-code, cursor). Defaults to all detected.",
+        help="Target platform. Defaults to claude-code.",
     ),
 ) -> None:
     """Generate platform MCP config for a server."""

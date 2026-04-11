@@ -133,10 +133,9 @@ def init_cmd(
             console.print("  🧠 Cognitive kernel installed (skills/virtuoso/SKILL.md)")
             console.print("  🧠 5 synapses installed (skills/_synapses/)")
     else:
-        print_warning("No AI platforms detected.")
-        console.print("  Supported platforms: claude-code, copilot-cli, cursor, windsurf, antigravity")
-        console.print("  Install a platform, then run [bold]archon init[/bold] again,")
-        console.print("  or specify one with [bold]archon init --platform <name>[/bold].")
+        print_warning("Claude Code not detected (~/.claude/ not found).")
+        console.print("  Install Claude Code, then run [bold]archon init[/bold] again.")
+        console.print("  Or create the directory manually: [bold]mkdir ~/.claude[/bold]")
 
     console.print()
     console.print("[muted]Next steps:[/muted]")
