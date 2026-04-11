@@ -153,7 +153,3 @@ When this skill completes:
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Cache lives in `~/.archon/` (shared across projects) |
-| Copilot CLI | Same cache location, accessible via terminal |
-| Cursor | Can reference cache in workspace settings |
-| Windsurf | Supports both local and cloud-synced cache |
-| Antigravity | Cache can be team-shared via network mount |

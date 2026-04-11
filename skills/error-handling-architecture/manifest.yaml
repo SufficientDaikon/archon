@@ -4,12 +4,6 @@ description: "Layered error handling with error taxonomy, typed classes, React b
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - error-handling

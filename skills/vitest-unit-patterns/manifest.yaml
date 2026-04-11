@@ -4,12 +4,6 @@ description: "Design fast isolated unit tests with Vitest including mock strateg
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - testing

@@ -5,12 +5,6 @@ description: "Transforms GitHub PRs into beautiful single-page interactive HTML 
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - documentation

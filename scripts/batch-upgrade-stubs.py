@@ -658,10 +658,6 @@ license: MIT
 
 platforms:
   - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
 {chr(10).join(f'  - {t}' for t in tags)}

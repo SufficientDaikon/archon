@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Guide for creating MCP servers that enable LLMs to interact with external services. Supports Python (FastMCP) and Node/TypeScript (MCP SDK)."
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["mcp", "integration", "model-context-protocol", "architecture"]
 triggers:
   keywords: ["building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK)"]

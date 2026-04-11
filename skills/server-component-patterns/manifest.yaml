@@ -4,12 +4,6 @@ description: "Design RSC architectures with minimal client boundaries, streaming
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - react

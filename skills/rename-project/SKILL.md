@@ -232,22 +232,13 @@ Create custom install script:
 ```bash
 # install.sh
 #!/bin/bash
-# Install <NewName> to platform
+# Install <NewName> to Claude Code
 
-PLATFORM=${1:-copilot-cli}
-TARGET=""
-
-case $PLATFORM in
-  "claude-code") TARGET="$HOME/.claude/skills" ;;
-  "copilot-cli") TARGET="$HOME/.copilot/skills" ;;
-  "cursor") TARGET=".cursor/rules" ;;
-  "windsurf") TARGET=".windsurfrules" ;;
-  "antigravity") TARGET=".antigravity/skills" ;;
-esac
+TARGET="$HOME/.claude/skills"
 
 echo "Installing <NewName> to $TARGET..."
-python sdk/<new-name>.py install --platform $PLATFORM
-echo "✅ Installation complete"
+python sdk/<new-name>.py install
+echo "Installation complete"
 ```
 
 ## Rules
@@ -317,8 +308,4 @@ When this skill completes:
 
 | Platform | Notes |
 |----------|-------|
-| Claude Code | N/A - this renames the framework itself |
-| Copilot CLI | Same |
-| Cursor | Same |
-| Windsurf | Same |
-| Antigravity | Same |
+| Claude Code | This skill renames the framework itself. Skills install to ~/.claude/skills/ |

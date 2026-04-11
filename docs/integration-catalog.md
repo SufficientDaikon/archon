@@ -20,8 +20,8 @@ archon catalog list
 # Search for a server
 archon catalog search database
 
-# Install a server for your platform
-archon catalog install github --platform copilot-cli
+# Install a server
+archon catalog install github
 ```
 
 ## Server Entry Format
@@ -116,15 +116,12 @@ Shows two sections:
 
 ### `archon catalog install <server>`
 
-Generate platform MCP config and merge it into the config file.
+Generate the MCP config and merge it into your Claude Code configuration.
 
 ```bash
-archon catalog install github                       # All detected platforms
-archon catalog install github --platform copilot-cli # Specific platform
-archon catalog install postgres --platform claude-code
+archon catalog install github
+archon catalog install postgres
 ```
-
-Supported platforms: `copilot-cli`, `claude-code`, `cursor`.
 
 ### `archon catalog check`
 
@@ -137,39 +134,11 @@ archon catalog check --json
 
 Reports any skills with unmet `mcp-dependencies`.
 
-## Platform Config Formats
+## MCP Config Format
 
-The `catalog install` command generates platform-specific JSON config:
-
-### Copilot CLI (`~/.copilot/mcp-config.json`)
-
-```json
-{
-  "servers": {
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": { "GITHUB_TOKEN": "YOUR_GITHUB_TOKEN_HERE" }
-    }
-  }
-}
-```
+The `catalog install` command generates config for Claude Code at `~/.claude/mcp.json`:
 
 ### Claude Code (`~/.claude/mcp.json`)
-
-```json
-{
-  "mcpServers": {
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": { "GITHUB_TOKEN": "YOUR_GITHUB_TOKEN_HERE" }
-    }
-  }
-}
-```
-
-### Cursor (`.cursor/mcp.json`)
 
 ```json
 {

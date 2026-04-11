@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Design dynamic import strategies for optional heavy dependencies with feature guards and graceful degradation"
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: [code-splitting, performance, dynamic-import, bundle-optimization]
 triggers:
   keywords: ["dynamic import", "code splitting", "lazy load", "bundle size", "optional dependency"]

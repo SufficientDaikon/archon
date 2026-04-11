@@ -18,7 +18,7 @@ class Archon:
 
         sdk = Archon()
         sdk.list_skills(tags=['godot'])
-        sdk.install(platform='copilot-cli', bundle='godot-kit')
+        sdk.install(bundle='godot-kit')
     """
 
     def __init__(self, root_path: Optional[Path] = None):
@@ -251,7 +251,7 @@ class Archon:
         Install skills to a platform.
 
         Args:
-            platform: Target platform (e.g., 'copilot-cli', 'cursor')
+            platform: Target platform (defaults to 'claude-code')
             bundle: Bundle to install (installs all member skills)
             skill: Single skill to install
             target: Custom installation path (overrides platform default)

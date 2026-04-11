@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Skill: godot-gdscript-mastery"
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["godot", "game-dev", "gdscript"]
 triggers:
   keywords: ["GDScript", "godot", "scripting", "signals", "classes"]

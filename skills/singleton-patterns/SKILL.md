@@ -117,7 +117,3 @@ if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Full singleton module creation |
-| Copilot CLI | Full singleton module creation |
-| Cursor | Apply via composer |
-| Windsurf | Apply via cascade |
-| Antigravity | Full file creation |

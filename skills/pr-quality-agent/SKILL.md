@@ -259,6 +259,3 @@ After the pipeline completes:
 | Platform | Support |
 |----------|---------|
 | claude-code | Full — primary platform, uses Bash + gh CLI |
-| copilot-cli | Full — same pipeline |
-| cursor | Partial — no `gh` CLI, outputs file only |
-| windsurf | Partial — no `gh` CLI, outputs file only |

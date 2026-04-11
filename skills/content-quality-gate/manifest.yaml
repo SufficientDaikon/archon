@@ -4,12 +4,6 @@ description: "Two-tier content validation with rule-based checks and optional AI
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - quality

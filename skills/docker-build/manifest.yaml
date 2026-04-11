@@ -4,10 +4,6 @@ description: "Docker image building with proper tagging, cache busting, git SHA 
 author: archon
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
 
 tags:
   - docker

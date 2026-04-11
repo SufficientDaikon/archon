@@ -424,7 +424,3 @@ When this skill completes:
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Full artifact generation supported. Use `open` command to launch HTML in browser. |
-| Copilot CLI | Full artifact generation supported. Generate HTML files in current directory. |
-| Cursor | Inline teaching works best. Artifacts can be previewed in Cursor's built-in browser. |
-| Windsurf | Full support. Use split panes for teaching alongside code. |
-| Antigravity | Full support. |

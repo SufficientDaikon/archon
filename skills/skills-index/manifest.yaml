@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Master index of all installed agent skills. Consult this to know which skills are available and when to use them. AI agents should read the corresponding SKILL.md before working in a skill's domain."
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: [index, catalog, registry, discovery]
 triggers:
   keywords: ["skills", "index", "catalog", "registry", "lookup"]

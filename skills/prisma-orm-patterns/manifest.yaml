@@ -4,12 +4,6 @@ description: "Database schema design, query optimization, and ORM configuration 
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - database

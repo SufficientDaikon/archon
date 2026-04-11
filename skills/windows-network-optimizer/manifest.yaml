@@ -4,10 +4,6 @@ description: "Windows 11 network and system performance optimizer — DNS, NIC t
 author: archon
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
 
 tags:
   - windows

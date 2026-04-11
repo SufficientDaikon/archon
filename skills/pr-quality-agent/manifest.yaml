@@ -4,11 +4,6 @@ description: "Self-reviewing PR quality agent — audits, rewrites, and iterates
 author: archon
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
 
 tags:
   - pr

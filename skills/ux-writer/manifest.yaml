@@ -4,12 +4,6 @@ description: "UX Writer — portfolio copy, hero headlines, project descriptions
 author: archon
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - ux-writing

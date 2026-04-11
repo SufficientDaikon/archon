@@ -3,13 +3,13 @@
 ## General
 
 **Q: What platforms does Archon support?**
-A: Claude Code, GitHub Copilot CLI, Cursor, Windsurf, and Antigravity.
+A: Archon targets Claude Code exclusively.
 
 **Q: Can I use just one bundle instead of everything?**
 A: Yes. `python scripts/install.py --bundle web-dev-kit` installs only that bundle.
 
-**Q: Do I need all 5 platforms installed?**
-A: No. You need at least one. The installer auto-detects what you have.
+**Q: Do I need anything besides Claude Code?**
+A: No. Claude Code is the only platform Archon targets.
 
 ## Skills
 
@@ -66,7 +66,7 @@ A: By default, sources are synced daily. Run `python scripts/admin.py --sync` to
 ## Self-Customization Skills
 
 **Q: What are self-customization skills?**
-A: AI-guided skills that help you extend Archon: `add-skill`, `add-bundle`, `add-agent`, `add-adapter`, and `rename-project`. Tell your AI assistant to "Follow the [skill-name] skill to..." and it will guide you through the process.
+A: AI-guided skills that help you extend Archon: `add-skill`, `add-bundle`, `add-agent`, and `rename-project`. Tell your AI assistant to "Follow the [skill-name] skill to..." and it will guide you through the process.
 
 **Q: Do I still need to follow the manual creation process?**
 A: No. The self-customization skills automate validation, template generation, and installation. But you can still create things manually if you prefer.
@@ -83,7 +83,7 @@ A: Reusable prompt components: router prompts, system prompts, shared formatting
 A: Yes. Edit files in `prompts/` to change how Archon interacts with AI models.
 
 **Q: Are prompts platform-specific?**
-A: No. Prompts are universal. Platform adapters handle any platform-specific formatting.
+A: No. Prompts are authored natively for Claude Code.
 
 ## SDK
 
@@ -163,7 +163,7 @@ A: In v0.x, pipelines were just YAML specs — documentation of what should happ
 A: Via CLI: `archon pipeline run sdd-pipeline --project ./myapp`. Or via SDK: `os.execute_pipeline("sdd-pipeline", project_name="myapp")`.
 
 **Q: What happens to pipeline state if execution stops?**
-A: State is persisted as JSON to `~/.copilot/.archon/pipeline-states/`. Use `archon pipeline resume <state-id>` to continue from where it stopped.
+A: State is persisted as JSON to `~/.claude/.archon/pipeline-states/`. Use `archon pipeline resume <state-id>` to continue from where it stopped.
 
 **Q: What is context curation?**
 A: Between pipeline steps, the context-curator agent creates focused summaries of the previous step's output, filtering to only what the next agent needs. This prevents context pollution across steps.

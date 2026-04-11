@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Implement features from specifications using spec-driven development, task breakdown execution, and TDD from acceptance criteria."
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["spec-driven-development"]
 triggers:
   keywords: ["implement the spec", "build from spec", "execute the implementation plan", "spec-driven implementation", "building from requirements", "task breakdown execution", "TDD from acceptance criteria"]

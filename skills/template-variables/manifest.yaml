@@ -4,12 +4,6 @@ description: "Multi-format template variable detection, normalization, and compi
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - templates

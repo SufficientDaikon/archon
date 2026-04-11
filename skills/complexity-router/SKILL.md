@@ -156,8 +156,4 @@ When this skill completes:
 
 | Platform | Notes |
 |----------|-------|
-| Claude Code | Auto-triggered via system prompt integration |
-| Copilot CLI | Can be invoked via `@complexity-router` mention |
-| Cursor | Integrated into `.cursor/rules/` as routing layer |
-| Windsurf | Applied via `.windsurfrules` preprocessing |
-| Antigravity | Built into agent orchestration layer |
+| Claude Code | Auto-triggered via system prompt integration at ~/.claude/skills/ |

@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Review implementation output against specifications for compliance. Generates HTML/CSS reports comparing code to spec requirements."
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["spec-driven-development"]
 triggers:
   keywords: ["review against spec", "verify implementation", "spec compliance review", "implementation verification", "quality auditing"]

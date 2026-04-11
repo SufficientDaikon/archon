@@ -139,7 +139,3 @@ tests/
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Full test file creation and vitest.config.ts editing |
-| Copilot CLI | Full test file creation and configuration |
-| Cursor | Apply test patterns via composer, run tests in terminal |
-| Windsurf | Apply via cascade, test execution in integrated terminal |
-| Antigravity | Full test file creation and execution |

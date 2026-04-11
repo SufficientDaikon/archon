@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Expert-level Django development for robust Python web applications with ORM, admin, and authentication"
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["django", "python", "backend", "web-framework"]
 triggers:
   keywords: ["django", "python", "ORM", "admin", "authentication"]

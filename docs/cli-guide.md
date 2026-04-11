@@ -66,14 +66,14 @@ Get up and running in 60 seconds:
 # 1. Initialize Archon in your environment
 archon init
 
-# 2. Install the default bundle for your detected platforms
+# 2. Install the default bundle
 archon install --all
 
 # 3. Verify everything is healthy
 archon doctor
 ```
 
-That's it — your AI coding assistants now have access to all Archon skills, agents, and pipelines.
+That's it -- your Claude Code environment now has access to all Archon skills, agents, and pipelines.
 
 ---
 
@@ -122,19 +122,15 @@ archon init [--platform <name>]
 
 | Option              | Description                                                                                                                    |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `--platform <name>` | Skip auto-detection and initialize for a specific platform (`claude-code`, `copilot-cli`, `cursor`, `windsurf`, `antigravity`) |
+| `--platform <name>` | Specify the target platform (default: `claude-code`) |
 
 **Example:**
 
 ```bash
 $ archon init
-✓ Detected platforms: claude-code, copilot-cli, cursor
+✓ Detected platform: claude-code
 ✓ Created ~/.archon/config.yaml
 ✓ Archon initialized successfully
-
-$ archon init --platform cursor
-✓ Initialized for platform: cursor
-✓ Created ~/.archon/config.yaml
 ```
 
 ---
@@ -156,7 +152,7 @@ archon install [--skill <name>] [--bundle <name>] [--all] [--platform <name>] [-
 | `--skill <name>`    | Install a single skill by name                     |
 | `--bundle <name>`   | Install a bundle (domain kit) by name              |
 | `--all`             | Install all available skills and bundles           |
-| `--platform <name>` | Target a specific platform (default: all detected) |
+| `--platform <name>` | Target platform (default: `claude-code`) |
 | `--force`           | Overwrite existing installations without prompting |
 
 **Examples:**
@@ -165,9 +161,7 @@ archon install [--skill <name>] [--bundle <name>] [--all] [--platform <name>] [-
 # Install a single skill
 $ archon install --skill react-best-practices
 ✓ Installed react-best-practices to claude-code
-✓ Installed react-best-practices to copilot-cli
-✓ Installed react-best-practices to cursor
-Installed 1 skill to 3 platforms
+Installed 1 skill
 
 # Install a bundle
 $ archon install --bundle web-dev-kit
@@ -178,16 +172,16 @@ $ archon install --bundle web-dev-kit
   ✓ web-design-guidelines
   ✓ backend-development
   ✓ web-fullstack-expert (meta-skill)
-Installed 6 skills to 3 platforms
+Installed 6 skills
 
 # Install everything
 $ archon install --all
-✓ Installing 83 skills, 13 bundles to 3 platforms...
+✓ Installing 83 skills, 13 bundles...
 Done in 4.2s
 
-# Force reinstall to a specific platform
-$ archon install --skill godot-best-practices --platform cursor --force
-✓ Installed godot-best-practices to cursor (overwritten)
+# Force reinstall a skill
+$ archon install --skill godot-best-practices --force
+✓ Installed godot-best-practices to claude-code (overwritten)
 ```
 
 ---
@@ -207,21 +201,19 @@ archon uninstall <name> [--platform <name>] [--force]
 | Option              | Description                                             |
 | ------------------- | ------------------------------------------------------- |
 | `<name>`            | **(Required)** Name of the skill or bundle to uninstall |
-| `--platform <name>` | Uninstall from a specific platform only (default: all)  |
+| `--platform <name>` | Uninstall from a specific platform (default: `claude-code`) |
 | `--force`           | Skip confirmation prompt                                |
 
 **Example:**
 
 ```bash
 $ archon uninstall godot-best-practices
-⚠ This will remove godot-best-practices from 3 platforms. Continue? [y/N] y
+⚠ This will remove godot-best-practices. Continue? [y/N] y
 ✓ Removed godot-best-practices from claude-code
-✓ Removed godot-best-practices from copilot-cli
-✓ Removed godot-best-practices from cursor
-Uninstalled 1 skill from 3 platforms
+Uninstalled 1 skill
 
-$ archon uninstall web-dev-kit --platform cursor --force
-✓ Removed web-dev-kit (6 skills) from cursor
+$ archon uninstall web-dev-kit --force
+✓ Removed web-dev-kit (6 skills) from claude-code
 ```
 
 ---
@@ -255,10 +247,6 @@ Configuration
 
 Platforms
   ✓ claude-code                 ~/.claude/AGENTS.md found
-  ✓ copilot-cli                 ~/.copilot/ found
-  ✓ cursor                      ~/.cursor/rules/ found
-  ✗ windsurf                    Not detected
-  ✗ antigravity                 Not detected
 
 Skills
   ✓ 83 skills installed         0 conflicts detected
@@ -269,7 +257,7 @@ Version
   ✓ Up to date                  v1.0.0 (latest)
 
 ──────────────────────────────
-Result: 11 passed, 2 skipped, 0 failed
+Result: 10 passed, 0 skipped, 0 failed
 ```
 
 ---
@@ -462,7 +450,7 @@ react-best-practices
   Version:      1.0.0
   Author:       archon-team
   License:      MIT
-  Platforms:    claude-code, copilot-cli, cursor, windsurf, antigravity
+  Platforms:    claude-code
   Tags:         web, react, hooks, performance
   Priority:     P2
   Description:  React development guidelines with hooks, component patterns,
@@ -475,7 +463,7 @@ react-best-practices
   Dependencies: none
   Bundle:       web-dev-kit
 
-  Installed:    Yes (3 platforms)
+  Installed:    Yes
 ```
 
 ---
@@ -658,14 +646,14 @@ archon config [key] [value] [--list]
 # List all config values
 $ archon config --list
 home             = ~/.archon
-platforms        = claude-code, copilot-cli, cursor
+platforms        = claude-code
 default_bundle   = web-dev-kit
 auto_update      = true
 json_output      = false
 
 # Read a single value
 $ archon config platforms
-claude-code, copilot-cli, cursor
+claude-code
 
 # Set a value
 $ archon config auto_update false
@@ -701,8 +689,6 @@ Archon stores configuration in `~/.archon/config.yaml`:
 home: ~/.archon
 platforms:
   - claude-code
-  - copilot-cli
-  - cursor
 default_bundle: web-dev-kit
 auto_update: true
 json_output: false
@@ -725,42 +711,31 @@ Environment variables override config file values:
 Archon_HOME=/opt/archon archon doctor
 
 # Force a specific platform
-Archon_PLATFORM=cursor archon install --all
+Archon_PLATFORM=claude-code archon install --all
 ```
 
 ---
 
 ## Platform Detection
 
-Archon auto-detects installed AI coding assistants by checking for platform-specific files and directories:
+Archon targets Claude Code. On initialization it confirms your `~/.claude/` directory exists.
 
-| Platform        | Detection Method                                              |
-| --------------- | ------------------------------------------------------------- |
-| **Claude Code** | Checks for `~/.claude/` directory and `AGENTS.md`             |
-| **Copilot CLI** | Checks for `~/.copilot/` directory                            |
-| **Cursor**      | Checks for `~/.cursor/rules/` directory                       |
-| **Windsurf**    | Checks for `~/.windsurf/` or `~/.codeium/windsurf/` directory |
-| **Antigravity** | Checks for `~/.antigravity/` directory                        |
+| Platform        | Detection Method                                  |
+| --------------- | ------------------------------------------------- |
+| **Claude Code** | Checks for `~/.claude/` directory and `AGENTS.md` |
 
 ### How It Works
 
-1. On `archon init`, the CLI scans your system for each platform's indicator files.
-2. Detected platforms are saved to `~/.archon/config.yaml`.
-3. On `archon install`, skills are deployed to each detected platform using the appropriate adapter.
-4. Each adapter knows how to transform a universal Archon skill into the platform's native format.
+1. On `archon init`, the CLI checks for the `~/.claude/` directory.
+2. The platform is saved to `~/.archon/config.yaml`.
+3. On `archon install`, skills are deployed directly to `~/.claude/skills/`.
 
 ### Override Detection
 
-Use `--platform` to target a specific platform:
+Use the `Archon_PLATFORM` environment variable if needed:
 
 ```bash
-archon install --all --platform claude-code
-```
-
-Or set the `Archon_PLATFORM` environment variable:
-
-```bash
-export Archon_PLATFORM=cursor
+export Archon_PLATFORM=claude-code
 archon install --all
 ```
 
@@ -779,7 +754,7 @@ When the `--json` flag is passed, all commands output a structured JSON envelope
     "checks_passed": 11,
     "checks_failed": 0,
     "checks_skipped": 2,
-    "platforms": ["claude-code", "copilot-cli", "cursor"]
+    "platforms": ["claude-code"]
   },
   "errors": []
 }

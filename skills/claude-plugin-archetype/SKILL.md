@@ -111,7 +111,3 @@ plugins/claude/<plugin-name>/
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Native platform — full support |
-| Copilot CLI | Not applicable — Claude-specific plugin format |
-| Cursor | Not applicable — Claude-specific plugin format |
-| Windsurf | Not applicable — Claude-specific plugin format |
-| Antigravity | Not applicable — Claude-specific plugin format |

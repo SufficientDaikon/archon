@@ -3,7 +3,6 @@ version: 1.0.0
 description: "UX interaction design patterns including micro-interactions, UI state machines, transitions, form UX, animation principles, and feedback patterns."
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["design", "ui-ux", "spec-driven-development", "best-practices", "architecture"]
 triggers:
   keywords: ["interaction", "animation", "micro-interaction", "states", "transitions"]

@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Build MCP servers in Python with FastMCP to expose tools, resources, and prompts to LLMs. Supports storage backends, middleware, OAuth, and cloud deployment."
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["mcp", "integration", "model-context-protocol"]
 triggers:
   keywords: ["FastMCP", "MCP", "tools", "resources", "server"]

@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Meta Godot/GDScript skill that composes all installed Godot skills, enforces MCP routing, and runs a self-evaluation loop for stable, high-performance, backward-compatible code."
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["godot", "game-dev", "gdscript"]
 triggers:
   keywords: ["godot", "GDScript", "meta", "evaluation", "performance"]

@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Analyze and transform prompts using research-backed frameworks (CO-STAR, RISEN, TIDD-EC, RTF, Chain of Thought). Structures prompts for maximum effectiveness."
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["architecture"]
 triggers:
   keywords: ["prompt", "engineering", "framework", "CO-STAR", "chain-of-thought"]

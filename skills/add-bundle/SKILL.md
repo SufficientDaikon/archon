@@ -146,7 +146,7 @@ Domain-specific terminology in table format.
 
 ## Installation
 \`\`\`bash
-archon install --bundle <bundle-name>-kit --platform <platform>
+archon install --bundle <bundle-name>-kit
 \`\`\`
 
 ## Usage
@@ -295,7 +295,3 @@ When this skill completes:
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Bundles installed to ~/.claude/skills/ as collection |
-| Copilot CLI | Install with `copilot-cli install --bundle <name>` |
-| Cursor | Bundles merge into .cursor/rules/ as single file |
-| Windsurf | Bundles go to .windsurfrules with section headers |
-| Antigravity | Bundles are first-class entities in .antigravity/ |

@@ -4,12 +4,6 @@ description: "Design chainable type-safe builder APIs for complex object constru
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - builder-pattern

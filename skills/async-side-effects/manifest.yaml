@@ -4,12 +4,6 @@ description: "Design fire-and-forget side effect pipelines with Promise.allSettl
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - async

@@ -4,12 +4,6 @@ description: "Complete GitHub Markdown reference — GFM syntax, Mermaid diagram
 author: archon
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - github

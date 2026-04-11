@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Use when Django ORM patterns with models, queries, and relationships. Use when building database-driven Django applications. allowed-tools: - Bash - Read"
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["django", "python", "backend", "web-framework", "best-practices"]
 triggers:
   keywords: ["ORM", "models", "queries", "migrations", "queryset"]

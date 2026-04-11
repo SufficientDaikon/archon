@@ -10,12 +10,6 @@ author: tahaa # Creator identifier
 license: MIT
 
 # Platforms this skill supports
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 # Tags for discovery and categorization
 tags:

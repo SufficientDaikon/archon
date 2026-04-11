@@ -6,12 +6,6 @@ description: "Pluggable knowledge base manager for syncing and searching externa
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - knowledge-base

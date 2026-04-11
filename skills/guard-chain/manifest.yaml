@@ -4,12 +4,6 @@ description: "Layered request validation pipelines where each guard can short-ci
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - security

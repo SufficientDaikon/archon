@@ -6,12 +6,6 @@ description: "Intelligent task classification and routing engine for optimal mod
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - routing

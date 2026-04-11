@@ -130,7 +130,3 @@ async function dispatchPostCreateEffects(prompt: Prompt): Promise<void> {
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Full TypeScript dispatcher creation |
-| Copilot CLI | Full TypeScript dispatcher creation |
-| Cursor | Apply patterns via composer |
-| Windsurf | Apply via cascade |
-| Antigravity | Full file creation |

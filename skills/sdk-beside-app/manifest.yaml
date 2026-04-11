@@ -4,12 +4,6 @@ description: "Extract core logic from a web app into a standalone publishable np
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - sdk

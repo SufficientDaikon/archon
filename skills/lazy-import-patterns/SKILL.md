@@ -118,7 +118,3 @@ export async function getS3Client(): Promise<S3Client | null> {
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Full import refactoring, config wiring |
-| Copilot CLI | Full import refactoring |
-| Cursor | Apply via composer |
-| Windsurf | Apply via cascade |
-| Antigravity | Full file creation |

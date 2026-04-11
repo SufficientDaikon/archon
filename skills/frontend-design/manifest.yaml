@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Create distinctive, production-grade frontend interfaces with high design quality. Generates polished web components, pages, and layouts avoiding generic AI aesthetics."
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["design", "ui-ux", "frontend", "web-development", "architecture"]
 triggers:
   keywords: ["frontend", "CSS", "HTML", "UI", "design"]

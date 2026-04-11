@@ -4,12 +4,6 @@ description: "Text similarity detection and deduplication with normalization and
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - deduplication

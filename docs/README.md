@@ -22,7 +22,7 @@ Comprehensive documentation for Archon v2.0 — the Universal AI Agent & Skills 
 - **[Migration Guide (v2.0)](migration-v2.md)** — Upgrading from v0.x to v2.0
 
 ### Reference
-- **[Platform Guide](platform-guide.md)** — Claude Code, Copilot, Cursor, Windsurf, Antigravity
+- **[Platform Guide](platform-guide.md)** -- Claude Code setup and configuration
 - **[CLI Guide](cli-guide.md)** — Full CLI command reference
 - **[Agent Cards](agent-cards.md)** — Machine-readable agent metadata
 - **[MCP Integration Catalog](integration-catalog.md)** — 20 curated MCP servers

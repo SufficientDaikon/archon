@@ -4,12 +4,6 @@ description: "Typed Map-based plugin architecture with interface contracts and c
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - plugin-system

@@ -3,7 +3,6 @@ version: 1.0.0
 description: "End-to-end testing with Playwright and Cypress for reliable test suites. Use when implementing E2E tests, debugging flaky tests, or setting standards."
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["testing", "quality-assurance"]
 triggers:
   keywords: ["implementing E2E tests, debugging flaky tests, or establishing testing standards"]

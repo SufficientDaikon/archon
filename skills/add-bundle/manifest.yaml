@@ -6,12 +6,6 @@ description: "AI-assisted guide for creating new skill bundles with shared resou
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - meta

@@ -62,7 +62,6 @@ cp ../\_template/manifest.yaml ./manifest.yaml
 # - description: "Brief description (10-200 chars)"
 # - author: tahaa (or your identifier)
 # - license: MIT
-# - platforms: [all five platforms]
 # - tags: [3-7 relevant tags]
 # - triggers.keywords: [3-10 activation phrases]
 # - triggers.patterns: [glob patterns with * wildcards]
@@ -131,17 +130,11 @@ cp ../\_template/SKILL.md ./SKILL.md
 - What artifact is produced
 - What to tell the user
 
-**9. Platform Notes** (5-15 lines):
-- Table with platform-specific behaviors
-- All 5 platforms: claude-code, copilot-cli, cursor, windsurf, antigravity
-- Can be "Standard behavior" if no platform differences
-
 **Validation checkpoints**:
-- ✅ All 9 sections present
-- ✅ Workflow has 3+ steps with actionable substeps
-- ✅ Rules have at least 5 DO and 5 DON'T items
-- ✅ Output template is included
-- ✅ Platform notes cover all 5 platforms
+- All 8 sections present
+- Workflow has 3+ steps with actionable substeps
+- Rules have at least 5 DO and 5 DON'T items
+- Output template is included
 
 ### Step 5: Create Resource Files
 For each resource listed in SKILL.md Resources section:
@@ -233,7 +226,7 @@ python scripts/admin.py --validate skills/<skill-name>
 **Validation checks**:
 - ✅ manifest.yaml is valid YAML
 - ✅ All required manifest fields present
-- ✅ SKILL.md has all 9 sections
+- ✅ SKILL.md has all 8 sections
 - ✅ All resources referenced in manifest exist
 - ✅ Skill is registered in archon.yaml
 - ✅ No duplicate skill names
@@ -283,7 +276,7 @@ git commit -m "Add <skill-name> skill
 
 ### DON'T:
 - Create skills without manifest.yaml
-- Skip sections in SKILL.md (all 9 are required)
+- Skip sections in SKILL.md (all 8 are required)
 - Use spaces or underscores in skill names (kebab-case only)
 - Create duplicate skills (search first)
 - Forget to register in archon.yaml
@@ -332,8 +325,4 @@ When this skill completes:
 
 | Platform | Notes |
 |----------|-------|
-| Claude Code | New skill auto-discovered on next context refresh |
-| Copilot CLI | Run `copilot-cli reload` to load new skill |
-| Cursor | Reload window to pick up new .cursor/rules/ |
-| Windsurf | Restart Windsurf to reload .windsurfrules |
-| Antigravity | New skills available immediately via hot-reload |
+| Claude Code | New skill auto-discovered on next context refresh. Skills installed to ~/.claude/skills/ |

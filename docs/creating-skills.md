@@ -11,8 +11,7 @@ skills/my-skill/
 ├── resources/         # Reference materials (cheat sheets, style guides)
 ├── examples/          # Sample interactions showing expected behavior
 ├── templates/         # Output templates
-├── tests/cases/       # Validation test cases
-└── overrides/         # Platform-specific instruction overrides
+└── tests/cases/       # Validation test cases
 ```
 
 ## Step 1: manifest.yaml
@@ -25,8 +24,6 @@ version: 1.0.0
 description: "What this skill does in one sentence"
 author: your-name
 license: MIT
-
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 
 tags: [domain, category, keywords]
 
@@ -116,17 +113,6 @@ This checks:
 - Trigger uniqueness (no conflicts with other skills)
 - Resources exist and are accessible
 - Tests are parseable
-
-## Step 6: Platform Overrides (Optional)
-
-If a skill needs different behavior on specific platforms:
-
-```
-overrides/cursor.md     — Cursor-specific instructions
-overrides/windsurf.md   — Windsurf-specific instructions
-```
-
-These are merged with the base SKILL.md during adapter transformation.
 
 ## Self-Customization Skills
 

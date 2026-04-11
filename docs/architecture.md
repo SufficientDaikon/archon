@@ -159,8 +159,6 @@ triggers:
   - React hooks
   - React performance
 platforms:
-  - copilot-cli
-  - cursor
   - claude-code
 ```
 
@@ -249,7 +247,7 @@ The `ArtifactValidator` checks every pipeline output against its schema:
 
 Pipeline state is persisted at:
 ```
-~/.copilot/.archon/pipeline-states/
+~/.claude/.archon/pipeline-states/
     ├── sdd-pipeline-<id>.json
     ├── ux-pipeline-<id>.json
     └── ...

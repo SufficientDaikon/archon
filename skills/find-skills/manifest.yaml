@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Discover and install agent skills based on user queries. Use when users ask how to do something or look for functionality that might exist as a skill."
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: [discovery, search, skills, install]
 triggers:
   keywords: ["how do I do X", "find a skill for X", "is there a skill that can..."]

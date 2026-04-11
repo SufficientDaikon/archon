@@ -285,10 +285,6 @@ When this skill completes:
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Full integration — read files, generate, save, analyze inline |
-| Copilot CLI | Use `powershell` tool to run `npx tsx tools/gemini-generate.ts` CLI |
-| Cursor | Use terminal to run generation scripts, inline image preview |
-| Windsurf | Same as Cursor — terminal-based generation |
-| Antigravity | API calls via built-in HTTP client |
 
 ## Design System Presets
 

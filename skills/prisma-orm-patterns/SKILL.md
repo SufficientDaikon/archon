@@ -122,7 +122,3 @@ When this skill completes:
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Full schema and TypeScript file creation |
-| Copilot CLI | Full schema and TypeScript file creation |
-| Cursor | Apply via composer or inline edit |
-| Windsurf | Apply via cascade |
-| Antigravity | Full file creation support |

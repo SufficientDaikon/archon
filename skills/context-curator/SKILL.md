@@ -38,9 +38,9 @@ The Context Curator operates in **three invocation modes**:
 
 **Procedure**:
 1. **Parse invocation** — Extract: project_name, pipeline_type, source_phase, target_phase, current_step (optional)
-2. **Load pipeline config** — Read `~/.copilot/sdd/pipeline-config.json` or use built-in defaults
+2. **Load pipeline config** — Read `~/.claude/sdd/pipeline-config.json` or use built-in defaults
    - Get transition rules: include/exclude lists, chunking strategy, validation rules
-3. **Load or create pipeline state** — Read `~/.copilot/sdd/pipeline-state-{project-name}.json`
+3. **Load or create pipeline state** — Read `~/.claude/sdd/pipeline-state-{project-name}.json`
    - If missing: create new state (first phase) or reconstruct from disk artifacts
 4. **Validate handoff artifacts** — Check source phase artifacts:
    - File exists and is non-empty
@@ -70,7 +70,7 @@ The Context Curator operates in **three invocation modes**:
 
 **Procedure**:
 1. **Parse invocation** — Extract: project_name
-2. **Load pipeline state** — Read `~/.copilot/sdd/pipeline-state-{project-name}.json`
+2. **Load pipeline state** — Read `~/.claude/sdd/pipeline-state-{project-name}.json`
    - If missing: attempt state reconstruction from disk artifacts
 3. **Identify current position** — Get current phase and step from state
 4. **Validate current phase artifacts** — Ensure in-progress phase has valid artifacts
@@ -182,7 +182,7 @@ This is the main body—what the receiving agent needs to know.]
 
 ### Pipeline State JSON Schema (Condensed)
 
-Saved at `~/.copilot/sdd/pipeline-state-{project-name}.json`:
+Saved at `~/.claude/sdd/pipeline-state-{project-name}.json`:
 
 ```json
 {
@@ -216,7 +216,7 @@ Saved at `~/.copilot/sdd/pipeline-state-{project-name}.json`:
           "last_modified": "2025-06-15T10:00:00Z"
         }
       ],
-      "context_brief_path": "~/.copilot/sdd/context-briefs/project/phase1.md",
+      "context_brief_path": "~/.claude/sdd/context-briefs/project/phase1.md",
       "blockers": [],
       "steps": []
     }
@@ -309,10 +309,10 @@ Saved at `~/.copilot/sdd/pipeline-state-{project-name}.json`:
 ## Resources
 
 **Required Files**:
-- **Pipeline config**: `~/.copilot/sdd/pipeline-config.json` — Transition rules, validation rules, chunking strategies
-- **Pipeline state**: `~/.copilot/sdd/pipeline-state-{project-name}.json` — Current pipeline state
-- **Context briefs**: `~/.copilot/sdd/context-briefs/{project-name}/` — Generated briefs for each transition
-- **Dashboards**: `~/.copilot/sdd/dashboards/{project-name}/dashboard.html` — Visual pipeline progress
+- **Pipeline config**: `~/.claude/sdd/pipeline-config.json` — Transition rules, validation rules, chunking strategies
+- **Pipeline state**: `~/.claude/sdd/pipeline-state-{project-name}.json` — Current pipeline state
+- **Context briefs**: `~/.claude/sdd/context-briefs/{project-name}/` — Generated briefs for each transition
+- **Dashboards**: `~/.claude/sdd/dashboards/{project-name}/dashboard.html` — Visual pipeline progress
 
 **Dashboard Template**: HTML/CSS dashboard with:
 - Progress visualization (pipeline flow diagram)
@@ -321,7 +321,7 @@ Saved at `~/.copilot/sdd/pipeline-state-{project-name}.json`:
 - Accumulated state (decisions, artifacts, files, tests, deviations)
 - Warnings & issues (drift, budget pressure, blockers)
 
-**For full pipeline-config.json schema and dashboard template, refer to the full Copilot CLI skill at `~/.copilot/skills/context-curator/SKILL.md`.**
+**For full pipeline-config.json schema and dashboard template, refer to the full skill at `~/.claude/skills/context-curator/SKILL.md`.**
 
 ## Handoff
 
@@ -388,7 +388,7 @@ Accuracy is approximate. Please verify:
 - Completed phases: [list]
 - Artifacts found: [list]
 
-If this is incorrect, manually edit: ~/.copilot/sdd/pipeline-state-[project-name].json
+If this is incorrect, manually edit: ~/.claude/sdd/pipeline-state-[project-name].json
 ```
 
 ## Platform Notes
@@ -400,9 +400,7 @@ If this is incorrect, manually edit: ~/.copilot/sdd/pipeline-state-[project-name
 - Avoid platform-specific commands in validation procedures
 
 **Platform-Specific Tools**:
-- **Copilot CLI**: Full support, native `~/.copilot/` directory
-- **Claude Code / Cursor / Windsurf**: Use project-relative paths if `~/.copilot/` not accessible
-- **Antigravity**: Adapt paths to Antigravity's workspace conventions
+- **Claude Code**: Full support, native `~/.claude/` directory. Use project-relative paths when appropriate.
 
 **When in doubt**: Persist to disk, use relative paths, and report exact file locations to the user.
 

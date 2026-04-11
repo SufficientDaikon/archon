@@ -86,5 +86,3 @@ When this skill completes:
 | Platform | Notes |
 |----------|-------|
 | Claude Code | [Any platform-specific behavior] |
-| Copilot CLI | [Any platform-specific behavior] |
-| Cursor | [Any platform-specific behavior] |

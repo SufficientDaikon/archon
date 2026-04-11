@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Test local web applications using Playwright. Supports verifying frontend functionality, debugging UI, capturing screenshots, and viewing logs."
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["testing", "quality-assurance"]
 triggers:
   keywords: ["Playwright", "browser", "e2e", "testing", "screenshot"]

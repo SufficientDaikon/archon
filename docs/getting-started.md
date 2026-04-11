@@ -4,16 +4,11 @@
 
 - **Git** installed
 - **Python 3.8+** installed
-- At least one supported AI coding assistant:
-  - Claude Code
-  - GitHub Copilot CLI
-  - Cursor
-  - Windsurf
-  - Antigravity
+- **Claude Code** installed (`~/.claude/` directory present)
 
 ## Installation
 
-### Full Install (all bundles, all detected platforms)
+### Full Install
 
 ```bash
 git clone https://github.com/SufficientDaikon/archon.git
@@ -26,13 +21,6 @@ python scripts/install.py
 ```bash
 python scripts/install.py --bundle web-dev-kit
 python scripts/install.py --bundle godot-kit
-```
-
-### Install for a Specific Platform
-
-```bash
-python scripts/install.py --platform claude-code
-python scripts/install.py --platform cursor
 ```
 
 ### Verify Installation
@@ -102,11 +90,10 @@ python scripts/admin.py --sync
 
 Archon includes AI-guided skills for extending itself:
 
-- **`add-skill`** — Tell your AI: "Follow the add-skill skill to create a skill for [domain]"
-- **`add-bundle`** — AI-guided bundle creation with checklists
-- **`add-agent`** — AI-guided agent creation
-- **`add-adapter`** — Create adapters for new platforms
-- **`rename-project`** — Fork Archon and customize it for your organization
+- **`add-skill`** -- Tell your AI: "Follow the add-skill skill to create a skill for [domain]"
+- **`add-bundle`** -- AI-guided bundle creation with checklists
+- **`add-agent`** -- AI-guided agent creation
+- **`rename-project`** -- Fork Archon and customize it for your organization
 
 These skills provide step-by-step guidance and validation checks.
 

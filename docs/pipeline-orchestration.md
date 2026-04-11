@@ -185,7 +185,7 @@ This ensures that:
 State is written to disk after every step:
 
 ```
-~/.copilot/.archon/pipeline-states/
+~/.claude/.archon/pipeline-states/
     └── sdd-pipeline-abc123.json
 ```
 
@@ -354,7 +354,7 @@ Because state files are human-readable JSON, you can manually edit them before r
 
 ```bash
 # Open the state file
-code ~/.copilot/.archon/pipeline-states/sdd-pipeline-abc123.json
+code ~/.claude/.archon/pipeline-states/sdd-pipeline-abc123.json
 
 # Edit: resolve a deviation, adjust constraints, etc.
 # Then resume

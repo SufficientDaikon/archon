@@ -4,12 +4,6 @@ description: "YAML-based prompt storage with structured messages, variables, and
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - prompts

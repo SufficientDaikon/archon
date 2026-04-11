@@ -4,12 +4,6 @@ description: "Design internationalization systems with namespace-driven translat
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - i18n

@@ -112,7 +112,7 @@ pending → validating → executing → completed
 
 ### State Persistence
 
-Pipeline state is saved as JSON to `~/.copilot/.archon/pipeline-states/`. This enables:
+Pipeline state is saved as JSON to `~/.claude/.archon/pipeline-states/`. This enables:
 
 - **Resumability** — `archon pipeline resume <state-id>`
 - **Audit trail** — Every step, decision, and deviation is recorded

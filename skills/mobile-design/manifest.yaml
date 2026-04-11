@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Mobile-first design doctrine for iOS and Android. Covers touch interaction, performance, platform conventions, and offline behavior for React Native, Flutter, or native apps."
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["design", "ui-ux", "mobile", "ios", "android", "spec-driven-development", "architecture"]
 triggers:
   keywords: ["mobile", "iOS", "Android", "touch", "responsive"]

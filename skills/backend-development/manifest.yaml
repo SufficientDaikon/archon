@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Backend API design, database architecture, microservices patterns, and test-driven development. Use for designing APIs, database schemas, or backend system architecture."
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["backend", "api", "best-practices", "architecture"]
 triggers:
   keywords: ["backend", "API", "server", "database", "REST"]

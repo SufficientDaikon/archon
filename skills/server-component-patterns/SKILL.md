@@ -133,7 +133,3 @@ app/
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Full TSX creation, next.config.ts editing |
-| Copilot CLI | Full TSX creation and configuration |
-| Cursor | Apply patterns via composer, preview in dev server |
-| Windsurf | Apply via cascade |
-| Antigravity | Full TSX creation |

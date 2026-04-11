@@ -189,13 +189,9 @@ resources:
     load: always
     description: "Structured output template"
 
-# Optional: Restrict to specific platforms
+# Optional: Platform support is Claude Code only by default
 # platforms:
 #   - claude-code
-#   - copilot-cli
-#   - cursor
-#   - windsurf
-#   - antigravity
 ```
 
 ### Manifest Field Reference
@@ -213,7 +209,7 @@ resources:
 #### Optional Fields
 
 - **`license`** — License identifier (defaults to MIT)
-- **`platforms`** — Supported platforms: `claude-code`, `copilot-cli`, `cursor`, `windsurf`, `antigravity` (defaults to all)
+- **`platforms`** -- Platform support (defaults to `claude-code`)
 - **`resources`** — List of resource objects with `path`, `type` (`rubric`, `template`, `heuristic`, `reference`, `cheat-sheet`), `load` (`always` or `on-demand`), and optional `description`
 
 ## 🔥 Firing Phase Design

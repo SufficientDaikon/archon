@@ -121,7 +121,3 @@ src/
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Full logger creation, middleware wiring |
-| Copilot CLI | Full logger creation and configuration |
-| Cursor | Apply via composer |
-| Windsurf | Apply via cascade |
-| Antigravity | Full file creation |

@@ -4,10 +4,6 @@ description: "Docker container operations via MCP tools — state inspection, lo
 author: archon
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
 
 tags:
   - docker

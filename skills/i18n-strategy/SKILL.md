@@ -139,7 +139,3 @@ src/
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Full message file creation, middleware, config |
-| Copilot CLI | Full message file creation and configuration |
-| Cursor | Apply patterns via composer |
-| Windsurf | Apply via cascade |
-| Antigravity | Full file creation |

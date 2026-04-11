@@ -4,12 +4,6 @@ description: "Astro 5/6 islands architecture expert — multi-framework selectio
 author: archon
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - astro

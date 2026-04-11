@@ -4,12 +4,6 @@ description: "Scout Intelligence Pipeline — deep multi-source research with pa
 author: archon
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - research

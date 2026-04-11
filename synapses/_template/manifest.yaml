@@ -31,11 +31,3 @@ resources:
     type: "[PLACEHOLDER: rubric | template | heuristic | reference | cheat-sheet]"
     load: always
     description: "[PLACEHOLDER: What this resource provides]"
-
-# Optional: Restrict to specific platforms (defaults to all)
-# platforms:
-#   - claude-code
-#   - copilot-cli
-#   - cursor
-#   - windsurf
-#   - antigravity

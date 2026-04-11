@@ -247,24 +247,8 @@
         },
         "archon.defaultPlatform": {
           "type": "string",
-          "default": "auto",
-          "enum": [
-            "auto",
-            "claude-code",
-            "copilot-cli",
-            "cursor",
-            "windsurf",
-            "antigravity"
-          ],
-          "enumDescriptions": [
-            "Auto-detect platform from environment",
-            "Claude Code (Anthropic)",
-            "GitHub Copilot CLI",
-            "Cursor Editor",
-            "Windsurf IDE",
-            "Antigravity Platform"
-          ],
-          "description": "Default platform adapter for skill installation."
+          "default": "claude-code",
+          "description": "Target platform for skill installation. Archon is built for Claude Code."
         },
         "archon.showStatusBar": {
           "type": "boolean",

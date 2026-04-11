@@ -1,7 +1,7 @@
 ---
 name: packager
 description: >-
-  Use when packaging, sharing, or publishing Copilot CLI agents, skills, templates,
+  Use when packaging, sharing, or publishing Archon agents, skills, templates,
   or SDD artifacts as shareable git repos. Triggers on tasks involving sharing,
   publishing, packaging, exporting, or distributing custom agents and skills.
   Also triggers when user says "package this", "share this", "make a repo for this",
@@ -10,13 +10,13 @@ description: >-
 
 # Packager Skill
 
-This skill packages local Copilot CLI artifacts into shareable git repositories with professional README documentation and self-contained HTML documentation websites.
+This skill packages local Archon artifacts into shareable git repositories with professional README documentation and self-contained HTML documentation websites.
 
 ## When to Use This Skill
 
 - User wants to share custom agents, skills, or templates
 - User says "package", "share", "publish", "export", or "distribute"
-- User wants to create a GitHub repo from their local Copilot CLI setup
+- User wants to create a GitHub repo from their local Archon setup
 - User wants documentation generated for their agents/skills
 
 ## Packaging Process
@@ -31,23 +31,23 @@ Ask the user what to package. Common patterns:
 | "Package the spec-writer" | 1 agent + 1 skill + its templates and examples |
 | "Package all my agents" | All .agent.md files + their matching skills |
 | "Package this skill" | 1 SKILL.md + templates/ + examples/ |
-| "Package everything" | Full ~/.copilot/ export (excluding session-state) |
+| "Package everything" | Full ~/.claude/ export (excluding session-state) |
 
 ### Step 2: Inventory Files
 
 Scan these directories for the requested artifacts:
 
 ```
-~/.copilot/
-├── agents/*.agent.md          → Agent profiles
-├── skills/*/SKILL.md          → Skills
-├── skills/*/templates/*       → Skill templates
-├── skills/*/examples/*        → Skill examples
-├── sdd/prompts/*              → Reusable prompts
-├── sdd/templates/*            → Shared templates
-├── sdd/SDD-GUIDE.md           → System documentation
-├── sdd/README.md              → Artifact index
-└── copilot-instructions.md    → Global rules (extract relevant sections)
+~/.claude/
+├── agents/*.agent.md          -> Agent profiles
+├── skills/*/SKILL.md          -> Skills
+├── skills/*/templates/*       -> Skill templates
+├── skills/*/examples/*        -> Skill examples
+├── sdd/prompts/*              -> Reusable prompts
+├── sdd/templates/*            -> Shared templates
+├── sdd/SDD-GUIDE.md           -> System documentation
+├── sdd/README.md              -> Artifact index
+└── CLAUDE.md                  -> Global rules (extract relevant sections)
 ```
 
 ### Step 3: Create Repo Structure
@@ -74,7 +74,7 @@ Required sections (in order):
 1. **Title** — `# {Package Name}` with one-line description
 2. **Overview** — What this is, who it's for, what problem it solves (3-5 sentences)
 3. **What's Included** — Table: File | Description | Required?
-4. **Prerequisites** — GitHub Copilot subscription, VS Code/CLI, etc.
+4. **Prerequisites** — Claude Code CLI installed, etc.
 5. **Installation** — Numbered steps with `code blocks`
 6. **Quick Start** — 3 commands or less to see it work
 7. **Usage** — Per-component guide with prompt examples
@@ -86,7 +86,7 @@ Required sections (in order):
 Quality rules:
 - Every command must be in a fenced code block with language tag
 - Every step must show expected output
-- Define all jargon (what IS a Copilot CLI agent? what IS a skill?)
+- Define all jargon (what IS an Archon agent? what IS a skill?)
 - Write for someone who found this repo via Google
 
 ### Step 5: Generate HTML Documentation Website
@@ -184,24 +184,24 @@ Create `docs/index.html` — a self-contained, beautiful documentation site.
 **install.ps1 (Windows PowerShell):**
 ```powershell
 # Install {Package Name}
-# Copies agents, skills, and templates to ~/.copilot/
+# Copies agents, skills, and templates to ~/.claude/
 
-$CopilotDir = "$env:USERPROFILE\.copilot"
+$ClaudeDir = "$env:USERPROFILE\.claude"
 
 # Create directories
 @("agents", "skills", "sdd\prompts", "sdd\templates") | ForEach-Object {
-    New-Item -ItemType Directory -Path "$CopilotDir\$_" -Force | Out-Null
+    New-Item -ItemType Directory -Path "$ClaudeDir\$_" -Force | Out-Null
 }
 
 # Copy agents
-Copy-Item -Path ".\agents\*" -Destination "$CopilotDir\agents\" -Recurse -Force
+Copy-Item -Path ".\agents\*" -Destination "$ClaudeDir\agents\" -Recurse -Force
 
 # Copy skills
 Get-ChildItem -Path ".\skills" -Directory | ForEach-Object {
-    Copy-Item -Path $_.FullName -Destination "$CopilotDir\skills\$($_.Name)" -Recurse -Force
+    Copy-Item -Path $_.FullName -Destination "$ClaudeDir\skills\$($_.Name)" -Recurse -Force
 }
 
-Write-Host "Installed successfully to $CopilotDir" -ForegroundColor Green
+Write-Host "Installed successfully to $ClaudeDir" -ForegroundColor Green
 ```
 
 **install.sh (macOS/Linux bash):**
@@ -209,13 +209,13 @@ Write-Host "Installed successfully to $CopilotDir" -ForegroundColor Green
 #!/bin/bash
 # Install {Package Name}
 
-COPILOT_DIR="$HOME/.copilot"
-mkdir -p "$COPILOT_DIR"/{agents,skills,sdd/{prompts,templates}}
+CLAUDE_DIR="$HOME/.claude"
+mkdir -p "$CLAUDE_DIR"/{agents,skills,sdd/{prompts,templates}}
 
-cp -r ./agents/* "$COPILOT_DIR/agents/" 2>/dev/null
-cp -r ./skills/* "$COPILOT_DIR/skills/" 2>/dev/null
+cp -r ./agents/* "$CLAUDE_DIR/agents/" 2>/dev/null
+cp -r ./skills/* "$CLAUDE_DIR/skills/" 2>/dev/null
 
-echo "Installed successfully to $COPILOT_DIR"
+echo "Installed successfully to $CLAUDE_DIR"
 ```
 
 ### Step 7: Generate Prompts Guide

@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Transform plans, ideas, or feature descriptions into comprehensive implementable specifications with requirements and acceptance criteria."
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: ["spec-driven-development"]
 triggers:
   keywords: ["write a spec", "create a specification", "turn this plan into a spec", "requirements engineering", "spec creation", "user story writing", "acceptance criteria definition"]

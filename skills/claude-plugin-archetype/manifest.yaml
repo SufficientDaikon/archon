@@ -4,12 +4,6 @@ description: "Scaffold complete Claude Code plugins with MCP servers, commands, 
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - claude

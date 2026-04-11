@@ -45,25 +45,19 @@ class VersionInfo:
             return (0, 0, 0)
 
 
-def get_installed_skills(platform: str) -> Dict[str, VersionInfo]:
+def get_installed_skills(platform: str = "claude-code") -> Dict[str, VersionInfo]:
     """
     Gets installed skills for a platform.
-    
+
     Args:
-        platform: Platform name
-        
+        platform: Platform name (only claude-code is supported)
+
     Returns:
         Dict mapping skill names to VersionInfo
     """
     installed = {}
     home = Path.home()
-    
-    if platform == "copilot-cli":
-        skills_dir = home / ".copilot" / "skills"
-    elif platform == "claude-code":
-        skills_dir = home / ".claude" / "skills"
-    else:
-        return installed  # Other platforms not supported yet
+    skills_dir = home / ".claude" / "skills"
     
     if not skills_dir.exists():
         return installed
@@ -156,13 +150,13 @@ def compare_versions(v1: str, v2: str) -> int:
         return 0
 
 
-def check_updates(platform: str = "copilot-cli") -> List[Tuple[str, str, str]]:
+def check_updates(platform: str = "claude-code") -> List[Tuple[str, str, str]]:
     """
     Checks for available updates.
-    
+
     Args:
-        platform: Platform to check (default: copilot-cli)
-        
+        platform: Platform to check (default: claude-code)
+
     Returns:
         List of (skill_name, current_version, new_version) tuples
     """
@@ -208,33 +202,26 @@ def backup_skill(skill_path: Path) -> Optional[Path]:
         return None
 
 
-def apply_update(skill_name: str, platform: str = "copilot-cli") -> bool:
+def apply_update(skill_name: str, platform: str = "claude-code") -> bool:
     """
     Applies an update for a skill.
-    
+
     Args:
         skill_name: Name of the skill to update
-        platform: Platform name
-        
+        platform: Platform name (only claude-code is supported)
+
     Returns:
         True if successful
     """
     # Get source and target paths
     source_path = ARCHON_ROOT / "skills" / skill_name
-    
+
     if not source_path.exists():
-        print(f"❌ Skill not found in repository: {skill_name}")
+        print(f"Skill not found in repository: {skill_name}")
         return False
-    
+
     home = Path.home()
-    
-    if platform == "copilot-cli":
-        target_base = home / ".copilot" / "skills"
-    elif platform == "claude-code":
-        target_base = home / ".claude" / "skills"
-    else:
-        print(f"❌ Platform not supported: {platform}")
-        return False
+    target_base = home / ".claude" / "skills"
     
     target_path = target_base / skill_name
     
@@ -279,26 +266,19 @@ def apply_update(skill_name: str, platform: str = "copilot-cli") -> bool:
         return False
 
 
-def rollback_skill(skill_name: str, platform: str = "copilot-cli") -> bool:
+def rollback_skill(skill_name: str, platform: str = "claude-code") -> bool:
     """
     Rolls back a skill to its previous version.
-    
+
     Args:
         skill_name: Name of the skill to rollback
-        platform: Platform name
-        
+        platform: Platform name (only claude-code is supported)
+
     Returns:
         True if successful
     """
     home = Path.home()
-    
-    if platform == "copilot-cli":
-        skills_base = home / ".copilot" / "skills"
-    elif platform == "claude-code":
-        skills_base = home / ".claude" / "skills"
-    else:
-        print(f"❌ Platform not supported: {platform}")
-        return False
+    skills_base = home / ".claude" / "skills"
     
     backup_dir = skills_base / ".backups"
     
@@ -351,8 +331,7 @@ Examples:
     parser.add_argument('--check', action='store_true', help='Check for available updates')
     parser.add_argument('--apply', nargs='?', const='all', help='Apply updates (all or specific skill)')
     parser.add_argument('--rollback', help='Rollback a skill to previous version')
-    parser.add_argument('--platform', default='copilot-cli', 
-                       choices=['copilot-cli', 'claude-code'],
+    parser.add_argument('--platform', default='claude-code',
                        help='Target platform')
     
     args = parser.parse_args()

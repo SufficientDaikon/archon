@@ -8,7 +8,7 @@
 
 <br><br>
 
-**Your AI agents are winging it. Archon makes them disciplined.**
+**The cognitive kernel for Claude Code.**
 
 <br>
 
@@ -16,7 +16,7 @@
 [![Version](https://img.shields.io/badge/v1.0.0-stable-brightgreen?style=flat-square)]()
 [![Python](https://img.shields.io/badge/python-3.9+-3776AB?style=flat-square&logo=python&logoColor=white)]()
 ![Skills](https://img.shields.io/badge/skills-98-blue?style=flat-square)
-![Agents](https://img.shields.io/badge/agents-11-orange?style=flat-square)
+![Agents](https://img.shields.io/badge/agents-17-orange?style=flat-square)
 ![Synapses](https://img.shields.io/badge/synapses-5-blueviolet?style=flat-square)
 ![Pipelines](https://img.shields.io/badge/pipelines-8-red?style=flat-square)
 ![Bundles](https://img.shields.io/badge/bundles-16-teal?style=flat-square)
@@ -24,11 +24,8 @@
 
 <br>
 
-[![Claude Code](https://img.shields.io/badge/Claude_Code-supported-f97316?style=flat-square&logo=anthropic&logoColor=white)]()
-[![Cursor](https://img.shields.io/badge/Cursor-supported-f97316?style=flat-square)]()
-[![Copilot CLI](https://img.shields.io/badge/Copilot_CLI-supported-f97316?style=flat-square&logo=github&logoColor=white)]()
-[![Windsurf](https://img.shields.io/badge/Windsurf-supported-f97316?style=flat-square)]()
-[![Antigravity](https://img.shields.io/badge/Antigravity-supported-f97316?style=flat-square)]()
+[![Claude Code](https://img.shields.io/badge/Claude_Code-native-f97316?style=flat-square&logo=anthropic&logoColor=white)]()
+[![VS Code Extension](https://img.shields.io/badge/VS_Code-extension-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white)]()
 
 <br>
 
@@ -42,7 +39,7 @@
 
 Most AI agent frameworks give you plumbing — tool calling, memory, chains. None of them address the real failure mode: **agents that guess, rationalize, and skip steps.**
 
-Archon is the first framework that treats agent discipline as a first-class concern. It ships 98 skills that work on 5 platforms, but the real value is what happens _between_ skills: cognitive synapses that force structured reasoning, guardrails with Iron Laws agents cannot talk their way out of, and resumable pipelines that recover from failure instead of crashing.
+Archon is the first framework that treats agent discipline as a first-class concern. It ships 98 skills as a native Claude Code plugin, but the real value is what happens _between_ skills: cognitive synapses that force structured reasoning, guardrails with Iron Laws agents cannot talk their way out of, and resumable pipelines that recover from failure instead of crashing.
 
 > [!IMPORTANT]
 > Archon is not another LangChain. It does not manage LLM calls, memory, or tool routing.
@@ -59,7 +56,7 @@ pip install -e .
 ```
 
 ```bash
-archon init                                   # Detect your AI platforms
+archon init                                   # Initialize Archon for Claude Code
 archon doctor                                 # Verify everything works
 archon install --all                          # Deploy all 98 skills
 archon install --bundle godot-kit             # Just one domain
@@ -73,7 +70,7 @@ archon pipeline run sdd-pipeline --project ./myapp
 ```
 
 > [!TIP]
-> `archon doctor` validates your environment, detects installed platforms, checks skill integrity, and reports any manifest issues — run it after every install.
+> `archon doctor` validates your environment, checks skill integrity, and reports any manifest issues — run it after every install.
 
 ---
 
@@ -87,7 +84,7 @@ graph TD
     GH["⚙️ Guardrails & Hooks<br><sub>5 lifecycle hooks · Iron Laws · Deviation protocol</sub>"]
     PO["🔄 Pipelines & Orchestration<br><sub>8 resumable workflows · Failure recovery · Context curation</sub>"]
     SC["🧠 Synapses & Cognition<br><sub>5 cognitive synapses · Structured reasoning · Confidence tagging</sub>"]
-    AP["🤖 Agents & Personas<br><sub>11 agents · Skill bindings · Handoff contracts · Quality gates</sub>"]
+    AP["🤖 Agents & Personas<br><sub>17 agents · Skill bindings · Handoff contracts · Quality gates</sub>"]
     SK["📚 Skills & Knowledge<br><sub>98 skills · 16 bundles · Prompt library · Knowledge sources</sub>"]
 
     RT --> GH --> PO --> SC --> AP --> SK
@@ -107,30 +104,22 @@ graph TD
 archon/
 ├── skills/          98 skills (SKILL.md + manifest.yaml + resources/)
 ├── bundles/         16 domain bundles (bundle.yaml + conflict resolution)
-├── agents/          11 agent definitions (AGENT.md + agent-manifest.yaml)
+├── agents/          17 agent definitions (AGENT.md + agent-manifest.yaml)
 ├── pipelines/       8 multi-agent workflows (resumable YAML)
 ├── synapses/        5 cognitive synapses (SYNAPSE.md + manifest.yaml)
 ├── hooks/           5 lifecycle hooks
 ├── src/             Core engine (session, policy, telemetry, replay)
 ├── sdk/             Python SDK
-├── adapters/        5 platform adapters
+├── mcp-servers/     MCP server integrations
+├── vscode/          VS Code extension
+├── webapp/          Web application
 ├── schemas/         15 validation schemas
 └── tests/           513 automated tests
 ```
 
 </details>
 
-### Write Once, Deploy Everywhere
-
-Every skill is authored once and installed to any platform with zero rewrites:
-
-| Platform                                                                                               | Install Target         | Command                                 |
-| :----------------------------------------------------------------------------------------------------- | :--------------------- | :-------------------------------------- |
-| ![](https://img.shields.io/badge/-Claude_Code-f97316?style=flat-square&logo=anthropic&logoColor=white) | `~/.claude/skills/`    | `archon install --platform claude-code` |
-| ![](https://img.shields.io/badge/-Copilot_CLI-f97316?style=flat-square&logo=github&logoColor=white)    | `~/.copilot/skills/`   | `archon install --platform copilot-cli` |
-| ![](https://img.shields.io/badge/-Cursor-f97316?style=flat-square)                                     | `.cursor/rules/`       | `archon install --platform cursor`      |
-| ![](https://img.shields.io/badge/-Windsurf-f97316?style=flat-square)                                   | `.windsurfrules`       | `archon install --platform windsurf`    |
-| ![](https://img.shields.io/badge/-Antigravity-f97316?style=flat-square)                                | `.antigravity/skills/` | `archon install --platform antigravity` |
+Skills are installed directly into `~/.claude/skills/` and are immediately available to Claude Code sessions. The built-in VS Code extension provides skill browsing, pipeline visualization, and agent card inspection without leaving your editor.
 
 ---
 
@@ -220,7 +209,7 @@ Every skill follows this structure:
 ```
 skills/backend-development/
 ├── SKILL.md           # Full instructions the agent follows
-├── manifest.yaml      # Metadata: name, version, tags, platforms, triggers
+├── manifest.yaml      # Metadata: name, version, tags, triggers
 └── resources/         # Templates, schemas, reference docs
     ├── api-template.md
     └── db-patterns.md
@@ -234,7 +223,6 @@ version: 1.0.0
 description: "Backend API design, database architecture, microservices"
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: [backend, api, database, architecture]
 triggers:
   - pattern: "design.*api"
@@ -248,7 +236,7 @@ priority: P1
 
 ## 🤖 Agents
 
-11 agents with formal personas, strict guardrail enforcement, skill bindings, and handoff contracts. Every agent operates under all 5 cognitive synapses.
+17 agents with formal personas, strict guardrail enforcement, skill bindings, and handoff contracts. Every agent operates under all 5 cognitive synapses.
 
 | Agent                        | Role                    | Skills                                                                       | Specialty                                                                                   |
 | :--------------------------- | :---------------------- | :--------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------ |
@@ -370,7 +358,7 @@ Guardrails are not suggestions. They are enforcement mechanisms that agents **ca
 
 | Guide                                            | Description                                             |
 | :----------------------------------------------- | :------------------------------------------------------ |
-| [Getting Started](docs/getting-started.md)       | Installation, platform detection, first skill           |
+| [Getting Started](docs/getting-started.md)       | Installation, setup, first skill                        |
 | [Creating Skills](docs/creating-skills.md)       | Skill anatomy, `SKILL.md` authoring, manifest reference |
 | [Creating Bundles](docs/creating-bundles.md)     | Domain kits with conflict resolution routing            |
 | [Creating Agents](docs/creating-agents.md)       | Personas, skill bindings, guardrails, handoff protocols |
@@ -379,7 +367,7 @@ Guardrails are not suggestions. They are enforcement mechanisms that agents **ca
 | [Architecture](docs/architecture.md)             | 6-layer design, data flow, validation schemas           |
 | [Guardrails](docs/guardrails.md)                 | Iron Laws, deviation protocol, confidence tagging       |
 | [CLI Guide](docs/cli-guide.md)                   | Full command reference                                  |
-| [Platform Guide](docs/platform-guide.md)         | Platform-specific setup and adapter details             |
+| [VS Code Extension](docs/vscode-extension.md)    | Extension setup, skill browser, pipeline visualization  |
 | [FAQ](docs/faq.md)                               | Common questions                                        |
 
 ---
@@ -389,22 +377,21 @@ Guardrails are not suggestions. They are enforcement mechanisms that agents **ca
 <details>
 <summary><strong>All commands</strong></summary>
 
-| Command                            | Description                                                |
-| :--------------------------------- | :--------------------------------------------------------- |
-| `archon init`                      | Detect AI platforms and create config                      |
-| `archon doctor`                    | Validate environment and skill integrity                   |
-| `archon install --all`             | Install all 98 skills to detected platforms                |
-| `archon install --bundle <name>`   | Install a domain bundle                                    |
-| `archon install --skill <name>`    | Install a single skill                                     |
-| `archon install --platform <name>` | Target a specific platform                                 |
-| `archon search <query>`            | Search skills by name, tag, or domain                      |
-| `archon info <skill>`              | Show skill details and manifest                            |
-| `archon validate`                  | Validate all manifests and skill structures                |
-| `archon pipeline run <name>`       | Execute a multi-agent pipeline                             |
-| `archon pipeline resume <name>`    | Resume an interrupted pipeline                             |
-| `archon pipeline list`             | List available pipelines                                   |
-| `archon admin stats`               | Show framework statistics                                  |
-| `archon cards <agent>`             | Display an agent's card (capabilities, skills, guardrails) |
+| Command                          | Description                                                |
+| :------------------------------- | :--------------------------------------------------------- |
+| `archon init`                    | Initialize Archon for Claude Code                          |
+| `archon doctor`                  | Validate environment and skill integrity                   |
+| `archon install --all`           | Install all 98 skills                                      |
+| `archon install --bundle <name>` | Install a domain bundle                                    |
+| `archon install --skill <name>`  | Install a single skill                                     |
+| `archon search <query>`          | Search skills by name, tag, or domain                      |
+| `archon info <skill>`            | Show skill details and manifest                            |
+| `archon validate`                | Validate all manifests and skill structures                |
+| `archon pipeline run <name>`     | Execute a multi-agent pipeline                             |
+| `archon pipeline resume <name>`  | Resume an interrupted pipeline                             |
+| `archon pipeline list`           | List available pipelines                                   |
+| `archon admin stats`             | Show framework statistics                                  |
+| `archon cards <agent>`           | Display an agent's card (capabilities, skills, guardrails) |
 
 </details>
 
@@ -414,7 +401,8 @@ Guardrails are not suggestions. They are enforcement mechanisms that agents **ca
 
 | Capability               | LangChain | CrewAI  | AutoGen |       <mark>Archon</mark>       |
 | :----------------------- | :-------: | :-----: | :-----: | :-----------------------------: |
-| Cross-platform skills    |     —     |    —    |    —    |         ✅ 5 platforms          |
+| Native Claude Code plugin |     —     |    —    |    —    |    ✅ Built for Claude Code     |
+| VS Code extension        |     —     |    —    |    —    |   ✅ Skill browser + pipeline   |
 | Cognitive synapses       |     —     |    —    |    —    |          ✅ 5 synapses          |
 | Anti-rationalization     |     —     |    —    |    —    |         ✅ 10 Iron Laws         |
 | Resumable pipelines      |     —     | Partial | Partial |     ✅ Full state recovery      |
@@ -444,6 +432,6 @@ archon validate  # Run before submitting — all manifests must pass
 
 **MIT License** · Built by [Ahmed Taha](https://github.com/SufficientDaikon)
 
-<sub>98 skills · 11 agents · 5 synapses · 8 pipelines · 16 bundles · 513 tests · 5 platforms</sub>
+<sub>98 skills · 17 agents · 5 synapses · 8 pipelines · 16 bundles · 513 tests · Claude Code native</sub>
 
 </div>

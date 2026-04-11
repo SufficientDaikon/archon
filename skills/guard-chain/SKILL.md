@@ -118,7 +118,3 @@ When this skill completes:
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Full file creation and editing support |
-| Copilot CLI | Full file creation and editing support |
-| Cursor | Apply via composer or inline edit |
-| Windsurf | Apply via cascade |
-| Antigravity | Full file creation support |

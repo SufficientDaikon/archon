@@ -94,4 +94,4 @@ The `add-bundle` skill guides you through:
 
 See the [bundles directory](../bundles/) for all available bundles.
 
-The **meta-kit** bundle includes the self-customization skills (`add-skill`, `add-bundle`, `add-agent`, `add-adapter`, `rename-project`) for extending Archon.
+The **meta-kit** bundle includes the self-customization skills (`add-skill`, `add-bundle`, `add-agent`, `rename-project`) for extending Archon.

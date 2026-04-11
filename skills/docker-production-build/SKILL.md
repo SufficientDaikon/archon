@@ -142,7 +142,3 @@ CMD ["node", "server.js"]
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Full Dockerfile, docker-compose, .dockerignore creation |
-| Copilot CLI | Full Docker configuration creation |
-| Cursor | Apply via composer |
-| Windsurf | Apply via cascade |
-| Antigravity | Full file creation |

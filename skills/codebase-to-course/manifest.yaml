@@ -3,12 +3,6 @@ version: 1.0.0
 description: "Transforms any codebase into a single-page interactive HTML course with visual explanations, animations, quizzes, and plain-English code translations"
 author: zarazhangrui
 license: MIT
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 tags:
   - teaching
   - course

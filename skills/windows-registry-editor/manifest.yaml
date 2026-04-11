@@ -4,10 +4,6 @@ description: "Windows Registry editor and optimizer — CRUD operations, backup/
 author: archon
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
 
 tags:
   - windows

@@ -4,12 +4,6 @@ description: "Adaptive AI teacher that calibrates to learner level, uses reverse
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - teaching

@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Design content moderation pipelines combining duplicate detection, quality scoring, user flagging, and soft deletion cascades"
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags: [moderation, trust-safety, content-quality, flagging]
 triggers:
   keywords: ["content moderation", "trust and safety", "flagging", "soft delete", "moderation queue", "quality gate"]

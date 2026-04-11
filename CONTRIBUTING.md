@@ -34,7 +34,6 @@ Every skill SHOULD:
 
 - [ ] Include resources (cheat sheets, references) in `resources/`
 - [ ] Include output templates in `templates/`
-- [ ] Support all 5 platforms (or document which are unsupported in overrides)
 
 ### Adding a Skill to a Bundle
 

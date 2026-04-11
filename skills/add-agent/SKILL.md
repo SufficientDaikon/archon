@@ -127,20 +127,11 @@ pipeline:
     - "No critical issues"
     - "Spec compliance verified"
 
-# Platform-specific settings
-platforms:
+# Platform settings
+platform:
   claude-code:
     model: claude-sonnet-4
     temperature: 0.7
-  copilot-cli:
-    model: gpt-5.1
-    temperature: 0.5
-  cursor:
-    model: claude-sonnet-4
-  windsurf:
-    model: auto
-  antigravity:
-    model: claude-opus-4
 ```
 
 ### Step 4: Create README.md
@@ -166,7 +157,7 @@ This agent has access to:
 
 ### Standalone
 \`\`\`bash
-copilot-cli agent --use <agent-name>-agent "<your request>"
+archon agent --use <agent-name>-agent "<your request>"
 \`\`\`
 
 ### In Pipeline
@@ -285,7 +276,7 @@ Pipeline: <pipeline-name> (if applicable)"
 - Use descriptive, role-based agent names
 - Test agents both standalone and in pipelines
 - Provide usage examples in README
-- Specify platform-specific model preferences
+- Specify model preferences for Claude Code
 - Define quality gates for pipeline phases
 - Keep agents specialized (not too broad)
 
@@ -333,14 +324,10 @@ The skill produces:
 When this skill completes:
 - **Next action**: Agent is ready to use standalone or in pipeline
 - **Artifact produced**: Agent directory with all files
-- **User instruction**: "Agent '<agent-name>-agent' created. Invoke with: copilot-cli agent --use <agent-name>-agent"
+- **User instruction**: "Agent '<agent-name>-agent' created. Invoke with: archon agent --use <agent-name>-agent"
 
 ## Platform Notes
 
 | Platform | Notes |
 |----------|-------|
-| Claude Code | Agents defined in Projects, bound to skills automatically |
-| Copilot CLI | Use `copilot-cli agent --use <name>` to invoke |
-| Cursor | Agent configs in .cursor/agents/ (experimental) |
-| Windsurf | Agent persona merged into context on activation |
-| Antigravity | First-class agent orchestration with handoff support |
+| Claude Code | Agents defined in Projects, bound to skills at ~/.claude/skills/ |

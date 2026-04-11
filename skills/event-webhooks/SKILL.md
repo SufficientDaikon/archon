@@ -105,7 +105,3 @@ src/app/api/admin/webhooks/     # CRUD API routes for webhook management
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Full file creation support |
-| Copilot CLI | Full file creation support |
-| Cursor | Apply via composer |
-| Windsurf | Apply via cascade |
-| Antigravity | Full file creation support |

@@ -131,7 +131,3 @@ MODERATION QUEUE
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Full pipeline creation, schema, admin API |
-| Copilot CLI | Full pipeline creation |
-| Cursor | Apply via composer |
-| Windsurf | Apply via cascade |
-| Antigravity | Full file creation |

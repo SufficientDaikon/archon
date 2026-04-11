@@ -104,7 +104,3 @@ src/variables/
 | Platform | Notes |
 |----------|-------|
 | Claude Code | Full file creation support |
-| Copilot CLI | Full file creation support |
-| Cursor | Apply via composer |
-| Windsurf | Apply via cascade |
-| Antigravity | Full file creation support |

@@ -5,12 +5,6 @@ author: tahaa
 license: MIT
 composes:
   - codebase-to-course
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 tags:
   - teaching
   - research

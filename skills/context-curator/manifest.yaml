@@ -3,7 +3,6 @@ version: 1.0.0
 description: "Context curation for multi-agent pipeline handoffs with summarization, filtering, chunking, state management, handoff validation, and budget tracking."
 author: tahaa
 license: MIT
-platforms: [claude-code, copilot-cli, cursor, windsurf, antigravity]
 tags:
   [
     "context-management",

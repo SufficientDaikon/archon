@@ -6,12 +6,6 @@ description: "Complete guide for forking and renaming Archon for custom use"
 author: tahaa
 license: MIT
 
-platforms:
-  - claude-code
-  - copilot-cli
-  - cursor
-  - windsurf
-  - antigravity
 
 tags:
   - meta
