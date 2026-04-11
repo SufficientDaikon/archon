@@ -670,20 +670,7 @@ pipelines:
 # Supported platforms
 platforms:
   - id: claude-code
-    adapter: adapters/claude-code
     target: "~/.claude/skills/"
-  - id: copilot-cli
-    adapter: adapters/copilot-cli
-    target: "~/.copilot/skills/"
-  - id: cursor
-    adapter: adapters/cursor
-    target: ".cursor/rules/"
-  - id: windsurf
-    adapter: adapters/windsurf
-    target: ".windsurfrules"
-  - id: antigravity
-    adapter: adapters/antigravity
-    target: ".antigravity/skills/"
 
 # MCP Server Integration Catalog
 catalog:

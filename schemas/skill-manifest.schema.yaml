@@ -32,12 +32,6 @@ required_fields:
     description: "Categorization tags for discovery"
 
 optional_fields:
-  platforms:
-    type: list
-    min_items: 1
-    allowed_values: [claude-code, copilot-cli, cursor, windsurf, antigravity]
-    description: "Supported AI coding assistant platforms"
-
   triggers:
     type: object
     required_children:
@@ -129,7 +123,6 @@ optional_directories:
   - "tests/"
   - "tests/cases/"
   - "scripts/"
-  - "overrides/"
 
 # SKILL.md required sections
 skill_md_required_sections:
@@ -143,4 +136,3 @@ skill_md_required_sections:
 skill_md_optional_sections:
   - "Resources" # Index of available reference materials
   - "Examples" # Sample interactions
-  - "Platform Notes" # Platform-specific behavior notes

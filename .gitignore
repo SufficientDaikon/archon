@@ -28,6 +28,12 @@ Thumbs.db
 .env
 .env.local
 
+# Legacy platform install dirs (Archon is Claude Code-only)
+.antigravity/
+.cursor/
+.cursorrules
+.windsurfrules
+
 # Tasks
 tasks.md
 

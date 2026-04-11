@@ -58,12 +58,6 @@ optional_fields:
     type: string
     default: "MIT"
 
-  platforms:
-    type: list
-    item_type: string
-    allowed_values: [claude-code, copilot-cli, cursor, windsurf, antigravity]
-    description: "Supported platforms (defaults to all if omitted)"
-
   resources:
     type: list
     item_type: object

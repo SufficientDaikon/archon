@@ -86,9 +86,5 @@ def get_platform_target(platform_id: str) -> Optional[Path]:
 
     targets: dict[str, Path] = {
         "claude-code": home / ".claude" / "skills",
-        "copilot-cli": home / ".copilot" / "skills",
-        "cursor": cwd / ".cursor" / "rules",
-        "windsurf": cwd,  # single file: .windsurfrules
-        "antigravity": cwd / ".antigravity" / "skills",
     }
     return targets.get(platform_id)

@@ -73,16 +73,8 @@ class MissingDependency:
 
 
 PLATFORM_CONFIGS: dict[str, dict[str, str]] = {
-    "copilot-cli": {
-        "path": "~/.copilot/mcp-config.json",
-        "root_key": "servers",
-    },
     "claude-code": {
         "path": "~/.claude/mcp.json",
-        "root_key": "mcpServers",
-    },
-    "cursor": {
-        "path": ".cursor/mcp.json",
         "root_key": "mcpServers",
     },
 }

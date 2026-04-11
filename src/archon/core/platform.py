@@ -35,38 +35,6 @@ PLATFORM_DEFS: list[dict] = [
         "scope": "global",
         "skills_dir": ".claude/skills",
     },
-    {
-        "id": "copilot-cli",
-        "name": "Copilot CLI",
-        "markers_home": [".copilot"],
-        "markers_cwd": [],
-        "scope": "global",
-        "skills_dir": ".copilot/skills",
-    },
-    {
-        "id": "cursor",
-        "name": "Cursor",
-        "markers_home": [".cursor"],
-        "markers_cwd": [".cursor", ".cursorrules"],
-        "scope": "project",
-        "skills_dir": ".cursor/rules",
-    },
-    {
-        "id": "windsurf",
-        "name": "Windsurf",
-        "markers_home": [".windsurf"],
-        "markers_cwd": [".windsurfrules", ".windsurf"],
-        "scope": "project",
-        "skills_dir": None,  # uses .windsurfrules file
-    },
-    {
-        "id": "antigravity",
-        "name": "Antigravity",
-        "markers_home": [".antigravity"],
-        "markers_cwd": [".antigravity"],
-        "scope": "project",
-        "skills_dir": ".antigravity/skills",
-    },
 ]
 
 

@@ -43,8 +43,7 @@ def install_skill_to_platform(
 
     target = platform.skills_target
     if target is None:
-        # Windsurf uses a single file — not a directory-based install
-        print_warning(f"Platform '{platform.id}' does not use directory-based skill install.")
+        print_warning(f"Platform '{platform.id}' has no skills target directory configured.")
         return False
 
     safe_name = _sanitize_path(skill.name)
