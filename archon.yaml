@@ -17,6 +17,11 @@ virtuoso:
 
 # All registered skills (alphabetical)
 skills:
+  - name: archon-adversarial-review
+    path: skills/archon-adversarial-review
+    version: 1.0.0
+    tags: [review, adversarial, architecture, quality, meta]
+    priority: P1
   - name: archon-scout
     path: skills/archon-scout
     version: 1.0.0
@@ -634,7 +639,7 @@ synapses:
   - name: pattern-recognition
     path: synapses/pattern-recognition
     version: 1.0.0
-    type: core
+    type: optional
   - name: security-awareness
     path: synapses/security-awareness
     version: 1.0.0

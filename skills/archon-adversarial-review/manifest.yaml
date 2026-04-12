@@ -1,0 +1,32 @@
+name: archon-adversarial-review
+version: 1.0.0
+description: "Spawn independent Opus sub-agent to stress-test Archon's architecture against its own principles"
+author: tahaa
+license: MIT
+
+tags:
+  - review
+  - adversarial
+  - architecture
+  - quality
+  - meta
+
+triggers:
+  keywords:
+    - "review archon"
+    - "audit archon"
+    - "adversarial review"
+    - "stress test archon"
+    - "validate archon"
+    - "archon quality check"
+  patterns:
+    - "review * archon *"
+    - "audit * hooks *"
+    - "stress test * framework *"
+
+priority: P1
+
+resources:
+  - path: resources/probe-vectors-quick-ref.md
+    type: cheat-sheet
+    load: on-demand

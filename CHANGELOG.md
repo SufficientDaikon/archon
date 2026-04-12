@@ -5,36 +5,48 @@ All notable changes to Archon will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- **Claude Code Hooks Architecture** — 8 lifecycle hooks that transform Archon's 5 synapses from passive documents into active enforced behavior
+  - `session_boot.py` (SessionStart): Project detection, git state, boot context injection
+  - `prompt_router.py` (UserPromptSubmit): Complexity classification, skill routing, synapse activation
+  - `guard_bash.py` (PreToolUse/Bash): Blocks dangerous commands (rm -rf, force push, fork bombs)
+  - `guard_write.py` (PreToolUse/Write|Edit|NotebookEdit): Secret scanning with env-var false-positive prevention
+  - `quality_write.py` (PostToolUse/Write|Edit|NotebookEdit): Tracks modified files in session state
+  - `quality_bash.py` (PostToolUse/Bash): Tracks test/build pass/fail results
+  - `completion_gate.py` (Stop): Blocks session completion when tests or build failed
+  - `agent_context.py` (SubagentStart): Role-specific context slicing for subagents
+- **Shared modules** for hooks: `state.py` (atomic JSON state), `classifier.py` (complexity tiers), `scanner.py` (secret/command detection)
+- **archon-adversarial-review skill** — PRISM-A protocol for independent framework auditing with 9 probe vectors
+
+### Changed
+
+- Stripped multi-platform support — Archon is now Claude Code only (model floor: Opus 4.6)
+- Removed platform-specific adapters (Copilot CLI, Cursor, Windsurf, Antigravity)
+
 ## [1.0.0] - 2026-03-24
 
 ### The Virtuoso Engine for AI Agents
 
-Archon v1.0.0 is the universal AI agent skills framework with enforced discipline.
+Archon v1.0.0 is the Virtuoso Engine for AI Agents — Claude Code only.
 
 **Core Framework**
 
 - 98 universal skills in a standardized format (SKILL.md + manifest.yaml + resources)
 - 16 domain bundles (Godot, Web Dev, UX, Django, SDD, Testing, Mobile, Meta, Prompts, Security, Data Layer, DevOps, Windows, Orchestration, GitHub, Teaching)
-- 11 formal agents with personas, skill bindings, guardrails, and handoff protocols
+- 17 agents with personas, skill bindings, guardrails, and handoff protocols
 - 8 resumable multi-agent pipelines with failure recovery and context curation
 - 5 cognitive synapses (metacognition, anti-rationalization, sequential-thinking, security-awareness, pattern-recognition)
-- 5 lifecycle hooks enforcing discipline at runtime
 
 **Architecture**
 
 - 6-layer architecture: Skills -> Agents -> Synapses -> Pipelines -> Guardrails -> Runtime
-- Session state machine with policy engine and telemetry
-- MCP trust routing and agent card system
-- 15 validation schemas
+- Session state machine with policy engine
+- MCP agent-router for on-demand agent discovery
 
-**Platform Support**
+**Platform**
 
-- Claude Code, Copilot CLI, Cursor, Windsurf, Antigravity
-- Platform-specific adapters with write-once-deploy-everywhere model
-
-**Developer Experience**
-
-- Full CLI: init, install, doctor, validate, search, info, pipeline, admin, cards
+- Claude Code (model floor: Opus 4.6)
 - Python SDK with programmatic access to all framework capabilities
-- 513 automated tests
-- GitHub Actions CI (Python 3.9, 3.12, 3.13)
