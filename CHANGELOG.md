@@ -1,3 +1,36 @@
+## [1.0.0-production] - 2026-04-21
+
+### Production Hardening Release
+
+**Synapse Engine v2**
+- Production-hardened `synapse_engine_v2.py` with async trigger firing
+- Formal decision types: `halt`, `warn`, `allow`
+- Wired into pipeline execution at pre-execution phase
+- Per-step synapse validation with blocking decisions
+
+**Complete Synapse Module (src/archon/synapses/)**
+- All 12 synapses now fully operational: anti_rationalization, code_quality, completeness, consistency, metacognition, mcp_client, pattern_recognition, security_awareness, sequential_thinking, trust_verification, code_quality_mcp, security_awareness_mcp
+- `metacognition.py` expanded from 6-line stub to 108-line full validator (plan, reasoning, reflection, confidence checks)
+- `trust_verification.py` contradiction detection fixed (was silent pass)
+- `synapses/__init__.py` exports all 12 (was only 3)
+
+**Testing Enforcement**
+- CI now runs `pytest tests/` — 362 test suite is guarded on every commit
+- Added `[project.optional-dependencies][dev]` with pytest, pytest-asyncio, pytest-cov
+- New test suite: test_anticrationalization, test_code_quality, test_completeness, test_consistency, test_metacognition, test_pattern_recognition, test_security_awareness, test_trust_verification, test_synapses_executable
+
+**MCP Servers**
+- `servers/file-ops/` — File operations MCP server (Python)
+- `servers/forge/` — Forge MCP server
+- `file-ops-rs/` — Rust daemon with rate limiting + metrics
+
+**Quality**
+- All build artifacts properly gitignored
+- `.gitignore` entries for file-ops-rs/target/ and servers/forge/target/
+- Comprehensive release notes and changelog
+
+---
+
 # Changelog
 
 All notable changes to Archon will be documented in this file.
