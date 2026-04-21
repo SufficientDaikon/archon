@@ -45,3 +45,6 @@ file-ops-rs/.gitignore
 
 # Rust build artifacts
 file-ops-rs/target/
+
+# Rust build artifacts (forge server)
+servers/forge/target/

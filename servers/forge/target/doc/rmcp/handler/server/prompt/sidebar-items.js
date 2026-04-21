@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"enum":["IntoGetPromptResultFut"],"fn":["cached_arguments_from_schema"],"struct":["AsyncMethodAdapter","AsyncMethodWithArgsAdapter","AsyncPromptAdapter","AsyncPromptMethodAdapter","PromptContext","PromptName","SyncPromptAdapter","SyncPromptMethodAdapter"],"trait":["GetPromptHandler","IntoGetPromptResult"],"type":["DynGetPromptHandler"]};

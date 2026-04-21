@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["validate_and_warn_tool_name"]};

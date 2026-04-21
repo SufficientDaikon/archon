@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["ToolAttrGenerateFunctionAdapter","ToolRoute","ToolRouter","WithToolAttr"],"trait":["AsyncTool","CallToolHandlerExt","IntoToolRoute","SyncTool","ToolBase"]};

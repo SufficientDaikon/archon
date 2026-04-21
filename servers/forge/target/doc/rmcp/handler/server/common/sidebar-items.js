@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["schema_for_empty_input","schema_for_output","schema_for_type"],"struct":["Extension","RequestId"],"trait":["AsRequestContext","FromContextPart"]};
