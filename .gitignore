@@ -41,3 +41,7 @@ tasks.md
 llms.txt
 llms-full.txt
 agent-cards.json
+file-ops-rs/.gitignore
+
+# Rust build artifacts
+file-ops-rs/target/

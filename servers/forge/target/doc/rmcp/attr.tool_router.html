@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="tool_router"><title>tool_router in rmcp - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../static.files/rustdoc-ca0dd0c4.css"><meta name="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="rmcp" data-themes="" data-resource-suffix="" data-rustdoc-version="1.93.1 (01f6ddf75 2026-02-11)" data-channel="1.93.1" data-search-js="search-9e2438ea.js" data-stringdex-js="stringdex-a3946164.js" data-settings-js="settings-c38705f0.js" ><script src="../static.files/storage-e2aeef58.js"></script><script defer src="sidebar-items.js"></script><script defer src="../static.files/main-a410ff4d.js"></script><noscript><link rel="stylesheet" href="../static.files/noscript-263c88ec.css"></noscript><link rel="alternate icon" type="image/png" href="../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../static.files/favicon-044be391.svg"></head><body class="rustdoc attr"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><rustdoc-topbar><h2><a href="#">tool_router</a></h2></rustdoc-topbar><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../rmcp/index.html">rmcp</a><span class="version">1.4.0</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">tool_<wbr>router</a></h2><h3><a href="#">Sections</a></h3><ul class="block top-toc"><li><a href="#tool_router" title="tool_router">tool_router</a><ul><li><a href="#usage" title="Usage">Usage</a></li><li><a href="#example" title="Example">Example</a></li></ul></li></ul></section><div id="rustdoc-modnav"><h2 class="in-crate"><a href="index.html">In crate rmcp</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="index.html">rmcp</a></div><h1>Attribute Macro <span class="attr">tool_<wbr>router</span>&nbsp;<button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"></span></div><pre class="rust item-decl"><code>#[tool_router]</code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><h2 id="tool_router"><a class="doc-anchor" href="#tool_router">§</a>tool_router</h2>
+<p>This macro is used to generate a tool router based on functions marked with <code>#[rmcp::tool]</code> in an implementation block.</p>
+<p>It creates a function that returns a <code>ToolRouter</code> instance.</p>
+<p>The generated function is used by <code>#[tool_handler]</code> by default (via <code>Self::tool_router()</code>),
+so in most cases you do not need to store the router in a field.</p>
+<h3 id="usage"><a class="doc-anchor" href="#usage">§</a>Usage</h3><div><table><thead><tr><th style="text-align: left">field</th><th style="text-align: left">type</th><th style="text-align: left">usage</th></tr></thead><tbody>
+<tr><td style="text-align: left"><code>router</code></td><td style="text-align: left"><code>Ident</code></td><td style="text-align: left">The name of the router function to be generated. Defaults to <code>tool_router</code>.</td></tr>
+<tr><td style="text-align: left"><code>vis</code></td><td style="text-align: left"><code>Visibility</code></td><td style="text-align: left">The visibility of the generated router function. Defaults to empty.</td></tr>
+<tr><td style="text-align: left"><code>server_handler</code></td><td style="text-align: left"><code>flag</code></td><td style="text-align: left">When set, also emits <code>#[::rmcp::tool_handler]</code> on <code>impl ServerHandler for Self</code> so you can omit a separate <code>#[tool_handler]</code> block.</td></tr>
+</tbody></table>
+</div><h3 id="example"><a class="doc-anchor" href="#example">§</a>Example</h3>
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[tool_router]
+</span><span class="kw">impl </span>MyToolHandler {
+    <span class="attr">#[tool]
+    </span><span class="kw">pub fn </span>my_tool() {
+
+    }
+}
+
+<span class="comment">// #[tool_handler] calls Self::tool_router() automatically
+</span><span class="attr">#[tool_handler]
+</span><span class="kw">impl </span>ServerHandler <span class="kw">for </span>MyToolHandler {}</code></pre></div><h4 id="eliding-tool_handler"><a class="doc-anchor" href="#eliding-tool_handler">§</a>Eliding <code>#[tool_handler]</code></h4>
+<p>For a tools-only server, pass <code>server_handler</code> so the <code>impl ServerHandler</code> block is not written by hand:</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="attr">#[tool_router(server_handler)]
+</span><span class="kw">impl </span>MyToolHandler {
+    <span class="attr">#[tool]
+    </span><span class="kw">fn </span>my_tool() {}
+}</code></pre></div>
+<p>This expands in two steps: first <code>#[tool_router]</code> emits the inherent impl plus
+<code>#[::rmcp::tool_handler] impl ServerHandler for MyToolHandler {}</code>, then <code>#[tool_handler]</code>
+fills in <code>call_tool</code>, <code>list_tools</code>, <code>get_info</code>, and related methods. If you combine tools with
+prompts or tasks on the <strong>same</strong> <code>impl ServerHandler</code> block (stacked <code>#[tool_handler]</code> /
+<code>#[prompt_handler]</code> attributes), keep using an explicit <code>#[tool_handler]</code> impl instead of <code>server_handler</code>.</p>
+<p>Or specify the visibility and router name, which would be helpful when you want to combine multiple routers into one:</p>
+
+<div class="example-wrap ignore"><a href="#" class="tooltip" title="This example is not tested">ⓘ</a><pre class="rust rust-example-rendered"><code><span class="kw">mod </span>a {
+    <span class="attr">#[tool_router(router = tool_router_a, vis = <span class="string">"pub"</span>)]
+    </span><span class="kw">impl </span>MyToolHandler {
+        <span class="attr">#[tool]
+        </span><span class="kw">fn </span>my_tool_a() {
+             
+        }
+    }
+}
+
+<span class="kw">mod </span>b {
+    <span class="attr">#[tool_router(router = tool_router_b, vis = <span class="string">"pub"</span>)]
+    </span><span class="kw">impl </span>MyToolHandler {
+        <span class="attr">#[tool]
+        </span><span class="kw">fn </span>my_tool_b() {
+             
+        }
+    }
+}
+
+<span class="kw">impl </span>MyToolHandler {
+    <span class="kw">fn </span>new() -&gt; <span class="self">Self </span>{
+        <span class="self">Self </span>{
+            tool_router: <span class="self">self</span>::tool_router_a() + <span class="self">self</span>::tool_router_b(),
+        }
+    }
+}</code></pre></div></div></details></section></div></main></body></html>

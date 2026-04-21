@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Tools for MCP servers."><title>rmcp::handler::server::router::tool - Rust</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-6b053e98.ttf.woff2,FiraSans-Italic-81dc35de.woff2,FiraSans-Regular-0fe48ade.woff2,FiraSans-MediumItalic-ccf7e434.woff2,FiraSans-Medium-e1aa3f0a.woff2,SourceCodePro-Regular-8badfe75.ttf.woff2,SourceCodePro-Semibold-aa29a496.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2"href="../../../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../../../static.files/normalize-9960930a.css"><link rel="stylesheet" href="../../../../../static.files/rustdoc-ca0dd0c4.css"><meta name="rustdoc-vars" data-root-path="../../../../../" data-static-root-path="../../../../../static.files/" data-current-crate="rmcp" data-themes="" data-resource-suffix="" data-rustdoc-version="1.93.1 (01f6ddf75 2026-02-11)" data-channel="1.93.1" data-search-js="search-9e2438ea.js" data-stringdex-js="stringdex-a3946164.js" data-settings-js="settings-c38705f0.js" ><script src="../../../../../static.files/storage-e2aeef58.js"></script><script defer src="../sidebar-items.js"></script><script defer src="../../../../../static.files/main-a410ff4d.js"></script><noscript><link rel="stylesheet" href="../../../../../static.files/noscript-263c88ec.css"></noscript><link rel="alternate icon" type="image/png" href="../../../../../static.files/favicon-32x32-eab170b8.png"><link rel="icon" type="image/svg+xml" href="../../../../../static.files/favicon-044be391.svg"></head><body class="rustdoc mod"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><rustdoc-topbar><h2><a href="#">Module tool</a></h2></rustdoc-topbar><nav class="sidebar"><div class="sidebar-crate"><h2><a href="../../../../../rmcp/index.html">rmcp</a><span class="version">1.4.0</span></h2></div><div class="sidebar-elems"><section id="rustdoc-toc"><h2 class="location"><a href="#">Module tool</a></h2><h3><a href="#structs">Module Items</a></h3><ul class="block"><li><a href="#structs" title="Structs">Structs</a></li><li><a href="#traits" title="Traits">Traits</a></li></ul></section><div id="rustdoc-modnav"><h2><a href="../index.html">In rmcp::<wbr>handler::<wbr>server::<wbr>router</a></h2></div></div></nav><div class="sidebar-resizer" title="Drag to resize sidebar"></div><main><div class="width-limiter"><section id="main-content" class="content"><div class="main-heading"><div class="rustdoc-breadcrumbs"><a href="../../../../index.html">rmcp</a>::<wbr><a href="../../../index.html">handler</a>::<wbr><a href="../../index.html">server</a>::<wbr><a href="../index.html">router</a></div><h1>Module <span>tool</span>&nbsp;<button id="copy-path" title="Copy item path to clipboard">Copy item path</button></h1><rustdoc-toolbar></rustdoc-toolbar><span class="sub-heading"><a class="src" href="../../../../../src/rmcp/handler\server\router/tool.rs.html#1-455">Source</a> </span></div><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Tools for MCP servers.</p>
+<p>It’s straightforward to define tools using <a href="../../../../attr.tool_router.html" title="attr rmcp::tool_router"><code>tool_router</code></a> and
+<a href="../../../../attr.tool.html" title="attr rmcp::tool"><code>tool</code></a> macro.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">struct </span>Server;
+
+<span class="attr">#[derive(Deserialize, schemars::JsonSchema, Default)]
+</span><span class="kw">struct </span>AddParameter {
+    left: usize,
+    right: usize
+}
+<span class="attr">#[derive(Serialize, schemars::JsonSchema)]
+</span><span class="kw">struct </span>AddOutput {
+    sum: usize
+}
+<span class="attr">#[tool_router(server_handler)]
+</span><span class="kw">impl </span>Server {
+    <span class="attr">#[tool(name = <span class="string">"adder"</span>, description = <span class="string">"Modular add two integers"</span>)]
+    </span><span class="kw">fn </span>add(
+        <span class="kw-2">&amp;</span><span class="self">self</span>,
+        Parameters(AddParameter { left, right }): Parameters&lt;AddParameter&gt;
+    ) -&gt; Json&lt;AddOutput&gt; {
+        Json(AddOutput { sum: left.wrapping_add(right) })
+    }
+}</code></pre></div>
+<p>The <code>server_handler</code> flag emits <code>#[tool_handler]</code> for you (tools-only servers). For custom
+<code>#[tool_handler(...)]</code> options or multiple handler macros on one <code>impl ServerHandler</code>, write
+<code>#[tool_router]</code> and <code>#[tool_handler] impl ServerHandler for ...</code> explicitly—see
+<a href="../../../../attr.tool_router.html" title="attr rmcp::tool_router"><code>tool_router</code></a> and <a href="../../../../attr.tool_handler.html" title="attr rmcp::tool_handler"><code>tool_handler</code></a>.</p>
+<p>Using the macro-based code pattern above is suitable for small MCP servers with simple interfaces.
+When the business logic become larger, it is recommended that each tool should reside
+in individual file, combined into MCP server using <a href="trait.SyncTool.html" title="trait rmcp::handler::server::router::tool::SyncTool"><code>SyncTool</code></a> and <a href="trait.AsyncTool.html" title="trait rmcp::handler::server::router::tool::AsyncTool"><code>AsyncTool</code></a> traits.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="comment">// In tool1.rs
+</span><span class="kw">pub struct </span>ComplexTool1;
+<span class="attr">#[derive(Deserialize, schemars::JsonSchema, Default)]
+</span><span class="kw">pub struct </span>ComplexTool1Input { <span class="comment">/* ... */ </span>}
+<span class="attr">#[derive(Serialize, schemars::JsonSchema)]
+</span><span class="kw">pub struct </span>ComplexTool1Output { <span class="comment">/* ... */ </span>}
+
+<span class="kw">impl </span>ToolBase <span class="kw">for </span>ComplexTool1 {
+    <span class="kw">type </span>Parameter = ComplexTool1Input;
+    <span class="kw">type </span>Output = ComplexTool1Output;
+    <span class="kw">type </span>Error = MyCustomError;
+    <span class="kw">fn </span>name() -&gt; Cow&lt;<span class="lifetime">'static</span>, str&gt; {
+        <span class="string">"complex-tool1"</span>.into()
+    }
+
+    <span class="kw">fn </span>description() -&gt; <span class="prelude-ty">Option</span>&lt;Cow&lt;<span class="lifetime">'static</span>, str&gt;&gt; {
+        <span class="prelude-val">Some</span>(<span class="string">"..."</span>.into())
+    }
+}
+<span class="kw">impl </span>SyncTool&lt;MyToolServer&gt; <span class="kw">for </span>ComplexTool1 {
+    <span class="kw">fn </span>invoke(service: <span class="kw-2">&amp;</span>MyToolServer, param: <span class="self">Self</span>::Parameter) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>::Output, <span class="self">Self</span>::Error&gt; {
+        <span class="comment">// ...
+    </span>}
+}
+<span class="comment">// In tool2.rs
+</span><span class="kw">pub struct </span>ComplexTool2;
+<span class="attr">#[derive(Deserialize, schemars::JsonSchema, Default)]
+</span><span class="kw">pub struct </span>ComplexTool2Input { <span class="comment">/* ... */ </span>}
+<span class="attr">#[derive(Serialize, schemars::JsonSchema)]
+</span><span class="kw">pub struct </span>ComplexTool2Output { <span class="comment">/* ... */ </span>}
+
+<span class="kw">impl </span>ToolBase <span class="kw">for </span>ComplexTool2 {
+    <span class="kw">type </span>Parameter = ComplexTool2Input;
+    <span class="kw">type </span>Output = ComplexTool2Output;
+    <span class="kw">type </span>Error = MyCustomError;
+    <span class="kw">fn </span>name() -&gt; Cow&lt;<span class="lifetime">'static</span>, str&gt; {
+        <span class="string">"complex-tool2"</span>.into()
+    }
+
+    <span class="kw">fn </span>description() -&gt; <span class="prelude-ty">Option</span>&lt;Cow&lt;<span class="lifetime">'static</span>, str&gt;&gt; {
+        <span class="prelude-val">Some</span>(<span class="string">"..."</span>.into())
+    }
+}
+<span class="kw">impl </span>AsyncTool&lt;MyToolServer&gt; <span class="kw">for </span>ComplexTool2 {
+    <span class="kw">async fn </span>invoke(service: <span class="kw-2">&amp;</span>MyToolServer, param: <span class="self">Self</span>::Parameter) -&gt; <span class="prelude-ty">Result</span>&lt;<span class="self">Self</span>::Output, <span class="self">Self</span>::Error&gt; {
+        <span class="comment">// ...
+    </span>}
+}
+
+<span class="comment">// In tool_router.rs
+</span><span class="kw">struct </span>MyToolServer {
+    tool_router: ToolRouter&lt;<span class="self">Self</span>&gt;,
+}
+<span class="kw">impl </span>MyToolServer {
+    <span class="kw">pub fn </span>tool_router() -&gt; ToolRouter&lt;<span class="self">Self</span>&gt; {
+        ToolRouter::new()
+            .with_sync_tool::&lt;ComplexTool1&gt;()
+            .with_async_tool::&lt;ComplexTool2&gt;()
+    }
+}</code></pre></div>
+<p>It’s also possible to use macro-based and trait-based tool definition together: Since
+<a href="struct.ToolRouter.html" title="struct rmcp::handler::server::router::tool::ToolRouter"><code>ToolRouter</code></a> implements <a href="https://doc.rust-lang.org/1.93.1/core/ops/arith/trait.Add.html" title="trait core::ops::arith::Add"><code>Add</code></a>, you can add two tool routers into final
+router as showed in <a href="../../../../attr.tool_router.html" title="attr rmcp::tool_router">the documentation of <code>tool_router</code></a>.</p>
+</div></details><h2 id="structs" class="section-header">Structs<a href="#structs" class="anchor">§</a></h2><dl class="item-table"><dt><a class="struct" href="struct.ToolAttrGenerateFunctionAdapter.html" title="struct rmcp::handler::server::router::tool::ToolAttrGenerateFunctionAdapter">Tool<wbr>Attr<wbr>Generate<wbr>Function<wbr>Adapter</a></dt><dt><a class="struct" href="struct.ToolRoute.html" title="struct rmcp::handler::server::router::tool::ToolRoute">Tool<wbr>Route</a></dt><dt><a class="struct" href="struct.ToolRouter.html" title="struct rmcp::handler::server::router::tool::ToolRouter">Tool<wbr>Router</a></dt><dt><a class="struct" href="struct.WithToolAttr.html" title="struct rmcp::handler::server::router::tool::WithToolAttr">With<wbr>Tool<wbr>Attr</a></dt></dl><h2 id="traits" class="section-header">Traits<a href="#traits" class="anchor">§</a></h2><dl class="item-table"><dt><a class="trait" href="trait.AsyncTool.html" title="trait rmcp::handler::server::router::tool::AsyncTool">Async<wbr>Tool</a></dt><dd>Asynchronous version of a tool.</dd><dt><a class="trait" href="trait.CallToolHandlerExt.html" title="trait rmcp::handler::server::router::tool::CallToolHandlerExt">Call<wbr>Tool<wbr>Handler<wbr>Ext</a></dt><dt><a class="trait" href="trait.IntoToolRoute.html" title="trait rmcp::handler::server::router::tool::IntoToolRoute">Into<wbr>Tool<wbr>Route</a></dt><dt><a class="trait" href="trait.SyncTool.html" title="trait rmcp::handler::server::router::tool::SyncTool">Sync<wbr>Tool</a></dt><dd>Synchronous version of a tool.</dd><dt><a class="trait" href="trait.ToolBase.html" title="trait rmcp::handler::server::router::tool::ToolBase">Tool<wbr>Base</a></dt><dd>Base trait to define attributes of a tool.</dd></dl></section></div></main></body></html>

@@ -1,0 +1,9 @@
+(function() {
+    var implementors = Object.fromEntries([["rmcp",[["impl&lt;F, R&gt; <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.1/core/future/future/trait.Future.html\" title=\"trait core::future::future::Future\">Future</a> for <a class=\"enum\" href=\"rmcp/handler/server/prompt/enum.IntoGetPromptResultFut.html\" title=\"enum rmcp::handler::server::prompt::IntoGetPromptResultFut\">IntoGetPromptResultFut</a>&lt;F, R&gt;<div class=\"where\">where\n    F: <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.1/core/future/future/trait.Future.html\" title=\"trait core::future::future::Future\">Future</a>&lt;Output = R&gt;,\n    R: <a class=\"trait\" href=\"rmcp/handler/server/prompt/trait.IntoGetPromptResult.html\" title=\"trait rmcp::handler::server::prompt::IntoGetPromptResult\">IntoGetPromptResult</a>,</div>"],["impl&lt;F, R&gt; <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.1/core/future/future/trait.Future.html\" title=\"trait core::future::future::Future\">Future</a> for <a class=\"enum\" href=\"rmcp/handler/server/tool/enum.IntoCallToolResultFut.html\" title=\"enum rmcp::handler::server::tool::IntoCallToolResultFut\">IntoCallToolResultFut</a>&lt;F, R&gt;<div class=\"where\">where\n    F: <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.1/core/future/future/trait.Future.html\" title=\"trait core::future::future::Future\">Future</a>&lt;Output = R&gt;,\n    R: <a class=\"trait\" href=\"rmcp/handler/server/tool/trait.IntoCallToolResult.html\" title=\"trait rmcp::handler::server::tool::IntoCallToolResult\">IntoCallToolResult</a>,</div>"]]]]);
+    if (window.register_implementors) {
+        window.register_implementors(implementors);
+    } else {
+        window.pending_implementors = implementors;
+    }
+})()
+//{"start":57,"fragment_lengths":[1542]}

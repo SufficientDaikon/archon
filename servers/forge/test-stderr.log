@@ -1,0 +1,2 @@
+2026-04-18T07:08:14.213348Z  INFO forge: FORGE v0.1.0 starting on stdio
+Error: expect initialized request, but received: Some(Request(JsonRpcRequest { jsonrpc: JsonRpcVersion2_0, id: Number(1), request: CustomRequest(CustomRequest { method: "initialize", params: Some(Object {"protocolVersion": String("2024-11-05")}), extensions: Extensions }) }))

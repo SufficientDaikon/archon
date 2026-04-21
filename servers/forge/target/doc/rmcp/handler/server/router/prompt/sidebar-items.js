@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"struct":["PromptAttrGenerateFunctionAdapter","PromptRoute","PromptRouter"],"trait":["IntoPromptRoute"]};

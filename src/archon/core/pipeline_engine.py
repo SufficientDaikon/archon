@@ -20,7 +20,11 @@ from enum import Enum
 from pathlib import Path
 from typing import Any, Callable
 
+import asyncio
+
 import yaml
+
+from .synapse_engine_v2 import SynapseEngine as SynapseEngineV2
 
 ARCHON_ROOT = Path(__file__).parent.parent.parent.parent
 
@@ -129,6 +133,7 @@ class PipelineExecutor:
 
         self._hooks: dict[str, Callable] = {}
         self._load_hooks()
+        self._synapse_engine: SynapseEngineV2 | None = None
 
     def _load_hooks(self) -> None:
         """Load hook handlers from hooks directory."""
@@ -163,6 +168,58 @@ class PipelineExecutor:
 
         return pipeline
 
+    def _build_synapse_engine(self) -> "SynapseEngineV2":
+        """Build a SynapseEngineV2 instance seeded with default synapses from synapse_engine."""
+        from .synapse_engine import create_default_synapses
+        from .synapse_engine_v2 import Synapse as SynapseV2, SynapseHook as SynapseHookV2
+
+        engine = SynapseEngineV2()
+        for name, syn in create_default_synapses().items():
+            new_syn = SynapseV2(name, syn.synapse_type)
+            for trigger, hook in syn.hooks.items():
+                new_syn.register_hook(
+                    SynapseHookV2(hook.name, trigger, hook.validator, hook.description)
+                )
+            try:
+                engine.register_synapse(new_syn)
+            except ValueError:
+                pass  # already registered
+        return engine
+
+    def _fire_synapses(self, trigger: str, context: dict) -> list:
+        """Fire synapse engine for a given trigger. Returns blocking decisions."""
+        if self._synapse_engine is None:
+            return []
+        try:
+            loop = asyncio.get_event_loop()
+            if loop.is_running():
+                import concurrent.futures
+                import threading
+                result_container = []
+                exc_container = []
+
+                def run():
+                    import asyncio as _asyncio
+                    try:
+                        result_container.extend(
+                            _asyncio.run(self._synapse_engine.fire_trigger(trigger, context))
+                        )
+                    except Exception as e:
+                        exc_container.append(e)
+
+                t = threading.Thread(target=run, daemon=True)
+                t.start()
+                t.join(timeout=5)
+                if exc_container:
+                    return []
+                return result_container
+            else:
+                return loop.run_until_complete(
+                    self._synapse_engine.fire_trigger(trigger, context)
+                )
+        except Exception:
+            return []
+
     def execute(
         self,
         pipeline: PipelineDefinition,
@@ -193,6 +250,11 @@ class PipelineExecutor:
         # Fire session-start hook
         self._fire_hook("session_start", {"pipeline": pipeline.name})
 
+        # Initialise synapse engine if synapse mode is active
+        if pipeline.synapse_mode != "disabled" and self._synapse_engine is None:
+            self._synapse_engine = self._build_synapse_engine()
+
+
         state.update_status(PipelineStatus.EXECUTING.value)
 
         for step_index, step_config in enumerate(pipeline.steps):
@@ -222,6 +284,30 @@ class PipelineExecutor:
                     return state.to_dict()
                 elif failure_action == "skip":
                     continue
+
+            # Fire synapse pre-execution check
+            if self._synapse_engine is not None:
+                synapse_decisions = self._fire_synapses("pre-execution", {
+                    "pipeline": pipeline.name,
+                    "step": step_name,
+                    "reasoning": step_config.get("prompt", step_config.get("description", "")),
+                    "task": step_config.get("name", ""),
+                })
+                blocking = [d for d in synapse_decisions if d.is_halt]
+                if blocking:
+                    state.record_step(step_name, StepStatus.FAILED.value, {
+                        "errors": [d.message for d in blocking],
+                        "phase": "synapse-pre-execution",
+                    })
+                    failure_action = self._handle_failure(
+                        step_config, step_name, [d.message for d in blocking], 1, state
+                    )
+                    if failure_action == "halt":
+                        state.update_status(PipelineStatus.FAILED.value)
+                        state.save(self.state_dir)
+                        return state.to_dict()
+                    elif failure_action == "skip":
+                        continue
 
             # Execute the step
             state.record_step(step_name, StepStatus.RUNNING.value)

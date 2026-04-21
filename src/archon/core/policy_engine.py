@@ -310,3 +310,90 @@ class PolicyEngine:
     def _record(self, decision: PolicyDecision) -> None:
         """Record decision to audit log."""
         self._audit_log.append(decision)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SYNAPSE INTEGRATION
+# ─────────────────────────────────────────────────────────────────────────────
+
+class PolicyEngineWithSynapses(PolicyEngine):
+    """Policy engine extended with synapse firing."""
+    
+    def __init__(self, rules: list[PermissionRule] | None = None, synapse_engine=None):
+        super().__init__(rules)
+        self.synapse_engine = synapse_engine
+        self.synapse_decisions: list = []
+    
+    def evaluate_with_synapses(
+        self,
+        tool_name: str,
+        session_id: str,
+        correlation_id: str,
+        arguments: dict[str, Any] | None = None,
+        trust_tier: str = "community",
+        context: dict[str, Any] | None = None,
+        synapse_context: dict[str, Any] | None = None,
+    ) -> tuple[PolicyDecision, list]:
+        """
+        Evaluate tool invocation through BOTH policy engine AND synapses.
+        Returns (policy_decision, synapse_decisions).
+        
+        If any synapse HALTS, return HALT regardless of policy decision.
+        """
+        synapse_decisions = []
+        
+        # Fire synapses first (they block harder)
+        if self.synapse_engine and synapse_context:
+            synapse_decisions = self._fire_synapses(synapse_context)
+            if any(d["action"] == "halt" for d in synapse_decisions):
+                # Synapses blocked it
+                policy_decision = PolicyDecision(
+                    decision_id=f"pd-synapse-halt-{uuid.uuid4().hex[:8]}",
+                    action="deny",
+                    rationale=f"Synapse halt: {[d.get('message') for d in synapse_decisions]}",
+                    policy_id="synapse-enforcement",
+                    tool_name=tool_name,
+                    session_id=session_id,
+                    correlation_id=correlation_id,
+                    timestamp=datetime.now(timezone.utc).isoformat(),
+                    evidence_links=[],
+                    conditions_evaluated=[{"synapses_fired": len(synapse_decisions)}],
+                )
+                return policy_decision, synapse_decisions
+        
+        # Then evaluate policy
+        policy_decision = self.evaluate(
+            tool_name,
+            session_id,
+            correlation_id,
+            arguments,
+            trust_tier,
+            context,
+        )
+        
+        return policy_decision, synapse_decisions
+    
+    def _fire_synapses(self, context: dict[str, Any]) -> list:
+        """Fire all registered synapses for the context."""
+        if not self.synapse_engine:
+            return []
+        
+        decisions = []
+        for synapse in self.synapse_engine.synapses.values():
+            for hook in synapse.hooks.values():
+                # Simple sync validation for now
+                try:
+                    result = hook.validator(context)
+                    if hasattr(result, '__await__'):
+                        # Can't await in sync context, skip async validators
+                        continue
+                    decisions.append({
+                        "synapse": synapse.name,
+                        "hook": hook.name,
+                        "action": result.action.value if hasattr(result, 'action') else "allow",
+                        "message": result.message if hasattr(result, 'message') else "",
+                    })
+                except Exception:
+                    pass
+        
+        return decisions

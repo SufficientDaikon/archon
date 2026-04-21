@@ -1,0 +1,42 @@
+[package]
+name = "forge"
+version = "0.1.0"
+edition = "2021"
+description = "FORGE — File Operations & Real-time Grammar Engine. MCP server for AI agents."
+
+[dependencies]
+# MCP protocol
+rmcp = { version = "1.4", features = ["server", "transport-io", "macros"] }
+tokio = { version = "1", features = ["full"] }
+
+# Text buffer
+ropey = "1.6"
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Diff generation
+similar = "2.6"
+
+# Content hashing
+xxhash-rust = { version = "0.8", features = ["xxh64"] }
+
+# Atomic writes
+tempfile = "3"
+
+# Encoding
+encoding_rs = "0.8"
+
+# Error handling
+thiserror = "2"
+anyhow = "1"
+
+# Tracing (for debug logging to stderr, not stdout — stdout is MCP)
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true

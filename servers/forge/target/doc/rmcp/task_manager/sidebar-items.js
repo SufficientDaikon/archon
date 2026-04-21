@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["DEFAULT_TASK_TIMEOUT_SECS"],"fn":["current_timestamp"],"struct":["OperationDescriptor","OperationMessage","OperationProcessor","TaskResult","ToolCallTaskResult"],"trait":["OperationResultTransport"],"type":["OperationFuture"]};

@@ -15,12 +15,12 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![Version](https://img.shields.io/badge/v1.0.0-stable-brightgreen?style=flat-square)]()
 [![Python](https://img.shields.io/badge/python-3.9+-3776AB?style=flat-square&logo=python&logoColor=white)]()
-![Skills](https://img.shields.io/badge/skills-98-blue?style=flat-square)
+![Skills](https://img.shields.io/badge/skills-99-blue?style=flat-square)
 ![Agents](https://img.shields.io/badge/agents-17-orange?style=flat-square)
-![Synapses](https://img.shields.io/badge/synapses-5-blueviolet?style=flat-square)
+![Synapses](https://img.shields.io/badge/synapses-12-blueviolet?style=flat-square)
 ![Pipelines](https://img.shields.io/badge/pipelines-8-red?style=flat-square)
 ![Bundles](https://img.shields.io/badge/bundles-16-teal?style=flat-square)
-![Tests](https://img.shields.io/badge/tests-513-success?style=flat-square)
+![Tests](https://img.shields.io/badge/tests-362-success?style=flat-square)
 
 <br>
 
@@ -83,9 +83,9 @@ graph TD
     RT["🔒 Runtime Contracts<br><sub>Session state · Policy engine · Telemetry · MCP trust</sub>"]
     GH["⚙️ Guardrails & Hooks<br><sub>5 lifecycle hooks · Iron Laws · Deviation protocol</sub>"]
     PO["🔄 Pipelines & Orchestration<br><sub>8 resumable workflows · Failure recovery · Context curation</sub>"]
-    SC["🧠 Synapses & Cognition<br><sub>5 cognitive synapses · Structured reasoning · Confidence tagging</sub>"]
+    SC["🧠 Synapses & Cognition<br><sub>12 cognitive synapses · Structured reasoning · Confidence tagging</sub>"]
     AP["🤖 Agents & Personas<br><sub>17 agents · Skill bindings · Handoff contracts · Quality gates</sub>"]
-    SK["📚 Skills & Knowledge<br><sub>98 skills · 16 bundles · Prompt library · Knowledge sources</sub>"]
+    SK["📚 Skills & Knowledge<br><sub>99 skills · 16 bundles · Prompt library · Knowledge sources</sub>"]
 
     RT --> GH --> PO --> SC --> AP --> SK
 
@@ -106,7 +106,7 @@ archon/
 ├── bundles/         16 domain bundles (bundle.yaml + conflict resolution)
 ├── agents/          17 agent definitions (AGENT.md + agent-manifest.yaml)
 ├── pipelines/       8 multi-agent workflows (resumable YAML)
-├── synapses/        5 cognitive synapses (SYNAPSE.md + manifest.yaml)
+├── synapses/        12 cognitive synapses (SYNAPSE.md + manifest.yaml)
 ├── hooks/           5 lifecycle hooks
 ├── src/             Core engine (session, policy, telemetry, replay)
 ├── sdk/             Python SDK
@@ -236,7 +236,7 @@ priority: P1
 
 ## 🤖 Agents
 
-17 agents with formal personas, strict guardrail enforcement, skill bindings, and handoff contracts. Every agent operates under all 5 cognitive synapses.
+17 agents with formal personas, strict guardrail enforcement, skill bindings, and handoff contracts. Every agent operates under all 12 cognitive synapses.
 
 | Agent                        | Role                    | Skills                                                                       | Specialty                                                                                   |
 | :--------------------------- | :---------------------- | :--------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------ |
