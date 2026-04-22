@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Archon for Kids</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<style>
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+.float { animation: float 3s ease-in-out infinite; }
+</style>
+</head>
+<body class="text-white bg-gradient-to-b from-slate-950 to-slate-900">
+
+<div class="min-h-screen bg-gradient-to-b from-blue-900 via-purple-900 to-slate-900 flex items-center justify-center px-4 relative">
+<div class="absolute top-20 left-10 w-40 h-40 bg-cyan-400 rounded-full blur-3xl opacity-20 float"></div>
+<div class="relative z-10 text-center max-w-4xl">
+<h1 class="text-8xl font-black mb-4 text-cyan-400">ARCHON</h1>
+<h2 class="text-5xl font-bold mb-6">The Super Smart Brain!</h2>
+<p class="text-2xl mb-8 text-gray-300">AI that thinks better and never cuts corners</p>
+<button onclick="document.getElementById('main').scrollIntoView()" class="px-8 py-4 bg-cyan-400 text-black font-bold text-xl rounded-full hover:scale-110">LEARN MORE</button>
+</div>
+</div>
+
+<div id="main" class="px-4 py-20">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-5xl font-bold text-center mb-12 text-cyan-300">4 Cool Things</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6" hx-target="#detail">
+
+<button hx-get="/skills.html" class="bg-blue-600 rounded-2xl p-8 cursor-pointer hover:scale-105 transition text-left">
+<div class="text-5xl mb-2">🛠️</div>
+<h3 class="text-3xl font-bold">Skills</h3>
+<p class="text-lg">99 Superpowers</p>
+</button>
+
+<button hx-get="/agents.html" class="bg-purple-600 rounded-2xl p-8 cursor-pointer hover:scale-105 transition text-left">
+<div class="text-5xl mb-2">👥</div>
+<h3 class="text-3xl font-bold">Agents</h3>
+<p class="text-lg">17 Team Members</p>
+</button>
+
+<button hx-get="/synapses.html" class="bg-pink-600 rounded-2xl p-8 cursor-pointer hover:scale-105 transition text-left">
+<div class="text-5xl mb-2">📋</div>
+<h3 class="text-3xl font-bold">Synapses</h3>
+<p class="text-lg">Keep Honest</p>
+</button>
+
+<button hx-get="/pipelines.html" class="bg-green-600 rounded-2xl p-8 cursor-pointer hover:scale-105 transition text-left">
+<div class="text-5xl mb-2">📍</div>
+<h3 class="text-3xl font-bold">Pipelines</h3>
+<p class="text-lg">Recipes</p>
+</button>
+
+</div>
+
+<div id="detail" class="mt-20"></div>
+</div>
+</div>
+
+<div class="bg-black bg-opacity-50 text-center py-8 text-gray-400">
+<p>Made by Ahmed Taha - Find us on <a href="https://github.com/SufficientDaikon/archon" class="text-cyan-400">GitHub</a></p>
+</div>
+
+<script>
+document.body.addEventListener('htmx:afterSwap', function() {
+  document.getElementById('detail').scrollIntoView({ behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>

@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["master"]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -42,17 +42,53 @@ jobs:
       - name: Build site
         run: |
           mkdir -p _site
-          # Copy root landing page
-          cp index.html _site/
           # Copy documentation
           cp -r docs _site/docs
+          # Copy archon-for-kids to root for easy access
+          cp docs/archon-for-kids.html _site/
+          cp docs/{skills,agents,synapses,pipelines}.html _site/
           # Copy llms.txt files
-          cp llms.txt _site/
-          cp llms-full.txt _site/
-          # Copy agent cards
-          cp agent-cards.json _site/
+          cp llms.txt _site/ || true
+          # Copy agent cards if generated
+          cp agent-cards.json _site/ || true
           # Add .nojekyll to prevent Jekyll processing
           touch _site/.nojekyll
+          # Create landing page linking to key resources
+          cat > _site/index.html << 'LANDING'
+          <!DOCTYPE html>
+          <html>
+          <head>
+          <meta charset="UTF-8">
+          <title>Archon Framework</title>
+          <script src="https://cdn.tailwindcss.com"></script>
+          <style>
+          body { background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%); }
+          </style>
+          </head>
+          <body class="text-white">
+          <div class="min-h-screen flex items-center justify-center px-4">
+          <div class="text-center max-w-4xl">
+          <h1 class="text-6xl font-black mb-4 text-cyan-400">ARCHON</h1>
+          <p class="text-2xl mb-8 text-gray-300">The Virtuoso Engine for AI Agents</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="docs/" class="bg-blue-600 rounded-lg p-6 hover:scale-105">
+          <h2 class="text-2xl font-bold">Documentation</h2>
+          <p>Full guides and API reference</p>
+          </a>
+          <a href="archon-for-kids.html" class="bg-purple-600 rounded-lg p-6 hover:scale-105">
+          <h2 class="text-2xl font-bold">For Kids</h2>
+          <p>Learn Archon simply</p>
+          </a>
+          <a href="https://github.com/SufficientDaikon/archon" class="bg-green-600 rounded-lg p-6 hover:scale-105">
+          <h2 class="text-2xl font-bold">GitHub</h2>
+          <p>Source code & issues</p>
+          </a>
+          </div>
+          </div>
+          </div>
+          </body>
+          </html>
+          LANDING
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
