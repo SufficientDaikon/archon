@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -26,15 +26,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: Install dependencies
-        run: pip install pyyaml
-
-      - name: Generate llms.txt
-        run: python scripts/generate-llms-txt.py
-
-      - name: Generate agent-cards.json
-        run: python scripts/generate-agent-cards.py
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -49,8 +40,6 @@ jobs:
           cp docs/{skills,agents,synapses,pipelines}.html _site/
           # Copy llms.txt files
           cp llms.txt _site/ || true
-          # Copy agent cards if generated
-          cp agent-cards.json _site/ || true
           # Add .nojekyll to prevent Jekyll processing
           touch _site/.nojekyll
           # Create landing page linking to key resources
