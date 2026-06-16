@@ -25,3 +25,17 @@ triggers:
     ]
   patterns: ["*handoff*", "*pipeline state*", "*context brief*"]
 priority: P1
+
+output-schema:
+  context_brief:
+    type: object
+    description: "Curated context package ready for pipeline handoff"
+    required: true
+  token_budget_used:
+    type: integer
+    description: "Tokens consumed by the curated context"
+    required: false
+  sections_included:
+    type: list
+    description: "List of section names included in the context brief"
+    required: false

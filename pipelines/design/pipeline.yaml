@@ -1,0 +1,90 @@
+name: design-pipeline
+version: 2.0.0
+description: >
+  Unified design pipeline. One agent, DESIGN.md as the central artifact.
+  Replaces: ux-pipeline (fragmented 7-step chain).
+
+entry-agent: design-agent
+synapse-mode: enabled
+artifact-persistence: design-specs
+
+modes:
+  generate:
+    description: Generate DESIGN.md from a project description
+    steps:
+      - id: brief
+        agent: design-agent
+        action: extract-constraints
+        input: user-brief
+        output: design-constraints.md
+
+      - id: archetype
+        agent: design-agent
+        action: select-archetype
+        input: design-constraints.md
+        output: archetype-selection.md
+
+      - id: design-md
+        agent: design-agent
+        action: generate-design-md
+        input: [design-constraints.md, archetype-selection.md]
+        output: DESIGN.md
+        artifact: true
+
+      - id: tokens
+        agent: design-agent
+        action: generate-tokens
+        input: DESIGN.md
+        output: tokens.css
+        artifact: true
+
+  apply:
+    description: Build UI components from an existing DESIGN.md
+    steps:
+      - id: load-design
+        agent: design-agent
+        action: load-design-md
+        input: DESIGN.md
+        output: design-context
+
+      - id: build
+        agent: design-agent
+        action: build-component
+        input: [design-context, component-spec]
+        output: component-code
+        artifact: true
+
+  audit:
+    description: Audit existing UI against a DESIGN.md
+    steps:
+      - id: load-design
+        agent: design-agent
+        action: load-design-md
+        input: DESIGN.md
+        output: design-context
+
+      - id: audit
+        agent: design-agent
+        action: run-audit
+        input: [design-context, ui-code]
+        output: audit-report.md
+        artifact: true
+
+quality-gates:
+  design-md:
+    - all-9-sections-present
+    - section-9-no-placeholders
+    - min-8-dos-8-donts
+    - all-section4-colors-in-section2
+
+  component:
+    - no-orphan-colors
+    - spacing-on-scale
+    - shadow-from-elevation-table
+    - no-section7-violations
+
+hooks:
+  post-design-md: validate-design-md-completeness
+  post-component: audit-against-design-md
+
+deprecated-pipeline: ux-pipeline

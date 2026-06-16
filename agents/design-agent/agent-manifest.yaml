@@ -1,0 +1,117 @@
+name: design-agent
+version: 2.0.0
+type: agent
+role: Unified Design Architect
+
+description: >
+  Archon single design agent. Generates, reads, applies, and audits DESIGN.md files.
+  Replaces: ui-design-agent, wireframe-agent, design-handoff-agent, design-reviewer-agent.
+  One agent with all design capabilities loaded as skills.
+
+skills:
+  primary:
+    - design-system
+    - design-tokens
+  supporting:
+    - design-review
+    - ux-research
+
+capabilities:
+  - design-md-generation
+  - design-md-application
+  - design-md-audit
+  - css-token-generation
+  - component-spec
+  - design-handoff
+
+deprecated-replaces:
+  - ui-design-agent
+  - wireframe-agent
+  - design-handoff-agent
+  - design-reviewer-agent
+
+workflow:
+  input:
+    - project description or brief
+    - existing DESIGN.md (optional, for audit/apply mode)
+    - component request (for generation with existing DESIGN.md)
+
+  modes:
+    generate: Creates DESIGN.md from a project description or brief
+    apply: Builds UI from an existing DESIGN.md
+    audit: Reviews UI/code against existing DESIGN.md
+    tokens: Generates CSS custom properties from DESIGN.md
+    adapt: Adapts a brand archetype to project-specific constraints
+
+  output:
+    - DESIGN.md (in generate/adapt mode)
+    - component code (in apply mode)
+    - audit report (in audit mode)
+    - tokens.css (in tokens mode)
+
+guardrail-enforcement: strict
+guardrails:
+  must-not:
+    - rule: Introduce a CSS value not documented in DESIGN.md
+      severity: critical
+      on-violation: halt
+    - rule: Use arbitrary hex values not in the color palette
+      severity: critical
+      on-violation: halt
+    - rule: Mix spacing values outside the defined scale
+      severity: major
+      on-violation: warn
+    - rule: Use font-weight 700 (bold) unless explicitly in the type system
+      severity: major
+      on-violation: warn
+
+  must-do:
+    - rule: Always produce a DESIGN.md or reference one in every design task
+      severity: critical
+      on-violation: halt
+    - rule: Self-audit Section 7 Donts before outputting any UI
+      severity: critical
+      on-violation: halt
+    - rule: Include all 9 sections in every generated DESIGN.md
+      severity: major
+      on-violation: warn
+    - rule: Use semantic token names that map to DESIGN.md sections
+      severity: major
+      on-violation: warn
+
+synapse-bindings:
+  - metacognition
+  - pattern-recognition
+
+card:
+  capabilities:
+    streaming: false
+    multi-turn: true
+    file-output: true
+    context-aware: true
+    self-evaluation: true
+  skills-provided:
+    - id: design-md-generation
+      name: DESIGN.md Generation
+      description: "Generate complete DESIGN.md files from project briefs and design requirements"
+      tags: [design, system, tokens, typography]
+    - id: design-md-application
+      name: Apply DESIGN.md to UI
+      description: "Build UI components and layouts by applying an existing DESIGN.md specification"
+      tags: [design, implementation, components]
+    - id: design-md-audit
+      name: Audit UI Against DESIGN.md
+      description: "Review UI code or designs against a DESIGN.md to detect violations and inconsistencies"
+      tags: [design, review, audit]
+  input-modes: [text/markdown, text/html, text/css, text/plain]
+  output-modes: [text/markdown, text/css, text/html]
+  cost-tier: standard
+  avg-tokens:
+    input: 8000
+    output: 14000
+
+acp:
+  endpoint: /agents/design-agent/runs
+  input-modes: [text]
+  output-modes: [text]
+  auth: none

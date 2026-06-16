@@ -101,6 +101,15 @@ skills:
     path: skills/design-handoff
     version: 2.0.0
     tags: [design, handoff, lifecycle, quality-gates]
+  - name: design-system
+    path: skills/design-system
+    version: 2.0.0
+    tags: [design, design-md, tokens, typography, components, layout]
+    priority: P1
+  - name: design-tokens
+    path: skills/design-tokens
+    version: 2.0.0
+    tags: [design, tokens, css, variables]
   - name: design-review
     path: skills/design-review
     version: 1.0.0
@@ -597,8 +606,6 @@ agents:
     path: agents/debugger-agent
   - name: ux-research-agent
     path: agents/ux-research-agent
-  - name: ui-design-agent
-    path: agents/ui-design-agent
   - name: qa-master-agent
     path: agents/qa-master-agent
   - name: context-curator-agent
@@ -609,12 +616,9 @@ agents:
     path: agents/security-reviewer-agent
   - name: university-professor-agent
     path: agents/university-professor-agent
-  - name: wireframe-agent
-    path: agents/wireframe-agent
-  - name: design-reviewer-agent
-    path: agents/design-reviewer-agent
-  - name: design-handoff-agent
-    path: agents/design-handoff-agent
+  - name: design-agent
+    path: agents/design-agent
+    description: "Unified design architect. Replaces ui-design-agent, wireframe-agent, design-handoff-agent, design-reviewer-agent."
   - name: prompt-architect-agent
     path: agents/prompt-architect-agent
   - name: skill-validator-agent
@@ -650,9 +654,16 @@ pipelines:
   - name: sdd-pipeline
     path: pipelines/sdd-pipeline.yaml
     trigger: "build feature * from scratch"
+  - name: design-pipeline
+    path: pipelines/design/pipeline.yaml
+    trigger: "design *"
+    description: "Unified design pipeline using DESIGN.md standard"
+  # DEPRECATED: replaced by design-pipeline
   - name: ux-pipeline
     path: pipelines/ux-pipeline.yaml
     trigger: "design feature *"
+    deprecated: true
+    superseded-by: design-pipeline
   - name: debug-pipeline
     path: pipelines/debug-pipeline.yaml
     trigger: "fix bug *"

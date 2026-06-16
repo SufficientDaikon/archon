@@ -1,0 +1,37 @@
+name: design-tokens
+author: tahaa
+description: >
+  CSS custom property generation and management from DESIGN.md.
+  Extracts, validates, and syncs design tokens between DESIGN.md and codebase.
+version: 2.0.0
+triggers:
+  - "generate tokens"
+  - "css variables from design"
+  - "design tokens"
+  - "update tokens"
+  - "sync design"
+platforms:
+  - claude-code
+  - cursor
+tags:
+  - design
+  - tokens
+  - css
+  - variables
+requires:
+  - design-system
+output-artifact: tokens.css
+
+output-schema:
+  tokens_css:
+    type: string
+    description: "CSS custom properties file content (--var-name: value)"
+    required: true
+  token_count:
+    type: integer
+    description: "Number of CSS custom properties generated"
+    required: true
+  format:
+    type: string
+    description: "Output format: css-vars | json | tailwind"
+    required: false

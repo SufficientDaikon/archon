@@ -8,3 +8,17 @@ triggers:
   keywords: ["review", "critique", "heuristic", "accessibility", "audit"]
   patterns: []
 priority: P2
+
+output-schema:
+  review_report:
+    type: string
+    description: "Structured design review report in markdown"
+    required: true
+  violations:
+    type: list
+    description: "List of design violations found (severity, rule, location)"
+    required: true
+  score:
+    type: integer
+    description: "Design quality score 0-100"
+    required: false

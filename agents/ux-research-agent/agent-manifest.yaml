@@ -115,3 +115,9 @@ card:
     input: 2000
     output: 10000
   quality-metrics: null
+
+acp:
+  endpoint: /agents/ux-research-agent/runs
+  input-modes: [text]
+  output-modes: [text]
+  auth: none

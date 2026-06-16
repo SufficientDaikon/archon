@@ -131,3 +131,9 @@ card:
     input: 8000
     output: 4000
   quality-metrics: null
+
+acp:
+  endpoint: /agents/context-curator-agent/runs
+  input-modes: [text]
+  output-modes: [text]
+  auth: none

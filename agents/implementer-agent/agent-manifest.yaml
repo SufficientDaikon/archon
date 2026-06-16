@@ -114,3 +114,9 @@ card:
     input: 6000
     output: 12000
   quality-metrics: null
+
+acp:
+  endpoint: /agents/implementer-agent/runs
+  input-modes: [text]
+  output-modes: [text]
+  auth: none

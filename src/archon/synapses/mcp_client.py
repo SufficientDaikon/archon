@@ -9,7 +9,12 @@ from typing import Optional, Dict, Any
 class MCPFileOpsClient:
     """Client for file-ops MCP server."""
     
-    def __init__(self, server_path: str = "C:/Users/tahaa/omniskill/servers/file-ops/server.py"):
+    def __init__(self, server_path: Optional[str] = None):
+        from pathlib import Path as _Path
+        if server_path is None:
+            # Default to project-relative path; falls back gracefully if not present
+            _root = _Path(__file__).resolve().parents[3]
+            server_path = str(_root / "servers" / "file-ops" / "server.py")
         self.server_path = server_path
         self.process = None
     

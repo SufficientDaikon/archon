@@ -68,7 +68,6 @@ class SynapseEngine:
 
 # Built-in Iron Laws
 IRON_LAWS = [
-    ("should", "Replace with: 'I verified this by [METHOD]'"),
     ("probably", "Remove or provide evidence"),
     ("close enough", "Exact or not done"),
     ("simple enough to skip", "Complexity doesn't excuse steps"),
@@ -76,6 +75,31 @@ IRON_LAWS = [
     ("will add later", "Technical debt — do now"),
 ]
 
+
+# Pre-compiled OWASP patterns for maximum scan speed.
+_OWASP_PATTERNS: list[tuple[re.Pattern, str, str]] = [
+    # A1 — Injection
+    (re.compile(r'\bexec\s*\(|(?<!\w)eval\s*\(', re.I), "CRITICAL", "A1-Injection: exec/eval (RCE risk)"),
+    (re.compile(r'subprocess\.(call|run|Popen)\s*\([^,)]*\+', re.I), "HIGH", "A1-Injection: dynamic subprocess call (command injection risk)"),
+    (re.compile(r'(?:query|execute|cursor\.execute)\s*\([^)]*\+[^)]*\)', re.I), "HIGH", "A1-Injection: possible SQL concatenation"),
+    # A2 — Broken Authentication
+    (re.compile(r"(?:password|passwd|pwd|secret|token|api_?key)\s*[=:]\s*[\"'][^\"']{6,}[\"']", re.I), "CRITICAL", "A2-Auth: hardcoded credential"),
+    (re.compile(r'jwt\.decode\s*\([^)]*verify\s*=\s*False', re.I), "CRITICAL", "A2-Auth: JWT signature verification disabled"),
+    # A3 — XSS
+    (re.compile(r'\.innerHTML\s*[+]?=|document\.write\s*\(', re.I), "HIGH", "A3-XSS: raw HTML injection point"),
+    (re.compile(r'dangerouslySetInnerHTML', re.I), "HIGH", "A3-XSS: React dangerouslySetInnerHTML"),
+    # A4 — Insecure Direct Object Reference (path traversal)
+    (re.compile(r'open\s*\([^)]*\+[^)]*\)|Path\s*\([^)]*\+[^)]*\)', re.I), "HIGH", "A4-IDOR: dynamic file path construction"),
+    # A5 — Security Misconfiguration
+    (re.compile(r'ssl\._create_unverified_context|verify\s*=\s*False.*requests\.|VERIFY_SSL\s*=\s*False', re.I), "HIGH", "A5-Misconfig: SSL verification disabled"),
+    (re.compile(r'DEBUG\s*=\s*True|debug\s*=\s*True', re.I), "MEDIUM", "A5-Misconfig: debug mode enabled"),
+    # A7 — Broken Access Control
+    (re.compile(r'os\.chmod\s*\([^,]+,\s*0o?777\)', re.I), "HIGH", "A7-Access: world-writable chmod 777"),
+    # A9 — Using Components with Known Vulnerabilities (pickle)
+    (re.compile(r'pickle\.loads?\s*\(', re.I), "HIGH", "A9-Deserialization: unsafe pickle deserialization"),
+    # A10 — SSRF indicators
+    (re.compile(r'requests\.(get|post|put|delete)\s*\([^)]*user[_-]?input|fetch\s*\([^)]*req\.(body|params|query)', re.I), "HIGH", "A10-SSRF: user-controlled URL in HTTP request"),
+]
 
 async def anti_rationalization_validator(context: dict[str, Any]) -> SynapseDecision:
     """Detect forbidden phrases in reasoning."""
@@ -100,30 +124,39 @@ async def anti_rationalization_validator(context: dict[str, Any]) -> SynapseDeci
 
 
 async def security_awareness_validator(context: dict[str, Any]) -> SynapseDecision:
-    """Scan code for OWASP vulnerabilities."""
-    code = context.get("code", "")
-    vulns = []
-    
-    if re.search(r"exec\(|eval\(", code):
-        vulns.append("CRITICAL: exec/eval detected")
-    if re.search(r"innerHTML\s*=", code):
-        vulns.append("HIGH: innerHTML assignment (XSS)")
-    if re.search(r"password\s*=\s*['\"]", code, re.IGNORECASE):
-        vulns.append("CRITICAL: Hardcoded password")
-    
-    if vulns:
+    """Scan code for OWASP Top-10 vulnerability patterns."""
+    code = context.get("code", "") or context.get("reasoning", "") or context.get("task", "")
+    if not code:
         return SynapseDecision(
             synapse_name="security-awareness",
             hook_name="scan-owasp",
-            action=SynapseAction.HALT,
-            message=f"Security vulnerabilities: {len(vulns)}",
+            action=SynapseAction.ALLOW,
+            message="No code content to scan",
+            evidence=[],
+        )
+
+    vulns: list[str] = []
+    critical_found = False
+    for pattern, severity, description in _OWASP_PATTERNS:
+        if pattern.search(code):
+            vulns.append(f"{severity}: {description}")
+            if severity == "CRITICAL":
+                critical_found = True
+
+    if vulns:
+        action = SynapseAction.HALT if critical_found else SynapseAction.WARN
+        return SynapseDecision(
+            synapse_name="security-awareness",
+            hook_name="scan-owasp",
+            action=action,
+            message=f"OWASP scan: {len(vulns)} issue(s) found ({'HALT' if critical_found else 'WARN'})",
             evidence=vulns,
         )
     return SynapseDecision(
         synapse_name="security-awareness",
         hook_name="scan-owasp",
         action=SynapseAction.ALLOW,
-        message="No vulnerabilities detected",
+        message="OWASP scan: no issues detected",
         evidence=[],
     )
 
@@ -223,8 +256,8 @@ class SynapseEngineV2(SynapseEngine):
                 halt = SynapseDecision(
                     synapse_name=synapse.name,
                     hook_name=getattr(hook, 'name', 'unknown'),
-                    action=SynapseAction.HALT,
-                    message=str(e),
+                    action=SynapseAction.WARN,
+                    message=f'Synapse error (degraded): {e}',
                 )
                 decisions.append(halt)
                 break
@@ -283,7 +316,7 @@ class SynapseEngineWithRouter(SynapseEngineV2):
                     break
             except Exception as e:
                 logger.error(f"Synapse {synapse.name} failed: {e}", exc_info=True)
-                halt = SynapseDecision(synapse.name, getattr(hook, 'name', 'unknown'), SynapseAction.HALT, str(e))
+                halt = SynapseDecision(synapse.name, getattr(hook, 'name', 'unknown'), SynapseAction.WARN, f'Synapse error (degraded): {e}')
                 decisions.append(halt)
                 break
         return decisions

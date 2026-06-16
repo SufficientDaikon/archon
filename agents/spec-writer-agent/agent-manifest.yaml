@@ -108,3 +108,9 @@ card:
     input: 2000
     output: 8000
   quality-metrics: null
+
+acp:
+  endpoint: /agents/spec-writer-agent/runs
+  input-modes: [text]
+  output-modes: [text]
+  auth: none

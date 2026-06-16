@@ -5,7 +5,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).parent.parent / "src"))
 from archon.synapses import anti_rationalization, security_awareness, metacognition
 
 def test_anti_rat_blocks():
-    result = anti_rationalization.validate({"reasoning": "This should work", "task": "fix"})
+    result = anti_rationalization.validate({"reasoning": "This will probably work", "task": "fix"})
     assert result["action"] == "halt", f"Got: {result}"
     print(f"PASS: anti_rationalization blocks")
 

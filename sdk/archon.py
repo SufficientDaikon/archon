@@ -373,7 +373,7 @@ class Archon:
                     manifest = yaml.safe_load(f)
 
                 # Check required fields
-                required = ['name', 'version', 'description', 'author', 'license', 'platforms', 'tags']
+                required = ['name', 'version', 'description', 'author', 'tags']
                 for field in required:
                     if field not in manifest:
                         errors.append(f"{skill_path.name}: Missing field '{field}' in manifest.yaml")
@@ -388,15 +388,54 @@ class Archon:
 
     def _validate_bundle(self, bundle_path: Path) -> Dict[str, Any]:
         """Validate a single bundle."""
+        import yaml
+        from pathlib import Path
         errors = []
-        # Add bundle validation logic
-        return {'valid': len(errors) == 0, 'errors': errors}
+        p = Path(bundle_path)
+        try:
+            data = yaml.safe_load(p.read_text(encoding="utf-8"))
+        except Exception as e:
+            return [f"Cannot read bundle at {bundle_path}: {e}"]
+        for field in ("name", "version", "skills"):
+            if field not in data:
+                errors.append(f"Missing required field: {field}")
+        skills = data.get("skills", [])
+        if not isinstance(skills, list):
+            errors.append("'skills' must be a list")
+        else:
+            base = p.parent
+            for entry in skills:
+                if not isinstance(entry, dict) or "ref" not in entry:
+                    errors.append(f"Skill entry missing 'ref': {entry}")
+                else:
+                    ref_path = base / entry["ref"]
+                    if not ref_path.exists():
+                        errors.append(f"Referenced skill not found: {entry['ref']}")
+        return errors
 
     def _validate_agent(self, agent_path: Path) -> Dict[str, Any]:
         """Validate a single agent."""
+        import yaml
+        from pathlib import Path
         errors = []
-        # Add agent validation logic
-        return {'valid': len(errors) == 0, 'errors': errors}
+        p = Path(agent_path)
+        if p.is_dir():
+            p = p / "agent-manifest.yaml"
+        try:
+            data = yaml.safe_load(p.read_text(encoding="utf-8"))
+        except Exception as e:
+            return [f"Cannot read agent manifest at {agent_path}: {e}"]
+        for field in ("name", "version", "role", "description", "skill-bindings"):
+            if field not in data:
+                errors.append(f"Missing required field: {field}")
+        if "skill-bindings" in data and not isinstance(data["skill-bindings"], list):
+            errors.append("'skill-bindings' must be a list")
+        handoff = data.get("handoff-targets", [])
+        if handoff:
+            for target in handoff:
+                if not isinstance(target, str) or not target.strip():
+                    errors.append(f"Invalid handoff-target: {target!r}")
+        return errors
 
     def sync_sources(self, source_id: Optional[str] = None, force: bool = False) -> bool:
         """

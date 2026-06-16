@@ -19,6 +19,10 @@ from pathlib import Path
 from typing import Any
 
 import yaml
+import platformdirs
+import json as _json
+
+_AUDIT_DIR = Path(platformdirs.user_data_dir("archon"))
 
 ARCHON_ROOT = Path(__file__).parent.parent.parent.parent
 
@@ -308,8 +312,22 @@ class PolicyEngine:
         return True
 
     def _record(self, decision: PolicyDecision) -> None:
-        """Record decision to audit log."""
+        """Record decision to audit log (in-memory + JSONL disk persistence)."""
         self._audit_log.append(decision)
+        try:
+            import json
+            from pathlib import Path
+            import platformdirs
+            audit_dir = Path(platformdirs.user_data_dir("archon"))
+            audit_dir.mkdir(parents=True, exist_ok=True)
+            entry = {
+                k: v for k, v in decision.__dict__.items()
+                if not k.startswith("_")
+            }
+            with open(audit_dir / "audit.jsonl", "a", encoding="utf-8") as f:
+                f.write(json.dumps(entry, default=str) + "\n")
+        except Exception:
+            pass  # Never let persistence failure block policy evaluation
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -377,15 +395,34 @@ class PolicyEngineWithSynapses(PolicyEngine):
         """Fire all registered synapses for the context."""
         if not self.synapse_engine:
             return []
-        
+
+        import asyncio
+        import threading
+
+        def _run_async(coro):
+            """Run an async coroutine from a sync context via a daemon thread."""
+            container = [None]
+            exc_container = [None]
+            def _target():
+                try:
+                    container[0] = asyncio.run(coro)
+                except Exception as e:
+                    exc_container[0] = e
+            t = threading.Thread(target=_target, daemon=True)
+            t.start()
+            t.join(timeout=10.0)
+            if exc_container[0]:
+                raise exc_container[0]
+            return container[0]
+
         decisions = []
         for synapse in self.synapse_engine.synapses.values():
             for hook in synapse.hooks.values():
-                # Simple sync validation for now
                 try:
                     result = hook.validator(context)
                     if hasattr(result, '__await__'):
-                        # Can't await in sync context, skip async validators
+                        result = _run_async(result)
+                    if result is None:
                         continue
                     decisions.append({
                         "synapse": synapse.name,
@@ -395,5 +432,5 @@ class PolicyEngineWithSynapses(PolicyEngine):
                     })
                 except Exception:
                     pass
-        
+
         return decisions

@@ -111,3 +111,9 @@ card:
     input: 5000
     output: 6000
   quality-metrics: null
+
+acp:
+  endpoint: /agents/security-reviewer-agent/runs
+  input-modes: [text]
+  output-modes: [text]
+  auth: none

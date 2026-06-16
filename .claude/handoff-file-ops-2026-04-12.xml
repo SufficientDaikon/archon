@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<handoff version="2.0" date="2026-04-12" purpose="evaluate-rtk-for-file-ops">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SESSION HANDOFF: Evaluate RTK + Design File Operations Solution
+
+       CONTEXT: We're building better Read/Edit/Write tools for Claude Code.
+       The current built-in tools are fundamentally broken (string matching,
+       line numbers baked into Read output, full-file overwrites).
+
+       A previous session completed deep research and produced a plan at:
+       c:/Users/tahaa/omniskill/.claude/rw-tools-plan.xml
+
+       THIS SESSION: Evaluate whether github.com/rtk-ai/rtk can help,
+       then decide on the best path forward and build it.
+       ═══════════════════════════════════════════════════════════════ -->
+
+  <context>
+    <project path="c:/Users/tahaa/omniskill" remote="github.com/SufficientDaikon/archon">
+      Archon — AI skills framework for Claude Code. Has 98 skills, 8 lifecycle hooks,
+      5 synapses, 2 existing MCP servers (skill-router, agent-router) using FastMCP 2.14.5.
+      Latest commit: 160fbc4 (hooks architecture + adversarial review fixes).
+      8 commits unpushed on main. NOT pushed — awaiting approval.
+    </project>
+
+    <existing-plan path="c:/Users/tahaa/omniskill/.claude/rw-tools-plan.xml">
+      A v2 planning document with 17 verified research findings covering:
+      - 4 pain points (PP-1 through PP-4) with the built-in tools
+      - FastMCP 2.14.5 verified working on Python 3.13 / Windows 11
+      - MCP tool naming convention: mcp__{server-name}__{tool-name} (no conflicts)
+      - Official MCP filesystem server analyzed (still uses string matching — same problem)
+      - Line-number editing, difflib, CRLF detection, atomic writes all verified
+      - 6 planned tools: file_read, file_edit, file_write, file_insert, file_search, file_structure
+      - 12 decided design decisions, 5 risks assessed
+      READ THIS FILE FIRST — it contains all prior research.
+    </existing-plan>
+  </context>
+
+  <!-- ─── THE CORE PROBLEMS (why we're doing this) ────────────────── -->
+  <problems>
+    <problem id="P-1" severity="critical" title="Edit tool: exact string matching is fragile">
+      Claude's Edit tool requires old_string to match EXACTLY. Whitespace, CRLF vs LF,
+      invisible chars, non-unique strings — all cause failures. This breaks multiple
+      times per session, every session. It is the single biggest source of friction.
+    </problem>
+
+    <problem id="P-2" severity="critical" title="Read tool: line numbers pollute content">
+      The Read tool returns content in "cat -n" format with line numbers baked into
+      the text (e.g., "    42→    def hello():"). When Claude then tries to use this
+      content in Edit's old_string, IT INCLUDES THE LINE NUMBERS, which obviously
+      don't exist in the actual file. This causes Edit to fail constantly.
+
+      Even worse: Claude sometimes copies these line-numbered strings into Write
+      operations, literally writing line numbers into the file content.
+
+      The line numbers are useful for navigation but POISONOUS for editing workflows.
+    </problem>
+
+    <problem id="P-3" severity="high" title="Write tool: full-file overwrite is dangerous">
+      Write requires reproducing the entire file. Large files get truncated,
+      sections fall out of context window, content drifts. For a 3-line change
+      in a 500-line file, Claude must correctly regenerate all 500 lines.
+    </problem>
+
+    <problem id="P-4" severity="medium" title="No atomic multi-edit">
+      Each Edit call is independent. 5 edits to one file = 5 sequential calls,
+      each of which can fail. Line shifts cascade and break subsequent edits.
+    </problem>
+  </problems>
+
+  <!-- ─── RTK EVALUATION TASK ─────────────────────────────────────── -->
+  <task priority="1" label="evaluate-rtk">
+    <instruction>
+      Thoroughly evaluate https://github.com/rtk-ai/rtk to determine if and how
+      it can help solve the problems above. Research specifically:
+
+      1. RTK's `rtk read` command — how it handles file reading, filtering, and
+         whether it solves the line-number pollution problem (P-2)
+
+      2. RTK's hook system — it uses PreToolUse hooks to rewrite Bash commands.
+         Can it intercept Read/Edit/Write tools, or is it Bash-only?
+
+      3. Whether RTK has or plans any edit/write functionality
+
+      4. Token compression benefits vs. overhead costs (there's data on this)
+
+      5. Windows compatibility (we're on Windows 11)
+    </instruction>
+
+    <known-findings comment="Research we already did — verify but don't re-discover">
+      <finding source="issue-538" status="open">
+        "Claude Code native tools bypass RTK hook — majority of token-heavy ops
+        never reach Bash." RTK only intercepts the Bash tool. Built-in Read, Grep,
+        Glob, Edit, Write are INVISIBLE to RTK's hook. ~60% of token-heavy
+        operations bypass RTK entirely.
+      </finding>
+
+      <finding source="issue-1005" status="open" severity="P2">
+        "read before write rules are broken." When RTK rewrites Read to rtk read,
+        Claude Code's internal "read before write" policy breaks because the native
+        Read was never called — only rtk read via Bash. Edit then fails because it
+        requires a prior native Read. Users report losing time and tokens on re-reads.
+      </finding>
+
+      <finding source="issue-582" status="closed">
+        "RTK Hook Increases Claude Code Costs by 18%." On non-compressible content,
+        RTK's format transformation costs MORE tokens than it saves. Real-world testing
+        showed +11% costs on files with low compression potential. RTK maintainers
+        acknowledged this is expected: "RTK is a compression proxy. When content has
+        low entropy, there's no room to compress and the overhead works against you."
+      </finding>
+
+      <finding source="issue-1104" status="open">
+        "rtk read does not support reading specific lines." Users who force Claude
+        to use rtk read lose the ability to read line ranges, causing full file reads.
+      </finding>
+
+      <finding source="read.rs">
+        rtk read supports: FilterLevel (None/Minimal/Aggressive), language-aware
+        comment stripping, smart_truncate, optional line numbers (--line-numbers flag,
+        OFF by default), head/tail. Line numbers use "N │ content" format, only when
+        explicitly requested. The default is raw content without line numbers.
+      </finding>
+
+      <finding source="filter.rs">
+        RTK's AggressiveFilter: keeps function/struct/class signatures, strips
+        function bodies. Uses regex FUNC_SIGNATURE pattern. Falls back to raw
+        content if filter produces empty output.
+      </finding>
+    </known-findings>
+
+    <evaluation-questions>
+      <question id="Q-1">
+        Can RTK solve P-2 (line number pollution)? Its rtk read defaults to no
+        line numbers — but RTK only works via Bash, and Claude Code prefers built-in
+        Read. Would we need to force Claude to use bash cat/rtk read instead?
+        What are the tradeoffs?
+      </question>
+
+      <question id="Q-2">
+        RTK is a CLI proxy (Rust binary). Our existing plan uses an MCP server
+        (Python FastMCP). Are these complementary, competing, or orthogonal?
+        Could we use RTK for Bash commands AND MCP for tool-level operations?
+      </question>
+
+      <question id="Q-3">
+        Issue #1005 shows RTK breaks the read-before-write policy. Does this
+        mean RTK is fundamentally incompatible with the Edit tool workflow?
+        Or is there a workaround?
+      </question>
+
+      <question id="Q-4">
+        RTK has 100+ command handlers but NO edit/write/MCP functionality.
+        Is it worth installing for the git/test/build compression alone,
+        while using our MCP server for file operations?
+      </question>
+
+      <question id="Q-5">
+        RTK has Windows binaries. Has anyone tested it with Claude Code on
+        Windows? Any known issues?
+      </question>
+    </evaluation-questions>
+  </task>
+
+  <!-- ─── DECISION TASK ──────────────────────────────────────────── -->
+  <task priority="2" label="decide-and-plan">
+    <instruction>
+      Based on the RTK evaluation, decide the path forward. The options are:
+
+      OPTION A: MCP server only (our original plan)
+        Build the file-ops MCP server with line-number editing.
+        Ignore RTK entirely. Our tools handle reads/edits/writes.
+        RTK can't help with the core problems.
+
+      OPTION B: RTK + MCP hybrid
+        Install RTK for what it's good at (git/test/build/lint compression).
+        Build MCP server for file operations (read/edit/write/search/structure).
+        They're complementary — RTK handles Bash output compression,
+        MCP handles file editing.
+
+      OPTION C: RTK-enhanced approach
+        If RTK has features or planned features that overlap with our MCP plan,
+        consider leveraging them instead of building from scratch.
+
+      OPTION D: Something else entirely
+        If your research reveals a better approach we haven't considered.
+
+      Update c:/Users/tahaa/omniskill/.claude/rw-tools-plan.xml with the decision
+      and reasoning. Add a new <rtk-evaluation> section with your findings.
+    </instruction>
+  </task>
+
+  <!-- ─── BUILD TASK ──────────────────────────────────────────────── -->
+  <task priority="3" label="build-it">
+    <instruction>
+      After deciding, BUILD the solution. Don't just plan. Execute.
+
+      If building the MCP server:
+      - Follow the implementation steps in rw-tools-plan.xml
+      - Follow patterns from servers/skill-router/server.py exactly
+      - Register in ~/.claude/settings.json
+      - Test via mock JSON-RPC stdin
+
+      If installing RTK:
+      - Check Windows binary availability
+      - Install and configure
+      - Test the hook integration
+      - Document what works and what doesn't
+
+      If hybrid:
+      - Do both, in the right order
+    </instruction>
+  </task>
+
+  <!-- ─── CONSTRAINTS ─────────────────────────────────────────────── -->
+  <constraints>
+    <rule>READ rw-tools-plan.xml FIRST — it has 17 verified findings from real research</rule>
+    <rule>Don't re-research what's already verified. Build on the existing research.</rule>
+    <rule>Don't declare something works without testing it on this Windows 11 system</rule>
+    <rule>Don't push to remote without explicit approval</rule>
+    <rule>The core problem to solve is P-1 (Edit string matching) and P-2 (line number pollution). Everything else is secondary.</rule>
+    <rule>RTK is ONLY relevant if it helps solve OUR specific problems. Token compression on git/test output is nice-to-have, not the goal.</rule>
+  </constraints>
+
+  <!-- ─── REFERENCE FILES ─────────────────────────────────────────── -->
+  <reference-files>
+    <file priority="1">c:/Users/tahaa/omniskill/.claude/rw-tools-plan.xml</file>
+    <file priority="2">c:/Users/tahaa/omniskill/servers/skill-router/server.py</file>
+    <file priority="3">c:/Users/tahaa/.claude/settings.json</file>
+    <file priority="4">c:/Users/tahaa/omniskill/hooks/claude/session_boot.py</file>
+  </reference-files>
+
+</handoff>

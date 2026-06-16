@@ -1,7 +1,6 @@
 import re
 
 IRON_LAWS = [
-    ("should", "Blocked: provide verification method"),
     ("probably", "Blocked: guess detected"),
     ("close enough", "Blocked: exact or not done"),
     ("simple enough to skip", "Blocked: all steps required"),

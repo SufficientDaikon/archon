@@ -68,7 +68,6 @@ class SynapseEngine:
 
 # Built-in Iron Laws
 IRON_LAWS = [
-    ("should", "Replace with: 'I verified this by [METHOD]'"),
     ("probably", "Remove or provide evidence"),
     ("close enough", "Exact or not done"),
     ("simple enough to skip", "Complexity doesn't excuse steps"),

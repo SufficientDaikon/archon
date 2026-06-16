@@ -163,3 +163,9 @@ success-criteria:
   - "Fork guide enables working fork with custom modification in 30 minutes"
   - "Every code citation references a real file at a real line range"
   - "Tech stack lists 90%+ of actual technologies used"
+
+acp:
+  endpoint: /agents/dissector-agent/runs
+  input-modes: [text]
+  output-modes: [text]
+  auth: none

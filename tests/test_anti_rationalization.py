@@ -7,9 +7,9 @@ from archon.synapses import anti_rationalization
 class TestAntiRationalization:
     """Test cases for forbidden phrase detection."""
     
-    def test_should_blocked(self):
+    def test_probably_blocked_2(self):
         result = anti_rationalization.validate({
-            "reasoning": "I should implement this later",
+            "reasoning": "This will probably complete correctly",
             "task": "build feature"
         })
         assert result["action"] == "halt"

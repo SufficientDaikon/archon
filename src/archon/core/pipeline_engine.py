@@ -293,7 +293,7 @@ class PipelineExecutor:
                     "reasoning": step_config.get("prompt", step_config.get("description", "")),
                     "task": step_config.get("name", ""),
                 })
-                blocking = [d for d in synapse_decisions if d.is_halt]
+                blocking = [d for d in synapse_decisions if d.is_blocking]
                 if blocking:
                     state.record_step(step_name, StepStatus.FAILED.value, {
                         "errors": [d.message for d in blocking],

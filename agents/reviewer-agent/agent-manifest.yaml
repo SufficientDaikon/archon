@@ -116,3 +116,9 @@ card:
     input: 10000
     output: 6000
   quality-metrics: null
+
+acp:
+  endpoint: /agents/reviewer-agent/runs
+  input-modes: [text]
+  output-modes: [text]
+  auth: none

@@ -1,0 +1,53 @@
+name: design-system
+author: tahaa
+description: "The DESIGN.md standard — Archon's design intelligence layer. Teaches agents to generate, read, and apply structured design system documents any AI can consume."
+version: 2.0.0
+supersedes:
+  - ui-visual-design
+  - wireframing
+  - frontend-design
+  - web-design-guidelines
+  - mobile-design
+  - ux-interaction-design
+triggers:
+  - "design a"
+  - "create a design system"
+  - "create DESIGN.md"
+  - "design landing page"
+  - "design UI"
+  - "design component"
+  - "what should this look like"
+  - "generate design"
+  - "apply design to"
+  - "design tokens"
+  - "visual design"
+  - "UI aesthetic"
+  - "how should this look"
+platforms:
+  - claude-code
+  - cursor
+  - windsurf
+tags:
+  - design
+  - ui
+  - ux
+  - design-system
+  - design-md
+  - tokens
+  - typography
+  - color
+output-artifact: DESIGN.md
+
+output-schema:
+  design_md:
+    type: string
+    description: "Complete DESIGN.md document with all 9 required sections"
+    required: true
+  archetype:
+    type: string
+    description: "Selected design archetype name"
+    required: false
+  token_count:
+    type: integer
+    description: "Number of design tokens defined"
+    required: false

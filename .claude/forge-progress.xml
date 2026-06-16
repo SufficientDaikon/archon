@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forge-progress version="1.0" started="2026-04-13" status="in-progress">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FORGE Build Progress Tracker
+       ═══════════════════════════════════════════════════════════════ -->
+
+  <phase n="1" name="Core Buffer + Read/Write" status="complete">
+    <task id="1.1" status="done">Set up Cargo project with dependencies</task>
+    <task id="1.2" status="done">Implement errors.rs — error types + MCP error mapping</task>
+    <task id="1.3" status="done">Implement encoding.rs — encoding detection, line ending handling</task>
+    <task id="1.4" status="done">Implement diff.rs — unified diff generation</task>
+    <task id="1.5" status="done">Implement buffer.rs — Buffer struct (rope, metadata, undo stack)</task>
+    <task id="1.6" status="done">Implement engine.rs — Engine (buffer map, open/read/edit/flush)</task>
+    <task id="1.7" status="done">Implement tools/read.rs — file_open, file_read, file_info params</task>
+    <task id="1.8" status="done">Implement tools/write.rs — file_edit, file_insert, file_delete, file_create, file_undo, file_redo, file_close params</task>
+    <task id="1.9" status="done">Implement main.rs — MCP server wiring via rmcp (11 tools wired)</task>
+    <task id="1.10" status="done">Build + register — release binary 3.8MB, registered in settings.json</task>
+    <notes>
+      - Fixed linker issue: Git's link.exe was shadowing MSVC. Need PATH override for builds.
+      - Fixed schemars import: need `use rmcp::schemars::{self, JsonSchema}` in tool param files.
+      - Fixed similar API: v2.7 uses .header() builder, not old_range()/new_range() methods.
+      - Fixed ServerInfo: use .new() + .with_instructions(), not struct literal (non-exhaustive).
+      - Build command: export PATH="/c/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.39.33519/bin/Hostx64/x64:$PATH" && cargo build --release
+    </notes>
+  </phase>
+
+  <phase n="2" name="Tree-sitter + Structural Navigation" status="blocked-by-phase-1">
+    <task id="2.1" status="pending">Implement parser.rs — ParserPool, language detection</task>
+    <task id="2.2" status="pending">Write tag query .scm files (Python, JS/TS, Rust, Go minimum)</task>
+    <task id="2.3" status="pending">Implement file_outline tool</task>
+    <task id="2.4" status="pending">Integrate incremental re-parsing into buffer edit flow</task>
+    <task id="2.5" status="pending">Add remaining grammars (Java, C, C++, C#, Ruby, Bash, JSON)</task>
+  </phase>
+
+  <phase n="3" name="Search" status="blocked-by-phase-2">
+    <task id="3.1" status="pending">Implement file_search tool (regex within buffer)</task>
+    <task id="3.2" status="pending">Implement codebase_search tool (directory walk + regex)</task>
+    <task id="3.3" status="pending">Implement symbols.rs — SymbolIndex</task>
+    <task id="3.4" status="pending">Implement codebase_symbols tool</task>
+    <task id="3.5" status="pending">Implement files_find tool (glob)</task>
+  </phase>
+
+  <phase n="4" name="File Watching + Undo/Redo" status="blocked-by-phase-3">
+    <task id="4.1" status="pending">Implement watcher.rs — FileWatcher (notify)</task>
+    <task id="4.2" status="pending">Wire watcher into Engine — external change detection</task>
+    <task id="4.3" status="pending">Implement file_undo + file_redo tools</task>
+    <task id="4.4" status="pending">Implement file_close tool</task>
+    <task id="4.5" status="pending">Add externally_modified flag to all read responses</task>
+  </phase>
+
+  <phase n="5" name="Polish + Integration" status="blocked-by-phase-4">
+    <task id="5.1" status="pending">Error handling audit — no panics</task>
+    <task id="5.2" status="pending">Windows-specific testing (CRLF, long paths, Unicode)</task>
+    <task id="5.3" status="pending">MCP instructions field</task>
+    <task id="5.4" status="pending">Release build + end-to-end test with Claude Code</task>
+  </phase>
+
+  <log>
+    <entry time="2026-04-13T04:30" task="1.1-1.9">All Phase 1 source files created. 11 tools wired into rmcp server.</entry>
+    <entry time="2026-04-13T04:45" task="1.10">Fixed linker, schemars, similar API, ServerInfo issues. Debug build passes.</entry>
+    <entry time="2026-04-13T04:52" task="1.10">Release build successful. forge.exe = 3.8MB. Registered in ~/.claude/settings.json.</entry>
+  </log>
+
+</forge-progress>

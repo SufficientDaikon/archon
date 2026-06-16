@@ -86,6 +86,78 @@ def write_agent_cards(
     }
 
 
+
+def write_a2a_cards(
+    root: Path,
+    registry: Registry | None = None,
+) -> Path:
+    """Generate A2A AgentCard JSON files conforming to schema version 0.2.1.
+
+    Writes:
+    - ``<root>/.well-known/agent.json`` — combined array of all agent cards
+    - ``<root>/.well-known/agents/<name>.json`` — per-agent card
+
+    Args:
+        root: Archon repository root.
+        registry: Pre-loaded Registry instance. If None, one is created.
+
+    Returns:
+        Path to the combined ``.well-known/agent.json`` file.
+    """
+    reg = _ensure_registry(root, registry)
+
+    well_known = root / ".well-known"
+    per_agent_dir = well_known / "agents"
+    per_agent_dir.mkdir(parents=True, exist_ok=True)
+
+    # Resolve base URL from environment variable or fall back to localhost.
+    # Set ARCHON_A2A_BASE_URL in production deployments.
+    import os
+    base_url = os.environ.get("ARCHON_A2A_BASE_URL", "http://localhost:8000").rstrip("/")
+
+    all_cards: list[dict[str, Any]] = []
+
+    for agent in sorted(reg.agents, key=lambda a: a.name):
+        reg.load_agent_manifest(agent)
+        skills_provided = []
+        if agent.card and agent.card.skills_provided:
+            for sk in agent.card.skills_provided:
+                if isinstance(sk, dict):
+                    skills_provided.append({
+                        "id": sk.get("id", sk.get("name", "")),
+                        "name": sk.get("name", ""),
+                        "description": sk.get("description", ""),
+                    })
+
+        card: dict[str, Any] = {
+            "schemaVersion": "0.2.1",
+            "name": agent.name,
+            "description": agent.description or "",
+            "url": f"{base_url}/agents/{agent.name}",
+            "capabilities": {
+                "streaming": False,
+                "pushNotifications": False,
+            },
+            "skills": skills_provided,
+        }
+
+        # Write per-agent card
+        per_card_path = per_agent_dir / f"{agent.name}.json"
+        per_card_path.write_text(
+            json.dumps(card, indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        all_cards.append(card)
+
+    # Write combined card
+    combined_path = well_known / "agent.json"
+    combined_path.write_text(
+        json.dumps(all_cards, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+    return combined_path
+
 # ── Private helpers ─────────────────────────────────────────────
 
 

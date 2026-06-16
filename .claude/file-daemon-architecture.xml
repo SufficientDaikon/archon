@@ -1,0 +1,998 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<file-daemon-plan version="1.0" created="2026-04-13" status="ready-to-build">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FORGE — File Operations & Real-time Grammar Engine
+       A local daemon giving AI agents VS Code-level file access.
+       ═══════════════════════════════════════════════════════════════ -->
+
+  <role>
+    You are a systems engineer building a high-performance local daemon in Rust
+    that replaces Claude Code's built-in file tools entirely. You think in terms
+    of correctness invariants, zero-copy where possible, and clean error contracts.
+    You ship working code, not prototypes.
+  </role>
+
+  <context>
+    <problem>
+      Claude's built-in file tools have two architectural flaws that make reliable
+      code editing impossible:
+
+      1. Read injects synthetic line-number prefixes into returned content. When
+         Claude copies that content into Edit's old_string, the edit fails because
+         the literal file contains no such prefixes. Every read-then-edit workflow
+         is broken by design.
+
+      2. Write requires full-file overwrite. For a 3-line change in a 500-line file,
+         Claude must reconstruct all 500 lines from memory. Large files get truncated,
+         sections drift, content is lost.
+
+      The root cause: Claude accesses files through stateless, low-level tool calls
+      with no persistent model of the file. A human developer never suffers this
+      because their editor maintains an in-memory buffer, structural parse tree,
+      and change history. Claude needs the equivalent.
+    </problem>
+
+    <goal>
+      Give Claude (or any AI agent) the same level of control over a codebase that
+      a human has in VS Code: precise reads, symbol navigation, safe surgical writes,
+      structural understanding, undo, and awareness of external changes.
+    </goal>
+
+    <prior-work>
+      A Python FastMCP prototype was designed but rejected in favor of this approach.
+      RTK (rtk-ai/rtk) was evaluated and rejected — it only intercepts Bash, has no
+      edit capability, and its hook system doesn't work on Windows.
+    </prior-work>
+  </context>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <architecture>
+    <overview>
+      FORGE is a single Rust binary that speaks MCP over stdio. It maintains
+      persistent, in-memory state for the lifetime of a Claude Code session:
+
+      ┌─────────────────────────────────────────────────────┐
+      │                   Claude Code                        │
+      │          (calls tools via MCP over stdio)            │
+      └──────────────────────┬──────────────────────────────┘
+                             │ JSON-RPC 2.0 (stdin/stdout)
+      ┌──────────────────────▼──────────────────────────────┐
+      │                    FORGE Daemon                      │
+      │  ┌─────────────┐  ┌──────────────┐  ┌───────────┐  │
+      │  │  MCP Layer   │  │ Buffer Engine │  │  Watcher  │  │
+      │  │  (rmcp)      │→ │  (ropey)     │  │  (notify) │  │
+      │  └─────────────┘  └──────┬───────┘  └─────┬─────┘  │
+      │                          │                  │        │
+      │                   ┌──────▼──────┐    ┌─────▼─────┐  │
+      │                   │  Parse Layer │    │ Invalidate │  │
+      │                   │ (tree-sitter)│    │  buffers   │  │
+      │                   └─────────────┘    └───────────┘  │
+      │                                                      │
+      │  ┌──────────────┐  ┌──────────────┐                 │
+      │  │ Symbol Index  │  │  Undo Stack  │                 │
+      │  │ (cross-file)  │  │ (per-buffer) │                 │
+      │  └──────────────┘  └──────────────┘                 │
+      └─────────────────────────────────────────────────────┘
+    </overview>
+
+    <components>
+
+      <component name="MCP Layer" crate="rmcp">
+        <purpose>
+          Thin transport layer. Receives JSON-RPC calls from Claude Code over
+          stdin, dispatches to tool handlers, returns results on stdout.
+          Uses the official Rust MCP SDK (rmcp crate) for protocol compliance.
+        </purpose>
+        <responsibilities>
+          - MCP protocol negotiation (initialize, capabilities)
+          - Tool registration and schema generation
+          - Request routing to tool handlers
+          - Error serialization (structured MCP errors, not panics)
+        </responsibilities>
+        <design-note>
+          The MCP layer is stateless. All state lives in the BufferEngine,
+          which is shared across tool handlers via Arc&lt;RwLock&lt;Engine&gt;&gt;.
+        </design-note>
+      </component>
+
+      <component name="Buffer Engine" crate="ropey">
+        <purpose>
+          Central abstraction. Every file operation goes through a Buffer.
+          Each Buffer owns a Rope (ropey), a tree-sitter Tree, an undo stack,
+          and file metadata. This is the architectural prevention of the
+          "baked-in line numbers" bug: the buffer stores raw bytes only.
+          Line numbers are computed on demand from rope indexing.
+        </purpose>
+        <data-model>
+          struct Engine {
+              buffers: HashMap&lt;PathBuf, Buffer&gt;,
+              symbol_index: SymbolIndex,
+              watcher: FileWatcher,
+              parsers: ParserPool,
+          }
+
+          struct Buffer {
+              path: PathBuf,
+              rope: Rope,               // ropey::Rope — the file content
+              tree: Option&lt;Tree&gt;,        // tree-sitter parse tree
+              language: Option&lt;Language&gt;, // detected language
+              encoding: Encoding,        // UTF-8, Latin-1, etc.
+              line_ending: LineEnding,    // LF, CRLF, Mixed
+              content_hash: u64,         // xxhash of current content
+              disk_hash: u64,            // xxhash of on-disk content (for stale detection)
+              undo_stack: Vec&lt;UndoEntry&gt;,
+              redo_stack: Vec&lt;UndoEntry&gt;,
+              dirty: bool,               // buffer differs from disk
+              last_modified: SystemTime,  // on-disk mtime at last read
+          }
+
+          struct UndoEntry {
+              rope_snapshot: Rope,    // cheap clone (COW)
+              tree_snapshot: Option&lt;Tree&gt;,
+              description: String,    // "edit lines 45-52", "insert at line 10"
+              timestamp: Instant,
+          }
+
+          enum LineEnding { LF, CRLF, Mixed }
+          enum Encoding { Utf8, Latin1 }
+        </data-model>
+        <operations>
+          - open(path) → &amp;Buffer: read file into rope, detect encoding/line-endings,
+            parse with tree-sitter, compute hash, register with watcher
+          - read(path, range?) → raw content + metadata (line numbers are NOT in content)
+          - edit(path, edits[]) → apply atomically, update rope + tree, push undo, flush
+          - insert(path, line, content) → splice into rope, update tree, push undo, flush
+          - delete(path, start, end) → remove from rope, update tree, push undo, flush
+          - write_new(path, content) → create new buffer + file
+          - undo(path) → pop undo stack, restore rope + tree, flush
+          - redo(path) → pop redo stack, restore rope + tree, flush
+          - flush(buffer) → atomic write: rope → temp file → os::rename → update disk_hash
+          - close(path) → flush if dirty, remove buffer, unregister watcher
+          - on_external_change(path) → re-read from disk, update rope + tree, clear undo
+        </operations>
+        <key-invariant>
+          Content returned by read() is ALWAYS byte-identical to what is in the rope,
+          which is ALWAYS byte-identical to what is on disk (after flush). No synthetic
+          characters, prefixes, or transformations are ever injected.
+        </key-invariant>
+        <implementation-trap name="char-vs-byte indexing">
+          ropey is CHAR-indexed (Unicode codepoints). tree-sitter is BYTE-indexed.
+          When applying an edit to tree-sitter's incremental parser via InputEdit,
+          ALL offsets (start_byte, old_end_byte, new_end_byte) must be byte offsets,
+          not char offsets. Convert with: rope.char_to_byte(char_idx).
+
+          Failing to convert produces silently corrupt parse trees on any file with
+          non-ASCII content (Python docstrings with accents, JS files with emoji, etc.).
+          This must be handled in every code path that calls tree.edit(&InputEdit{...}).
+        </implementation-trap>
+      </component>
+
+      <component name="Parse Layer" crate="tree-sitter">
+        <purpose>
+          Language-aware structural parsing. Provides symbol outlines, scope
+          boundaries, and syntax-aware navigation without requiring LSP servers.
+        </purpose>
+        <design>
+          ParserPool maintains one tree-sitter Parser instance per language.
+          Grammars for top 12 languages are compiled into the binary at build time
+          (no runtime loading, no external files, works on Windows out of the box).
+
+          When a buffer is opened or edited, the parse layer:
+          1. Detects language from file extension
+          2. Parses (or incrementally re-parses) the content
+          3. Runs a language-specific tag query to extract symbols
+          4. Updates the buffer's tree and the global symbol index
+
+          Incremental re-parsing after edits: tree-sitter's edit() API takes the
+          byte range that changed and re-parses only the affected region. For a
+          typical edit (changing a few lines), this is sub-millisecond.
+        </design>
+        <compiled-grammars>
+          python, javascript, typescript, tsx, rust, go, java, c, cpp, c_sharp,
+          ruby, bash
+          <!-- 12 languages cover 95%+ of real-world codebases -->
+          <!-- Fallback: files with unknown extensions get no structural parsing -->
+          <!-- but all other operations (read, edit, search) still work perfectly -->
+        </compiled-grammars>
+        <tag-queries>
+          Per-language .scm query files compiled into the binary via include_str!().
+          Each query extracts: functions, classes, methods, structs, enums, traits,
+          interfaces, imports — with name and byte range.
+
+          Example (Python):
+            (function_definition name: (identifier) @name) @definition.function
+            (class_definition name: (identifier) @name) @definition.class
+
+          The tag query format follows tree-sitter's official tags convention,
+          making it compatible with existing query files from the tree-sitter org.
+        </tag-queries>
+      </component>
+
+      <component name="Symbol Index">
+        <purpose>
+          Cross-file symbol resolution. Maps symbol names to their definitions
+          across all open buffers. Enables "find definition" and "find all usages"
+          without LSP.
+        </purpose>
+        <data-model>
+          struct SymbolIndex {
+              definitions: HashMap&lt;String, Vec&lt;SymbolDef&gt;&gt;,
+              // name → list of definitions (same name can exist in multiple files)
+          }
+
+          struct SymbolDef {
+              name: String,
+              kind: SymbolKind,   // Function, Class, Method, Struct, Enum, etc.
+              path: PathBuf,
+              start_line: usize,
+              end_line: usize,
+              signature: String,  // first line of the definition (for preview)
+          }
+
+          enum SymbolKind {
+              Function, Class, Method, Struct, Enum, Trait, Interface,
+              Import, Variable, Constant, Module
+          }
+        </data-model>
+        <limitations>
+          This is syntactic, not semantic. It finds definitions by name matching,
+          not by type resolution. It cannot resolve which "Config" you mean if
+          three files define "Config". This is acceptable — Claude can disambiguate
+          from the file paths and signatures returned.
+        </limitations>
+      </component>
+
+      <component name="File Watcher" crate="notify">
+        <purpose>
+          Detects when files change on disk (e.g., human developer edits in VS Code
+          while Claude is working). Marks affected buffers as stale so the next
+          operation re-reads from disk.
+        </purpose>
+        <design>
+          Uses notify crate's debounced watcher (500ms debounce). Watches parent
+          directories of all open buffers. On change event:
+          1. Compare file mtime to buffer's last_modified
+          2. If changed: re-read file, update rope, re-parse tree, clear undo stack
+          3. Mark buffer as externally modified (reported in next tool response)
+
+          On Windows: uses ReadDirectoryChangesW under the hood (notify handles this).
+        </design>
+      </component>
+
+    </components>
+  </architecture>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <tool_schema>
+    <overview>
+      15 tools organized into 4 categories:
+      Buffer (open/close), Read (read/outline/info), Write (edit/insert/delete/create/undo/redo),
+      Search (search/symbols/files/find).
+
+      All tools return structured JSON. Errors use MCP's isError flag with
+      a human-readable message and a machine-readable error code.
+    </overview>
+
+    <!-- ─── BUFFER MANAGEMENT ─────────────────────────────────── -->
+
+    <tool name="file_open" category="buffer">
+      <description>
+        Open a file into a persistent buffer. Returns file metadata and structural
+        outline. The file stays in memory until explicitly closed or the session ends.
+        Subsequent reads/edits are fast (no disk I/O unless externally modified).
+
+        Most other tools auto-open files, so explicit open is optional — use it
+        when you want the outline upfront without reading the full content.
+      </description>
+      <input>
+        <field name="path" type="string" required="true">Absolute file path.</field>
+      </input>
+      <output>
+        <field name="total_lines" type="integer">Total line count.</field>
+        <field name="size_bytes" type="integer">File size in bytes.</field>
+        <field name="language" type="string|null">Detected language (e.g. "python", "rust"). Null if unknown.</field>
+        <field name="encoding" type="string">Detected encoding ("utf-8" or "latin-1").</field>
+        <field name="line_ending" type="string">"lf", "crlf", or "mixed".</field>
+        <field name="content_hash" type="string">Hex-encoded xxhash64 of current content. Use for stale detection.</field>
+        <field name="outline" type="array|null">
+          Structural outline if language is supported. Array of:
+          { name: string, kind: string, start_line: int, end_line: int, children: array }
+          Null if language has no grammar.
+        </field>
+      </output>
+      <errors>
+        <error code="FILE_NOT_FOUND">Path does not exist.</error>
+        <error code="BINARY_FILE">File appears to be binary (null bytes in first 8KB).</error>
+        <error code="PERMISSION_DENIED">Cannot read file.</error>
+      </errors>
+    </tool>
+
+    <tool name="file_close" category="buffer">
+      <description>
+        Close a buffer, flushing any unsaved changes to disk and freeing memory.
+        No-op if the file is not open.
+      </description>
+      <input>
+        <field name="path" type="string" required="true">Absolute file path.</field>
+      </input>
+      <output>
+        <field name="status" type="string">"closed" or "not_open".</field>
+        <field name="flushed" type="boolean">Whether dirty changes were written to disk.</field>
+      </output>
+    </tool>
+
+    <!-- ─── READ OPERATIONS ───────────────────────────────────── -->
+
+    <tool name="file_read" category="read">
+      <description>
+        Read file content. Returns raw content exactly as it exists on disk —
+        NO line numbers, NO prefixes, NO synthetic characters injected.
+
+        Line numbers are provided as a SEPARATE metadata field, never mixed
+        into the content string. This is the architectural fix for P-2.
+
+        Auto-opens the file into a buffer if not already open.
+      </description>
+      <input>
+        <field name="path" type="string" required="true">Absolute file path.</field>
+        <field name="start_line" type="integer" required="false">First line to read (1-indexed). Default: 1.</field>
+        <field name="end_line" type="integer" required="false">Last line to read (inclusive). Default: last line of file.</field>
+        <field name="max_lines" type="integer" required="false">Maximum lines to return. Default: 500. Max: 5000. Use with start_line for pagination.</field>
+      </input>
+      <output>
+        <field name="content" type="string">
+          Raw file content for the requested range. Byte-identical to what is on disk.
+          Line endings preserved as-is (CRLF or LF). No transformations applied.
+        </field>
+        <field name="lines" type="object">
+          { start: int, end: int, total: int } — the actual line range returned
+          and total lines in the file. Use these numbers for file_edit.
+        </field>
+        <field name="content_hash" type="string">Hex xxhash64 of the FULL file content (not just the range).</field>
+        <field name="truncated" type="boolean">True if output was capped by max_lines.</field>
+        <field name="externally_modified" type="boolean">True if file changed on disk since last read.</field>
+      </output>
+      <errors>
+        <error code="FILE_NOT_FOUND">Path does not exist.</error>
+        <error code="BINARY_FILE">File appears to be binary.</error>
+        <error code="LINE_OUT_OF_RANGE">start_line or end_line exceeds file length.</error>
+      </errors>
+      <invariant>
+        content MUST be byte-identical to the corresponding bytes in the file.
+        The caller can use content directly in any write operation without
+        worrying about synthetic characters being included.
+      </invariant>
+    </tool>
+
+    <tool name="file_outline" category="read">
+      <description>
+        Get the structural outline of a file: all top-level and nested symbols
+        (functions, classes, methods, structs, enums, imports) with their line
+        ranges. Powered by tree-sitter — fast (sub-5ms) and incremental.
+
+        Use this to understand file structure before editing. The line ranges
+        can be passed directly to file_read or file_edit.
+      </description>
+      <input>
+        <field name="path" type="string" required="true">Absolute file path.</field>
+      </input>
+      <output>
+        <field name="language" type="string|null">Detected language.</field>
+        <field name="total_lines" type="integer">Total line count.</field>
+        <field name="symbols" type="array">
+          Array of symbol definitions:
+          {
+            name: string,        // "MyClass", "process_data", "Config"
+            kind: string,        // "function", "class", "method", "struct", "enum", etc.
+            start_line: integer, // first line (1-indexed)
+            end_line: integer,   // last line (inclusive)
+            signature: string,   // first line of the definition (for preview)
+            children: array      // nested symbols (methods inside a class, etc.)
+          }
+        </field>
+      </output>
+      <errors>
+        <error code="NO_GRAMMAR">No tree-sitter grammar for this file type. Use file_read instead.</error>
+      </errors>
+    </tool>
+
+    <tool name="file_info" category="read">
+      <description>
+        Get file metadata. Behavior depends on buffer state:
+        - If file is already open: returns all fields from the in-memory buffer (no disk I/O).
+        - If file is NOT open: performs a lightweight open (reads file, builds buffer, detects
+          encoding/structure) then returns metadata. The buffer stays open for subsequent calls.
+          This means file_info always auto-opens the file — same as file_open without the outline.
+        - If file does not exist: returns exists=false, all other fields null.
+      </description>
+      <input>
+        <field name="path" type="string" required="true">Absolute file path.</field>
+      </input>
+      <output>
+        <field name="exists" type="boolean">Whether the file exists.</field>
+        <field name="total_lines" type="integer|null">Line count. Null if file does not exist.</field>
+        <field name="size_bytes" type="integer|null">File size in bytes. Null if file does not exist.</field>
+        <field name="language" type="string|null">Detected language. Null if unknown or file does not exist.</field>
+        <field name="encoding" type="string|null">Encoding ("utf-8" or "latin-1"). Null if file does not exist.</field>
+        <field name="line_ending" type="string|null">Line ending style ("lf", "crlf", "mixed"). Null if file does not exist.</field>
+        <field name="is_open" type="boolean">Whether file has an active buffer (always true after this call if file exists).</field>
+        <field name="is_dirty" type="boolean">Whether buffer has unsaved changes.</field>
+        <field name="content_hash" type="string|null">Content hash. Null if file does not exist.</field>
+      </output>
+    </tool>
+
+    <!-- ─── WRITE OPERATIONS ──────────────────────────────────── -->
+
+    <tool name="file_edit" category="write">
+      <description>
+        REQUIRES an open buffer: call file_read or file_open on the file first.
+        file_edit will return FILE_NOT_OPEN if called without a prior read.
+
+        Apply one or more edits to a file atomically. Each edit specifies a line
+        range to replace with new content. All edits succeed or none apply.
+
+        This is the core tool that replaces Claude's built-in Edit. Instead of
+        fragile string matching, you specify exact line ranges (obtained from
+        file_read or file_search). Multiple edits are applied in a single call —
+        no cascading line-shift failures.
+
+        Edits are sorted and applied bottom-up automatically (highest line numbers
+        first) so that earlier edits don't shift later line numbers.
+
+        Returns a unified diff of all changes and the new file state.
+      </description>
+      <input>
+        <field name="path" type="string" required="true">Absolute file path.</field>
+        <field name="edits" type="array" required="true">
+          Array of edit operations, each:
+          {
+            start_line: integer,  // first line to replace (1-indexed)
+            end_line: integer,    // last line to replace (inclusive)
+            content: string       // replacement content. Empty string = delete lines.
+                                  // Content is split on newlines. Final newline is auto-added
+                                  // if the original range ended with one.
+          }
+        </field>
+        <field name="expected_hash" type="string" required="false">
+          If provided, the edit is rejected if the file's current content hash
+          doesn't match. Prevents applying edits based on stale reads.
+        </field>
+        <field name="dry_run" type="boolean" required="false">
+          If true, return the diff without writing to disk. Default: false.
+        </field>
+      </input>
+      <output>
+        <field name="diff" type="string">Unified diff (--- / +++ / @@ format) showing all changes.</field>
+        <field name="lines_changed" type="integer">Total lines affected.</field>
+        <field name="new_total_lines" type="integer">Total lines after edit.</field>
+        <field name="new_content_hash" type="string">Content hash after edit.</field>
+        <field name="applied" type="boolean">Whether changes were written to disk (false if dry_run).</field>
+      </output>
+      <errors>
+        <error code="HASH_MISMATCH">File content changed since last read. Re-read the file.</error>
+        <error code="OVERLAPPING_RANGES">Two or more edits overlap. Fix the line ranges.</error>
+        <error code="LINE_OUT_OF_RANGE">A start_line or end_line exceeds file length.</error>
+        <error code="FILE_NOT_OPEN">File must be read at least once before editing.</error>
+      </errors>
+      <atomicity>
+        All edits are applied to an in-memory copy of the rope first. If any edit
+        fails validation, the entire batch is rejected and the rope is untouched.
+        Only after all edits succeed is the result flushed to disk atomically
+        (write to .tmp, os::rename to target).
+      </atomicity>
+    </tool>
+
+    <tool name="file_insert" category="write">
+      <description>
+        Insert content at a specific line without replacing anything. Content
+        appears BEFORE the specified line. Use line > total_lines to append.
+        Requires an open buffer (call file_read or file_open first).
+      </description>
+      <input>
+        <field name="path" type="string" required="true">Absolute file path.</field>
+        <field name="line" type="integer" required="true">Insert before this line (1-indexed). Beyond EOF = append.</field>
+        <field name="content" type="string" required="true">Content to insert (can be multi-line).</field>
+      </input>
+      <output>
+        <field name="diff" type="string">Unified diff.</field>
+        <field name="new_total_lines" type="integer">New line count.</field>
+        <field name="new_content_hash" type="string">New content hash.</field>
+      </output>
+      <errors>
+        <error code="FILE_NOT_OPEN">File must be read at least once before inserting. Call file_read first.</error>
+        <error code="LINE_OUT_OF_RANGE">line is negative or zero.</error>
+      </errors>
+    </tool>
+
+    <tool name="file_delete" category="write">
+      <description>
+        Delete a range of lines from a file.
+        Requires an open buffer (call file_read or file_open first).
+      </description>
+      <input>
+        <field name="path" type="string" required="true">Absolute file path.</field>
+        <field name="start_line" type="integer" required="true">First line to delete (1-indexed).</field>
+        <field name="end_line" type="integer" required="true">Last line to delete (inclusive).</field>
+      </input>
+      <output>
+        <field name="diff" type="string">Unified diff.</field>
+        <field name="new_total_lines" type="integer">New line count.</field>
+        <field name="new_content_hash" type="string">New content hash.</field>
+      </output>
+      <errors>
+        <error code="FILE_NOT_OPEN">File must be read at least once before deleting. Call file_read first.</error>
+        <error code="LINE_OUT_OF_RANGE">start_line or end_line exceeds file length, or start_line > end_line.</error>
+      </errors>
+    </tool>
+
+    <tool name="file_create" category="write">
+      <description>
+        Create a new file with the given content. Creates parent directories
+        if they don't exist. Fails if the file already exists (use file_edit
+        for existing files).
+      </description>
+      <input>
+        <field name="path" type="string" required="true">Absolute file path.</field>
+        <field name="content" type="string" required="true">File content.</field>
+        <field name="line_ending" type="string" required="false">Force line ending: "lf" or "crlf". Default: "lf". Use "crlf" explicitly for Windows-native files.</field>
+      </input>
+      <output>
+        <field name="total_lines" type="integer">Line count of created file.</field>
+        <field name="size_bytes" type="integer">File size.</field>
+        <field name="content_hash" type="string">Content hash.</field>
+      </output>
+      <errors>
+        <error code="FILE_EXISTS">File already exists. Use file_edit for modifications.</error>
+      </errors>
+    </tool>
+
+    <tool name="file_undo" category="write">
+      <description>
+        Undo the last write operation(s) on a file. Restores the previous
+        buffer state and flushes to disk. After undo, file_redo is available.
+
+        With steps=1 (default): undoes the single last operation.
+        With steps=N: undoes the last N operations atomically, producing
+        one combined diff showing the net change from current state to the
+        target restored state. descriptions is an array of all undone ops,
+        most-recent-first.
+      </description>
+      <input>
+        <field name="path" type="string" required="true">Absolute file path.</field>
+        <field name="steps" type="integer" required="false">Number of operations to undo. Default: 1.</field>
+      </input>
+      <output>
+        <field name="diff" type="string">
+          Unified diff showing the net change from current state to the restored state.
+          For steps=1 this is a single-operation diff. For steps=N this is a combined
+          diff across all N undone operations.
+        </field>
+        <field name="descriptions" type="array">
+          Array of strings describing each undone operation, most-recent-first.
+          E.g. ["edit lines 45-52", "insert at line 10", "edit lines 3-3"]
+        </field>
+        <field name="remaining_undos" type="integer">How many more undos are available.</field>
+        <field name="remaining_redos" type="integer">How many redos are now available.</field>
+        <field name="new_content_hash" type="string">Content hash after undo.</field>
+      </output>
+      <errors>
+        <error code="NOTHING_TO_UNDO">No undo history for this file.</error>
+        <error code="INSUFFICIENT_HISTORY">steps exceeds available undo history. Use remaining_undos to check first.</error>
+      </errors>
+    </tool>
+
+    <tool name="file_redo" category="write">
+      <description>
+        Redo the last undone operation(s) on a file. Only available after file_undo.
+        Any new write operation (file_edit, file_insert, etc.) clears the redo stack.
+      </description>
+      <input>
+        <field name="path" type="string" required="true">Absolute file path.</field>
+        <field name="steps" type="integer" required="false">Number of operations to redo. Default: 1.</field>
+      </input>
+      <output>
+        <field name="diff" type="string">Unified diff showing the net change from current state to the re-applied state.</field>
+        <field name="descriptions" type="array">Array of strings describing each re-applied operation, oldest-first.</field>
+        <field name="remaining_undos" type="integer">Undos available after this redo.</field>
+        <field name="remaining_redos" type="integer">Redos still available after this redo.</field>
+        <field name="new_content_hash" type="string">Content hash after redo.</field>
+      </output>
+      <errors>
+        <error code="NOTHING_TO_REDO">No redo history. Redo stack is cleared by any write operation.</error>
+        <error code="INSUFFICIENT_HISTORY">steps exceeds available redo history.</error>
+      </errors>
+    </tool>
+
+    <!-- ─── SEARCH OPERATIONS ─────────────────────────────────── -->
+
+    <tool name="file_search" category="search">
+      <description>
+        Search within a single file for a pattern (regex or literal). Returns
+        matching lines with line numbers and surrounding context. Use this to
+        find the right line numbers before calling file_edit.
+      </description>
+      <input>
+        <field name="path" type="string" required="true">Absolute file path.</field>
+        <field name="pattern" type="string" required="true">Search pattern.</field>
+        <field name="regex" type="boolean" required="false">Treat pattern as regex. Default: true.</field>
+        <field name="case_sensitive" type="boolean" required="false">Case-sensitive search. Default: true.</field>
+        <field name="context_lines" type="integer" required="false">Lines of context around each match. Default: 2.</field>
+        <field name="max_matches" type="integer" required="false">Maximum matches to return. Default: 50.</field>
+      </input>
+      <output>
+        <field name="matches" type="array">
+          Array of:
+          {
+            line: integer,        // line number of the match (1-indexed)
+            text: string,         // the matching line content (raw)
+            column_start: integer, // byte offset of match start within line
+            column_end: integer,   // byte offset of match end within line
+            context_before: array, // [{line: int, text: string}, ...]
+            context_after: array   // [{line: int, text: string}, ...]
+          }
+        </field>
+        <field name="total_matches" type="integer">Total match count (may exceed max_matches).</field>
+        <field name="truncated" type="boolean">True if results were capped.</field>
+      </output>
+    </tool>
+
+    <tool name="codebase_search" category="search">
+      <description>
+        Search across multiple files for a pattern. Like ripgrep but integrated
+        into the daemon. Returns matches grouped by file with line numbers.
+      </description>
+      <input>
+        <field name="pattern" type="string" required="true">Search pattern (regex by default).</field>
+        <field name="path" type="string" required="false">Directory to search in. Default: current working directory.</field>
+        <field name="glob" type="string" required="false">File glob filter (e.g. "*.py", "src/**/*.rs").</field>
+        <field name="regex" type="boolean" required="false">Treat pattern as regex. Default: true.</field>
+        <field name="case_sensitive" type="boolean" required="false">Default: true.</field>
+        <field name="max_results" type="integer" required="false">Max total matches across all files. Default: 100.</field>
+        <field name="context_lines" type="integer" required="false">Lines of context. Default: 1.</field>
+      </input>
+      <output>
+        <field name="files" type="array">
+          Array of:
+          {
+            path: string,
+            matches: [{ line: int, text: string, column_start: int, column_end: int }]
+          }
+        </field>
+        <field name="total_files" type="integer">Files with matches.</field>
+        <field name="total_matches" type="integer">Total matches found.</field>
+        <field name="truncated" type="boolean">Whether results were capped.</field>
+      </output>
+    </tool>
+
+    <tool name="codebase_symbols" category="search">
+      <description>
+        Search for symbol definitions across all currently open buffers.
+
+        IMPORTANT SCOPE LIMITATION: This tool only searches files that have been
+        explicitly opened via file_read, file_open, or file_info. In a typical session,
+        most files in a repo are NOT open. A query for "Config" will return no results
+        if no file containing a Config definition has been opened yet.
+
+        To search for a symbol across the full codebase without opening every file,
+        use codebase_search with a pattern like "class Config" or "fn process_data" —
+        it walks all files on disk regardless of buffer state.
+
+        Use codebase_symbols when you have already opened the relevant files and want
+        structured symbol metadata (kind, line ranges, signature) rather than raw text matches.
+      </description>
+      <input>
+        <field name="query" type="string" required="true">Symbol name or partial name to search for.</field>
+        <field name="kind" type="string" required="false">Filter by kind: "function", "class", "method", "struct", etc.</field>
+        <field name="exact" type="boolean" required="false">Exact name match vs substring. Default: false (substring).</field>
+      </input>
+      <output>
+        <field name="symbols" type="array">
+          Array of:
+          {
+            name: string,
+            kind: string,
+            path: string,
+            start_line: integer,
+            end_line: integer,
+            signature: string  // preview of the definition
+          }
+        </field>
+        <field name="total" type="integer">Total symbols found.</field>
+      </output>
+    </tool>
+
+    <tool name="files_find" category="search">
+      <description>
+        Find files matching a glob pattern. Like the Glob tool but integrated.
+      </description>
+      <input>
+        <field name="pattern" type="string" required="true">Glob pattern (e.g. "**/*.py", "src/components/*.tsx").</field>
+        <field name="path" type="string" required="false">Base directory. Default: cwd.</field>
+        <field name="max_results" type="integer" required="false">Max files to return. Default: 200.</field>
+      </input>
+      <output>
+        <field name="files" type="array">
+          Array of: { path: string, size_bytes: integer, modified: string }
+        </field>
+        <field name="total" type="integer">Total matching files.</field>
+        <field name="truncated" type="boolean">Whether results were capped.</field>
+      </output>
+    </tool>
+
+  </tool_schema>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <language_and_stack>
+    <language>Rust</language>
+    <justification>
+      1. tree-sitter is a C library with first-class Rust bindings. No FFI friction.
+      2. ropey is the best rope implementation in any language — battle-tested, COW clones.
+      3. Single static binary — no runtime, no Python interpreter, no Node.js. Ship one .exe.
+      4. Sub-millisecond operation latency. Zero GC pauses.
+      5. Memory safety without runtime cost — critical for a daemon that manages file buffers.
+      6. The user is building Axon (a systems language) in Rust — familiar toolchain.
+    </justification>
+
+    <dependencies>
+      <dep name="rmcp" version="1.3+" purpose="Official MCP SDK — protocol handling, tool registration" />
+      <dep name="tokio" version="1.35+" features="full" purpose="Async runtime for rmcp + file watcher" />
+      <dep name="ropey" version="1.6+" purpose="Rope data structure for text buffers" />
+      <dep name="tree-sitter" version="0.26+" purpose="Incremental parser for structural analysis (current: 0.26.8)" />
+      <!-- Grammar crates version independently from the core. Each links against the
+           tree-sitter C library via its own build.rs. Cargo.lock pins compatible versions.
+           Verify ABI compatibility: all grammar crates must be built with the same
+           tree-sitter C headers as the core crate. Run `cargo tree` to confirm. -->
+      <dep name="tree-sitter-python" version="0.23+" purpose="Python grammar" />
+      <dep name="tree-sitter-javascript" version="0.23+" purpose="JavaScript grammar" />
+      <dep name="tree-sitter-typescript" version="0.23+" purpose="TypeScript + TSX grammars" />
+      <dep name="tree-sitter-rust" version="0.23+" purpose="Rust grammar" />
+      <dep name="tree-sitter-go" version="0.23+" purpose="Go grammar" />
+      <dep name="tree-sitter-java" version="0.23+" purpose="Java grammar" />
+      <dep name="tree-sitter-c" version="0.23+" purpose="C grammar" />
+      <dep name="tree-sitter-cpp" version="0.23+" purpose="C++ grammar" />
+      <dep name="tree-sitter-c-sharp" version="0.23+" purpose="C# grammar" />
+      <dep name="tree-sitter-ruby" version="0.23+" purpose="Ruby grammar" />
+      <dep name="tree-sitter-bash" version="0.23+" purpose="Bash grammar" />
+      <dep name="tree-sitter-json" version="0.23+" purpose="JSON grammar" />
+      <dep name="notify" version="6.1+" purpose="Cross-platform file watching" />
+      <dep name="serde" version="1.0+" features="derive" purpose="Serialization" />
+      <dep name="serde_json" version="1.0+" purpose="JSON handling" />
+      <dep name="xxhash-rust" version="0.8+" purpose="Fast content hashing" />
+      <dep name="glob" version="0.3+" purpose="File glob matching" />
+      <dep name="regex" version="1.10+" purpose="Search patterns" />
+      <dep name="similar" version="2.4+" purpose="Unified diff generation" />
+      <dep name="tempfile" version="3.10+" purpose="Atomic writes via temp files" />
+      <dep name="encoding_rs" version="0.8+" purpose="Encoding detection + conversion" />
+    </dependencies>
+
+    <build-target>
+      x86_64-pc-windows-msvc (primary — user is on Windows 11)
+      Cross-compilation targets: x86_64-unknown-linux-gnu, aarch64-apple-darwin (future)
+    </build-target>
+
+    <project-structure>
+      forge/
+      ├── Cargo.toml
+      ├── src/
+      │   ├── main.rs              // Entry point: init MCP server, run event loop
+      │   ├── engine.rs            // BufferEngine: owns all buffers, coordinates ops
+      │   ├── buffer.rs            // Buffer: rope + tree + undo + metadata
+      │   ├── tools/
+      │   │   ├── mod.rs           // Tool registration
+      │   │   ├── read.rs          // file_open, file_read, file_outline, file_info
+      │   │   ├── write.rs         // file_edit, file_insert, file_delete, file_create, file_undo
+      │   │   └── search.rs        // file_search, codebase_search, codebase_symbols, files_find
+      │   ├── parser.rs            // ParserPool: tree-sitter management, language detection
+      │   ├── symbols.rs           // SymbolIndex: cross-file symbol resolution
+      │   ├── watcher.rs           // FileWatcher: notify integration
+      │   ├── diff.rs              // Diff generation (unified format)
+      │   ├── encoding.rs          // Encoding detection, line ending handling
+      │   └── errors.rs            // Error types and MCP error mapping
+      └── queries/
+          ├── python.scm           // Tree-sitter tag queries per language
+          ├── javascript.scm
+          ├── typescript.scm
+          ├── rust.scm
+          ├── go.scm
+          ├── java.scm
+          ├── c.scm
+          ├── cpp.scm
+          ├── c_sharp.scm
+          ├── ruby.scm
+          ├── bash.scm
+          └── json.scm             // JSON has no functions/classes; query captures keys at depth 1
+    </project-structure>
+  </language_and_stack>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <implementation_plan>
+
+    <phase n="1" name="Core Buffer + Read/Write" target="Day 1-2">
+      <goal>
+        Minimal working MCP server that can read and write files. This alone
+        solves P-2 (no baked-in line numbers) and provides a foundation.
+      </goal>
+      <tasks>
+        <task>Set up Cargo project with rmcp, ropey, serde_json, tempfile, xxhash-rust</task>
+        <task>Implement Buffer struct (rope, metadata, encoding/line-ending detection)</task>
+        <task>Implement Engine struct (HashMap of buffers, open/close/flush operations)</task>
+        <task>Implement atomic write (tempfile + fs::rename)</task>
+        <task>Implement file_open tool (open file → buffer → return metadata)</task>
+        <task>Implement file_read tool (read from buffer with line range, raw content output)</task>
+        <task>Implement file_edit tool (line-range edits, bottom-up application, diff output)</task>
+        <task>Implement file_create tool (new file with parent dir creation)</task>
+        <task>Implement file_insert + file_delete tools</task>
+        <task>Wire tools into MCP server via rmcp, test with JSON-RPC stdin</task>
+        <task>Register in ~/.claude/settings.json, verify Claude Code sees tools</task>
+      </tasks>
+      <deliverable>
+        A working MCP server binary that Claude can use for file_read, file_edit,
+        file_create, file_insert, file_delete. No tree-sitter yet. No search yet.
+        But the core read-edit loop works without string matching.
+      </deliverable>
+    </phase>
+
+    <phase n="2" name="Tree-sitter + Structural Navigation" target="Day 3-4">
+      <goal>
+        Add structural understanding. Claude can get file outlines and navigate
+        by symbol names instead of guessing line numbers.
+      </goal>
+      <tasks>
+        <task>Add tree-sitter + language grammar crates to Cargo.toml</task>
+        <task>Implement ParserPool (one parser per language, language detection from extension)</task>
+        <task>Write tag query .scm files for Python, JS/TS, Rust, Go (minimum 4)</task>
+        <task>Implement file_outline tool (parse file, run tag query, return symbols)</task>
+        <task>Implement incremental re-parsing after edits (tree-sitter's edit API)</task>
+        <task>Integrate parsing into buffer lifecycle (parse on open, re-parse on edit)</task>
+        <task>Implement file_info tool</task>
+        <task>Add remaining grammars (Java, C, C++, C#, Ruby, Bash, JSON)</task>
+      </tasks>
+      <deliverable>
+        file_outline returns structural outlines for 12 languages. Workflow:
+        file_outline → see function at lines 45-52 → file_edit lines 45-52.
+      </deliverable>
+    </phase>
+
+    <phase n="3" name="Search" target="Day 5">
+      <goal>
+        Full-text and symbol search within files and across the codebase.
+      </goal>
+      <tasks>
+        <task>Implement file_search tool (regex search within a buffer)</task>
+        <task>Implement codebase_search tool (walk directory, match files, search content)</task>
+        <task>Implement SymbolIndex (aggregate symbols from all open buffers)</task>
+        <task>Implement codebase_symbols tool (query the symbol index)</task>
+        <task>Implement files_find tool (glob pattern file listing)</task>
+        <task>Optimize codebase_search for large repos (parallel file reading, early termination)</task>
+      </tasks>
+      <deliverable>
+        Claude can search for patterns and symbols across the codebase, getting
+        file paths and line numbers it can feed directly into file_read/file_edit.
+      </deliverable>
+    </phase>
+
+    <phase n="4" name="File Watching + Undo" target="Day 6">
+      <goal>
+        Detect external file changes and provide undo/redo for all write operations.
+      </goal>
+      <tasks>
+        <task>Implement FileWatcher (notify crate, debounced, watches open buffer paths)</task>
+        <task>Wire watcher into Engine — on external change, re-read buffer, mark as externally modified</task>
+        <task>Implement undo stack (push rope snapshot on every write operation)</task>
+        <task>Implement redo stack (push on undo, clear on new edit)</task>
+        <task>Implement file_undo tool (pop undo, restore rope, flush, return diff)</task>
+        <task>Implement file_close tool (flush + cleanup + unwatch)</task>
+        <task>Add "externally_modified" flag to all read tool responses</task>
+      </tasks>
+      <deliverable>
+        Full production system. File watching prevents stale edits. Undo provides
+        safety net. Every write is reversible within the session.
+      </deliverable>
+    </phase>
+
+    <phase n="5" name="Polish + Integration" target="Day 7">
+      <goal>
+        Harden, optimize, and integrate with Archon.
+      </goal>
+      <tasks>
+        <task>Error handling audit — every tool returns structured errors, never panics</task>
+        <task>Token budget analysis — ensure large file reads stay under 10K tokens</task>
+        <task>Windows-specific testing (CRLF files, long paths, Unicode filenames)</task>
+        <task>Performance benchmarks (target: sub-10ms for read, sub-50ms for edit+parse)</task>
+        <task>Write MCP server instructions field (tells Claude to prefer FORGE tools)</task>
+        <task>Create Archon skill for FORGE usage patterns</task>
+        <task>Update rw-tools-plan.xml with final architecture and results</task>
+        <task>Build release binary, test end-to-end with Claude Code</task>
+      </tasks>
+      <deliverable>
+        Production-ready FORGE binary. Registered in Claude Code. Archon skill
+        teaches Claude the optimal workflow. All 12 tools tested on Windows 11.
+      </deliverable>
+    </phase>
+
+  </implementation_plan>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <invariants>
+    <invariant id="I-1" severity="absolute">
+      file_read MUST return content that is byte-identical to the corresponding
+      bytes in the file (or buffer). No synthetic characters, line numbers, prefixes,
+      suffixes, or transformations may be injected into the content field. Line
+      numbers exist ONLY in the metadata (lines.start, lines.end, lines.total).
+    </invariant>
+
+    <invariant id="I-2" severity="absolute">
+      All write operations (edit, insert, delete, create) MUST be atomic. Either
+      all changes apply successfully or none do. The file on disk is NEVER left
+      in a partial state. Implementation: apply to in-memory rope first, validate,
+      then flush via tempfile + fs::rename.
+    </invariant>
+
+    <invariant id="I-3" severity="absolute">
+      file_edit with multiple edits MUST apply them bottom-up (highest start_line
+      first). This ensures that line numbers from earlier edits don't shift the
+      targets of later edits. Overlapping ranges MUST be rejected before any
+      changes are applied.
+    </invariant>
+
+    <invariant id="I-4" severity="high">
+      Every write operation MUST push an undo entry before modifying the buffer.
+      The undo entry contains a rope clone (cheap, COW) and the tree-sitter tree.
+      Undo MUST restore the exact previous state.
+    </invariant>
+
+    <invariant id="I-5" severity="high">
+      Line endings detected at file open MUST be preserved on all writes.
+      If a file uses CRLF, all output from edit/insert/create MUST use CRLF.
+      The daemon NEVER silently converts line endings.
+    </invariant>
+
+    <invariant id="I-6" severity="high">
+      The MCP server MUST NOT crash on any input. All errors are returned as
+      structured MCP error responses with human-readable messages and machine-
+      readable error codes. Panics are bugs.
+    </invariant>
+
+    <invariant id="I-7" severity="medium">
+      The content_hash field MUST be consistent: if two reads return the same
+      hash, the content MUST be identical. If the content changed (by edit or
+      external modification), the hash MUST change. Used for stale detection
+      in file_edit's expected_hash parameter.
+    </invariant>
+  </invariants>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <first_task>
+    <what>
+      Build a minimal FORGE binary that implements file_read and file_edit
+      over MCP stdio. No tree-sitter, no search, no file watching — just
+      the core buffer engine with rope-backed reads and line-range edits.
+    </what>
+    <steps>
+      <step n="1">cargo init forge (in c:/Users/tahaa/omniskill/servers/forge/)</step>
+      <step n="2">Add dependencies: rmcp, tokio, ropey, serde, serde_json, xxhash-rust, tempfile, similar</step>
+      <step n="3">Implement Buffer struct (rope, metadata, content hash)</step>
+      <step n="4">Implement Engine struct (buffer map, open/read/edit/flush)</step>
+      <step n="5">Implement file_read tool handler — returns raw content + line metadata</step>
+      <step n="6">Implement file_edit tool handler — line-range edits, bottom-up, atomic write, diff output</step>
+      <step n="7">Wire into rmcp MCP server on stdio</step>
+      <step n="8">Build: cargo build --release</step>
+      <step n="9">
+        Register in C:/Users/tahaa/.claude/settings.json under mcpServers:
+        "forge": {
+          "command": "C:/Users/tahaa/omniskill/servers/forge/target/release/forge.exe"
+        }
+      </step>
+      <step n="10">Test: open Claude Code, verify mcp__forge__file_read and mcp__forge__file_edit appear</step>
+    </steps>
+    <success-criteria>
+      Claude can call file_read to read a file and get raw content (no line numbers
+      in the content string). Claude can then call file_edit with line ranges and
+      get a unified diff back confirming the edit was applied. The file on disk
+      reflects the changes.
+    </success-criteria>
+    <estimated-time>2-3 hours for a working prototype</estimated-time>
+  </first_task>
+
+</file-daemon-plan>
