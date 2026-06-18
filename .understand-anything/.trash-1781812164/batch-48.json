@@ -1,0 +1,280 @@
+{
+  "batchIndex": 48,
+  "nodes": [
+    {
+      "id": "document:skills/dispatching-parallel-agents/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (dispatching-parallel-agents)",
+      "filePath": "skills/dispatching-parallel-agents/SKILL.md",
+      "summary": "Skill documentation for dispatching-parallel-agents, providing protocols for spawning and coordinating multiple agents in parallel using the Agent tool.",
+      "tags": ["dispatching-parallel-agents", "documentation", "multi-agent", "parallel-execution", "orchestration"],
+      "complexity": 3
+    },
+    {
+      "id": "file:skills/django-expert/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (django-expert examples)",
+      "filePath": "skills/django-expert/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory for the django-expert skill.",
+      "tags": ["django-expert", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/django-expert/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (django-expert)",
+      "filePath": "skills/django-expert/manifest.yaml",
+      "summary": "Skill manifest for django-expert, a minimal manifest defining triggers for advanced Django development tasks.",
+      "tags": ["django-expert", "skill", "manifest", "django", "python"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/django-expert/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (django-expert overrides)",
+      "filePath": "skills/django-expert/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the django-expert skill.",
+      "tags": ["django-expert", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/django-expert/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (django-expert resources)",
+      "filePath": "skills/django-expert/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the django-expert skill.",
+      "tags": ["django-expert", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/django-expert/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (django-expert)",
+      "filePath": "skills/django-expert/SKILL.md",
+      "summary": "Skill documentation for django-expert, covering advanced Django patterns including custom managers, signals, middleware, and performance optimization.",
+      "tags": ["django-expert", "documentation", "django", "python", "advanced-patterns"],
+      "complexity": 5
+    },
+    {
+      "id": "file:skills/django-expert/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (django-expert test cases)",
+      "filePath": "skills/django-expert/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the django-expert skill.",
+      "tags": ["django-expert", "placeholder", "git", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/django-framework/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (django-framework examples)",
+      "filePath": "skills/django-framework/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory for the django-framework skill.",
+      "tags": ["django-framework", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/django-framework/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (django-framework)",
+      "filePath": "skills/django-framework/manifest.yaml",
+      "summary": "Skill manifest for django-framework, a minimal manifest defining triggers for Django framework development tasks.",
+      "tags": ["django-framework", "skill", "manifest", "django", "python"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/django-framework/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (django-framework overrides)",
+      "filePath": "skills/django-framework/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the django-framework skill.",
+      "tags": ["django-framework", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/django-framework/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (django-framework resources)",
+      "filePath": "skills/django-framework/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the django-framework skill.",
+      "tags": ["django-framework", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/django-framework/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (django-framework)",
+      "filePath": "skills/django-framework/SKILL.md",
+      "summary": "Very large skill documentation for django-framework, providing a comprehensive Django development reference covering models, views, templates, forms, and deployment.",
+      "tags": ["django-framework", "documentation", "django", "python", "web-framework"],
+      "complexity": 5
+    },
+    {
+      "id": "file:skills/django-framework/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (django-framework test cases)",
+      "filePath": "skills/django-framework/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the django-framework skill.",
+      "tags": ["django-framework", "placeholder", "git", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/django-orm-patterns/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (django-orm-patterns examples)",
+      "filePath": "skills/django-orm-patterns/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory for the django-orm-patterns skill.",
+      "tags": ["django-orm-patterns", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/django-orm-patterns/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (django-orm-patterns)",
+      "filePath": "skills/django-orm-patterns/manifest.yaml",
+      "summary": "Skill manifest for django-orm-patterns, a minimal manifest defining triggers for Django ORM query and model pattern tasks.",
+      "tags": ["django-orm-patterns", "skill", "manifest", "django", "orm"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/django-orm-patterns/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (django-orm-patterns overrides)",
+      "filePath": "skills/django-orm-patterns/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the django-orm-patterns skill.",
+      "tags": ["django-orm-patterns", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/django-orm-patterns/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (django-orm-patterns resources)",
+      "filePath": "skills/django-orm-patterns/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the django-orm-patterns skill.",
+      "tags": ["django-orm-patterns", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/django-orm-patterns/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (django-orm-patterns)",
+      "filePath": "skills/django-orm-patterns/SKILL.md",
+      "summary": "Very large skill documentation for django-orm-patterns, covering advanced Django ORM query optimization, select_related, prefetch_related, annotations, and complex lookups.",
+      "tags": ["django-orm-patterns", "documentation", "django", "orm", "query-optimization"],
+      "complexity": 5
+    },
+    {
+      "id": "file:skills/django-orm-patterns/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (django-orm-patterns test cases)",
+      "filePath": "skills/django-orm-patterns/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the django-orm-patterns skill.",
+      "tags": ["django-orm-patterns", "placeholder", "git", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/django-rest-framework/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (django-rest-framework examples)",
+      "filePath": "skills/django-rest-framework/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory for the django-rest-framework skill.",
+      "tags": ["django-rest-framework", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/django-rest-framework/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (django-rest-framework)",
+      "filePath": "skills/django-rest-framework/manifest.yaml",
+      "summary": "Skill manifest for django-rest-framework, a minimal manifest defining triggers for Django REST Framework API development tasks.",
+      "tags": ["django-rest-framework", "skill", "manifest", "drf", "rest-api"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/django-rest-framework/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (django-rest-framework overrides)",
+      "filePath": "skills/django-rest-framework/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the django-rest-framework skill.",
+      "tags": ["django-rest-framework", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/django-rest-framework/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (django-rest-framework resources)",
+      "filePath": "skills/django-rest-framework/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the django-rest-framework skill.",
+      "tags": ["django-rest-framework", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/django-rest-framework/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (django-rest-framework)",
+      "filePath": "skills/django-rest-framework/SKILL.md",
+      "summary": "Very large skill documentation for django-rest-framework, covering DRF serializers, viewsets, authentication, permissions, filtering, and API versioning.",
+      "tags": ["django-rest-framework", "documentation", "drf", "rest-api", "serializers"],
+      "complexity": 5
+    },
+    {
+      "id": "file:skills/django-rest-framework/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (django-rest-framework test cases)",
+      "filePath": "skills/django-rest-framework/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the django-rest-framework skill.",
+      "tags": ["django-rest-framework", "placeholder", "git", "testing"],
+      "complexity": 1
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:skills/dispatching-parallel-agents/SKILL.md",
+      "target": "config:skills/dispatching-parallel-agents/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/django-expert/SKILL.md",
+      "target": "config:skills/django-expert/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/django-framework/SKILL.md",
+      "target": "config:skills/django-framework/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/django-orm-patterns/SKILL.md",
+      "target": "config:skills/django-orm-patterns/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/django-rest-framework/SKILL.md",
+      "target": "config:skills/django-rest-framework/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/django-orm-patterns/SKILL.md",
+      "target": "document:skills/django-framework/SKILL.md",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "document:skills/django-rest-framework/SKILL.md",
+      "target": "document:skills/django-framework/SKILL.md",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "document:skills/django-expert/SKILL.md",
+      "target": "document:skills/django-framework/SKILL.md",
+      "type": "imports",
+      "weight": 0.7
+    }
+  ]
+}

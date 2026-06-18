@@ -1,0 +1,265 @@
+{
+  "batchIndex": 53,
+  "nodes": [
+    {
+      "id": "config:skills/info-architecture/manifest.yaml",
+      "type": "config",
+      "name": "info-architecture manifest",
+      "filePath": "skills/info-architecture/manifest.yaml",
+      "summary": "Skill manifest for the info-architecture skill, declaring name, version, triggers, and skill metadata.",
+      "tags": ["manifest", "skill", "info-architecture", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/info-architecture/SKILL.md",
+      "type": "document",
+      "name": "info-architecture SKILL.md",
+      "filePath": "skills/info-architecture/SKILL.md",
+      "summary": "Comprehensive skill documentation for the information architecture skill, covering site structure, navigation patterns, content hierarchy, and IA audit workflows.",
+      "tags": ["docs", "info-architecture", "navigation", "skill", "site-structure"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:skills/info-architecture/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (info-architecture examples)",
+      "filePath": "skills/info-architecture/examples/.gitkeep",
+      "summary": "Placeholder file to preserve empty examples directory in git.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/info-architecture/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (info-architecture overrides)",
+      "filePath": "skills/info-architecture/overrides/.gitkeep",
+      "summary": "Placeholder file to preserve empty overrides directory in git.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/info-architecture/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (info-architecture resources)",
+      "filePath": "skills/info-architecture/resources/.gitkeep",
+      "summary": "Placeholder file to preserve empty resources directory in git.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/info-architecture/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (info-architecture tests)",
+      "filePath": "skills/info-architecture/tests/cases/.gitkeep",
+      "summary": "Placeholder file to preserve empty test cases directory in git.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/knowledge-sources/manifest.yaml",
+      "type": "config",
+      "name": "knowledge-sources manifest",
+      "filePath": "skills/knowledge-sources/manifest.yaml",
+      "summary": "Skill manifest for the knowledge-sources skill with extended configuration for source type references and templates.",
+      "tags": ["manifest", "skill", "knowledge-sources", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/knowledge-sources/resources/source-types.md",
+      "type": "document",
+      "name": "source-types.md",
+      "filePath": "skills/knowledge-sources/resources/source-types.md",
+      "summary": "Reference documentation cataloguing different knowledge source types (docs, APIs, databases, code) with integration patterns and trust-level guidelines.",
+      "tags": ["knowledge-sources", "reference", "source-types", "integration"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:skills/knowledge-sources/SKILL.md",
+      "type": "document",
+      "name": "knowledge-sources SKILL.md",
+      "filePath": "skills/knowledge-sources/SKILL.md",
+      "summary": "Skill documentation for the knowledge-sources skill, guiding users on discovering, evaluating, and integrating knowledge sources into AI workflows.",
+      "tags": ["docs", "knowledge-sources", "skill", "ai-workflow"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/knowledge-sources/templates/source-config.yaml",
+      "type": "config",
+      "name": "source-config.yaml template",
+      "filePath": "skills/knowledge-sources/templates/source-config.yaml",
+      "summary": "YAML template for configuring knowledge source connections, defining source type, access patterns, credentials, and caching behavior.",
+      "tags": ["template", "yaml", "knowledge-sources", "config", "source"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/lazy-import-patterns/manifest.yaml",
+      "type": "config",
+      "name": "lazy-import-patterns manifest",
+      "filePath": "skills/lazy-import-patterns/manifest.yaml",
+      "summary": "Skill manifest for the lazy-import-patterns skill declaring triggers and version metadata.",
+      "tags": ["manifest", "skill", "lazy-import", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/lazy-import-patterns/SKILL.md",
+      "type": "document",
+      "name": "lazy-import-patterns SKILL.md",
+      "filePath": "skills/lazy-import-patterns/SKILL.md",
+      "summary": "Skill documentation covering lazy import patterns for code-splitting, dynamic imports, and deferred module loading to improve performance.",
+      "tags": ["docs", "lazy-import", "code-splitting", "performance", "patterns"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/mcp-builder/manifest.yaml",
+      "type": "config",
+      "name": "mcp-builder manifest",
+      "filePath": "skills/mcp-builder/manifest.yaml",
+      "summary": "Skill manifest for the mcp-builder skill, registering triggers for building and evaluating MCP servers.",
+      "tags": ["manifest", "skill", "mcp-builder", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/mcp-builder/resources/connections.py",
+      "type": "file",
+      "name": "connections.py",
+      "filePath": "skills/mcp-builder/resources/connections.py",
+      "summary": "Lightweight MCP connection library providing abstract MCPConnection base class and concrete implementations for stdio, SSE, and HTTP transports; includes a factory function create_connection.",
+      "tags": ["mcp", "connection", "stdio", "sse", "http"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/mcp-builder/resources/evaluation.py",
+      "type": "file",
+      "name": "evaluation.py",
+      "filePath": "skills/mcp-builder/resources/evaluation.py",
+      "summary": "MCP server evaluation harness that runs test questions against an MCP server using Claude, collecting structured summaries, tool feedback, and responses tagged in XML.",
+      "tags": ["mcp", "evaluation", "claude", "testing", "harness"],
+      "complexity": "high"
+    },
+    {
+      "id": "document:skills/mcp-builder/SKILL.md",
+      "type": "document",
+      "name": "mcp-builder SKILL.md",
+      "filePath": "skills/mcp-builder/SKILL.md",
+      "summary": "Skill documentation for building MCP servers, covering tool definition, transport selection, evaluation workflows, and best practices.",
+      "tags": ["docs", "mcp-builder", "skill", "mcp-server"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/mcp-builder/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (mcp-builder examples)",
+      "filePath": "skills/mcp-builder/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/mcp-builder/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (mcp-builder overrides)",
+      "filePath": "skills/mcp-builder/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/mcp-builder/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (mcp-builder resources)",
+      "filePath": "skills/mcp-builder/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/mcp-builder/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (mcp-builder tests)",
+      "filePath": "skills/mcp-builder/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/mcp-server-index/manifest.yaml",
+      "type": "config",
+      "name": "mcp-server-index manifest",
+      "filePath": "skills/mcp-server-index/manifest.yaml",
+      "summary": "Skill manifest for the mcp-server-index skill used to browse and discover available MCP servers.",
+      "tags": ["manifest", "skill", "mcp-server-index", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/mcp-server-index/SKILL.md",
+      "type": "document",
+      "name": "mcp-server-index SKILL.md",
+      "filePath": "skills/mcp-server-index/SKILL.md",
+      "summary": "Skill documentation for indexing and browsing available MCP servers, providing discovery and selection guidance.",
+      "tags": ["docs", "mcp-server-index", "skill", "discovery"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/mcp-server-index/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (mcp-server-index examples)",
+      "filePath": "skills/mcp-server-index/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/mcp-server-index/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (mcp-server-index overrides)",
+      "filePath": "skills/mcp-server-index/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/mcp-server-index/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (mcp-server-index resources)",
+      "filePath": "skills/mcp-server-index/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/mcp-builder/resources/MCPConnection",
+      "type": "file",
+      "name": "MCPConnection (class)",
+      "filePath": "skills/mcp-builder/resources/connections.py",
+      "summary": "Abstract base class for MCP server connections implementing async context manager protocol.",
+      "tags": ["class", "abstract", "mcp", "connection"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/mcp-builder/resources/create_connection",
+      "type": "file",
+      "name": "create_connection (function)",
+      "filePath": "skills/mcp-builder/resources/connections.py",
+      "summary": "Factory function selecting MCPConnection implementation by transport type (stdio/sse/http).",
+      "tags": ["factory", "function", "mcp", "transport"],
+      "complexity": "low"
+    }
+  ],
+  "edges": [
+    {"source": "config:skills/info-architecture/manifest.yaml", "target": "document:skills/info-architecture/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "document:skills/info-architecture/SKILL.md", "target": "config:skills/info-architecture/manifest.yaml", "type": "documents", "weight": 0.5},
+    {"source": "config:skills/knowledge-sources/manifest.yaml", "target": "document:skills/knowledge-sources/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/knowledge-sources/manifest.yaml", "target": "document:skills/knowledge-sources/resources/source-types.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/knowledge-sources/manifest.yaml", "target": "config:skills/knowledge-sources/templates/source-config.yaml", "type": "contains", "weight": 1.0},
+    {"source": "document:skills/knowledge-sources/SKILL.md", "target": "document:skills/knowledge-sources/resources/source-types.md", "type": "documents", "weight": 0.5},
+    {"source": "config:skills/lazy-import-patterns/manifest.yaml", "target": "document:skills/lazy-import-patterns/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/mcp-builder/manifest.yaml", "target": "document:skills/mcp-builder/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/mcp-builder/manifest.yaml", "target": "file:skills/mcp-builder/resources/connections.py", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/mcp-builder/manifest.yaml", "target": "file:skills/mcp-builder/resources/evaluation.py", "type": "configures", "weight": 0.6},
+    {"source": "file:skills/mcp-builder/resources/evaluation.py", "target": "file:skills/mcp-builder/resources/connections.py", "type": "imports", "weight": 0.7},
+    {"source": "file:skills/mcp-builder/resources/connections.py", "target": "file:skills/mcp-builder/resources/MCPConnection", "type": "contains", "weight": 1.0},
+    {"source": "file:skills/mcp-builder/resources/connections.py", "target": "file:skills/mcp-builder/resources/create_connection", "type": "contains", "weight": 1.0},
+    {"source": "document:skills/mcp-builder/SKILL.md", "target": "file:skills/mcp-builder/resources/connections.py", "type": "documents", "weight": 0.5},
+    {"source": "config:skills/mcp-server-index/manifest.yaml", "target": "document:skills/mcp-server-index/SKILL.md", "type": "configures", "weight": 0.6}
+  ]
+}

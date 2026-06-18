@@ -1,0 +1,1773 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "skills/windows-network-optimizer/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 29,
+      "nonEmptyLines": 25,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/windows-network-optimizer/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 190,
+      "nonEmptyLines": 160,
+      "sections": [
+        {
+          "heading": "Windows Network & System Optimizer",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "Prerequisites",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Phase 1: Diagnose",
+          "level": 2,
+          "line": 22
+        },
+        {
+          "heading": "Phase 2: Optimize",
+          "level": 2,
+          "line": 40
+        },
+        {
+          "heading": "DNS",
+          "level": 3,
+          "line": 47
+        },
+        {
+          "heading": "NIC Adapter (Realtek)",
+          "level": 3,
+          "line": 56
+        },
+        {
+          "heading": "TCP/IP Registry (Per-Interface Nagle Disable)",
+          "level": 3,
+          "line": 71
+        },
+        {
+          "heading": "TCP/IP Global Registry",
+          "level": 3,
+          "line": 80
+        },
+        {
+          "heading": "TCP netsh",
+          "level": 3,
+          "line": 93
+        },
+        {
+          "heading": "MMCSS / Network Throttling",
+          "level": 3,
+          "line": 104
+        },
+        {
+          "heading": "AFD Parameters",
+          "level": 3,
+          "line": 111
+        },
+        {
+          "heading": "QoS + WinINet + SMB",
+          "level": 3,
+          "line": 120
+        },
+        {
+          "heading": "Services",
+          "level": 3,
+          "line": 132
+        },
+        {
+          "heading": "Telemetry",
+          "level": 3,
+          "line": 140
+        },
+        {
+          "heading": "Memory + CPU + Power",
+          "level": 3,
+          "line": 147
+        },
+        {
+          "heading": "Defender (without disabling)",
+          "level": 3,
+          "line": 157
+        },
+        {
+          "heading": "Network Stack Reset (requires reboot)",
+          "level": 3,
+          "line": 163
+        },
+        {
+          "heading": "Phase 3: Verify",
+          "level": 2,
+          "line": 170
+        },
+        {
+          "heading": "Phase 4: Report",
+          "level": 2,
+          "line": 177
+        },
+        {
+          "heading": "Known Hardware Issues (Per-Machine)",
+          "level": 2,
+          "line": 185
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 21
+      }
+    },
+    {
+      "path": "skills/windows-registry-editor/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 40,
+      "nonEmptyLines": 35,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 17
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 29
+        },
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "skills/windows-registry-editor/references/optimization-presets.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 187,
+      "nonEmptyLines": 150,
+      "sections": [
+        {
+          "heading": "Registry Optimization Presets",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Preset: network",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "TCP Global Parameters",
+          "level": 3,
+          "line": 12
+        },
+        {
+          "heading": "Per-Interface Nagle Disable",
+          "level": 3,
+          "line": 24
+        },
+        {
+          "heading": "MMCSS / Network Throttling",
+          "level": 3,
+          "line": 33
+        },
+        {
+          "heading": "AFD (Winsock) Buffers",
+          "level": 3,
+          "line": 39
+        },
+        {
+          "heading": "QoS Bandwidth",
+          "level": 3,
+          "line": 46
+        },
+        {
+          "heading": "WinINet Connections",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "SMB Client",
+          "level": 3,
+          "line": 57
+        },
+        {
+          "heading": "DNS Cache",
+          "level": 3,
+          "line": 62
+        },
+        {
+          "heading": "Preset: gaming",
+          "level": 2,
+          "line": 70
+        },
+        {
+          "heading": "MMCSS Game Tasks",
+          "level": 3,
+          "line": 74
+        },
+        {
+          "heading": "Power Throttling",
+          "level": 3,
+          "line": 85
+        },
+        {
+          "heading": "Pre-rendered Frames",
+          "level": 3,
+          "line": 90
+        },
+        {
+          "heading": "GameDVR (disable background recording overhead)",
+          "level": 3,
+          "line": 95
+        },
+        {
+          "heading": "Fullscreen Optimizations",
+          "level": 3,
+          "line": 103
+        },
+        {
+          "heading": "Preset: privacy",
+          "level": 2,
+          "line": 111
+        },
+        {
+          "heading": "Preset: performance",
+          "level": 2,
+          "line": 133
+        },
+        {
+          "heading": "Preset: input-latency",
+          "level": 2,
+          "line": 152
+        },
+        {
+          "heading": "Mouse Acceleration Curves (Linear 1:1)",
+          "level": 3,
+          "line": 166
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 20
+      }
+    },
+    {
+      "path": "skills/windows-registry-editor/references/presets/network-deep.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 673,
+      "nonEmptyLines": 515,
+      "sections": [
+        {
+          "heading": "Network Deep Optimization — Complete Registry & System Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Table of Contents",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Layer 1: NIC Hardware & Driver Tuning",
+          "level": 2,
+          "line": 30
+        },
+        {
+          "heading": "Via PowerShell (Set-NetAdapterAdvancedProperty)",
+          "level": 3,
+          "line": 34
+        },
+        {
+          "heading": "Interrupt Moderation (Deep Dive)",
+          "level": 3,
+          "line": 90
+        },
+        {
+          "heading": "RSS (Receive Side Scaling)",
+          "level": 3,
+          "line": 105
+        },
+        {
+          "heading": "Checksum Offload",
+          "level": 3,
+          "line": 121
+        },
+        {
+          "heading": "Layer 2: NDIS & Interrupt Handling",
+          "level": 2,
+          "line": 134
+        },
+        {
+          "heading": "Registry: NDIS Parameters",
+          "level": 3,
+          "line": 138
+        },
+        {
+          "heading": "Layer 3: TCP/IP Global Parameters",
+          "level": 2,
+          "line": 172
+        },
+        {
+          "heading": "Layer 4: TCP Per-Interface Parameters",
+          "level": 2,
+          "line": 226
+        },
+        {
+          "heading": "Layer 5: TCP Netsh Global Settings",
+          "level": 2,
+          "line": 251
+        },
+        {
+          "heading": "Layer 6: TCP Advanced",
+          "level": 2,
+          "line": 296
+        },
+        {
+          "heading": "Congestion Control Comparison",
+          "level": 3,
+          "line": 298
+        },
+        {
+          "heading": "ECN Deep Dive",
+          "level": 3,
+          "line": 318
+        },
+        {
+          "heading": "Layer 7: UDP & Winsock (AFD)",
+          "level": 2,
+          "line": 334
+        },
+        {
+          "heading": "Layer 8: DNS Resolver",
+          "level": 2,
+          "line": 379
+        },
+        {
+          "heading": "DNS Server Configuration",
+          "level": 3,
+          "line": 400
+        },
+        {
+          "heading": "Layer 9: MMCSS & Network Throttling",
+          "level": 2,
+          "line": 419
+        },
+        {
+          "heading": "Layer 10: QoS & Bandwidth Reservation",
+          "level": 2,
+          "line": 449
+        },
+        {
+          "heading": "Layer 11: SMB & File Sharing",
+          "level": 2,
+          "line": 467
+        },
+        {
+          "heading": "Layer 12: WinHTTP & WinINet",
+          "level": 2,
+          "line": 505
+        },
+        {
+          "heading": "WinINet (Internet Explorer / Edge / many apps)",
+          "level": 3,
+          "line": 509
+        },
+        {
+          "heading": "WinHTTP (system-level HTTP client)",
+          "level": 3,
+          "line": 518
+        },
+        {
+          "heading": "Layer 13: Power Management",
+          "level": 2,
+          "line": 534
+        },
+        {
+          "heading": "Layer 14: Services & Background Noise",
+          "level": 2,
+          "line": 564
+        },
+        {
+          "heading": "Layer 15: MTU & Path Discovery",
+          "level": 2,
+          "line": 605
+        },
+        {
+          "heading": "Find Optimal MTU",
+          "level": 3,
+          "line": 609
+        },
+        {
+          "heading": "Set MTU",
+          "level": 3,
+          "line": 622
+        },
+        {
+          "heading": "Registry MTU Override",
+          "level": 3,
+          "line": 633
+        },
+        {
+          "heading": "Diagnostics & Validation",
+          "level": 2,
+          "line": 644
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 31
+      }
+    },
+    {
+      "path": "skills/windows-registry-editor/references/safety-rules.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 140,
+      "nonEmptyLines": 109,
+      "sections": [
+        {
+          "heading": "Registry Safety Rules",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "BLOCKED Keys - NEVER Modify",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Boot / Recovery",
+          "level": 3,
+          "line": 7
+        },
+        {
+          "heading": "Security / Authentication Core",
+          "level": 3,
+          "line": 12
+        },
+        {
+          "heading": "Critical System Integrity",
+          "level": 3,
+          "line": 17
+        },
+        {
+          "heading": "Driver Core",
+          "level": 3,
+          "line": 25
+        },
+        {
+          "heading": "WARN Keys - Require User Confirmation",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "Session Manager / Memory",
+          "level": 3,
+          "line": 33
+        },
+        {
+          "heading": "Services (Start Type)",
+          "level": 3,
+          "line": 37
+        },
+        {
+          "heading": "Authentication / Security Settings",
+          "level": 3,
+          "line": 41
+        },
+        {
+          "heading": "Network Core",
+          "level": 3,
+          "line": 46
+        },
+        {
+          "heading": "User Shell",
+          "level": 3,
+          "line": 50
+        },
+        {
+          "heading": "SAFE Keys - Modify Freely",
+          "level": 2,
+          "line": 55
+        },
+        {
+          "heading": "Network Optimization",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "Gaming / GPU",
+          "level": 3,
+          "line": 67
+        },
+        {
+          "heading": "Privacy / Telemetry",
+          "level": 3,
+          "line": 72
+        },
+        {
+          "heading": "Performance",
+          "level": 3,
+          "line": 79
+        },
+        {
+          "heading": "Visual / UI",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "Validation Function",
+          "level": 2,
+          "line": 88
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 19
+      }
+    },
+    {
+      "path": "skills/windows-registry-editor/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 222,
+      "nonEmptyLines": 165,
+      "sections": [
+        {
+          "heading": "Windows Registry Editor & Optimizer",
+          "level": 1,
+          "line": 13
+        },
+        {
+          "heading": "Prerequisites",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Core Principles",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "Backup Directory",
+          "level": 2,
+          "line": 30
+        },
+        {
+          "heading": "Operations Reference",
+          "level": 2,
+          "line": 39
+        },
+        {
+          "heading": "1. Read / Query",
+          "level": 3,
+          "line": 41
+        },
+        {
+          "heading": "2. Backup / Export",
+          "level": 3,
+          "line": 60
+        },
+        {
+          "heading": "3. Create / Modify",
+          "level": 3,
+          "line": 74
+        },
+        {
+          "heading": "4. Delete",
+          "level": 3,
+          "line": 102
+        },
+        {
+          "heading": "5. Import .reg Files",
+          "level": 3,
+          "line": 112
+        },
+        {
+          "heading": "6. Search",
+          "level": 3,
+          "line": 122
+        },
+        {
+          "heading": "Optimization Presets",
+          "level": 2,
+          "line": 154
+        },
+        {
+          "heading": "Applying a Preset",
+          "level": 3,
+          "line": 167
+        },
+        {
+          "heading": "Safety Rules",
+          "level": 2,
+          "line": 191
+        },
+        {
+          "heading": "Hive Mapping",
+          "level": 2,
+          "line": 198
+        },
+        {
+          "heading": "Troubleshooting",
+          "level": 2,
+          "line": 217
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 16
+      }
+    },
+    {
+      "path": "skills/wireframing/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/wireframing/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/wireframing/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/wireframing/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/wireframing/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 880,
+      "nonEmptyLines": 762,
+      "sections": [
+        {
+          "heading": "Wireframing Skill",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "Layout Grid Systems",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "12-Column Grid Explanation",
+          "level": 3,
+          "line": 10
+        },
+        {
+          "heading": "CSS Grid vs Flexbox Guidance",
+          "level": 3,
+          "line": 29
+        },
+        {
+          "heading": "Common Column Splits",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "Gutter Sizing Guidelines",
+          "level": 3,
+          "line": 95
+        },
+        {
+          "heading": "Content Block Patterns",
+          "level": 2,
+          "line": 109
+        },
+        {
+          "heading": "Hero Blocks",
+          "level": 3,
+          "line": 111
+        },
+        {
+          "heading": "Feature Grids",
+          "level": 3,
+          "line": 154
+        },
+        {
+          "heading": "Testimonial Layouts",
+          "level": 3,
+          "line": 195
+        },
+        {
+          "heading": "Pricing Tables",
+          "level": 3,
+          "line": 237
+        },
+        {
+          "heading": "CTA Blocks",
+          "level": 3,
+          "line": 271
+        },
+        {
+          "heading": "Footer Layouts",
+          "level": 3,
+          "line": 309
+        },
+        {
+          "heading": "Navigation Layouts",
+          "level": 3,
+          "line": 347
+        },
+        {
+          "heading": "Responsive Breakpoint Strategy",
+          "level": 2,
+          "line": 379
+        },
+        {
+          "heading": "3 Breakpoints System",
+          "level": 3,
+          "line": 381
+        },
+        {
+          "heading": "Content Changes by Breakpoint",
+          "level": 3,
+          "line": 407
+        },
+        {
+          "heading": "Mobile-First vs Desktop-First Approach",
+          "level": 3,
+          "line": 440
+        },
+        {
+          "heading": "Common Page Layout Patterns",
+          "level": 2,
+          "line": 469
+        },
+        {
+          "heading": "Landing Page Pattern",
+          "level": 3,
+          "line": 471
+        },
+        {
+          "heading": "Dashboard Pattern",
+          "level": 3,
+          "line": 482
+        },
+        {
+          "heading": "Form Page Pattern",
+          "level": 3,
+          "line": 496
+        },
+        {
+          "heading": "Content Page Pattern",
+          "level": 3,
+          "line": 515
+        },
+        {
+          "heading": "Product Page Pattern",
+          "level": 3,
+          "line": 532
+        },
+        {
+          "heading": "Wireframe Conventions",
+          "level": 2,
+          "line": 551
+        },
+        {
+          "heading": "Visual Design Rules",
+          "level": 3,
+          "line": 553
+        },
+        {
+          "heading": "Annotation Format",
+          "level": 3,
+          "line": 580
+        },
+        {
+          "heading": "Above-the-Fold Strategy",
+          "level": 2,
+          "line": 602
+        },
+        {
+          "heading": "Priority Content (Must be visible without scrolling)",
+          "level": 3,
+          "line": 604
+        },
+        {
+          "heading": "Prioritization Framework",
+          "level": 3,
+          "line": 617
+        },
+        {
+          "heading": "Viewport Considerations",
+          "level": 3,
+          "line": 634
+        },
+        {
+          "heading": "Wireframe HTML Template",
+          "level": 2,
+          "line": 650
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 32
+      }
+    },
+    {
+      "path": "skills/wireframing/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/writing-plans/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "category",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "skills/writing-plans/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 92,
+      "nonEmptyLines": 70,
+      "sections": [
+        {
+          "heading": "Writing Plans — TDD-Sized Task Breakdown",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Iron Law",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Purpose",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Task Granularity",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Plan Document Structure",
+          "level": 2,
+          "line": 28
+        },
+        {
+          "heading": "Plan Review Process",
+          "level": 2,
+          "line": 60
+        },
+        {
+          "heading": "Key Rules",
+          "level": 2,
+          "line": 69
+        },
+        {
+          "heading": "Rationalization Table",
+          "level": 2,
+          "line": 77
+        },
+        {
+          "heading": "Transition",
+          "level": 2,
+          "line": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "skills/writing-skills/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/writing-skills/examples/CLAUDE_MD_TESTING.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 189,
+      "nonEmptyLines": 134,
+      "sections": [
+        {
+          "heading": "Testing CLAUDE.md Skills Documentation",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Test Scenarios",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Scenario 1: Time Pressure + Confidence",
+          "level": 3,
+          "line": 7
+        },
+        {
+          "heading": "Scenario 2: Sunk Cost + Works Already",
+          "level": 3,
+          "line": 21
+        },
+        {
+          "heading": "Scenario 3: Authority + Speed Bias",
+          "level": 3,
+          "line": 38
+        },
+        {
+          "heading": "Scenario 4: Familiarity + Efficiency",
+          "level": 3,
+          "line": 52
+        },
+        {
+          "heading": "Documentation Variants to Test",
+          "level": 2,
+          "line": 64
+        },
+        {
+          "heading": "NULL (Baseline - no skills doc)",
+          "level": 3,
+          "line": 66
+        },
+        {
+          "heading": "Variant A: Soft Suggestion",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "Variant B: Directive",
+          "level": 3,
+          "line": 77
+        },
+        {
+          "heading": "Variant C: Claude.AI Emphatic Style",
+          "level": 3,
+          "line": 88
+        },
+        {
+          "heading": "Variant D: Process-Oriented",
+          "level": 3,
+          "line": 115
+        },
+        {
+          "heading": "Testing Protocol",
+          "level": 2,
+          "line": 135
+        },
+        {
+          "heading": "Success Criteria",
+          "level": 2,
+          "line": 156
+        },
+        {
+          "heading": "Expected Results",
+          "level": 2,
+          "line": 170
+        },
+        {
+          "heading": "Next Steps",
+          "level": 2,
+          "line": 182
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 16
+      }
+    },
+    {
+      "path": "skills/writing-skills/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/writing-skills/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/writing-skills/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/writing-skills/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 655,
+      "nonEmptyLines": 469,
+      "sections": [
+        {
+          "heading": "Writing Skills",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "What is a Skill?",
+          "level": 2,
+          "line": 22
+        },
+        {
+          "heading": "TDD Mapping for Skills",
+          "level": 2,
+          "line": 30
+        },
+        {
+          "heading": "When to Create a Skill",
+          "level": 2,
+          "line": 47
+        },
+        {
+          "heading": "Skill Types",
+          "level": 2,
+          "line": 61
+        },
+        {
+          "heading": "Technique",
+          "level": 3,
+          "line": 63
+        },
+        {
+          "heading": "Pattern",
+          "level": 3,
+          "line": 66
+        },
+        {
+          "heading": "Reference",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "Directory Structure",
+          "level": 2,
+          "line": 72
+        },
+        {
+          "heading": "SKILL.md Structure",
+          "level": 2,
+          "line": 93
+        },
+        {
+          "heading": "Claude Search Optimization (CSO)",
+          "level": 2,
+          "line": 140
+        },
+        {
+          "heading": "1. Rich Description Field",
+          "level": 3,
+          "line": 144
+        },
+        {
+          "heading": "2. Keyword Coverage",
+          "level": 3,
+          "line": 199
+        },
+        {
+          "heading": "3. Descriptive Naming",
+          "level": 3,
+          "line": 207
+        },
+        {
+          "heading": "4. Token Efficiency (Critical)",
+          "level": 3,
+          "line": 213
+        },
+        {
+          "heading": "4. Cross-Referencing Other Skills",
+          "level": 3,
+          "line": 278
+        },
+        {
+          "heading": "Flowchart Usage",
+          "level": 2,
+          "line": 290
+        },
+        {
+          "heading": "Code Examples",
+          "level": 2,
+          "line": 324
+        },
+        {
+          "heading": "File Organization",
+          "level": 2,
+          "line": 347
+        },
+        {
+          "heading": "Self-Contained Skill",
+          "level": 3,
+          "line": 349
+        },
+        {
+          "heading": "Skill with Reusable Tool",
+          "level": 3,
+          "line": 356
+        },
+        {
+          "heading": "Skill with Heavy Reference",
+          "level": 3,
+          "line": 364
+        },
+        {
+          "heading": "The Iron Law (Same as TDD)",
+          "level": 2,
+          "line": 374
+        },
+        {
+          "heading": "Testing All Skill Types",
+          "level": 2,
+          "line": 395
+        },
+        {
+          "heading": "Discipline-Enforcing Skills (rules/requirements)",
+          "level": 3,
+          "line": 399
+        },
+        {
+          "heading": "Technique Skills (how-to guides)",
+          "level": 3,
+          "line": 411
+        },
+        {
+          "heading": "Pattern Skills (mental models)",
+          "level": 3,
+          "line": 422
+        },
+        {
+          "heading": "Reference Skills (documentation/APIs)",
+          "level": 3,
+          "line": 433
+        },
+        {
+          "heading": "Common Rationalizations for Skipping Testing",
+          "level": 2,
+          "line": 444
+        },
+        {
+          "heading": "Bulletproofing Skills Against Rationalization",
+          "level": 2,
+          "line": 459
+        },
+        {
+          "heading": "Close Every Loophole Explicitly",
+          "level": 3,
+          "line": 465
+        },
+        {
+          "heading": "Address \"Spirit vs Letter\" Arguments",
+          "level": 3,
+          "line": 487
+        },
+        {
+          "heading": "Build Rationalization Table",
+          "level": 3,
+          "line": 497
+        },
+        {
+          "heading": "Create Red Flags List",
+          "level": 3,
+          "line": 509
+        },
+        {
+          "heading": "Update CSO for Violation Symptoms",
+          "level": 3,
+          "line": 525
+        },
+        {
+          "heading": "RED-GREEN-REFACTOR for Skills",
+          "level": 2,
+          "line": 533
+        },
+        {
+          "heading": "RED: Write Failing Test (Baseline)",
+          "level": 3,
+          "line": 537
+        },
+        {
+          "heading": "GREEN: Write Minimal Skill",
+          "level": 3,
+          "line": 546
+        },
+        {
+          "heading": "REFACTOR: Close Loopholes",
+          "level": 3,
+          "line": 552
+        },
+        {
+          "heading": "Anti-Patterns",
+          "level": 2,
+          "line": 562
+        },
+        {
+          "heading": "❌ Narrative Example",
+          "level": 3,
+          "line": 564
+        },
+        {
+          "heading": "❌ Multi-Language Dilution",
+          "level": 3,
+          "line": 568
+        },
+        {
+          "heading": "❌ Code in Flowcharts",
+          "level": 3,
+          "line": 572
+        },
+        {
+          "heading": "❌ Generic Labels",
+          "level": 3,
+          "line": 579
+        },
+        {
+          "heading": "STOP: Before Moving to Next Skill",
+          "level": 2,
+          "line": 583
+        },
+        {
+          "heading": "Skill Creation Checklist (TDD Adapted)",
+          "level": 2,
+          "line": 596
+        },
+        {
+          "heading": "Discovery Workflow",
+          "level": 2,
+          "line": 635
+        },
+        {
+          "heading": "The Bottom Line",
+          "level": 2,
+          "line": 647
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 49
+      }
+    },
+    {
+      "path": "skills/writing-skills/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/yaml-prompt-library/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 25
+        },
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "skills/yaml-prompt-library/resources/prompt-yaml-schema.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 171,
+      "nonEmptyLines": 143,
+      "sections": [
+        {
+          "heading": "YAML Prompt Schema Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Schema",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "TypeScript Loader",
+          "level": 2,
+          "line": 46
+        },
+        {
+          "heading": "Example Prompts",
+          "level": 2,
+          "line": 110
+        },
+        {
+          "heading": "Translation Prompt",
+          "level": 3,
+          "line": 112
+        },
+        {
+          "heading": "SQL Generation Prompt",
+          "level": 3,
+          "line": 129
+        },
+        {
+          "heading": "Usage Pattern",
+          "level": 2,
+          "line": 150
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "skills/yaml-prompt-library/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 108,
+      "nonEmptyLines": 81,
+      "sections": [
+        {
+          "heading": "YAML Prompt Library",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Workflow",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Step 1: Define YAML Schema",
+          "level": 3,
+          "line": 28
+        },
+        {
+          "heading": "Step 2: Create Prompt Loader",
+          "level": 3,
+          "line": 34
+        },
+        {
+          "heading": "Step 3: Build Variable Interpolator",
+          "level": 3,
+          "line": 40
+        },
+        {
+          "heading": "Step 4: Add Model Override",
+          "level": 3,
+          "line": 45
+        },
+        {
+          "heading": "Step 5: Create Test Runner",
+          "level": 3,
+          "line": 50
+        },
+        {
+          "heading": "Step 6: Organize Library",
+          "level": 3,
+          "line": 56
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 61
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 63
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 70
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 77
+        },
+        {
+          "heading": "Output Template",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "Resources",
+          "level": 2,
+          "line": 92
+        },
+        {
+          "heading": "Handoff",
+          "level": 2,
+          "line": 98
+        },
+        {
+          "heading": "Platform Notes",
+          "level": 2,
+          "line": 104
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    }
+  ]
+}

@@ -1,0 +1,328 @@
+{
+  "batchIndex": 40,
+  "nodes": [
+    {
+      "id": "file:.nojekyll",
+      "type": "file:",
+      "name": ".nojekyll",
+      "filePath": ".nojekyll",
+      "summary": "Empty marker file that disables Jekyll processing on GitHub Pages deployments. Required for sites with directories starting with underscores.",
+      "tags": ["github-pages", "jekyll", "static-site", "marker"],
+      "complexity": 1
+    },
+    {
+      "id": "file:.understand-anything/.understandignore",
+      "type": "file:",
+      "name": ".understandignore",
+      "filePath": ".understand-anything/.understandignore",
+      "summary": "Ignore rules for the understand-anything analysis tool, excluding directories and files that should not be indexed or analyzed.",
+      "tags": ["ignore-rules", "understand-anything", "configuration", "analysis"],
+      "complexity": 2
+    },
+    {
+      "id": "config:agents/_template/agent-manifest.yaml",
+      "type": "config:",
+      "name": "agent-manifest.yaml (template)",
+      "filePath": "agents/_template/agent-manifest.yaml",
+      "summary": "Template YAML manifest defining the schema and structure for Archon agent definitions, including metadata, capabilities, and tool configurations.",
+      "tags": ["agent", "template", "manifest", "yaml", "schema"],
+      "complexity": 3
+    },
+    {
+      "id": "document:agents/_template/AGENT.md",
+      "type": "document:",
+      "name": "AGENT.md (template)",
+      "filePath": "agents/_template/AGENT.md",
+      "summary": "Template documentation file for Archon agents, providing instructions and placeholders for documenting agent capabilities, usage, and behavior.",
+      "tags": ["agent", "template", "documentation", "markdown"],
+      "complexity": 2
+    },
+    {
+      "id": "config:agents/context-curator-agent/agent-manifest.yaml",
+      "type": "config:",
+      "name": "agent-manifest.yaml (context-curator)",
+      "filePath": "agents/context-curator-agent/agent-manifest.yaml",
+      "summary": "Agent manifest for the Context Curator agent, which compresses and curates context from prior conversation phases to fit within token budgets.",
+      "tags": ["context-curator", "agent", "manifest", "context-management"],
+      "complexity": 4
+    },
+    {
+      "id": "document:agents/context-curator-agent/AGENT.md",
+      "type": "document:",
+      "name": "AGENT.md (context-curator)",
+      "filePath": "agents/context-curator-agent/AGENT.md",
+      "summary": "Documentation for the Context Curator agent, describing how it summarizes completed phases and manages token window usage for long-running sessions.",
+      "tags": ["context-curator", "agent", "documentation", "context-management", "token-budget"],
+      "complexity": 4
+    },
+    {
+      "id": "config:agents/debugger-agent/agent-manifest.yaml",
+      "type": "config:",
+      "name": "agent-manifest.yaml (debugger)",
+      "filePath": "agents/debugger-agent/agent-manifest.yaml",
+      "summary": "Agent manifest for the Debugger agent, defining its capabilities for systematic debugging, error analysis, and root cause identification.",
+      "tags": ["debugger", "agent", "manifest", "debugging"],
+      "complexity": 4
+    },
+    {
+      "id": "document:agents/debugger-agent/AGENT.md",
+      "type": "document:",
+      "name": "AGENT.md (debugger)",
+      "filePath": "agents/debugger-agent/AGENT.md",
+      "summary": "Comprehensive documentation for the Debugger agent, covering error diagnosis workflows, stack trace analysis, and systematic root cause investigation protocols.",
+      "tags": ["debugger", "agent", "documentation", "error-analysis", "debugging"],
+      "complexity": 5
+    },
+    {
+      "id": "config:agents/design-agent/agent-manifest.yaml",
+      "type": "config:",
+      "name": "agent-manifest.yaml (design)",
+      "filePath": "agents/design-agent/agent-manifest.yaml",
+      "summary": "Agent manifest for the Design agent, specifying its role in UI/UX design tasks, visual system creation, and design-to-code workflows.",
+      "tags": ["design", "agent", "manifest", "ui-ux"],
+      "complexity": 3
+    },
+    {
+      "id": "document:agents/design-agent/AGENT.md",
+      "type": "document:",
+      "name": "AGENT.md (design)",
+      "filePath": "agents/design-agent/AGENT.md",
+      "summary": "Documentation for the Design agent, covering its capabilities in visual design, component systems, and handoff to implementation.",
+      "tags": ["design", "agent", "documentation", "ui-ux", "design-system"],
+      "complexity": 3
+    },
+    {
+      "id": "config:agents/dissector-agent/agent-manifest.yaml",
+      "type": "config:",
+      "name": "agent-manifest.yaml (dissector)",
+      "filePath": "agents/dissector-agent/agent-manifest.yaml",
+      "summary": "Agent manifest for the Dissector agent, defining its deep code analysis and codebase archaeology capabilities.",
+      "tags": ["dissector", "agent", "manifest", "code-analysis"],
+      "complexity": 4
+    },
+    {
+      "id": "document:agents/dissector-agent/AGENT.md",
+      "type": "document:",
+      "name": "AGENT.md (dissector)",
+      "filePath": "agents/dissector-agent/AGENT.md",
+      "summary": "Documentation for the Dissector agent, covering its methods for deep codebase analysis, architectural dissection, and dependency mapping.",
+      "tags": ["dissector", "agent", "documentation", "code-analysis", "architecture"],
+      "complexity": 4
+    },
+    {
+      "id": "config:agents/implementer-agent/agent-manifest.yaml",
+      "type": "config:",
+      "name": "agent-manifest.yaml (implementer)",
+      "filePath": "agents/implementer-agent/agent-manifest.yaml",
+      "summary": "Agent manifest for the Implementer agent, specifying its role in translating plans and specs into working code.",
+      "tags": ["implementer", "agent", "manifest", "code-generation"],
+      "complexity": 4
+    },
+    {
+      "id": "document:agents/implementer-agent/AGENT.md",
+      "type": "document:",
+      "name": "AGENT.md (implementer)",
+      "filePath": "agents/implementer-agent/AGENT.md",
+      "summary": "Documentation for the Implementer agent, covering its approach to executing implementation plans, writing code, and following coding standards.",
+      "tags": ["implementer", "agent", "documentation", "code-generation", "implementation"],
+      "complexity": 4
+    },
+    {
+      "id": "config:agents/prompt-architect-agent/agent-manifest.yaml",
+      "type": "config:",
+      "name": "agent-manifest.yaml (prompt-architect)",
+      "filePath": "agents/prompt-architect-agent/agent-manifest.yaml",
+      "summary": "Agent manifest for the Prompt Architect agent, defining its capabilities for designing, refining, and optimizing prompts for LLM workflows.",
+      "tags": ["prompt-architect", "agent", "manifest", "prompt-engineering"],
+      "complexity": 3
+    },
+    {
+      "id": "document:agents/prompt-architect-agent/AGENT.md",
+      "type": "document:",
+      "name": "AGENT.md (prompt-architect)",
+      "filePath": "agents/prompt-architect-agent/AGENT.md",
+      "summary": "Documentation for the Prompt Architect agent, covering prompt design patterns, chain-of-thought construction, and prompt optimization strategies.",
+      "tags": ["prompt-architect", "agent", "documentation", "prompt-engineering", "llm"],
+      "complexity": 4
+    },
+    {
+      "id": "config:agents/qa-master-agent/agent-manifest.yaml",
+      "type": "config:",
+      "name": "agent-manifest.yaml (qa-master)",
+      "filePath": "agents/qa-master-agent/agent-manifest.yaml",
+      "summary": "Agent manifest for the QA Master agent, defining its capabilities in test strategy, test case generation, and quality assurance workflows.",
+      "tags": ["qa-master", "agent", "manifest", "testing", "quality-assurance"],
+      "complexity": 4
+    },
+    {
+      "id": "document:agents/qa-master-agent/AGENT.md",
+      "type": "document:",
+      "name": "AGENT.md (qa-master)",
+      "filePath": "agents/qa-master-agent/AGENT.md",
+      "summary": "Comprehensive documentation for the QA Master agent, covering test planning, edge case identification, regression testing, and quality gates.",
+      "tags": ["qa-master", "agent", "documentation", "testing", "quality-assurance"],
+      "complexity": 5
+    },
+    {
+      "id": "document:agents/README.md",
+      "type": "document:",
+      "name": "README.md (agents)",
+      "filePath": "agents/README.md",
+      "summary": "Overview documentation for the agents directory, listing available Archon agents and their primary roles in the framework.",
+      "tags": ["agents", "documentation", "overview", "readme"],
+      "complexity": 1
+    },
+    {
+      "id": "config:agents/reviewer-agent/agent-manifest.yaml",
+      "type": "config:",
+      "name": "agent-manifest.yaml (reviewer)",
+      "filePath": "agents/reviewer-agent/agent-manifest.yaml",
+      "summary": "Agent manifest for the Reviewer agent, specifying its code review capabilities including correctness, style, and architectural review.",
+      "tags": ["reviewer", "agent", "manifest", "code-review"],
+      "complexity": 4
+    },
+    {
+      "id": "document:agents/reviewer-agent/AGENT.md",
+      "type": "document:",
+      "name": "AGENT.md (reviewer)",
+      "filePath": "agents/reviewer-agent/AGENT.md",
+      "summary": "Documentation for the Reviewer agent, covering code review protocols, review criteria, inline comment strategies, and PR review workflows.",
+      "tags": ["reviewer", "agent", "documentation", "code-review", "pr-review"],
+      "complexity": 5
+    },
+    {
+      "id": "config:agents/security-reviewer-agent/agent-manifest.yaml",
+      "type": "config:",
+      "name": "agent-manifest.yaml (security-reviewer)",
+      "filePath": "agents/security-reviewer-agent/agent-manifest.yaml",
+      "summary": "Agent manifest for the Security Reviewer agent, defining its capabilities for security auditing, vulnerability detection, and OWASP compliance checking.",
+      "tags": ["security-reviewer", "agent", "manifest", "security", "owasp"],
+      "complexity": 4
+    },
+    {
+      "id": "document:agents/security-reviewer-agent/AGENT.md",
+      "type": "document:",
+      "name": "AGENT.md (security-reviewer)",
+      "filePath": "agents/security-reviewer-agent/AGENT.md",
+      "summary": "Documentation for the Security Reviewer agent, covering its security audit workflow and vulnerability assessment approach.",
+      "tags": ["security-reviewer", "agent", "documentation", "security", "vulnerability"],
+      "complexity": 3
+    },
+    {
+      "id": "config:agents/skill-validator-agent/agent-manifest.yaml",
+      "type": "config:",
+      "name": "agent-manifest.yaml (skill-validator)",
+      "filePath": "agents/skill-validator-agent/agent-manifest.yaml",
+      "summary": "Agent manifest for the Skill Validator agent, specifying its role in validating Archon skill manifests and SKILL.md files for compliance.",
+      "tags": ["skill-validator", "agent", "manifest", "validation"],
+      "complexity": 4
+    },
+    {
+      "id": "document:agents/skill-validator-agent/AGENT.md",
+      "type": "document:",
+      "name": "AGENT.md (skill-validator)",
+      "filePath": "agents/skill-validator-agent/AGENT.md",
+      "summary": "Documentation for the Skill Validator agent, covering its skill manifest validation workflow, compliance checking, and error reporting.",
+      "tags": ["skill-validator", "agent", "documentation", "validation", "compliance"],
+      "complexity": 5
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:agents/_template/AGENT.md",
+      "target": "config:agents/_template/agent-manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:agents/context-curator-agent/AGENT.md",
+      "target": "config:agents/context-curator-agent/agent-manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:agents/debugger-agent/AGENT.md",
+      "target": "config:agents/debugger-agent/agent-manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:agents/design-agent/AGENT.md",
+      "target": "config:agents/design-agent/agent-manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:agents/dissector-agent/AGENT.md",
+      "target": "config:agents/dissector-agent/agent-manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:agents/implementer-agent/AGENT.md",
+      "target": "config:agents/implementer-agent/agent-manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:agents/prompt-architect-agent/AGENT.md",
+      "target": "config:agents/prompt-architect-agent/agent-manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:agents/qa-master-agent/AGENT.md",
+      "target": "config:agents/qa-master-agent/agent-manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:agents/reviewer-agent/AGENT.md",
+      "target": "config:agents/reviewer-agent/agent-manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:agents/security-reviewer-agent/AGENT.md",
+      "target": "config:agents/security-reviewer-agent/agent-manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:agents/skill-validator-agent/AGENT.md",
+      "target": "config:agents/skill-validator-agent/agent-manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:agents/_template/agent-manifest.yaml",
+      "target": "config:agents/context-curator-agent/agent-manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "config:agents/_template/agent-manifest.yaml",
+      "target": "config:agents/debugger-agent/agent-manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "config:agents/_template/agent-manifest.yaml",
+      "target": "config:agents/skill-validator-agent/agent-manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:agents/README.md",
+      "target": "config:agents/context-curator-agent/agent-manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:agents/README.md",
+      "target": "config:agents/debugger-agent/agent-manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    }
+  ]
+}

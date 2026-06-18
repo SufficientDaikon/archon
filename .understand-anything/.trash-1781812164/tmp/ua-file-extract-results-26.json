@@ -1,0 +1,240 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "skills/fastmcp/examples/.env.example",
+      "language": "config",
+      "fileCategory": "config",
+      "totalLines": 49,
+      "nonEmptyLines": 37,
+      "definitions": [
+        {
+          "name": "SERVER_NAME",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 5,
+          "endLine": 5
+        },
+        {
+          "name": "ENVIRONMENT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 6,
+          "endLine": 6
+        },
+        {
+          "name": "API_BASE_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 9,
+          "endLine": 9
+        },
+        {
+          "name": "API_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 10,
+          "endLine": 10
+        },
+        {
+          "name": "API_SECRET",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 11,
+          "endLine": 11
+        },
+        {
+          "name": "API_TIMEOUT",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 12,
+          "endLine": 12
+        },
+        {
+          "name": "DATABASE_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 15,
+          "endLine": 15
+        },
+        {
+          "name": "CACHE_TTL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 18,
+          "endLine": 18
+        },
+        {
+          "name": "ENABLE_CACHE",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 19,
+          "endLine": 19
+        },
+        {
+          "name": "MAX_RETRIES",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 22,
+          "endLine": 22
+        },
+        {
+          "name": "OPENAPI_SPEC_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 25,
+          "endLine": 25
+        },
+        {
+          "name": "LOG_LEVEL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 28,
+          "endLine": 28
+        },
+        {
+          "name": "ENABLE_PROGRESS_TRACKING",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 31,
+          "endLine": 31
+        },
+        {
+          "name": "ENABLE_ELICITATION",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 32,
+          "endLine": 32
+        },
+        {
+          "name": "ENABLE_SAMPLING",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 33,
+          "endLine": 33
+        },
+        {
+          "name": "RATE_LIMIT_REQUESTS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 36,
+          "endLine": 36
+        },
+        {
+          "name": "RATE_LIMIT_WINDOW",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 37,
+          "endLine": 37
+        },
+        {
+          "name": "ALLOWED_ORIGINS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 40,
+          "endLine": 40
+        },
+        {
+          "name": "ENABLE_CORS",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 41,
+          "endLine": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 19
+      }
+    },
+    {
+      "path": "skills/fastmcp/examples/pyproject.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 92,
+      "nonEmptyLines": 81,
+      "sections": [
+        {
+          "heading": "project",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "project.optional-dependencies",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "project.urls",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "build-system",
+          "level": 1,
+          "line": 32
+        },
+        {
+          "heading": "tool.setuptools",
+          "level": 2,
+          "line": 36
+        },
+        {
+          "heading": "tool.setuptools.package-data",
+          "level": 3,
+          "line": 39
+        },
+        {
+          "heading": "tool.ruff",
+          "level": 2,
+          "line": 43
+        },
+        {
+          "heading": "tool.ruff.lint",
+          "level": 3,
+          "line": 47
+        },
+        {
+          "heading": "tool.mypy",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "tool.pytest.ini_options",
+          "level": 3,
+          "line": 71
+        },
+        {
+          "heading": "tool.coverage.run",
+          "level": 3,
+          "line": 80
+        },
+        {
+          "heading": "tool.coverage.report",
+          "level": 3,
+          "line": 84
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "skills/fastmcp/examples/requirements.txt",
+      "language": "txt",
+      "fileCategory": "docs",
+      "totalLines": 37,
+      "nonEmptyLines": 28,
+      "metrics": {}
+    }
+  ]
+}

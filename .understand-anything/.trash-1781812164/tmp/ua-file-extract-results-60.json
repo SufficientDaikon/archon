@@ -1,0 +1,1369 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "skills/verification-before-completion/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 84,
+      "nonEmptyLines": 65,
+      "sections": [
+        {
+          "heading": "Verification Before Completion — The Honesty Enforcer",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Iron Law",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "The Gate Function",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Step 1: IDENTIFY",
+          "level": 3,
+          "line": 17
+        },
+        {
+          "heading": "Step 2: RUN",
+          "level": 3,
+          "line": 24
+        },
+        {
+          "heading": "Step 3: READ",
+          "level": 3,
+          "line": 30
+        },
+        {
+          "heading": "Step 4: VERIFY",
+          "level": 3,
+          "line": 36
+        },
+        {
+          "heading": "Step 5: ONLY THEN — Make the Claim",
+          "level": 3,
+          "line": 43
+        },
+        {
+          "heading": "Forbidden Phrases",
+          "level": 2,
+          "line": 49
+        },
+        {
+          "heading": "Rationalization Table",
+          "level": 2,
+          "line": 59
+        },
+        {
+          "heading": "The Origin Story",
+          "level": 2,
+          "line": 69
+        },
+        {
+          "heading": "Integration",
+          "level": 2,
+          "line": 79
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "skills/vitest-unit-patterns/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 32,
+      "nonEmptyLines": 27,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "composes",
+          "level": 1,
+          "line": 29
+        },
+        {
+          "heading": "source-dissection",
+          "level": 1,
+          "line": 30
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "skills/vitest-unit-patterns/resources/vitest-reference.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 727,
+      "nonEmptyLines": 583,
+      "sections": [
+        {
+          "heading": "Vitest Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. Vitest Configuration",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "vitest.config.ts",
+          "level": 3,
+          "line": 9
+        },
+        {
+          "heading": "vitest.setup.ts",
+          "level": 3,
+          "line": 52
+        },
+        {
+          "heading": "package.json scripts",
+          "level": 3,
+          "line": 75
+        },
+        {
+          "heading": "2. Mock Patterns",
+          "level": 2,
+          "line": 90
+        },
+        {
+          "heading": "Module-Level Mocking (Prisma)",
+          "level": 3,
+          "line": 92
+        },
+        {
+          "heading": "Auth Mocking (NextAuth)",
+          "level": 3,
+          "line": 122
+        },
+        {
+          "heading": "External Service Mocking (S3)",
+          "level": 3,
+          "line": 146
+        },
+        {
+          "heading": "Typed Mock Helpers",
+          "level": 3,
+          "line": 161
+        },
+        {
+          "heading": "Spy on Specific Methods",
+          "level": 3,
+          "line": 183
+        },
+        {
+          "heading": "3. Route Handler Testing (Next.js App Router)",
+          "level": 2,
+          "line": 205
+        },
+        {
+          "heading": "GET Route Handler",
+          "level": 3,
+          "line": 207
+        },
+        {
+          "heading": "POST Route Handler with Request Body",
+          "level": 3,
+          "line": 288
+        },
+        {
+          "heading": "4. Business Logic Testing",
+          "level": 2,
+          "line": 349
+        },
+        {
+          "heading": "Pure Function Testing",
+          "level": 3,
+          "line": 351
+        },
+        {
+          "heading": "Validator Testing",
+          "level": 3,
+          "line": 421
+        },
+        {
+          "heading": "5. React Hook Testing",
+          "level": 2,
+          "line": 452
+        },
+        {
+          "heading": "Custom Hook with State",
+          "level": 3,
+          "line": 454
+        },
+        {
+          "heading": "Async Hook with API Call",
+          "level": 3,
+          "line": 513
+        },
+        {
+          "heading": "Hook with Context Provider Wrapper",
+          "level": 3,
+          "line": 617
+        },
+        {
+          "heading": "6. Common Assertion Patterns",
+          "level": 2,
+          "line": 658
+        },
+        {
+          "heading": "7. CI Configuration Example",
+          "level": 2,
+          "line": 698
+        },
+        {
+          "heading": "GitHub Actions",
+          "level": 3,
+          "line": 700
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 24
+      }
+    },
+    {
+      "path": "skills/vitest-unit-patterns/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 141,
+      "nonEmptyLines": 112,
+      "sections": [
+        {
+          "heading": "Vitest Unit Patterns",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Workflow",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "Step 1: Configure Vitest",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "Step 2: Design Mock Strategy",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "Step 3: Test API Route Handlers",
+          "level": 3,
+          "line": 49
+        },
+        {
+          "heading": "Step 4: Test Business Logic",
+          "level": 3,
+          "line": 56
+        },
+        {
+          "heading": "Step 5: Test React Hooks",
+          "level": 3,
+          "line": 63
+        },
+        {
+          "heading": "Step 6: Wire CI Integration",
+          "level": 3,
+          "line": 70
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 77
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 79
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 88
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 97
+        },
+        {
+          "heading": "File Structure Template",
+          "level": 3,
+          "line": 103
+        },
+        {
+          "heading": "Resources",
+          "level": 2,
+          "line": 123
+        },
+        {
+          "heading": "Handoff",
+          "level": 2,
+          "line": 129
+        },
+        {
+          "heading": "Platform Notes",
+          "level": 2,
+          "line": 137
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    },
+    {
+      "path": "skills/web-design-guidelines/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/web-design-guidelines/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/web-design-guidelines/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/web-design-guidelines/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/web-design-guidelines/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 39,
+      "nonEmptyLines": 28,
+      "sections": [
+        {
+          "heading": "Web Interface Guidelines",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "How It Works",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Guidelines Source",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "Usage",
+          "level": 2,
+          "line": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "skills/web-design-guidelines/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/webapp-testing/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/webapp-testing/examples/console_logging.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 24,
+      "callGraph": [
+        {
+          "caller": "handle_console_message",
+          "callee": "console_logs.append",
+          "lineNumber": 15
+        },
+        {
+          "caller": "handle_console_message",
+          "callee": "print",
+          "lineNumber": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "skills/webapp-testing/examples/element_discovery.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 32,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "skills/webapp-testing/examples/static_html_automation.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 23,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "skills/webapp-testing/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/webapp-testing/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/webapp-testing/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/webapp-testing/resources/with_server.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 106,
+      "nonEmptyLines": 85,
+      "functions": [
+        {
+          "name": "is_server_ready",
+          "startLine": 23,
+          "endLine": 32,
+          "params": [
+            "port",
+            "timeout"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 35,
+          "endLine": 102,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "is_server_ready",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "is_server_ready",
+          "callee": "time.time",
+          "lineNumber": 25
+        },
+        {
+          "caller": "is_server_ready",
+          "callee": "time.time",
+          "lineNumber": 26
+        },
+        {
+          "caller": "is_server_ready",
+          "callee": "socket.create_connection",
+          "lineNumber": 28
+        },
+        {
+          "caller": "is_server_ready",
+          "callee": "time.sleep",
+          "lineNumber": 31
+        },
+        {
+          "caller": "main",
+          "callee": "argparse.ArgumentParser",
+          "lineNumber": 36
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 37
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 38
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 39
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 40
+        },
+        {
+          "caller": "main",
+          "callee": "parser.parse_args",
+          "lineNumber": 42
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 49
+        },
+        {
+          "caller": "main",
+          "callee": "sys.exit",
+          "lineNumber": 50
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 53
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 53
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 54
+        },
+        {
+          "caller": "main",
+          "callee": "sys.exit",
+          "lineNumber": 55
+        },
+        {
+          "caller": "main",
+          "callee": "zip",
+          "lineNumber": 58
+        },
+        {
+          "caller": "main",
+          "callee": "servers.append",
+          "lineNumber": 59
+        },
+        {
+          "caller": "main",
+          "callee": "enumerate",
+          "lineNumber": 65
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 66
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 66
+        },
+        {
+          "caller": "main",
+          "callee": "subprocess.Popen",
+          "lineNumber": 69
+        },
+        {
+          "caller": "main",
+          "callee": "server_processes.append",
+          "lineNumber": 75
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 78
+        },
+        {
+          "caller": "main",
+          "callee": "is_server_ready",
+          "lineNumber": 79
+        },
+        {
+          "caller": "main",
+          "callee": "RuntimeError",
+          "lineNumber": 80
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 82
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 84
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 84
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 87
+        },
+        {
+          "caller": "main",
+          "callee": "' '.join",
+          "lineNumber": 87
+        },
+        {
+          "caller": "main",
+          "callee": "subprocess.run",
+          "lineNumber": 88
+        },
+        {
+          "caller": "main",
+          "callee": "sys.exit",
+          "lineNumber": 89
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 93
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 93
+        },
+        {
+          "caller": "main",
+          "callee": "enumerate",
+          "lineNumber": 94
+        },
+        {
+          "caller": "main",
+          "callee": "process.terminate",
+          "lineNumber": 96
+        },
+        {
+          "caller": "main",
+          "callee": "process.wait",
+          "lineNumber": 97
+        },
+        {
+          "caller": "main",
+          "callee": "process.kill",
+          "lineNumber": 99
+        },
+        {
+          "caller": "main",
+          "callee": "process.wait",
+          "lineNumber": 100
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 101
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 102
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "skills/webapp-testing/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 96,
+      "nonEmptyLines": 74,
+      "sections": [
+        {
+          "heading": "Web Application Testing",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "Decision Tree: Choosing Your Approach",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "Example: Using with_server.py",
+          "level": 2,
+          "line": 35
+        },
+        {
+          "heading": "Reconnaissance-Then-Action Pattern",
+          "level": 2,
+          "line": 65
+        },
+        {
+          "heading": "Common Pitfall",
+          "level": 2,
+          "line": 78
+        },
+        {
+          "heading": "Best Practices",
+          "level": 2,
+          "line": 83
+        },
+        {
+          "heading": "Reference Files",
+          "level": 2,
+          "line": 91
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "skills/webapp-testing/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/white-label-config/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 25
+        },
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "skills/white-label-config/resources/config-patterns.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 189,
+      "nonEmptyLines": 158,
+      "sections": [
+        {
+          "heading": "Config Patterns Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. User-Facing Config File",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "2. Config Type Definitions",
+          "level": 2,
+          "line": 44
+        },
+        {
+          "heading": "3. Core Implementation",
+          "level": 2,
+          "line": 85
+        },
+        {
+          "heading": "4. Environment Override Layer",
+          "level": 2,
+          "line": 122
+        },
+        {
+          "heading": "5. Feature Flag Usage",
+          "level": 2,
+          "line": 153
+        },
+        {
+          "heading": "6. Deep Merge Utility",
+          "level": 2,
+          "line": 175
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "skills/white-label-config/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 107,
+      "nonEmptyLines": 80,
+      "sections": [
+        {
+          "heading": "White-Label Config",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Workflow",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Step 1: Define Config Schema",
+          "level": 3,
+          "line": 28
+        },
+        {
+          "heading": "Step 2: Create defineConfig()",
+          "level": 3,
+          "line": 33
+        },
+        {
+          "heading": "Step 3: Build Config Loader",
+          "level": 3,
+          "line": 38
+        },
+        {
+          "heading": "Step 4: Add Env Override Layer",
+          "level": 3,
+          "line": 44
+        },
+        {
+          "heading": "Step 5: Wire Feature Flags",
+          "level": 3,
+          "line": 50
+        },
+        {
+          "heading": "Step 6: Create Reference Config",
+          "level": 3,
+          "line": 55
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 60
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 62
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 76
+        },
+        {
+          "heading": "Output Template",
+          "level": 3,
+          "line": 82
+        },
+        {
+          "heading": "Resources",
+          "level": 2,
+          "line": 91
+        },
+        {
+          "heading": "Handoff",
+          "level": 2,
+          "line": 97
+        },
+        {
+          "heading": "Platform Notes",
+          "level": 2,
+          "line": 103
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    },
+    {
+      "path": "skills/windows-error-debugger/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 47,
+      "nonEmptyLines": 42,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 17
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 33
+        },
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "skills/windows-error-debugger/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 340,
+      "nonEmptyLines": 262,
+      "sections": [
+        {
+          "heading": "Windows Error Debugger",
+          "level": 1,
+          "line": 13
+        },
+        {
+          "heading": "Prerequisites",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "When NOT to Use",
+          "level": 2,
+          "line": 34
+        },
+        {
+          "heading": "Core Principles",
+          "level": 2,
+          "line": 40
+        },
+        {
+          "heading": "Phase 1: Triage (always start here)",
+          "level": 2,
+          "line": 48
+        },
+        {
+          "heading": "Bugcheck Code Reference",
+          "level": 3,
+          "line": 91
+        },
+        {
+          "heading": "Phase 2: Deep Dive",
+          "level": 2,
+          "line": 110
+        },
+        {
+          "heading": "2a. Driver Health Check",
+          "level": 3,
+          "line": 114
+        },
+        {
+          "heading": "2b. Resource Pressure Check",
+          "level": 3,
+          "line": 130
+        },
+        {
+          "heading": "2c. Startup & Service Audit",
+          "level": 3,
+          "line": 158
+        },
+        {
+          "heading": "2d. Hardware Info",
+          "level": 3,
+          "line": 174
+        },
+        {
+          "heading": "2e. System File Integrity",
+          "level": 3,
+          "line": 193
+        },
+        {
+          "heading": "2f. Minidump Analysis (if available)",
+          "level": 3,
+          "line": 206
+        },
+        {
+          "heading": "Phase 3: Diagnose",
+          "level": 2,
+          "line": 241
+        },
+        {
+          "heading": "Phase 4: Fix",
+          "level": 2,
+          "line": 250
+        },
+        {
+          "heading": "Phase 5: Verify & Report",
+          "level": 2,
+          "line": 283
+        },
+        {
+          "heading": "Knowledge Base Management",
+          "level": 2,
+          "line": 294
+        },
+        {
+          "heading": "Files",
+          "level": 3,
+          "line": 299
+        },
+        {
+          "heading": "Adding a Resolved Issue",
+          "level": 3,
+          "line": 308
+        },
+        {
+          "heading": "Checking Known Issues",
+          "level": 3,
+          "line": 321
+        },
+        {
+          "heading": "Hardware Profile (This Machine)",
+          "level": 2,
+          "line": 326
+        },
+        {
+          "heading": "Useful External Tools (recommend when needed)",
+          "level": 2,
+          "line": 330
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 23
+      }
+    }
+  ]
+}

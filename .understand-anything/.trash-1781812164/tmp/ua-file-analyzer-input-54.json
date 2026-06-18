@@ -1,0 +1,31 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [
+    {"path": "skills/mcp-server-index/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/mobile-design/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/mobile-design/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/mobile-design/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/mobile-design/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/mobile-design/resources/mobile_audit.py", "language": "python", "sizeLines": 670, "fileCategory": "code"},
+    {"path": "skills/mobile-design/SKILL.md", "language": "markdown", "sizeLines": 284, "fileCategory": "docs"},
+    {"path": "skills/mobile-design/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/omega-gdscript-expert/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/omega-gdscript-expert/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/omega-gdscript-expert/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/omega-gdscript-expert/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/omega-gdscript-expert/SKILL.md", "language": "markdown", "sizeLines": 66, "fileCategory": "docs"},
+    {"path": "skills/omega-gdscript-expert/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/packager/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/packager/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/packager/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/packager/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/packager/SKILL.md", "language": "markdown", "sizeLines": 281, "fileCategory": "docs"},
+    {"path": "skills/packager/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/plugin-system/manifest.yaml", "language": "yaml", "sizeLines": 29, "fileCategory": "config"},
+    {"path": "skills/plugin-system/resources/plugin-patterns.md", "language": "markdown", "sizeLines": 163, "fileCategory": "docs"},
+    {"path": "skills/plugin-system/SKILL.md", "language": "markdown", "sizeLines": 112, "fileCategory": "docs"},
+    {"path": "skills/pr-quality-agent/manifest.yaml", "language": "yaml", "sizeLines": 41, "fileCategory": "config"},
+    {"path": "skills/pr-quality-agent/resources/audit-checklist.md", "language": "markdown", "sizeLines": 56, "fileCategory": "docs"}
+  ],
+  "batchImportData": {}
+}

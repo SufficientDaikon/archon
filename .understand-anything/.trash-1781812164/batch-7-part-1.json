@@ -1,0 +1,1395 @@
+{
+  "batchIndex": 7,
+  "part": 1,
+  "totalParts": 2,
+  "nodes": [
+    {
+      "id": "file:servers/forge/src/buffer.rs",
+      "type": "file",
+      "path": "servers/forge/src/buffer.rs",
+      "label": "buffer.rs",
+      "language": "rust",
+      "sizeLines": 398,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 398,
+        "nonEmptyLines": 344,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 13,
+          "functionCount": 13,
+          "classCount": 3
+        }
+      }
+    },
+    {
+      "id": "function:servers/forge/src/buffer.rs:open",
+      "type": "function",
+      "path": "servers/forge/src/buffer.rs",
+      "label": "open",
+      "language": "rust",
+      "metadata": {
+        "startLine": 48,
+        "endLine": 70,
+        "lineCount": 23,
+        "params": [
+          "path"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/buffer.rs:meta",
+      "type": "function",
+      "path": "servers/forge/src/buffer.rs",
+      "label": "meta",
+      "language": "rust",
+      "metadata": {
+        "startLine": 73,
+        "endLine": 83,
+        "lineCount": 11,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/buffer.rs:content",
+      "type": "function",
+      "path": "servers/forge/src/buffer.rs",
+      "label": "content",
+      "language": "rust",
+      "metadata": {
+        "startLine": 86,
+        "endLine": 88,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/buffer.rs:read_range",
+      "type": "function",
+      "path": "servers/forge/src/buffer.rs",
+      "label": "read_range",
+      "language": "rust",
+      "metadata": {
+        "startLine": 91,
+        "endLine": 122,
+        "lineCount": 32,
+        "params": [
+          "start",
+          "end"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/buffer.rs:apply_single_edit",
+      "type": "function",
+      "path": "servers/forge/src/buffer.rs",
+      "label": "apply_single_edit",
+      "language": "rust",
+      "metadata": {
+        "startLine": 137,
+        "endLine": 181,
+        "lineCount": 45,
+        "params": [
+          "start",
+          "end",
+          "content"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "function:servers/forge/src/buffer.rs:apply_edits",
+      "type": "function",
+      "path": "servers/forge/src/buffer.rs",
+      "label": "apply_edits",
+      "language": "rust",
+      "metadata": {
+        "startLine": 185,
+        "endLine": 233,
+        "lineCount": 49,
+        "params": [
+          "edits",
+          "expected_hash"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/buffer.rs:insert_at",
+      "type": "function",
+      "path": "servers/forge/src/buffer.rs",
+      "label": "insert_at",
+      "language": "rust",
+      "metadata": {
+        "startLine": 236,
+        "endLine": 273,
+        "lineCount": 38,
+        "params": [
+          "line",
+          "content"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/buffer.rs:delete_range",
+      "type": "function",
+      "path": "servers/forge/src/buffer.rs",
+      "label": "delete_range",
+      "language": "rust",
+      "metadata": {
+        "startLine": 276,
+        "endLine": 294,
+        "lineCount": 19,
+        "params": [
+          "start",
+          "end"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/buffer.rs:undo",
+      "type": "function",
+      "path": "servers/forge/src/buffer.rs",
+      "label": "undo",
+      "language": "rust",
+      "metadata": {
+        "startLine": 297,
+        "endLine": 328,
+        "lineCount": 32,
+        "params": [
+          "steps"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/buffer.rs:redo",
+      "type": "function",
+      "path": "servers/forge/src/buffer.rs",
+      "label": "redo",
+      "language": "rust",
+      "metadata": {
+        "startLine": 331,
+        "endLine": 366,
+        "lineCount": 36,
+        "params": [
+          "steps"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/buffer.rs:flush",
+      "type": "function",
+      "path": "servers/forge/src/buffer.rs",
+      "label": "flush",
+      "language": "rust",
+      "metadata": {
+        "startLine": 369,
+        "endLine": 391,
+        "lineCount": 23,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/buffer.rs:UndoEntry",
+      "type": "class",
+      "path": "servers/forge/src/buffer.rs",
+      "label": "UndoEntry",
+      "language": "rust",
+      "metadata": {
+        "startLine": 15,
+        "endLine": 18,
+        "lineCount": 4,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/buffer.rs:Buffer",
+      "type": "class",
+      "path": "servers/forge/src/buffer.rs",
+      "label": "Buffer",
+      "language": "rust",
+      "metadata": {
+        "startLine": 21,
+        "endLine": 33,
+        "lineCount": 13,
+        "methods": [
+          "open",
+          "meta",
+          "content",
+          "read_range",
+          "push_undo",
+          "apply_single_edit",
+          "apply_edits",
+          "insert_at",
+          "delete_range",
+          "undo",
+          "redo",
+          "flush",
+          "update_hash"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/buffer.rs:BufferMeta",
+      "type": "class",
+      "path": "servers/forge/src/buffer.rs",
+      "label": "BufferMeta",
+      "language": "rust",
+      "metadata": {
+        "startLine": 37,
+        "endLine": 44,
+        "lineCount": 8,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:servers/forge/src/diff.rs",
+      "type": "file",
+      "path": "servers/forge/src/diff.rs",
+      "label": "diff.rs",
+      "language": "rust",
+      "sizeLines": 11,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 11,
+        "nonEmptyLines": 10,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:servers/forge/src/diff.rs:unified_diff",
+      "type": "function",
+      "path": "servers/forge/src/diff.rs",
+      "label": "unified_diff",
+      "language": "rust",
+      "metadata": {
+        "startLine": 5,
+        "endLine": 11,
+        "lineCount": 7,
+        "params": [
+          "original",
+          "modified",
+          "path"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:servers/forge/src/encoding.rs",
+      "type": "file",
+      "path": "servers/forge/src/encoding.rs",
+      "label": "encoding.rs",
+      "language": "rust",
+      "sizeLines": 92,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 92,
+        "nonEmptyLines": 80,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 8,
+          "functionCount": 6,
+          "classCount": 2
+        }
+      }
+    },
+    {
+      "id": "function:servers/forge/src/encoding.rs:as_str",
+      "type": "function",
+      "path": "servers/forge/src/encoding.rs",
+      "label": "as_str",
+      "language": "rust",
+      "metadata": {
+        "startLine": 16,
+        "endLine": 21,
+        "lineCount": 6,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/encoding.rs:is_binary",
+      "type": "function",
+      "path": "servers/forge/src/encoding.rs",
+      "label": "is_binary",
+      "language": "rust",
+      "metadata": {
+        "startLine": 33,
+        "endLine": 36,
+        "lineCount": 4,
+        "params": [
+          "bytes"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/encoding.rs:detect_line_ending",
+      "type": "function",
+      "path": "servers/forge/src/encoding.rs",
+      "label": "detect_line_ending",
+      "language": "rust",
+      "metadata": {
+        "startLine": 39,
+        "endLine": 51,
+        "lineCount": 13,
+        "params": [
+          "content"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/encoding.rs:read_file_bytes",
+      "type": "function",
+      "path": "servers/forge/src/encoding.rs",
+      "label": "read_file_bytes",
+      "language": "rust",
+      "metadata": {
+        "startLine": 54,
+        "endLine": 78,
+        "lineCount": 25,
+        "params": [
+          "path"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/encoding.rs:normalize_to_lf",
+      "type": "function",
+      "path": "servers/forge/src/encoding.rs",
+      "label": "normalize_to_lf",
+      "language": "rust",
+      "metadata": {
+        "startLine": 82,
+        "endLine": 84,
+        "lineCount": 3,
+        "params": [
+          "content"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/encoding.rs:apply_line_ending",
+      "type": "function",
+      "path": "servers/forge/src/encoding.rs",
+      "label": "apply_line_ending",
+      "language": "rust",
+      "metadata": {
+        "startLine": 87,
+        "endLine": 92,
+        "lineCount": 6,
+        "params": [
+          "content",
+          "ending"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/encoding.rs:LineEnding",
+      "type": "class",
+      "path": "servers/forge/src/encoding.rs",
+      "label": "LineEnding",
+      "language": "rust",
+      "metadata": {
+        "startLine": 8,
+        "endLine": 12,
+        "lineCount": 5,
+        "methods": [
+          "as_str"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/encoding.rs:Encoding",
+      "type": "class",
+      "path": "servers/forge/src/encoding.rs",
+      "label": "Encoding",
+      "language": "rust",
+      "metadata": {
+        "startLine": 27,
+        "endLine": 30,
+        "lineCount": 4,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:servers/forge/src/engine.rs",
+      "type": "file",
+      "path": "servers/forge/src/engine.rs",
+      "label": "engine.rs",
+      "language": "rust",
+      "sizeLines": 326,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 326,
+        "nonEmptyLines": 288,
+        "metrics": {
+          "importCount": 3,
+          "exportCount": 19,
+          "functionCount": 14,
+          "classCount": 6
+        }
+      }
+    },
+    {
+      "id": "function:servers/forge/src/engine.rs:new",
+      "type": "function",
+      "path": "servers/forge/src/engine.rs",
+      "label": "new",
+      "language": "rust",
+      "metadata": {
+        "startLine": 14,
+        "endLine": 18,
+        "lineCount": 5,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/engine.rs:normalize_path",
+      "type": "function",
+      "path": "servers/forge/src/engine.rs",
+      "label": "normalize_path",
+      "language": "rust",
+      "metadata": {
+        "startLine": 21,
+        "endLine": 31,
+        "lineCount": 11,
+        "params": [
+          "path"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "function:servers/forge/src/engine.rs:open",
+      "type": "function",
+      "path": "servers/forge/src/engine.rs",
+      "label": "open",
+      "language": "rust",
+      "metadata": {
+        "startLine": 34,
+        "endLine": 41,
+        "lineCount": 8,
+        "params": [
+          "path"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/engine.rs:get_buffer",
+      "type": "function",
+      "path": "servers/forge/src/engine.rs",
+      "label": "get_buffer",
+      "language": "rust",
+      "metadata": {
+        "startLine": 44,
+        "endLine": 51,
+        "lineCount": 8,
+        "params": [
+          "path"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/engine.rs:get_buffer_mut",
+      "type": "function",
+      "path": "servers/forge/src/engine.rs",
+      "label": "get_buffer_mut",
+      "language": "rust",
+      "metadata": {
+        "startLine": 54,
+        "endLine": 61,
+        "lineCount": 8,
+        "params": [
+          "path"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/engine.rs:is_open",
+      "type": "function",
+      "path": "servers/forge/src/engine.rs",
+      "label": "is_open",
+      "language": "rust",
+      "metadata": {
+        "startLine": 64,
+        "endLine": 68,
+        "lineCount": 5,
+        "params": [
+          "path"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/engine.rs:read",
+      "type": "function",
+      "path": "servers/forge/src/engine.rs",
+      "label": "read",
+      "language": "rust",
+      "metadata": {
+        "startLine": 71,
+        "endLine": 105,
+        "lineCount": 35,
+        "params": [
+          "path",
+          "start_line",
+          "end_line",
+          "max_lines"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/engine.rs:edit",
+      "type": "function",
+      "path": "servers/forge/src/engine.rs",
+      "label": "edit",
+      "language": "rust",
+      "metadata": {
+        "startLine": 108,
+        "endLine": 152,
+        "lineCount": 45,
+        "params": [
+          "path",
+          "edits",
+          "expected_hash",
+          "dry_run"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/engine.rs:insert",
+      "type": "function",
+      "path": "servers/forge/src/engine.rs",
+      "label": "insert",
+      "language": "rust",
+      "metadata": {
+        "startLine": 155,
+        "endLine": 168,
+        "lineCount": 14,
+        "params": [
+          "path",
+          "line",
+          "content"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/engine.rs:delete",
+      "type": "function",
+      "path": "servers/forge/src/engine.rs",
+      "label": "delete",
+      "language": "rust",
+      "metadata": {
+        "startLine": 171,
+        "endLine": 184,
+        "lineCount": 14,
+        "params": [
+          "path",
+          "start",
+          "end"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/engine.rs:create",
+      "type": "function",
+      "path": "servers/forge/src/engine.rs",
+      "label": "create",
+      "language": "rust",
+      "metadata": {
+        "startLine": 187,
+        "endLine": 225,
+        "lineCount": 39,
+        "params": [
+          "path",
+          "content",
+          "line_ending"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/engine.rs:undo",
+      "type": "function",
+      "path": "servers/forge/src/engine.rs",
+      "label": "undo",
+      "language": "rust",
+      "metadata": {
+        "startLine": 228,
+        "endLine": 243,
+        "lineCount": 16,
+        "params": [
+          "path",
+          "steps"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/engine.rs:redo",
+      "type": "function",
+      "path": "servers/forge/src/engine.rs",
+      "label": "redo",
+      "language": "rust",
+      "metadata": {
+        "startLine": 246,
+        "endLine": 261,
+        "lineCount": 16,
+        "params": [
+          "path",
+          "steps"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/engine.rs:close",
+      "type": "function",
+      "path": "servers/forge/src/engine.rs",
+      "label": "close",
+      "language": "rust",
+      "metadata": {
+        "startLine": 264,
+        "endLine": 282,
+        "lineCount": 19,
+        "params": [
+          "path"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/engine.rs:Engine",
+      "type": "class",
+      "path": "servers/forge/src/engine.rs",
+      "label": "Engine",
+      "language": "rust",
+      "metadata": {
+        "startLine": 9,
+        "endLine": 11,
+        "lineCount": 3,
+        "methods": [
+          "new",
+          "normalize_path",
+          "open",
+          "get_buffer",
+          "get_buffer_mut",
+          "is_open",
+          "read",
+          "edit",
+          "insert",
+          "delete",
+          "create",
+          "undo",
+          "redo",
+          "close"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/engine.rs:ReadResult",
+      "type": "class",
+      "path": "servers/forge/src/engine.rs",
+      "label": "ReadResult",
+      "language": "rust",
+      "metadata": {
+        "startLine": 288,
+        "endLine": 296,
+        "lineCount": 9,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/engine.rs:EditResult",
+      "type": "class",
+      "path": "servers/forge/src/engine.rs",
+      "label": "EditResult",
+      "language": "rust",
+      "metadata": {
+        "startLine": 299,
+        "endLine": 304,
+        "lineCount": 6,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/engine.rs:CreateResult",
+      "type": "class",
+      "path": "servers/forge/src/engine.rs",
+      "label": "CreateResult",
+      "language": "rust",
+      "metadata": {
+        "startLine": 307,
+        "endLine": 311,
+        "lineCount": 5,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/engine.rs:UndoResult",
+      "type": "class",
+      "path": "servers/forge/src/engine.rs",
+      "label": "UndoResult",
+      "language": "rust",
+      "metadata": {
+        "startLine": 314,
+        "endLine": 320,
+        "lineCount": 7,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/engine.rs:CloseResult",
+      "type": "class",
+      "path": "servers/forge/src/engine.rs",
+      "label": "CloseResult",
+      "language": "rust",
+      "metadata": {
+        "startLine": 323,
+        "endLine": 326,
+        "lineCount": 4,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:servers/forge/src/errors.rs",
+      "type": "file",
+      "path": "servers/forge/src/errors.rs",
+      "label": "errors.rs",
+      "language": "rust",
+      "sizeLines": 67,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 67,
+        "nonEmptyLines": 52,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 2,
+          "functionCount": 1,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:servers/forge/src/errors.rs:code",
+      "type": "function",
+      "path": "servers/forge/src/errors.rs",
+      "label": "code",
+      "language": "rust",
+      "metadata": {
+        "startLine": 48,
+        "endLine": 64,
+        "lineCount": 17,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/errors.rs:ForgeError",
+      "type": "class",
+      "path": "servers/forge/src/errors.rs",
+      "label": "ForgeError",
+      "language": "rust",
+      "metadata": {
+        "startLine": 5,
+        "endLine": 44,
+        "lineCount": 40,
+        "methods": [
+          "code"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:servers/forge/src/main.rs",
+      "type": "file",
+      "path": "servers/forge/src/main.rs",
+      "label": "main.rs",
+      "language": "rust",
+      "sizeLines": 358,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 358,
+        "nonEmptyLines": 321,
+        "metrics": {
+          "importCount": 6,
+          "exportCount": 2,
+          "functionCount": 14,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:servers/forge/src/main.rs:new",
+      "type": "function",
+      "path": "servers/forge/src/main.rs",
+      "label": "new",
+      "language": "rust",
+      "metadata": {
+        "startLine": 31,
+        "endLine": 36,
+        "lineCount": 6,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:servers/forge/src/main.rs:file_open",
+      "type": "function",
+      "path": "servers/forge/src/main.rs",
+      "label": "file_open",
+      "language": "rust",
+      "metadata": {
+        "startLine": 57,
+        "endLine": 76,
+        "lineCount": 20,
+        "params": [
+          "Parameters(p)"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "function:servers/forge/src/main.rs:file_close",
+      "type": "function",
+      "path": "servers/forge/src/main.rs",
+      "label": "file_close",
+      "language": "rust",
+      "metadata": {
+        "startLine": 80,
+        "endLine": 93,
+        "lineCount": 14,
+        "params": [
+          "Parameters(p)"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "function:servers/forge/src/main.rs:file_read",
+      "type": "function",
+      "path": "servers/forge/src/main.rs",
+      "label": "file_read",
+      "language": "rust",
+      "metadata": {
+        "startLine": 100,
+        "endLine": 122,
+        "lineCount": 23,
+        "params": [
+          "Parameters(p)"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "function:servers/forge/src/main.rs:file_info",
+      "type": "function",
+      "path": "servers/forge/src/main.rs",
+      "label": "file_info",
+      "language": "rust",
+      "metadata": {
+        "startLine": 126,
+        "endLine": 170,
+        "lineCount": 45,
+        "params": [
+          "Parameters(p)"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "function:servers/forge/src/main.rs:file_edit",
+      "type": "function",
+      "path": "servers/forge/src/main.rs",
+      "label": "file_edit",
+      "language": "rust",
+      "metadata": {
+        "startLine": 178,
+        "endLine": 204,
+        "lineCount": 27,
+        "params": [
+          "Parameters(p)"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "function:servers/forge/src/main.rs:file_insert",
+      "type": "function",
+      "path": "servers/forge/src/main.rs",
+      "label": "file_insert",
+      "language": "rust",
+      "metadata": {
+        "startLine": 209,
+        "endLine": 223,
+        "lineCount": 15,
+        "params": [
+          "Parameters(p)"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "function:servers/forge/src/main.rs:file_delete",
+      "type": "function",
+      "path": "servers/forge/src/main.rs",
+      "label": "file_delete",
+      "language": "rust",
+      "metadata": {
+        "startLine": 227,
+        "endLine": 243,
+        "lineCount": 17,
+        "params": [
+          "Parameters(p)"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "function:servers/forge/src/main.rs:file_create",
+      "type": "function",
+      "path": "servers/forge/src/main.rs",
+      "label": "file_create",
+      "language": "rust",
+      "metadata": {
+        "startLine": 247,
+        "endLine": 263,
+        "lineCount": 17,
+        "params": [
+          "Parameters(p)"
+        ],
+        "exported": false
+      }
+    }
+  ],
+  "edges": [
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/buffer.rs",
+      "target": "function:servers/forge/src/buffer.rs:open",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/buffer.rs",
+      "target": "function:servers/forge/src/buffer.rs:meta",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/buffer.rs",
+      "target": "function:servers/forge/src/buffer.rs:content",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/buffer.rs",
+      "target": "function:servers/forge/src/buffer.rs:read_range",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/buffer.rs",
+      "target": "function:servers/forge/src/buffer.rs:apply_single_edit",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/buffer.rs",
+      "target": "function:servers/forge/src/buffer.rs:apply_edits",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/buffer.rs",
+      "target": "function:servers/forge/src/buffer.rs:insert_at",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/buffer.rs",
+      "target": "function:servers/forge/src/buffer.rs:delete_range",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/buffer.rs",
+      "target": "function:servers/forge/src/buffer.rs:undo",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/buffer.rs",
+      "target": "function:servers/forge/src/buffer.rs:redo",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/buffer.rs",
+      "target": "function:servers/forge/src/buffer.rs:flush",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/buffer.rs",
+      "target": "class:servers/forge/src/buffer.rs:UndoEntry",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/buffer.rs",
+      "target": "class:servers/forge/src/buffer.rs:Buffer",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/buffer.rs",
+      "target": "class:servers/forge/src/buffer.rs:BufferMeta",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:servers/forge/src/buffer.rs",
+      "target": "file:servers/forge/src/encoding.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:servers/forge/src/buffer.rs",
+      "target": "file:servers/forge/src/errors.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/diff.rs",
+      "target": "function:servers/forge/src/diff.rs:unified_diff",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/encoding.rs",
+      "target": "function:servers/forge/src/encoding.rs:as_str",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/encoding.rs",
+      "target": "function:servers/forge/src/encoding.rs:is_binary",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/encoding.rs",
+      "target": "function:servers/forge/src/encoding.rs:detect_line_ending",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/encoding.rs",
+      "target": "function:servers/forge/src/encoding.rs:read_file_bytes",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/encoding.rs",
+      "target": "function:servers/forge/src/encoding.rs:normalize_to_lf",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/encoding.rs",
+      "target": "function:servers/forge/src/encoding.rs:apply_line_ending",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/encoding.rs",
+      "target": "class:servers/forge/src/encoding.rs:LineEnding",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/encoding.rs",
+      "target": "class:servers/forge/src/encoding.rs:Encoding",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:servers/forge/src/encoding.rs",
+      "target": "file:servers/forge/src/errors.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "function:servers/forge/src/engine.rs:new",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "function:servers/forge/src/engine.rs:normalize_path",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "function:servers/forge/src/engine.rs:open",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "function:servers/forge/src/engine.rs:get_buffer",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "function:servers/forge/src/engine.rs:get_buffer_mut",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "function:servers/forge/src/engine.rs:is_open",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "function:servers/forge/src/engine.rs:read",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "function:servers/forge/src/engine.rs:edit",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "function:servers/forge/src/engine.rs:insert",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "function:servers/forge/src/engine.rs:delete",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "function:servers/forge/src/engine.rs:create",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "function:servers/forge/src/engine.rs:undo",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "function:servers/forge/src/engine.rs:redo",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "function:servers/forge/src/engine.rs:close",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "class:servers/forge/src/engine.rs:Engine",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "class:servers/forge/src/engine.rs:ReadResult",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "class:servers/forge/src/engine.rs:EditResult",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "class:servers/forge/src/engine.rs:CreateResult",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "class:servers/forge/src/engine.rs:UndoResult",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "class:servers/forge/src/engine.rs:CloseResult",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "file:servers/forge/src/buffer.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "file:servers/forge/src/encoding.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:servers/forge/src/engine.rs",
+      "target": "file:servers/forge/src/errors.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/errors.rs",
+      "target": "function:servers/forge/src/errors.rs:code",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/errors.rs",
+      "target": "class:servers/forge/src/errors.rs:ForgeError",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/main.rs",
+      "target": "function:servers/forge/src/main.rs:new",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/main.rs",
+      "target": "function:servers/forge/src/main.rs:file_open",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/main.rs",
+      "target": "function:servers/forge/src/main.rs:file_close",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/main.rs",
+      "target": "function:servers/forge/src/main.rs:file_read",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/main.rs",
+      "target": "function:servers/forge/src/main.rs:file_info",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/main.rs",
+      "target": "function:servers/forge/src/main.rs:file_edit",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/main.rs",
+      "target": "function:servers/forge/src/main.rs:file_insert",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/main.rs",
+      "target": "function:servers/forge/src/main.rs:file_delete",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/main.rs",
+      "target": "function:servers/forge/src/main.rs:file_create",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:servers/forge/src/main.rs",
+      "target": "file:servers/forge/src/buffer.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:servers/forge/src/main.rs",
+      "target": "file:servers/forge/src/diff.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:servers/forge/src/main.rs",
+      "target": "file:servers/forge/src/encoding.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:servers/forge/src/main.rs",
+      "target": "file:servers/forge/src/engine.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:servers/forge/src/main.rs",
+      "target": "file:servers/forge/src/errors.rs",
+      "weight": 0.7
+    }
+  ]
+}

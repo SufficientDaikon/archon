@@ -1,0 +1,4815 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 20,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "tests/test_security_awareness.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 20,
+      "classes": [
+        {
+          "name": "TestSecurityAwareness",
+          "startLine": 7,
+          "endLine": 28,
+          "methods": [
+            "test_exec_blocked",
+            "test_eval_blocked",
+            "test_password_hardcoded",
+            "test_safe_code",
+            "test_empty"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestSecurityAwareness",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_exec_blocked",
+          "callee": "security_awareness.validate",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_eval_blocked",
+          "callee": "security_awareness.validate",
+          "lineNumber": 15
+        },
+        {
+          "caller": "test_password_hardcoded",
+          "callee": "security_awareness.validate",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_safe_code",
+          "callee": "security_awareness.validate",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_empty",
+          "callee": "security_awareness.validate",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "tests/test_sequential_thinking.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 22,
+      "classes": [
+        {
+          "name": "TestSequentialThinking",
+          "startLine": 7,
+          "endLine": 27,
+          "methods": [
+            "test_circular_reasoning_blocked",
+            "test_simple_reasoning"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestSequentialThinking",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_circular_reasoning_blocked",
+          "callee": "sequential_thinking.validate",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_simple_reasoning",
+          "callee": "sequential_thinking.validate",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "tests/test_synapses_executable.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "test_anti_rat_blocks",
+          "startLine": 7,
+          "endLine": 10,
+          "params": []
+        },
+        {
+          "name": "test_anti_rat_allows",
+          "startLine": 12,
+          "endLine": 15,
+          "params": []
+        },
+        {
+          "name": "test_security",
+          "startLine": 17,
+          "endLine": 20,
+          "params": []
+        },
+        {
+          "name": "test_metacognition",
+          "startLine": 22,
+          "endLine": 25,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_anti_rat_blocks",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "test_anti_rat_allows",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "test_security",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "test_metacognition",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_anti_rat_blocks",
+          "callee": "anti_rationalization.validate",
+          "lineNumber": 8
+        },
+        {
+          "caller": "test_anti_rat_blocks",
+          "callee": "print",
+          "lineNumber": 10
+        },
+        {
+          "caller": "test_anti_rat_allows",
+          "callee": "anti_rationalization.validate",
+          "lineNumber": 13
+        },
+        {
+          "caller": "test_anti_rat_allows",
+          "callee": "print",
+          "lineNumber": 15
+        },
+        {
+          "caller": "test_security",
+          "callee": "security_awareness.validate",
+          "lineNumber": 18
+        },
+        {
+          "caller": "test_security",
+          "callee": "print",
+          "lineNumber": 20
+        },
+        {
+          "caller": "test_metacognition",
+          "callee": "metacognition.validate",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_metacognition",
+          "callee": "print",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/test_trust_verification.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 23,
+      "classes": [
+        {
+          "name": "TestTrustVerification",
+          "startLine": 7,
+          "endLine": 29,
+          "methods": [
+            "test_critical_without_evidence",
+            "test_with_evidence",
+            "test_empty"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestTrustVerification",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_critical_without_evidence",
+          "callee": "trust_verification.validate",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_with_evidence",
+          "callee": "trust_verification.validate",
+          "lineNumber": 18
+        },
+        {
+          "caller": "test_empty",
+          "callee": "trust_verification.validate",
+          "lineNumber": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "tests/test_v3_agent_mcp.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 224,
+      "nonEmptyLines": 187,
+      "classes": [
+        {
+          "name": "TestAgentCapabilityProfile",
+          "startLine": 31,
+          "endLine": 70,
+          "methods": [
+            "test_profile_creation",
+            "test_from_manifest",
+            "test_serializes",
+            "test_loads_real_agents"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestSkillManifestChecker",
+          "startLine": 77,
+          "endLine": 133,
+          "methods": [
+            "test_valid_manifest",
+            "test_missing_required_fields",
+            "test_precedence_tiers",
+            "test_conflict_resolution_deterministic",
+            "test_check_all_real_skills"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestMCPConnectorManager",
+          "startLine": 140,
+          "endLine": 224,
+          "methods": [
+            "test_register_and_get",
+            "test_unregister",
+            "test_route_by_capability",
+            "test_route_respects_trust_tier",
+            "test_route_prefers_higher_trust",
+            "test_route_skips_unhealthy",
+            "test_route_returns_none_when_no_match",
+            "test_health_update",
+            "test_get_unhealthy",
+            "test_get_by_tier",
+            "test_routing_is_deterministic"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestAgentCapabilityProfile",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "TestSkillManifestChecker",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "TestMCPConnectorManager",
+          "line": 140,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_profile_creation",
+          "callee": "AgentCapabilityProfile",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_profile_creation",
+          "callee": "p.can_execute_in_mode",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_profile_creation",
+          "callee": "p.can_execute_in_mode",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_from_manifest",
+          "callee": "agent_dir.mkdir",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_from_manifest",
+          "callee": "manifest.write_text",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_from_manifest",
+          "callee": "AgentCapabilityProfile.from_manifest",
+          "lineNumber": 52
+        },
+        {
+          "caller": "test_from_manifest",
+          "callee": "p.can_execute_in_mode",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_serializes",
+          "callee": "AgentCapabilityProfile",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_serializes",
+          "callee": "p.to_dict",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_loads_real_agents",
+          "callee": "agents_dir.exists",
+          "lineNumber": 67
+        },
+        {
+          "caller": "test_loads_real_agents",
+          "callee": "pytest.skip",
+          "lineNumber": 68
+        },
+        {
+          "caller": "test_loads_real_agents",
+          "callee": "list",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_loads_real_agents",
+          "callee": "agents_dir.rglob",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_loads_real_agents",
+          "callee": "len",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_valid_manifest",
+          "callee": "skill_dir.mkdir",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_valid_manifest",
+          "callee": "(skill_dir / \"manifest.yaml\").write_text",
+          "lineNumber": 83
+        },
+        {
+          "caller": "test_valid_manifest",
+          "callee": "SkillManifestChecker",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_valid_manifest",
+          "callee": "checker.check",
+          "lineNumber": 87
+        },
+        {
+          "caller": "test_valid_manifest",
+          "callee": "len",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_missing_required_fields",
+          "callee": "skill_dir.mkdir",
+          "lineNumber": 94
+        },
+        {
+          "caller": "test_missing_required_fields",
+          "callee": "(skill_dir / \"manifest.yaml\").write_text",
+          "lineNumber": 95
+        },
+        {
+          "caller": "test_missing_required_fields",
+          "callee": "SkillManifestChecker",
+          "lineNumber": 96
+        },
+        {
+          "caller": "test_missing_required_fields",
+          "callee": "checker.check",
+          "lineNumber": 97
+        },
+        {
+          "caller": "test_missing_required_fields",
+          "callee": "any",
+          "lineNumber": 99
+        },
+        {
+          "caller": "test_precedence_tiers",
+          "callee": "SkillManifestChecker",
+          "lineNumber": 102
+        },
+        {
+          "caller": "test_precedence_tiers",
+          "callee": "skill_dir.mkdir",
+          "lineNumber": 105
+        },
+        {
+          "caller": "test_precedence_tiers",
+          "callee": "(skill_dir / \"manifest.yaml\").write_text",
+          "lineNumber": 106
+        },
+        {
+          "caller": "test_precedence_tiers",
+          "callee": "checker.check",
+          "lineNumber": 109
+        },
+        {
+          "caller": "test_conflict_resolution_deterministic",
+          "callee": "SkillManifestChecker",
+          "lineNumber": 113
+        },
+        {
+          "caller": "test_conflict_resolution_deterministic",
+          "callee": "SkillManifestCheck",
+          "lineNumber": 115
+        },
+        {
+          "caller": "test_conflict_resolution_deterministic",
+          "callee": "SkillManifestCheck",
+          "lineNumber": 116
+        },
+        {
+          "caller": "test_conflict_resolution_deterministic",
+          "callee": "SkillManifestCheck",
+          "lineNumber": 117
+        },
+        {
+          "caller": "test_conflict_resolution_deterministic",
+          "callee": "SkillManifestCheck",
+          "lineNumber": 118
+        },
+        {
+          "caller": "test_conflict_resolution_deterministic",
+          "callee": "checker.resolve_conflicts",
+          "lineNumber": 120
+        },
+        {
+          "caller": "test_check_all_real_skills",
+          "callee": "skills_dir.exists",
+          "lineNumber": 129
+        },
+        {
+          "caller": "test_check_all_real_skills",
+          "callee": "pytest.skip",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_check_all_real_skills",
+          "callee": "SkillManifestChecker",
+          "lineNumber": 131
+        },
+        {
+          "caller": "test_check_all_real_skills",
+          "callee": "checker.check_all",
+          "lineNumber": 132
+        },
+        {
+          "caller": "test_check_all_real_skills",
+          "callee": "len",
+          "lineNumber": 133
+        },
+        {
+          "caller": "test_register_and_get",
+          "callee": "MCPConnectorManager",
+          "lineNumber": 144
+        },
+        {
+          "caller": "test_register_and_get",
+          "callee": "MCPConnector",
+          "lineNumber": 145
+        },
+        {
+          "caller": "test_register_and_get",
+          "callee": "mgr.register",
+          "lineNumber": 146
+        },
+        {
+          "caller": "test_register_and_get",
+          "callee": "mgr.get",
+          "lineNumber": 147
+        },
+        {
+          "caller": "test_register_and_get",
+          "callee": "mgr.get",
+          "lineNumber": 148
+        },
+        {
+          "caller": "test_unregister",
+          "callee": "MCPConnectorManager",
+          "lineNumber": 151
+        },
+        {
+          "caller": "test_unregister",
+          "callee": "mgr.register",
+          "lineNumber": 152
+        },
+        {
+          "caller": "test_unregister",
+          "callee": "MCPConnector",
+          "lineNumber": 152
+        },
+        {
+          "caller": "test_unregister",
+          "callee": "mgr.unregister",
+          "lineNumber": 153
+        },
+        {
+          "caller": "test_unregister",
+          "callee": "mgr.unregister",
+          "lineNumber": 154
+        },
+        {
+          "caller": "test_route_by_capability",
+          "callee": "MCPConnectorManager",
+          "lineNumber": 157
+        },
+        {
+          "caller": "test_route_by_capability",
+          "callee": "mgr.register",
+          "lineNumber": 158
+        },
+        {
+          "caller": "test_route_by_capability",
+          "callee": "MCPConnector",
+          "lineNumber": 158
+        },
+        {
+          "caller": "test_route_by_capability",
+          "callee": "mgr.register",
+          "lineNumber": 159
+        },
+        {
+          "caller": "test_route_by_capability",
+          "callee": "MCPConnector",
+          "lineNumber": 159
+        },
+        {
+          "caller": "test_route_by_capability",
+          "callee": "mgr.route",
+          "lineNumber": 161
+        },
+        {
+          "caller": "test_route_by_capability",
+          "callee": "mgr.route",
+          "lineNumber": 165
+        },
+        {
+          "caller": "test_route_respects_trust_tier",
+          "callee": "MCPConnectorManager",
+          "lineNumber": 170
+        },
+        {
+          "caller": "test_route_respects_trust_tier",
+          "callee": "mgr.register",
+          "lineNumber": 171
+        },
+        {
+          "caller": "test_route_respects_trust_tier",
+          "callee": "MCPConnector",
+          "lineNumber": 171
+        },
+        {
+          "caller": "test_route_respects_trust_tier",
+          "callee": "mgr.route",
+          "lineNumber": 173
+        },
+        {
+          "caller": "test_route_prefers_higher_trust",
+          "callee": "MCPConnectorManager",
+          "lineNumber": 177
+        },
+        {
+          "caller": "test_route_prefers_higher_trust",
+          "callee": "mgr.register",
+          "lineNumber": 178
+        },
+        {
+          "caller": "test_route_prefers_higher_trust",
+          "callee": "MCPConnector",
+          "lineNumber": 178
+        },
+        {
+          "caller": "test_route_prefers_higher_trust",
+          "callee": "mgr.register",
+          "lineNumber": 179
+        },
+        {
+          "caller": "test_route_prefers_higher_trust",
+          "callee": "MCPConnector",
+          "lineNumber": 179
+        },
+        {
+          "caller": "test_route_prefers_higher_trust",
+          "callee": "mgr.route",
+          "lineNumber": 180
+        },
+        {
+          "caller": "test_route_skips_unhealthy",
+          "callee": "MCPConnectorManager",
+          "lineNumber": 184
+        },
+        {
+          "caller": "test_route_skips_unhealthy",
+          "callee": "mgr.register",
+          "lineNumber": 185
+        },
+        {
+          "caller": "test_route_skips_unhealthy",
+          "callee": "MCPConnector",
+          "lineNumber": 185
+        },
+        {
+          "caller": "test_route_skips_unhealthy",
+          "callee": "mgr.register",
+          "lineNumber": 186
+        },
+        {
+          "caller": "test_route_skips_unhealthy",
+          "callee": "MCPConnector",
+          "lineNumber": 186
+        },
+        {
+          "caller": "test_route_skips_unhealthy",
+          "callee": "mgr.route",
+          "lineNumber": 187
+        },
+        {
+          "caller": "test_route_returns_none_when_no_match",
+          "callee": "MCPConnectorManager",
+          "lineNumber": 191
+        },
+        {
+          "caller": "test_route_returns_none_when_no_match",
+          "callee": "mgr.register",
+          "lineNumber": 192
+        },
+        {
+          "caller": "test_route_returns_none_when_no_match",
+          "callee": "MCPConnector",
+          "lineNumber": 192
+        },
+        {
+          "caller": "test_route_returns_none_when_no_match",
+          "callee": "mgr.route",
+          "lineNumber": 193
+        },
+        {
+          "caller": "test_health_update",
+          "callee": "MCPConnectorManager",
+          "lineNumber": 196
+        },
+        {
+          "caller": "test_health_update",
+          "callee": "mgr.register",
+          "lineNumber": 197
+        },
+        {
+          "caller": "test_health_update",
+          "callee": "MCPConnector",
+          "lineNumber": 197
+        },
+        {
+          "caller": "test_health_update",
+          "callee": "mgr.update_health",
+          "lineNumber": 198
+        },
+        {
+          "caller": "test_health_update",
+          "callee": "mgr.get",
+          "lineNumber": 199
+        },
+        {
+          "caller": "test_health_update",
+          "callee": "mgr.update_health",
+          "lineNumber": 200
+        },
+        {
+          "caller": "test_health_update",
+          "callee": "mgr.update_health",
+          "lineNumber": 201
+        },
+        {
+          "caller": "test_get_unhealthy",
+          "callee": "MCPConnectorManager",
+          "lineNumber": 204
+        },
+        {
+          "caller": "test_get_unhealthy",
+          "callee": "mgr.register",
+          "lineNumber": 205
+        },
+        {
+          "caller": "test_get_unhealthy",
+          "callee": "MCPConnector",
+          "lineNumber": 205
+        },
+        {
+          "caller": "test_get_unhealthy",
+          "callee": "mgr.register",
+          "lineNumber": 206
+        },
+        {
+          "caller": "test_get_unhealthy",
+          "callee": "MCPConnector",
+          "lineNumber": 206
+        },
+        {
+          "caller": "test_get_unhealthy",
+          "callee": "mgr.register",
+          "lineNumber": 207
+        },
+        {
+          "caller": "test_get_unhealthy",
+          "callee": "MCPConnector",
+          "lineNumber": 207
+        },
+        {
+          "caller": "test_get_unhealthy",
+          "callee": "len",
+          "lineNumber": 208
+        },
+        {
+          "caller": "test_get_unhealthy",
+          "callee": "mgr.get_unhealthy",
+          "lineNumber": 208
+        },
+        {
+          "caller": "test_get_by_tier",
+          "callee": "MCPConnectorManager",
+          "lineNumber": 211
+        },
+        {
+          "caller": "test_get_by_tier",
+          "callee": "mgr.register",
+          "lineNumber": 212
+        },
+        {
+          "caller": "test_get_by_tier",
+          "callee": "MCPConnector",
+          "lineNumber": 212
+        },
+        {
+          "caller": "test_get_by_tier",
+          "callee": "mgr.register",
+          "lineNumber": 213
+        },
+        {
+          "caller": "test_get_by_tier",
+          "callee": "MCPConnector",
+          "lineNumber": 213
+        },
+        {
+          "caller": "test_get_by_tier",
+          "callee": "mgr.register",
+          "lineNumber": 214
+        },
+        {
+          "caller": "test_get_by_tier",
+          "callee": "MCPConnector",
+          "lineNumber": 214
+        },
+        {
+          "caller": "test_get_by_tier",
+          "callee": "len",
+          "lineNumber": 215
+        },
+        {
+          "caller": "test_get_by_tier",
+          "callee": "mgr.get_by_tier",
+          "lineNumber": 215
+        },
+        {
+          "caller": "test_routing_is_deterministic",
+          "callee": "MCPConnectorManager",
+          "lineNumber": 219
+        },
+        {
+          "caller": "test_routing_is_deterministic",
+          "callee": "mgr.register",
+          "lineNumber": 220
+        },
+        {
+          "caller": "test_routing_is_deterministic",
+          "callee": "MCPConnector",
+          "lineNumber": 220
+        },
+        {
+          "caller": "test_routing_is_deterministic",
+          "callee": "mgr.register",
+          "lineNumber": 221
+        },
+        {
+          "caller": "test_routing_is_deterministic",
+          "callee": "MCPConnector",
+          "lineNumber": 221
+        },
+        {
+          "caller": "test_routing_is_deterministic",
+          "callee": "mgr.route",
+          "lineNumber": 222
+        },
+        {
+          "caller": "test_routing_is_deterministic",
+          "callee": "mgr.route",
+          "lineNumber": 223
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "tests/test_v3_contracts.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 336,
+      "nonEmptyLines": 270,
+      "functions": [
+        {
+          "name": "_load_schema",
+          "startLine": 333,
+          "endLine": 336,
+          "params": [
+            "name"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TestV3SchemasExist",
+          "startLine": 48,
+          "endLine": 59,
+          "methods": [
+            "test_v3_schema_exists",
+            "test_v2_schema_preserved"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestV3SchemaStructure",
+          "startLine": 62,
+          "endLine": 95,
+          "methods": [
+            "test_has_title",
+            "test_has_version_3",
+            "test_has_type",
+            "test_has_required_fields",
+            "test_properties_are_typed"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestSessionSchemaTransitions",
+          "startLine": 98,
+          "endLine": 125,
+          "methods": [
+            "test_transitions_exist",
+            "test_all_status_enum_states_have_transitions",
+            "test_no_unknown_target_states",
+            "test_archived_is_terminal"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestToolInvocationSchema",
+          "startLine": 128,
+          "endLine": 138,
+          "methods": [
+            "test_policy_decision_required",
+            "test_policy_action_enum"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestPermissionSchema",
+          "startLine": 141,
+          "endLine": 148,
+          "methods": [
+            "test_trust_tiers_defined"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestContextHandoffSchema",
+          "startLine": 151,
+          "endLine": 167,
+          "methods": [
+            "test_evidence_links_required",
+            "test_pinned_constraints_required",
+            "test_evidence_types_enum"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestNegativeFixtures",
+          "startLine": 174,
+          "endLine": 199,
+          "methods": [
+            "test_session_id_rejects_bad_format",
+            "test_session_id_accepts_good_format",
+            "test_invocation_id_rejects_bad_format",
+            "test_event_id_rejects_bad_format"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestSchemaLint",
+          "startLine": 206,
+          "endLine": 276,
+          "methods": [
+            "test_lint_all_v3_schemas_pass",
+            "test_lint_catches_missing_title",
+            "test_lint_catches_invalid_version",
+            "test_lint_catches_duplicate_enum",
+            "test_lint_catches_invalid_regex",
+            "test_lint_catches_unreachable_state"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestCompatibilityChecker",
+          "startLine": 283,
+          "endLine": 326,
+          "methods": [
+            "test_no_v2_schemas_removed",
+            "test_all_v2_schemas_preserved",
+            "test_v3_schemas_detected",
+            "test_report_is_deterministic",
+            "test_migration_hints_present",
+            "test_detects_missing_v2_schema"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestV3SchemasExist",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "TestV3SchemaStructure",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "TestSessionSchemaTransitions",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "TestToolInvocationSchema",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "TestPermissionSchema",
+          "line": 141,
+          "isDefault": false
+        },
+        {
+          "name": "TestContextHandoffSchema",
+          "line": 151,
+          "isDefault": false
+        },
+        {
+          "name": "TestNegativeFixtures",
+          "line": 174,
+          "isDefault": false
+        },
+        {
+          "name": "TestSchemaLint",
+          "line": 206,
+          "isDefault": false
+        },
+        {
+          "name": "TestCompatibilityChecker",
+          "line": 283,
+          "isDefault": false
+        },
+        {
+          "name": "_load_schema",
+          "line": 333,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_v3_schema_exists",
+          "callee": "path.exists",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_v2_schema_preserved",
+          "callee": "path.exists",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_has_title",
+          "callee": "_load_schema",
+          "lineNumber": 67
+        },
+        {
+          "caller": "test_has_version_3",
+          "callee": "_load_schema",
+          "lineNumber": 72
+        },
+        {
+          "caller": "test_has_version_3",
+          "callee": "data.get(\"version\", \"\").startswith",
+          "lineNumber": 73
+        },
+        {
+          "caller": "test_has_version_3",
+          "callee": "data.get",
+          "lineNumber": 73
+        },
+        {
+          "caller": "test_has_type",
+          "callee": "_load_schema",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_has_required_fields",
+          "callee": "_load_schema",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_has_required_fields",
+          "callee": "isinstance",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_properties_are_typed",
+          "callee": "_load_schema",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_properties_are_typed",
+          "callee": "data.get",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_properties_are_typed",
+          "callee": "properties.items",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_properties_are_typed",
+          "callee": "isinstance",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_transitions_exist",
+          "callee": "_load_schema",
+          "lineNumber": 102
+        },
+        {
+          "caller": "test_all_status_enum_states_have_transitions",
+          "callee": "_load_schema",
+          "lineNumber": 106
+        },
+        {
+          "caller": "test_all_status_enum_states_have_transitions",
+          "callee": "set",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_all_status_enum_states_have_transitions",
+          "callee": "set",
+          "lineNumber": 108
+        },
+        {
+          "caller": "test_all_status_enum_states_have_transitions",
+          "callee": "data[\"state_transitions\"].keys",
+          "lineNumber": 108
+        },
+        {
+          "caller": "test_no_unknown_target_states",
+          "callee": "_load_schema",
+          "lineNumber": 114
+        },
+        {
+          "caller": "test_no_unknown_target_states",
+          "callee": "set",
+          "lineNumber": 115
+        },
+        {
+          "caller": "test_no_unknown_target_states",
+          "callee": "data[\"state_transitions\"].keys",
+          "lineNumber": 115
+        },
+        {
+          "caller": "test_no_unknown_target_states",
+          "callee": "data[\"state_transitions\"].items",
+          "lineNumber": 116
+        },
+        {
+          "caller": "test_archived_is_terminal",
+          "callee": "_load_schema",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_archived_is_terminal",
+          "callee": "data[\"state_transitions\"].get",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_policy_decision_required",
+          "callee": "_load_schema",
+          "lineNumber": 132
+        },
+        {
+          "caller": "test_policy_decision_required",
+          "callee": "data.get",
+          "lineNumber": 133
+        },
+        {
+          "caller": "test_policy_action_enum",
+          "callee": "_load_schema",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_policy_action_enum",
+          "callee": "set",
+          "lineNumber": 138
+        },
+        {
+          "caller": "test_trust_tiers_defined",
+          "callee": "_load_schema",
+          "lineNumber": 145
+        },
+        {
+          "caller": "test_evidence_links_required",
+          "callee": "_load_schema",
+          "lineNumber": 155
+        },
+        {
+          "caller": "test_evidence_links_required",
+          "callee": "data.get",
+          "lineNumber": 156
+        },
+        {
+          "caller": "test_pinned_constraints_required",
+          "callee": "_load_schema",
+          "lineNumber": 159
+        },
+        {
+          "caller": "test_pinned_constraints_required",
+          "callee": "data.get",
+          "lineNumber": 160
+        },
+        {
+          "caller": "test_evidence_types_enum",
+          "callee": "_load_schema",
+          "lineNumber": 163
+        },
+        {
+          "caller": "test_evidence_types_enum",
+          "callee": "set",
+          "lineNumber": 165
+        },
+        {
+          "caller": "test_session_id_rejects_bad_format",
+          "callee": "_load_schema",
+          "lineNumber": 179
+        },
+        {
+          "caller": "test_session_id_rejects_bad_format",
+          "callee": "re.match",
+          "lineNumber": 181
+        },
+        {
+          "caller": "test_session_id_accepts_good_format",
+          "callee": "_load_schema",
+          "lineNumber": 185
+        },
+        {
+          "caller": "test_session_id_accepts_good_format",
+          "callee": "re.match",
+          "lineNumber": 187
+        },
+        {
+          "caller": "test_invocation_id_rejects_bad_format",
+          "callee": "_load_schema",
+          "lineNumber": 191
+        },
+        {
+          "caller": "test_invocation_id_rejects_bad_format",
+          "callee": "re.match",
+          "lineNumber": 193
+        },
+        {
+          "caller": "test_event_id_rejects_bad_format",
+          "callee": "_load_schema",
+          "lineNumber": 197
+        },
+        {
+          "caller": "test_event_id_rejects_bad_format",
+          "callee": "re.match",
+          "lineNumber": 199
+        },
+        {
+          "caller": "test_lint_all_v3_schemas_pass",
+          "callee": "SchemaValidator",
+          "lineNumber": 211
+        },
+        {
+          "caller": "test_lint_all_v3_schemas_pass",
+          "callee": "validator.lint_all",
+          "lineNumber": 212
+        },
+        {
+          "caller": "test_lint_all_v3_schemas_pass",
+          "callee": "len",
+          "lineNumber": 214
+        },
+        {
+          "caller": "test_lint_all_v3_schemas_pass",
+          "callee": "len",
+          "lineNumber": 214
+        },
+        {
+          "caller": "test_lint_catches_missing_title",
+          "callee": "bad_schema.write_text",
+          "lineNumber": 221
+        },
+        {
+          "caller": "test_lint_catches_missing_title",
+          "callee": "SchemaValidator",
+          "lineNumber": 222
+        },
+        {
+          "caller": "test_lint_catches_missing_title",
+          "callee": "validator.lint_schema",
+          "lineNumber": 223
+        },
+        {
+          "caller": "test_lint_catches_missing_title",
+          "callee": "any",
+          "lineNumber": 225
+        },
+        {
+          "caller": "test_lint_catches_invalid_version",
+          "callee": "bad_schema.write_text",
+          "lineNumber": 230
+        },
+        {
+          "caller": "test_lint_catches_invalid_version",
+          "callee": "SchemaValidator",
+          "lineNumber": 233
+        },
+        {
+          "caller": "test_lint_catches_invalid_version",
+          "callee": "validator.lint_schema",
+          "lineNumber": 234
+        },
+        {
+          "caller": "test_lint_catches_invalid_version",
+          "callee": "any",
+          "lineNumber": 236
+        },
+        {
+          "caller": "test_lint_catches_invalid_version",
+          "callee": "e.lower",
+          "lineNumber": 236
+        },
+        {
+          "caller": "test_lint_catches_duplicate_enum",
+          "callee": "bad_schema.write_text",
+          "lineNumber": 241
+        },
+        {
+          "caller": "test_lint_catches_duplicate_enum",
+          "callee": "SchemaValidator",
+          "lineNumber": 246
+        },
+        {
+          "caller": "test_lint_catches_duplicate_enum",
+          "callee": "validator.lint_schema",
+          "lineNumber": 247
+        },
+        {
+          "caller": "test_lint_catches_duplicate_enum",
+          "callee": "any",
+          "lineNumber": 249
+        },
+        {
+          "caller": "test_lint_catches_duplicate_enum",
+          "callee": "e.lower",
+          "lineNumber": 249
+        },
+        {
+          "caller": "test_lint_catches_invalid_regex",
+          "callee": "bad_schema.write_text",
+          "lineNumber": 254
+        },
+        {
+          "caller": "test_lint_catches_invalid_regex",
+          "callee": "SchemaValidator",
+          "lineNumber": 259
+        },
+        {
+          "caller": "test_lint_catches_invalid_regex",
+          "callee": "validator.lint_schema",
+          "lineNumber": 260
+        },
+        {
+          "caller": "test_lint_catches_invalid_regex",
+          "callee": "any",
+          "lineNumber": 262
+        },
+        {
+          "caller": "test_lint_catches_invalid_regex",
+          "callee": "e.lower",
+          "lineNumber": 262
+        },
+        {
+          "caller": "test_lint_catches_invalid_regex",
+          "callee": "e.lower",
+          "lineNumber": 262
+        },
+        {
+          "caller": "test_lint_catches_unreachable_state",
+          "callee": "bad_schema.write_text",
+          "lineNumber": 267
+        },
+        {
+          "caller": "test_lint_catches_unreachable_state",
+          "callee": "SchemaValidator",
+          "lineNumber": 273
+        },
+        {
+          "caller": "test_lint_catches_unreachable_state",
+          "callee": "validator.lint_schema",
+          "lineNumber": 274
+        },
+        {
+          "caller": "test_lint_catches_unreachable_state",
+          "callee": "any",
+          "lineNumber": 276
+        },
+        {
+          "caller": "test_lint_catches_unreachable_state",
+          "callee": "e.lower",
+          "lineNumber": 276
+        },
+        {
+          "caller": "test_no_v2_schemas_removed",
+          "callee": "CompatibilityChecker",
+          "lineNumber": 288
+        },
+        {
+          "caller": "test_no_v2_schemas_removed",
+          "callee": "checker.check",
+          "lineNumber": 289
+        },
+        {
+          "caller": "test_all_v2_schemas_preserved",
+          "callee": "CompatibilityChecker",
+          "lineNumber": 294
+        },
+        {
+          "caller": "test_all_v2_schemas_preserved",
+          "callee": "checker.check",
+          "lineNumber": 295
+        },
+        {
+          "caller": "test_all_v2_schemas_preserved",
+          "callee": "len",
+          "lineNumber": 296
+        },
+        {
+          "caller": "test_all_v2_schemas_preserved",
+          "callee": "len",
+          "lineNumber": 296
+        },
+        {
+          "caller": "test_v3_schemas_detected",
+          "callee": "CompatibilityChecker",
+          "lineNumber": 300
+        },
+        {
+          "caller": "test_v3_schemas_detected",
+          "callee": "checker.check",
+          "lineNumber": 301
+        },
+        {
+          "caller": "test_v3_schemas_detected",
+          "callee": "len",
+          "lineNumber": 302
+        },
+        {
+          "caller": "test_v3_schemas_detected",
+          "callee": "len",
+          "lineNumber": 302
+        },
+        {
+          "caller": "test_report_is_deterministic",
+          "callee": "CompatibilityChecker",
+          "lineNumber": 306
+        },
+        {
+          "caller": "test_report_is_deterministic",
+          "callee": "checker.check",
+          "lineNumber": 307
+        },
+        {
+          "caller": "test_report_is_deterministic",
+          "callee": "checker.check",
+          "lineNumber": 308
+        },
+        {
+          "caller": "test_report_is_deterministic",
+          "callee": "r1.to_dict",
+          "lineNumber": 309
+        },
+        {
+          "caller": "test_report_is_deterministic",
+          "callee": "r2.to_dict",
+          "lineNumber": 309
+        },
+        {
+          "caller": "test_migration_hints_present",
+          "callee": "CompatibilityChecker",
+          "lineNumber": 313
+        },
+        {
+          "caller": "test_migration_hints_present",
+          "callee": "checker.check",
+          "lineNumber": 314
+        },
+        {
+          "caller": "test_migration_hints_present",
+          "callee": "len",
+          "lineNumber": 315
+        },
+        {
+          "caller": "test_detects_missing_v2_schema",
+          "callee": "(tmp_path / name).write_text",
+          "lineNumber": 322
+        },
+        {
+          "caller": "test_detects_missing_v2_schema",
+          "callee": "CompatibilityChecker",
+          "lineNumber": 323
+        },
+        {
+          "caller": "test_detects_missing_v2_schema",
+          "callee": "checker.check",
+          "lineNumber": 324
+        },
+        {
+          "caller": "test_detects_missing_v2_schema",
+          "callee": "len",
+          "lineNumber": 326
+        },
+        {
+          "caller": "_load_schema",
+          "callee": "open",
+          "lineNumber": 335
+        },
+        {
+          "caller": "_load_schema",
+          "callee": "yaml.safe_load",
+          "lineNumber": 336
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 1,
+        "classCount": 9
+      }
+    },
+    {
+      "path": "tests/test_v3_migration.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 225,
+      "nonEmptyLines": 181,
+      "functions": [
+        {
+          "name": "_find_gate",
+          "startLine": 221,
+          "endLine": 225,
+          "params": [
+            "scorecard",
+            "name"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TestMigrationDryRun",
+          "startLine": 29,
+          "endLine": 103,
+          "methods": [
+            "test_dry_run_succeeds",
+            "test_zero_blockers",
+            "test_all_v2_schemas_preserved",
+            "test_all_v3_schemas_present",
+            "test_all_v3_modules_present",
+            "test_all_v3_tests_present",
+            "test_all_v2_modules_intact",
+            "test_report_is_deterministic",
+            "test_detects_missing_schema"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestReleaseGates",
+          "startLine": 110,
+          "endLine": 156,
+          "methods": [
+            "test_all_gates_pass",
+            "test_schema_and_contracts_gate",
+            "test_policy_and_security_gate",
+            "test_replay_determinism_gate",
+            "test_context_integrity_gate",
+            "test_prompt_quality_gate",
+            "test_migration_readiness_gate"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestReleaseScorecard",
+          "startLine": 159,
+          "endLine": 184,
+          "methods": [
+            "test_weighted_score_at_least_90",
+            "test_go_recommendation",
+            "test_scorecard_serializes"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestDocsReadiness",
+          "startLine": 191,
+          "endLine": 214,
+          "methods": [
+            "test_prompts_directory_exists",
+            "test_system_prompt_exists",
+            "test_schemas_have_descriptions",
+            "test_docs_exist"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestMigrationDryRun",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "TestReleaseGates",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "TestReleaseScorecard",
+          "line": 159,
+          "isDefault": false
+        },
+        {
+          "name": "TestDocsReadiness",
+          "line": 191,
+          "isDefault": false
+        },
+        {
+          "name": "_find_gate",
+          "line": 221,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_dry_run_succeeds",
+          "callee": "MigrationRunner",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_dry_run_succeeds",
+          "callee": "runner.dry_run",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_zero_blockers",
+          "callee": "MigrationRunner",
+          "lineNumber": 38
+        },
+        {
+          "caller": "test_zero_blockers",
+          "callee": "runner.dry_run",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_zero_blockers",
+          "callee": "len",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_all_v2_schemas_preserved",
+          "callee": "MigrationRunner",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_all_v2_schemas_preserved",
+          "callee": "runner.dry_run",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_all_v3_schemas_present",
+          "callee": "MigrationRunner",
+          "lineNumber": 50
+        },
+        {
+          "caller": "test_all_v3_schemas_present",
+          "callee": "runner.dry_run",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_all_v3_schemas_present",
+          "callee": "len",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_all_v3_modules_present",
+          "callee": "MigrationRunner",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_all_v3_modules_present",
+          "callee": "runner.dry_run",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_all_v3_modules_present",
+          "callee": "len",
+          "lineNumber": 65
+        },
+        {
+          "caller": "test_all_v3_tests_present",
+          "callee": "MigrationRunner",
+          "lineNumber": 68
+        },
+        {
+          "caller": "test_all_v3_tests_present",
+          "callee": "runner.dry_run",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_all_v3_tests_present",
+          "callee": "len",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_all_v2_modules_intact",
+          "callee": "MigrationRunner",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_all_v2_modules_intact",
+          "callee": "runner.dry_run",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_report_is_deterministic",
+          "callee": "MigrationRunner",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_report_is_deterministic",
+          "callee": "runner.dry_run",
+          "lineNumber": 85
+        },
+        {
+          "caller": "test_report_is_deterministic",
+          "callee": "runner.dry_run",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_report_is_deterministic",
+          "callee": "r1.to_dict",
+          "lineNumber": 87
+        },
+        {
+          "caller": "test_report_is_deterministic",
+          "callee": "r2.to_dict",
+          "lineNumber": 87
+        },
+        {
+          "caller": "test_report_is_deterministic",
+          "callee": "r1.to_dict",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_report_is_deterministic",
+          "callee": "r2.to_dict",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_report_is_deterministic",
+          "callee": "r1.to_dict",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_report_is_deterministic",
+          "callee": "r2.to_dict",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_detects_missing_schema",
+          "callee": "(tmp_path / \"schemas\").mkdir",
+          "lineNumber": 94
+        },
+        {
+          "caller": "test_detects_missing_schema",
+          "callee": "(tmp_path / \"schemas\" / name).write_text",
+          "lineNumber": 96
+        },
+        {
+          "caller": "test_detects_missing_schema",
+          "callee": "(tmp_path / \"src\" / \"archon\" / \"core\").mkdir",
+          "lineNumber": 97
+        },
+        {
+          "caller": "test_detects_missing_schema",
+          "callee": "(tmp_path / \"tests\").mkdir",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_detects_missing_schema",
+          "callee": "MigrationRunner",
+          "lineNumber": 100
+        },
+        {
+          "caller": "test_detects_missing_schema",
+          "callee": "runner.dry_run",
+          "lineNumber": 101
+        },
+        {
+          "caller": "test_detects_missing_schema",
+          "callee": "any",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_all_gates_pass",
+          "callee": "ReleaseGateValidator",
+          "lineNumber": 114
+        },
+        {
+          "caller": "test_all_gates_pass",
+          "callee": "validator.validate_all",
+          "lineNumber": 115
+        },
+        {
+          "caller": "test_schema_and_contracts_gate",
+          "callee": "ReleaseGateValidator",
+          "lineNumber": 122
+        },
+        {
+          "caller": "test_schema_and_contracts_gate",
+          "callee": "validator.validate_all",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_schema_and_contracts_gate",
+          "callee": "_find_gate",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_schema_and_contracts_gate",
+          "callee": "len",
+          "lineNumber": 126
+        },
+        {
+          "caller": "test_policy_and_security_gate",
+          "callee": "ReleaseGateValidator",
+          "lineNumber": 129
+        },
+        {
+          "caller": "test_policy_and_security_gate",
+          "callee": "validator.validate_all",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_policy_and_security_gate",
+          "callee": "_find_gate",
+          "lineNumber": 131
+        },
+        {
+          "caller": "test_replay_determinism_gate",
+          "callee": "ReleaseGateValidator",
+          "lineNumber": 135
+        },
+        {
+          "caller": "test_replay_determinism_gate",
+          "callee": "validator.validate_all",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_replay_determinism_gate",
+          "callee": "_find_gate",
+          "lineNumber": 137
+        },
+        {
+          "caller": "test_context_integrity_gate",
+          "callee": "ReleaseGateValidator",
+          "lineNumber": 141
+        },
+        {
+          "caller": "test_context_integrity_gate",
+          "callee": "validator.validate_all",
+          "lineNumber": 142
+        },
+        {
+          "caller": "test_context_integrity_gate",
+          "callee": "_find_gate",
+          "lineNumber": 143
+        },
+        {
+          "caller": "test_prompt_quality_gate",
+          "callee": "ReleaseGateValidator",
+          "lineNumber": 147
+        },
+        {
+          "caller": "test_prompt_quality_gate",
+          "callee": "validator.validate_all",
+          "lineNumber": 148
+        },
+        {
+          "caller": "test_prompt_quality_gate",
+          "callee": "_find_gate",
+          "lineNumber": 149
+        },
+        {
+          "caller": "test_migration_readiness_gate",
+          "callee": "ReleaseGateValidator",
+          "lineNumber": 153
+        },
+        {
+          "caller": "test_migration_readiness_gate",
+          "callee": "validator.validate_all",
+          "lineNumber": 154
+        },
+        {
+          "caller": "test_migration_readiness_gate",
+          "callee": "_find_gate",
+          "lineNumber": 155
+        },
+        {
+          "caller": "test_weighted_score_at_least_90",
+          "callee": "ReleaseGateValidator",
+          "lineNumber": 163
+        },
+        {
+          "caller": "test_weighted_score_at_least_90",
+          "callee": "validator.validate_all",
+          "lineNumber": 164
+        },
+        {
+          "caller": "test_go_recommendation",
+          "callee": "ReleaseGateValidator",
+          "lineNumber": 170
+        },
+        {
+          "caller": "test_go_recommendation",
+          "callee": "validator.validate_all",
+          "lineNumber": 171
+        },
+        {
+          "caller": "test_scorecard_serializes",
+          "callee": "ReleaseGateValidator",
+          "lineNumber": 178
+        },
+        {
+          "caller": "test_scorecard_serializes",
+          "callee": "validator.validate_all",
+          "lineNumber": 179
+        },
+        {
+          "caller": "test_scorecard_serializes",
+          "callee": "scorecard.to_dict",
+          "lineNumber": 180
+        },
+        {
+          "caller": "test_prompts_directory_exists",
+          "callee": "(ARCHON_ROOT / \"prompts\").is_dir",
+          "lineNumber": 195
+        },
+        {
+          "caller": "test_system_prompt_exists",
+          "callee": "(ARCHON_ROOT / \"prompts\" / \"system.md\").exists",
+          "lineNumber": 198
+        },
+        {
+          "caller": "test_schemas_have_descriptions",
+          "callee": "schemas_dir.glob",
+          "lineNumber": 203
+        },
+        {
+          "caller": "test_schemas_have_descriptions",
+          "callee": "open",
+          "lineNumber": 204
+        },
+        {
+          "caller": "test_schemas_have_descriptions",
+          "callee": "yaml.safe_load",
+          "lineNumber": 205
+        },
+        {
+          "caller": "test_docs_exist",
+          "callee": "docs_dir.is_dir",
+          "lineNumber": 212
+        },
+        {
+          "caller": "test_docs_exist",
+          "callee": "getting_started.exists",
+          "lineNumber": 214
+        },
+        {
+          "caller": "_find_gate",
+          "callee": "ValueError",
+          "lineNumber": 225
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 1,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "tests/test_v3_policy.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 351,
+      "nonEmptyLines": 305,
+      "classes": [
+        {
+          "name": "TestPolicyEngineBasics",
+          "startLine": 25,
+          "endLine": 88,
+          "methods": [
+            "test_default_deny_when_no_rules",
+            "test_allow_rule_matches",
+            "test_deny_rule_matches",
+            "test_escalate_rule",
+            "test_prompt_action_becomes_escalate",
+            "test_first_matching_rule_wins"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestTrustTierPrecedence",
+          "startLine": 91,
+          "endLine": 116,
+          "methods": [
+            "test_builtin_satisfies_community",
+            "test_untrusted_rejected_for_verified_rule",
+            "test_verified_satisfies_community"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestConditionEvaluation",
+          "startLine": 119,
+          "endLine": 185,
+          "methods": [
+            "test_condition_eq_matches",
+            "test_condition_eq_fails",
+            "test_condition_neq",
+            "test_multiple_conditions_and_logic"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestSchemaValidation",
+          "startLine": 192,
+          "endLine": 278,
+          "methods": [
+            "test_missing_required_arg_denied",
+            "test_valid_args_allowed",
+            "test_wrong_type_denied",
+            "test_pattern_validation",
+            "test_enum_validation",
+            "test_no_schema_passes_through"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestPolicyDecisionArtifacts",
+          "startLine": 285,
+          "endLine": 351,
+          "methods": [
+            "test_decision_has_required_fields",
+            "test_decision_id_format",
+            "test_audit_log_records_all_decisions",
+            "test_filter_by_session",
+            "test_denied_decisions_queryable",
+            "test_conditions_evaluated_recorded",
+            "test_decision_is_replayable"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestPolicyEngineBasics",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "TestTrustTierPrecedence",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "TestConditionEvaluation",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "TestSchemaValidation",
+          "line": 192,
+          "isDefault": false
+        },
+        {
+          "name": "TestPolicyDecisionArtifacts",
+          "line": 285,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_default_deny_when_no_rules",
+          "callee": "PolicyEngine",
+          "lineNumber": 29
+        },
+        {
+          "caller": "test_default_deny_when_no_rules",
+          "callee": "engine.evaluate",
+          "lineNumber": 30
+        },
+        {
+          "caller": "test_allow_rule_matches",
+          "callee": "PolicyEngine",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_allow_rule_matches",
+          "callee": "engine.add_rule",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_allow_rule_matches",
+          "callee": "PermissionRule",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_allow_rule_matches",
+          "callee": "engine.evaluate",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_deny_rule_matches",
+          "callee": "PolicyEngine",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_deny_rule_matches",
+          "callee": "engine.add_rule",
+          "lineNumber": 47
+        },
+        {
+          "caller": "test_deny_rule_matches",
+          "callee": "PermissionRule",
+          "lineNumber": 47
+        },
+        {
+          "caller": "test_deny_rule_matches",
+          "callee": "engine.evaluate",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_escalate_rule",
+          "callee": "PolicyEngine",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_escalate_rule",
+          "callee": "engine.add_rule",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_escalate_rule",
+          "callee": "PermissionRule",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_escalate_rule",
+          "callee": "engine.evaluate",
+          "lineNumber": 64
+        },
+        {
+          "caller": "test_prompt_action_becomes_escalate",
+          "callee": "PolicyEngine",
+          "lineNumber": 68
+        },
+        {
+          "caller": "test_prompt_action_becomes_escalate",
+          "callee": "engine.add_rule",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_prompt_action_becomes_escalate",
+          "callee": "PermissionRule",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_prompt_action_becomes_escalate",
+          "callee": "engine.evaluate",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_first_matching_rule_wins",
+          "callee": "PolicyEngine",
+          "lineNumber": 79
+        },
+        {
+          "caller": "test_first_matching_rule_wins",
+          "callee": "engine.add_rule",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_first_matching_rule_wins",
+          "callee": "PermissionRule",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_first_matching_rule_wins",
+          "callee": "engine.add_rule",
+          "lineNumber": 83
+        },
+        {
+          "caller": "test_first_matching_rule_wins",
+          "callee": "PermissionRule",
+          "lineNumber": 83
+        },
+        {
+          "caller": "test_first_matching_rule_wins",
+          "callee": "engine.evaluate",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_builtin_satisfies_community",
+          "callee": "PolicyEngine",
+          "lineNumber": 95
+        },
+        {
+          "caller": "test_builtin_satisfies_community",
+          "callee": "engine.add_rule",
+          "lineNumber": 96
+        },
+        {
+          "caller": "test_builtin_satisfies_community",
+          "callee": "PermissionRule",
+          "lineNumber": 96
+        },
+        {
+          "caller": "test_builtin_satisfies_community",
+          "callee": "engine.evaluate",
+          "lineNumber": 99
+        },
+        {
+          "caller": "test_untrusted_rejected_for_verified_rule",
+          "callee": "PolicyEngine",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_untrusted_rejected_for_verified_rule",
+          "callee": "engine.add_rule",
+          "lineNumber": 104
+        },
+        {
+          "caller": "test_untrusted_rejected_for_verified_rule",
+          "callee": "PermissionRule",
+          "lineNumber": 104
+        },
+        {
+          "caller": "test_untrusted_rejected_for_verified_rule",
+          "callee": "engine.evaluate",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_verified_satisfies_community",
+          "callee": "PolicyEngine",
+          "lineNumber": 111
+        },
+        {
+          "caller": "test_verified_satisfies_community",
+          "callee": "engine.add_rule",
+          "lineNumber": 112
+        },
+        {
+          "caller": "test_verified_satisfies_community",
+          "callee": "PermissionRule",
+          "lineNumber": 112
+        },
+        {
+          "caller": "test_verified_satisfies_community",
+          "callee": "engine.evaluate",
+          "lineNumber": 115
+        },
+        {
+          "caller": "test_condition_eq_matches",
+          "callee": "PolicyEngine",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_condition_eq_matches",
+          "callee": "engine.add_rule",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_condition_eq_matches",
+          "callee": "PermissionRule",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_condition_eq_matches",
+          "callee": "engine.evaluate",
+          "lineNumber": 131
+        },
+        {
+          "caller": "test_condition_eq_fails",
+          "callee": "PolicyEngine",
+          "lineNumber": 138
+        },
+        {
+          "caller": "test_condition_eq_fails",
+          "callee": "engine.add_rule",
+          "lineNumber": 139
+        },
+        {
+          "caller": "test_condition_eq_fails",
+          "callee": "PermissionRule",
+          "lineNumber": 139
+        },
+        {
+          "caller": "test_condition_eq_fails",
+          "callee": "engine.evaluate",
+          "lineNumber": 146
+        },
+        {
+          "caller": "test_condition_neq",
+          "callee": "PolicyEngine",
+          "lineNumber": 153
+        },
+        {
+          "caller": "test_condition_neq",
+          "callee": "engine.add_rule",
+          "lineNumber": 154
+        },
+        {
+          "caller": "test_condition_neq",
+          "callee": "PermissionRule",
+          "lineNumber": 154
+        },
+        {
+          "caller": "test_condition_neq",
+          "callee": "engine.evaluate",
+          "lineNumber": 161
+        },
+        {
+          "caller": "test_multiple_conditions_and_logic",
+          "callee": "PolicyEngine",
+          "lineNumber": 168
+        },
+        {
+          "caller": "test_multiple_conditions_and_logic",
+          "callee": "engine.add_rule",
+          "lineNumber": 169
+        },
+        {
+          "caller": "test_multiple_conditions_and_logic",
+          "callee": "PermissionRule",
+          "lineNumber": 169
+        },
+        {
+          "caller": "test_multiple_conditions_and_logic",
+          "callee": "engine.evaluate",
+          "lineNumber": 180
+        },
+        {
+          "caller": "test_multiple_conditions_and_logic",
+          "callee": "engine.evaluate",
+          "lineNumber": 184
+        },
+        {
+          "caller": "test_missing_required_arg_denied",
+          "callee": "PolicyEngine",
+          "lineNumber": 196
+        },
+        {
+          "caller": "test_missing_required_arg_denied",
+          "callee": "engine.add_rule",
+          "lineNumber": 197
+        },
+        {
+          "caller": "test_missing_required_arg_denied",
+          "callee": "PermissionRule",
+          "lineNumber": 197
+        },
+        {
+          "caller": "test_missing_required_arg_denied",
+          "callee": "engine.register_tool_schema",
+          "lineNumber": 200
+        },
+        {
+          "caller": "test_missing_required_arg_denied",
+          "callee": "engine.evaluate",
+          "lineNumber": 204
+        },
+        {
+          "caller": "test_valid_args_allowed",
+          "callee": "PolicyEngine",
+          "lineNumber": 209
+        },
+        {
+          "caller": "test_valid_args_allowed",
+          "callee": "engine.add_rule",
+          "lineNumber": 210
+        },
+        {
+          "caller": "test_valid_args_allowed",
+          "callee": "PermissionRule",
+          "lineNumber": 210
+        },
+        {
+          "caller": "test_valid_args_allowed",
+          "callee": "engine.register_tool_schema",
+          "lineNumber": 213
+        },
+        {
+          "caller": "test_valid_args_allowed",
+          "callee": "engine.evaluate",
+          "lineNumber": 217
+        },
+        {
+          "caller": "test_wrong_type_denied",
+          "callee": "PolicyEngine",
+          "lineNumber": 224
+        },
+        {
+          "caller": "test_wrong_type_denied",
+          "callee": "engine.add_rule",
+          "lineNumber": 225
+        },
+        {
+          "caller": "test_wrong_type_denied",
+          "callee": "PermissionRule",
+          "lineNumber": 225
+        },
+        {
+          "caller": "test_wrong_type_denied",
+          "callee": "engine.register_tool_schema",
+          "lineNumber": 228
+        },
+        {
+          "caller": "test_wrong_type_denied",
+          "callee": "engine.evaluate",
+          "lineNumber": 232
+        },
+        {
+          "caller": "test_wrong_type_denied",
+          "callee": "decision.rationale.lower",
+          "lineNumber": 237
+        },
+        {
+          "caller": "test_pattern_validation",
+          "callee": "PolicyEngine",
+          "lineNumber": 240
+        },
+        {
+          "caller": "test_pattern_validation",
+          "callee": "engine.add_rule",
+          "lineNumber": 241
+        },
+        {
+          "caller": "test_pattern_validation",
+          "callee": "PermissionRule",
+          "lineNumber": 241
+        },
+        {
+          "caller": "test_pattern_validation",
+          "callee": "engine.register_tool_schema",
+          "lineNumber": 244
+        },
+        {
+          "caller": "test_pattern_validation",
+          "callee": "engine.evaluate",
+          "lineNumber": 249
+        },
+        {
+          "caller": "test_pattern_validation",
+          "callee": "engine.evaluate",
+          "lineNumber": 253
+        },
+        {
+          "caller": "test_enum_validation",
+          "callee": "PolicyEngine",
+          "lineNumber": 257
+        },
+        {
+          "caller": "test_enum_validation",
+          "callee": "engine.add_rule",
+          "lineNumber": 258
+        },
+        {
+          "caller": "test_enum_validation",
+          "callee": "PermissionRule",
+          "lineNumber": 258
+        },
+        {
+          "caller": "test_enum_validation",
+          "callee": "engine.register_tool_schema",
+          "lineNumber": 261
+        },
+        {
+          "caller": "test_enum_validation",
+          "callee": "engine.evaluate",
+          "lineNumber": 265
+        },
+        {
+          "caller": "test_enum_validation",
+          "callee": "engine.evaluate",
+          "lineNumber": 268
+        },
+        {
+          "caller": "test_no_schema_passes_through",
+          "callee": "PolicyEngine",
+          "lineNumber": 273
+        },
+        {
+          "caller": "test_no_schema_passes_through",
+          "callee": "engine.add_rule",
+          "lineNumber": 274
+        },
+        {
+          "caller": "test_no_schema_passes_through",
+          "callee": "PermissionRule",
+          "lineNumber": 274
+        },
+        {
+          "caller": "test_no_schema_passes_through",
+          "callee": "engine.evaluate",
+          "lineNumber": 277
+        },
+        {
+          "caller": "test_decision_has_required_fields",
+          "callee": "PolicyEngine",
+          "lineNumber": 289
+        },
+        {
+          "caller": "test_decision_has_required_fields",
+          "callee": "engine.evaluate",
+          "lineNumber": 290
+        },
+        {
+          "caller": "test_decision_has_required_fields",
+          "callee": "decision.to_dict",
+          "lineNumber": 291
+        },
+        {
+          "caller": "test_decision_id_format",
+          "callee": "PolicyEngine",
+          "lineNumber": 302
+        },
+        {
+          "caller": "test_decision_id_format",
+          "callee": "engine.evaluate",
+          "lineNumber": 303
+        },
+        {
+          "caller": "test_decision_id_format",
+          "callee": "decision.decision_id.startswith",
+          "lineNumber": 304
+        },
+        {
+          "caller": "test_audit_log_records_all_decisions",
+          "callee": "PolicyEngine",
+          "lineNumber": 307
+        },
+        {
+          "caller": "test_audit_log_records_all_decisions",
+          "callee": "engine.evaluate",
+          "lineNumber": 308
+        },
+        {
+          "caller": "test_audit_log_records_all_decisions",
+          "callee": "engine.evaluate",
+          "lineNumber": 309
+        },
+        {
+          "caller": "test_audit_log_records_all_decisions",
+          "callee": "engine.evaluate",
+          "lineNumber": 310
+        },
+        {
+          "caller": "test_audit_log_records_all_decisions",
+          "callee": "len",
+          "lineNumber": 311
+        },
+        {
+          "caller": "test_filter_by_session",
+          "callee": "PolicyEngine",
+          "lineNumber": 314
+        },
+        {
+          "caller": "test_filter_by_session",
+          "callee": "engine.evaluate",
+          "lineNumber": 315
+        },
+        {
+          "caller": "test_filter_by_session",
+          "callee": "engine.evaluate",
+          "lineNumber": 316
+        },
+        {
+          "caller": "test_filter_by_session",
+          "callee": "engine.evaluate",
+          "lineNumber": 317
+        },
+        {
+          "caller": "test_filter_by_session",
+          "callee": "engine.get_decisions_for_session",
+          "lineNumber": 318
+        },
+        {
+          "caller": "test_filter_by_session",
+          "callee": "len",
+          "lineNumber": 319
+        },
+        {
+          "caller": "test_filter_by_session",
+          "callee": "all",
+          "lineNumber": 320
+        },
+        {
+          "caller": "test_denied_decisions_queryable",
+          "callee": "PolicyEngine",
+          "lineNumber": 323
+        },
+        {
+          "caller": "test_denied_decisions_queryable",
+          "callee": "engine.evaluate",
+          "lineNumber": 324
+        },
+        {
+          "caller": "test_denied_decisions_queryable",
+          "callee": "engine.add_rule",
+          "lineNumber": 325
+        },
+        {
+          "caller": "test_denied_decisions_queryable",
+          "callee": "PermissionRule",
+          "lineNumber": 325
+        },
+        {
+          "caller": "test_denied_decisions_queryable",
+          "callee": "engine.evaluate",
+          "lineNumber": 328
+        },
+        {
+          "caller": "test_denied_decisions_queryable",
+          "callee": "engine.get_denied_decisions",
+          "lineNumber": 329
+        },
+        {
+          "caller": "test_denied_decisions_queryable",
+          "callee": "len",
+          "lineNumber": 330
+        },
+        {
+          "caller": "test_conditions_evaluated_recorded",
+          "callee": "PolicyEngine",
+          "lineNumber": 334
+        },
+        {
+          "caller": "test_conditions_evaluated_recorded",
+          "callee": "engine.add_rule",
+          "lineNumber": 335
+        },
+        {
+          "caller": "test_conditions_evaluated_recorded",
+          "callee": "PermissionRule",
+          "lineNumber": 335
+        },
+        {
+          "caller": "test_conditions_evaluated_recorded",
+          "callee": "engine.evaluate",
+          "lineNumber": 339
+        },
+        {
+          "caller": "test_conditions_evaluated_recorded",
+          "callee": "len",
+          "lineNumber": 340
+        },
+        {
+          "caller": "test_decision_is_replayable",
+          "callee": "PolicyEngine",
+          "lineNumber": 344
+        },
+        {
+          "caller": "test_decision_is_replayable",
+          "callee": "engine.evaluate",
+          "lineNumber": 345
+        },
+        {
+          "caller": "test_decision_is_replayable",
+          "callee": "decision.to_dict",
+          "lineNumber": 346
+        },
+        {
+          "caller": "test_decision_is_replayable",
+          "callee": "isinstance",
+          "lineNumber": 351
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 0,
+        "classCount": 5
+      }
+    },
+    {
+      "path": "tests/test_v3_session.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 371,
+      "nonEmptyLines": 297,
+      "functions": [
+        {
+          "name": "_active_session",
+          "startLine": 367,
+          "endLine": 371,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "TestSessionStateMachine",
+          "startLine": 27,
+          "endLine": 129,
+          "methods": [
+            "test_create_starts_in_created",
+            "test_created_to_active",
+            "test_active_to_waiting_tool",
+            "test_active_to_waiting_permission",
+            "test_active_to_idle",
+            "test_active_to_error",
+            "test_active_to_archived",
+            "test_waiting_tool_to_active",
+            "test_waiting_permission_to_active",
+            "test_idle_to_active",
+            "test_idle_to_archived",
+            "test_error_to_recovering",
+            "test_recovering_to_active",
+            "test_recovering_to_archived",
+            "test_archived_is_terminal",
+            "test_created_cannot_skip_to_error",
+            "test_created_cannot_go_to_idle",
+            "test_error_cannot_go_to_active_directly"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestRecoveryPolicy",
+          "startLine": 136,
+          "endLine": 175,
+          "methods": [
+            "test_recovery_respects_max_retries",
+            "test_recovery_counter_increments",
+            "test_default_recovery_allows_3_retries"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestSessionLifecycle",
+          "startLine": 182,
+          "endLine": 225,
+          "methods": [
+            "test_create_generates_valid_ids",
+            "test_send_records_step",
+            "test_send_rejects_when_not_active",
+            "test_abort_from_error",
+            "test_objective_survives_lifecycle",
+            "test_constraints_survive_lifecycle"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestSessionPersistence",
+          "startLine": 228,
+          "endLine": 264,
+          "methods": [
+            "test_save_and_load",
+            "test_load_nonexistent_returns_none",
+            "test_resume_from_disk_preserves_constraints"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestAccumulatedState",
+          "startLine": 267,
+          "endLine": 284,
+          "methods": [
+            "test_add_decision",
+            "test_no_duplicate_decisions",
+            "test_add_constraint"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestCorrelationLinking",
+          "startLine": 291,
+          "endLine": 325,
+          "methods": [
+            "test_link_returns_correlation_id",
+            "test_link_emits_event",
+            "test_all_events_carry_correlation_id",
+            "test_context_checksum_is_deterministic",
+            "test_steps_carry_correlation_id"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestEventLog",
+          "startLine": 328,
+          "endLine": 360,
+          "methods": [
+            "test_create_emits_event",
+            "test_full_lifecycle_events",
+            "test_events_have_required_fields"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestSessionStateMachine",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "TestRecoveryPolicy",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "TestSessionLifecycle",
+          "line": 182,
+          "isDefault": false
+        },
+        {
+          "name": "TestSessionPersistence",
+          "line": 228,
+          "isDefault": false
+        },
+        {
+          "name": "TestAccumulatedState",
+          "line": 267,
+          "isDefault": false
+        },
+        {
+          "name": "TestCorrelationLinking",
+          "line": 291,
+          "isDefault": false
+        },
+        {
+          "name": "TestEventLog",
+          "line": 328,
+          "isDefault": false
+        },
+        {
+          "name": "_active_session",
+          "line": 367,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_create_starts_in_created",
+          "callee": "Session.create",
+          "lineNumber": 31
+        },
+        {
+          "caller": "test_created_to_active",
+          "callee": "Session.create",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_created_to_active",
+          "callee": "s.activate",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_active_to_waiting_tool",
+          "callee": "_active_session",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_active_to_waiting_tool",
+          "callee": "s.wait_for_tool",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_active_to_waiting_permission",
+          "callee": "_active_session",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_active_to_waiting_permission",
+          "callee": "s.wait_for_permission",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_active_to_idle",
+          "callee": "_active_session",
+          "lineNumber": 50
+        },
+        {
+          "caller": "test_active_to_idle",
+          "callee": "s.idle",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_active_to_error",
+          "callee": "_active_session",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_active_to_error",
+          "callee": "s.fail",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_active_to_archived",
+          "callee": "_active_session",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_active_to_archived",
+          "callee": "s.complete",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_waiting_tool_to_active",
+          "callee": "_active_session",
+          "lineNumber": 65
+        },
+        {
+          "caller": "test_waiting_tool_to_active",
+          "callee": "s.wait_for_tool",
+          "lineNumber": 66
+        },
+        {
+          "caller": "test_waiting_tool_to_active",
+          "callee": "s.resume",
+          "lineNumber": 67
+        },
+        {
+          "caller": "test_waiting_permission_to_active",
+          "callee": "_active_session",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_waiting_permission_to_active",
+          "callee": "s.wait_for_permission",
+          "lineNumber": 72
+        },
+        {
+          "caller": "test_waiting_permission_to_active",
+          "callee": "s.resume",
+          "lineNumber": 73
+        },
+        {
+          "caller": "test_idle_to_active",
+          "callee": "_active_session",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_idle_to_active",
+          "callee": "s.idle",
+          "lineNumber": 78
+        },
+        {
+          "caller": "test_idle_to_active",
+          "callee": "s.resume",
+          "lineNumber": 79
+        },
+        {
+          "caller": "test_idle_to_archived",
+          "callee": "_active_session",
+          "lineNumber": 83
+        },
+        {
+          "caller": "test_idle_to_archived",
+          "callee": "s.idle",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_idle_to_archived",
+          "callee": "s.abort",
+          "lineNumber": 85
+        },
+        {
+          "caller": "test_error_to_recovering",
+          "callee": "_active_session",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_error_to_recovering",
+          "callee": "s.fail",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_error_to_recovering",
+          "callee": "s.recover",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_recovering_to_active",
+          "callee": "_active_session",
+          "lineNumber": 96
+        },
+        {
+          "caller": "test_recovering_to_active",
+          "callee": "s.fail",
+          "lineNumber": 97
+        },
+        {
+          "caller": "test_recovering_to_active",
+          "callee": "s.recover",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_recovering_to_active",
+          "callee": "s.resume",
+          "lineNumber": 99
+        },
+        {
+          "caller": "test_recovering_to_archived",
+          "callee": "_active_session",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_recovering_to_archived",
+          "callee": "s.fail",
+          "lineNumber": 104
+        },
+        {
+          "caller": "test_recovering_to_archived",
+          "callee": "s.recover",
+          "lineNumber": 105
+        },
+        {
+          "caller": "test_recovering_to_archived",
+          "callee": "s.abort",
+          "lineNumber": 106
+        },
+        {
+          "caller": "test_archived_is_terminal",
+          "callee": "_active_session",
+          "lineNumber": 110
+        },
+        {
+          "caller": "test_archived_is_terminal",
+          "callee": "s.complete",
+          "lineNumber": 111
+        },
+        {
+          "caller": "test_archived_is_terminal",
+          "callee": "pytest.raises",
+          "lineNumber": 112
+        },
+        {
+          "caller": "test_archived_is_terminal",
+          "callee": "s.activate",
+          "lineNumber": 113
+        },
+        {
+          "caller": "test_created_cannot_skip_to_error",
+          "callee": "Session.create",
+          "lineNumber": 116
+        },
+        {
+          "caller": "test_created_cannot_skip_to_error",
+          "callee": "pytest.raises",
+          "lineNumber": 117
+        },
+        {
+          "caller": "test_created_cannot_skip_to_error",
+          "callee": "s.fail",
+          "lineNumber": 118
+        },
+        {
+          "caller": "test_created_cannot_go_to_idle",
+          "callee": "Session.create",
+          "lineNumber": 121
+        },
+        {
+          "caller": "test_created_cannot_go_to_idle",
+          "callee": "pytest.raises",
+          "lineNumber": 122
+        },
+        {
+          "caller": "test_created_cannot_go_to_idle",
+          "callee": "s.idle",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_error_cannot_go_to_active_directly",
+          "callee": "_active_session",
+          "lineNumber": 126
+        },
+        {
+          "caller": "test_error_cannot_go_to_active_directly",
+          "callee": "s.fail",
+          "lineNumber": 127
+        },
+        {
+          "caller": "test_error_cannot_go_to_active_directly",
+          "callee": "pytest.raises",
+          "lineNumber": 128
+        },
+        {
+          "caller": "test_error_cannot_go_to_active_directly",
+          "callee": "s.resume",
+          "lineNumber": 129
+        },
+        {
+          "caller": "test_recovery_respects_max_retries",
+          "callee": "Session.create",
+          "lineNumber": 140
+        },
+        {
+          "caller": "test_recovery_respects_max_retries",
+          "callee": "s.activate",
+          "lineNumber": 141
+        },
+        {
+          "caller": "test_recovery_respects_max_retries",
+          "callee": "s.fail",
+          "lineNumber": 144
+        },
+        {
+          "caller": "test_recovery_respects_max_retries",
+          "callee": "s.recover",
+          "lineNumber": 145
+        },
+        {
+          "caller": "test_recovery_respects_max_retries",
+          "callee": "s.resume",
+          "lineNumber": 146
+        },
+        {
+          "caller": "test_recovery_respects_max_retries",
+          "callee": "s.fail",
+          "lineNumber": 149
+        },
+        {
+          "caller": "test_recovery_respects_max_retries",
+          "callee": "s.recover",
+          "lineNumber": 150
+        },
+        {
+          "caller": "test_recovery_respects_max_retries",
+          "callee": "s.resume",
+          "lineNumber": 151
+        },
+        {
+          "caller": "test_recovery_respects_max_retries",
+          "callee": "s.fail",
+          "lineNumber": 154
+        },
+        {
+          "caller": "test_recovery_respects_max_retries",
+          "callee": "s.recover",
+          "lineNumber": 155
+        },
+        {
+          "caller": "test_recovery_counter_increments",
+          "callee": "_active_session",
+          "lineNumber": 159
+        },
+        {
+          "caller": "test_recovery_counter_increments",
+          "callee": "s.fail",
+          "lineNumber": 160
+        },
+        {
+          "caller": "test_recovery_counter_increments",
+          "callee": "s.recover",
+          "lineNumber": 161
+        },
+        {
+          "caller": "test_recovery_counter_increments",
+          "callee": "s.resume",
+          "lineNumber": 163
+        },
+        {
+          "caller": "test_recovery_counter_increments",
+          "callee": "s.fail",
+          "lineNumber": 164
+        },
+        {
+          "caller": "test_recovery_counter_increments",
+          "callee": "s.recover",
+          "lineNumber": 165
+        },
+        {
+          "caller": "test_default_recovery_allows_3_retries",
+          "callee": "_active_session",
+          "lineNumber": 169
+        },
+        {
+          "caller": "test_default_recovery_allows_3_retries",
+          "callee": "range",
+          "lineNumber": 170
+        },
+        {
+          "caller": "test_default_recovery_allows_3_retries",
+          "callee": "s.fail",
+          "lineNumber": 171
+        },
+        {
+          "caller": "test_default_recovery_allows_3_retries",
+          "callee": "s.recover",
+          "lineNumber": 172
+        },
+        {
+          "caller": "test_default_recovery_allows_3_retries",
+          "callee": "s.resume",
+          "lineNumber": 173
+        },
+        {
+          "caller": "test_default_recovery_allows_3_retries",
+          "callee": "s.fail",
+          "lineNumber": 174
+        },
+        {
+          "caller": "test_default_recovery_allows_3_retries",
+          "callee": "s.recover",
+          "lineNumber": 175
+        },
+        {
+          "caller": "test_create_generates_valid_ids",
+          "callee": "Session.create",
+          "lineNumber": 186
+        },
+        {
+          "caller": "test_create_generates_valid_ids",
+          "callee": "s.session_id.startswith",
+          "lineNumber": 187
+        },
+        {
+          "caller": "test_create_generates_valid_ids",
+          "callee": "s.correlation_id.startswith",
+          "lineNumber": 188
+        },
+        {
+          "caller": "test_create_generates_valid_ids",
+          "callee": "len",
+          "lineNumber": 189
+        },
+        {
+          "caller": "test_create_generates_valid_ids",
+          "callee": "len",
+          "lineNumber": 190
+        },
+        {
+          "caller": "test_send_records_step",
+          "callee": "_active_session",
+          "lineNumber": 193
+        },
+        {
+          "caller": "test_send_records_step",
+          "callee": "s.send",
+          "lineNumber": 194
+        },
+        {
+          "caller": "test_send_records_step",
+          "callee": "len",
+          "lineNumber": 195
+        },
+        {
+          "caller": "test_send_rejects_when_not_active",
+          "callee": "Session.create",
+          "lineNumber": 200
+        },
+        {
+          "caller": "test_send_rejects_when_not_active",
+          "callee": "pytest.raises",
+          "lineNumber": 201
+        },
+        {
+          "caller": "test_send_rejects_when_not_active",
+          "callee": "s.send",
+          "lineNumber": 202
+        },
+        {
+          "caller": "test_abort_from_error",
+          "callee": "_active_session",
+          "lineNumber": 205
+        },
+        {
+          "caller": "test_abort_from_error",
+          "callee": "s.fail",
+          "lineNumber": 206
+        },
+        {
+          "caller": "test_abort_from_error",
+          "callee": "s.abort",
+          "lineNumber": 207
+        },
+        {
+          "caller": "test_objective_survives_lifecycle",
+          "callee": "Session.create",
+          "lineNumber": 211
+        },
+        {
+          "caller": "test_objective_survives_lifecycle",
+          "callee": "s.activate",
+          "lineNumber": 212
+        },
+        {
+          "caller": "test_objective_survives_lifecycle",
+          "callee": "s.idle",
+          "lineNumber": 213
+        },
+        {
+          "caller": "test_objective_survives_lifecycle",
+          "callee": "s.resume",
+          "lineNumber": 214
+        },
+        {
+          "caller": "test_objective_survives_lifecycle",
+          "callee": "s.complete",
+          "lineNumber": 215
+        },
+        {
+          "caller": "test_constraints_survive_lifecycle",
+          "callee": "Session.create",
+          "lineNumber": 220
+        },
+        {
+          "caller": "test_constraints_survive_lifecycle",
+          "callee": "s.activate",
+          "lineNumber": 221
+        },
+        {
+          "caller": "test_constraints_survive_lifecycle",
+          "callee": "s.idle",
+          "lineNumber": 222
+        },
+        {
+          "caller": "test_constraints_survive_lifecycle",
+          "callee": "s.resume",
+          "lineNumber": 223
+        },
+        {
+          "caller": "test_constraints_survive_lifecycle",
+          "callee": "s.complete",
+          "lineNumber": 224
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "Session.create",
+          "lineNumber": 232
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "s.activate",
+          "lineNumber": 233
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "s.send",
+          "lineNumber": 234
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "s.add_decision",
+          "lineNumber": 235
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "s.save",
+          "lineNumber": 237
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "path.exists",
+          "lineNumber": 238
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "Session.load",
+          "lineNumber": 240
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "len",
+          "lineNumber": 246
+        },
+        {
+          "caller": "test_load_nonexistent_returns_none",
+          "callee": "Session.load",
+          "lineNumber": 249
+        },
+        {
+          "caller": "test_resume_from_disk_preserves_constraints",
+          "callee": "Session.create",
+          "lineNumber": 253
+        },
+        {
+          "caller": "test_resume_from_disk_preserves_constraints",
+          "callee": "s.activate",
+          "lineNumber": 256
+        },
+        {
+          "caller": "test_resume_from_disk_preserves_constraints",
+          "callee": "s.idle",
+          "lineNumber": 257
+        },
+        {
+          "caller": "test_resume_from_disk_preserves_constraints",
+          "callee": "s.save",
+          "lineNumber": 258
+        },
+        {
+          "caller": "test_resume_from_disk_preserves_constraints",
+          "callee": "Session.load",
+          "lineNumber": 260
+        },
+        {
+          "caller": "test_resume_from_disk_preserves_constraints",
+          "callee": "loaded.resume",
+          "lineNumber": 262
+        },
+        {
+          "caller": "test_add_decision",
+          "callee": "_active_session",
+          "lineNumber": 271
+        },
+        {
+          "caller": "test_add_decision",
+          "callee": "s.add_decision",
+          "lineNumber": 272
+        },
+        {
+          "caller": "test_no_duplicate_decisions",
+          "callee": "_active_session",
+          "lineNumber": 276
+        },
+        {
+          "caller": "test_no_duplicate_decisions",
+          "callee": "s.add_decision",
+          "lineNumber": 277
+        },
+        {
+          "caller": "test_no_duplicate_decisions",
+          "callee": "s.add_decision",
+          "lineNumber": 278
+        },
+        {
+          "caller": "test_no_duplicate_decisions",
+          "callee": "s.accumulated_state[\"decisions\"].count",
+          "lineNumber": 279
+        },
+        {
+          "caller": "test_add_constraint",
+          "callee": "_active_session",
+          "lineNumber": 282
+        },
+        {
+          "caller": "test_add_constraint",
+          "callee": "s.add_constraint",
+          "lineNumber": 283
+        },
+        {
+          "caller": "test_link_returns_correlation_id",
+          "callee": "_active_session",
+          "lineNumber": 295
+        },
+        {
+          "caller": "test_link_returns_correlation_id",
+          "callee": "s.link_pipeline_trace",
+          "lineNumber": 296
+        },
+        {
+          "caller": "test_link_returns_correlation_id",
+          "callee": "corr.startswith",
+          "lineNumber": 298
+        },
+        {
+          "caller": "test_link_emits_event",
+          "callee": "_active_session",
+          "lineNumber": 301
+        },
+        {
+          "caller": "test_link_emits_event",
+          "callee": "s.link_pipeline_trace",
+          "lineNumber": 302
+        },
+        {
+          "caller": "test_link_emits_event",
+          "callee": "len",
+          "lineNumber": 304
+        },
+        {
+          "caller": "test_all_events_carry_correlation_id",
+          "callee": "Session.create",
+          "lineNumber": 308
+        },
+        {
+          "caller": "test_all_events_carry_correlation_id",
+          "callee": "s.activate",
+          "lineNumber": 309
+        },
+        {
+          "caller": "test_all_events_carry_correlation_id",
+          "callee": "s.wait_for_tool",
+          "lineNumber": 310
+        },
+        {
+          "caller": "test_all_events_carry_correlation_id",
+          "callee": "s.resume",
+          "lineNumber": 311
+        },
+        {
+          "caller": "test_context_checksum_is_deterministic",
+          "callee": "Session.create",
+          "lineNumber": 316
+        },
+        {
+          "caller": "test_context_checksum_is_deterministic",
+          "callee": "s.context_checksum",
+          "lineNumber": 317
+        },
+        {
+          "caller": "test_context_checksum_is_deterministic",
+          "callee": "s.context_checksum",
+          "lineNumber": 318
+        },
+        {
+          "caller": "test_context_checksum_is_deterministic",
+          "callee": "len",
+          "lineNumber": 320
+        },
+        {
+          "caller": "test_steps_carry_correlation_id",
+          "callee": "_active_session",
+          "lineNumber": 323
+        },
+        {
+          "caller": "test_steps_carry_correlation_id",
+          "callee": "s.send",
+          "lineNumber": 324
+        },
+        {
+          "caller": "test_create_emits_event",
+          "callee": "Session.create",
+          "lineNumber": 332
+        },
+        {
+          "caller": "test_create_emits_event",
+          "callee": "len",
+          "lineNumber": 333
+        },
+        {
+          "caller": "test_full_lifecycle_events",
+          "callee": "Session.create",
+          "lineNumber": 337
+        },
+        {
+          "caller": "test_full_lifecycle_events",
+          "callee": "s.activate",
+          "lineNumber": 338
+        },
+        {
+          "caller": "test_full_lifecycle_events",
+          "callee": "s.wait_for_tool",
+          "lineNumber": 339
+        },
+        {
+          "caller": "test_full_lifecycle_events",
+          "callee": "s.resume",
+          "lineNumber": 340
+        },
+        {
+          "caller": "test_full_lifecycle_events",
+          "callee": "s.complete",
+          "lineNumber": 341
+        },
+        {
+          "caller": "test_events_have_required_fields",
+          "callee": "Session.create",
+          "lineNumber": 353
+        },
+        {
+          "caller": "test_events_have_required_fields",
+          "callee": "s.activate",
+          "lineNumber": 354
+        },
+        {
+          "caller": "test_events_have_required_fields",
+          "callee": "event[\"event_id\"].startswith",
+          "lineNumber": 357
+        },
+        {
+          "caller": "_active_session",
+          "callee": "Session.create",
+          "lineNumber": 369
+        },
+        {
+          "caller": "_active_session",
+          "callee": "s.activate",
+          "lineNumber": 370
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 1,
+        "classCount": 7
+      }
+    },
+    {
+      "path": "tests/test_v3_telemetry.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 361,
+      "nonEmptyLines": 300,
+      "functions": [
+        {
+          "name": "_make_snapshot",
+          "startLine": 346,
+          "endLine": 361,
+          "params": [
+            "status",
+            "steps",
+            "policies",
+            "objective"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TestTelemetryEnvelope",
+          "startLine": 30,
+          "endLine": 59,
+          "methods": [
+            "test_envelope_has_required_fields",
+            "test_envelope_checksum_deterministic",
+            "test_envelope_carries_correlation_id",
+            "test_retention_class_default",
+            "test_audit_retention_for_policy_events"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestTelemetryCollector",
+          "startLine": 62,
+          "endLine": 118,
+          "methods": [
+            "test_emit_returns_id",
+            "test_filter_by_session",
+            "test_filter_by_correlation",
+            "test_filter_by_type",
+            "test_emit_from_session_event",
+            "test_emit_from_policy_decision"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestReplaySnapshot",
+          "startLine": 125,
+          "endLine": 156,
+          "methods": [
+            "test_snapshot_checksum_deterministic",
+            "test_identical_runs_same_checksum",
+            "test_different_status_different_checksum",
+            "test_save_and_load",
+            "test_load_nonexistent_returns_none"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestReplayHarness",
+          "startLine": 159,
+          "endLine": 202,
+          "methods": [
+            "test_identical_snapshots_are_deterministic",
+            "test_different_status_not_deterministic",
+            "test_different_step_count_detected",
+            "test_capture_from_live_session"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestStressSessionLifecycle",
+          "startLine": 209,
+          "endLine": 237,
+          "methods": [
+            "test_rapid_transitions_100_cycles",
+            "test_rapid_recovery_cycles",
+            "test_large_accumulated_state"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestStressPolicyEngine",
+          "startLine": 240,
+          "endLine": 267,
+          "methods": [
+            "test_1000_evaluations",
+            "test_mixed_allow_deny_pattern"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestStressTelemetry",
+          "startLine": 270,
+          "endLine": 302,
+          "methods": [
+            "test_10000_envelopes",
+            "test_persistence_roundtrip"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestStressFailureInjection",
+          "startLine": 305,
+          "endLine": 339,
+          "methods": [
+            "test_schema_validation_blocks_bad_batch",
+            "test_double_archive_rejected"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestTelemetryEnvelope",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "TestTelemetryCollector",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "TestReplaySnapshot",
+          "line": 125,
+          "isDefault": false
+        },
+        {
+          "name": "TestReplayHarness",
+          "line": 159,
+          "isDefault": false
+        },
+        {
+          "name": "TestStressSessionLifecycle",
+          "line": 209,
+          "isDefault": false
+        },
+        {
+          "name": "TestStressPolicyEngine",
+          "line": 240,
+          "isDefault": false
+        },
+        {
+          "name": "TestStressTelemetry",
+          "line": 270,
+          "isDefault": false
+        },
+        {
+          "name": "TestStressFailureInjection",
+          "line": 305,
+          "isDefault": false
+        },
+        {
+          "name": "_make_snapshot",
+          "line": 346,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_envelope_has_required_fields",
+          "callee": "TelemetryEnvelope",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_envelope_has_required_fields",
+          "callee": "e.to_dict",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_envelope_has_required_fields",
+          "callee": "d[\"envelope_id\"].startswith",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_envelope_checksum_deterministic",
+          "callee": "TelemetryEnvelope",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_envelope_checksum_deterministic",
+          "callee": "e.checksum",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_envelope_checksum_deterministic",
+          "callee": "e.checksum",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_envelope_checksum_deterministic",
+          "callee": "len",
+          "lineNumber": 47
+        },
+        {
+          "caller": "test_envelope_carries_correlation_id",
+          "callee": "TelemetryEnvelope",
+          "lineNumber": 50
+        },
+        {
+          "caller": "test_envelope_carries_correlation_id",
+          "callee": "e.to_dict",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_retention_class_default",
+          "callee": "TelemetryEnvelope",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_audit_retention_for_policy_events",
+          "callee": "TelemetryEnvelope",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_emit_returns_id",
+          "callee": "TelemetryCollector",
+          "lineNumber": 66
+        },
+        {
+          "caller": "test_emit_returns_id",
+          "callee": "c.emit",
+          "lineNumber": 67
+        },
+        {
+          "caller": "test_emit_returns_id",
+          "callee": "TelemetryEnvelope",
+          "lineNumber": 67
+        },
+        {
+          "caller": "test_emit_returns_id",
+          "callee": "eid.startswith",
+          "lineNumber": 68
+        },
+        {
+          "caller": "test_emit_returns_id",
+          "callee": "len",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_filter_by_session",
+          "callee": "TelemetryCollector",
+          "lineNumber": 72
+        },
+        {
+          "caller": "test_filter_by_session",
+          "callee": "c.emit",
+          "lineNumber": 73
+        },
+        {
+          "caller": "test_filter_by_session",
+          "callee": "TelemetryEnvelope",
+          "lineNumber": 73
+        },
+        {
+          "caller": "test_filter_by_session",
+          "callee": "c.emit",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_filter_by_session",
+          "callee": "TelemetryEnvelope",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_filter_by_session",
+          "callee": "c.emit",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_filter_by_session",
+          "callee": "TelemetryEnvelope",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_filter_by_session",
+          "callee": "c.get_by_session",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_filter_by_session",
+          "callee": "len",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_filter_by_correlation",
+          "callee": "TelemetryCollector",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_filter_by_correlation",
+          "callee": "c.emit",
+          "lineNumber": 81
+        },
+        {
+          "caller": "test_filter_by_correlation",
+          "callee": "TelemetryEnvelope",
+          "lineNumber": 81
+        },
+        {
+          "caller": "test_filter_by_correlation",
+          "callee": "c.emit",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_filter_by_correlation",
+          "callee": "TelemetryEnvelope",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_filter_by_correlation",
+          "callee": "c.get_by_correlation",
+          "lineNumber": 83
+        },
+        {
+          "caller": "test_filter_by_correlation",
+          "callee": "len",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_filter_by_type",
+          "callee": "TelemetryCollector",
+          "lineNumber": 87
+        },
+        {
+          "caller": "test_filter_by_type",
+          "callee": "c.emit",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_filter_by_type",
+          "callee": "TelemetryEnvelope",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_filter_by_type",
+          "callee": "c.emit",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_filter_by_type",
+          "callee": "TelemetryEnvelope",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_filter_by_type",
+          "callee": "c.emit",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_filter_by_type",
+          "callee": "TelemetryEnvelope",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_filter_by_type",
+          "callee": "c.get_by_type",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_filter_by_type",
+          "callee": "len",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_emit_from_session_event",
+          "callee": "TelemetryCollector",
+          "lineNumber": 95
+        },
+        {
+          "caller": "test_emit_from_session_event",
+          "callee": "c.emit_from_session_event",
+          "lineNumber": 102
+        },
+        {
+          "caller": "test_emit_from_session_event",
+          "callee": "eid.startswith",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_emit_from_policy_decision",
+          "callee": "TelemetryCollector",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_emit_from_policy_decision",
+          "callee": "c.emit_from_policy_decision",
+          "lineNumber": 114
+        },
+        {
+          "caller": "test_snapshot_checksum_deterministic",
+          "callee": "_make_snapshot",
+          "lineNumber": 129
+        },
+        {
+          "caller": "test_snapshot_checksum_deterministic",
+          "callee": "s.checksum",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_snapshot_checksum_deterministic",
+          "callee": "s.checksum",
+          "lineNumber": 131
+        },
+        {
+          "caller": "test_identical_runs_same_checksum",
+          "callee": "_make_snapshot",
+          "lineNumber": 135
+        },
+        {
+          "caller": "test_identical_runs_same_checksum",
+          "callee": "_make_snapshot",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_identical_runs_same_checksum",
+          "callee": "s1.checksum",
+          "lineNumber": 137
+        },
+        {
+          "caller": "test_identical_runs_same_checksum",
+          "callee": "s2.checksum",
+          "lineNumber": 137
+        },
+        {
+          "caller": "test_different_status_different_checksum",
+          "callee": "_make_snapshot",
+          "lineNumber": 140
+        },
+        {
+          "caller": "test_different_status_different_checksum",
+          "callee": "_make_snapshot",
+          "lineNumber": 141
+        },
+        {
+          "caller": "test_different_status_different_checksum",
+          "callee": "s1.checksum",
+          "lineNumber": 142
+        },
+        {
+          "caller": "test_different_status_different_checksum",
+          "callee": "s2.checksum",
+          "lineNumber": 142
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "_make_snapshot",
+          "lineNumber": 145
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "s.save",
+          "lineNumber": 146
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "path.exists",
+          "lineNumber": 147
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "ReplaySnapshot.load",
+          "lineNumber": 149
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "loaded.checksum",
+          "lineNumber": 152
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "s.checksum",
+          "lineNumber": 152
+        },
+        {
+          "caller": "test_load_nonexistent_returns_none",
+          "callee": "ReplaySnapshot.load",
+          "lineNumber": 155
+        },
+        {
+          "caller": "test_identical_snapshots_are_deterministic",
+          "callee": "ReplayHarness",
+          "lineNumber": 163
+        },
+        {
+          "caller": "test_identical_snapshots_are_deterministic",
+          "callee": "_make_snapshot",
+          "lineNumber": 164
+        },
+        {
+          "caller": "test_identical_snapshots_are_deterministic",
+          "callee": "_make_snapshot",
+          "lineNumber": 165
+        },
+        {
+          "caller": "test_identical_snapshots_are_deterministic",
+          "callee": "harness.compare",
+          "lineNumber": 166
+        },
+        {
+          "caller": "test_different_status_not_deterministic",
+          "callee": "ReplayHarness",
+          "lineNumber": 170
+        },
+        {
+          "caller": "test_different_status_not_deterministic",
+          "callee": "_make_snapshot",
+          "lineNumber": 171
+        },
+        {
+          "caller": "test_different_status_not_deterministic",
+          "callee": "_make_snapshot",
+          "lineNumber": 172
+        },
+        {
+          "caller": "test_different_status_not_deterministic",
+          "callee": "harness.compare",
+          "lineNumber": 173
+        },
+        {
+          "caller": "test_different_status_not_deterministic",
+          "callee": "any",
+          "lineNumber": 176
+        },
+        {
+          "caller": "test_different_step_count_detected",
+          "callee": "ReplayHarness",
+          "lineNumber": 179
+        },
+        {
+          "caller": "test_different_step_count_detected",
+          "callee": "_make_snapshot",
+          "lineNumber": 180
+        },
+        {
+          "caller": "test_different_step_count_detected",
+          "callee": "_make_snapshot",
+          "lineNumber": 181
+        },
+        {
+          "caller": "test_different_step_count_detected",
+          "callee": "harness.compare",
+          "lineNumber": 185
+        },
+        {
+          "caller": "test_capture_from_live_session",
+          "callee": "Session.create",
+          "lineNumber": 190
+        },
+        {
+          "caller": "test_capture_from_live_session",
+          "callee": "session.activate",
+          "lineNumber": 191
+        },
+        {
+          "caller": "test_capture_from_live_session",
+          "callee": "session.send",
+          "lineNumber": 192
+        },
+        {
+          "caller": "test_capture_from_live_session",
+          "callee": "session.complete",
+          "lineNumber": 193
+        },
+        {
+          "caller": "test_capture_from_live_session",
+          "callee": "TelemetryCollector",
+          "lineNumber": 195
+        },
+        {
+          "caller": "test_capture_from_live_session",
+          "callee": "collector.emit_from_session_event",
+          "lineNumber": 197
+        },
+        {
+          "caller": "test_capture_from_live_session",
+          "callee": "ReplayHarness",
+          "lineNumber": 199
+        },
+        {
+          "caller": "test_capture_from_live_session",
+          "callee": "harness.capture",
+          "lineNumber": 200
+        },
+        {
+          "caller": "test_capture_from_live_session",
+          "callee": "session.to_dict",
+          "lineNumber": 200
+        },
+        {
+          "caller": "test_capture_from_live_session",
+          "callee": "snap.snapshot_id.startswith",
+          "lineNumber": 201
+        },
+        {
+          "caller": "test_capture_from_live_session",
+          "callee": "snap.checksum",
+          "lineNumber": 202
+        },
+        {
+          "caller": "test_rapid_transitions_100_cycles",
+          "callee": "Session.create",
+          "lineNumber": 213
+        },
+        {
+          "caller": "test_rapid_transitions_100_cycles",
+          "callee": "s.activate",
+          "lineNumber": 214
+        },
+        {
+          "caller": "test_rapid_transitions_100_cycles",
+          "callee": "range",
+          "lineNumber": 215
+        },
+        {
+          "caller": "test_rapid_transitions_100_cycles",
+          "callee": "s.wait_for_tool",
+          "lineNumber": 216
+        },
+        {
+          "caller": "test_rapid_transitions_100_cycles",
+          "callee": "s.resume",
+          "lineNumber": 217
+        },
+        {
+          "caller": "test_rapid_transitions_100_cycles",
+          "callee": "len",
+          "lineNumber": 219
+        },
+        {
+          "caller": "test_rapid_recovery_cycles",
+          "callee": "Session.create",
+          "lineNumber": 222
+        },
+        {
+          "caller": "test_rapid_recovery_cycles",
+          "callee": "s.activate",
+          "lineNumber": 223
+        },
+        {
+          "caller": "test_rapid_recovery_cycles",
+          "callee": "range",
+          "lineNumber": 224
+        },
+        {
+          "caller": "test_rapid_recovery_cycles",
+          "callee": "s.fail",
+          "lineNumber": 225
+        },
+        {
+          "caller": "test_rapid_recovery_cycles",
+          "callee": "s.recover",
+          "lineNumber": 226
+        },
+        {
+          "caller": "test_rapid_recovery_cycles",
+          "callee": "s.resume",
+          "lineNumber": 227
+        },
+        {
+          "caller": "test_large_accumulated_state",
+          "callee": "Session.create",
+          "lineNumber": 231
+        },
+        {
+          "caller": "test_large_accumulated_state",
+          "callee": "s.activate",
+          "lineNumber": 232
+        },
+        {
+          "caller": "test_large_accumulated_state",
+          "callee": "range",
+          "lineNumber": 233
+        },
+        {
+          "caller": "test_large_accumulated_state",
+          "callee": "s.add_decision",
+          "lineNumber": 234
+        },
+        {
+          "caller": "test_large_accumulated_state",
+          "callee": "s.add_constraint",
+          "lineNumber": 235
+        },
+        {
+          "caller": "test_large_accumulated_state",
+          "callee": "len",
+          "lineNumber": 236
+        },
+        {
+          "caller": "test_large_accumulated_state",
+          "callee": "len",
+          "lineNumber": 237
+        },
+        {
+          "caller": "test_1000_evaluations",
+          "callee": "PolicyEngine",
+          "lineNumber": 244
+        },
+        {
+          "caller": "test_1000_evaluations",
+          "callee": "engine.add_rule",
+          "lineNumber": 245
+        },
+        {
+          "caller": "test_1000_evaluations",
+          "callee": "PermissionRule",
+          "lineNumber": 245
+        },
+        {
+          "caller": "test_1000_evaluations",
+          "callee": "range",
+          "lineNumber": 248
+        },
+        {
+          "caller": "test_1000_evaluations",
+          "callee": "engine.evaluate",
+          "lineNumber": 249
+        },
+        {
+          "caller": "test_1000_evaluations",
+          "callee": "len",
+          "lineNumber": 251
+        },
+        {
+          "caller": "test_mixed_allow_deny_pattern",
+          "callee": "PolicyEngine",
+          "lineNumber": 254
+        },
+        {
+          "caller": "test_mixed_allow_deny_pattern",
+          "callee": "engine.add_rule",
+          "lineNumber": 255
+        },
+        {
+          "caller": "test_mixed_allow_deny_pattern",
+          "callee": "PermissionRule",
+          "lineNumber": 255
+        },
+        {
+          "caller": "test_mixed_allow_deny_pattern",
+          "callee": "range",
+          "lineNumber": 259
+        },
+        {
+          "caller": "test_mixed_allow_deny_pattern",
+          "callee": "engine.evaluate",
+          "lineNumber": 261
+        },
+        {
+          "caller": "test_10000_envelopes",
+          "callee": "TelemetryCollector",
+          "lineNumber": 274
+        },
+        {
+          "caller": "test_10000_envelopes",
+          "callee": "range",
+          "lineNumber": 275
+        },
+        {
+          "caller": "test_10000_envelopes",
+          "callee": "c.emit",
+          "lineNumber": 276
+        },
+        {
+          "caller": "test_10000_envelopes",
+          "callee": "TelemetryEnvelope",
+          "lineNumber": 276
+        },
+        {
+          "caller": "test_10000_envelopes",
+          "callee": "len",
+          "lineNumber": 281
+        },
+        {
+          "caller": "test_10000_envelopes",
+          "callee": "len",
+          "lineNumber": 283
+        },
+        {
+          "caller": "test_10000_envelopes",
+          "callee": "c.get_by_session",
+          "lineNumber": 283
+        },
+        {
+          "caller": "test_10000_envelopes",
+          "callee": "len",
+          "lineNumber": 284
+        },
+        {
+          "caller": "test_10000_envelopes",
+          "callee": "c.get_by_type",
+          "lineNumber": 284
+        },
+        {
+          "caller": "test_persistence_roundtrip",
+          "callee": "TelemetryCollector",
+          "lineNumber": 288
+        },
+        {
+          "caller": "test_persistence_roundtrip",
+          "callee": "range",
+          "lineNumber": 289
+        },
+        {
+          "caller": "test_persistence_roundtrip",
+          "callee": "c.emit",
+          "lineNumber": 290
+        },
+        {
+          "caller": "test_persistence_roundtrip",
+          "callee": "TelemetryEnvelope",
+          "lineNumber": 290
+        },
+        {
+          "caller": "test_persistence_roundtrip",
+          "callee": "ReplaySnapshot",
+          "lineNumber": 292
+        },
+        {
+          "caller": "test_persistence_roundtrip",
+          "callee": "e.to_dict",
+          "lineNumber": 295
+        },
+        {
+          "caller": "test_persistence_roundtrip",
+          "callee": "snap.save",
+          "lineNumber": 298
+        },
+        {
+          "caller": "test_persistence_roundtrip",
+          "callee": "ReplaySnapshot.load",
+          "lineNumber": 299
+        },
+        {
+          "caller": "test_persistence_roundtrip",
+          "callee": "len",
+          "lineNumber": 301
+        },
+        {
+          "caller": "test_persistence_roundtrip",
+          "callee": "loaded.checksum",
+          "lineNumber": 302
+        },
+        {
+          "caller": "test_persistence_roundtrip",
+          "callee": "snap.checksum",
+          "lineNumber": 302
+        },
+        {
+          "caller": "test_schema_validation_blocks_bad_batch",
+          "callee": "PolicyEngine",
+          "lineNumber": 310
+        },
+        {
+          "caller": "test_schema_validation_blocks_bad_batch",
+          "callee": "engine.add_rule",
+          "lineNumber": 311
+        },
+        {
+          "caller": "test_schema_validation_blocks_bad_batch",
+          "callee": "PermissionRule",
+          "lineNumber": 311
+        },
+        {
+          "caller": "test_schema_validation_blocks_bad_batch",
+          "callee": "engine.register_tool_schema",
+          "lineNumber": 314
+        },
+        {
+          "caller": "test_schema_validation_blocks_bad_batch",
+          "callee": "engine.evaluate",
+          "lineNumber": 327
+        },
+        {
+          "caller": "test_double_archive_rejected",
+          "callee": "Session.create",
+          "lineNumber": 333
+        },
+        {
+          "caller": "test_double_archive_rejected",
+          "callee": "s.activate",
+          "lineNumber": 334
+        },
+        {
+          "caller": "test_double_archive_rejected",
+          "callee": "s.complete",
+          "lineNumber": 335
+        },
+        {
+          "caller": "test_double_archive_rejected",
+          "callee": "pytest.raises",
+          "lineNumber": 336
+        },
+        {
+          "caller": "test_double_archive_rejected",
+          "callee": "s.activate",
+          "lineNumber": 337
+        },
+        {
+          "caller": "test_double_archive_rejected",
+          "callee": "pytest.raises",
+          "lineNumber": 338
+        },
+        {
+          "caller": "test_double_archive_rejected",
+          "callee": "s.fail",
+          "lineNumber": 339
+        },
+        {
+          "caller": "_make_snapshot",
+          "callee": "ReplaySnapshot",
+          "lineNumber": 352
+        },
+        {
+          "caller": "_make_snapshot",
+          "callee": "id",
+          "lineNumber": 353
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 1,
+        "classCount": 8
+      }
+    },
+    {
+      "path": "virtuoso/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 75,
+      "nonEmptyLines": 55,
+      "sections": [
+        {
+          "heading": "Virtuoso Engine",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "What It Is",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "How It Gets Installed",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "Design Philosophy",
+          "level": 2,
+          "line": 37
+        },
+        {
+          "heading": "File Structure",
+          "level": 2,
+          "line": 49
+        },
+        {
+          "heading": "Evolving the Engine",
+          "level": 2,
+          "line": 57
+        },
+        {
+          "heading": "Version History",
+          "level": 2,
+          "line": 73
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "virtuoso/virtuoso.xml",
+      "language": "xml",
+      "fileCategory": "config",
+      "totalLines": 601,
+      "nonEmptyLines": 502,
+      "metrics": {}
+    },
+    {
+      "path": "vscode-extension/.vscodeignore",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "metrics": {}
+    },
+    {
+      "path": "vscode-extension/esbuild.config.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 19,
+          "endLine": 32,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "esbuild.context",
+          "lineNumber": 21
+        },
+        {
+          "caller": "main",
+          "callee": "ctx.watch",
+          "lineNumber": 22
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 23
+        },
+        {
+          "caller": "main",
+          "callee": "esbuild.build",
+          "lineNumber": 25
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 27
+        },
+        {
+          "caller": "main",
+          "callee": "process.exit",
+          "lineNumber": 28
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 30
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/next.config.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/postcss.config.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/app/docs/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 169,
+      "nonEmptyLines": 163,
+      "functions": [
+        {
+          "name": "DocsPage",
+          "startLine": 80,
+          "endLine": 169,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "DocsPage",
+          "line": 80,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "DocsPage",
+          "callee": "docSections.map",
+          "lineNumber": 116
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/app/globals.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 73,
+      "nonEmptyLines": 61,
+      "metrics": {}
+    },
+    {
+      "path": "webapp/src/data/registry.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 1518,
+      "nonEmptyLines": 1518,
+      "sections": [
+        {
+          "heading": "meta",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "stats",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "platforms",
+          "level": 1,
+          "line": 13
+        },
+        {
+          "heading": "skills",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "bundles",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "agents",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "pipelines",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "synapses",
+          "level": 1,
+          "line": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "webapp/tailwind.config.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 55,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

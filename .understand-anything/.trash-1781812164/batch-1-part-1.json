@@ -1,0 +1,1398 @@
+{
+  "batchIndex": 1,
+  "part": 1,
+  "totalParts": 3,
+  "nodes": [
+    {
+      "id": "file:src/archon/__init__.py",
+      "type": "file",
+      "path": "src/archon/__init__.py",
+      "label": "__init__.py",
+      "language": "python",
+      "sizeLines": 4,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 4,
+        "nonEmptyLines": 3,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "file:src/archon/__main__.py",
+      "type": "file",
+      "path": "src/archon/__main__.py",
+      "label": "__main__.py",
+      "language": "python",
+      "sizeLines": 6,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 6,
+        "nonEmptyLines": 4,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "file:src/archon/cli.py",
+      "type": "file",
+      "path": "src/archon/cli.py",
+      "label": "cli.py",
+      "language": "python",
+      "sizeLines": 83,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 83,
+        "nonEmptyLines": 68,
+        "metrics": {
+          "importCount": 17,
+          "exportCount": 2,
+          "functionCount": 2,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/cli.py:_version_callback",
+      "type": "function",
+      "path": "src/archon/cli.py",
+      "label": "_version_callback",
+      "language": "python",
+      "metadata": {
+        "startLine": 27,
+        "endLine": 30,
+        "lineCount": 4,
+        "params": [
+          "value"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/cli.py:main",
+      "type": "function",
+      "path": "src/archon/cli.py",
+      "label": "main",
+      "language": "python",
+      "metadata": {
+        "startLine": 34,
+        "endLine": 48,
+        "lineCount": 15,
+        "params": [
+          "version",
+          "json_output",
+          "quiet",
+          "verbose"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/commands/admin.py",
+      "type": "file",
+      "path": "src/archon/commands/admin.py",
+      "label": "admin.py",
+      "language": "python",
+      "sizeLines": 136,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 136,
+        "nonEmptyLines": 117,
+        "metrics": {
+          "importCount": 5,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/commands/admin.py:admin_cmd",
+      "type": "function",
+      "path": "src/archon/commands/admin.py",
+      "label": "admin_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 16,
+        "endLine": 136,
+        "lineCount": 121,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/commands/cards.py",
+      "type": "file",
+      "path": "src/archon/commands/cards.py",
+      "label": "cards.py",
+      "language": "python",
+      "sizeLines": 396,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 396,
+        "nonEmptyLines": 339,
+        "metrics": {
+          "importCount": 3,
+          "exportCount": 5,
+          "functionCount": 5,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/commands/cards.py:_validate_card",
+      "type": "function",
+      "path": "src/archon/commands/cards.py",
+      "label": "_validate_card",
+      "language": "python",
+      "metadata": {
+        "startLine": 49,
+        "endLine": 153,
+        "lineCount": 105,
+        "params": [
+          "agent_name",
+          "card_data"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/cards.py:_badges_str",
+      "type": "function",
+      "path": "src/archon/commands/cards.py",
+      "label": "_badges_str",
+      "language": "python",
+      "metadata": {
+        "startLine": 158,
+        "endLine": 164,
+        "lineCount": 7,
+        "params": [
+          "capabilities"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/cards.py:_show_summary_table",
+      "type": "function",
+      "path": "src/archon/commands/cards.py",
+      "label": "_show_summary_table",
+      "language": "python",
+      "metadata": {
+        "startLine": 167,
+        "endLine": 193,
+        "lineCount": 27,
+        "params": [
+          "reg"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/cards.py:_show_detail_panel",
+      "type": "function",
+      "path": "src/archon/commands/cards.py",
+      "label": "_show_detail_panel",
+      "language": "python",
+      "metadata": {
+        "startLine": 196,
+        "endLine": 268,
+        "lineCount": 73,
+        "params": [
+          "agent_obj",
+          "reg"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/cards.py:cards_cmd",
+      "type": "function",
+      "path": "src/archon/commands/cards.py",
+      "label": "cards_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 273,
+        "endLine": 396,
+        "lineCount": 124,
+        "params": [
+          "agent_name",
+          "validate",
+          "json_export"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/commands/catalog.py",
+      "type": "file",
+      "path": "src/archon/commands/catalog.py",
+      "label": "catalog.py",
+      "language": "python",
+      "sizeLines": 441,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 441,
+        "nonEmptyLines": 364,
+        "metrics": {
+          "importCount": 4,
+          "exportCount": 7,
+          "functionCount": 7,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/commands/catalog.py:_load_catalog_or_exit",
+      "type": "function",
+      "path": "src/archon/commands/catalog.py",
+      "label": "_load_catalog_or_exit",
+      "language": "python",
+      "metadata": {
+        "startLine": 51,
+        "endLine": 62,
+        "lineCount": 12,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/catalog.py:catalog_list_cmd",
+      "type": "function",
+      "path": "src/archon/commands/catalog.py",
+      "label": "catalog_list_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 69,
+        "endLine": 110,
+        "lineCount": 42,
+        "params": [
+          "category"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/catalog.py:catalog_search_cmd",
+      "type": "function",
+      "path": "src/archon/commands/catalog.py",
+      "label": "catalog_search_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 117,
+        "endLine": 155,
+        "lineCount": 39,
+        "params": [
+          "query"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/catalog.py:catalog_info_cmd",
+      "type": "function",
+      "path": "src/archon/commands/catalog.py",
+      "label": "catalog_info_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 162,
+        "endLine": 220,
+        "lineCount": 59,
+        "params": [
+          "server"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/catalog.py:catalog_recommend_cmd",
+      "type": "function",
+      "path": "src/archon/commands/catalog.py",
+      "label": "catalog_recommend_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 227,
+        "endLine": 281,
+        "lineCount": 55,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/catalog.py:catalog_install_cmd",
+      "type": "function",
+      "path": "src/archon/commands/catalog.py",
+      "label": "catalog_install_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 288,
+        "endLine": 387,
+        "lineCount": 100,
+        "params": [
+          "server",
+          "platform"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/catalog.py:catalog_check_cmd",
+      "type": "function",
+      "path": "src/archon/commands/catalog.py",
+      "label": "catalog_check_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 394,
+        "endLine": 441,
+        "lineCount": 48,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/commands/config.py",
+      "type": "file",
+      "path": "src/archon/commands/config.py",
+      "label": "config.py",
+      "language": "python",
+      "sizeLines": 84,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 84,
+        "nonEmptyLines": 69,
+        "metrics": {
+          "importCount": 3,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/commands/config.py:config_cmd",
+      "type": "function",
+      "path": "src/archon/commands/config.py",
+      "label": "config_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 20,
+        "endLine": 84,
+        "lineCount": 65,
+        "params": [
+          "key",
+          "value"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/commands/doctor.py",
+      "type": "file",
+      "path": "src/archon/commands/doctor.py",
+      "label": "doctor.py",
+      "language": "python",
+      "sizeLines": 398,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 398,
+        "nonEmptyLines": 358,
+        "metrics": {
+          "importCount": 4,
+          "exportCount": 2,
+          "functionCount": 2,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/commands/doctor.py:_compute_health",
+      "type": "function",
+      "path": "src/archon/commands/doctor.py",
+      "label": "_compute_health",
+      "language": "python",
+      "metadata": {
+        "startLine": 16,
+        "endLine": 43,
+        "lineCount": 28,
+        "params": [
+          "initialized",
+          "platforms_detected",
+          "registry_ok",
+          "skills_count",
+          "issues",
+          "catalog_issues"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/doctor.py:doctor_cmd",
+      "type": "function",
+      "path": "src/archon/commands/doctor.py",
+      "label": "doctor_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 46,
+        "endLine": 398,
+        "lineCount": 353,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/commands/generate.py",
+      "type": "file",
+      "path": "src/archon/commands/generate.py",
+      "label": "generate.py",
+      "language": "python",
+      "sizeLines": 211,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 211,
+        "nonEmptyLines": 176,
+        "metrics": {
+          "importCount": 4,
+          "exportCount": 2,
+          "functionCount": 2,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/commands/generate.py:llms_txt_cmd",
+      "type": "function",
+      "path": "src/archon/commands/generate.py",
+      "label": "llms_txt_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 29,
+        "endLine": 141,
+        "lineCount": 113,
+        "params": [
+          "concise",
+          "full",
+          "output"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/generate.py:agent_cards_cmd",
+      "type": "function",
+      "path": "src/archon/commands/generate.py",
+      "label": "agent_cards_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 145,
+        "endLine": 211,
+        "lineCount": 67,
+        "params": [
+          "output"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/commands/info.py",
+      "type": "file",
+      "path": "src/archon/commands/info.py",
+      "label": "info.py",
+      "language": "python",
+      "sizeLines": 160,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 160,
+        "nonEmptyLines": 139,
+        "metrics": {
+          "importCount": 4,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/commands/info.py:info_cmd",
+      "type": "function",
+      "path": "src/archon/commands/info.py",
+      "label": "info_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 15,
+        "endLine": 160,
+        "lineCount": 146,
+        "params": [
+          "name"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/commands/init_cmd.py",
+      "type": "file",
+      "path": "src/archon/commands/init_cmd.py",
+      "label": "init_cmd.py",
+      "language": "python",
+      "sizeLines": 145,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 145,
+        "nonEmptyLines": 123,
+        "metrics": {
+          "importCount": 5,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/commands/init_cmd.py:init_cmd",
+      "type": "function",
+      "path": "src/archon/commands/init_cmd.py",
+      "label": "init_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 26,
+        "endLine": 145,
+        "lineCount": 120,
+        "params": [
+          "platform",
+          "force"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/commands/install.py",
+      "type": "file",
+      "path": "src/archon/commands/install.py",
+      "label": "install.py",
+      "language": "python",
+      "sizeLines": 262,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 262,
+        "nonEmptyLines": 224,
+        "metrics": {
+          "importCount": 4,
+          "exportCount": 3,
+          "functionCount": 3,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/commands/install.py:install_cmd",
+      "type": "function",
+      "path": "src/archon/commands/install.py",
+      "label": "install_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 21,
+        "endLine": 202,
+        "lineCount": 182,
+        "params": [
+          "skill",
+          "bundle",
+          "synapse",
+          "all_flag",
+          "platform",
+          "force"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/install.py:_install_synapse_to_platform",
+      "type": "function",
+      "path": "src/archon/commands/install.py",
+      "label": "_install_synapse_to_platform",
+      "language": "python",
+      "metadata": {
+        "startLine": 205,
+        "endLine": 235,
+        "lineCount": 31,
+        "params": [
+          "synapse_dir",
+          "synapse",
+          "platform"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/install.py:_update_synapse_index",
+      "type": "function",
+      "path": "src/archon/commands/install.py",
+      "label": "_update_synapse_index",
+      "language": "python",
+      "metadata": {
+        "startLine": 238,
+        "endLine": 262,
+        "lineCount": 25,
+        "params": [
+          "index_path",
+          "synapse"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/commands/list_cmd.py",
+      "type": "file",
+      "path": "src/archon/commands/list_cmd.py",
+      "label": "list_cmd.py",
+      "language": "python",
+      "sizeLines": 229,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 229,
+        "nonEmptyLines": 187,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 7,
+          "functionCount": 7,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/commands/list_cmd.py:list_cmd",
+      "type": "function",
+      "path": "src/archon/commands/list_cmd.py",
+      "label": "list_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 18,
+        "endLine": 52,
+        "lineCount": 35,
+        "params": [
+          "component_type"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/list_cmd.py:_show_summary",
+      "type": "function",
+      "path": "src/archon/commands/list_cmd.py",
+      "label": "_show_summary",
+      "language": "python",
+      "metadata": {
+        "startLine": 57,
+        "endLine": 85,
+        "lineCount": 29,
+        "params": [
+          "reg"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/list_cmd.py:_list_skills",
+      "type": "function",
+      "path": "src/archon/commands/list_cmd.py",
+      "label": "_list_skills",
+      "language": "python",
+      "metadata": {
+        "startLine": 90,
+        "endLine": 114,
+        "lineCount": 25,
+        "params": [
+          "reg"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/list_cmd.py:_list_agents",
+      "type": "function",
+      "path": "src/archon/commands/list_cmd.py",
+      "label": "_list_agents",
+      "language": "python",
+      "metadata": {
+        "startLine": 119,
+        "endLine": 142,
+        "lineCount": 24,
+        "params": [
+          "reg"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/list_cmd.py:_list_bundles",
+      "type": "function",
+      "path": "src/archon/commands/list_cmd.py",
+      "label": "_list_bundles",
+      "language": "python",
+      "metadata": {
+        "startLine": 147,
+        "endLine": 171,
+        "lineCount": 25,
+        "params": [
+          "reg"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/list_cmd.py:_list_pipelines",
+      "type": "function",
+      "path": "src/archon/commands/list_cmd.py",
+      "label": "_list_pipelines",
+      "language": "python",
+      "metadata": {
+        "startLine": 176,
+        "endLine": 200,
+        "lineCount": 25,
+        "params": [
+          "reg"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/list_cmd.py:_list_synapses",
+      "type": "function",
+      "path": "src/archon/commands/list_cmd.py",
+      "label": "_list_synapses",
+      "language": "python",
+      "metadata": {
+        "startLine": 205,
+        "endLine": 229,
+        "lineCount": 25,
+        "params": [
+          "reg"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/commands/pipeline.py",
+      "type": "file",
+      "path": "src/archon/commands/pipeline.py",
+      "label": "pipeline.py",
+      "language": "python",
+      "sizeLines": 364,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 364,
+        "nonEmptyLines": 290,
+        "metrics": {
+          "importCount": 4,
+          "exportCount": 8,
+          "functionCount": 8,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/commands/pipeline.py:_create_executor",
+      "type": "function",
+      "path": "src/archon/commands/pipeline.py",
+      "label": "_create_executor",
+      "language": "python",
+      "metadata": {
+        "startLine": 26,
+        "endLine": 28,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/pipeline.py:_icon",
+      "type": "function",
+      "path": "src/archon/commands/pipeline.py",
+      "label": "_icon",
+      "language": "python",
+      "metadata": {
+        "startLine": 45,
+        "endLine": 46,
+        "lineCount": 2,
+        "params": [
+          "status"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/pipeline.py:_print_state_detail",
+      "type": "function",
+      "path": "src/archon/commands/pipeline.py",
+      "label": "_print_state_detail",
+      "language": "python",
+      "metadata": {
+        "startLine": 49,
+        "endLine": 74,
+        "lineCount": 26,
+        "params": [
+          "state"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/pipeline.py:pipeline_run",
+      "type": "function",
+      "path": "src/archon/commands/pipeline.py",
+      "label": "pipeline_run",
+      "language": "python",
+      "metadata": {
+        "startLine": 83,
+        "endLine": 170,
+        "lineCount": 88,
+        "params": [
+          "name",
+          "project",
+          "continue_on_error"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/pipeline.py:pipeline_status",
+      "type": "function",
+      "path": "src/archon/commands/pipeline.py",
+      "label": "pipeline_status",
+      "language": "python",
+      "metadata": {
+        "startLine": 179,
+        "endLine": 215,
+        "lineCount": 37,
+        "params": [
+          "state_id"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/pipeline.py:pipeline_resume",
+      "type": "function",
+      "path": "src/archon/commands/pipeline.py",
+      "label": "pipeline_resume",
+      "language": "python",
+      "metadata": {
+        "startLine": 224,
+        "endLine": 275,
+        "lineCount": 52,
+        "params": [
+          "state_id"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/pipeline.py:pipeline_list",
+      "type": "function",
+      "path": "src/archon/commands/pipeline.py",
+      "label": "pipeline_list",
+      "language": "python",
+      "metadata": {
+        "startLine": 284,
+        "endLine": 331,
+        "lineCount": 48,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/pipeline.py:pipeline_cancel",
+      "type": "function",
+      "path": "src/archon/commands/pipeline.py",
+      "label": "pipeline_cancel",
+      "language": "python",
+      "metadata": {
+        "startLine": 340,
+        "endLine": 364,
+        "lineCount": 25,
+        "params": [
+          "state_id"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/commands/search.py",
+      "type": "file",
+      "path": "src/archon/commands/search.py",
+      "label": "search.py",
+      "language": "python",
+      "sizeLines": 154,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 154,
+        "nonEmptyLines": 128,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 2,
+          "functionCount": 2,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/commands/search.py:_score",
+      "type": "function",
+      "path": "src/archon/commands/search.py",
+      "label": "_score",
+      "language": "python",
+      "metadata": {
+        "startLine": 15,
+        "endLine": 53,
+        "lineCount": 39,
+        "params": [
+          "query",
+          "name",
+          "description",
+          "tags"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/commands/search.py:search_cmd",
+      "type": "function",
+      "path": "src/archon/commands/search.py",
+      "label": "search_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 56,
+        "endLine": 154,
+        "lineCount": 99,
+        "params": [
+          "query"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/commands/uninstall.py",
+      "type": "file",
+      "path": "src/archon/commands/uninstall.py",
+      "label": "uninstall.py",
+      "language": "python",
+      "sizeLines": 81,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 81,
+        "nonEmptyLines": 69,
+        "metrics": {
+          "importCount": 4,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/commands/uninstall.py:uninstall_cmd",
+      "type": "function",
+      "path": "src/archon/commands/uninstall.py",
+      "label": "uninstall_cmd",
+      "language": "python",
+      "metadata": {
+        "startLine": 18,
+        "endLine": 81,
+        "lineCount": 64,
+        "params": [
+          "component",
+          "platform",
+          "force"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/commands/update.py",
+      "type": "file",
+      "path": "src/archon/commands/update.py",
+      "label": "update.py",
+      "language": "python",
+      "sizeLines": 105,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 105,
+        "nonEmptyLines": 86,
+        "metrics": {
+          "importCount": 5,
+          "exportCount": 3,
+          "functionCount": 3,
+          "classCount": 0
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "type": "imports",
+      "source": "file:src/archon/__main__.py",
+      "target": "file:src/archon/cli.py",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/cli.py",
+      "target": "function:src/archon/cli.py:_version_callback",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/cli.py",
+      "target": "function:src/archon/cli.py:main",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/cli.py",
+      "target": "file:src/archon/__init__.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/cli.py",
+      "target": "file:src/archon/commands/admin.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/cli.py",
+      "target": "file:src/archon/commands/cards.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/cli.py",
+      "target": "file:src/archon/commands/catalog.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/cli.py",
+      "target": "file:src/archon/commands/config.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/cli.py",
+      "target": "file:src/archon/commands/doctor.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/cli.py",
+      "target": "file:src/archon/commands/generate.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/cli.py",
+      "target": "file:src/archon/commands/info.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/cli.py",
+      "target": "file:src/archon/commands/init_cmd.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/cli.py",
+      "target": "file:src/archon/commands/install.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/cli.py",
+      "target": "file:src/archon/commands/list_cmd.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/cli.py",
+      "target": "file:src/archon/commands/pipeline.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/cli.py",
+      "target": "file:src/archon/commands/search.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/cli.py",
+      "target": "file:src/archon/commands/uninstall.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/cli.py",
+      "target": "file:src/archon/commands/update.py",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/admin.py",
+      "target": "function:src/archon/commands/admin.py:admin_cmd",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/commands/admin.py",
+      "target": "file:src/archon/__init__.py",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/cards.py",
+      "target": "function:src/archon/commands/cards.py:_validate_card",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/cards.py",
+      "target": "function:src/archon/commands/cards.py:_badges_str",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/cards.py",
+      "target": "function:src/archon/commands/cards.py:_show_summary_table",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/cards.py",
+      "target": "function:src/archon/commands/cards.py:_show_detail_panel",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/cards.py",
+      "target": "function:src/archon/commands/cards.py:cards_cmd",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/catalog.py",
+      "target": "function:src/archon/commands/catalog.py:_load_catalog_or_exit",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/catalog.py",
+      "target": "function:src/archon/commands/catalog.py:catalog_list_cmd",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/catalog.py",
+      "target": "function:src/archon/commands/catalog.py:catalog_search_cmd",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/catalog.py",
+      "target": "function:src/archon/commands/catalog.py:catalog_info_cmd",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/catalog.py",
+      "target": "function:src/archon/commands/catalog.py:catalog_recommend_cmd",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/catalog.py",
+      "target": "function:src/archon/commands/catalog.py:catalog_install_cmd",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/catalog.py",
+      "target": "function:src/archon/commands/catalog.py:catalog_check_cmd",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/config.py",
+      "target": "function:src/archon/commands/config.py:config_cmd",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/doctor.py",
+      "target": "function:src/archon/commands/doctor.py:_compute_health",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/doctor.py",
+      "target": "function:src/archon/commands/doctor.py:doctor_cmd",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/generate.py",
+      "target": "function:src/archon/commands/generate.py:llms_txt_cmd",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/generate.py",
+      "target": "function:src/archon/commands/generate.py:agent_cards_cmd",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/info.py",
+      "target": "function:src/archon/commands/info.py:info_cmd",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/init_cmd.py",
+      "target": "function:src/archon/commands/init_cmd.py:init_cmd",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/install.py",
+      "target": "function:src/archon/commands/install.py:install_cmd",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/install.py",
+      "target": "function:src/archon/commands/install.py:_install_synapse_to_platform",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/install.py",
+      "target": "function:src/archon/commands/install.py:_update_synapse_index",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/list_cmd.py",
+      "target": "function:src/archon/commands/list_cmd.py:list_cmd",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/list_cmd.py",
+      "target": "function:src/archon/commands/list_cmd.py:_show_summary",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/list_cmd.py",
+      "target": "function:src/archon/commands/list_cmd.py:_list_skills",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/list_cmd.py",
+      "target": "function:src/archon/commands/list_cmd.py:_list_agents",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/list_cmd.py",
+      "target": "function:src/archon/commands/list_cmd.py:_list_bundles",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/list_cmd.py",
+      "target": "function:src/archon/commands/list_cmd.py:_list_pipelines",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/list_cmd.py",
+      "target": "function:src/archon/commands/list_cmd.py:_list_synapses",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/pipeline.py",
+      "target": "function:src/archon/commands/pipeline.py:_create_executor",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/pipeline.py",
+      "target": "function:src/archon/commands/pipeline.py:_icon",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/pipeline.py",
+      "target": "function:src/archon/commands/pipeline.py:_print_state_detail",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/pipeline.py",
+      "target": "function:src/archon/commands/pipeline.py:pipeline_run",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/pipeline.py",
+      "target": "function:src/archon/commands/pipeline.py:pipeline_status",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/pipeline.py",
+      "target": "function:src/archon/commands/pipeline.py:pipeline_resume",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/pipeline.py",
+      "target": "function:src/archon/commands/pipeline.py:pipeline_list",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/pipeline.py",
+      "target": "function:src/archon/commands/pipeline.py:pipeline_cancel",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/search.py",
+      "target": "function:src/archon/commands/search.py:_score",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/search.py",
+      "target": "function:src/archon/commands/search.py:search_cmd",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/commands/uninstall.py",
+      "target": "function:src/archon/commands/uninstall.py:uninstall_cmd",
+      "weight": 1
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [{"path": "prompts/README.md", "language": "markdown", "sizeLines": 44, "fileCategory": "docs"}, {"path": "prompts/router.md", "language": "markdown", "sizeLines": 176, "fileCategory": "docs"}, {"path": "prompts/shared.md", "language": "markdown", "sizeLines": 406, "fileCategory": "docs"}, {"path": "prompts/system.md", "language": "markdown", "sizeLines": 249, "fileCategory": "docs"}],
+  "batchImportData": {"prompts/README.md": [], "prompts/router.md": [], "prompts/shared.md": [], "prompts/system.md": []}
+}

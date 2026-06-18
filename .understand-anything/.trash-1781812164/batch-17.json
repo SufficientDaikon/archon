@@ -1,0 +1,87 @@
+{
+  "batchIndex": 17,
+  "nodes": [
+    {
+      "id": "document:pipelines/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "pipelines/README.md",
+      "summary": "Brief overview of the Archon pipelines directory, explaining what pipelines are, how they work within the system, and pointing to the schema for pipeline YAML definitions.",
+      "tags": ["pipelines", "readme", "documentation", "overview"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pipelines/batch-sdd-pipeline.yaml",
+      "type": "config",
+      "name": "batch-sdd-pipeline.yaml",
+      "filePath": "pipelines/batch-sdd-pipeline.yaml",
+      "summary": "Pipeline definition for batch Software Design Document (SDD) processing, orchestrating multi-step spec, implement, and review cycles for batch runs. Supports resumable execution with artifact persistence and synapse mode.",
+      "tags": ["pipeline", "batch-sdd", "resumable", "yaml", "orchestration"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:pipelines/debug-pipeline.yaml",
+      "type": "config",
+      "name": "debug-pipeline.yaml",
+      "filePath": "pipelines/debug-pipeline.yaml",
+      "summary": "Pipeline definition for debugging workflows, guiding agents through systematic diagnosis steps. Resumable pipeline with artifact persistence.",
+      "tags": ["pipeline", "debug", "resumable", "yaml", "diagnostic"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:pipelines/dissect-to-skill.yaml",
+      "type": "config",
+      "name": "dissect-to-skill.yaml",
+      "filePath": "pipelines/dissect-to-skill.yaml",
+      "summary": "Pipeline definition implementing the DDE (Dissection-Driven Enhancement) methodology to dissect existing code patterns and create or upgrade Archon skills. Resumable with artifact persistence.",
+      "tags": ["pipeline", "dde", "skill-creation", "dissect", "yaml"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:pipelines/full-product.yaml",
+      "type": "config",
+      "name": "full-product.yaml",
+      "filePath": "pipelines/full-product.yaml",
+      "summary": "End-to-end product development pipeline covering spec, design, implementation, review, and delivery stages for building complete products. Resumable with artifact persistence.",
+      "tags": ["pipeline", "product-development", "end-to-end", "yaml", "orchestration"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:pipelines/sdd-pipeline.yaml",
+      "type": "config",
+      "name": "sdd-pipeline.yaml",
+      "filePath": "pipelines/sdd-pipeline.yaml",
+      "summary": "Core Software Design Document pipeline orchestrating spec-writer, implementer, and reviewer agents for a single SDD cycle. Resumable with artifact persistence.",
+      "tags": ["pipeline", "sdd", "spec-writer", "implementer", "yaml"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:pipelines/skill-factory.yaml",
+      "type": "config",
+      "name": "skill-factory.yaml",
+      "filePath": "pipelines/skill-factory.yaml",
+      "summary": "Pipeline definition for the skill factory workflow, automating the creation of new Archon skills from requirements through manifest generation, SKILL.md authoring, and validation. Resumable with artifact persistence.",
+      "tags": ["pipeline", "skill-factory", "skill-creation", "yaml", "automation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:pipelines/skill-upgrade.yaml",
+      "type": "config",
+      "name": "skill-upgrade.yaml",
+      "filePath": "pipelines/skill-upgrade.yaml",
+      "summary": "Pipeline definition for upgrading existing Archon skills through the DDE loop, dissecting current skill state and applying targeted improvements. Resumable with artifact persistence.",
+      "tags": ["pipeline", "skill-upgrade", "dde", "yaml", "improvement"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:pipelines/ux-pipeline.yaml",
+      "type": "config",
+      "name": "ux-pipeline.yaml",
+      "filePath": "pipelines/ux-pipeline.yaml",
+      "summary": "UX design pipeline orchestrating research, design, implementation, and review stages for user experience improvements. Resumable with artifact persistence.",
+      "tags": ["pipeline", "ux", "design", "yaml", "user-experience"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": []
+}

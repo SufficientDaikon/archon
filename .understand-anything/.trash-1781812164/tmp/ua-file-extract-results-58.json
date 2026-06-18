@@ -1,0 +1,1392 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "skills/systematic-debugging/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 296,
+      "nonEmptyLines": 221,
+      "sections": [
+        {
+          "heading": "Systematic Debugging",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "The Iron Law",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "The Four Phases",
+          "level": 2,
+          "line": 47
+        },
+        {
+          "heading": "Phase 1: Root Cause Investigation",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "Phase 2: Pattern Analysis",
+          "level": 3,
+          "line": 123
+        },
+        {
+          "heading": "Phase 3: Hypothesis and Testing",
+          "level": 3,
+          "line": 146
+        },
+        {
+          "heading": "Phase 4: Implementation",
+          "level": 3,
+          "line": 171
+        },
+        {
+          "heading": "Red Flags - STOP and Follow Process",
+          "level": 2,
+          "line": 231
+        },
+        {
+          "heading": "Common Rationalizations",
+          "level": 2,
+          "line": 250
+        },
+        {
+          "heading": "Quick Reference",
+          "level": 2,
+          "line": 263
+        },
+        {
+          "heading": "When Process Reveals \"No Root Cause\"",
+          "level": 2,
+          "line": 272
+        },
+        {
+          "heading": "Integration with Other Skills",
+          "level": 2,
+          "line": 283
+        },
+        {
+          "heading": "Real-World Impact",
+          "level": 2,
+          "line": 290
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 15
+      }
+    },
+    {
+      "path": "skills/systematic-debugging/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/template-variables/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 25
+        },
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "skills/template-variables/resources/variable-formats.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 114,
+      "nonEmptyLines": 96,
+      "sections": [
+        {
+          "heading": "Variable Formats Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Format Detection Patterns",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Implementation",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Usage Examples",
+          "level": 2,
+          "line": 94
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "skills/template-variables/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 106,
+      "nonEmptyLines": 79,
+      "sections": [
+        {
+          "heading": "Template Variables",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Workflow",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Step 1: Define Supported Formats",
+          "level": 3,
+          "line": 28
+        },
+        {
+          "heading": "Step 2: Build Detector",
+          "level": 3,
+          "line": 36
+        },
+        {
+          "heading": "Step 3: Build Normalizer",
+          "level": 3,
+          "line": 41
+        },
+        {
+          "heading": "Step 4: Build Compiler",
+          "level": 3,
+          "line": 46
+        },
+        {
+          "heading": "Step 5: Build Extractor",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "Step 6: Handle Edge Cases",
+          "level": 3,
+          "line": 55
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 60
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 62
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 76
+        },
+        {
+          "heading": "Output Template",
+          "level": 3,
+          "line": 82
+        },
+        {
+          "heading": "Resources",
+          "level": 2,
+          "line": 90
+        },
+        {
+          "heading": "Handoff",
+          "level": 2,
+          "line": 96
+        },
+        {
+          "heading": "Platform Notes",
+          "level": 2,
+          "line": 102
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    },
+    {
+      "path": "skills/test-driven-development/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "category",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "skills/test-driven-development/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 87,
+      "nonEmptyLines": 68,
+      "sections": [
+        {
+          "heading": "Test-Driven Development — The Iron Law",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Iron Law",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "The Cycle: Red → Green → Refactor",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "RED Phase",
+          "level": 3,
+          "line": 15
+        },
+        {
+          "heading": "GREEN Phase",
+          "level": 3,
+          "line": 21
+        },
+        {
+          "heading": "REFACTOR Phase",
+          "level": 3,
+          "line": 27
+        },
+        {
+          "heading": "REPEAT",
+          "level": 3,
+          "line": 33
+        },
+        {
+          "heading": "What \"Delete\" Means",
+          "level": 2,
+          "line": 36
+        },
+        {
+          "heading": "The 11-Entry Rationalization Table",
+          "level": 2,
+          "line": 45
+        },
+        {
+          "heading": "Red Flags",
+          "level": 2,
+          "line": 61
+        },
+        {
+          "heading": "Framework Detection",
+          "level": 2,
+          "line": 70
+        },
+        {
+          "heading": "Integration",
+          "level": 2,
+          "line": 82
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "skills/ui-ux-designer/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ui-ux-designer/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/ui-ux-designer/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ui-ux-designer/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ui-ux-designer/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 187,
+      "nonEmptyLines": 158,
+      "sections": [
+        {
+          "heading": "UI/UX 设计师专家",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "触发条件",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "核心能力",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "UI 设计",
+          "level": 3,
+          "line": 22
+        },
+        {
+          "heading": "UX 设计",
+          "level": 3,
+          "line": 28
+        },
+        {
+          "heading": "设计工具",
+          "level": 3,
+          "line": 34
+        },
+        {
+          "heading": "设计方法论",
+          "level": 3,
+          "line": 40
+        },
+        {
+          "heading": "工作流程",
+          "level": 2,
+          "line": 46
+        },
+        {
+          "heading": "1. 研究阶段",
+          "level": 3,
+          "line": 48
+        },
+        {
+          "heading": "2. 设计阶段",
+          "level": 3,
+          "line": 54
+        },
+        {
+          "heading": "3. 验证阶段",
+          "level": 3,
+          "line": 60
+        },
+        {
+          "heading": "4. 交付阶段",
+          "level": 3,
+          "line": 66
+        },
+        {
+          "heading": "常见解决方案",
+          "level": 2,
+          "line": 72
+        },
+        {
+          "heading": "色彩系统设计",
+          "level": 3,
+          "line": 74
+        },
+        {
+          "heading": "字体排版系统",
+          "level": 3,
+          "line": 94
+        },
+        {
+          "heading": "间距系统 (8px 网格)",
+          "level": 3,
+          "line": 116
+        },
+        {
+          "heading": "组件设计原则",
+          "level": 3,
+          "line": 128
+        },
+        {
+          "heading": "移动端设计规范",
+          "level": 3,
+          "line": 135
+        },
+        {
+          "heading": "用户体验原则",
+          "level": 2,
+          "line": 141
+        },
+        {
+          "heading": "Nielsen 可用性启发式评估",
+          "level": 3,
+          "line": 143
+        },
+        {
+          "heading": "用户流程优化",
+          "level": 3,
+          "line": 155
+        },
+        {
+          "heading": "动效设计原则",
+          "level": 3,
+          "line": 162
+        },
+        {
+          "heading": "设计系统文档模板",
+          "level": 2,
+          "line": 168
+        },
+        {
+          "heading": "组件文档结构",
+          "level": 3,
+          "line": 170
+        },
+        {
+          "heading": "设计评审检查清单",
+          "level": 3,
+          "line": 179
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 25
+      }
+    },
+    {
+      "path": "skills/ui-ux-designer/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ui-visual-design/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ui-visual-design/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/ui-visual-design/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ui-visual-design/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ui-visual-design/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 862,
+      "nonEmptyLines": 741,
+      "sections": [
+        {
+          "heading": "UI Visual Design Mastery",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "Color Theory & Palette Generation",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "60-30-10 Rule",
+          "level": 3,
+          "line": 10
+        },
+        {
+          "heading": "Generating Shade Scales with HSL Manipulation",
+          "level": 3,
+          "line": 15
+        },
+        {
+          "heading": "Semantic Color Systems",
+          "level": 3,
+          "line": 39
+        },
+        {
+          "heading": "Neutral Scale Generation",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "Gradient Patterns with CSS",
+          "level": 3,
+          "line": 92
+        },
+        {
+          "heading": "Dark Mode Color Mapping Strategy",
+          "level": 3,
+          "line": 121
+        },
+        {
+          "heading": "Typography Scale Systems",
+          "level": 2,
+          "line": 141
+        },
+        {
+          "heading": "Modular Scales",
+          "level": 3,
+          "line": 143
+        },
+        {
+          "heading": "Font Pairing Rules",
+          "level": 3,
+          "line": 171
+        },
+        {
+          "heading": "Fluid Typography with CSS clamp()",
+          "level": 3,
+          "line": 196
+        },
+        {
+          "heading": "System Font Stacks",
+          "level": 3,
+          "line": 210
+        },
+        {
+          "heading": "Typography Measures",
+          "level": 3,
+          "line": 229
+        },
+        {
+          "heading": "Visual Hierarchy Principles",
+          "level": 2,
+          "line": 243
+        },
+        {
+          "heading": "The 6 Levers of Hierarchy",
+          "level": 3,
+          "line": 245
+        },
+        {
+          "heading": "Reading Pattern Layouts",
+          "level": 3,
+          "line": 254
+        },
+        {
+          "heading": "Emphasis Techniques",
+          "level": 3,
+          "line": 268
+        },
+        {
+          "heading": "Whitespace & Layout Principles",
+          "level": 2,
+          "line": 274
+        },
+        {
+          "heading": "Macro vs Micro Whitespace",
+          "level": 3,
+          "line": 276
+        },
+        {
+          "heading": "Optical vs Mathematical Alignment",
+          "level": 3,
+          "line": 289
+        },
+        {
+          "heading": "Content Density Guidelines",
+          "level": 3,
+          "line": 294
+        },
+        {
+          "heading": "Hero Section Design Patterns",
+          "level": 2,
+          "line": 308
+        },
+        {
+          "heading": "1. Gradient Hero",
+          "level": 3,
+          "line": 310
+        },
+        {
+          "heading": "2. Split Hero",
+          "level": 3,
+          "line": 327
+        },
+        {
+          "heading": "3. Full-Image Hero",
+          "level": 3,
+          "line": 343
+        },
+        {
+          "heading": "4. Minimal Text Hero",
+          "level": 3,
+          "line": 361
+        },
+        {
+          "heading": "5. Video Background Hero",
+          "level": 3,
+          "line": 380
+        },
+        {
+          "heading": "6. Animated Particle Hero",
+          "level": 3,
+          "line": 402
+        },
+        {
+          "heading": "7. Asymmetric Hero",
+          "level": 3,
+          "line": 424
+        },
+        {
+          "heading": "8. Card-Based Hero",
+          "level": 3,
+          "line": 446
+        },
+        {
+          "heading": "9. Dark Mode Hero",
+          "level": 3,
+          "line": 465
+        },
+        {
+          "heading": "10. Illustration Hero",
+          "level": 3,
+          "line": 482
+        },
+        {
+          "heading": "11. Interactive Hero",
+          "level": 3,
+          "line": 500
+        },
+        {
+          "heading": "12. Stats Hero",
+          "level": 3,
+          "line": 517
+        },
+        {
+          "heading": "Page Section Design Patterns",
+          "level": 2,
+          "line": 540
+        },
+        {
+          "heading": "1. Feature Grid",
+          "level": 3,
+          "line": 542
+        },
+        {
+          "heading": "2. Alternating Feature Rows",
+          "level": 3,
+          "line": 555
+        },
+        {
+          "heading": "3. Testimonial Carousel",
+          "level": 3,
+          "line": 572
+        },
+        {
+          "heading": "4. Testimonial Grid",
+          "level": 3,
+          "line": 577
+        },
+        {
+          "heading": "5. Pricing Tiers",
+          "level": 3,
+          "line": 582
+        },
+        {
+          "heading": "6. CTA Banner",
+          "level": 3,
+          "line": 587
+        },
+        {
+          "heading": "7. Stats/Numbers Strip",
+          "level": 3,
+          "line": 592
+        },
+        {
+          "heading": "8. Team Grid",
+          "level": 3,
+          "line": 597
+        },
+        {
+          "heading": "9. FAQ Accordion",
+          "level": 3,
+          "line": 602
+        },
+        {
+          "heading": "10. Newsletter Signup",
+          "level": 3,
+          "line": 607
+        },
+        {
+          "heading": "11. Logo Cloud",
+          "level": 3,
+          "line": 612
+        },
+        {
+          "heading": "12. Comparison Table",
+          "level": 3,
+          "line": 617
+        },
+        {
+          "heading": "13. Timeline/Process",
+          "level": 3,
+          "line": 622
+        },
+        {
+          "heading": "14. Gallery/Portfolio",
+          "level": 3,
+          "line": 627
+        },
+        {
+          "heading": "15. Integration Logos",
+          "level": 3,
+          "line": 632
+        },
+        {
+          "heading": "16. Footer",
+          "level": 3,
+          "line": 637
+        },
+        {
+          "heading": "Design Token Architecture",
+          "level": 2,
+          "line": 642
+        },
+        {
+          "heading": "Complete CSS Custom Property Structure",
+          "level": 3,
+          "line": 644
+        },
+        {
+          "heading": "Naming Convention",
+          "level": 3,
+          "line": 742
+        },
+        {
+          "heading": "Current Design Trends (2025-2026)",
+          "level": 2,
+          "line": 750
+        },
+        {
+          "heading": "Bento Grid Layouts",
+          "level": 3,
+          "line": 752
+        },
+        {
+          "heading": "Glassmorphism 2.0",
+          "level": 3,
+          "line": 767
+        },
+        {
+          "heading": "Neo-Brutalism",
+          "level": 3,
+          "line": 780
+        },
+        {
+          "heading": "Soft Gradients",
+          "level": 3,
+          "line": 796
+        },
+        {
+          "heading": "3D Elements",
+          "level": 3,
+          "line": 805
+        },
+        {
+          "heading": "AI-Generated Illustration Integration",
+          "level": 3,
+          "line": 818
+        },
+        {
+          "heading": "Variable Fonts and Kinetic Typography",
+          "level": 3,
+          "line": 822
+        },
+        {
+          "heading": "Micro-Animations and Scroll-Triggered Reveals",
+          "level": 3,
+          "line": 832
+        },
+        {
+          "heading": "Dark Mode as Default",
+          "level": 3,
+          "line": 847
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 65
+      }
+    },
+    {
+      "path": "skills/ui-visual-design/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/using-git-worktrees/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "category",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "skills/using-git-worktrees/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 100,
+      "nonEmptyLines": 76,
+      "sections": [
+        {
+          "heading": "Using Git Worktrees — The Isolator",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Iron Law",
+          "level": 2,
+          "line": 6
+        },
+        {
+          "heading": "Purpose",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "Directory Selection Priority",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "Safety Verification",
+          "level": 2,
+          "line": 22
+        },
+        {
+          "heading": "Process",
+          "level": 2,
+          "line": 32
+        },
+        {
+          "heading": "Step 1: Detect Project",
+          "level": 3,
+          "line": 34
+        },
+        {
+          "heading": "Step 2: Create Worktree",
+          "level": 3,
+          "line": 40
+        },
+        {
+          "heading": "Step 3: Project Setup",
+          "level": 3,
+          "line": 46
+        },
+        {
+          "heading": "Step 4: Verify Clean Baseline",
+          "level": 3,
+          "line": 57
+        },
+        {
+          "heading": "Step 5: Report",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "When to Use Worktrees",
+          "level": 2,
+          "line": 72
+        },
+        {
+          "heading": "When NOT to Use",
+          "level": 2,
+          "line": 79
+        },
+        {
+          "heading": "Cleanup",
+          "level": 2,
+          "line": 85
+        },
+        {
+          "heading": "Rationalization Table",
+          "level": 2,
+          "line": 93
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 15
+      }
+    },
+    {
+      "path": "skills/using-superpowers/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "category",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "skills/using-superpowers/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 63,
+      "nonEmptyLines": 47,
+      "sections": [
+        {
+          "heading": "Using Archon — The Gatekeeper",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Iron Law",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Purpose",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "The Protocol",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Skill Priority Order",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "Red Flags — Thoughts That Mean STOP",
+          "level": 2,
+          "line": 44
+        },
+        {
+          "heading": "Subagent Exception",
+          "level": 2,
+          "line": 55
+        },
+        {
+          "heading": "Integration",
+          "level": 2,
+          "line": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/ux-interaction-design/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ux-interaction-design/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    }
+  ]
+}

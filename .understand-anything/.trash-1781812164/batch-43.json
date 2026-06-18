@@ -1,0 +1,316 @@
+{
+  "batchIndex": 43,
+  "nodes": [
+    {
+      "id": "config:bundles/ux-design-kit/meta-skill/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (ux-design-kit meta-skill)",
+      "filePath": "bundles/ux-design-kit/meta-skill/manifest.yaml",
+      "summary": "Skill manifest for the UX Design Kit meta-skill, defining triggers for design system, handoff, and UX review tasks.",
+      "tags": ["ux-design-kit", "meta-skill", "manifest", "ux-design"],
+      "complexity": 3
+    },
+    {
+      "id": "document:bundles/ux-design-kit/meta-skill/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (ux-design-kit)",
+      "filePath": "bundles/ux-design-kit/meta-skill/SKILL.md",
+      "summary": "Skill documentation for the UX Design Kit meta-skill, covering design systems, tokens, handoff workflows, and UX review criteria.",
+      "tags": ["ux-design-kit", "documentation", "design-system", "ux-design", "design-tokens"],
+      "complexity": 4
+    },
+    {
+      "id": "config:bundles/web-dev-kit/bundle.yaml",
+      "type": "config:",
+      "name": "bundle.yaml (web-dev-kit)",
+      "filePath": "bundles/web-dev-kit/bundle.yaml",
+      "summary": "Bundle manifest for the Web Dev Kit, grouping frontend and backend web development skills including Astro, async patterns, and API design.",
+      "tags": ["web-dev-kit", "bundle", "manifest", "web-development", "frontend"],
+      "complexity": 3
+    },
+    {
+      "id": "config:bundles/web-dev-kit/meta-skill/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (web-dev-kit meta-skill)",
+      "filePath": "bundles/web-dev-kit/meta-skill/manifest.yaml",
+      "summary": "Skill manifest for the Web Dev Kit meta-skill, defining triggers for web development tasks across frontend and backend.",
+      "tags": ["web-dev-kit", "meta-skill", "manifest", "web-development"],
+      "complexity": 3
+    },
+    {
+      "id": "document:bundles/web-dev-kit/meta-skill/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (web-dev-kit)",
+      "filePath": "bundles/web-dev-kit/meta-skill/SKILL.md",
+      "summary": "Skill documentation for the Web Dev Kit meta-skill, covering frontend patterns, API design, async handling, and full-stack web development.",
+      "tags": ["web-dev-kit", "documentation", "web-development", "frontend", "api-design"],
+      "complexity": 5
+    },
+    {
+      "id": "config:bundles/windows-kit/bundle.yaml",
+      "type": "config:",
+      "name": "bundle.yaml (windows-kit)",
+      "filePath": "bundles/windows-kit/bundle.yaml",
+      "summary": "Bundle manifest for the Windows Kit, grouping skills for Windows-specific development including PowerShell and Windows APIs.",
+      "tags": ["windows-kit", "bundle", "manifest", "windows", "powershell"],
+      "complexity": 2
+    },
+    {
+      "id": "config:bundles/windows-kit/meta-skill/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (windows-kit meta-skill)",
+      "filePath": "bundles/windows-kit/meta-skill/manifest.yaml",
+      "summary": "Skill manifest for the Windows Kit meta-skill, defining triggers for Windows platform development tasks.",
+      "tags": ["windows-kit", "meta-skill", "manifest", "windows"],
+      "complexity": 2
+    },
+    {
+      "id": "document:bundles/windows-kit/meta-skill/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (windows-kit)",
+      "filePath": "bundles/windows-kit/meta-skill/SKILL.md",
+      "summary": "Skill documentation for the Windows Kit meta-skill, covering Windows-specific development, PowerShell scripting, and Windows API usage.",
+      "tags": ["windows-kit", "documentation", "windows", "powershell", "windows-api"],
+      "complexity": 3
+    },
+    {
+      "id": "config:catalog/mcp-servers.yaml",
+      "type": "config:",
+      "name": "mcp-servers.yaml",
+      "filePath": "catalog/mcp-servers.yaml",
+      "summary": "Comprehensive catalog of MCP (Model Context Protocol) servers available for Claude Code, listing server configurations and capabilities.",
+      "tags": ["mcp", "catalog", "servers", "configuration", "tools"],
+      "complexity": 5
+    },
+    {
+      "id": "document:catalog/README.md",
+      "type": "document:",
+      "name": "README.md (catalog)",
+      "filePath": "catalog/README.md",
+      "summary": "Documentation for the catalog directory, explaining the purpose and structure of the MCP server catalog.",
+      "tags": ["catalog", "documentation", "mcp", "readme"],
+      "complexity": 2
+    },
+    {
+      "id": "file:debug_test.py",
+      "type": "file:",
+      "name": "debug_test.py",
+      "filePath": "debug_test.py",
+      "summary": "Debug test script for the Archon framework, providing test cases and validation utilities for debugging purposes.",
+      "tags": ["debug", "testing", "python", "validation"],
+      "complexity": 3
+    },
+    {
+      "id": "config:file-ops-rs/Cargo.toml",
+      "type": "config:",
+      "name": "Cargo.toml (file-ops-rs)",
+      "filePath": "file-ops-rs/Cargo.toml",
+      "summary": "Cargo manifest for the file-ops-rs Rust binary, declaring dependencies and build configuration for the file operations utility.",
+      "tags": ["cargo", "rust", "file-ops", "build-config"],
+      "complexity": 2
+    },
+    {
+      "id": "file:file-ops-rs/src/main.rs",
+      "type": "file:",
+      "name": "main.rs (file-ops-rs)",
+      "filePath": "file-ops-rs/src/main.rs",
+      "summary": "Rust binary entry point for the file-ops-rs utility, implementing high-performance file operations for the Archon framework.",
+      "tags": ["rust", "file-ops", "binary", "performance"],
+      "complexity": 3
+    },
+    {
+      "id": "file:hooks/claude/__init__.py",
+      "type": "file:",
+      "name": "__init__.py (hooks/claude)",
+      "filePath": "hooks/claude/__init__.py",
+      "summary": "Package initializer for the hooks/claude Python package, enabling module imports within the hook system.",
+      "tags": ["python", "package", "hooks", "init"],
+      "complexity": 1
+    },
+    {
+      "id": "file:hooks/claude/shared/__init__.py",
+      "type": "file:",
+      "name": "__init__.py (hooks/claude/shared)",
+      "filePath": "hooks/claude/shared/__init__.py",
+      "summary": "Package initializer for the hooks/claude/shared Python subpackage containing shared utilities for hook scripts.",
+      "tags": ["python", "package", "hooks", "shared"],
+      "complexity": 1
+    },
+    {
+      "id": "file:hooks/claude/shared/agent_roles.py",
+      "type": "file:",
+      "name": "agent_roles.py",
+      "filePath": "hooks/claude/shared/agent_roles.py",
+      "summary": "Defines agent role definitions and context slice configurations injected by the SubagentStart hook to provide role-specific context to spawned agents.",
+      "tags": ["agent-roles", "hooks", "context-injection", "subagent"],
+      "complexity": 4
+    },
+    {
+      "id": "config:hooks/hooks.yaml",
+      "type": "config:",
+      "name": "hooks.yaml",
+      "filePath": "hooks/hooks.yaml",
+      "summary": "YAML configuration for the hooks pipeline system, defining hook event types, triggers, and script mappings for pipeline execution.",
+      "tags": ["hooks", "yaml", "pipeline", "configuration", "events"],
+      "complexity": 3
+    },
+    {
+      "id": "file:hooks/on_deviation.py",
+      "type": "file:",
+      "name": "on_deviation.py",
+      "filePath": "hooks/on_deviation.py",
+      "summary": "Hook script triggered when an agent deviates from expected behavior, implementing the STOP-DOCUMENT-ASK-LOG deviation protocol.",
+      "tags": ["hooks", "deviation", "protocol", "error-handling"],
+      "complexity": 3
+    },
+    {
+      "id": "file:hooks/on_failure.py",
+      "type": "file:",
+      "name": "on_failure.py",
+      "filePath": "hooks/on_failure.py",
+      "summary": "Hook script triggered on pipeline step failure, logging errors and triggering failure escalation or retry protocols.",
+      "tags": ["hooks", "failure-handling", "pipeline", "error-recovery"],
+      "complexity": 3
+    },
+    {
+      "id": "file:hooks/post_step.py",
+      "type": "file:",
+      "name": "post_step.py",
+      "filePath": "hooks/post_step.py",
+      "summary": "Post-step hook script for pipeline execution, validating step outputs, updating pipeline state, and tracking file changes after each step.",
+      "tags": ["hooks", "post-step", "pipeline", "state-management"],
+      "complexity": 4
+    },
+    {
+      "id": "file:hooks/pre_step.py",
+      "type": "file:",
+      "name": "pre_step.py",
+      "filePath": "hooks/pre_step.py",
+      "summary": "Pre-step hook script for pipeline execution, validating preconditions, injecting context, and enforcing available-when conditions before each step.",
+      "tags": ["hooks", "pre-step", "pipeline", "validation"],
+      "complexity": 4
+    },
+    {
+      "id": "file:hooks/session_start.py",
+      "type": "file:",
+      "name": "session_start.py (hooks)",
+      "filePath": "hooks/session_start.py",
+      "summary": "Session start hook for the pipeline system, initializing pipeline session state and setting up tracking variables at the start of execution.",
+      "tags": ["hooks", "session-start", "pipeline", "initialization"],
+      "complexity": 3
+    },
+    {
+      "id": "file:integration_test.py",
+      "type": "file:",
+      "name": "integration_test.py",
+      "filePath": "integration_test.py",
+      "summary": "Integration test suite for the Archon framework, testing cross-component interactions between the CLI, registry, pipeline engine, and hook system.",
+      "tags": ["integration-testing", "testing", "python", "framework"],
+      "complexity": 5
+    },
+    {
+      "id": "config:pipelines/design/pipeline.yaml",
+      "type": "config:",
+      "name": "pipeline.yaml (design)",
+      "filePath": "pipelines/design/pipeline.yaml",
+      "summary": "Pipeline definition for the design workflow, orchestrating design research, wireframing, and handoff steps through the Archon pipeline engine.",
+      "tags": ["pipeline", "design", "yaml", "orchestration", "workflow"],
+      "complexity": 3
+    },
+    {
+      "id": "file:scripts/batch-upgrade-stubs.py",
+      "type": "file:",
+      "name": "batch-upgrade-stubs.py",
+      "filePath": "scripts/batch-upgrade-stubs.py",
+      "summary": "Large Python script for batch-upgrading skill stub files across the Archon framework, processing skill manifests and SKILL.md files in bulk.",
+      "tags": ["scripts", "batch-processing", "skill-upgrade", "automation"],
+      "complexity": 5
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:bundles/ux-design-kit/meta-skill/SKILL.md",
+      "target": "config:bundles/ux-design-kit/meta-skill/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:bundles/ux-design-kit/bundle.yaml",
+      "target": "config:bundles/ux-design-kit/meta-skill/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:bundles/web-dev-kit/meta-skill/SKILL.md",
+      "target": "config:bundles/web-dev-kit/meta-skill/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:bundles/web-dev-kit/bundle.yaml",
+      "target": "config:bundles/web-dev-kit/meta-skill/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:bundles/windows-kit/meta-skill/SKILL.md",
+      "target": "config:bundles/windows-kit/meta-skill/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:bundles/windows-kit/bundle.yaml",
+      "target": "config:bundles/windows-kit/meta-skill/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:catalog/README.md",
+      "target": "config:catalog/mcp-servers.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "file:file-ops-rs/src/main.rs",
+      "target": "config:file-ops-rs/Cargo.toml",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:hooks/claude/shared/agent_roles.py",
+      "target": "file:hooks/claude/shared/__init__.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:hooks/post_step.py",
+      "target": "config:hooks/hooks.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "file:hooks/pre_step.py",
+      "target": "config:hooks/hooks.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "file:hooks/on_failure.py",
+      "target": "config:hooks/hooks.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "file:hooks/on_deviation.py",
+      "target": "config:hooks/hooks.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "file:hooks/session_start.py",
+      "target": "config:hooks/hooks.yaml",
+      "type": "configures",
+      "weight": 0.6
+    }
+  ]
+}

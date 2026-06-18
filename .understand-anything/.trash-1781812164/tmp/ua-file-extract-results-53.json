@@ -1,0 +1,2043 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "skills/info-architecture/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/info-architecture/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/info-architecture/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/info-architecture/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/info-architecture/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 490,
+      "nonEmptyLines": 399,
+      "sections": [
+        {
+          "heading": "Information Architecture Skill",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "Sitemap Patterns",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "Hierarchical Tree Format (ASCII)",
+          "level": 3,
+          "line": 10
+        },
+        {
+          "heading": "Flat vs Deep Structures",
+          "level": 3,
+          "line": 40
+        },
+        {
+          "heading": "Common Site Structures by Type",
+          "level": 3,
+          "line": 54
+        },
+        {
+          "heading": "Navigation Patterns",
+          "level": 2,
+          "line": 132
+        },
+        {
+          "heading": "Primary Navigation",
+          "level": 3,
+          "line": 134
+        },
+        {
+          "heading": "Secondary Navigation",
+          "level": 3,
+          "line": 146
+        },
+        {
+          "heading": "Utility Navigation",
+          "level": 3,
+          "line": 158
+        },
+        {
+          "heading": "Mobile Navigation Patterns",
+          "level": 3,
+          "line": 175
+        },
+        {
+          "heading": "Advanced Navigation",
+          "level": 3,
+          "line": 192
+        },
+        {
+          "heading": "Content Strategy Principles",
+          "level": 2,
+          "line": 204
+        },
+        {
+          "heading": "Content Types",
+          "level": 3,
+          "line": 206
+        },
+        {
+          "heading": "Content Hierarchy (H1→H6 Semantic Meaning)",
+          "level": 3,
+          "line": 223
+        },
+        {
+          "heading": "CTA Strategy",
+          "level": 3,
+          "line": 245
+        },
+        {
+          "heading": "Microcopy Approach",
+          "level": 3,
+          "line": 265
+        },
+        {
+          "heading": "Content Density Guidelines",
+          "level": 3,
+          "line": 283
+        },
+        {
+          "heading": "User Flow Diagramming",
+          "level": 2,
+          "line": 295
+        },
+        {
+          "heading": "ASCII Flowchart Format",
+          "level": 3,
+          "line": 297
+        },
+        {
+          "heading": "Example User Flow: Sign-up Process",
+          "level": 3,
+          "line": 312
+        },
+        {
+          "heading": "Deriving Flows from Personas + Goals",
+          "level": 3,
+          "line": 344
+        },
+        {
+          "heading": "Card Sorting Concepts",
+          "level": 2,
+          "line": 352
+        },
+        {
+          "heading": "Open Card Sorting",
+          "level": 3,
+          "line": 354
+        },
+        {
+          "heading": "Closed Card Sorting",
+          "level": 3,
+          "line": 360
+        },
+        {
+          "heading": "Deriving Navigation from Content Grouping",
+          "level": 3,
+          "line": 366
+        },
+        {
+          "heading": "Screen Inventory Format",
+          "level": 2,
+          "line": 374
+        },
+        {
+          "heading": "IA Document Output Template",
+          "level": 2,
+          "line": 389
+        },
+        {
+          "heading": "Project Overview",
+          "level": 3,
+          "line": 391
+        },
+        {
+          "heading": "Site Architecture",
+          "level": 3,
+          "line": 397
+        },
+        {
+          "heading": "Sitemap",
+          "level": 4,
+          "line": 399
+        },
+        {
+          "heading": "Navigation Design",
+          "level": 4,
+          "line": 404
+        },
+        {
+          "heading": "URL Structure",
+          "level": 4,
+          "line": 418
+        },
+        {
+          "heading": "User Flows",
+          "level": 3,
+          "line": 430
+        },
+        {
+          "heading": "Primary User Flow: [Most Important Task]",
+          "level": 4,
+          "line": 432
+        },
+        {
+          "heading": "Secondary User Flow: [Second Most Important Task]",
+          "level": 4,
+          "line": 437
+        },
+        {
+          "heading": "Content Strategy",
+          "level": 3,
+          "line": 442
+        },
+        {
+          "heading": "Content Types",
+          "level": 4,
+          "line": 444
+        },
+        {
+          "heading": "Content Hierarchy",
+          "level": 4,
+          "line": 449
+        },
+        {
+          "heading": "CTA Strategy",
+          "level": 4,
+          "line": 454
+        },
+        {
+          "heading": "Screen Inventory",
+          "level": 3,
+          "line": 459
+        },
+        {
+          "heading": "Technical Requirements",
+          "level": 3,
+          "line": 463
+        },
+        {
+          "heading": "SEO Considerations",
+          "level": 4,
+          "line": 465
+        },
+        {
+          "heading": "Accessibility Requirements",
+          "level": 4,
+          "line": 470
+        },
+        {
+          "heading": "Performance Considerations",
+          "level": 4,
+          "line": 476
+        },
+        {
+          "heading": "Implementation Notes",
+          "level": 3,
+          "line": 481
+        },
+        {
+          "heading": "Success Metrics",
+          "level": 3,
+          "line": 486
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 46
+      }
+    },
+    {
+      "path": "skills/info-architecture/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/knowledge-sources/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 35,
+      "nonEmptyLines": 29,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 17
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 27
+        },
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "skills/knowledge-sources/resources/source-types.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 288,
+      "nonEmptyLines": 215,
+      "sections": [
+        {
+          "heading": "Knowledge Source Types Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Source Type: GitHub",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Source Type: Local",
+          "level": 2,
+          "line": 50
+        },
+        {
+          "heading": "Source Type: URL",
+          "level": 2,
+          "line": 92
+        },
+        {
+          "heading": "Source Type: API",
+          "level": 2,
+          "line": 144
+        },
+        {
+          "heading": "Configuration File: sources.yaml",
+          "level": 2,
+          "line": 195
+        },
+        {
+          "heading": "Sync Commands",
+          "level": 2,
+          "line": 236
+        },
+        {
+          "heading": "Search Cached Content",
+          "level": 2,
+          "line": 267
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/knowledge-sources/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 155,
+      "nonEmptyLines": 122,
+      "sections": [
+        {
+          "heading": "Knowledge Sources",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Workflow",
+          "level": 2,
+          "line": 30
+        },
+        {
+          "heading": "Step 1: Define Source",
+          "level": 3,
+          "line": 34
+        },
+        {
+          "heading": "Step 2: Sync Content",
+          "level": 3,
+          "line": 41
+        },
+        {
+          "heading": "Step 3: Normalize Content",
+          "level": 3,
+          "line": 62
+        },
+        {
+          "heading": "Step 4: Index for Search",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "Step 5: Query Sources",
+          "level": 3,
+          "line": 76
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 83
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 85
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 94
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 102
+        },
+        {
+          "heading": "Cached File Template",
+          "level": 3,
+          "line": 109
+        },
+        {
+          "heading": "Sync Log Format",
+          "level": 3,
+          "line": 123
+        },
+        {
+          "heading": "Resources",
+          "level": 2,
+          "line": 137
+        },
+        {
+          "heading": "Handoff",
+          "level": 2,
+          "line": 144
+        },
+        {
+          "heading": "Platform Notes",
+          "level": 2,
+          "line": 151
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    },
+    {
+      "path": "skills/knowledge-sources/templates/source-config.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 98,
+      "nonEmptyLines": 85,
+      "sections": [
+        {
+          "heading": "cache-dir",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "max-cache-size",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "log-file",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "sources",
+          "level": 1,
+          "line": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "skills/lazy-import-patterns/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 12,
+      "nonEmptyLines": 12,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "composes",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "source-dissection",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "skills/lazy-import-patterns/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 120,
+      "nonEmptyLines": 91,
+      "sections": [
+        {
+          "heading": "Lazy Import Patterns",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Workflow",
+          "level": 2,
+          "line": 32
+        },
+        {
+          "heading": "Step 1: Identify Optional Dependencies",
+          "level": 3,
+          "line": 34
+        },
+        {
+          "heading": "Step 2: Convert to Dynamic Import",
+          "level": 3,
+          "line": 40
+        },
+        {
+          "heading": "Step 3: Add Feature Guard",
+          "level": 3,
+          "line": 46
+        },
+        {
+          "heading": "Step 4: Handle Import Failures",
+          "level": 3,
+          "line": 52
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 59
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 61
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 77
+        },
+        {
+          "heading": "Code Template",
+          "level": 3,
+          "line": 82
+        },
+        {
+          "heading": "Resources",
+          "level": 2,
+          "line": 102
+        },
+        {
+          "heading": "Handoff",
+          "level": 2,
+          "line": 108
+        },
+        {
+          "heading": "Platform Notes",
+          "level": 2,
+          "line": 116
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 16
+      }
+    },
+    {
+      "path": "skills/mcp-builder/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/mcp-builder/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/mcp-builder/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/mcp-builder/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/mcp-builder/resources/connections.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 151,
+      "nonEmptyLines": 118,
+      "functions": [
+        {
+          "name": "create_connection",
+          "startLine": 112,
+          "endLine": 151,
+          "params": [
+            "transport",
+            "command",
+            "args",
+            "env",
+            "url",
+            "headers"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MCPConnection",
+          "startLine": 13,
+          "endLine": 70,
+          "methods": [
+            "__init__",
+            "_create_context",
+            "__aenter__",
+            "__aexit__",
+            "list_tools",
+            "call_tool"
+          ],
+          "properties": []
+        },
+        {
+          "name": "MCPConnectionStdio",
+          "startLine": 73,
+          "endLine": 85,
+          "methods": [
+            "__init__",
+            "_create_context"
+          ],
+          "properties": []
+        },
+        {
+          "name": "MCPConnectionSSE",
+          "startLine": 88,
+          "endLine": 97,
+          "methods": [
+            "__init__",
+            "_create_context"
+          ],
+          "properties": []
+        },
+        {
+          "name": "MCPConnectionHTTP",
+          "startLine": 100,
+          "endLine": 109,
+          "methods": [
+            "__init__",
+            "_create_context"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MCPConnection",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "MCPConnectionStdio",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "MCPConnectionSSE",
+          "line": 88,
+          "isDefault": false
+        },
+        {
+          "name": "MCPConnectionHTTP",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "create_connection",
+          "line": 112,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__aenter__",
+          "callee": "AsyncExitStack",
+          "lineNumber": 26
+        },
+        {
+          "caller": "__aenter__",
+          "callee": "self._stack.__aenter__",
+          "lineNumber": 27
+        },
+        {
+          "caller": "__aenter__",
+          "callee": "self._create_context",
+          "lineNumber": 30
+        },
+        {
+          "caller": "__aenter__",
+          "callee": "self._stack.enter_async_context",
+          "lineNumber": 31
+        },
+        {
+          "caller": "__aenter__",
+          "callee": "len",
+          "lineNumber": 33
+        },
+        {
+          "caller": "__aenter__",
+          "callee": "len",
+          "lineNumber": 35
+        },
+        {
+          "caller": "__aenter__",
+          "callee": "ValueError",
+          "lineNumber": 38
+        },
+        {
+          "caller": "__aenter__",
+          "callee": "ClientSession",
+          "lineNumber": 40
+        },
+        {
+          "caller": "__aenter__",
+          "callee": "self._stack.enter_async_context",
+          "lineNumber": 41
+        },
+        {
+          "caller": "__aenter__",
+          "callee": "self.session.initialize",
+          "lineNumber": 42
+        },
+        {
+          "caller": "__aenter__",
+          "callee": "self._stack.__aexit__",
+          "lineNumber": 45
+        },
+        {
+          "caller": "__aexit__",
+          "callee": "self._stack.__aexit__",
+          "lineNumber": 51
+        },
+        {
+          "caller": "list_tools",
+          "callee": "self.session.list_tools",
+          "lineNumber": 57
+        },
+        {
+          "caller": "call_tool",
+          "callee": "self.session.call_tool",
+          "lineNumber": 69
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 77
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_create_context",
+          "callee": "stdio_client",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_create_context",
+          "callee": "StdioServerParameters",
+          "lineNumber": 84
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 92
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_create_context",
+          "callee": "sse_client",
+          "lineNumber": 97
+        },
+        {
+          "caller": "__init__",
+          "callee": "super().__init__",
+          "lineNumber": 104
+        },
+        {
+          "caller": "__init__",
+          "callee": "super",
+          "lineNumber": 104
+        },
+        {
+          "caller": "_create_context",
+          "callee": "streamablehttp_client",
+          "lineNumber": 109
+        },
+        {
+          "caller": "create_connection",
+          "callee": "transport.lower",
+          "lineNumber": 133
+        },
+        {
+          "caller": "create_connection",
+          "callee": "ValueError",
+          "lineNumber": 137
+        },
+        {
+          "caller": "create_connection",
+          "callee": "MCPConnectionStdio",
+          "lineNumber": 138
+        },
+        {
+          "caller": "create_connection",
+          "callee": "ValueError",
+          "lineNumber": 142
+        },
+        {
+          "caller": "create_connection",
+          "callee": "MCPConnectionSSE",
+          "lineNumber": 143
+        },
+        {
+          "caller": "create_connection",
+          "callee": "ValueError",
+          "lineNumber": 147
+        },
+        {
+          "caller": "create_connection",
+          "callee": "MCPConnectionHTTP",
+          "lineNumber": 148
+        },
+        {
+          "caller": "create_connection",
+          "callee": "ValueError",
+          "lineNumber": 151
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 1,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "skills/mcp-builder/resources/evaluation.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 373,
+      "nonEmptyLines": 297,
+      "functions": [
+        {
+          "name": "parse_evaluation_file",
+          "startLine": 56,
+          "endLine": 76,
+          "params": [
+            "file_path"
+          ]
+        },
+        {
+          "name": "extract_xml_content",
+          "startLine": 79,
+          "endLine": 83,
+          "params": [
+            "text",
+            "tag"
+          ]
+        },
+        {
+          "name": "agent_loop",
+          "startLine": 86,
+          "endLine": 151,
+          "params": [
+            "client",
+            "model",
+            "question",
+            "tools",
+            "connection"
+          ]
+        },
+        {
+          "name": "evaluate_single_task",
+          "startLine": 154,
+          "endLine": 184,
+          "params": [
+            "client",
+            "model",
+            "qa_pair",
+            "tools",
+            "connection",
+            "task_index"
+          ]
+        },
+        {
+          "name": "run_evaluation",
+          "startLine": 220,
+          "endLine": 272,
+          "params": [
+            "eval_path",
+            "connection",
+            "model"
+          ]
+        },
+        {
+          "name": "parse_headers",
+          "startLine": 275,
+          "endLine": 287,
+          "params": [
+            "header_list"
+          ]
+        },
+        {
+          "name": "parse_env_vars",
+          "startLine": 290,
+          "endLine": 302,
+          "params": [
+            "env_list"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 305,
+          "endLine": 369,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "parse_evaluation_file",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "extract_xml_content",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "agent_loop",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "evaluate_single_task",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "run_evaluation",
+          "line": 220,
+          "isDefault": false
+        },
+        {
+          "name": "parse_headers",
+          "line": 275,
+          "isDefault": false
+        },
+        {
+          "name": "parse_env_vars",
+          "line": 290,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 305,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parse_evaluation_file",
+          "callee": "ET.parse",
+          "lineNumber": 59
+        },
+        {
+          "caller": "parse_evaluation_file",
+          "callee": "tree.getroot",
+          "lineNumber": 60
+        },
+        {
+          "caller": "parse_evaluation_file",
+          "callee": "root.findall",
+          "lineNumber": 63
+        },
+        {
+          "caller": "parse_evaluation_file",
+          "callee": "qa_pair.find",
+          "lineNumber": 64
+        },
+        {
+          "caller": "parse_evaluation_file",
+          "callee": "qa_pair.find",
+          "lineNumber": 65
+        },
+        {
+          "caller": "parse_evaluation_file",
+          "callee": "evaluations.append",
+          "lineNumber": 68
+        },
+        {
+          "caller": "parse_evaluation_file",
+          "callee": "(question_elem.text or \"\").strip",
+          "lineNumber": 69
+        },
+        {
+          "caller": "parse_evaluation_file",
+          "callee": "(answer_elem.text or \"\").strip",
+          "lineNumber": 70
+        },
+        {
+          "caller": "parse_evaluation_file",
+          "callee": "print",
+          "lineNumber": 75
+        },
+        {
+          "caller": "extract_xml_content",
+          "callee": "re.findall",
+          "lineNumber": 82
+        },
+        {
+          "caller": "extract_xml_content",
+          "callee": "matches[-1].strip",
+          "lineNumber": 83
+        },
+        {
+          "caller": "agent_loop",
+          "callee": "asyncio.to_thread",
+          "lineNumber": 96
+        },
+        {
+          "caller": "agent_loop",
+          "callee": "messages.append",
+          "lineNumber": 105
+        },
+        {
+          "caller": "agent_loop",
+          "callee": "next",
+          "lineNumber": 110
+        },
+        {
+          "caller": "agent_loop",
+          "callee": "time.time",
+          "lineNumber": 114
+        },
+        {
+          "caller": "agent_loop",
+          "callee": "connection.call_tool",
+          "lineNumber": 116
+        },
+        {
+          "caller": "agent_loop",
+          "callee": "json.dumps",
+          "lineNumber": 117
+        },
+        {
+          "caller": "agent_loop",
+          "callee": "isinstance",
+          "lineNumber": 117
+        },
+        {
+          "caller": "agent_loop",
+          "callee": "str",
+          "lineNumber": 117
+        },
+        {
+          "caller": "agent_loop",
+          "callee": "str",
+          "lineNumber": 119
+        },
+        {
+          "caller": "agent_loop",
+          "callee": "traceback.format_exc",
+          "lineNumber": 120
+        },
+        {
+          "caller": "agent_loop",
+          "callee": "time.time",
+          "lineNumber": 121
+        },
+        {
+          "caller": "agent_loop",
+          "callee": "tool_metrics[tool_name][\"durations\"].append",
+          "lineNumber": 126
+        },
+        {
+          "caller": "agent_loop",
+          "callee": "messages.append",
+          "lineNumber": 128
+        },
+        {
+          "caller": "agent_loop",
+          "callee": "asyncio.to_thread",
+          "lineNumber": 137
+        },
+        {
+          "caller": "agent_loop",
+          "callee": "messages.append",
+          "lineNumber": 145
+        },
+        {
+          "caller": "agent_loop",
+          "callee": "next",
+          "lineNumber": 147
+        },
+        {
+          "caller": "agent_loop",
+          "callee": "hasattr",
+          "lineNumber": 148
+        },
+        {
+          "caller": "evaluate_single_task",
+          "callee": "time.time",
+          "lineNumber": 163
+        },
+        {
+          "caller": "evaluate_single_task",
+          "callee": "print",
+          "lineNumber": 165
+        },
+        {
+          "caller": "evaluate_single_task",
+          "callee": "agent_loop",
+          "lineNumber": 166
+        },
+        {
+          "caller": "evaluate_single_task",
+          "callee": "extract_xml_content",
+          "lineNumber": 168
+        },
+        {
+          "caller": "evaluate_single_task",
+          "callee": "extract_xml_content",
+          "lineNumber": 169
+        },
+        {
+          "caller": "evaluate_single_task",
+          "callee": "extract_xml_content",
+          "lineNumber": 170
+        },
+        {
+          "caller": "evaluate_single_task",
+          "callee": "time.time",
+          "lineNumber": 172
+        },
+        {
+          "caller": "evaluate_single_task",
+          "callee": "int",
+          "lineNumber": 178
+        },
+        {
+          "caller": "evaluate_single_task",
+          "callee": "sum",
+          "lineNumber": 181
+        },
+        {
+          "caller": "evaluate_single_task",
+          "callee": "len",
+          "lineNumber": 181
+        },
+        {
+          "caller": "evaluate_single_task",
+          "callee": "tool_metrics.values",
+          "lineNumber": 181
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "print",
+          "lineNumber": 226
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "Anthropic",
+          "lineNumber": 228
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "connection.list_tools",
+          "lineNumber": 230
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "print",
+          "lineNumber": 231
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "len",
+          "lineNumber": 231
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "parse_evaluation_file",
+          "lineNumber": 233
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "print",
+          "lineNumber": 234
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "len",
+          "lineNumber": 234
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "enumerate",
+          "lineNumber": 237
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "print",
+          "lineNumber": 238
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "len",
+          "lineNumber": 238
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "evaluate_single_task",
+          "lineNumber": 239
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "results.append",
+          "lineNumber": 240
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "sum",
+          "lineNumber": 242
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "len",
+          "lineNumber": 243
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "sum",
+          "lineNumber": 244
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "len",
+          "lineNumber": 244
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "sum",
+          "lineNumber": 245
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "len",
+          "lineNumber": 245
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "sum",
+          "lineNumber": 246
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "REPORT_HEADER.format",
+          "lineNumber": 248
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "len",
+          "lineNumber": 250
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "\"\".join",
+          "lineNumber": 257
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "TASK_TEMPLATE.format",
+          "lineNumber": 258
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "json.dumps",
+          "lineNumber": 265
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "enumerate",
+          "lineNumber": 269
+        },
+        {
+          "caller": "run_evaluation",
+          "callee": "zip",
+          "lineNumber": 269
+        },
+        {
+          "caller": "parse_headers",
+          "callee": "header.split",
+          "lineNumber": 283
+        },
+        {
+          "caller": "parse_headers",
+          "callee": "key.strip",
+          "lineNumber": 284
+        },
+        {
+          "caller": "parse_headers",
+          "callee": "value.strip",
+          "lineNumber": 284
+        },
+        {
+          "caller": "parse_headers",
+          "callee": "print",
+          "lineNumber": 286
+        },
+        {
+          "caller": "parse_env_vars",
+          "callee": "env_var.split",
+          "lineNumber": 298
+        },
+        {
+          "caller": "parse_env_vars",
+          "callee": "key.strip",
+          "lineNumber": 299
+        },
+        {
+          "caller": "parse_env_vars",
+          "callee": "value.strip",
+          "lineNumber": 299
+        },
+        {
+          "caller": "parse_env_vars",
+          "callee": "print",
+          "lineNumber": 301
+        },
+        {
+          "caller": "main",
+          "callee": "argparse.ArgumentParser",
+          "lineNumber": 306
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 322
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 323
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 324
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument_group",
+          "lineNumber": 326
+        },
+        {
+          "caller": "main",
+          "callee": "stdio_group.add_argument",
+          "lineNumber": 327
+        },
+        {
+          "caller": "main",
+          "callee": "stdio_group.add_argument",
+          "lineNumber": 328
+        },
+        {
+          "caller": "main",
+          "callee": "stdio_group.add_argument",
+          "lineNumber": 329
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument_group",
+          "lineNumber": 331
+        },
+        {
+          "caller": "main",
+          "callee": "remote_group.add_argument",
+          "lineNumber": 332
+        },
+        {
+          "caller": "main",
+          "callee": "remote_group.add_argument",
+          "lineNumber": 333
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 335
+        },
+        {
+          "caller": "main",
+          "callee": "parser.parse_args",
+          "lineNumber": 337
+        },
+        {
+          "caller": "main",
+          "callee": "args.eval_file.exists",
+          "lineNumber": 339
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 340
+        },
+        {
+          "caller": "main",
+          "callee": "sys.exit",
+          "lineNumber": 341
+        },
+        {
+          "caller": "main",
+          "callee": "parse_headers",
+          "lineNumber": 343
+        },
+        {
+          "caller": "main",
+          "callee": "parse_env_vars",
+          "lineNumber": 344
+        },
+        {
+          "caller": "main",
+          "callee": "create_connection",
+          "lineNumber": 347
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 356
+        },
+        {
+          "caller": "main",
+          "callee": "sys.exit",
+          "lineNumber": 357
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 359
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 362
+        },
+        {
+          "caller": "main",
+          "callee": "run_evaluation",
+          "lineNumber": 363
+        },
+        {
+          "caller": "main",
+          "callee": "args.output.write_text",
+          "lineNumber": 366
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 367
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 369
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 8,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "skills/mcp-builder/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 236,
+      "nonEmptyLines": 165,
+      "sections": [
+        {
+          "heading": "MCP Server Development Guide",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Process",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "🚀 High-Level Workflow",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Phase 1: Deep Research and Planning",
+          "level": 3,
+          "line": 21
+        },
+        {
+          "heading": "1.1 Understand Modern MCP Design",
+          "level": 4,
+          "line": 23
+        },
+        {
+          "heading": "1.2 Study MCP Protocol Documentation",
+          "level": 4,
+          "line": 37
+        },
+        {
+          "heading": "1.3 Study Framework Documentation",
+          "level": 4,
+          "line": 50
+        },
+        {
+          "heading": "1.4 Plan Your Implementation",
+          "level": 4,
+          "line": 68
+        },
+        {
+          "heading": "Phase 2: Implementation",
+          "level": 3,
+          "line": 78
+        },
+        {
+          "heading": "2.1 Set Up Project Structure",
+          "level": 4,
+          "line": 80
+        },
+        {
+          "heading": "2.2 Implement Core Infrastructure",
+          "level": 4,
+          "line": 86
+        },
+        {
+          "heading": "2.3 Implement Tools",
+          "level": 4,
+          "line": 94
+        },
+        {
+          "heading": "Phase 3: Review and Test",
+          "level": 3,
+          "line": 127
+        },
+        {
+          "heading": "3.1 Code Quality",
+          "level": 4,
+          "line": 129
+        },
+        {
+          "heading": "3.2 Build and Test",
+          "level": 4,
+          "line": 137
+        },
+        {
+          "heading": "Phase 4: Create Evaluations",
+          "level": 3,
+          "line": 151
+        },
+        {
+          "heading": "4.1 Understand Evaluation Purpose",
+          "level": 4,
+          "line": 157
+        },
+        {
+          "heading": "4.2 Create 10 Evaluation Questions",
+          "level": 4,
+          "line": 161
+        },
+        {
+          "heading": "4.3 Evaluation Requirements",
+          "level": 4,
+          "line": 170
+        },
+        {
+          "heading": "4.4 Output Format",
+          "level": 4,
+          "line": 180
+        },
+        {
+          "heading": "Reference Files",
+          "level": 1,
+          "line": 196
+        },
+        {
+          "heading": "📚 Documentation Library",
+          "level": 2,
+          "line": 198
+        },
+        {
+          "heading": "Core MCP Documentation (Load First)",
+          "level": 3,
+          "line": 202
+        },
+        {
+          "heading": "SDK Documentation (Load During Phase 1/2)",
+          "level": 3,
+          "line": 211
+        },
+        {
+          "heading": "Language-Specific Implementation Guides (Load During Phase 2)",
+          "level": 3,
+          "line": 215
+        },
+        {
+          "heading": "Evaluation Guide (Load During Phase 4)",
+          "level": 3,
+          "line": 230
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 27
+      }
+    },
+    {
+      "path": "skills/mcp-builder/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/mcp-server-index/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/mcp-server-index/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/mcp-server-index/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/mcp-server-index/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/mcp-server-index/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 69,
+      "nonEmptyLines": 57,
+      "sections": [
+        {
+          "heading": "MCP Server Index",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "Active MCP Servers",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "godot-mcp",
+          "level": 3,
+          "line": 13
+        },
+        {
+          "heading": "context7",
+          "level": 3,
+          "line": 22
+        },
+        {
+          "heading": "godot-asset-library",
+          "level": 3,
+          "line": 29
+        },
+        {
+          "heading": "kscript-knowledge",
+          "level": 3,
+          "line": 39
+        },
+        {
+          "heading": "ragx-aipm",
+          "level": 3,
+          "line": 50
+        },
+        {
+          "heading": "Dispatch Rules",
+          "level": 2,
+          "line": 55
+        },
+        {
+          "heading": "Godot Workflow Policy",
+          "level": 2,
+          "line": 63
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [{"path": "scripts/admin.py", "language": "python", "sizeLines": 424, "fileCategory": "code"}, {"path": "sdk/__init__.py", "language": "python", "sizeLines": 12, "fileCategory": "code"}, {"path": "sdk/archon.py", "language": "python", "sizeLines": 654, "fileCategory": "code"}],
+  "batchImportData": {"scripts/admin.py": ["sdk/__init__.py"], "sdk/__init__.py": ["sdk/archon.py"], "sdk/archon.py": []}
+}

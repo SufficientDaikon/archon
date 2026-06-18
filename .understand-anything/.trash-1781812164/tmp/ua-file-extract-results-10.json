@@ -1,0 +1,147 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "webapp/src/app/layout.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 55,
+      "functions": [
+        {
+          "name": "RootLayout",
+          "startLine": 31,
+          "endLine": 57,
+          "params": [
+            "{\n  children,\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "RootLayout",
+          "line": 31,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/components/Footer.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 126,
+      "nonEmptyLines": 121,
+      "functions": [
+        {
+          "name": "Footer",
+          "startLine": 3,
+          "endLine": 126,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Footer",
+          "line": 3,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Footer",
+          "callee": "[\n                { href: \"/skills/\", label: \"Skills Marketplace\" },\n                { href: \"/agents/\", label: \"Agent Directory\" },\n                { href: \"/pipelines/\", label: \"Pipeline Gallery\" },\n                { href: \"/bundles/\", label: \"Bundle Showcase\" },\n              ].map",
+          "lineNumber": 29
+        },
+        {
+          "caller": "Footer",
+          "callee": "[\n                { href: \"/docs/\", label: \"Documentation\" },\n                {\n                  href: \"https://github.com/SufficientDaikon/archon\",\n                  label: \"GitHub\",\n                  external: true,\n                },\n                {\n                  href: \"https://github.com/SufficientDaikon/archon/blob/main/CONTRIBUTING.md\",\n                  label: \"Contributing\",\n                  external: true,\n                },\n                {\n                  href: \"https://github.com/SufficientDaikon/archon/blob/main/CHANGELOG.md\",\n                  label: \"Changelog\",\n                  external: true,\n                },\n              ].map",
+          "lineNumber": 53
+        },
+        {
+          "caller": "Footer",
+          "callee": "[\n                \"Claude Code\",\n                \"Copilot CLI\",\n                \"Cursor\",\n                \"Windsurf\",\n                \"Antigravity\",\n              ].map",
+          "lineNumber": 100
+        },
+        {
+          "caller": "Footer",
+          "callee": "new Date().getFullYear",
+          "lineNumber": 117
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/components/Navbar.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 134,
+      "nonEmptyLines": 127,
+      "functions": [
+        {
+          "name": "Navbar",
+          "startLine": 15,
+          "endLine": 134,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Navbar",
+          "line": 15,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Navbar",
+          "callee": "useState",
+          "lineNumber": 16
+        },
+        {
+          "caller": "Navbar",
+          "callee": "navLinks.map",
+          "lineNumber": 38
+        },
+        {
+          "caller": "Navbar",
+          "callee": "setMobileOpen",
+          "lineNumber": 71
+        },
+        {
+          "caller": "Navbar",
+          "callee": "navLinks.map",
+          "lineNumber": 111
+        },
+        {
+          "caller": "Navbar",
+          "callee": "setMobileOpen",
+          "lineNumber": 115
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

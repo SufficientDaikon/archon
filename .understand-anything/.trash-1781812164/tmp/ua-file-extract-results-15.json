@@ -1,0 +1,1513 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 20,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "docs/AUDIT_REPORT.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 191,
+      "nonEmptyLines": 136,
+      "sections": [
+        {
+          "heading": "ARCHON SYNAPSE ENGINE — ADVERSARIAL CODE AUDIT",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "STRIKE PROTOCOL FINDINGS",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "S — SAFETY (Thread Safety)",
+          "level": 3,
+          "line": 12
+        },
+        {
+          "heading": "[BLOCKER] S-001: Race Condition on SynapseEngine.firing_log",
+          "level": 4,
+          "line": 14
+        },
+        {
+          "heading": "[BLOCKER] S-002: Race Condition on Synapse.firing_log",
+          "level": 4,
+          "line": 19
+        },
+        {
+          "heading": "[MAJOR] S-003: Dict mutation race on synapses",
+          "level": 4,
+          "line": 23
+        },
+        {
+          "heading": "T — TYPES (API Design)",
+          "level": 3,
+          "line": 29
+        },
+        {
+          "heading": "[MAJOR] T-001: Type Mismatch on validator",
+          "level": 4,
+          "line": 31
+        },
+        {
+          "heading": "[MAJOR] T-002: Silent overwrites on register_synapse()",
+          "level": 4,
+          "line": 36
+        },
+        {
+          "heading": "[MAJOR] T-003: No validation of trigger names",
+          "level": 4,
+          "line": 41
+        },
+        {
+          "heading": "R — RESOURCES (Cleanup)",
+          "level": 3,
+          "line": 48
+        },
+        {
+          "heading": "[MINOR] R-001: No cleanup API",
+          "level": 4,
+          "line": 50
+        },
+        {
+          "heading": "I — INVARIANTS (Behavior)",
+          "level": 3,
+          "line": 57
+        },
+        {
+          "heading": "[MAJOR] I-001: Confusing is_blocking semantics",
+          "level": 4,
+          "line": 59
+        },
+        {
+          "heading": "K — KOVER (Test Coverage)",
+          "level": 3,
+          "line": 67
+        },
+        {
+          "heading": "[MAJOR] K-001: No concurrency tests",
+          "level": 4,
+          "line": 69
+        },
+        {
+          "heading": "[MAJOR] K-002: No test for async validators in sync context",
+          "level": 4,
+          "line": 74
+        },
+        {
+          "heading": "E — EFFICIENCY",
+          "level": 3,
+          "line": 81
+        },
+        {
+          "heading": "[MINOR] E-001: Redundant list comprehension every call",
+          "level": 4,
+          "line": 83
+        },
+        {
+          "heading": "[MINOR] E-002: Regex compiled on every call",
+          "level": 4,
+          "line": 88
+        },
+        {
+          "heading": "7 — ERROR HANDLING",
+          "level": 3,
+          "line": 94
+        },
+        {
+          "heading": "[BLOCKER] 7-001: Silent exception swallowing",
+          "level": 4,
+          "line": 96
+        },
+        {
+          "heading": "[MAJOR] 7-002: Return type mismatch",
+          "level": 4,
+          "line": 101
+        },
+        {
+          "heading": "[MAJOR] 7-003: No validation of callable",
+          "level": 4,
+          "line": 106
+        },
+        {
+          "heading": "8 — DOCUMENTATION",
+          "level": 3,
+          "line": 113
+        },
+        {
+          "heading": "[MAJOR] 8-001: Threading model not documented",
+          "level": 4,
+          "line": 115
+        },
+        {
+          "heading": "[MINOR] 8-002: Incomplete docstrings",
+          "level": 4,
+          "line": 120
+        },
+        {
+          "heading": "9 — EDGE CASES",
+          "level": 3,
+          "line": 128
+        },
+        {
+          "heading": "[MAJOR] 9-001: Null context not handled",
+          "level": 4,
+          "line": 130
+        },
+        {
+          "heading": "[MAJOR] 9-002: Empty code string in security validator",
+          "level": 4,
+          "line": 135
+        },
+        {
+          "heading": "10 — BLAST RADIUS (Integration)",
+          "level": 3,
+          "line": 141
+        },
+        {
+          "heading": "[BLOCKER] 10-001: BROKEN integration with PolicyEngine",
+          "level": 4,
+          "line": 143
+        },
+        {
+          "heading": "[MAJOR] 10-002: No integration tests",
+          "level": 4,
+          "line": 151
+        },
+        {
+          "heading": "SUMMARY",
+          "level": 2,
+          "line": 158
+        },
+        {
+          "heading": "VERDICT",
+          "level": 2,
+          "line": 175
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 35
+      }
+    },
+    {
+      "path": "docs/DDE-METHODOLOGY.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 195,
+      "nonEmptyLines": 152,
+      "sections": [
+        {
+          "heading": "DDE: Dissection-Driven Enhancement",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "The 8-Step DDE Loop",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Step 1: DISSECT",
+          "level": 3,
+          "line": 18
+        },
+        {
+          "heading": "Step 2: CATALOG",
+          "level": 3,
+          "line": 33
+        },
+        {
+          "heading": "Step 3: DIFF",
+          "level": 3,
+          "line": 44
+        },
+        {
+          "heading": "Step 4: SPECIFY",
+          "level": 3,
+          "line": 60
+        },
+        {
+          "heading": "Step 5: IMPLEMENT",
+          "level": 3,
+          "line": 73
+        },
+        {
+          "heading": "Step 6: VALIDATE",
+          "level": 3,
+          "line": 90
+        },
+        {
+          "heading": "Step 7: REGISTER",
+          "level": 3,
+          "line": 107
+        },
+        {
+          "heading": "Step 8: COMPOSE",
+          "level": 3,
+          "line": 117
+        },
+        {
+          "heading": "Quality Gates",
+          "level": 2,
+          "line": 126
+        },
+        {
+          "heading": "Example: prompts.chat DDE Cycle",
+          "level": 2,
+          "line": 141
+        },
+        {
+          "heading": "Patterns Cataloged",
+          "level": 3,
+          "line": 146
+        },
+        {
+          "heading": "Skills Created",
+          "level": 3,
+          "line": 159
+        },
+        {
+          "heading": "Skills Upgraded",
+          "level": 3,
+          "line": 164
+        },
+        {
+          "heading": "Running DDE on a New Codebase",
+          "level": 2,
+          "line": 169
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 17
+      }
+    },
+    {
+      "path": "docs/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 138,
+      "nonEmptyLines": 99,
+      "sections": [
+        {
+          "heading": "Archon Documentation",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "📚 Documentation Pages",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Getting Started",
+          "level": 3,
+          "line": 7
+        },
+        {
+          "heading": "Creating Components",
+          "level": 3,
+          "line": 10
+        },
+        {
+          "heading": "v2.0 Guides",
+          "level": 3,
+          "line": 17
+        },
+        {
+          "heading": "Reference",
+          "level": 3,
+          "line": 24
+        },
+        {
+          "heading": "🎨 Design",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "🚀 Quick Start",
+          "level": 2,
+          "line": 44
+        },
+        {
+          "heading": "🔧 Customization",
+          "level": 2,
+          "line": 51
+        },
+        {
+          "heading": "📝 Content Sources",
+          "level": 2,
+          "line": 60
+        },
+        {
+          "heading": "✨ Features",
+          "level": 2,
+          "line": 68
+        },
+        {
+          "heading": "🌐 Live Preview",
+          "level": 2,
+          "line": 83
+        },
+        {
+          "heading": "📦 Building HTML Documentation",
+          "level": 2,
+          "line": 102
+        },
+        {
+          "heading": "Deploying",
+          "level": 3,
+          "line": 119
+        },
+        {
+          "heading": "🎯 Design Inspiration",
+          "level": 2,
+          "line": 128
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 15
+      }
+    },
+    {
+      "path": "docs/REMEDIATION_PLAN.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 265,
+      "nonEmptyLines": 198,
+      "sections": [
+        {
+          "heading": "Archon Synapse Engine — Remediation Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "BLOCKER Issues & Fixes",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "BLOCKER 1: Thread-Safety Races (S-001, S-002, S-003)",
+          "level": 3,
+          "line": 5
+        },
+        {
+          "heading": "BLOCKER 2: Silent Exception Swallowing (7-001)",
+          "level": 3,
+          "line": 34
+        },
+        {
+          "heading": "BLOCKER 3: Async/Sync Validator Mismatch (10-001)",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "BLOCKER 4: Broken Integration (10-001 Integration Test)",
+          "level": 3,
+          "line": 99
+        },
+        {
+          "heading": "MAJOR Issues & Fixes",
+          "level": 2,
+          "line": 129
+        },
+        {
+          "heading": "MAJOR T-002: Silent Overwrites",
+          "level": 3,
+          "line": 131
+        },
+        {
+          "heading": "MAJOR T-003: No Trigger Validation",
+          "level": 3,
+          "line": 142
+        },
+        {
+          "heading": "MAJOR 7-003: No Validator Validation",
+          "level": 3,
+          "line": 157
+        },
+        {
+          "heading": "MAJOR 9-001: Null Context Not Handled",
+          "level": 3,
+          "line": 167
+        },
+        {
+          "heading": "MINOR Issues & Fixes",
+          "level": 2,
+          "line": 182
+        },
+        {
+          "heading": "MINOR E-001/E-002: Performance",
+          "level": 3,
+          "line": 184
+        },
+        {
+          "heading": "MINOR 8-001: Document Threading",
+          "level": 3,
+          "line": 200
+        },
+        {
+          "heading": "Implementation Schedule",
+          "level": 2,
+          "line": 217
+        },
+        {
+          "heading": "Verification Checklist",
+          "level": 2,
+          "line": 239
+        },
+        {
+          "heading": "Timeline",
+          "level": 2,
+          "line": 253
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 17
+      }
+    },
+    {
+      "path": "docs/SYNAPSES_EXECUTABLE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 133,
+      "nonEmptyLines": 101,
+      "sections": [
+        {
+          "heading": "Executable Synapses — Archon v2",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "What Changed",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Architecture",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Core Components",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "1. SynapseEngine (src/archon/core/synapse_engine.py)",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "2. Individual Synapses (src/archon/synapses/)",
+          "level": 2,
+          "line": 45
+        },
+        {
+          "heading": "Anti-Rationalization",
+          "level": 3,
+          "line": 57
+        },
+        {
+          "heading": "Security Awareness",
+          "level": 3,
+          "line": 66
+        },
+        {
+          "heading": "Metacognition",
+          "level": 3,
+          "line": 75
+        },
+        {
+          "heading": "3. PolicyEngineWithSynapses (src/archon/core/policy_engine.py)",
+          "level": 2,
+          "line": 83
+        },
+        {
+          "heading": "Integration Points",
+          "level": 2,
+          "line": 98
+        },
+        {
+          "heading": "1. Pipeline Engine",
+          "level": 3,
+          "line": 100
+        },
+        {
+          "heading": "2. Agent Execution",
+          "level": 3,
+          "line": 103
+        },
+        {
+          "heading": "3. Policy Engine",
+          "level": 3,
+          "line": 106
+        },
+        {
+          "heading": "Testing",
+          "level": 2,
+          "line": 109
+        },
+        {
+          "heading": "Extending Synapses",
+          "level": 2,
+          "line": 121
+        },
+        {
+          "heading": "Next Steps",
+          "level": 2,
+          "line": 127
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 17
+      }
+    },
+    {
+      "path": "docs/agent-cards.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 388,
+      "nonEmptyLines": 364,
+      "metrics": {}
+    },
+    {
+      "path": "docs/agent-cards.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 210,
+      "nonEmptyLines": 158,
+      "sections": [
+        {
+          "heading": "Agent Cards",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "What are Agent Cards?",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Card Schema",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "Example Card",
+          "level": 2,
+          "line": 50
+        },
+        {
+          "heading": "Generating `agent-cards.json`",
+          "level": 2,
+          "line": 79
+        },
+        {
+          "heading": "CLI Command (recommended)",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "Standalone Script",
+          "level": 3,
+          "line": 96
+        },
+        {
+          "heading": "CLI Reference",
+          "level": 2,
+          "line": 107
+        },
+        {
+          "heading": "View all agent cards",
+          "level": 3,
+          "line": 109
+        },
+        {
+          "heading": "View a single agent card",
+          "level": 3,
+          "line": 117
+        },
+        {
+          "heading": "Export as JSON",
+          "level": 3,
+          "line": 125
+        },
+        {
+          "heading": "Validate cards",
+          "level": 3,
+          "line": 133
+        },
+        {
+          "heading": "Check freshness",
+          "level": 3,
+          "line": 141
+        },
+        {
+          "heading": "Using Cards Programmatically",
+          "level": 2,
+          "line": 151
+        },
+        {
+          "heading": "Python",
+          "level": 3,
+          "line": 181
+        },
+        {
+          "heading": "JavaScript",
+          "level": 3,
+          "line": 192
+        },
+        {
+          "heading": "Adding Cards to Your Agent",
+          "level": 2,
+          "line": 203
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 17
+      }
+    },
+    {
+      "path": "docs/architecture.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 564,
+      "nonEmptyLines": 528,
+      "metrics": {}
+    },
+    {
+      "path": "docs/architecture.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 441,
+      "nonEmptyLines": 336,
+      "sections": [
+        {
+          "heading": "Archon v3.0 — 6-Layer Architecture",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Layer 0: Bootstrap & Discipline",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "Hook System",
+          "level": 3,
+          "line": 37
+        },
+        {
+          "heading": "Bootstrap Sequence",
+          "level": 3,
+          "line": 47
+        },
+        {
+          "heading": "Why Layer 0 Exists",
+          "level": 3,
+          "line": 71
+        },
+        {
+          "heading": "Layer 1: Agent Layer",
+          "level": 2,
+          "line": 82
+        },
+        {
+          "heading": "Agent Manifest Structure",
+          "level": 3,
+          "line": 100
+        },
+        {
+          "heading": "Agent ↔ Skill Relationship",
+          "level": 3,
+          "line": 125
+        },
+        {
+          "heading": "Layer 2: Skill Layer",
+          "level": 2,
+          "line": 145
+        },
+        {
+          "heading": "Skill Manifest Format",
+          "level": 3,
+          "line": 151
+        },
+        {
+          "heading": "Skill Bundles",
+          "level": 3,
+          "line": 165
+        },
+        {
+          "heading": "Layer 3: Pipeline Layer",
+          "level": 2,
+          "line": 184
+        },
+        {
+          "heading": "Pipeline State Machine",
+          "level": 3,
+          "line": 190
+        },
+        {
+          "heading": "Pipeline Execution",
+          "level": 3,
+          "line": 214
+        },
+        {
+          "heading": "Available Pipelines",
+          "level": 3,
+          "line": 223
+        },
+        {
+          "heading": "Layer 4: Artifact Layer",
+          "level": 2,
+          "line": 235
+        },
+        {
+          "heading": "Artifact Validation",
+          "level": 3,
+          "line": 239
+        },
+        {
+          "heading": "Persistence",
+          "level": 3,
+          "line": 246
+        },
+        {
+          "heading": "Why JSON?",
+          "level": 3,
+          "line": 262
+        },
+        {
+          "heading": "Cognitive Synapses",
+          "level": 2,
+          "line": 272
+        },
+        {
+          "heading": "Synapse Types",
+          "level": 3,
+          "line": 276
+        },
+        {
+          "heading": "Built-in Synapses",
+          "level": 3,
+          "line": 286
+        },
+        {
+          "heading": "DDE (Dissect-Develop-Evolve) Pipeline Framework",
+          "level": 2,
+          "line": 296
+        },
+        {
+          "heading": "DDE Stages",
+          "level": 3,
+          "line": 300
+        },
+        {
+          "heading": "DDE Pipelines",
+          "level": 3,
+          "line": 317
+        },
+        {
+          "heading": "Cross-Layer Data Flow",
+          "level": 2,
+          "line": 328
+        },
+        {
+          "heading": "Layer 6: Runtime Contracts (v3.0)",
+          "level": 2,
+          "line": 360
+        },
+        {
+          "heading": "Session Lifecycle",
+          "level": 3,
+          "line": 366
+        },
+        {
+          "heading": "Central Policy Engine",
+          "level": 3,
+          "line": 380
+        },
+        {
+          "heading": "Telemetry & Replay",
+          "level": 3,
+          "line": 391
+        },
+        {
+          "heading": "MCP Trust Routing",
+          "level": 3,
+          "line": 408
+        },
+        {
+          "heading": "v3 Schemas",
+          "level": 3,
+          "line": 417
+        },
+        {
+          "heading": "Release Gates",
+          "level": 3,
+          "line": 430
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 34
+      }
+    },
+    {
+      "path": "docs/cli-guide.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 1408,
+      "nonEmptyLines": 1269,
+      "metrics": {}
+    },
+    {
+      "path": "docs/cli-guide.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 875,
+      "nonEmptyLines": 644,
+      "sections": [
+        {
+          "heading": "CLI Guide for Archon",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Table of Contents",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Installation",
+          "level": 2,
+          "line": 36
+        },
+        {
+          "heading": "From PyPI (Recommended)",
+          "level": 3,
+          "line": 38
+        },
+        {
+          "heading": "From Source",
+          "level": 3,
+          "line": 44
+        },
+        {
+          "heading": "Verify Installation",
+          "level": 3,
+          "line": 52
+        },
+        {
+          "heading": "Quick Start",
+          "level": 2,
+          "line": 61
+        },
+        {
+          "heading": "Global Flags",
+          "level": 2,
+          "line": 80
+        },
+        {
+          "heading": "Command Reference",
+          "level": 2,
+          "line": 109
+        },
+        {
+          "heading": "`archon init`",
+          "level": 3,
+          "line": 111
+        },
+        {
+          "heading": "`archon install`",
+          "level": 3,
+          "line": 138
+        },
+        {
+          "heading": "`archon uninstall`",
+          "level": 3,
+          "line": 189
+        },
+        {
+          "heading": "`archon doctor`",
+          "level": 3,
+          "line": 221
+        },
+        {
+          "heading": "`archon validate`",
+          "level": 3,
+          "line": 265
+        },
+        {
+          "heading": "`archon list`",
+          "level": 3,
+          "line": 325
+        },
+        {
+          "heading": "`archon search`",
+          "level": 3,
+          "line": 388
+        },
+        {
+          "heading": "`archon info`",
+          "level": 3,
+          "line": 426
+        },
+        {
+          "heading": "`archon pipeline`",
+          "level": 3,
+          "line": 471
+        },
+        {
+          "heading": "`archon update`",
+          "level": 3,
+          "line": 522
+        },
+        {
+          "heading": "`archon migrate`",
+          "level": 3,
+          "line": 559
+        },
+        {
+          "heading": "`archon admin`",
+          "level": 3,
+          "line": 596
+        },
+        {
+          "heading": "`archon config`",
+          "level": 3,
+          "line": 625
+        },
+        {
+          "heading": "Exit Codes",
+          "level": 2,
+          "line": 665
+        },
+        {
+          "heading": "Configuration",
+          "level": 2,
+          "line": 681
+        },
+        {
+          "heading": "Config File",
+          "level": 3,
+          "line": 683
+        },
+        {
+          "heading": "Environment Variables",
+          "level": 3,
+          "line": 698
+        },
+        {
+          "heading": "Platform Detection",
+          "level": 2,
+          "line": 719
+        },
+        {
+          "heading": "How It Works",
+          "level": 3,
+          "line": 727
+        },
+        {
+          "heading": "Override Detection",
+          "level": 3,
+          "line": 733
+        },
+        {
+          "heading": "JSON Output",
+          "level": 2,
+          "line": 744
+        },
+        {
+          "heading": "Envelope Fields",
+          "level": 3,
+          "line": 763
+        },
+        {
+          "heading": "Error Envelope",
+          "level": 3,
+          "line": 773
+        },
+        {
+          "heading": "Shell Completions",
+          "level": 2,
+          "line": 789
+        },
+        {
+          "heading": "Common Workflows",
+          "level": 2,
+          "line": 817
+        },
+        {
+          "heading": "Install a Bundle",
+          "level": 3,
+          "line": 819
+        },
+        {
+          "heading": "Validate Before a PR",
+          "level": 3,
+          "line": 826
+        },
+        {
+          "heading": "Check Installation Health",
+          "level": 3,
+          "line": 834
+        },
+        {
+          "heading": "Search for Skills",
+          "level": 3,
+          "line": 841
+        },
+        {
+          "heading": "Run a Pipeline",
+          "level": 3,
+          "line": 849
+        },
+        {
+          "heading": "Update Archon",
+          "level": 3,
+          "line": 856
+        },
+        {
+          "heading": "Next Steps",
+          "level": 2,
+          "line": 866
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 41
+      }
+    },
+    {
+      "path": "docs/creating-agents.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 664,
+      "nonEmptyLines": 574,
+      "metrics": {}
+    },
+    {
+      "path": "docs/creating-agents.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 147,
+      "nonEmptyLines": 108,
+      "sections": [
+        {
+          "heading": "Creating Agents",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "What's an Agent?",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Agent Structure",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Creating an Agent",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Step 1: Define agent-manifest.yaml",
+          "level": 3,
+          "line": 17
+        },
+        {
+          "heading": "Step 2: Write AGENT.md",
+          "level": 3,
+          "line": 61
+        },
+        {
+          "heading": "Step 3: Validate",
+          "level": 3,
+          "line": 65
+        },
+        {
+          "heading": "Self-Customization",
+          "level": 2,
+          "line": 71
+        },
+        {
+          "heading": "Special Agent Pattern: The Routing Agent",
+          "level": 2,
+          "line": 79
+        },
+        {
+          "heading": "Existing Agents",
+          "level": 2,
+          "line": 90
+        },
+        {
+          "heading": "v2.0: Guardrails Enforcement",
+          "level": 2,
+          "line": 107
+        },
+        {
+          "heading": "Severity Levels",
+          "level": 3,
+          "line": 117
+        },
+        {
+          "heading": "The Anti-Rationalization Synapse",
+          "level": 3,
+          "line": 123
+        },
+        {
+          "heading": "Example: Spec Writer Guardrails",
+          "level": 3,
+          "line": 131
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "docs/creating-bundles.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 650,
+      "nonEmptyLines": 569,
+      "metrics": {}
+    },
+    {
+      "path": "docs/creating-bundles.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 97,
+      "nonEmptyLines": 67,
+      "sections": [
+        {
+          "heading": "Creating Bundles",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "What's a Bundle?",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Bundle Structure",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Creating a Bundle",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "Step 1: Define bundle.yaml",
+          "level": 3,
+          "line": 20
+        },
+        {
+          "heading": "Step 2: Create the Meta-Skill",
+          "level": 3,
+          "line": 43
+        },
+        {
+          "heading": "Step 3: Add Shared Resources",
+          "level": 3,
+          "line": 63
+        },
+        {
+          "heading": "Step 4: Validate",
+          "level": 3,
+          "line": 74
+        },
+        {
+          "heading": "Self-Customization",
+          "level": 2,
+          "line": 80
+        },
+        {
+          "heading": "Existing Bundles",
+          "level": 2,
+          "line": 93
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "docs/creating-pipelines.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 711,
+      "nonEmptyLines": 639,
+      "metrics": {}
+    },
+    {
+      "path": "docs/creating-pipelines.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 150,
+      "nonEmptyLines": 108,
+      "sections": [
+        {
+          "heading": "Creating Pipelines",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "What's a Pipeline?",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Pipeline Format",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "The Complexity Router Pre-Step",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "Step Configuration",
+          "level": 2,
+          "line": 49
+        },
+        {
+          "heading": "on-failure options",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "Input References",
+          "level": 3,
+          "line": 58
+        },
+        {
+          "heading": "Existing Pipelines",
+          "level": 2,
+          "line": 65
+        },
+        {
+          "heading": "v2.0: Pipeline Execution Engine",
+          "level": 2,
+          "line": 79
+        },
+        {
+          "heading": "Running a Pipeline",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "Pipeline State Machine",
+          "level": 3,
+          "line": 95
+        },
+        {
+          "heading": "State Persistence",
+          "level": 3,
+          "line": 113
+        },
+        {
+          "heading": "Context Curation Between Steps",
+          "level": 3,
+          "line": 121
+        },
+        {
+          "heading": "Artifact Validation",
+          "level": 3,
+          "line": 132
+        },
+        {
+          "heading": "CLI Commands",
+          "level": 3,
+          "line": 142
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 15
+      }
+    },
+    {
+      "path": "docs/creating-skills.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 625,
+      "nonEmptyLines": 556,
+      "metrics": {}
+    },
+    {
+      "path": "docs/creating-skills.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 154,
+      "nonEmptyLines": 104,
+      "sections": [
+        {
+          "heading": "Creating Skills",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Skill Anatomy",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Step 1: manifest.yaml",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Trigger Design Tips",
+          "level": 3,
+          "line": 37
+        },
+        {
+          "heading": "Step 2: SKILL.md",
+          "level": 2,
+          "line": 43
+        },
+        {
+          "heading": "Identity",
+          "level": 3,
+          "line": 47
+        },
+        {
+          "heading": "When to Use",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "Workflow",
+          "level": 3,
+          "line": 55
+        },
+        {
+          "heading": "Rules",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "Output Format",
+          "level": 3,
+          "line": 63
+        },
+        {
+          "heading": "Handoff",
+          "level": 3,
+          "line": 67
+        },
+        {
+          "heading": "Step 3: Resources (Optional but Recommended)",
+          "level": 2,
+          "line": 71
+        },
+        {
+          "heading": "Step 4: Tests",
+          "level": 2,
+          "line": 89
+        },
+        {
+          "heading": "Step 5: Validate",
+          "level": 2,
+          "line": 103
+        },
+        {
+          "heading": "Self-Customization Skills",
+          "level": 2,
+          "line": 117
+        },
+        {
+          "heading": "The `add-skill` Skill",
+          "level": 3,
+          "line": 121
+        },
+        {
+          "heading": "Example Advanced Skills",
+          "level": 3,
+          "line": 134
+        },
+        {
+          "heading": "Generator Tool Pattern",
+          "level": 2,
+          "line": 141
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    },
+    {
+      "path": "docs/creating-synapses.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 938,
+      "nonEmptyLines": 815,
+      "metrics": {}
+    }
+  ]
+}

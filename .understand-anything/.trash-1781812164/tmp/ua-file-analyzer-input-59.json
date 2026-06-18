@@ -1,0 +1,31 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [
+    {"path": "skills/ux-interaction-design/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ux-interaction-design/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ux-interaction-design/SKILL.md", "language": "markdown", "sizeLines": 982, "fileCategory": "docs"},
+    {"path": "skills/ux-interaction-design/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ux-research/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ux-research/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/ux-research/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ux-research/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ux-research/SKILL.md", "language": "markdown", "sizeLines": 249, "fileCategory": "docs"},
+    {"path": "skills/ux-research/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ux-test-suite/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ux-test-suite/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/ux-test-suite/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ux-test-suite/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ux-test-suite/SKILL.md", "language": "markdown", "sizeLines": 961, "fileCategory": "docs"},
+    {"path": "skills/ux-test-suite/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ux-writer/manifest.yaml", "language": "yaml", "sizeLines": 31, "fileCategory": "config"},
+    {"path": "skills/ux-writer/SKILL.md", "language": "markdown", "sizeLines": 486, "fileCategory": "docs"},
+    {"path": "skills/vercel-react-best-practices/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/vercel-react-best-practices/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/vercel-react-best-practices/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/vercel-react-best-practices/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/vercel-react-best-practices/SKILL.md", "language": "markdown", "sizeLines": 125, "fileCategory": "docs"},
+    {"path": "skills/vercel-react-best-practices/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/verification-before-completion/manifest.yaml", "language": "yaml", "sizeLines": 6, "fileCategory": "config"}
+  ],
+  "batchImportData": {}
+}

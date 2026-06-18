@@ -1,0 +1,33 @@
+{
+  "batchIndex": 25,
+  "nodes": [
+    {
+      "id": "document:skills/eyes/resources/gemini-api-reference.md",
+      "type": "document",
+      "name": "gemini-api-reference.md",
+      "filePath": "skills/eyes/resources/gemini-api-reference.md",
+      "summary": "Quick reference guide for the Gemini API used in the eyes skill for image generation and vision analysis, covering authentication, available models, aspect ratios, Node.js and Python SDK usage examples for generate/analyze/edit image operations, error handling, rate limits, and tips.",
+      "tags": ["gemini", "api-reference", "image-generation", "vision", "eyes-skill"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:skills/eyes/resources/presets.md",
+      "type": "document",
+      "name": "presets.md",
+      "filePath": "skills/eyes/resources/presets.md",
+      "summary": "Preset prompt library for the eyes skill containing ready-to-use image generation prompts for hero backgrounds (dark computational void, abstract data flow, cosmic grid), project visuals (neural network, agent orchestration, systems language), world-themed backgrounds, and textures.",
+      "tags": ["eyes-skill", "presets", "image-prompts", "hero-backgrounds", "visual"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:skills/eyes/resources/prompt-formulas.md",
+      "type": "document",
+      "name": "prompt-formulas.md",
+      "filePath": "skills/eyes/resources/prompt-formulas.md",
+      "summary": "Structured prompt formulas for image generation in the eyes skill, defining the 5-component (Subject/Action/Environment/Composition/Style) and 7-component formulas, quick prompt enhancers, and anti-patterns that break image generation prompts.",
+      "tags": ["prompt-formulas", "image-generation", "eyes-skill", "composition", "style"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

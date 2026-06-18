@@ -1,0 +1,1159 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "skills/server-component-patterns/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 32,
+      "nonEmptyLines": 27,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "extends",
+          "level": 1,
+          "line": 29
+        },
+        {
+          "heading": "source-dissection",
+          "level": 1,
+          "line": 30
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "skills/server-component-patterns/resources/rsc-patterns.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 628,
+      "nonEmptyLines": 501,
+      "sections": [
+        {
+          "heading": "RSC Patterns Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. Server/Client Boundary Patterns",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Pattern A: Server Component with Direct Data Fetching",
+          "level": 3,
+          "line": 9
+        },
+        {
+          "heading": "Pattern B: Extracting a Minimal Client Component",
+          "level": 3,
+          "line": 37
+        },
+        {
+          "heading": "Pattern C: Composition — Server Component Children Inside Client Component",
+          "level": 3,
+          "line": 90
+        },
+        {
+          "heading": "Pattern D: Avoiding Barrel File Contamination",
+          "level": 3,
+          "line": 138
+        },
+        {
+          "heading": "2. Streaming with Suspense",
+          "level": 2,
+          "line": 156
+        },
+        {
+          "heading": "Pattern E: Route-Level Streaming with loading.tsx",
+          "level": 3,
+          "line": 158
+        },
+        {
+          "heading": "Pattern F: Nested Suspense for Independent Data",
+          "level": 3,
+          "line": 178
+        },
+        {
+          "heading": "Pattern G: Streaming a List with Sequential Reveal",
+          "level": 3,
+          "line": 241
+        },
+        {
+          "heading": "3. Server Actions",
+          "level": 2,
+          "line": 269
+        },
+        {
+          "heading": "Pattern H: Form with Server Action (Progressive Enhancement)",
+          "level": 3,
+          "line": 271
+        },
+        {
+          "heading": "Pattern I: Optimistic Updates with useOptimistic",
+          "level": 3,
+          "line": 366
+        },
+        {
+          "heading": "Pattern J: Server Action with Revalidation Tags",
+          "level": 3,
+          "line": 437
+        },
+        {
+          "heading": "4. Error Handling",
+          "level": 2,
+          "line": 489
+        },
+        {
+          "heading": "Pattern K: error.tsx Boundary",
+          "level": 3,
+          "line": 491
+        },
+        {
+          "heading": "5. Anti-Patterns to Avoid",
+          "level": 2,
+          "line": 526
+        },
+        {
+          "heading": "Anti-Pattern: \"use client\" on a Page",
+          "level": 3,
+          "line": 528
+        },
+        {
+          "heading": "Anti-Pattern: Passing Functions Across the Boundary",
+          "level": 3,
+          "line": 550
+        },
+        {
+          "heading": "Anti-Pattern: Wrapping Root Layout in Providers",
+          "level": 3,
+          "line": 590
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 20
+      }
+    },
+    {
+      "path": "skills/server-component-patterns/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 135,
+      "nonEmptyLines": 106,
+      "sections": [
+        {
+          "heading": "Server Component Patterns",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Workflow",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "Step 1: Classify Components",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "Step 2: Design Server Data Flow",
+          "level": 3,
+          "line": 41
+        },
+        {
+          "heading": "Step 3: Add Streaming with Suspense",
+          "level": 3,
+          "line": 48
+        },
+        {
+          "heading": "Step 4: Minimize Client Boundary",
+          "level": 3,
+          "line": 55
+        },
+        {
+          "heading": "Step 5: Handle Mutations with Server Actions",
+          "level": 3,
+          "line": 62
+        },
+        {
+          "heading": "Step 6: Configure Build Optimization",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 76
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 78
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 87
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 96
+        },
+        {
+          "heading": "Component Tree Template",
+          "level": 3,
+          "line": 102
+        },
+        {
+          "heading": "Resources",
+          "level": 2,
+          "line": 117
+        },
+        {
+          "heading": "Handoff",
+          "level": 2,
+          "line": 123
+        },
+        {
+          "heading": "Platform Notes",
+          "level": 2,
+          "line": 131
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    },
+    {
+      "path": "skills/singleton-patterns/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 11,
+      "nonEmptyLines": 11,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "source-dissection",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "skills/singleton-patterns/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 119,
+      "nonEmptyLines": 89,
+      "sections": [
+        {
+          "heading": "Singleton Patterns",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Workflow",
+          "level": 2,
+          "line": 32
+        },
+        {
+          "heading": "Step 1: Identify Singleton Candidates",
+          "level": 3,
+          "line": 34
+        },
+        {
+          "heading": "Step 2: Implement globalThis Pattern",
+          "level": 3,
+          "line": 41
+        },
+        {
+          "heading": "Step 3: Add Initialization Guard",
+          "level": 3,
+          "line": 48
+        },
+        {
+          "heading": "Step 4: Configure Connection Pooling",
+          "level": 3,
+          "line": 55
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 72
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 80
+        },
+        {
+          "heading": "Code Template",
+          "level": 3,
+          "line": 85
+        },
+        {
+          "heading": "Resources",
+          "level": 2,
+          "line": 101
+        },
+        {
+          "heading": "Handoff",
+          "level": 2,
+          "line": 107
+        },
+        {
+          "heading": "Platform Notes",
+          "level": 2,
+          "line": 115
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 16
+      }
+    },
+    {
+      "path": "skills/skills-index/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/skills-index/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/skills-index/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/skills-index/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/skills-index/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 110,
+      "nonEmptyLines": 81,
+      "sections": [
+        {
+          "heading": "Installed Skills Index",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "🎮 Godot / GDScript",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "🐍 Django",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "🧪 Testing",
+          "level": 2,
+          "line": 35
+        },
+        {
+          "heading": "⚛️ React / Frontend",
+          "level": 2,
+          "line": 45
+        },
+        {
+          "heading": "📱 Mobile",
+          "level": 2,
+          "line": 56
+        },
+        {
+          "heading": "🔧 Backend",
+          "level": 2,
+          "line": 65
+        },
+        {
+          "heading": "🎨 Design & UX",
+          "level": 2,
+          "line": 73
+        },
+        {
+          "heading": "🤖 AI / Prompting / Meta",
+          "level": 2,
+          "line": 81
+        },
+        {
+          "heading": "Quick Reference: When to Load Which Skill",
+          "level": 2,
+          "line": 94
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "skills/skills-index/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/spec-writer/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/spec-writer/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/spec-writer/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/spec-writer/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/spec-writer/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 126,
+      "nonEmptyLines": 96,
+      "sections": [
+        {
+          "heading": "Spec Writer Skill",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "When to Use This Skill",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Specification Output Structure",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "Required Sections (always include):",
+          "level": 3,
+          "line": 25
+        },
+        {
+          "heading": "Conditional Sections (include when relevant):",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "Process",
+          "level": 2,
+          "line": 38
+        },
+        {
+          "heading": "Step 1: Parse the Plan",
+          "level": 3,
+          "line": 40
+        },
+        {
+          "heading": "Step 2: Clarify Ambiguities",
+          "level": 3,
+          "line": 48
+        },
+        {
+          "heading": "Step 3: Write User Stories",
+          "level": 3,
+          "line": 54
+        },
+        {
+          "heading": "Step 4: Write Requirements",
+          "level": 3,
+          "line": 74
+        },
+        {
+          "heading": "Step 5: Define Success Criteria",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "Step 6: Validate",
+          "level": 3,
+          "line": 89
+        },
+        {
+          "heading": "File Output",
+          "level": 2,
+          "line": 99
+        },
+        {
+          "heading": "Examples of Good vs Bad",
+          "level": 2,
+          "line": 106
+        },
+        {
+          "heading": "Good Requirement",
+          "level": 3,
+          "line": 108
+        },
+        {
+          "heading": "Bad Requirement",
+          "level": 3,
+          "line": 111
+        },
+        {
+          "heading": "Good Success Criterion",
+          "level": 3,
+          "line": 114
+        },
+        {
+          "heading": "Bad Success Criterion",
+          "level": 3,
+          "line": 117
+        },
+        {
+          "heading": "Handoff Instructions",
+          "level": 2,
+          "line": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 19
+      }
+    },
+    {
+      "path": "skills/spec-writer/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/structured-logging/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 11,
+      "nonEmptyLines": 11,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "source-dissection",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "skills/structured-logging/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 123,
+      "nonEmptyLines": 95,
+      "sections": [
+        {
+          "heading": "Structured Logging",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Workflow",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "Step 1: Choose Logger",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "Step 2: Configure Environments",
+          "level": 3,
+          "line": 41
+        },
+        {
+          "heading": "Step 3: Define Context Fields",
+          "level": 3,
+          "line": 47
+        },
+        {
+          "heading": "Step 4: Wire Request Correlation",
+          "level": 3,
+          "line": 53
+        },
+        {
+          "heading": "Step 5: Define Log Level Strategy",
+          "level": 3,
+          "line": 60
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 67
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 78
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 87
+        },
+        {
+          "heading": "File Structure Template",
+          "level": 3,
+          "line": 93
+        },
+        {
+          "heading": "Resources",
+          "level": 2,
+          "line": 105
+        },
+        {
+          "heading": "Handoff",
+          "level": 2,
+          "line": 111
+        },
+        {
+          "heading": "Platform Notes",
+          "level": 2,
+          "line": 119
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 17
+      }
+    },
+    {
+      "path": "skills/subagent-driven-development/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "category",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "skills/subagent-driven-development/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 103,
+      "nonEmptyLines": 81,
+      "sections": [
+        {
+          "heading": "Subagent-Driven Development — The Execution Engine",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Iron Law",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Purpose",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "The Process (Per Task)",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "Four Implementer Statuses",
+          "level": 2,
+          "line": 37
+        },
+        {
+          "heading": "Two-Stage Review (NEVER reverse order)",
+          "level": 2,
+          "line": 46
+        },
+        {
+          "heading": "Model Selection Strategy",
+          "level": 2,
+          "line": 63
+        },
+        {
+          "heading": "Fresh Context Principle",
+          "level": 2,
+          "line": 71
+        },
+        {
+          "heading": "Rationalization Table",
+          "level": 2,
+          "line": 87
+        },
+        {
+          "heading": "Red Flags",
+          "level": 2,
+          "line": 97
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "skills/systematic-debugging/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/systematic-debugging/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/systematic-debugging/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/systematic-debugging/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    }
+  ]
+}

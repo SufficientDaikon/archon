@@ -1,0 +1,1074 @@
+{
+  "batchIndex": 6,
+  "nodes": [
+    {
+      "id": "file:hooks/claude/agent_context.py",
+      "type": "file",
+      "path": "hooks/claude/agent_context.py",
+      "label": "agent_context.py",
+      "language": "python",
+      "sizeLines": 91,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 91,
+        "nonEmptyLines": 72,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 2,
+          "functionCount": 2,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:hooks/claude/agent_context.py:main",
+      "type": "function",
+      "path": "hooks/claude/agent_context.py",
+      "label": "main",
+      "language": "python",
+      "metadata": {
+        "startLine": 27,
+        "endLine": 53,
+        "lineCount": 27,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/agent_context.py:build_agent_context",
+      "type": "function",
+      "path": "hooks/claude/agent_context.py",
+      "label": "build_agent_context",
+      "language": "python",
+      "metadata": {
+        "startLine": 56,
+        "endLine": 87,
+        "lineCount": 32,
+        "params": [
+          "mode",
+          "state"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:hooks/claude/completion_gate.py",
+      "type": "file",
+      "path": "hooks/claude/completion_gate.py",
+      "label": "completion_gate.py",
+      "language": "python",
+      "sizeLines": 152,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 152,
+        "nonEmptyLines": 117,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 4,
+          "functionCount": 4,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:hooks/claude/completion_gate.py:main",
+      "type": "function",
+      "path": "hooks/claude/completion_gate.py",
+      "label": "main",
+      "language": "python",
+      "metadata": {
+        "startLine": 22,
+        "endLine": 61,
+        "lineCount": 40,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/completion_gate.py:check_quality_gates",
+      "type": "function",
+      "path": "hooks/claude/completion_gate.py",
+      "label": "check_quality_gates",
+      "language": "python",
+      "metadata": {
+        "startLine": 64,
+        "endLine": 97,
+        "lineCount": 34,
+        "params": [
+          "session"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/completion_gate.py:persist_and_archive",
+      "type": "function",
+      "path": "hooks/claude/completion_gate.py",
+      "label": "persist_and_archive",
+      "language": "python",
+      "metadata": {
+        "startLine": 100,
+        "endLine": 124,
+        "lineCount": 25,
+        "params": [
+          "state"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/completion_gate.py:build_completion_summary",
+      "type": "function",
+      "path": "hooks/claude/completion_gate.py",
+      "label": "build_completion_summary",
+      "language": "python",
+      "metadata": {
+        "startLine": 127,
+        "endLine": 148,
+        "lineCount": 22,
+        "params": [
+          "session",
+          "warnings"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:hooks/claude/guard_bash.py",
+      "type": "file",
+      "path": "hooks/claude/guard_bash.py",
+      "label": "guard_bash.py",
+      "language": "python",
+      "sizeLines": 53,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 53,
+        "nonEmptyLines": 40,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:hooks/claude/guard_bash.py:main",
+      "type": "function",
+      "path": "hooks/claude/guard_bash.py",
+      "label": "main",
+      "language": "python",
+      "metadata": {
+        "startLine": 19,
+        "endLine": 49,
+        "lineCount": 31,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:hooks/claude/guard_write.py",
+      "type": "file",
+      "path": "hooks/claude/guard_write.py",
+      "label": "guard_write.py",
+      "language": "python",
+      "sizeLines": 65,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 65,
+        "nonEmptyLines": 50,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:hooks/claude/guard_write.py:main",
+      "type": "function",
+      "path": "hooks/claude/guard_write.py",
+      "label": "main",
+      "language": "python",
+      "metadata": {
+        "startLine": 19,
+        "endLine": 61,
+        "lineCount": 43,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:hooks/claude/prompt_router.py",
+      "type": "file",
+      "path": "hooks/claude/prompt_router.py",
+      "label": "prompt_router.py",
+      "language": "python",
+      "sizeLines": 86,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 86,
+        "nonEmptyLines": 68,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 2,
+          "functionCount": 2,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:hooks/claude/prompt_router.py:main",
+      "type": "function",
+      "path": "hooks/claude/prompt_router.py",
+      "label": "main",
+      "language": "python",
+      "metadata": {
+        "startLine": 26,
+        "endLine": 60,
+        "lineCount": 35,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/prompt_router.py:build_route_context",
+      "type": "function",
+      "path": "hooks/claude/prompt_router.py",
+      "label": "build_route_context",
+      "language": "python",
+      "metadata": {
+        "startLine": 63,
+        "endLine": 82,
+        "lineCount": 20,
+        "params": [
+          "tier",
+          "mode",
+          "skills",
+          "synapses",
+          "synapse_context"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:hooks/claude/quality_bash.py",
+      "type": "file",
+      "path": "hooks/claude/quality_bash.py",
+      "label": "quality_bash.py",
+      "language": "python",
+      "sizeLines": 92,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 92,
+        "nonEmptyLines": 68,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 2,
+          "functionCount": 2,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:hooks/claude/quality_bash.py:main",
+      "type": "function",
+      "path": "hooks/claude/quality_bash.py",
+      "label": "main",
+      "language": "python",
+      "metadata": {
+        "startLine": 20,
+        "endLine": 57,
+        "lineCount": 38,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/quality_bash.py:_extract_exit_code",
+      "type": "function",
+      "path": "hooks/claude/quality_bash.py",
+      "label": "_extract_exit_code",
+      "language": "python",
+      "metadata": {
+        "startLine": 64,
+        "endLine": 88,
+        "lineCount": 25,
+        "params": [
+          "tool_response"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:hooks/claude/quality_write.py",
+      "type": "file",
+      "path": "hooks/claude/quality_write.py",
+      "label": "quality_write.py",
+      "language": "python",
+      "sizeLines": 37,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 37,
+        "nonEmptyLines": 26,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:hooks/claude/quality_write.py:main",
+      "type": "function",
+      "path": "hooks/claude/quality_write.py",
+      "label": "main",
+      "language": "python",
+      "metadata": {
+        "startLine": 18,
+        "endLine": 33,
+        "lineCount": 16,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:hooks/claude/session_boot.py",
+      "type": "file",
+      "path": "hooks/claude/session_boot.py",
+      "label": "session_boot.py",
+      "language": "python",
+      "sizeLines": 226,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 226,
+        "nonEmptyLines": 182,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 6,
+          "functionCount": 6,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:hooks/claude/session_boot.py:main",
+      "type": "function",
+      "path": "hooks/claude/session_boot.py",
+      "label": "main",
+      "language": "python",
+      "metadata": {
+        "startLine": 43,
+        "endLine": 87,
+        "lineCount": 45,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/session_boot.py:detect_project",
+      "type": "function",
+      "path": "hooks/claude/session_boot.py",
+      "label": "detect_project",
+      "language": "python",
+      "metadata": {
+        "startLine": 90,
+        "endLine": 102,
+        "lineCount": 13,
+        "params": [
+          "cwd"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/session_boot.py:_detect_node_framework",
+      "type": "function",
+      "path": "hooks/claude/session_boot.py",
+      "label": "_detect_node_framework",
+      "language": "python",
+      "metadata": {
+        "startLine": 105,
+        "endLine": 115,
+        "lineCount": 11,
+        "params": [
+          "cwd_path"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/session_boot.py:get_git_summary",
+      "type": "function",
+      "path": "hooks/claude/session_boot.py",
+      "label": "get_git_summary",
+      "language": "python",
+      "metadata": {
+        "startLine": 118,
+        "endLine": 158,
+        "lineCount": 41,
+        "params": [
+          "cwd"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/session_boot.py:archive_previous_session",
+      "type": "function",
+      "path": "hooks/claude/session_boot.py",
+      "label": "archive_previous_session",
+      "language": "python",
+      "metadata": {
+        "startLine": 161,
+        "endLine": 190,
+        "lineCount": 30,
+        "params": [
+          "state"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/session_boot.py:build_boot_context",
+      "type": "function",
+      "path": "hooks/claude/session_boot.py",
+      "label": "build_boot_context",
+      "language": "python",
+      "metadata": {
+        "startLine": 193,
+        "endLine": 222,
+        "lineCount": 30,
+        "params": [
+          "state"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:hooks/claude/shared/classifier.py",
+      "type": "file",
+      "path": "hooks/claude/shared/classifier.py",
+      "label": "classifier.py",
+      "language": "python",
+      "sizeLines": 168,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 168,
+        "nonEmptyLines": 143,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 5,
+          "functionCount": 5,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/classifier.py:classify_complexity",
+      "type": "function",
+      "path": "hooks/claude/shared/classifier.py",
+      "label": "classify_complexity",
+      "language": "python",
+      "metadata": {
+        "startLine": 106,
+        "endLine": 126,
+        "lineCount": 21,
+        "params": [
+          "prompt"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/classifier.py:match_skills",
+      "type": "function",
+      "path": "hooks/claude/shared/classifier.py",
+      "label": "match_skills",
+      "language": "python",
+      "metadata": {
+        "startLine": 129,
+        "endLine": 135,
+        "lineCount": 7,
+        "params": [
+          "prompt"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/classifier.py:get_execution_mode",
+      "type": "function",
+      "path": "hooks/claude/shared/classifier.py",
+      "label": "get_execution_mode",
+      "language": "python",
+      "metadata": {
+        "startLine": 138,
+        "endLine": 140,
+        "lineCount": 3,
+        "params": [
+          "tier"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/classifier.py:active_synapses",
+      "type": "function",
+      "path": "hooks/claude/shared/classifier.py",
+      "label": "active_synapses",
+      "language": "python",
+      "metadata": {
+        "startLine": 143,
+        "endLine": 154,
+        "lineCount": 12,
+        "params": [
+          "tier",
+          "prompt"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/classifier.py:build_synapse_context",
+      "type": "function",
+      "path": "hooks/claude/shared/classifier.py",
+      "label": "build_synapse_context",
+      "language": "python",
+      "metadata": {
+        "startLine": 157,
+        "endLine": 168,
+        "lineCount": 12,
+        "params": [
+          "synapses",
+          "tier"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:hooks/claude/shared/scanner.py",
+      "type": "file",
+      "path": "hooks/claude/shared/scanner.py",
+      "label": "scanner.py",
+      "language": "python",
+      "sizeLines": 144,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 144,
+        "nonEmptyLines": 127,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 4,
+          "functionCount": 4,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/scanner.py:scan_for_secrets",
+      "type": "function",
+      "path": "hooks/claude/shared/scanner.py",
+      "label": "scan_for_secrets",
+      "language": "python",
+      "metadata": {
+        "startLine": 105,
+        "endLine": 122,
+        "lineCount": 18,
+        "params": [
+          "content",
+          "file_path"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/scanner.py:scan_bash_command",
+      "type": "function",
+      "path": "hooks/claude/shared/scanner.py",
+      "label": "scan_bash_command",
+      "language": "python",
+      "metadata": {
+        "startLine": 125,
+        "endLine": 134,
+        "lineCount": 10,
+        "params": [
+          "command"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/scanner.py:is_test_command",
+      "type": "function",
+      "path": "hooks/claude/shared/scanner.py",
+      "label": "is_test_command",
+      "language": "python",
+      "metadata": {
+        "startLine": 137,
+        "endLine": 139,
+        "lineCount": 3,
+        "params": [
+          "command"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/scanner.py:is_build_command",
+      "type": "function",
+      "path": "hooks/claude/shared/scanner.py",
+      "label": "is_build_command",
+      "language": "python",
+      "metadata": {
+        "startLine": 142,
+        "endLine": 144,
+        "lineCount": 3,
+        "params": [
+          "command"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:hooks/claude/shared/state.py",
+      "type": "file",
+      "path": "hooks/claude/shared/state.py",
+      "label": "state.py",
+      "language": "python",
+      "sizeLines": 132,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 132,
+        "nonEmptyLines": 109,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 9,
+          "functionCount": 9,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/state.py:_get_archon_home",
+      "type": "function",
+      "path": "hooks/claude/shared/state.py",
+      "label": "_get_archon_home",
+      "language": "python",
+      "metadata": {
+        "startLine": 19,
+        "endLine": 24,
+        "lineCount": 6,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/state.py:get_state_path",
+      "type": "function",
+      "path": "hooks/claude/shared/state.py",
+      "label": "get_state_path",
+      "language": "python",
+      "metadata": {
+        "startLine": 27,
+        "endLine": 28,
+        "lineCount": 2,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/state.py:load_state",
+      "type": "function",
+      "path": "hooks/claude/shared/state.py",
+      "label": "load_state",
+      "language": "python",
+      "metadata": {
+        "startLine": 31,
+        "endLine": 43,
+        "lineCount": 13,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/state.py:save_state",
+      "type": "function",
+      "path": "hooks/claude/shared/state.py",
+      "label": "save_state",
+      "language": "python",
+      "metadata": {
+        "startLine": 46,
+        "endLine": 55,
+        "lineCount": 10,
+        "params": [
+          "state"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/state.py:_empty_state",
+      "type": "function",
+      "path": "hooks/claude/shared/state.py",
+      "label": "_empty_state",
+      "language": "python",
+      "metadata": {
+        "startLine": 58,
+        "endLine": 90,
+        "lineCount": 33,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/state.py:_migrate_state",
+      "type": "function",
+      "path": "hooks/claude/shared/state.py",
+      "label": "_migrate_state",
+      "language": "python",
+      "metadata": {
+        "startLine": 93,
+        "endLine": 104,
+        "lineCount": 12,
+        "params": [
+          "data"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/state.py:update_session_field",
+      "type": "function",
+      "path": "hooks/claude/shared/state.py",
+      "label": "update_session_field",
+      "language": "python",
+      "metadata": {
+        "startLine": 107,
+        "endLine": 111,
+        "lineCount": 5,
+        "params": [
+          "key",
+          "value"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/state.py:append_modified_file",
+      "type": "function",
+      "path": "hooks/claude/shared/state.py",
+      "label": "append_modified_file",
+      "language": "python",
+      "metadata": {
+        "startLine": 114,
+        "endLine": 120,
+        "lineCount": 7,
+        "params": [
+          "filepath"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:hooks/claude/shared/state.py:new_session_id",
+      "type": "function",
+      "path": "hooks/claude/shared/state.py",
+      "label": "new_session_id",
+      "language": "python",
+      "metadata": {
+        "startLine": 123,
+        "endLine": 125,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/agent_context.py",
+      "target": "function:hooks/claude/agent_context.py:main",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/agent_context.py",
+      "target": "function:hooks/claude/agent_context.py:build_agent_context",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:hooks/claude/agent_context.py",
+      "target": "file:hooks/claude/shared/state.py",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/completion_gate.py",
+      "target": "function:hooks/claude/completion_gate.py:main",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/completion_gate.py",
+      "target": "function:hooks/claude/completion_gate.py:check_quality_gates",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/completion_gate.py",
+      "target": "function:hooks/claude/completion_gate.py:persist_and_archive",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/completion_gate.py",
+      "target": "function:hooks/claude/completion_gate.py:build_completion_summary",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:hooks/claude/completion_gate.py",
+      "target": "file:hooks/claude/shared/state.py",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/guard_bash.py",
+      "target": "function:hooks/claude/guard_bash.py:main",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:hooks/claude/guard_bash.py",
+      "target": "file:hooks/claude/shared/scanner.py",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/guard_write.py",
+      "target": "function:hooks/claude/guard_write.py:main",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:hooks/claude/guard_write.py",
+      "target": "file:hooks/claude/shared/scanner.py",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/prompt_router.py",
+      "target": "function:hooks/claude/prompt_router.py:main",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/prompt_router.py",
+      "target": "function:hooks/claude/prompt_router.py:build_route_context",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:hooks/claude/prompt_router.py",
+      "target": "file:hooks/claude/shared/classifier.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:hooks/claude/prompt_router.py",
+      "target": "file:hooks/claude/shared/state.py",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/quality_bash.py",
+      "target": "function:hooks/claude/quality_bash.py:main",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/quality_bash.py",
+      "target": "function:hooks/claude/quality_bash.py:_extract_exit_code",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:hooks/claude/quality_bash.py",
+      "target": "file:hooks/claude/shared/scanner.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:hooks/claude/quality_bash.py",
+      "target": "file:hooks/claude/shared/state.py",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/quality_write.py",
+      "target": "function:hooks/claude/quality_write.py:main",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:hooks/claude/quality_write.py",
+      "target": "file:hooks/claude/shared/state.py",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/session_boot.py",
+      "target": "function:hooks/claude/session_boot.py:main",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/session_boot.py",
+      "target": "function:hooks/claude/session_boot.py:detect_project",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/session_boot.py",
+      "target": "function:hooks/claude/session_boot.py:_detect_node_framework",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/session_boot.py",
+      "target": "function:hooks/claude/session_boot.py:get_git_summary",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/session_boot.py",
+      "target": "function:hooks/claude/session_boot.py:archive_previous_session",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/session_boot.py",
+      "target": "function:hooks/claude/session_boot.py:build_boot_context",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:hooks/claude/session_boot.py",
+      "target": "file:hooks/claude/shared/state.py",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/classifier.py",
+      "target": "function:hooks/claude/shared/classifier.py:classify_complexity",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/classifier.py",
+      "target": "function:hooks/claude/shared/classifier.py:match_skills",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/classifier.py",
+      "target": "function:hooks/claude/shared/classifier.py:get_execution_mode",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/classifier.py",
+      "target": "function:hooks/claude/shared/classifier.py:active_synapses",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/classifier.py",
+      "target": "function:hooks/claude/shared/classifier.py:build_synapse_context",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/scanner.py",
+      "target": "function:hooks/claude/shared/scanner.py:scan_for_secrets",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/scanner.py",
+      "target": "function:hooks/claude/shared/scanner.py:scan_bash_command",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/scanner.py",
+      "target": "function:hooks/claude/shared/scanner.py:is_test_command",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/scanner.py",
+      "target": "function:hooks/claude/shared/scanner.py:is_build_command",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/state.py",
+      "target": "function:hooks/claude/shared/state.py:_get_archon_home",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/state.py",
+      "target": "function:hooks/claude/shared/state.py:get_state_path",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/state.py",
+      "target": "function:hooks/claude/shared/state.py:load_state",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/state.py",
+      "target": "function:hooks/claude/shared/state.py:save_state",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/state.py",
+      "target": "function:hooks/claude/shared/state.py:_empty_state",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/state.py",
+      "target": "function:hooks/claude/shared/state.py:_migrate_state",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/state.py",
+      "target": "function:hooks/claude/shared/state.py:update_session_field",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/state.py",
+      "target": "function:hooks/claude/shared/state.py:append_modified_file",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:hooks/claude/shared/state.py",
+      "target": "function:hooks/claude/shared/state.py:new_session_id",
+      "weight": 1
+    }
+  ]
+}

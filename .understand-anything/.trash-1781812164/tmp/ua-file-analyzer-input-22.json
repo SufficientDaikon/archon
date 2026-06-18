@@ -1,0 +1,5 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [{"path": "skills/design-system/examples/README.md", "language": "markdown", "sizeLines": 27, "fileCategory": "docs"}, {"path": "skills/design-system/examples/linear-DESIGN.md", "language": "markdown", "sizeLines": 367, "fileCategory": "docs"}, {"path": "skills/design-system/examples/vercel-DESIGN.md", "language": "markdown", "sizeLines": 310, "fileCategory": "docs"}],
+  "batchImportData": {"skills/design-system/examples/README.md": [], "skills/design-system/examples/linear-DESIGN.md": [], "skills/design-system/examples/vercel-DESIGN.md": []}
+}

@@ -1,0 +1,33 @@
+{
+  "batchIndex": 14,
+  "nodes": [
+    {
+      "id": "document:batch-runs/google-adk-improvements/continue.md",
+      "type": "document",
+      "name": "continue.md",
+      "filePath": "batch-runs/google-adk-improvements/continue.md",
+      "summary": "Auto-continue prompt template for the Archon Batch SDD pipeline, guiding agents through multi-step spec/implement/review cycles across sessions. Provides step-by-step instructions for reading state, running the SDD pipeline on pending plans, and generating handoffs.",
+      "tags": ["batch-sdd", "pipeline", "auto-continue", "session-handoff", "prompt-template"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:batch-runs/google-adk-improvements/handoff-template.md",
+      "type": "document",
+      "name": "handoff-template.md",
+      "filePath": "batch-runs/google-adk-improvements/handoff-template.md",
+      "summary": "Handoff template auto-generated at session end to capture where work left off for the Batch SDD pipeline. Provides human-readable context summarizing session progress, completed work, and next steps.",
+      "tags": ["handoff", "session-state", "batch-sdd", "template"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:batch-runs/google-adk-improvements/state.yaml",
+      "type": "config",
+      "name": "state.yaml",
+      "filePath": "batch-runs/google-adk-improvements/state.yaml",
+      "summary": "YAML state file tracking sprint progress for the Google ADK improvements batch run, containing batch metadata, sprint definitions, and session records. Serves as the source of truth for the auto-continue pipeline.",
+      "tags": ["state", "batch-run", "google-adk", "sprints", "yaml"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": []
+}

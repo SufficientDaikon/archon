@@ -1,0 +1,1348 @@
+{
+  "batchIndex": 3,
+  "nodes": [
+    {
+      "id": "file:webapp/src/app/agents/page.tsx",
+      "type": "file",
+      "path": "webapp/src/app/agents/page.tsx",
+      "label": "page.tsx",
+      "language": "typescript",
+      "sizeLines": 84,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 84,
+        "nonEmptyLines": 79,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 2,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/app/agents/page.tsx:AgentsPage",
+      "type": "function",
+      "path": "webapp/src/app/agents/page.tsx",
+      "label": "AgentsPage",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 15,
+        "endLine": 84,
+        "lineCount": 70,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/app/bundles/page.tsx",
+      "type": "file",
+      "path": "webapp/src/app/bundles/page.tsx",
+      "label": "page.tsx",
+      "language": "typescript",
+      "sizeLines": 43,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 43,
+        "nonEmptyLines": 39,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 2,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/app/bundles/page.tsx:BundlesPage",
+      "type": "function",
+      "path": "webapp/src/app/bundles/page.tsx",
+      "label": "BundlesPage",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 16,
+        "endLine": 43,
+        "lineCount": 28,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/app/page.tsx",
+      "type": "file",
+      "path": "webapp/src/app/page.tsx",
+      "label": "page.tsx",
+      "language": "typescript",
+      "sizeLines": 267,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 267,
+        "nonEmptyLines": 252,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/app/page.tsx:HomePage",
+      "type": "function",
+      "path": "webapp/src/app/page.tsx",
+      "label": "HomePage",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 60,
+        "endLine": 267,
+        "lineCount": 208,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/app/pipelines/page.tsx",
+      "type": "file",
+      "path": "webapp/src/app/pipelines/page.tsx",
+      "label": "page.tsx",
+      "language": "typescript",
+      "sizeLines": 72,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 72,
+        "nonEmptyLines": 67,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 2,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/app/pipelines/page.tsx:PipelinesPage",
+      "type": "function",
+      "path": "webapp/src/app/pipelines/page.tsx",
+      "label": "PipelinesPage",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 16,
+        "endLine": 72,
+        "lineCount": 57,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/app/skills/[slug]/page.tsx",
+      "type": "file",
+      "path": "webapp/src/app/skills/[slug]/page.tsx",
+      "label": "page.tsx",
+      "language": "typescript",
+      "sizeLines": 268,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 268,
+        "nonEmptyLines": 253,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 3,
+          "functionCount": 3,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/app/skills/[slug]/page.tsx:generateStaticParams",
+      "type": "function",
+      "path": "webapp/src/app/skills/[slug]/page.tsx",
+      "label": "generateStaticParams",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 13,
+        "endLine": 15,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/app/skills/[slug]/page.tsx:generateMetadata",
+      "type": "function",
+      "path": "webapp/src/app/skills/[slug]/page.tsx",
+      "label": "generateMetadata",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 21,
+        "endLine": 35,
+        "lineCount": 15,
+        "params": [
+          "{ params }"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/app/skills/[slug]/page.tsx:SkillDetailPage",
+      "type": "function",
+      "path": "webapp/src/app/skills/[slug]/page.tsx",
+      "label": "SkillDetailPage",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 37,
+        "endLine": 268,
+        "lineCount": 232,
+        "params": [
+          "{ params }"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/app/skills/page.tsx",
+      "type": "file",
+      "path": "webapp/src/app/skills/page.tsx",
+      "label": "page.tsx",
+      "language": "typescript",
+      "sizeLines": 112,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 112,
+        "nonEmptyLines": 101,
+        "metrics": {
+          "importCount": 5,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/app/skills/page.tsx:SkillsPage",
+      "type": "function",
+      "path": "webapp/src/app/skills/page.tsx",
+      "label": "SkillsPage",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 17,
+        "endLine": 112,
+        "lineCount": 96,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/app/synapses/[slug]/page.tsx",
+      "type": "file",
+      "path": "webapp/src/app/synapses/[slug]/page.tsx",
+      "label": "page.tsx",
+      "language": "typescript",
+      "sizeLines": 210,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 210,
+        "nonEmptyLines": 196,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 3,
+          "functionCount": 3,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/app/synapses/[slug]/page.tsx:generateStaticParams",
+      "type": "function",
+      "path": "webapp/src/app/synapses/[slug]/page.tsx",
+      "label": "generateStaticParams",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 5,
+        "endLine": 7,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/app/synapses/[slug]/page.tsx:generateMetadata",
+      "type": "function",
+      "path": "webapp/src/app/synapses/[slug]/page.tsx",
+      "label": "generateMetadata",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 13,
+        "endLine": 27,
+        "lineCount": 15,
+        "params": [
+          "{ params }"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/app/synapses/[slug]/page.tsx:SynapseDetailPage",
+      "type": "function",
+      "path": "webapp/src/app/synapses/[slug]/page.tsx",
+      "label": "SynapseDetailPage",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 29,
+        "endLine": 210,
+        "lineCount": 182,
+        "params": [
+          "{ params }"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/app/synapses/page.tsx",
+      "type": "file",
+      "path": "webapp/src/app/synapses/page.tsx",
+      "label": "page.tsx",
+      "language": "typescript",
+      "sizeLines": 124,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 124,
+        "nonEmptyLines": 114,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/app/synapses/page.tsx:SynapsesPage",
+      "type": "function",
+      "path": "webapp/src/app/synapses/page.tsx",
+      "label": "SynapsesPage",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 10,
+        "endLine": 124,
+        "lineCount": 115,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/components/AgentCard.tsx",
+      "type": "file",
+      "path": "webapp/src/components/AgentCard.tsx",
+      "label": "AgentCard.tsx",
+      "language": "typescript",
+      "sizeLines": 57,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 57,
+        "nonEmptyLines": 52,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/components/AgentCard.tsx:AgentCard",
+      "type": "function",
+      "path": "webapp/src/components/AgentCard.tsx",
+      "label": "AgentCard",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 7,
+        "endLine": 57,
+        "lineCount": 51,
+        "params": [
+          "{ agent }"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/components/BundleCard.tsx",
+      "type": "file",
+      "path": "webapp/src/components/BundleCard.tsx",
+      "label": "BundleCard.tsx",
+      "language": "typescript",
+      "sizeLines": 81,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 81,
+        "nonEmptyLines": 73,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/components/BundleCard.tsx:BundleCard",
+      "type": "function",
+      "path": "webapp/src/components/BundleCard.tsx",
+      "label": "BundleCard",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 11,
+        "endLine": 81,
+        "lineCount": 71,
+        "params": [
+          "{ bundle }"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/components/CategoryFilter.tsx",
+      "type": "file",
+      "path": "webapp/src/components/CategoryFilter.tsx",
+      "label": "CategoryFilter.tsx",
+      "language": "typescript",
+      "sizeLines": 49,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 49,
+        "nonEmptyLines": 47,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/components/CategoryFilter.tsx:CategoryFilter",
+      "type": "function",
+      "path": "webapp/src/components/CategoryFilter.tsx",
+      "label": "CategoryFilter",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 10,
+        "endLine": 49,
+        "lineCount": 40,
+        "params": [
+          "{\r\n  categories,\r\n  selected,\r\n  onSelect,\r\n  getCategoryColor,\r\n}"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/components/InstallCommand.tsx",
+      "type": "file",
+      "path": "webapp/src/components/InstallCommand.tsx",
+      "label": "InstallCommand.tsx",
+      "language": "typescript",
+      "sizeLines": 84,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 84,
+        "nonEmptyLines": 79,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/components/InstallCommand.tsx:InstallCommand",
+      "type": "function",
+      "path": "webapp/src/components/InstallCommand.tsx",
+      "label": "InstallCommand",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 11,
+        "endLine": 84,
+        "lineCount": 74,
+        "params": [
+          "{\r\n  command,\r\n  label,\r\n  compact = false,\r\n}"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/components/PipelineFlow.tsx",
+      "type": "file",
+      "path": "webapp/src/components/PipelineFlow.tsx",
+      "label": "PipelineFlow.tsx",
+      "language": "typescript",
+      "sizeLines": 78,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 78,
+        "nonEmptyLines": 73,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/components/PipelineFlow.tsx:PipelineFlow",
+      "type": "function",
+      "path": "webapp/src/components/PipelineFlow.tsx",
+      "label": "PipelineFlow",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 7,
+        "endLine": 78,
+        "lineCount": 72,
+        "params": [
+          "{ pipeline }"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/components/SearchBar.tsx",
+      "type": "file",
+      "path": "webapp/src/components/SearchBar.tsx",
+      "label": "SearchBar.tsx",
+      "language": "typescript",
+      "sizeLines": 61,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 61,
+        "nonEmptyLines": 59,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/components/SearchBar.tsx:SearchBar",
+      "type": "function",
+      "path": "webapp/src/components/SearchBar.tsx",
+      "label": "SearchBar",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 9,
+        "endLine": 61,
+        "lineCount": 53,
+        "params": [
+          "{\r\n  value,\r\n  onChange,\r\n  placeholder = \"Search...\",\r\n}"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/components/SkillCard.tsx",
+      "type": "file",
+      "path": "webapp/src/components/SkillCard.tsx",
+      "label": "SkillCard.tsx",
+      "language": "typescript",
+      "sizeLines": 51,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 51,
+        "nonEmptyLines": 47,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/components/SkillCard.tsx:SkillCard",
+      "type": "function",
+      "path": "webapp/src/components/SkillCard.tsx",
+      "label": "SkillCard",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 9,
+        "endLine": 51,
+        "lineCount": 43,
+        "params": [
+          "{ skill }"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/lib/registry.ts",
+      "type": "file",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "registry.ts",
+      "language": "typescript",
+      "sizeLines": 154,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 154,
+        "nonEmptyLines": 131,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 22,
+          "functionCount": 22,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getAllSkills",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getAllSkills",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 19,
+        "endLine": 21,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getSkillBySlug",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getSkillBySlug",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 23,
+        "endLine": 25,
+        "lineCount": 3,
+        "params": [
+          "slug"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getSkillsByCategory",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getSkillsByCategory",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 27,
+        "endLine": 29,
+        "lineCount": 3,
+        "params": [
+          "category"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:searchSkills",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "searchSkills",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 31,
+        "endLine": 39,
+        "lineCount": 9,
+        "params": [
+          "query"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getSkillCategories",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getSkillCategories",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 41,
+        "endLine": 51,
+        "lineCount": 11,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getAllSkillSlugs",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getAllSkillSlugs",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 53,
+        "endLine": 55,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getAllAgents",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getAllAgents",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 58,
+        "endLine": 60,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getAgentBySlug",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getAgentBySlug",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 62,
+        "endLine": 64,
+        "lineCount": 3,
+        "params": [
+          "slug"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getAllPipelines",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getAllPipelines",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 67,
+        "endLine": 69,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getPipelineBySlug",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getPipelineBySlug",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 71,
+        "endLine": 73,
+        "lineCount": 3,
+        "params": [
+          "slug"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getAllBundles",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getAllBundles",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 76,
+        "endLine": 78,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getBundleBySlug",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getBundleBySlug",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 80,
+        "endLine": 82,
+        "lineCount": 3,
+        "params": [
+          "slug"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getAllSynapses",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getAllSynapses",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 85,
+        "endLine": 87,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getSynapseBySlug",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getSynapseBySlug",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 89,
+        "endLine": 91,
+        "lineCount": 3,
+        "params": [
+          "slug"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getAllSynapseSlugs",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getAllSynapseSlugs",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 93,
+        "endLine": 95,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getSynapseCategories",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getSynapseCategories",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 97,
+        "endLine": 100,
+        "lineCount": 4,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getAllPlatforms",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getAllPlatforms",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 103,
+        "endLine": 105,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getStats",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getStats",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 108,
+        "endLine": 110,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getMeta",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getMeta",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 113,
+        "endLine": 115,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getCategoryColor",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getCategoryColor",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 118,
+        "endLine": 129,
+        "lineCount": 12,
+        "params": [
+          "category"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getPriorityColor",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getPriorityColor",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 131,
+        "endLine": 141,
+        "lineCount": 11,
+        "params": [
+          "priority"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:webapp/src/lib/registry.ts:getCategoryEmoji",
+      "type": "function",
+      "path": "webapp/src/lib/registry.ts",
+      "label": "getCategoryEmoji",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 143,
+        "endLine": 154,
+        "lineCount": 12,
+        "params": [
+          "category"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/lib/types.ts",
+      "type": "file",
+      "path": "webapp/src/lib/types.ts",
+      "label": "types.ts",
+      "language": "typescript",
+      "sizeLines": 107,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 107,
+        "nonEmptyLines": 97,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "type": "contains",
+      "source": "file:webapp/src/app/agents/page.tsx",
+      "target": "function:webapp/src/app/agents/page.tsx:AgentsPage",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/agents/page.tsx",
+      "target": "file:webapp/src/components/AgentCard.tsx",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/agents/page.tsx",
+      "target": "file:webapp/src/lib/registry.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/app/bundles/page.tsx",
+      "target": "function:webapp/src/app/bundles/page.tsx:BundlesPage",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/bundles/page.tsx",
+      "target": "file:webapp/src/components/BundleCard.tsx",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/bundles/page.tsx",
+      "target": "file:webapp/src/lib/registry.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/app/page.tsx",
+      "target": "function:webapp/src/app/page.tsx:HomePage",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/page.tsx",
+      "target": "file:webapp/src/components/InstallCommand.tsx",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/page.tsx",
+      "target": "file:webapp/src/lib/registry.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/app/pipelines/page.tsx",
+      "target": "function:webapp/src/app/pipelines/page.tsx:PipelinesPage",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/pipelines/page.tsx",
+      "target": "file:webapp/src/components/PipelineFlow.tsx",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/pipelines/page.tsx",
+      "target": "file:webapp/src/lib/registry.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/app/skills/[slug]/page.tsx",
+      "target": "function:webapp/src/app/skills/[slug]/page.tsx:generateStaticParams",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/app/skills/[slug]/page.tsx",
+      "target": "function:webapp/src/app/skills/[slug]/page.tsx:generateMetadata",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/app/skills/[slug]/page.tsx",
+      "target": "function:webapp/src/app/skills/[slug]/page.tsx:SkillDetailPage",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/skills/[slug]/page.tsx",
+      "target": "file:webapp/src/components/InstallCommand.tsx",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/skills/[slug]/page.tsx",
+      "target": "file:webapp/src/lib/registry.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/app/skills/page.tsx",
+      "target": "function:webapp/src/app/skills/page.tsx:SkillsPage",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/skills/page.tsx",
+      "target": "file:webapp/src/components/CategoryFilter.tsx",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/skills/page.tsx",
+      "target": "file:webapp/src/components/SearchBar.tsx",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/skills/page.tsx",
+      "target": "file:webapp/src/components/SkillCard.tsx",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/skills/page.tsx",
+      "target": "file:webapp/src/lib/registry.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/skills/page.tsx",
+      "target": "file:webapp/src/lib/types.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/app/synapses/[slug]/page.tsx",
+      "target": "function:webapp/src/app/synapses/[slug]/page.tsx:generateStaticParams",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/app/synapses/[slug]/page.tsx",
+      "target": "function:webapp/src/app/synapses/[slug]/page.tsx:generateMetadata",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/app/synapses/[slug]/page.tsx",
+      "target": "function:webapp/src/app/synapses/[slug]/page.tsx:SynapseDetailPage",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/synapses/[slug]/page.tsx",
+      "target": "file:webapp/src/lib/registry.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/app/synapses/page.tsx",
+      "target": "function:webapp/src/app/synapses/page.tsx:SynapsesPage",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/synapses/page.tsx",
+      "target": "file:webapp/src/lib/registry.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/synapses/page.tsx",
+      "target": "file:webapp/src/lib/types.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/components/AgentCard.tsx",
+      "target": "function:webapp/src/components/AgentCard.tsx:AgentCard",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/components/AgentCard.tsx",
+      "target": "file:webapp/src/lib/types.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/components/BundleCard.tsx",
+      "target": "function:webapp/src/components/BundleCard.tsx:BundleCard",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/components/BundleCard.tsx",
+      "target": "file:webapp/src/components/InstallCommand.tsx",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/components/BundleCard.tsx",
+      "target": "file:webapp/src/lib/types.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/components/CategoryFilter.tsx",
+      "target": "function:webapp/src/components/CategoryFilter.tsx:CategoryFilter",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/components/InstallCommand.tsx",
+      "target": "function:webapp/src/components/InstallCommand.tsx:InstallCommand",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/components/PipelineFlow.tsx",
+      "target": "function:webapp/src/components/PipelineFlow.tsx:PipelineFlow",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/components/PipelineFlow.tsx",
+      "target": "file:webapp/src/lib/types.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/components/SearchBar.tsx",
+      "target": "function:webapp/src/components/SearchBar.tsx:SearchBar",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/components/SkillCard.tsx",
+      "target": "function:webapp/src/components/SkillCard.tsx:SkillCard",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/components/SkillCard.tsx",
+      "target": "file:webapp/src/lib/registry.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/components/SkillCard.tsx",
+      "target": "file:webapp/src/lib/types.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getAllSkills",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getSkillBySlug",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getSkillsByCategory",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:searchSkills",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getSkillCategories",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getAllSkillSlugs",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getAllAgents",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getAgentBySlug",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getAllPipelines",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getPipelineBySlug",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getAllBundles",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getBundleBySlug",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getAllSynapses",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getSynapseBySlug",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getAllSynapseSlugs",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getSynapseCategories",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getAllPlatforms",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getStats",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getMeta",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getCategoryColor",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getPriorityColor",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "function:webapp/src/lib/registry.ts:getCategoryEmoji",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "file:webapp/src/data/registry.json",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/lib/registry.ts",
+      "target": "file:webapp/src/lib/types.ts",
+      "weight": 0.7
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 6,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".claude/file-daemon-architecture.xml",
+      "language": "xml",
+      "fileCategory": "config",
+      "totalLines": 998,
+      "nonEmptyLines": 916,
+      "metrics": {}
+    },
+    {
+      "path": ".claude/forge-progress.xml",
+      "language": "xml",
+      "fileCategory": "config",
+      "totalLines": 65,
+      "nonEmptyLines": 57,
+      "metrics": {}
+    },
+    {
+      "path": ".claude/handoff-2026-04-12.xml",
+      "language": "xml",
+      "fileCategory": "config",
+      "totalLines": 119,
+      "nonEmptyLines": 103,
+      "metrics": {}
+    },
+    {
+      "path": ".claude/handoff-file-ops-2026-04-12.xml",
+      "language": "xml",
+      "fileCategory": "config",
+      "totalLines": 233,
+      "nonEmptyLines": 191,
+      "metrics": {}
+    },
+    {
+      "path": ".claude/rw-tools-plan.xml",
+      "language": "xml",
+      "fileCategory": "config",
+      "totalLines": 906,
+      "nonEmptyLines": 797,
+      "metrics": {}
+    },
+    {
+      "path": ".claude/settings.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 105,
+      "nonEmptyLines": 105,
+      "sections": [
+        {
+          "heading": "hooks",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "permissions",
+          "level": 1,
+          "line": 92
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    }
+  ]
+}

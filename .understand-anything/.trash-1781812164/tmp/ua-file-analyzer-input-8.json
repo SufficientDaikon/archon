@@ -1,0 +1,5 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [{"path": "file-ops-rs/src/utils/diff.rs", "language": "rust", "sizeLines": 7, "fileCategory": "code"}, {"path": "file-ops-rs/src/utils/file_io.rs", "language": "rust", "sizeLines": 7, "fileCategory": "code"}, {"path": "file-ops-rs/src/utils/hashing.rs", "language": "rust", "sizeLines": 7, "fileCategory": "code"}, {"path": "file-ops-rs/src/utils/mod.rs", "language": "rust", "sizeLines": 11, "fileCategory": "code"}, {"path": "file-ops-rs/src/utils/parser.rs", "language": "rust", "sizeLines": 7, "fileCategory": "code"}, {"path": "file-ops-rs/src/utils/validation.rs", "language": "rust", "sizeLines": 7, "fileCategory": "code"}],
+  "batchImportData": {"file-ops-rs/src/utils/diff.rs": [], "file-ops-rs/src/utils/file_io.rs": [], "file-ops-rs/src/utils/hashing.rs": [], "file-ops-rs/src/utils/mod.rs": ["file-ops-rs/src/utils/diff.rs", "file-ops-rs/src/utils/file_io.rs", "file-ops-rs/src/utils/hashing.rs", "file-ops-rs/src/utils/parser.rs", "file-ops-rs/src/utils/validation.rs"], "file-ops-rs/src/utils/parser.rs": [], "file-ops-rs/src/utils/validation.rs": []}
+}

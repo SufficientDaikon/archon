@@ -1,0 +1,1267 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "skills/ux-interaction-design/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ux-interaction-design/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ux-interaction-design/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 983,
+      "nonEmptyLines": 816,
+      "sections": [
+        {
+          "heading": "UX Interaction Design Skill",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "Micro-Interaction Patterns",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "Trigger → Rules → Feedback → Loop/Mode Model",
+          "level": 3,
+          "line": 10
+        },
+        {
+          "heading": "Common Micro-Interaction Examples",
+          "level": 3,
+          "line": 33
+        },
+        {
+          "heading": "UI State Machines",
+          "level": 2,
+          "line": 87
+        },
+        {
+          "heading": "State Enumeration",
+          "level": 3,
+          "line": 89
+        },
+        {
+          "heading": "Transition Table Format",
+          "level": 3,
+          "line": 102
+        },
+        {
+          "heading": "Component State Matrix Template",
+          "level": 3,
+          "line": 119
+        },
+        {
+          "heading": "Transition Specifications",
+          "level": 2,
+          "line": 143
+        },
+        {
+          "heading": "Page Transitions",
+          "level": 3,
+          "line": 145
+        },
+        {
+          "heading": "Trigger Types",
+          "level": 3,
+          "line": 207
+        },
+        {
+          "heading": "Direction Conventions",
+          "level": 3,
+          "line": 224
+        },
+        {
+          "heading": "Duration Ranges",
+          "level": 3,
+          "line": 251
+        },
+        {
+          "heading": "Form UX Best Practices",
+          "level": 2,
+          "line": 277
+        },
+        {
+          "heading": "Inline Validation",
+          "level": 3,
+          "line": 279
+        },
+        {
+          "heading": "Error Message Placement and Styling",
+          "level": 3,
+          "line": 297
+        },
+        {
+          "heading": "Success Indication",
+          "level": 3,
+          "line": 321
+        },
+        {
+          "heading": "Multi-Step Form Progress",
+          "level": 3,
+          "line": 341
+        },
+        {
+          "heading": "Keyboard Navigation",
+          "level": 3,
+          "line": 368
+        },
+        {
+          "heading": "Auto-focus Rules",
+          "level": 3,
+          "line": 391
+        },
+        {
+          "heading": "Input Masking",
+          "level": 3,
+          "line": 405
+        },
+        {
+          "heading": "Animation Principles",
+          "level": 2,
+          "line": 431
+        },
+        {
+          "heading": "Easing Functions",
+          "level": 3,
+          "line": 433
+        },
+        {
+          "heading": "Purpose-Driven Animation",
+          "level": 3,
+          "line": 467
+        },
+        {
+          "heading": "Motion Design Tokens",
+          "level": 3,
+          "line": 516
+        },
+        {
+          "heading": "Feedback Patterns",
+          "level": 2,
+          "line": 557
+        },
+        {
+          "heading": "Loading States",
+          "level": 3,
+          "line": 559
+        },
+        {
+          "heading": "Empty States",
+          "level": 3,
+          "line": 598
+        },
+        {
+          "heading": "Error States",
+          "level": 3,
+          "line": 631
+        },
+        {
+          "heading": "Success States",
+          "level": 3,
+          "line": 675
+        },
+        {
+          "heading": "Accessibility Interaction Requirements",
+          "level": 2,
+          "line": 704
+        },
+        {
+          "heading": "Keyboard Navigation",
+          "level": 3,
+          "line": 706
+        },
+        {
+          "heading": "Focus Management",
+          "level": 3,
+          "line": 733
+        },
+        {
+          "heading": "ARIA Patterns for Custom Components",
+          "level": 3,
+          "line": 770
+        },
+        {
+          "heading": "Prefers-Reduced-Motion Handling",
+          "level": 3,
+          "line": 802
+        },
+        {
+          "heading": "Screen Reader Announcements",
+          "level": 3,
+          "line": 831
+        },
+        {
+          "heading": "Component State Matrix Template",
+          "level": 2,
+          "line": 857
+        },
+        {
+          "heading": "[Component Name] State Matrix",
+          "level": 3,
+          "line": 859
+        },
+        {
+          "heading": "UX Specification Output Template",
+          "level": 2,
+          "line": 874
+        },
+        {
+          "heading": "Component Interaction Specification",
+          "level": 3,
+          "line": 876
+        },
+        {
+          "heading": "Overview",
+          "level": 4,
+          "line": 882
+        },
+        {
+          "heading": "States and Transitions",
+          "level": 4,
+          "line": 885
+        },
+        {
+          "heading": "Default State",
+          "level": 5,
+          "line": 896
+        },
+        {
+          "heading": "[Additional states...]",
+          "level": 5,
+          "line": 901
+        },
+        {
+          "heading": "Micro-interactions",
+          "level": 4,
+          "line": 903
+        },
+        {
+          "heading": "Animation Specifications",
+          "level": 4,
+          "line": 915
+        },
+        {
+          "heading": "Accessibility Requirements",
+          "level": 4,
+          "line": 927
+        },
+        {
+          "heading": "Responsive Behavior",
+          "level": 4,
+          "line": 941
+        },
+        {
+          "heading": "Error Handling",
+          "level": 4,
+          "line": 952
+        },
+        {
+          "heading": "Performance Considerations",
+          "level": 4,
+          "line": 962
+        },
+        {
+          "heading": "Testing Checklist",
+          "level": 4,
+          "line": 972
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 51
+      }
+    },
+    {
+      "path": "skills/ux-interaction-design/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ux-research/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ux-research/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/ux-research/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ux-research/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ux-research/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 250,
+      "nonEmptyLines": 193,
+      "sections": [
+        {
+          "heading": "UX Research Skill",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "Persona Creation Methodology",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "Template Structure",
+          "level": 3,
+          "line": 10
+        },
+        {
+          "heading": "Persona Anti-Patterns to Avoid",
+          "level": 3,
+          "line": 36
+        },
+        {
+          "heading": "Deriving Personas from Brief",
+          "level": 3,
+          "line": 44
+        },
+        {
+          "heading": "Journey Mapping Frameworks",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "6-Row Journey Map Structure",
+          "level": 3,
+          "line": 54
+        },
+        {
+          "heading": "Identifying Stages from Product Brief",
+          "level": 3,
+          "line": 67
+        },
+        {
+          "heading": "Emotion Curve Charting",
+          "level": 3,
+          "line": 76
+        },
+        {
+          "heading": "Competitive Analysis Patterns",
+          "level": 2,
+          "line": 84
+        },
+        {
+          "heading": "Feature Comparison Matrix Format",
+          "level": 3,
+          "line": 86
+        },
+        {
+          "heading": "UX Audit Framework",
+          "level": 3,
+          "line": 98
+        },
+        {
+          "heading": "Identifying Competitors from Brief",
+          "level": 3,
+          "line": 130
+        },
+        {
+          "heading": "Research Synthesis Techniques",
+          "level": 2,
+          "line": 138
+        },
+        {
+          "heading": "Affinity Mapping Process",
+          "level": 3,
+          "line": 140
+        },
+        {
+          "heading": "Insight Prioritization Matrix (Impact × Frequency)",
+          "level": 3,
+          "line": 148
+        },
+        {
+          "heading": "Converting Insights to Recommendations",
+          "level": 3,
+          "line": 157
+        },
+        {
+          "heading": "Key Metrics/KPIs Selection",
+          "level": 3,
+          "line": 165
+        },
+        {
+          "heading": "Research Brief Output Template",
+          "level": 2,
+          "line": 189
+        },
+        {
+          "heading": "Executive Summary",
+          "level": 3,
+          "line": 191
+        },
+        {
+          "heading": "Research Objectives",
+          "level": 3,
+          "line": 196
+        },
+        {
+          "heading": "Methodology",
+          "level": 3,
+          "line": 201
+        },
+        {
+          "heading": "User Personas",
+          "level": 3,
+          "line": 206
+        },
+        {
+          "heading": "User Journey Maps",
+          "level": 3,
+          "line": 209
+        },
+        {
+          "heading": "Competitive Analysis",
+          "level": 3,
+          "line": 212
+        },
+        {
+          "heading": "Key Insights",
+          "level": 3,
+          "line": 215
+        },
+        {
+          "heading": "Priority Matrix",
+          "level": 3,
+          "line": 234
+        },
+        {
+          "heading": "Next Steps",
+          "level": 3,
+          "line": 241
+        },
+        {
+          "heading": "Appendix",
+          "level": 3,
+          "line": 246
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 29
+      }
+    },
+    {
+      "path": "skills/ux-research/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ux-test-suite/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ux-test-suite/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/ux-test-suite/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ux-test-suite/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ux-test-suite/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 962,
+      "nonEmptyLines": 814,
+      "sections": [
+        {
+          "heading": "UX Testing Patterns & Methodology",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "Task Completion Testing",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "Defining Tasks from User Flows",
+          "level": 3,
+          "line": 10
+        },
+        {
+          "heading": "Success Criteria Per Task",
+          "level": 3,
+          "line": 41
+        },
+        {
+          "heading": "Measuring Completion Rate",
+          "level": 3,
+          "line": 72
+        },
+        {
+          "heading": "Identifying Blocking Issues",
+          "level": 3,
+          "line": 85
+        },
+        {
+          "heading": "Error Recovery Testing",
+          "level": 2,
+          "line": 105
+        },
+        {
+          "heading": "Intentional Error Injection",
+          "level": 3,
+          "line": 107
+        },
+        {
+          "heading": "Recovery Path Validation",
+          "level": 3,
+          "line": 141
+        },
+        {
+          "heading": "Error Message Quality Assessment",
+          "level": 3,
+          "line": 158
+        },
+        {
+          "heading": "Dead-End Detection",
+          "level": 3,
+          "line": 198
+        },
+        {
+          "heading": "Flow Testing Methodology",
+          "level": 2,
+          "line": 225
+        },
+        {
+          "heading": "Step-by-Step Flow Validation",
+          "level": 3,
+          "line": 227
+        },
+        {
+          "heading": "Branch Coverage Testing",
+          "level": 3,
+          "line": 262
+        },
+        {
+          "heading": "Entry/Exit Point Testing",
+          "level": 3,
+          "line": 297
+        },
+        {
+          "heading": "Cross-Flow Navigation",
+          "level": 3,
+          "line": 330
+        },
+        {
+          "heading": "Usability Scoring Rubrics",
+          "level": 2,
+          "line": 344
+        },
+        {
+          "heading": "System Usability Scale (SUS) for Automated Evaluation",
+          "level": 3,
+          "line": 346
+        },
+        {
+          "heading": "UMUX-LITE (2-Question Variant)",
+          "level": 3,
+          "line": 392
+        },
+        {
+          "heading": "Inferring Scores from Automated Test Results",
+          "level": 3,
+          "line": 416
+        },
+        {
+          "heading": "Cognitive Load Heuristics",
+          "level": 2,
+          "line": 437
+        },
+        {
+          "heading": "Information Density Measurement",
+          "level": 3,
+          "line": 439
+        },
+        {
+          "heading": "Choice Overload Detection",
+          "level": 3,
+          "line": 469
+        },
+        {
+          "heading": "Working Memory Assessment",
+          "level": 3,
+          "line": 501
+        },
+        {
+          "heading": "Recognition vs Recall Scoring",
+          "level": 3,
+          "line": 532
+        },
+        {
+          "heading": "Accessibility Testing Patterns",
+          "level": 2,
+          "line": 559
+        },
+        {
+          "heading": "axe-core Integration Patterns",
+          "level": 3,
+          "line": 561
+        },
+        {
+          "heading": "WCAG 2.1 AA Automated Checks",
+          "level": 3,
+          "line": 597
+        },
+        {
+          "heading": "Manual Check Items (Cannot be Automated)",
+          "level": 3,
+          "line": 641
+        },
+        {
+          "heading": "Common Violations Ranked by Frequency",
+          "level": 3,
+          "line": 652
+        },
+        {
+          "heading": "Performance Testing Patterns",
+          "level": 2,
+          "line": 666
+        },
+        {
+          "heading": "Lighthouse Categories Integration",
+          "level": 3,
+          "line": 668
+        },
+        {
+          "heading": "Core Web Vitals (LCP, FID/INP, CLS)",
+          "level": 3,
+          "line": 710
+        },
+        {
+          "heading": "Asset Budget Guidelines",
+          "level": 3,
+          "line": 789
+        },
+        {
+          "heading": "Test Report Format",
+          "level": 2,
+          "line": 827
+        },
+        {
+          "heading": "Comprehensive Test Report Template",
+          "level": 3,
+          "line": 829
+        },
+        {
+          "heading": "Summary Dashboard Data",
+          "level": 3,
+          "line": 929
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 37
+      }
+    },
+    {
+      "path": "skills/ux-test-suite/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/ux-writer/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 31,
+      "nonEmptyLines": 27,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/ux-writer/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 486,
+      "nonEmptyLines": 358,
+      "sections": [
+        {
+          "heading": "Archon UX Writer",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "When to Activate",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "The Brief",
+          "level": 2,
+          "line": 43
+        },
+        {
+          "heading": "Three Portfolio Identities",
+          "level": 3,
+          "line": 58
+        },
+        {
+          "heading": "Voice Calibration",
+          "level": 2,
+          "line": 70
+        },
+        {
+          "heading": "The Specificity Test",
+          "level": 2,
+          "line": 96
+        },
+        {
+          "heading": "Anti-Slop Rules",
+          "level": 2,
+          "line": 124
+        },
+        {
+          "heading": "Banned Phrases (never write these)",
+          "level": 3,
+          "line": 128
+        },
+        {
+          "heading": "Structural Anti-Patterns",
+          "level": 3,
+          "line": 155
+        },
+        {
+          "heading": "Formulas for Strong Copy",
+          "level": 2,
+          "line": 165
+        },
+        {
+          "heading": "Formula 1: Specific Outcome + Surprising Mechanism",
+          "level": 3,
+          "line": 167
+        },
+        {
+          "heading": "Formula 2: Confident Claim + Proof in Same Breath",
+          "level": 3,
+          "line": 179
+        },
+        {
+          "heading": "Formula 3: Observer Frame",
+          "level": 3,
+          "line": 191
+        },
+        {
+          "heading": "Formula 4: The Contradiction",
+          "level": 3,
+          "line": 203
+        },
+        {
+          "heading": "Formula 5: Implied Scale Without Boasting",
+          "level": 3,
+          "line": 215
+        },
+        {
+          "heading": "Copy by Type",
+          "level": 2,
+          "line": 229
+        },
+        {
+          "heading": "Hero Headlines",
+          "level": 3,
+          "line": 231
+        },
+        {
+          "heading": "Project Descriptions",
+          "level": 3,
+          "line": 276
+        },
+        {
+          "heading": "CTA Copy",
+          "level": 3,
+          "line": 309
+        },
+        {
+          "heading": "Taglines and Identity Statements",
+          "level": 3,
+          "line": 344
+        },
+        {
+          "heading": "Bio / About Copy",
+          "level": 3,
+          "line": 377
+        },
+        {
+          "heading": "Copy QA Checklist",
+          "level": 2,
+          "line": 421
+        },
+        {
+          "heading": "Rewrite Protocol",
+          "level": 2,
+          "line": 438
+        },
+        {
+          "heading": "Source Material: What Makes This Copy Work",
+          "level": 2,
+          "line": 450
+        },
+        {
+          "heading": "Integration with Archon",
+          "level": 2,
+          "line": 466
+        },
+        {
+          "heading": "Related Skills",
+          "level": 2,
+          "line": 481
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 27
+      }
+    },
+    {
+      "path": "skills/vercel-react-best-practices/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/vercel-react-best-practices/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/vercel-react-best-practices/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/vercel-react-best-practices/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/vercel-react-best-practices/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 125,
+      "nonEmptyLines": 96,
+      "sections": [
+        {
+          "heading": "Vercel React Best Practices",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "When to Apply",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Rule Categories by Priority",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "Quick Reference",
+          "level": 2,
+          "line": 36
+        },
+        {
+          "heading": "1. Eliminating Waterfalls (CRITICAL)",
+          "level": 3,
+          "line": 38
+        },
+        {
+          "heading": "2. Bundle Size Optimization (CRITICAL)",
+          "level": 3,
+          "line": 46
+        },
+        {
+          "heading": "3. Server-Side Performance (HIGH)",
+          "level": 3,
+          "line": 54
+        },
+        {
+          "heading": "4. Client-Side Data Fetching (MEDIUM-HIGH)",
+          "level": 3,
+          "line": 62
+        },
+        {
+          "heading": "5. Re-render Optimization (MEDIUM)",
+          "level": 3,
+          "line": 67
+        },
+        {
+          "heading": "6. Rendering Performance (MEDIUM)",
+          "level": 3,
+          "line": 77
+        },
+        {
+          "heading": "7. JavaScript Performance (LOW-MEDIUM)",
+          "level": 3,
+          "line": 87
+        },
+        {
+          "heading": "8. Advanced Patterns (LOW)",
+          "level": 3,
+          "line": 102
+        },
+        {
+          "heading": "How to Use",
+          "level": 2,
+          "line": 107
+        },
+        {
+          "heading": "Full Compiled Document",
+          "level": 2,
+          "line": 123
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "skills/vercel-react-best-practices/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/verification-before-completion/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "category",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "batchIndex": 23,
+  "nodes": [
+    {
+      "id": "config:skills/docker-build/.skillfish.json",
+      "type": "config",
+      "name": ".skillfish.json",
+      "filePath": "skills/docker-build/.skillfish.json",
+      "summary": "Skillfish metadata file for the docker-build skill tracking version, name, owner, repo, path, branch, SHA, and source for skill provenance and registry integration.",
+      "tags": ["skillfish", "metadata", "docker-build", "provenance", "registry"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:skills/docker-build/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": "skills/docker-build/SKILL.md",
+      "summary": "Skill documentation for the docker-build skill, describing its identity, build process with tracking, anti-patterns to avoid, and workflow for building Docker images with proper observation of build output.",
+      "tags": ["docker", "build", "skill", "container", "tracking"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:skills/docker-build/manifest.yaml",
+      "type": "config",
+      "name": "manifest.yaml",
+      "filePath": "skills/docker-build/manifest.yaml",
+      "summary": "Archon skill manifest for the docker-build skill defining name, version, description, author, license, tags, trigger keywords, and priority for automatic skill activation during Docker build operations.",
+      "tags": ["manifest", "docker-build", "skill", "triggers", "yaml"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

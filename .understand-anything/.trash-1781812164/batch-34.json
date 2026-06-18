@@ -1,0 +1,42 @@
+{
+  "batchIndex": 34,
+  "nodes": [
+    {
+      "id": "file:skills/windows-registry-editor/scripts/Apply-NetworkDeep.ps1",
+      "type": "file:",
+      "name": "Apply-NetworkDeep.ps1",
+      "filePath": "skills/windows-registry-editor/scripts/Apply-NetworkDeep.ps1",
+      "summary": "PowerShell script that applies deep network optimizations across all 15 layers of the Windows network stack via registry changes. Backs up every key before modification. Supports -DryRun and -Layer filtering across NIC, NDIS, TCP global/interface/netsh, AFD, DNS, MMCSS, QoS, SMB, WinINet, power, services, and MTU layers.",
+      "tags": ["powershell", "windows", "registry", "network", "optimization", "tcp", "ndis"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:skills/windows-registry-editor/scripts/Apply-Preset.ps1",
+      "type": "file:",
+      "name": "Apply-Preset.ps1",
+      "filePath": "skills/windows-registry-editor/scripts/Apply-Preset.ps1",
+      "summary": "PowerShell script that applies named registry optimization presets (network, gaming, privacy, performance, input-latency, all) with automatic backup. Supports -DryRun and -Force flags. Tracks applied, skipped, and error counts.",
+      "tags": ["powershell", "windows", "registry", "preset", "optimization", "gaming", "privacy"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/windows-registry-editor/scripts/Backup-RegistryKey.ps1",
+      "type": "file:",
+      "name": "Backup-RegistryKey.ps1",
+      "filePath": "skills/windows-registry-editor/scripts/Backup-RegistryKey.ps1",
+      "summary": "PowerShell utility script that exports a specified Windows registry key to a .reg file for backup before modifications. Used by other registry editor scripts to ensure safe rollback capability.",
+      "tags": ["powershell", "windows", "registry", "backup", "export", "rollback"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/windows-registry-editor/scripts/Search-Registry.ps1",
+      "type": "file:",
+      "name": "Search-Registry.ps1",
+      "filePath": "skills/windows-registry-editor/scripts/Search-Registry.ps1",
+      "summary": "PowerShell script that recursively searches the Windows registry for keys or values matching a given pattern. Supports searching by key name, value name, or value data across specified hive roots.",
+      "tags": ["powershell", "windows", "registry", "search", "query"],
+      "complexity": "medium"
+    }
+  ],
+  "edges": []
+}

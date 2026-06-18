@@ -1,0 +1,373 @@
+{
+  "batchIndex": 8,
+  "nodes": [
+    {
+      "id": "file:file-ops-rs/src/utils/diff.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/utils/diff.rs",
+      "label": "diff.rs",
+      "language": "rust",
+      "sizeLines": 7,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 7,
+        "nonEmptyLines": 6,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 2,
+          "functionCount": 1,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/utils/diff.rs:generate",
+      "type": "function",
+      "path": "file-ops-rs/src/utils/diff.rs",
+      "label": "generate",
+      "language": "rust",
+      "metadata": {
+        "startLine": 4,
+        "endLine": 6,
+        "lineCount": 3,
+        "params": [
+          "_original",
+          "_modified"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/utils/diff.rs:UnifiedDiff",
+      "type": "class",
+      "path": "file-ops-rs/src/utils/diff.rs",
+      "label": "UnifiedDiff",
+      "language": "rust",
+      "metadata": {
+        "startLine": 1,
+        "endLine": 1,
+        "lineCount": 1,
+        "methods": [
+          "generate"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/utils/file_io.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/utils/file_io.rs",
+      "label": "file_io.rs",
+      "language": "rust",
+      "sizeLines": 7,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 7,
+        "nonEmptyLines": 6,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 2,
+          "functionCount": 1,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/utils/file_io.rs:read_file_lines",
+      "type": "function",
+      "path": "file-ops-rs/src/utils/file_io.rs",
+      "label": "read_file_lines",
+      "language": "rust",
+      "metadata": {
+        "startLine": 4,
+        "endLine": 6,
+        "lineCount": 3,
+        "params": [
+          "_path"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/utils/file_io.rs:FileIo",
+      "type": "class",
+      "path": "file-ops-rs/src/utils/file_io.rs",
+      "label": "FileIo",
+      "language": "rust",
+      "metadata": {
+        "startLine": 1,
+        "endLine": 1,
+        "lineCount": 1,
+        "methods": [
+          "read_file_lines"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/utils/hashing.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/utils/hashing.rs",
+      "label": "hashing.rs",
+      "language": "rust",
+      "sizeLines": 7,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 7,
+        "nonEmptyLines": 6,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 2,
+          "functionCount": 1,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/utils/hashing.rs:hash",
+      "type": "function",
+      "path": "file-ops-rs/src/utils/hashing.rs",
+      "label": "hash",
+      "language": "rust",
+      "metadata": {
+        "startLine": 4,
+        "endLine": 6,
+        "lineCount": 3,
+        "params": [
+          "_lines"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/utils/hashing.rs:ContentHash",
+      "type": "class",
+      "path": "file-ops-rs/src/utils/hashing.rs",
+      "label": "ContentHash",
+      "language": "rust",
+      "metadata": {
+        "startLine": 1,
+        "endLine": 1,
+        "lineCount": 1,
+        "methods": [
+          "hash"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/utils/mod.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/utils/mod.rs",
+      "label": "mod.rs",
+      "language": "rust",
+      "sizeLines": 11,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 11,
+        "nonEmptyLines": 10,
+        "metrics": {
+          "importCount": 5,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/utils/parser.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/utils/parser.rs",
+      "label": "parser.rs",
+      "language": "rust",
+      "sizeLines": 7,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 7,
+        "nonEmptyLines": 6,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 2,
+          "functionCount": 1,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/utils/parser.rs:parse_python",
+      "type": "function",
+      "path": "file-ops-rs/src/utils/parser.rs",
+      "label": "parse_python",
+      "language": "rust",
+      "metadata": {
+        "startLine": 4,
+        "endLine": 6,
+        "lineCount": 3,
+        "params": [
+          "_lines"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/utils/parser.rs:LanguageParser",
+      "type": "class",
+      "path": "file-ops-rs/src/utils/parser.rs",
+      "label": "LanguageParser",
+      "language": "rust",
+      "metadata": {
+        "startLine": 1,
+        "endLine": 1,
+        "lineCount": 1,
+        "methods": [
+          "parse_python"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/utils/validation.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/utils/validation.rs",
+      "label": "validation.rs",
+      "language": "rust",
+      "sizeLines": 7,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 7,
+        "nonEmptyLines": 6,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 2,
+          "functionCount": 1,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/utils/validation.rs:validate_params",
+      "type": "function",
+      "path": "file-ops-rs/src/utils/validation.rs",
+      "label": "validate_params",
+      "language": "rust",
+      "metadata": {
+        "startLine": 4,
+        "endLine": 6,
+        "lineCount": 3,
+        "params": [
+          "_params",
+          "_schema"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/utils/validation.rs:Validation",
+      "type": "class",
+      "path": "file-ops-rs/src/utils/validation.rs",
+      "label": "Validation",
+      "language": "rust",
+      "metadata": {
+        "startLine": 1,
+        "endLine": 1,
+        "lineCount": 1,
+        "methods": [
+          "validate_params"
+        ],
+        "exported": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/utils/diff.rs",
+      "target": "function:file-ops-rs/src/utils/diff.rs:generate",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/utils/diff.rs",
+      "target": "class:file-ops-rs/src/utils/diff.rs:UnifiedDiff",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/utils/file_io.rs",
+      "target": "function:file-ops-rs/src/utils/file_io.rs:read_file_lines",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/utils/file_io.rs",
+      "target": "class:file-ops-rs/src/utils/file_io.rs:FileIo",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/utils/hashing.rs",
+      "target": "function:file-ops-rs/src/utils/hashing.rs:hash",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/utils/hashing.rs",
+      "target": "class:file-ops-rs/src/utils/hashing.rs:ContentHash",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/utils/mod.rs",
+      "target": "file:file-ops-rs/src/utils/diff.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/utils/mod.rs",
+      "target": "file:file-ops-rs/src/utils/file_io.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/utils/mod.rs",
+      "target": "file:file-ops-rs/src/utils/hashing.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/utils/mod.rs",
+      "target": "file:file-ops-rs/src/utils/parser.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/utils/mod.rs",
+      "target": "file:file-ops-rs/src/utils/validation.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/utils/parser.rs",
+      "target": "function:file-ops-rs/src/utils/parser.rs:parse_python",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/utils/parser.rs",
+      "target": "class:file-ops-rs/src/utils/parser.rs:LanguageParser",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/utils/validation.rs",
+      "target": "function:file-ops-rs/src/utils/validation.rs:validate_params",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/utils/validation.rs",
+      "target": "class:file-ops-rs/src/utils/validation.rs:Validation",
+      "weight": 1
+    }
+  ]
+}

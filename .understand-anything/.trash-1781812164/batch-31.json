@@ -1,0 +1,33 @@
+{
+  "batchIndex": 31,
+  "nodes": [
+    {
+      "id": "document:skills/spec-writer/examples/constitution-template.md",
+      "type": "document:",
+      "name": "constitution-template.md",
+      "filePath": "skills/spec-writer/examples/constitution-template.md",
+      "summary": "Template for writing a project constitution — a foundational document capturing guiding principles, non-negotiable constraints, and decision-making rules for a software project.",
+      "tags": ["spec", "template", "constitution", "principles", "constraints", "spec-writer"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/spec-writer/examples/sample-spec.md",
+      "type": "document:",
+      "name": "sample-spec.md",
+      "filePath": "skills/spec-writer/examples/sample-spec.md",
+      "summary": "Example feature specification demonstrating the spec-writer skill output format. Shows a filled-out spec with project overview, user scenarios, acceptance criteria, and implementation guidance.",
+      "tags": ["spec", "example", "feature", "user-stories", "acceptance-criteria", "spec-writer"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/spec-writer/examples/spec-template.md",
+      "type": "document:",
+      "name": "spec-template.md",
+      "filePath": "skills/spec-writer/examples/spec-template.md",
+      "summary": "Feature specification template for the spec-writer skill. Provides structured sections for project overview, user scenarios and stories with prioritization, acceptance criteria, and notes on independently testable MVP slices.",
+      "tags": ["spec", "template", "feature", "user-stories", "mvp", "spec-writer"],
+      "complexity": "low"
+    }
+  ],
+  "edges": []
+}

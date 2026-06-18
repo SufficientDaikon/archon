@@ -1,0 +1,2746 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "skills/mcp-server-index/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/mobile-design/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/mobile-design/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/mobile-design/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/mobile-design/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/mobile-design/resources/mobile_audit.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 670,
+      "nonEmptyLines": 554,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 631,
+          "endLine": 664,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "MobileAuditor",
+          "startLine": 74,
+          "endLine": 628,
+          "methods": [
+            "__init__",
+            "audit_file",
+            "audit_directory",
+            "get_report"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MobileAuditor",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 631,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "audit_file",
+          "callee": "open",
+          "lineNumber": 83
+        },
+        {
+          "caller": "audit_file",
+          "callee": "f.read",
+          "lineNumber": 84
+        },
+        {
+          "caller": "audit_file",
+          "callee": "os.path.basename",
+          "lineNumber": 89
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 92
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 92
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 93
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 93
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.findall",
+          "lineNumber": 102
+        },
+        {
+          "caller": "audit_file",
+          "callee": "int",
+          "lineNumber": 104
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.issues.append",
+          "lineNumber": 105
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.findall",
+          "lineNumber": 109
+        },
+        {
+          "caller": "audit_file",
+          "callee": "int",
+          "lineNumber": 111
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 112
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.findall",
+          "lineNumber": 116
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 117
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 117
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 119
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 123
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 123
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 124
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 124
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 126
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 130
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 130
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 131
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 131
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 133
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 138
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 138
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 139
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 139
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 141
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 146
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 146
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 147
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 147
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.issues.append",
+          "lineNumber": 149
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 153
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 153
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 154
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 154
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 156
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 160
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 160
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 161
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 161
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 163
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 167
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 167
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 168
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 168
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 169
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 169
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.issues.append",
+          "lineNumber": 171
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.issues.append",
+          "lineNumber": 173
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 177
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 177
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 178
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 178
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 179
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 179
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 181
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 183
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 187
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 187
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 188
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 188
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 189
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 189
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.issues.append",
+          "lineNumber": 191
+        },
+        {
+          "caller": "audit_file",
+          "callee": "len",
+          "lineNumber": 194
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.findall",
+          "lineNumber": 194
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 196
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.findall",
+          "lineNumber": 200
+        },
+        {
+          "caller": "audit_file",
+          "callee": "len",
+          "lineNumber": 201
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 202
+        },
+        {
+          "caller": "audit_file",
+          "callee": "len",
+          "lineNumber": 202
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 206
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 206
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.issues.append",
+          "lineNumber": 208
+        },
+        {
+          "caller": "audit_file",
+          "callee": "len",
+          "lineNumber": 213
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.findall",
+          "lineNumber": 213
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 215
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 218
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 218
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 221
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 221
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 223
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 226
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 226
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 227
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 227
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 229
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 232
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 232
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 233
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 233
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 238
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 244
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 244
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 245
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 245
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 247
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 251
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 251
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 252
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 252
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 254
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.findall",
+          "lineNumber": 257
+        },
+        {
+          "caller": "audit_file",
+          "callee": "float",
+          "lineNumber": 259
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 260
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.findall",
+          "lineNumber": 263
+        },
+        {
+          "caller": "audit_file",
+          "callee": "float",
+          "lineNumber": 265
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 267
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 269
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 274
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 275
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 278
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 278
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 279
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 279
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 281
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 287
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 287
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 288
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 288
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 293
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 293
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 294
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 294
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 296
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 299
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 299
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 301
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 307
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 307
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 312
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 312
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 313
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 313
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 315
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 319
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 319
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 320
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 320
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 322
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 327
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 327
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 328
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 328
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 329
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 329
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.issues.append",
+          "lineNumber": 331
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 334
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 334
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 335
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 335
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 337
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 340
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 340
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 341
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 341
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 343
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 350
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 350
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 351
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 351
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 352
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 352
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 353
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 353
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.findall",
+          "lineNumber": 356
+        },
+        {
+          "caller": "audit_file",
+          "callee": "sum",
+          "lineNumber": 358
+        },
+        {
+          "caller": "audit_file",
+          "callee": "any",
+          "lineNumber": 358
+        },
+        {
+          "caller": "audit_file",
+          "callee": "abs",
+          "lineNumber": 358
+        },
+        {
+          "caller": "audit_file",
+          "callee": "float",
+          "lineNumber": 358
+        },
+        {
+          "caller": "audit_file",
+          "callee": "len",
+          "lineNumber": 360
+        },
+        {
+          "caller": "audit_file",
+          "callee": "len",
+          "lineNumber": 360
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 361
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 366
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 366
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 367
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 367
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 368
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 368
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 369
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 369
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 370
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 370
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 373
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 373
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 376
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.findall",
+          "lineNumber": 380
+        },
+        {
+          "caller": "audit_file",
+          "callee": "len",
+          "lineNumber": 381
+        },
+        {
+          "caller": "audit_file",
+          "callee": "sorted",
+          "lineNumber": 382
+        },
+        {
+          "caller": "audit_file",
+          "callee": "set",
+          "lineNumber": 382
+        },
+        {
+          "caller": "audit_file",
+          "callee": "float",
+          "lineNumber": 382
+        },
+        {
+          "caller": "audit_file",
+          "callee": "range",
+          "lineNumber": 384
+        },
+        {
+          "caller": "audit_file",
+          "callee": "len",
+          "lineNumber": 384
+        },
+        {
+          "caller": "audit_file",
+          "callee": "ratios.append",
+          "lineNumber": 386
+        },
+        {
+          "caller": "audit_file",
+          "callee": "any",
+          "lineNumber": 391
+        },
+        {
+          "caller": "audit_file",
+          "callee": "abs",
+          "lineNumber": 391
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 392
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 398
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 398
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 399
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 399
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 401
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.findall",
+          "lineNumber": 406
+        },
+        {
+          "caller": "audit_file",
+          "callee": "weight_map.get",
+          "lineNumber": 410
+        },
+        {
+          "caller": "audit_file",
+          "callee": "w.lower",
+          "lineNumber": 410
+        },
+        {
+          "caller": "audit_file",
+          "callee": "numeric_weights.append",
+          "lineNumber": 412
+        },
+        {
+          "caller": "audit_file",
+          "callee": "int",
+          "lineNumber": 412
+        },
+        {
+          "caller": "audit_file",
+          "callee": "sum",
+          "lineNumber": 417
+        },
+        {
+          "caller": "audit_file",
+          "callee": "sum",
+          "lineNumber": 418
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 420
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 426
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 428
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 431
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 433
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.findall",
+          "lineNumber": 437
+        },
+        {
+          "caller": "audit_file",
+          "callee": "int",
+          "lineNumber": 442
+        },
+        {
+          "caller": "audit_file",
+          "callee": "int",
+          "lineNumber": 442
+        },
+        {
+          "caller": "audit_file",
+          "callee": "int",
+          "lineNumber": 442
+        },
+        {
+          "caller": "audit_file",
+          "callee": "max",
+          "lineNumber": 443
+        },
+        {
+          "caller": "audit_file",
+          "callee": "min",
+          "lineNumber": 444
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 454
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.findall",
+          "lineNumber": 458
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 460
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 460
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 462
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 466
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 466
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 468
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 468
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 470
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 476
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 476
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 477
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 477
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 479
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 483
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 483
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 484
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 484
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 485
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 485
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 487
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 487
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 489
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 492
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 492
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 493
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 493
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 494
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 494
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 496
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 496
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 498
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 501
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 501
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 502
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 502
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 504
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 508
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 508
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 509
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 509
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 510
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 510
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 519
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 519
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 520
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 520
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 522
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 525
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 525
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 526
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 526
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 528
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 532
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 532
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 533
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 533
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 535
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 539
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 539
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 540
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 540
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 541
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 541
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 542
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 542
+        },
+        {
+          "caller": "audit_file",
+          "callee": "sum",
+          "lineNumber": 544
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 549
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 549
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 550
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 550
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 551
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 551
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 556
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 561
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 561
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 562
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 562
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 563
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 563
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 564
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 564
+        },
+        {
+          "caller": "audit_file",
+          "callee": "testing_tools.append",
+          "lineNumber": 567
+        },
+        {
+          "caller": "audit_file",
+          "callee": "testing_tools.append",
+          "lineNumber": 568
+        },
+        {
+          "caller": "audit_file",
+          "callee": "testing_tools.append",
+          "lineNumber": 569
+        },
+        {
+          "caller": "audit_file",
+          "callee": "testing_tools.append",
+          "lineNumber": 570
+        },
+        {
+          "caller": "audit_file",
+          "callee": "len",
+          "lineNumber": 572
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 573
+        },
+        {
+          "caller": "audit_file",
+          "callee": "len",
+          "lineNumber": 576
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.findall",
+          "lineNumber": 576
+        },
+        {
+          "caller": "audit_file",
+          "callee": "len",
+          "lineNumber": 577
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.findall",
+          "lineNumber": 577
+        },
+        {
+          "caller": "audit_file",
+          "callee": "content.lower",
+          "lineNumber": 577
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 580
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 584
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 584
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 585
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 585
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 587
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 592
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 592
+        },
+        {
+          "caller": "audit_file",
+          "callee": "len",
+          "lineNumber": 593
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.findall",
+          "lineNumber": 593
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 594
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 594
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 597
+        },
+        {
+          "caller": "audit_file",
+          "callee": "bool",
+          "lineNumber": 603
+        },
+        {
+          "caller": "audit_file",
+          "callee": "re.search",
+          "lineNumber": 603
+        },
+        {
+          "caller": "audit_file",
+          "callee": "self.warnings.append",
+          "lineNumber": 605
+        },
+        {
+          "caller": "audit_directory",
+          "callee": "os.walk",
+          "lineNumber": 615
+        },
+        {
+          "caller": "audit_directory",
+          "callee": "Path",
+          "lineNumber": 618
+        },
+        {
+          "caller": "audit_directory",
+          "callee": "self.audit_file",
+          "lineNumber": 619
+        },
+        {
+          "caller": "audit_directory",
+          "callee": "os.path.join",
+          "lineNumber": 619
+        },
+        {
+          "caller": "get_report",
+          "callee": "len",
+          "lineNumber": 627
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 632
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 633
+        },
+        {
+          "caller": "main",
+          "callee": "sys.exit",
+          "lineNumber": 634
+        },
+        {
+          "caller": "main",
+          "callee": "MobileAuditor",
+          "lineNumber": 639
+        },
+        {
+          "caller": "main",
+          "callee": "os.path.isfile",
+          "lineNumber": 640
+        },
+        {
+          "caller": "main",
+          "callee": "auditor.audit_file",
+          "lineNumber": 641
+        },
+        {
+          "caller": "main",
+          "callee": "auditor.audit_directory",
+          "lineNumber": 643
+        },
+        {
+          "caller": "main",
+          "callee": "auditor.get_report",
+          "lineNumber": 645
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 648
+        },
+        {
+          "caller": "main",
+          "callee": "json.dumps",
+          "lineNumber": 648
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 650
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 651
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 653
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 653
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 655
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 657
+        },
+        {
+          "caller": "main",
+          "callee": "len",
+          "lineNumber": 657
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 659
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 660
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 662
+        },
+        {
+          "caller": "main",
+          "callee": "sys.exit",
+          "lineNumber": 664
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "skills/mobile-design/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 284,
+      "nonEmptyLines": 205,
+      "sections": [
+        {
+          "heading": "Mobile Design System",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "1. Mobile Feasibility & Risk Index (MFRI)",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "MFRI Dimensions (1–5)",
+          "level": 3,
+          "line": 22
+        },
+        {
+          "heading": "Score Formula",
+          "level": 3,
+          "line": 32
+        },
+        {
+          "heading": "Interpretation",
+          "level": 3,
+          "line": 41
+        },
+        {
+          "heading": "2. Mandatory Thinking Before Any Work",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "⛔ STOP: Ask Before Assuming (Required)",
+          "level": 3,
+          "line": 54
+        },
+        {
+          "heading": "3. Mandatory Reference Reading (Enforced)",
+          "level": 2,
+          "line": 71
+        },
+        {
+          "heading": "Universal (Always Read First)",
+          "level": 3,
+          "line": 73
+        },
+        {
+          "heading": "Platform-Specific (Conditional)",
+          "level": 3,
+          "line": 84
+        },
+        {
+          "heading": "4. AI Mobile Anti-Patterns (Hard Bans)",
+          "level": 2,
+          "line": 96
+        },
+        {
+          "heading": "🚫 Performance Sins (Non-Negotiable)",
+          "level": 3,
+          "line": 98
+        },
+        {
+          "heading": "🚫 Touch & UX Sins",
+          "level": 3,
+          "line": 111
+        },
+        {
+          "heading": "🚫 Security Sins",
+          "level": 3,
+          "line": 123
+        },
+        {
+          "heading": "5. Platform Unification vs Divergence Matrix",
+          "level": 2,
+          "line": 134
+        },
+        {
+          "heading": "Platform Defaults",
+          "level": 3,
+          "line": 146
+        },
+        {
+          "heading": "6. Mobile UX Psychology (Non-Optional)",
+          "level": 2,
+          "line": 158
+        },
+        {
+          "heading": "Fitts’ Law (Touch Reality)",
+          "level": 3,
+          "line": 160
+        },
+        {
+          "heading": "7. Performance Doctrine",
+          "level": 2,
+          "line": 174
+        },
+        {
+          "heading": "React Native (Required Pattern)",
+          "level": 3,
+          "line": 176
+        },
+        {
+          "heading": "Flutter (Required Pattern)",
+          "level": 3,
+          "line": 200
+        },
+        {
+          "heading": "8. Mandatory Mobile Checkpoint",
+          "level": 2,
+          "line": 218
+        },
+        {
+          "heading": "9. Framework Decision Tree (Canonical)",
+          "level": 2,
+          "line": 243
+        },
+        {
+          "heading": "10. Release Readiness Checklist",
+          "level": 2,
+          "line": 256
+        },
+        {
+          "heading": "Before Shipping",
+          "level": 3,
+          "line": 258
+        },
+        {
+          "heading": "11. Related Skills",
+          "level": 2,
+          "line": 271
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 26
+      }
+    },
+    {
+      "path": "skills/mobile-design/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/omega-gdscript-expert/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/omega-gdscript-expert/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/omega-gdscript-expert/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/omega-gdscript-expert/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/omega-gdscript-expert/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 67,
+      "nonEmptyLines": 52,
+      "sections": [
+        {
+          "heading": "Omega GDScript Expert",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "Always Compose These Skills",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "Mandatory Workflow",
+          "level": 2,
+          "line": 28
+        },
+        {
+          "heading": "MCP Policy",
+          "level": 2,
+          "line": 53
+        },
+        {
+          "heading": "Output Contract For Implementation Tasks",
+          "level": 2,
+          "line": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "skills/omega-gdscript-expert/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/packager/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/packager/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/packager/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/packager/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/packager/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 281,
+      "nonEmptyLines": 227,
+      "sections": [
+        {
+          "heading": "Packager Skill",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "When to Use This Skill",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Packaging Process",
+          "level": 2,
+          "line": 22
+        },
+        {
+          "heading": "Step 1: Determine Scope",
+          "level": 3,
+          "line": 24
+        },
+        {
+          "heading": "Step 2: Inventory Files",
+          "level": 3,
+          "line": 36
+        },
+        {
+          "heading": "Step 3: Create Repo Structure",
+          "level": 3,
+          "line": 53
+        },
+        {
+          "heading": "Step 4: Generate README.md",
+          "level": 3,
+          "line": 70
+        },
+        {
+          "heading": "Step 5: Generate HTML Documentation Website",
+          "level": 3,
+          "line": 92
+        },
+        {
+          "heading": "Required HTML Structure:",
+          "level": 4,
+          "line": 96
+        },
+        {
+          "heading": "HTML Design Requirements:",
+          "level": 4,
+          "line": 132
+        },
+        {
+          "heading": "Step 6: Generate Install Scripts",
+          "level": 3,
+          "line": 182
+        },
+        {
+          "heading": "Step 7: Generate Prompts Guide",
+          "level": 3,
+          "line": 221
+        },
+        {
+          "heading": "Step 8: Sanitize, Init Git & Push to GitHub",
+          "level": 3,
+          "line": 239
+        },
+        {
+          "heading": "Output Quality Checklist",
+          "level": 2,
+          "line": 257
+        },
+        {
+          "heading": "Handoff",
+          "level": 2,
+          "line": 275
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 15
+      }
+    },
+    {
+      "path": "skills/packager/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/plugin-system/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 29,
+      "nonEmptyLines": 24,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 24
+        },
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "skills/plugin-system/resources/plugin-patterns.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 163,
+      "nonEmptyLines": 131,
+      "sections": [
+        {
+          "heading": "Plugin System Patterns Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. Interface Definitions (`types.ts`)",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "2. Registry Implementation (`registry.ts`)",
+          "level": 2,
+          "line": 45
+        },
+        {
+          "heading": "3. Initialization (`index.ts`)",
+          "level": 2,
+          "line": 83
+        },
+        {
+          "heading": "4. Concrete Plugin Example (`auth/github.ts`)",
+          "level": 2,
+          "line": 114
+        },
+        {
+          "heading": "5. Adding a New Plugin (Extension Guide)",
+          "level": 2,
+          "line": 131
+        },
+        {
+          "heading": "6. Generic Plugin Registry (Reusable Template)",
+          "level": 2,
+          "line": 139
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "skills/plugin-system/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 112,
+      "nonEmptyLines": 84,
+      "sections": [
+        {
+          "heading": "Plugin System",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Workflow",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Step 1: Identify Extension Points",
+          "level": 3,
+          "line": 30
+        },
+        {
+          "heading": "Step 2: Define Interfaces",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "Step 3: Build Registry",
+          "level": 3,
+          "line": 41
+        },
+        {
+          "heading": "Step 4: Create Config Integration",
+          "level": 3,
+          "line": 48
+        },
+        {
+          "heading": "Step 5: Implement Reference Plugin",
+          "level": 3,
+          "line": 53
+        },
+        {
+          "heading": "Step 6: Document Extension Guide",
+          "level": 3,
+          "line": 58
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 71
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 78
+        },
+        {
+          "heading": "Output Template",
+          "level": 3,
+          "line": 85
+        },
+        {
+          "heading": "Resources",
+          "level": 2,
+          "line": 95
+        },
+        {
+          "heading": "Handoff",
+          "level": 2,
+          "line": 101
+        },
+        {
+          "heading": "Platform Notes",
+          "level": 2,
+          "line": 108
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    },
+    {
+      "path": "skills/pr-quality-agent/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 41,
+      "nonEmptyLines": 36,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 17
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 33
+        },
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "skills/pr-quality-agent/resources/audit-checklist.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 56,
+      "nonEmptyLines": 48,
+      "sections": [
+        {
+          "heading": "PR Quality Audit Checklist",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Citation Audit",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Structure Audit",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Accuracy Audit",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "Voice Audit",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "Markdown Audit",
+          "level": 2,
+          "line": 39
+        },
+        {
+          "heading": "Scoring",
+          "level": 2,
+          "line": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    }
+  ]
+}

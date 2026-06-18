@@ -1,0 +1,1523 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 13,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "src/archon/synapses/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 28,
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/archon/synapses/anti_rationalization.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 12,
+      "functions": [
+        {
+          "name": "validate",
+          "startLine": 9,
+          "endLine": 14,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "validate",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validate",
+          "callee": "(context.get(\"reasoning\", \"\") + \" \" + context.get(\"task\", \"\")).lower",
+          "lineNumber": 10
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 10
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 10
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/archon/synapses/code_quality.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 89,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "validate",
+          "startLine": 17,
+          "endLine": 78,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "validate",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 30
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 31
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 32
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 33
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 34
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 35
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 36
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 42
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 45
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 46
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 50
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 56
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 62
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 63
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/archon/synapses/code_quality_mcp.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "validate",
+          "startLine": 12,
+          "endLine": 72,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "validate",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 22
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 23
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 24
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 25
+        },
+        {
+          "caller": "validate",
+          "callee": "get_mcp_client",
+          "lineNumber": 33
+        },
+        {
+          "caller": "validate",
+          "callee": "client.analyze_code_quality",
+          "lineNumber": 34
+        },
+        {
+          "caller": "validate",
+          "callee": "analysis.get",
+          "lineNumber": 42
+        },
+        {
+          "caller": "validate",
+          "callee": "metrics.get",
+          "lineNumber": 46
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 47
+        },
+        {
+          "caller": "validate",
+          "callee": "metrics.get",
+          "lineNumber": 50
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 51
+        },
+        {
+          "caller": "validate",
+          "callee": "metrics.get",
+          "lineNumber": 54
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 56
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 63
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/archon/synapses/completeness.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 92,
+      "nonEmptyLines": 75,
+      "functions": [
+        {
+          "name": "validate",
+          "startLine": 17,
+          "endLine": 83,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "validate",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 28
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 29
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 30
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 31
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 32
+        },
+        {
+          "caller": "validate",
+          "callee": "c.get",
+          "lineNumber": 38
+        },
+        {
+          "caller": "validate",
+          "callee": "sum",
+          "lineNumber": 40
+        },
+        {
+          "caller": "validate",
+          "callee": "c.get",
+          "lineNumber": 40
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 41
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 42
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 43
+        },
+        {
+          "caller": "validate",
+          "callee": "sum",
+          "lineNumber": 49
+        },
+        {
+          "caller": "validate",
+          "callee": "c.get",
+          "lineNumber": 49
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 50
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 53
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 59
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 63
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 67
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 67
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 72
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/archon/synapses/consistency.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 106,
+      "nonEmptyLines": 87,
+      "functions": [
+        {
+          "name": "validate",
+          "startLine": 17,
+          "endLine": 96,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "validate",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 29
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 30
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 31
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 32
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 33
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 34
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 39
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 44
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 45
+        },
+        {
+          "caller": "validate",
+          "callee": "definitions.keys",
+          "lineNumber": 50
+        },
+        {
+          "caller": "validate",
+          "callee": "any",
+          "lineNumber": 51
+        },
+        {
+          "caller": "validate",
+          "callee": "c.isupper",
+          "lineNumber": 51
+        },
+        {
+          "caller": "validate",
+          "callee": "violations.append",
+          "lineNumber": 55
+        },
+        {
+          "caller": "validate",
+          "callee": "violations.append",
+          "lineNumber": 57
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 60
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 60
+        },
+        {
+          "caller": "validate",
+          "callee": "imp.split",
+          "lineNumber": 63
+        },
+        {
+          "caller": "validate",
+          "callee": "p.startswith",
+          "lineNumber": 64
+        },
+        {
+          "caller": "validate",
+          "callee": "p.startswith",
+          "lineNumber": 65
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 67
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 68
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 73
+        },
+        {
+          "caller": "validate",
+          "callee": "schema.get",
+          "lineNumber": 77
+        },
+        {
+          "caller": "validate",
+          "callee": "first_schema.get",
+          "lineNumber": 77
+        },
+        {
+          "caller": "validate",
+          "callee": "schema.get",
+          "lineNumber": 78
+        },
+        {
+          "caller": "validate",
+          "callee": "first_schema.get",
+          "lineNumber": 78
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 79
+        },
+        {
+          "caller": "validate",
+          "callee": "schema.get",
+          "lineNumber": 80
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 87
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 89
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 95
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/archon/synapses/mcp_client.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 89,
+      "functions": [
+        {
+          "name": "get_mcp_client",
+          "startLine": 104,
+          "endLine": 109,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "MCPFileOpsClient",
+          "startLine": 9,
+          "endLine": 97,
+          "methods": [
+            "__init__",
+            "read_file",
+            "analyze_code_quality",
+            "scan_security",
+            "_detect_language",
+            "_estimate_complexity"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MCPFileOpsClient",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "get_mcp_client",
+          "line": 104,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "_Path(__file__).resolve",
+          "lineNumber": 16
+        },
+        {
+          "caller": "__init__",
+          "callee": "_Path",
+          "lineNumber": 16
+        },
+        {
+          "caller": "__init__",
+          "callee": "str",
+          "lineNumber": 17
+        },
+        {
+          "caller": "read_file",
+          "callee": "Path(path).exists",
+          "lineNumber": 24
+        },
+        {
+          "caller": "read_file",
+          "callee": "Path",
+          "lineNumber": 24
+        },
+        {
+          "caller": "read_file",
+          "callee": "Path(path).read_text().splitlines",
+          "lineNumber": 27
+        },
+        {
+          "caller": "read_file",
+          "callee": "Path(path).read_text",
+          "lineNumber": 27
+        },
+        {
+          "caller": "read_file",
+          "callee": "Path",
+          "lineNumber": 27
+        },
+        {
+          "caller": "read_file",
+          "callee": "\"\\n\".join",
+          "lineNumber": 30
+        },
+        {
+          "caller": "read_file",
+          "callee": "len",
+          "lineNumber": 31
+        },
+        {
+          "caller": "read_file",
+          "callee": "self._detect_language",
+          "lineNumber": 32
+        },
+        {
+          "caller": "read_file",
+          "callee": "str",
+          "lineNumber": 35
+        },
+        {
+          "caller": "analyze_code_quality",
+          "callee": "self.read_file",
+          "lineNumber": 39
+        },
+        {
+          "caller": "analyze_code_quality",
+          "callee": "file_info.get",
+          "lineNumber": 43
+        },
+        {
+          "caller": "analyze_code_quality",
+          "callee": "file_info.get",
+          "lineNumber": 50
+        },
+        {
+          "caller": "analyze_code_quality",
+          "callee": "self._estimate_complexity",
+          "lineNumber": 51
+        },
+        {
+          "caller": "scan_security",
+          "callee": "self.read_file",
+          "lineNumber": 58
+        },
+        {
+          "caller": "scan_security",
+          "callee": "file_info.get(\"content\", \"\").lower",
+          "lineNumber": 62
+        },
+        {
+          "caller": "scan_security",
+          "callee": "file_info.get",
+          "lineNumber": 62
+        },
+        {
+          "caller": "scan_security",
+          "callee": "issues.append",
+          "lineNumber": 75
+        },
+        {
+          "caller": "scan_security",
+          "callee": "len",
+          "lineNumber": 79
+        },
+        {
+          "caller": "_detect_language",
+          "callee": "ext_map.get",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_detect_language",
+          "callee": "Path",
+          "lineNumber": 92
+        },
+        {
+          "caller": "_estimate_complexity",
+          "callee": "sum",
+          "lineNumber": 97
+        },
+        {
+          "caller": "_estimate_complexity",
+          "callee": "content.count",
+          "lineNumber": 97
+        },
+        {
+          "caller": "get_mcp_client",
+          "callee": "MCPFileOpsClient",
+          "lineNumber": 108
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "src/archon/synapses/metacognition.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 108,
+      "nonEmptyLines": 90,
+      "functions": [
+        {
+          "name": "validate",
+          "startLine": 35,
+          "endLine": 99,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "validate",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validate",
+          "callee": "context.get(\"complexity\", \"SIMPLE\").upper",
+          "lineNumber": 46
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 46
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 47
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 48
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 49
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 50
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 56
+        },
+        {
+          "caller": "validate",
+          "callee": "_MIN_REASONING_LENGTH.get",
+          "lineNumber": 62
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 63
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 64
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 66
+        },
+        {
+          "caller": "validate",
+          "callee": "any",
+          "lineNumber": 71
+        },
+        {
+          "caller": "validate",
+          "callee": "reasoning.lower",
+          "lineNumber": 71
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 73
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 80
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 88
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/archon/synapses/pattern_recognition.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 87,
+      "nonEmptyLines": 72,
+      "functions": [
+        {
+          "name": "validate",
+          "startLine": 16,
+          "endLine": 74,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "pd_normalize_action",
+          "startLine": 77,
+          "endLine": 79,
+          "params": [
+            "action"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "validate",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "pd_normalize_action",
+          "line": 77,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 26
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 27
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 28
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 29
+        },
+        {
+          "caller": "validate",
+          "callee": "str(error_pattern).lower",
+          "lineNumber": 37
+        },
+        {
+          "caller": "validate",
+          "callee": "str",
+          "lineNumber": 37
+        },
+        {
+          "caller": "validate",
+          "callee": "sum",
+          "lineNumber": 38
+        },
+        {
+          "caller": "validate",
+          "callee": "str(exec_record).lower",
+          "lineNumber": 40
+        },
+        {
+          "caller": "validate",
+          "callee": "str",
+          "lineNumber": 40
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 43
+        },
+        {
+          "caller": "validate",
+          "callee": "sum",
+          "lineNumber": 51
+        },
+        {
+          "caller": "validate",
+          "callee": "pd_normalize_action",
+          "lineNumber": 53
+        },
+        {
+          "caller": "validate",
+          "callee": "record.get",
+          "lineNumber": 53
+        },
+        {
+          "caller": "validate",
+          "callee": "pd_normalize_action",
+          "lineNumber": 54
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 57
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 65
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 67
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 73
+        },
+        {
+          "caller": "pd_normalize_action",
+          "callee": "str(action).lower().strip",
+          "lineNumber": 79
+        },
+        {
+          "caller": "pd_normalize_action",
+          "callee": "str(action).lower",
+          "lineNumber": 79
+        },
+        {
+          "caller": "pd_normalize_action",
+          "callee": "str",
+          "lineNumber": 79
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/archon/synapses/security_awareness.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "validate",
+          "startLine": 35,
+          "endLine": 62,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "validate",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 44
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 44
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 44
+        },
+        {
+          "caller": "validate",
+          "callee": "pattern.search",
+          "lineNumber": 49
+        },
+        {
+          "caller": "validate",
+          "callee": "vulns.append",
+          "lineNumber": 50
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 58
+        },
+        {
+          "caller": "validate",
+          "callee": "action.upper",
+          "lineNumber": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/archon/synapses/security_awareness_mcp.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "validate",
+          "startLine": 12,
+          "endLine": 52,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "validate",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 20
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 21
+        },
+        {
+          "caller": "validate",
+          "callee": "get_mcp_client",
+          "lineNumber": 29
+        },
+        {
+          "caller": "validate",
+          "callee": "client.scan_security",
+          "lineNumber": 30
+        },
+        {
+          "caller": "validate",
+          "callee": "scan.get",
+          "lineNumber": 38
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/archon/synapses/sequential_thinking.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 78,
+      "functions": [
+        {
+          "name": "validate",
+          "startLine": 16,
+          "endLine": 87,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "validate",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 26
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 27
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 28
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 29
+        },
+        {
+          "caller": "validate",
+          "callee": "enumerate",
+          "lineNumber": 35
+        },
+        {
+          "caller": "validate",
+          "callee": "str(step).lower",
+          "lineNumber": 36
+        },
+        {
+          "caller": "validate",
+          "callee": "str",
+          "lineNumber": 36
+        },
+        {
+          "caller": "validate",
+          "callee": "str(step).lower",
+          "lineNumber": 37
+        },
+        {
+          "caller": "validate",
+          "callee": "str",
+          "lineNumber": 37
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 38
+        },
+        {
+          "caller": "validate",
+          "callee": "set",
+          "lineNumber": 41
+        },
+        {
+          "caller": "validate",
+          "callee": "dependencies.items",
+          "lineNumber": 42
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 44
+        },
+        {
+          "caller": "validate",
+          "callee": "processed.add",
+          "lineNumber": 47
+        },
+        {
+          "caller": "validate",
+          "callee": "set",
+          "lineNumber": 50
+        },
+        {
+          "caller": "has_cycle",
+          "callee": "visited.add",
+          "lineNumber": 57
+        },
+        {
+          "caller": "has_cycle",
+          "callee": "dependencies.get",
+          "lineNumber": 58
+        },
+        {
+          "caller": "has_cycle",
+          "callee": "isinstance",
+          "lineNumber": 59
+        },
+        {
+          "caller": "has_cycle",
+          "callee": "has_cycle",
+          "lineNumber": 62
+        },
+        {
+          "caller": "validate",
+          "callee": "has_cycle",
+          "lineNumber": 67
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 68
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 73
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 78
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 80
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 86
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/archon/synapses/trust_verification.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 115,
+      "nonEmptyLines": 91,
+      "functions": [
+        {
+          "name": "_extract_key_terms",
+          "startLine": 26,
+          "endLine": 33,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "_contradicts",
+          "startLine": 36,
+          "endLine": 52,
+          "params": [
+            "reasoning",
+            "prior_text"
+          ]
+        },
+        {
+          "name": "validate",
+          "startLine": 55,
+          "endLine": 107,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_extract_key_terms",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "_contradicts",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "validate",
+          "line": 55,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_extract_key_terms",
+          "callee": "w.lower",
+          "lineNumber": 30
+        },
+        {
+          "caller": "_extract_key_terms",
+          "callee": "re.findall",
+          "lineNumber": 31
+        },
+        {
+          "caller": "_extract_key_terms",
+          "callee": "w.lower",
+          "lineNumber": 32
+        },
+        {
+          "caller": "_contradicts",
+          "callee": "bool",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_contradicts",
+          "callee": "_NEGATION_PATTERNS.search",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_contradicts",
+          "callee": "bool",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_contradicts",
+          "callee": "_NEGATION_PATTERNS.search",
+          "lineNumber": 44
+        },
+        {
+          "caller": "_contradicts",
+          "callee": "_extract_key_terms",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_contradicts",
+          "callee": "_extract_key_terms",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_contradicts",
+          "callee": "len",
+          "lineNumber": 52
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get(\"reasoning\", \"\").lower",
+          "lineNumber": 65
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 65
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 66
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 67
+        },
+        {
+          "caller": "validate",
+          "callee": "context.get",
+          "lineNumber": 68
+        },
+        {
+          "caller": "validate",
+          "callee": "any",
+          "lineNumber": 73
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 75
+        },
+        {
+          "caller": "validate",
+          "callee": "prior_state.get",
+          "lineNumber": 79
+        },
+        {
+          "caller": "validate",
+          "callee": "str",
+          "lineNumber": 81
+        },
+        {
+          "caller": "validate",
+          "callee": "_contradicts",
+          "lineNumber": 82
+        },
+        {
+          "caller": "validate",
+          "callee": "prior_text[:80].replace",
+          "lineNumber": 83
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 84
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 89
+        },
+        {
+          "caller": "validate",
+          "callee": "max",
+          "lineNumber": 89
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 89
+        },
+        {
+          "caller": "validate",
+          "callee": "issues.append",
+          "lineNumber": 91
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 98
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    }
+  ]
+}

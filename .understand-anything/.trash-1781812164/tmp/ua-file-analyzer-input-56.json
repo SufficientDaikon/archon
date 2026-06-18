@@ -1,0 +1,31 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [
+    {"path": "skills/react-best-practices/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/react-best-practices/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/react-best-practices/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/react-best-practices/SKILL.md", "language": "markdown", "sizeLines": 22, "fileCategory": "docs"},
+    {"path": "skills/react-best-practices/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/README.md", "language": "markdown", "sizeLines": 23, "fileCategory": "docs"},
+    {"path": "skills/receiving-code-review/manifest.yaml", "language": "yaml", "sizeLines": 6, "fileCategory": "config"},
+    {"path": "skills/receiving-code-review/SKILL.md", "language": "markdown", "sizeLines": 88, "fileCategory": "docs"},
+    {"path": "skills/rename-project/manifest.yaml", "language": "yaml", "sizeLines": 27, "fileCategory": "config"},
+    {"path": "skills/rename-project/SKILL.md", "language": "markdown", "sizeLines": 311, "fileCategory": "docs"},
+    {"path": "skills/requesting-code-review/manifest.yaml", "language": "yaml", "sizeLines": 6, "fileCategory": "config"},
+    {"path": "skills/requesting-code-review/SKILL.md", "language": "markdown", "sizeLines": 79, "fileCategory": "docs"},
+    {"path": "skills/research-paper-to-course/manifest.yaml", "language": "yaml", "sizeLines": 38, "fileCategory": "config"},
+    {"path": "skills/research-paper-to-course/references/academic-elements.md", "language": "markdown", "sizeLines": 1299, "fileCategory": "docs"},
+    {"path": "skills/research-paper-to-course/SKILL.md", "language": "markdown", "sizeLines": 388, "fileCategory": "docs"},
+    {"path": "skills/reviewer/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/reviewer/examples/report-template.html", "language": "html", "sizeLines": 909, "fileCategory": "markup"},
+    {"path": "skills/reviewer/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/reviewer/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/reviewer/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/reviewer/SKILL.md", "language": "markdown", "sizeLines": 133, "fileCategory": "docs"},
+    {"path": "skills/reviewer/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/sdk-beside-app/manifest.yaml", "language": "yaml", "sizeLines": 31, "fileCategory": "config"},
+    {"path": "skills/sdk-beside-app/resources/sdk-scaffold.md", "language": "markdown", "sizeLines": 232, "fileCategory": "docs"},
+    {"path": "skills/sdk-beside-app/SKILL.md", "language": "markdown", "sizeLines": 128, "fileCategory": "docs"}
+  ],
+  "batchImportData": {}
+}

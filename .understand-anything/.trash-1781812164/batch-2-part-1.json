@@ -1,0 +1,1389 @@
+{
+  "batchIndex": 2,
+  "part": 1,
+  "totalParts": 2,
+  "nodes": [
+    {
+      "id": "file:file-ops-rs/src/errors.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/errors.rs",
+      "label": "errors.rs",
+      "language": "rust",
+      "sizeLines": 85,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 85,
+        "nonEmptyLines": 66,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 2,
+          "functionCount": 1,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/errors.rs:to_json_rpc_error",
+      "type": "function",
+      "path": "file-ops-rs/src/errors.rs",
+      "label": "to_json_rpc_error",
+      "language": "rust",
+      "metadata": {
+        "startLine": 60,
+        "endLine": 84,
+        "lineCount": 25,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/errors.rs:FileOpsError",
+      "type": "class",
+      "path": "file-ops-rs/src/errors.rs",
+      "label": "FileOpsError",
+      "language": "rust",
+      "metadata": {
+        "startLine": 8,
+        "endLine": 56,
+        "lineCount": 49,
+        "methods": [
+          "to_json_rpc_error"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/lib.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/lib.rs",
+      "label": "lib.rs",
+      "language": "rust",
+      "sizeLines": 25,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 25,
+        "nonEmptyLines": 23,
+        "metrics": {
+          "importCount": 6,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/rpc/mod.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/rpc/mod.rs",
+      "label": "mod.rs",
+      "language": "rust",
+      "sizeLines": 5,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 5,
+        "nonEmptyLines": 4,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/rpc/router.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/rpc/router.rs",
+      "label": "router.rs",
+      "language": "rust",
+      "sizeLines": 13,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 13,
+        "nonEmptyLines": 10,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 3,
+          "functionCount": 2,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/rpc/router.rs:new",
+      "type": "function",
+      "path": "file-ops-rs/src/rpc/router.rs",
+      "label": "new",
+      "language": "rust",
+      "metadata": {
+        "startLine": 6,
+        "endLine": 8,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/rpc/router.rs:dispatch",
+      "type": "function",
+      "path": "file-ops-rs/src/rpc/router.rs",
+      "label": "dispatch",
+      "language": "rust",
+      "metadata": {
+        "startLine": 10,
+        "endLine": 12,
+        "lineCount": 3,
+        "params": [
+          "request"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/rpc/router.rs:RpcRouter",
+      "type": "class",
+      "path": "file-ops-rs/src/rpc/router.rs",
+      "label": "RpcRouter",
+      "language": "rust",
+      "metadata": {
+        "startLine": 3,
+        "endLine": 3,
+        "lineCount": 1,
+        "methods": [
+          "new",
+          "dispatch"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/rpc/schema.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/rpc/schema.rs",
+      "label": "schema.rs",
+      "language": "rust",
+      "sizeLines": 7,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 7,
+        "nonEmptyLines": 6,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 2,
+          "functionCount": 1,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/rpc/schema.rs:validate_request",
+      "type": "function",
+      "path": "file-ops-rs/src/rpc/schema.rs",
+      "label": "validate_request",
+      "language": "rust",
+      "metadata": {
+        "startLine": 4,
+        "endLine": 6,
+        "lineCount": 3,
+        "params": [
+          "_request"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/rpc/schema.rs:SchemaValidator",
+      "type": "class",
+      "path": "file-ops-rs/src/rpc/schema.rs",
+      "label": "SchemaValidator",
+      "language": "rust",
+      "metadata": {
+        "startLine": 1,
+        "endLine": 1,
+        "lineCount": 1,
+        "methods": [
+          "validate_request"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/services/logging.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/services/logging.rs",
+      "label": "logging.rs",
+      "language": "rust",
+      "sizeLines": 11,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 11,
+        "nonEmptyLines": 9,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 3,
+          "functionCount": 3,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/services/logging.rs:setup_logging",
+      "type": "function",
+      "path": "file-ops-rs/src/services/logging.rs",
+      "label": "setup_logging",
+      "language": "rust",
+      "metadata": {
+        "startLine": 1,
+        "endLine": 3,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/services/logging.rs:log_request",
+      "type": "function",
+      "path": "file-ops-rs/src/services/logging.rs",
+      "label": "log_request",
+      "language": "rust",
+      "metadata": {
+        "startLine": 5,
+        "endLine": 7,
+        "lineCount": 3,
+        "params": [
+          "_id",
+          "_method"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/services/logging.rs:log_response",
+      "type": "function",
+      "path": "file-ops-rs/src/services/logging.rs",
+      "label": "log_response",
+      "language": "rust",
+      "metadata": {
+        "startLine": 9,
+        "endLine": 11,
+        "lineCount": 3,
+        "params": [
+          "_id",
+          "_latency_ms"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/services/metrics.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/services/metrics.rs",
+      "label": "metrics.rs",
+      "language": "rust",
+      "sizeLines": 40,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 40,
+        "nonEmptyLines": 34,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 5,
+          "functionCount": 5,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/services/metrics.rs:new",
+      "type": "function",
+      "path": "file-ops-rs/src/services/metrics.rs",
+      "label": "new",
+      "language": "rust",
+      "metadata": {
+        "startLine": 11,
+        "endLine": 17,
+        "lineCount": 7,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/services/metrics.rs:record_request",
+      "type": "function",
+      "path": "file-ops-rs/src/services/metrics.rs",
+      "label": "record_request",
+      "language": "rust",
+      "metadata": {
+        "startLine": 19,
+        "endLine": 21,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/services/metrics.rs:record_success",
+      "type": "function",
+      "path": "file-ops-rs/src/services/metrics.rs",
+      "label": "record_success",
+      "language": "rust",
+      "metadata": {
+        "startLine": 23,
+        "endLine": 25,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/services/metrics.rs:record_error",
+      "type": "function",
+      "path": "file-ops-rs/src/services/metrics.rs",
+      "label": "record_error",
+      "language": "rust",
+      "metadata": {
+        "startLine": 27,
+        "endLine": 29,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/services/metrics.rs:Metrics",
+      "type": "class",
+      "path": "file-ops-rs/src/services/metrics.rs",
+      "label": "Metrics",
+      "language": "rust",
+      "metadata": {
+        "startLine": 4,
+        "endLine": 8,
+        "lineCount": 5,
+        "methods": [
+          "new",
+          "record_request",
+          "record_success",
+          "record_error",
+          "clone"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/services/mod.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/services/mod.rs",
+      "label": "mod.rs",
+      "language": "rust",
+      "sizeLines": 8,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 8,
+        "nonEmptyLines": 7,
+        "metrics": {
+          "importCount": 3,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/services/rate_limit.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/services/rate_limit.rs",
+      "label": "rate_limit.rs",
+      "language": "rust",
+      "sizeLines": 11,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 11,
+        "nonEmptyLines": 9,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 3,
+          "functionCount": 2,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/services/rate_limit.rs:new",
+      "type": "function",
+      "path": "file-ops-rs/src/services/rate_limit.rs",
+      "label": "new",
+      "language": "rust",
+      "metadata": {
+        "startLine": 4,
+        "endLine": 6,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/services/rate_limit.rs:check_rate",
+      "type": "function",
+      "path": "file-ops-rs/src/services/rate_limit.rs",
+      "label": "check_rate",
+      "language": "rust",
+      "metadata": {
+        "startLine": 8,
+        "endLine": 10,
+        "lineCount": 3,
+        "params": [
+          "_request"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/services/rate_limit.rs:RateLimiter",
+      "type": "class",
+      "path": "file-ops-rs/src/services/rate_limit.rs",
+      "label": "RateLimiter",
+      "language": "rust",
+      "metadata": {
+        "startLine": 1,
+        "endLine": 1,
+        "lineCount": 1,
+        "methods": [
+          "new",
+          "check_rate"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/tools/file_create.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/tools/file_create.rs",
+      "label": "file_create.rs",
+      "language": "rust",
+      "sizeLines": 13,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 13,
+        "nonEmptyLines": 10,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 3,
+          "functionCount": 2,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/tools/file_create.rs:new",
+      "type": "function",
+      "path": "file-ops-rs/src/tools/file_create.rs",
+      "label": "new",
+      "language": "rust",
+      "metadata": {
+        "startLine": 6,
+        "endLine": 8,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/tools/file_create.rs:call",
+      "type": "function",
+      "path": "file-ops-rs/src/tools/file_create.rs",
+      "label": "call",
+      "language": "rust",
+      "metadata": {
+        "startLine": 10,
+        "endLine": 12,
+        "lineCount": 3,
+        "params": [
+          "_params"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/tools/file_create.rs:FileCreateTool",
+      "type": "class",
+      "path": "file-ops-rs/src/tools/file_create.rs",
+      "label": "FileCreateTool",
+      "language": "rust",
+      "metadata": {
+        "startLine": 3,
+        "endLine": 3,
+        "lineCount": 1,
+        "methods": [
+          "new",
+          "call"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/tools/file_edit.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/tools/file_edit.rs",
+      "label": "file_edit.rs",
+      "language": "rust",
+      "sizeLines": 13,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 13,
+        "nonEmptyLines": 10,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 3,
+          "functionCount": 2,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/tools/file_edit.rs:new",
+      "type": "function",
+      "path": "file-ops-rs/src/tools/file_edit.rs",
+      "label": "new",
+      "language": "rust",
+      "metadata": {
+        "startLine": 6,
+        "endLine": 8,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/tools/file_edit.rs:call",
+      "type": "function",
+      "path": "file-ops-rs/src/tools/file_edit.rs",
+      "label": "call",
+      "language": "rust",
+      "metadata": {
+        "startLine": 10,
+        "endLine": 12,
+        "lineCount": 3,
+        "params": [
+          "_params"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/tools/file_edit.rs:FileEditTool",
+      "type": "class",
+      "path": "file-ops-rs/src/tools/file_edit.rs",
+      "label": "FileEditTool",
+      "language": "rust",
+      "metadata": {
+        "startLine": 3,
+        "endLine": 3,
+        "lineCount": 1,
+        "methods": [
+          "new",
+          "call"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/tools/file_insert.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/tools/file_insert.rs",
+      "label": "file_insert.rs",
+      "language": "rust",
+      "sizeLines": 13,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 13,
+        "nonEmptyLines": 10,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 3,
+          "functionCount": 2,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/tools/file_insert.rs:new",
+      "type": "function",
+      "path": "file-ops-rs/src/tools/file_insert.rs",
+      "label": "new",
+      "language": "rust",
+      "metadata": {
+        "startLine": 6,
+        "endLine": 8,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/tools/file_insert.rs:call",
+      "type": "function",
+      "path": "file-ops-rs/src/tools/file_insert.rs",
+      "label": "call",
+      "language": "rust",
+      "metadata": {
+        "startLine": 10,
+        "endLine": 12,
+        "lineCount": 3,
+        "params": [
+          "_params"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/tools/file_insert.rs:FileInsertTool",
+      "type": "class",
+      "path": "file-ops-rs/src/tools/file_insert.rs",
+      "label": "FileInsertTool",
+      "language": "rust",
+      "metadata": {
+        "startLine": 3,
+        "endLine": 3,
+        "lineCount": 1,
+        "methods": [
+          "new",
+          "call"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/tools/file_read.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/tools/file_read.rs",
+      "label": "file_read.rs",
+      "language": "rust",
+      "sizeLines": 13,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 13,
+        "nonEmptyLines": 10,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 3,
+          "functionCount": 2,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/tools/file_read.rs:new",
+      "type": "function",
+      "path": "file-ops-rs/src/tools/file_read.rs",
+      "label": "new",
+      "language": "rust",
+      "metadata": {
+        "startLine": 6,
+        "endLine": 8,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/tools/file_read.rs:call",
+      "type": "function",
+      "path": "file-ops-rs/src/tools/file_read.rs",
+      "label": "call",
+      "language": "rust",
+      "metadata": {
+        "startLine": 10,
+        "endLine": 12,
+        "lineCount": 3,
+        "params": [
+          "_params"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/tools/file_read.rs:FileReadTool",
+      "type": "class",
+      "path": "file-ops-rs/src/tools/file_read.rs",
+      "label": "FileReadTool",
+      "language": "rust",
+      "metadata": {
+        "startLine": 3,
+        "endLine": 3,
+        "lineCount": 1,
+        "methods": [
+          "new",
+          "call"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/tools/file_search.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/tools/file_search.rs",
+      "label": "file_search.rs",
+      "language": "rust",
+      "sizeLines": 13,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 13,
+        "nonEmptyLines": 10,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 3,
+          "functionCount": 2,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/tools/file_search.rs:new",
+      "type": "function",
+      "path": "file-ops-rs/src/tools/file_search.rs",
+      "label": "new",
+      "language": "rust",
+      "metadata": {
+        "startLine": 6,
+        "endLine": 8,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/tools/file_search.rs:call",
+      "type": "function",
+      "path": "file-ops-rs/src/tools/file_search.rs",
+      "label": "call",
+      "language": "rust",
+      "metadata": {
+        "startLine": 10,
+        "endLine": 12,
+        "lineCount": 3,
+        "params": [
+          "_params"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/tools/file_search.rs:FileSearchTool",
+      "type": "class",
+      "path": "file-ops-rs/src/tools/file_search.rs",
+      "label": "FileSearchTool",
+      "language": "rust",
+      "metadata": {
+        "startLine": 3,
+        "endLine": 3,
+        "lineCount": 1,
+        "methods": [
+          "new",
+          "call"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/tools/file_structure.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/tools/file_structure.rs",
+      "label": "file_structure.rs",
+      "language": "rust",
+      "sizeLines": 13,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 13,
+        "nonEmptyLines": 10,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 3,
+          "functionCount": 2,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/tools/file_structure.rs:new",
+      "type": "function",
+      "path": "file-ops-rs/src/tools/file_structure.rs",
+      "label": "new",
+      "language": "rust",
+      "metadata": {
+        "startLine": 6,
+        "endLine": 8,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/tools/file_structure.rs:call",
+      "type": "function",
+      "path": "file-ops-rs/src/tools/file_structure.rs",
+      "label": "call",
+      "language": "rust",
+      "metadata": {
+        "startLine": 10,
+        "endLine": 12,
+        "lineCount": 3,
+        "params": [
+          "_params"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/tools/file_structure.rs:FileStructureTool",
+      "type": "class",
+      "path": "file-ops-rs/src/tools/file_structure.rs",
+      "label": "FileStructureTool",
+      "language": "rust",
+      "metadata": {
+        "startLine": 3,
+        "endLine": 3,
+        "lineCount": 1,
+        "methods": [
+          "new",
+          "call"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/tools/mod.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/tools/mod.rs",
+      "label": "mod.rs",
+      "language": "rust",
+      "sizeLines": 14,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 14,
+        "nonEmptyLines": 13,
+        "metrics": {
+          "importCount": 6,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/transport/message.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/transport/message.rs",
+      "label": "message.rs",
+      "language": "rust",
+      "sizeLines": 128,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 128,
+        "nonEmptyLines": 116,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 11,
+          "functionCount": 7,
+          "classCount": 4
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/transport/message.rs:as_json",
+      "type": "function",
+      "path": "file-ops-rs/src/transport/message.rs",
+      "label": "as_json",
+      "language": "rust",
+      "metadata": {
+        "startLine": 25,
+        "endLine": 30,
+        "lineCount": 6,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/transport/message.rs:success",
+      "type": "function",
+      "path": "file-ops-rs/src/transport/message.rs",
+      "label": "success",
+      "language": "rust",
+      "metadata": {
+        "startLine": 55,
+        "endLine": 62,
+        "lineCount": 8,
+        "params": [
+          "id",
+          "result"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/transport/message.rs:error",
+      "type": "function",
+      "path": "file-ops-rs/src/transport/message.rs",
+      "label": "error",
+      "language": "rust",
+      "metadata": {
+        "startLine": 64,
+        "endLine": 75,
+        "lineCount": 12,
+        "params": [
+          "id",
+          "code",
+          "message"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/transport/message.rs:parse_error",
+      "type": "function",
+      "path": "file-ops-rs/src/transport/message.rs",
+      "label": "parse_error",
+      "language": "rust",
+      "metadata": {
+        "startLine": 77,
+        "endLine": 88,
+        "lineCount": 12,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/transport/message.rs:invalid_request",
+      "type": "function",
+      "path": "file-ops-rs/src/transport/message.rs",
+      "label": "invalid_request",
+      "language": "rust",
+      "metadata": {
+        "startLine": 90,
+        "endLine": 101,
+        "lineCount": 12,
+        "params": [
+          "reason"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/transport/message.rs:method_not_found",
+      "type": "function",
+      "path": "file-ops-rs/src/transport/message.rs",
+      "label": "method_not_found",
+      "language": "rust",
+      "metadata": {
+        "startLine": 103,
+        "endLine": 114,
+        "lineCount": 12,
+        "params": [
+          "method"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/transport/message.rs:internal_error",
+      "type": "function",
+      "path": "file-ops-rs/src/transport/message.rs",
+      "label": "internal_error",
+      "language": "rust",
+      "metadata": {
+        "startLine": 116,
+        "endLine": 127,
+        "lineCount": 12,
+        "params": [
+          "reason"
+        ],
+        "exported": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/errors.rs",
+      "target": "function:file-ops-rs/src/errors.rs:to_json_rpc_error",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/errors.rs",
+      "target": "class:file-ops-rs/src/errors.rs:FileOpsError",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/lib.rs",
+      "target": "file:file-ops-rs/src/errors.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/lib.rs",
+      "target": "file:file-ops-rs/src/rpc/mod.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/lib.rs",
+      "target": "file:file-ops-rs/src/services/mod.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/lib.rs",
+      "target": "file:file-ops-rs/src/tools/mod.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/rpc/mod.rs",
+      "target": "file:file-ops-rs/src/rpc/router.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/rpc/mod.rs",
+      "target": "file:file-ops-rs/src/rpc/schema.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/rpc/router.rs",
+      "target": "function:file-ops-rs/src/rpc/router.rs:new",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/rpc/router.rs",
+      "target": "function:file-ops-rs/src/rpc/router.rs:dispatch",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/rpc/router.rs",
+      "target": "class:file-ops-rs/src/rpc/router.rs:RpcRouter",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/rpc/schema.rs",
+      "target": "function:file-ops-rs/src/rpc/schema.rs:validate_request",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/rpc/schema.rs",
+      "target": "class:file-ops-rs/src/rpc/schema.rs:SchemaValidator",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/services/logging.rs",
+      "target": "function:file-ops-rs/src/services/logging.rs:setup_logging",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/services/logging.rs",
+      "target": "function:file-ops-rs/src/services/logging.rs:log_request",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/services/logging.rs",
+      "target": "function:file-ops-rs/src/services/logging.rs:log_response",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/services/metrics.rs",
+      "target": "function:file-ops-rs/src/services/metrics.rs:new",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/services/metrics.rs",
+      "target": "function:file-ops-rs/src/services/metrics.rs:record_request",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/services/metrics.rs",
+      "target": "function:file-ops-rs/src/services/metrics.rs:record_success",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/services/metrics.rs",
+      "target": "function:file-ops-rs/src/services/metrics.rs:record_error",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/services/metrics.rs",
+      "target": "class:file-ops-rs/src/services/metrics.rs:Metrics",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/services/mod.rs",
+      "target": "file:file-ops-rs/src/services/logging.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/services/mod.rs",
+      "target": "file:file-ops-rs/src/services/metrics.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/services/mod.rs",
+      "target": "file:file-ops-rs/src/services/rate_limit.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/services/rate_limit.rs",
+      "target": "function:file-ops-rs/src/services/rate_limit.rs:new",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/services/rate_limit.rs",
+      "target": "function:file-ops-rs/src/services/rate_limit.rs:check_rate",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/services/rate_limit.rs",
+      "target": "class:file-ops-rs/src/services/rate_limit.rs:RateLimiter",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_create.rs",
+      "target": "function:file-ops-rs/src/tools/file_create.rs:new",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_create.rs",
+      "target": "function:file-ops-rs/src/tools/file_create.rs:call",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_create.rs",
+      "target": "class:file-ops-rs/src/tools/file_create.rs:FileCreateTool",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/tools/file_create.rs",
+      "target": "file:file-ops-rs/src/errors.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_edit.rs",
+      "target": "function:file-ops-rs/src/tools/file_edit.rs:new",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_edit.rs",
+      "target": "function:file-ops-rs/src/tools/file_edit.rs:call",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_edit.rs",
+      "target": "class:file-ops-rs/src/tools/file_edit.rs:FileEditTool",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/tools/file_edit.rs",
+      "target": "file:file-ops-rs/src/errors.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_insert.rs",
+      "target": "function:file-ops-rs/src/tools/file_insert.rs:new",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_insert.rs",
+      "target": "function:file-ops-rs/src/tools/file_insert.rs:call",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_insert.rs",
+      "target": "class:file-ops-rs/src/tools/file_insert.rs:FileInsertTool",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/tools/file_insert.rs",
+      "target": "file:file-ops-rs/src/errors.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_read.rs",
+      "target": "function:file-ops-rs/src/tools/file_read.rs:new",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_read.rs",
+      "target": "function:file-ops-rs/src/tools/file_read.rs:call",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_read.rs",
+      "target": "class:file-ops-rs/src/tools/file_read.rs:FileReadTool",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/tools/file_read.rs",
+      "target": "file:file-ops-rs/src/errors.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_search.rs",
+      "target": "function:file-ops-rs/src/tools/file_search.rs:new",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_search.rs",
+      "target": "function:file-ops-rs/src/tools/file_search.rs:call",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_search.rs",
+      "target": "class:file-ops-rs/src/tools/file_search.rs:FileSearchTool",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/tools/file_search.rs",
+      "target": "file:file-ops-rs/src/errors.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_structure.rs",
+      "target": "function:file-ops-rs/src/tools/file_structure.rs:new",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_structure.rs",
+      "target": "function:file-ops-rs/src/tools/file_structure.rs:call",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/tools/file_structure.rs",
+      "target": "class:file-ops-rs/src/tools/file_structure.rs:FileStructureTool",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/tools/file_structure.rs",
+      "target": "file:file-ops-rs/src/errors.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/tools/mod.rs",
+      "target": "file:file-ops-rs/src/tools/file_create.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/tools/mod.rs",
+      "target": "file:file-ops-rs/src/tools/file_edit.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/tools/mod.rs",
+      "target": "file:file-ops-rs/src/tools/file_insert.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/tools/mod.rs",
+      "target": "file:file-ops-rs/src/tools/file_read.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/tools/mod.rs",
+      "target": "file:file-ops-rs/src/tools/file_search.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/tools/mod.rs",
+      "target": "file:file-ops-rs/src/tools/file_structure.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/transport/message.rs",
+      "target": "function:file-ops-rs/src/transport/message.rs:as_json",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/transport/message.rs",
+      "target": "function:file-ops-rs/src/transport/message.rs:success",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/transport/message.rs",
+      "target": "function:file-ops-rs/src/transport/message.rs:error",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/transport/message.rs",
+      "target": "function:file-ops-rs/src/transport/message.rs:parse_error",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/transport/message.rs",
+      "target": "function:file-ops-rs/src/transport/message.rs:invalid_request",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/transport/message.rs",
+      "target": "function:file-ops-rs/src/transport/message.rs:method_not_found",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/transport/message.rs",
+      "target": "function:file-ops-rs/src/transport/message.rs:internal_error",
+      "weight": 1
+    }
+  ]
+}

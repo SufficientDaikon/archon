@@ -1,0 +1,316 @@
+{
+  "batchIndex": 41,
+  "nodes": [
+    {
+      "id": "config:agents/spec-writer-agent/agent-manifest.yaml",
+      "type": "config:",
+      "name": "agent-manifest.yaml (spec-writer)",
+      "filePath": "agents/spec-writer-agent/agent-manifest.yaml",
+      "summary": "Agent manifest for the Spec Writer agent, defining capabilities for producing detailed technical specifications from high-level requirements.",
+      "tags": ["spec-writer", "agent", "manifest", "specification"],
+      "complexity": 3
+    },
+    {
+      "id": "document:agents/spec-writer-agent/AGENT.md",
+      "type": "document:",
+      "name": "AGENT.md (spec-writer)",
+      "filePath": "agents/spec-writer-agent/AGENT.md",
+      "summary": "Documentation for the Spec Writer agent, covering specification templates, requirements gathering, and technical document generation workflows.",
+      "tags": ["spec-writer", "agent", "documentation", "specification", "requirements"],
+      "complexity": 4
+    },
+    {
+      "id": "config:agents/university-professor-agent/agent-manifest.yaml",
+      "type": "config:",
+      "name": "agent-manifest.yaml (university-professor)",
+      "filePath": "agents/university-professor-agent/agent-manifest.yaml",
+      "summary": "Agent manifest for the University Professor agent, a large manifest defining its educational, adaptive teaching, and knowledge explanation capabilities.",
+      "tags": ["university-professor", "agent", "manifest", "education", "teaching"],
+      "complexity": 5
+    },
+    {
+      "id": "document:agents/university-professor-agent/AGENT.md",
+      "type": "document:",
+      "name": "AGENT.md (university-professor)",
+      "filePath": "agents/university-professor-agent/AGENT.md",
+      "summary": "Documentation for the University Professor agent, covering its adaptive teaching strategies, curriculum design, and multi-level explanation protocols.",
+      "tags": ["university-professor", "agent", "documentation", "education", "adaptive-teaching"],
+      "complexity": 5
+    },
+    {
+      "id": "config:agents/ux-lifecycle-master-agent/agent-manifest.yaml",
+      "type": "config:",
+      "name": "agent-manifest.yaml (ux-lifecycle-master)",
+      "filePath": "agents/ux-lifecycle-master-agent/agent-manifest.yaml",
+      "summary": "Agent manifest for the UX Lifecycle Master agent, defining end-to-end UX process management from research through delivery.",
+      "tags": ["ux-lifecycle", "agent", "manifest", "ux-design", "design-process"],
+      "complexity": 4
+    },
+    {
+      "id": "document:agents/ux-lifecycle-master-agent/AGENT.md",
+      "type": "document:",
+      "name": "AGENT.md (ux-lifecycle-master)",
+      "filePath": "agents/ux-lifecycle-master-agent/AGENT.md",
+      "summary": "Documentation for the UX Lifecycle Master agent, covering the full UX design lifecycle including research, wireframing, prototyping, and testing phases.",
+      "tags": ["ux-lifecycle", "agent", "documentation", "ux-design", "design-process"],
+      "complexity": 5
+    },
+    {
+      "id": "config:agents/ux-research-agent/agent-manifest.yaml",
+      "type": "config:",
+      "name": "agent-manifest.yaml (ux-research)",
+      "filePath": "agents/ux-research-agent/agent-manifest.yaml",
+      "summary": "Agent manifest for the UX Research agent, specifying user research, usability testing, and insight synthesis capabilities.",
+      "tags": ["ux-research", "agent", "manifest", "user-research", "usability"],
+      "complexity": 4
+    },
+    {
+      "id": "document:agents/ux-research-agent/AGENT.md",
+      "type": "document:",
+      "name": "AGENT.md (ux-research)",
+      "filePath": "agents/ux-research-agent/AGENT.md",
+      "summary": "Documentation for the UX Research agent, covering user interview protocols, usability testing methods, and synthesis of research findings.",
+      "tags": ["ux-research", "agent", "documentation", "user-research", "usability-testing"],
+      "complexity": 4
+    },
+    {
+      "id": "document:batch-runs/README.md",
+      "type": "document:",
+      "name": "README.md (batch-runs)",
+      "filePath": "batch-runs/README.md",
+      "summary": "Documentation for the batch-runs directory, explaining its purpose for storing output from bulk skill upgrade and batch processing operations.",
+      "tags": ["batch-runs", "documentation", "readme", "batch-processing"],
+      "complexity": 2
+    },
+    {
+      "id": "config:bundles/data-layer-kit/bundle.yaml",
+      "type": "config:",
+      "name": "bundle.yaml (data-layer-kit)",
+      "filePath": "bundles/data-layer-kit/bundle.yaml",
+      "summary": "Bundle manifest for the Data Layer Kit, grouping skills related to database design, ORM patterns, and data access layer implementation.",
+      "tags": ["data-layer-kit", "bundle", "manifest", "database", "data-access"],
+      "complexity": 2
+    },
+    {
+      "id": "config:bundles/data-layer-kit/meta-skill/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (data-layer-kit meta-skill)",
+      "filePath": "bundles/data-layer-kit/meta-skill/manifest.yaml",
+      "summary": "Skill manifest for the Data Layer Kit meta-skill, defining its trigger conditions and the aggregated knowledge it provides across data layer skills.",
+      "tags": ["data-layer-kit", "meta-skill", "manifest", "database"],
+      "complexity": 2
+    },
+    {
+      "id": "document:bundles/data-layer-kit/meta-skill/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (data-layer-kit)",
+      "filePath": "bundles/data-layer-kit/meta-skill/SKILL.md",
+      "summary": "Skill documentation for the Data Layer Kit meta-skill, providing comprehensive patterns for database design, query optimization, and ORM usage.",
+      "tags": ["data-layer-kit", "documentation", "database", "orm", "data-patterns"],
+      "complexity": 4
+    },
+    {
+      "id": "config:bundles/devops-kit/bundle.yaml",
+      "type": "config:",
+      "name": "bundle.yaml (devops-kit)",
+      "filePath": "bundles/devops-kit/bundle.yaml",
+      "summary": "Bundle manifest for the DevOps Kit, grouping skills for CI/CD pipelines, infrastructure-as-code, and deployment automation.",
+      "tags": ["devops-kit", "bundle", "manifest", "ci-cd", "infrastructure"],
+      "complexity": 2
+    },
+    {
+      "id": "config:bundles/devops-kit/meta-skill/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (devops-kit meta-skill)",
+      "filePath": "bundles/devops-kit/meta-skill/manifest.yaml",
+      "summary": "Skill manifest for the DevOps Kit meta-skill, defining triggers for CI/CD, Docker, and deployment-related tasks.",
+      "tags": ["devops-kit", "meta-skill", "manifest", "devops"],
+      "complexity": 2
+    },
+    {
+      "id": "document:bundles/devops-kit/meta-skill/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (devops-kit)",
+      "filePath": "bundles/devops-kit/meta-skill/SKILL.md",
+      "summary": "Skill documentation for the DevOps Kit meta-skill, covering CI/CD pipeline patterns, Docker containerization, and deployment best practices.",
+      "tags": ["devops-kit", "documentation", "ci-cd", "docker", "deployment"],
+      "complexity": 4
+    },
+    {
+      "id": "config:bundles/django-kit/bundle.yaml",
+      "type": "config:",
+      "name": "bundle.yaml (django-kit)",
+      "filePath": "bundles/django-kit/bundle.yaml",
+      "summary": "Bundle manifest for the Django Kit, grouping Django framework skills including ORM patterns, REST framework, and Django best practices.",
+      "tags": ["django-kit", "bundle", "manifest", "django", "python"],
+      "complexity": 2
+    },
+    {
+      "id": "config:bundles/django-kit/meta-skill/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (django-kit meta-skill)",
+      "filePath": "bundles/django-kit/meta-skill/manifest.yaml",
+      "summary": "Skill manifest for the Django Kit meta-skill, defining activation conditions for Django-related development tasks.",
+      "tags": ["django-kit", "meta-skill", "manifest", "django"],
+      "complexity": 2
+    },
+    {
+      "id": "document:bundles/django-kit/meta-skill/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (django-kit)",
+      "filePath": "bundles/django-kit/meta-skill/SKILL.md",
+      "summary": "Skill documentation for the Django Kit meta-skill, providing comprehensive guidance on Django development including models, views, and DRF patterns.",
+      "tags": ["django-kit", "documentation", "django", "python", "web-framework"],
+      "complexity": 5
+    },
+    {
+      "id": "config:bundles/github-kit/bundle.yaml",
+      "type": "config:",
+      "name": "bundle.yaml (github-kit)",
+      "filePath": "bundles/github-kit/bundle.yaml",
+      "summary": "Bundle manifest for the GitHub Kit, grouping skills related to GitHub workflows, Actions, and repository management.",
+      "tags": ["github-kit", "bundle", "manifest", "github", "version-control"],
+      "complexity": 2
+    },
+    {
+      "id": "config:bundles/github-kit/meta-skill/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (github-kit meta-skill)",
+      "filePath": "bundles/github-kit/meta-skill/manifest.yaml",
+      "summary": "Skill manifest for the GitHub Kit meta-skill, defining triggers for GitHub Actions, PRs, and repository workflow tasks.",
+      "tags": ["github-kit", "meta-skill", "manifest", "github-actions"],
+      "complexity": 2
+    },
+    {
+      "id": "document:bundles/github-kit/meta-skill/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (github-kit)",
+      "filePath": "bundles/github-kit/meta-skill/SKILL.md",
+      "summary": "Skill documentation for the GitHub Kit meta-skill, covering GitHub Actions workflows, branch strategies, and repository management patterns.",
+      "tags": ["github-kit", "documentation", "github-actions", "ci-cd", "version-control"],
+      "complexity": 4
+    },
+    {
+      "id": "config:bundles/godot-kit/bundle.yaml",
+      "type": "config:",
+      "name": "bundle.yaml (godot-kit)",
+      "filePath": "bundles/godot-kit/bundle.yaml",
+      "summary": "Bundle manifest for the Godot Kit, grouping skills for Godot game engine development including GDScript, particles, and best practices.",
+      "tags": ["godot-kit", "bundle", "manifest", "godot", "game-development"],
+      "complexity": 2
+    },
+    {
+      "id": "config:bundles/godot-kit/meta-skill/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (godot-kit meta-skill)",
+      "filePath": "bundles/godot-kit/meta-skill/manifest.yaml",
+      "summary": "Skill manifest for the Godot Kit meta-skill, defining activation for Godot engine development tasks.",
+      "tags": ["godot-kit", "meta-skill", "manifest", "godot"],
+      "complexity": 2
+    },
+    {
+      "id": "document:bundles/godot-kit/meta-skill/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (godot-kit)",
+      "filePath": "bundles/godot-kit/meta-skill/SKILL.md",
+      "summary": "Skill documentation for the Godot Kit meta-skill, covering GDScript patterns, Godot best practices, debugging, and particle systems.",
+      "tags": ["godot-kit", "documentation", "godot", "gdscript", "game-development"],
+      "complexity": 4
+    },
+    {
+      "id": "config:bundles/meta-kit/bundle.yaml",
+      "type": "config:",
+      "name": "bundle.yaml (meta-kit)",
+      "filePath": "bundles/meta-kit/bundle.yaml",
+      "summary": "Bundle manifest for the Meta Kit, grouping Archon self-management skills for adding skills, agents, and bundles to the framework.",
+      "tags": ["meta-kit", "bundle", "manifest", "archon", "self-management"],
+      "complexity": 3
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:agents/spec-writer-agent/AGENT.md",
+      "target": "config:agents/spec-writer-agent/agent-manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:agents/university-professor-agent/AGENT.md",
+      "target": "config:agents/university-professor-agent/agent-manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:agents/ux-lifecycle-master-agent/AGENT.md",
+      "target": "config:agents/ux-lifecycle-master-agent/agent-manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:agents/ux-research-agent/AGENT.md",
+      "target": "config:agents/ux-research-agent/agent-manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:bundles/data-layer-kit/meta-skill/SKILL.md",
+      "target": "config:bundles/data-layer-kit/meta-skill/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:bundles/data-layer-kit/bundle.yaml",
+      "target": "config:bundles/data-layer-kit/meta-skill/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:bundles/devops-kit/meta-skill/SKILL.md",
+      "target": "config:bundles/devops-kit/meta-skill/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:bundles/devops-kit/bundle.yaml",
+      "target": "config:bundles/devops-kit/meta-skill/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:bundles/django-kit/meta-skill/SKILL.md",
+      "target": "config:bundles/django-kit/meta-skill/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:bundles/django-kit/bundle.yaml",
+      "target": "config:bundles/django-kit/meta-skill/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:bundles/github-kit/meta-skill/SKILL.md",
+      "target": "config:bundles/github-kit/meta-skill/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:bundles/github-kit/bundle.yaml",
+      "target": "config:bundles/github-kit/meta-skill/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:bundles/godot-kit/meta-skill/SKILL.md",
+      "target": "config:bundles/godot-kit/meta-skill/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:bundles/godot-kit/bundle.yaml",
+      "target": "config:bundles/godot-kit/meta-skill/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    }
+  ]
+}

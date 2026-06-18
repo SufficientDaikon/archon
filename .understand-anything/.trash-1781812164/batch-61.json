@@ -1,0 +1,246 @@
+{
+  "batchIndex": 61,
+  "nodes": [
+    {
+      "id": "config:skills/windows-network-optimizer/manifest.yaml",
+      "type": "config",
+      "name": "windows-network-optimizer manifest",
+      "filePath": "skills/windows-network-optimizer/manifest.yaml",
+      "summary": "Skill manifest for the Windows network optimizer skill providing TCP/IP tuning and network performance guidance.",
+      "tags": ["manifest", "skill", "windows", "network", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/windows-network-optimizer/SKILL.md",
+      "type": "document",
+      "name": "windows-network-optimizer SKILL.md",
+      "filePath": "skills/windows-network-optimizer/SKILL.md",
+      "summary": "Skill documentation for optimizing Windows network performance via registry tweaks, TCP/IP stack tuning, DNS settings, and adapter configuration.",
+      "tags": ["docs", "windows", "network", "skill", "optimization"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/windows-registry-editor/manifest.yaml",
+      "type": "config",
+      "name": "windows-registry-editor manifest",
+      "filePath": "skills/windows-registry-editor/manifest.yaml",
+      "summary": "Skill manifest for the Windows registry editor skill with references to optimization presets and safety rules.",
+      "tags": ["manifest", "skill", "windows", "registry", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/windows-registry-editor/references/optimization-presets.md",
+      "type": "document",
+      "name": "optimization-presets.md",
+      "filePath": "skills/windows-registry-editor/references/optimization-presets.md",
+      "summary": "Reference document listing Windows registry optimization presets for system performance, gaming, and development environment tuning.",
+      "tags": ["registry", "presets", "optimization", "windows", "reference"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:skills/windows-registry-editor/references/presets/network-deep.md",
+      "type": "document",
+      "name": "network-deep.md",
+      "filePath": "skills/windows-registry-editor/references/presets/network-deep.md",
+      "summary": "Deep dive registry preset for Windows network optimization covering TCP parameters, network adapter settings, and low-level stack tuning with specific registry keys and values.",
+      "tags": ["registry", "network", "deep-optimization", "windows", "tcp"],
+      "complexity": "high"
+    },
+    {
+      "id": "document:skills/windows-registry-editor/references/safety-rules.md",
+      "type": "document",
+      "name": "safety-rules.md",
+      "filePath": "skills/windows-registry-editor/references/safety-rules.md",
+      "summary": "Safety guidelines for Windows registry edits covering backup procedures, dangerous keys to avoid, rollback strategies, and recovery procedures.",
+      "tags": ["registry", "safety", "windows", "backup", "reference"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:skills/windows-registry-editor/SKILL.md",
+      "type": "document",
+      "name": "windows-registry-editor SKILL.md",
+      "filePath": "skills/windows-registry-editor/SKILL.md",
+      "summary": "Skill documentation for safely editing the Windows registry with structured workflows, preset application, and rollback safeguards.",
+      "tags": ["docs", "windows-registry-editor", "skill", "registry", "windows"],
+      "complexity": "high"
+    },
+    {
+      "id": "config:skills/wireframing/manifest.yaml",
+      "type": "config",
+      "name": "wireframing manifest",
+      "filePath": "skills/wireframing/manifest.yaml",
+      "summary": "Skill manifest for the wireframing skill providing UI wireframe creation and layout planning guidance.",
+      "tags": ["manifest", "skill", "wireframing", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/wireframing/SKILL.md",
+      "type": "document",
+      "name": "wireframing SKILL.md",
+      "filePath": "skills/wireframing/SKILL.md",
+      "summary": "Extensive skill documentation for creating high-fidelity wireframes covering layout grids, component hierarchies, annotation standards, and handoff workflows.",
+      "tags": ["docs", "wireframing", "skill", "layout", "ui-design"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:skills/wireframing/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (wireframing examples)",
+      "filePath": "skills/wireframing/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/wireframing/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (wireframing overrides)",
+      "filePath": "skills/wireframing/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/wireframing/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (wireframing resources)",
+      "filePath": "skills/wireframing/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/wireframing/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (wireframing tests)",
+      "filePath": "skills/wireframing/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/writing-plans/manifest.yaml",
+      "type": "config",
+      "name": "writing-plans manifest",
+      "filePath": "skills/writing-plans/manifest.yaml",
+      "summary": "Minimal skill manifest for the writing-plans skill for structured task and project planning.",
+      "tags": ["manifest", "skill", "writing-plans", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/writing-plans/SKILL.md",
+      "type": "document",
+      "name": "writing-plans SKILL.md",
+      "filePath": "skills/writing-plans/SKILL.md",
+      "summary": "Skill documentation for creating structured execution plans before starting tasks, covering scope definition, step decomposition, and dependency mapping.",
+      "tags": ["docs", "writing-plans", "skill", "planning", "execution"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/writing-skills/examples/CLAUDE_MD_TESTING.md",
+      "type": "document",
+      "name": "CLAUDE_MD_TESTING.md",
+      "filePath": "skills/writing-skills/examples/CLAUDE_MD_TESTING.md",
+      "summary": "Example file demonstrating CLAUDE.md testing patterns and skill invocation examples for the writing-skills skill.",
+      "tags": ["example", "writing-skills", "claude-md", "testing", "docs"],
+      "complexity": "low"
+    },
+    {
+      "id": "config:skills/writing-skills/manifest.yaml",
+      "type": "config",
+      "name": "writing-skills manifest",
+      "filePath": "skills/writing-skills/manifest.yaml",
+      "summary": "Skill manifest for the writing-skills skill providing technical and professional writing guidance.",
+      "tags": ["manifest", "skill", "writing-skills", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/writing-skills/SKILL.md",
+      "type": "document",
+      "name": "writing-skills SKILL.md",
+      "filePath": "skills/writing-skills/SKILL.md",
+      "summary": "Comprehensive skill documentation covering technical writing, documentation styles, commit messages, PR descriptions, CHANGELOG entries, and clear communication patterns.",
+      "tags": ["docs", "writing-skills", "skill", "technical-writing", "documentation"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:skills/writing-skills/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (writing-skills examples)",
+      "filePath": "skills/writing-skills/examples/.gitkeep",
+      "summary": "Placeholder alongside the CLAUDE_MD_TESTING.md example.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/writing-skills/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (writing-skills overrides)",
+      "filePath": "skills/writing-skills/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/writing-skills/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (writing-skills resources)",
+      "filePath": "skills/writing-skills/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/writing-skills/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (writing-skills tests)",
+      "filePath": "skills/writing-skills/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/yaml-prompt-library/manifest.yaml",
+      "type": "config",
+      "name": "yaml-prompt-library manifest",
+      "filePath": "skills/yaml-prompt-library/manifest.yaml",
+      "summary": "Skill manifest for the YAML prompt library skill providing structured prompt template storage and retrieval.",
+      "tags": ["manifest", "skill", "yaml-prompt-library", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/yaml-prompt-library/resources/prompt-yaml-schema.md",
+      "type": "document",
+      "name": "prompt-yaml-schema.md",
+      "filePath": "skills/yaml-prompt-library/resources/prompt-yaml-schema.md",
+      "summary": "Schema documentation defining the YAML structure for prompt templates including metadata, variables, version fields, and example payloads.",
+      "tags": ["yaml", "schema", "prompt", "template", "reference"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:skills/yaml-prompt-library/SKILL.md",
+      "type": "document",
+      "name": "yaml-prompt-library SKILL.md",
+      "filePath": "skills/yaml-prompt-library/SKILL.md",
+      "summary": "Skill documentation for creating and managing a YAML-based prompt template library with versioning, categorization, and retrieval patterns.",
+      "tags": ["docs", "yaml-prompt-library", "skill", "prompts", "templates"],
+      "complexity": "medium"
+    }
+  ],
+  "edges": [
+    {"source": "config:skills/windows-network-optimizer/manifest.yaml", "target": "document:skills/windows-network-optimizer/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/windows-registry-editor/manifest.yaml", "target": "document:skills/windows-registry-editor/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/windows-registry-editor/manifest.yaml", "target": "document:skills/windows-registry-editor/references/optimization-presets.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/windows-registry-editor/manifest.yaml", "target": "document:skills/windows-registry-editor/references/presets/network-deep.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/windows-registry-editor/manifest.yaml", "target": "document:skills/windows-registry-editor/references/safety-rules.md", "type": "configures", "weight": 0.6},
+    {"source": "document:skills/windows-registry-editor/SKILL.md", "target": "document:skills/windows-registry-editor/references/safety-rules.md", "type": "documents", "weight": 0.5},
+    {"source": "document:skills/windows-registry-editor/SKILL.md", "target": "document:skills/windows-registry-editor/references/optimization-presets.md", "type": "documents", "weight": 0.5},
+    {"source": "config:skills/wireframing/manifest.yaml", "target": "document:skills/wireframing/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/writing-plans/manifest.yaml", "target": "document:skills/writing-plans/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/writing-skills/manifest.yaml", "target": "document:skills/writing-skills/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/writing-skills/manifest.yaml", "target": "document:skills/writing-skills/examples/CLAUDE_MD_TESTING.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/yaml-prompt-library/manifest.yaml", "target": "document:skills/yaml-prompt-library/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/yaml-prompt-library/manifest.yaml", "target": "document:skills/yaml-prompt-library/resources/prompt-yaml-schema.md", "type": "configures", "weight": 0.6},
+    {"source": "document:skills/yaml-prompt-library/SKILL.md", "target": "document:skills/yaml-prompt-library/resources/prompt-yaml-schema.md", "type": "documents", "weight": 0.5}
+  ]
+}

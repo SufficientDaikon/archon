@@ -1,0 +1,33 @@
+{
+  "batchIndex": 24,
+  "nodes": [
+    {
+      "id": "config:skills/docker-mcp-ops/.skillfish.json",
+      "type": "config",
+      "name": ".skillfish.json",
+      "filePath": "skills/docker-mcp-ops/.skillfish.json",
+      "summary": "Skillfish metadata file for the docker-mcp-ops skill tracking version, name, owner, repo, path, branch, SHA, and source for skill provenance and registry integration.",
+      "tags": ["skillfish", "metadata", "docker-mcp-ops", "provenance", "registry"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:skills/docker-mcp-ops/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": "skills/docker-mcp-ops/SKILL.md",
+      "summary": "Skill documentation for the docker-mcp-ops skill, describing its identity and instructions for managing MCP (Model Context Protocol) operations via Docker containers.",
+      "tags": ["docker", "mcp", "skill", "operations", "container"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:skills/docker-mcp-ops/manifest.yaml",
+      "type": "config",
+      "name": "manifest.yaml",
+      "filePath": "skills/docker-mcp-ops/manifest.yaml",
+      "summary": "Archon skill manifest for the docker-mcp-ops skill defining name, version, description, author, license, tags, trigger keywords, and priority for automatic activation during Docker MCP operations.",
+      "tags": ["manifest", "docker-mcp-ops", "skill", "triggers", "yaml"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

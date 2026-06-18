@@ -1,0 +1,106 @@
+{
+  "batchIndex": 11,
+  "nodes": [
+    {
+      "id": "pipeline:.github/workflows/ci.yml",
+      "type": "pipeline",
+      "path": ".github/workflows/ci.yml",
+      "label": "ci.yml",
+      "language": "yaml",
+      "sizeLines": 20,
+      "metadata": {
+        "fileCategory": "infra",
+        "totalLines": 20,
+        "nonEmptyLines": 20,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 3
+        }
+      }
+    },
+    {
+      "id": "pipeline:.github/workflows/deploy-pages.yml",
+      "type": "pipeline",
+      "path": ".github/workflows/deploy-pages.yml",
+      "label": "deploy-pages.yml",
+      "language": "yaml",
+      "sizeLines": 73,
+      "metadata": {
+        "fileCategory": "infra",
+        "totalLines": 73,
+        "nonEmptyLines": 64,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 5
+        }
+      }
+    },
+    {
+      "id": "pipeline:.github/workflows/plan-advanced-audit.yml",
+      "type": "pipeline",
+      "path": ".github/workflows/plan-advanced-audit.yml",
+      "label": "plan-advanced-audit.yml",
+      "language": "yaml",
+      "sizeLines": 18,
+      "metadata": {
+        "fileCategory": "infra",
+        "totalLines": 18,
+        "nonEmptyLines": 16,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 3
+        }
+      }
+    },
+    {
+      "id": "pipeline:.github/workflows/plan-quality.yml",
+      "type": "pipeline",
+      "path": ".github/workflows/plan-quality.yml",
+      "label": "plan-quality.yml",
+      "language": "yaml",
+      "sizeLines": 45,
+      "metadata": {
+        "fileCategory": "infra",
+        "totalLines": 45,
+        "nonEmptyLines": 38,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 3
+        }
+      }
+    },
+    {
+      "id": "pipeline:.github/workflows/publish-pypi.yml",
+      "type": "pipeline",
+      "path": ".github/workflows/publish-pypi.yml",
+      "label": "publish-pypi.yml",
+      "language": "yaml",
+      "sizeLines": 17,
+      "metadata": {
+        "fileCategory": "infra",
+        "totalLines": 17,
+        "nonEmptyLines": 17,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 3
+        }
+      }
+    }
+  ],
+  "edges": []
+}

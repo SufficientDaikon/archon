@@ -1,0 +1,304 @@
+{
+  "batchIndex": 49,
+  "nodes": [
+    {
+      "id": "config:skills/docker-production-build/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (docker-production-build)",
+      "filePath": "skills/docker-production-build/manifest.yaml",
+      "summary": "Skill manifest for docker-production-build, defining triggers for creating optimized production Docker images.",
+      "tags": ["docker-production-build", "skill", "manifest", "docker", "production"],
+      "complexity": 2
+    },
+    {
+      "id": "document:skills/docker-production-build/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (docker-production-build)",
+      "filePath": "skills/docker-production-build/SKILL.md",
+      "summary": "Skill documentation for docker-production-build, covering multi-stage Dockerfile patterns, layer optimization, and security hardening for production images.",
+      "tags": ["docker-production-build", "documentation", "docker", "production", "optimization"],
+      "complexity": 3
+    },
+    {
+      "id": "file:skills/e2e-testing-patterns/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (e2e-testing-patterns examples)",
+      "filePath": "skills/e2e-testing-patterns/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory for the e2e-testing-patterns skill.",
+      "tags": ["e2e-testing-patterns", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/e2e-testing-patterns/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (e2e-testing-patterns)",
+      "filePath": "skills/e2e-testing-patterns/manifest.yaml",
+      "summary": "Skill manifest for e2e-testing-patterns, a minimal manifest defining triggers for end-to-end testing pattern tasks.",
+      "tags": ["e2e-testing-patterns", "skill", "manifest", "e2e", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/e2e-testing-patterns/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (e2e-testing-patterns overrides)",
+      "filePath": "skills/e2e-testing-patterns/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the e2e-testing-patterns skill.",
+      "tags": ["e2e-testing-patterns", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/e2e-testing-patterns/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (e2e-testing-patterns resources)",
+      "filePath": "skills/e2e-testing-patterns/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the e2e-testing-patterns skill.",
+      "tags": ["e2e-testing-patterns", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/e2e-testing-patterns/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (e2e-testing-patterns)",
+      "filePath": "skills/e2e-testing-patterns/SKILL.md",
+      "summary": "Skill documentation for e2e-testing-patterns, covering Playwright and Cypress patterns, page object models, test fixtures, and CI integration.",
+      "tags": ["e2e-testing-patterns", "documentation", "playwright", "cypress", "e2e"],
+      "complexity": 5
+    },
+    {
+      "id": "file:skills/e2e-testing-patterns/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (e2e-testing-patterns test cases)",
+      "filePath": "skills/e2e-testing-patterns/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the e2e-testing-patterns skill.",
+      "tags": ["e2e-testing-patterns", "placeholder", "git", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/error-handling-architecture/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (error-handling-architecture)",
+      "filePath": "skills/error-handling-architecture/manifest.yaml",
+      "summary": "Skill manifest for error-handling-architecture, defining triggers for designing robust error handling strategies in applications.",
+      "tags": ["error-handling-architecture", "skill", "manifest", "error-handling", "architecture"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/error-handling-architecture/resources/error-patterns.md",
+      "type": "document:",
+      "name": "error-patterns.md",
+      "filePath": "skills/error-handling-architecture/resources/error-patterns.md",
+      "summary": "Reference document defining error handling patterns used by the error-handling-architecture skill, covering error types, retry strategies, and fallback patterns.",
+      "tags": ["error-handling-architecture", "error-patterns", "reference", "retry", "fallback"],
+      "complexity": 4
+    },
+    {
+      "id": "document:skills/error-handling-architecture/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (error-handling-architecture)",
+      "filePath": "skills/error-handling-architecture/SKILL.md",
+      "summary": "Skill documentation for error-handling-architecture, providing a structured approach to designing application-wide error handling including boundary patterns and recovery strategies.",
+      "tags": ["error-handling-architecture", "documentation", "error-handling", "resilience", "architecture"],
+      "complexity": 4
+    },
+    {
+      "id": "config:skills/event-webhooks/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (event-webhooks)",
+      "filePath": "skills/event-webhooks/manifest.yaml",
+      "summary": "Skill manifest for event-webhooks, defining triggers for designing and implementing webhook event systems.",
+      "tags": ["event-webhooks", "skill", "manifest", "webhooks", "events"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/event-webhooks/resources/webhook-patterns.md",
+      "type": "document:",
+      "name": "webhook-patterns.md",
+      "filePath": "skills/event-webhooks/resources/webhook-patterns.md",
+      "summary": "Reference document defining webhook implementation patterns, including delivery guarantees, retry logic, and signature verification.",
+      "tags": ["event-webhooks", "webhook-patterns", "reference", "delivery", "signature"],
+      "complexity": 4
+    },
+    {
+      "id": "document:skills/event-webhooks/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (event-webhooks)",
+      "filePath": "skills/event-webhooks/SKILL.md",
+      "summary": "Skill documentation for event-webhooks, covering webhook endpoint design, payload validation, idempotency, and event replay capabilities.",
+      "tags": ["event-webhooks", "documentation", "webhooks", "events", "idempotency"],
+      "complexity": 3
+    },
+    {
+      "id": "config:skills/executing-plans/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (executing-plans)",
+      "filePath": "skills/executing-plans/manifest.yaml",
+      "summary": "Skill manifest for executing-plans, a minimal manifest defining triggers for systematic plan execution tasks.",
+      "tags": ["executing-plans", "skill", "manifest", "execution", "planning"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/executing-plans/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (executing-plans)",
+      "filePath": "skills/executing-plans/SKILL.md",
+      "summary": "Skill documentation for executing-plans, providing a structured approach to implementing task plans with checkpoints and progress tracking.",
+      "tags": ["executing-plans", "documentation", "execution", "planning", "checkpoints"],
+      "complexity": 2
+    },
+    {
+      "id": "document:skills/eyes/examples/interactions.md",
+      "type": "document:",
+      "name": "interactions.md (eyes)",
+      "filePath": "skills/eyes/examples/interactions.md",
+      "summary": "Example interactions for the eyes skill, demonstrating screenshot analysis and visual inspection workflows.",
+      "tags": ["eyes", "examples", "screenshots", "visual-analysis", "interactions"],
+      "complexity": 3
+    },
+    {
+      "id": "config:skills/eyes/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (eyes)",
+      "filePath": "skills/eyes/manifest.yaml",
+      "summary": "Skill manifest for eyes, defining triggers for visual screenshot analysis, UI inspection, and browser-based visual testing tasks.",
+      "tags": ["eyes", "skill", "manifest", "screenshots", "visual-testing"],
+      "complexity": 4
+    },
+    {
+      "id": "document:skills/eyes/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (eyes)",
+      "filePath": "skills/eyes/SKILL.md",
+      "summary": "Skill documentation for eyes, providing protocols for capturing, analyzing, and annotating screenshots for UI review and visual regression testing.",
+      "tags": ["eyes", "documentation", "screenshots", "visual-testing", "ui-review"],
+      "complexity": 4
+    },
+    {
+      "id": "config:skills/eyes/tests/test-cases.yaml",
+      "type": "config:",
+      "name": "test-cases.yaml (eyes)",
+      "filePath": "skills/eyes/tests/test-cases.yaml",
+      "summary": "YAML-defined test cases for the eyes skill, providing structured test scenarios for screenshot analysis validation.",
+      "tags": ["eyes", "testing", "test-cases", "yaml", "validation"],
+      "complexity": 2
+    },
+    {
+      "id": "file:skills/fastmcp/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (fastmcp examples)",
+      "filePath": "skills/fastmcp/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory root for the fastmcp skill.",
+      "tags": ["fastmcp", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/fastmcp/examples/api-client-pattern.py",
+      "type": "file:",
+      "name": "api-client-pattern.py",
+      "filePath": "skills/fastmcp/examples/api-client-pattern.py",
+      "summary": "Example file demonstrating FastMCP API client patterns, showing how to build type-safe MCP clients with error handling and retry logic.",
+      "tags": ["fastmcp", "example", "api-client", "mcp", "python"],
+      "complexity": 4
+    },
+    {
+      "id": "file:skills/fastmcp/examples/basic-server.py",
+      "type": "file:",
+      "name": "basic-server.py",
+      "filePath": "skills/fastmcp/examples/basic-server.py",
+      "summary": "Example FastMCP basic server implementation showing tool registration, resource definition, and server startup patterns.",
+      "tags": ["fastmcp", "example", "mcp-server", "python", "basic"],
+      "complexity": 3
+    },
+    {
+      "id": "file:skills/fastmcp/examples/client-example.py",
+      "type": "file:",
+      "name": "client-example.py",
+      "filePath": "skills/fastmcp/examples/client-example.py",
+      "summary": "Example FastMCP client implementation demonstrating tool invocation, resource access, and prompt retrieval patterns.",
+      "tags": ["fastmcp", "example", "mcp-client", "python", "tool-invocation"],
+      "complexity": 4
+    },
+    {
+      "id": "file:skills/fastmcp/examples/error-handling.py",
+      "type": "file:",
+      "name": "error-handling.py (fastmcp)",
+      "filePath": "skills/fastmcp/examples/error-handling.py",
+      "summary": "Example file showing FastMCP error handling patterns including ToolError, validation errors, and graceful failure modes.",
+      "tags": ["fastmcp", "example", "error-handling", "python", "resilience"],
+      "complexity": 4
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:skills/docker-production-build/SKILL.md",
+      "target": "config:skills/docker-production-build/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/e2e-testing-patterns/SKILL.md",
+      "target": "config:skills/e2e-testing-patterns/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/error-handling-architecture/SKILL.md",
+      "target": "config:skills/error-handling-architecture/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/error-handling-architecture/resources/error-patterns.md",
+      "target": "config:skills/error-handling-architecture/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/event-webhooks/SKILL.md",
+      "target": "config:skills/event-webhooks/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/event-webhooks/resources/webhook-patterns.md",
+      "target": "config:skills/event-webhooks/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/executing-plans/SKILL.md",
+      "target": "config:skills/executing-plans/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/eyes/SKILL.md",
+      "target": "config:skills/eyes/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/eyes/examples/interactions.md",
+      "target": "config:skills/eyes/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:skills/eyes/tests/test-cases.yaml",
+      "target": "config:skills/eyes/manifest.yaml",
+      "type": "tested_by",
+      "weight": 0.5
+    },
+    {
+      "source": "file:skills/fastmcp/examples/basic-server.py",
+      "target": "file:skills/fastmcp/examples/api-client-pattern.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:skills/fastmcp/examples/client-example.py",
+      "target": "file:skills/fastmcp/examples/basic-server.py",
+      "type": "imports",
+      "weight": 0.7
+    }
+  ]
+}

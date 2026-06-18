@@ -1,0 +1,5 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [{"path": "webapp/src/app/layout.tsx", "language": "typescript", "sizeLines": 57, "fileCategory": "code"}, {"path": "webapp/src/components/Footer.tsx", "language": "typescript", "sizeLines": 126, "fileCategory": "code"}, {"path": "webapp/src/components/Navbar.tsx", "language": "typescript", "sizeLines": 134, "fileCategory": "code"}],
+  "batchImportData": {"webapp/src/app/layout.tsx": ["webapp/src/app/globals.css", "webapp/src/components/Footer.tsx", "webapp/src/components/Navbar.tsx"], "webapp/src/components/Footer.tsx": [], "webapp/src/components/Navbar.tsx": []}
+}

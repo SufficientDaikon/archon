@@ -1,0 +1,1377 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 17,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "webapp/src/app/agents/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 79,
+      "functions": [
+        {
+          "name": "AgentsPage",
+          "startLine": 15,
+          "endLine": 84,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "AgentsPage",
+          "line": 15,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AgentsPage",
+          "callee": "getAllAgents",
+          "lineNumber": 16
+        },
+        {
+          "caller": "AgentsPage",
+          "callee": "[\n              { emoji: \"🔬\", label: \"Research\" },\n              { emoji: \"📝\", label: \"Specify\" },\n              { emoji: \"🎨\", label: \"Design\" },\n              { emoji: \"🔨\", label: \"Implement\" },\n              { emoji: \"🧪\", label: \"Test\" },\n              { emoji: \"📋\", label: \"Review\" },\n              { emoji: \"🧹\", label: \"Curate\" },\n            ].map",
+          "lineNumber": 39
+        },
+        {
+          "caller": "AgentsPage",
+          "callee": "agents.map",
+          "lineNumber": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/app/bundles/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "BundlesPage",
+          "startLine": 16,
+          "endLine": 43,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "BundlesPage",
+          "line": 16,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "BundlesPage",
+          "callee": "getAllBundles",
+          "lineNumber": 17
+        },
+        {
+          "caller": "BundlesPage",
+          "callee": "bundles.map",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/app/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 267,
+      "nonEmptyLines": 252,
+      "functions": [
+        {
+          "name": "HomePage",
+          "startLine": 60,
+          "endLine": 267,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "HomePage",
+          "line": 60,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "HomePage",
+          "callee": "[\n              {\n                value: stats.skills,\n                label: \"Skills\",\n                color: \"text-brand-purple\",\n              },\n              {\n                value: stats.agents,\n                label: \"Agents\",\n                color: \"text-brand-cyan\",\n              },\n              {\n                value: stats.pipelines,\n                label: \"Pipelines\",\n                color: \"text-pink-400\",\n              },\n              {\n                value: stats.bundles,\n                label: \"Bundles\",\n                color: \"text-yellow-400\",\n              },\n              {\n                value: stats.platforms,\n                label: \"Platforms\",\n                color: \"text-green-400\",\n              },\n              {\n                value: stats.synapses,\n                label: \"Synapses\",\n                color: \"text-violet-400\",\n              },\n            ].map",
+          "lineNumber": 124
+        },
+        {
+          "caller": "HomePage",
+          "callee": "features.map",
+          "lineNumber": 183
+        },
+        {
+          "caller": "HomePage",
+          "callee": "platforms.map",
+          "lineNumber": 219
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/app/pipelines/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "PipelinesPage",
+          "startLine": 16,
+          "endLine": 72,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "metadata",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "PipelinesPage",
+          "line": 16,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PipelinesPage",
+          "callee": "getAllPipelines",
+          "lineNumber": 17
+        },
+        {
+          "caller": "PipelinesPage",
+          "callee": "pipelines.map",
+          "lineNumber": 65
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/app/skills/[slug]/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 268,
+      "nonEmptyLines": 253,
+      "functions": [
+        {
+          "name": "generateStaticParams",
+          "startLine": 13,
+          "endLine": 15,
+          "params": []
+        },
+        {
+          "name": "generateMetadata",
+          "startLine": 21,
+          "endLine": 35,
+          "params": [
+            "{ params }"
+          ]
+        },
+        {
+          "name": "SkillDetailPage",
+          "startLine": 37,
+          "endLine": 268,
+          "params": [
+            "{ params }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "generateStaticParams",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "generateMetadata",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "SkillDetailPage",
+          "line": 37,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateStaticParams",
+          "callee": "getAllSkillSlugs().map",
+          "lineNumber": 14
+        },
+        {
+          "caller": "generateStaticParams",
+          "callee": "getAllSkillSlugs",
+          "lineNumber": 14
+        },
+        {
+          "caller": "generateMetadata",
+          "callee": "getSkillBySlug",
+          "lineNumber": 22
+        },
+        {
+          "caller": "SkillDetailPage",
+          "callee": "getSkillBySlug",
+          "lineNumber": 38
+        },
+        {
+          "caller": "SkillDetailPage",
+          "callee": "getAllPlatforms",
+          "lineNumber": 39
+        },
+        {
+          "caller": "SkillDetailPage",
+          "callee": "getCategoryEmoji",
+          "lineNumber": 83
+        },
+        {
+          "caller": "SkillDetailPage",
+          "callee": "getCategoryColor",
+          "lineNumber": 96
+        },
+        {
+          "caller": "SkillDetailPage",
+          "callee": "getPriorityColor",
+          "lineNumber": 101
+        },
+        {
+          "caller": "SkillDetailPage",
+          "callee": "skill.tags.map",
+          "lineNumber": 113
+        },
+        {
+          "caller": "SkillDetailPage",
+          "callee": "platforms.map",
+          "lineNumber": 131
+        },
+        {
+          "caller": "SkillDetailPage",
+          "callee": "platforms.map",
+          "lineNumber": 153
+        },
+        {
+          "caller": "SkillDetailPage",
+          "callee": "skill.platforms.includes",
+          "lineNumber": 154
+        },
+        {
+          "caller": "SkillDetailPage",
+          "callee": "skill.bundles.map",
+          "lineNumber": 194
+        },
+        {
+          "caller": "SkillDetailPage",
+          "callee": "skill.pipelines.map",
+          "lineNumber": 218
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/app/skills/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 112,
+      "nonEmptyLines": 101,
+      "functions": [
+        {
+          "name": "SkillsPage",
+          "startLine": 17,
+          "endLine": 112,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SkillsPage",
+          "line": 17,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SkillsPage",
+          "callee": "useState",
+          "lineNumber": 18
+        },
+        {
+          "caller": "SkillsPage",
+          "callee": "useState",
+          "lineNumber": 19
+        },
+        {
+          "caller": "SkillsPage",
+          "callee": "useMemo",
+          "lineNumber": 21
+        },
+        {
+          "caller": "SkillsPage",
+          "callee": "result.filter",
+          "lineNumber": 25
+        },
+        {
+          "caller": "SkillsPage",
+          "callee": "search.toLowerCase",
+          "lineNumber": 29
+        },
+        {
+          "caller": "SkillsPage",
+          "callee": "result.filter",
+          "lineNumber": 30
+        },
+        {
+          "caller": "SkillsPage",
+          "callee": "s.name.toLowerCase().includes",
+          "lineNumber": 32
+        },
+        {
+          "caller": "SkillsPage",
+          "callee": "s.name.toLowerCase",
+          "lineNumber": 32
+        },
+        {
+          "caller": "SkillsPage",
+          "callee": "s.description.toLowerCase().includes",
+          "lineNumber": 33
+        },
+        {
+          "caller": "SkillsPage",
+          "callee": "s.description.toLowerCase",
+          "lineNumber": 33
+        },
+        {
+          "caller": "SkillsPage",
+          "callee": "s.tags.some",
+          "lineNumber": 34
+        },
+        {
+          "caller": "SkillsPage",
+          "callee": "t.toLowerCase().includes",
+          "lineNumber": 34
+        },
+        {
+          "caller": "SkillsPage",
+          "callee": "t.toLowerCase",
+          "lineNumber": 34
+        },
+        {
+          "caller": "SkillsPage",
+          "callee": "setSelectedCategory",
+          "lineNumber": 65
+        },
+        {
+          "caller": "SkillsPage",
+          "callee": "filtered.map",
+          "lineNumber": 97
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/app/synapses/[slug]/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 210,
+      "nonEmptyLines": 196,
+      "functions": [
+        {
+          "name": "generateStaticParams",
+          "startLine": 5,
+          "endLine": 7,
+          "params": []
+        },
+        {
+          "name": "generateMetadata",
+          "startLine": 13,
+          "endLine": 27,
+          "params": [
+            "{ params }"
+          ]
+        },
+        {
+          "name": "SynapseDetailPage",
+          "startLine": 29,
+          "endLine": 210,
+          "params": [
+            "{ params }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "generateStaticParams",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "generateMetadata",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "SynapseDetailPage",
+          "line": 29,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateStaticParams",
+          "callee": "getAllSynapseSlugs().map",
+          "lineNumber": 6
+        },
+        {
+          "caller": "generateStaticParams",
+          "callee": "getAllSynapseSlugs",
+          "lineNumber": 6
+        },
+        {
+          "caller": "generateMetadata",
+          "callee": "getSynapseBySlug",
+          "lineNumber": 14
+        },
+        {
+          "caller": "SynapseDetailPage",
+          "callee": "getSynapseBySlug",
+          "lineNumber": 30
+        },
+        {
+          "caller": "SynapseDetailPage",
+          "callee": "synapse.tags.map",
+          "lineNumber": 109
+        },
+        {
+          "caller": "SynapseDetailPage",
+          "callee": "synapse.firingPhases.map",
+          "lineNumber": 127
+        },
+        {
+          "caller": "SynapseDetailPage",
+          "callee": "synapse.agents.map",
+          "lineNumber": 161
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/app/synapses/page.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 124,
+      "nonEmptyLines": 114,
+      "functions": [
+        {
+          "name": "SynapsesPage",
+          "startLine": 10,
+          "endLine": 124,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SynapsesPage",
+          "line": 10,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SynapsesPage",
+          "callee": "useState",
+          "lineNumber": 11
+        },
+        {
+          "caller": "SynapsesPage",
+          "callee": "useMemo",
+          "lineNumber": 13
+        },
+        {
+          "caller": "SynapsesPage",
+          "callee": "search.toLowerCase",
+          "lineNumber": 17
+        },
+        {
+          "caller": "SynapsesPage",
+          "callee": "result.filter",
+          "lineNumber": 18
+        },
+        {
+          "caller": "SynapsesPage",
+          "callee": "s.name.toLowerCase().includes",
+          "lineNumber": 20
+        },
+        {
+          "caller": "SynapsesPage",
+          "callee": "s.name.toLowerCase",
+          "lineNumber": 20
+        },
+        {
+          "caller": "SynapsesPage",
+          "callee": "s.description.toLowerCase().includes",
+          "lineNumber": 21
+        },
+        {
+          "caller": "SynapsesPage",
+          "callee": "s.description.toLowerCase",
+          "lineNumber": 21
+        },
+        {
+          "caller": "SynapsesPage",
+          "callee": "s.tags.some",
+          "lineNumber": 22
+        },
+        {
+          "caller": "SynapsesPage",
+          "callee": "t.toLowerCase().includes",
+          "lineNumber": 22
+        },
+        {
+          "caller": "SynapsesPage",
+          "callee": "t.toLowerCase",
+          "lineNumber": 22
+        },
+        {
+          "caller": "SynapsesPage",
+          "callee": "setSearch",
+          "lineNumber": 50
+        },
+        {
+          "caller": "SynapsesPage",
+          "callee": "filtered.map",
+          "lineNumber": 66
+        },
+        {
+          "caller": "SynapsesPage",
+          "callee": "synapse.firingPhases.map",
+          "lineNumber": 91
+        },
+        {
+          "caller": "SynapsesPage",
+          "callee": "synapse.tags.slice(0, 3).map",
+          "lineNumber": 101
+        },
+        {
+          "caller": "SynapsesPage",
+          "callee": "synapse.tags.slice",
+          "lineNumber": 101
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/components/AgentCard.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "AgentCard",
+          "startLine": 7,
+          "endLine": 57,
+          "params": [
+            "{ agent }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AgentCard",
+          "line": 7,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "AgentCard",
+          "callee": "agent.skills.map",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/components/BundleCard.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "BundleCard",
+          "startLine": 11,
+          "endLine": 81,
+          "params": [
+            "{ bundle }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BundleCard",
+          "line": 11,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "BundleCard",
+          "callee": "useState",
+          "lineNumber": 12
+        },
+        {
+          "caller": "BundleCard",
+          "callee": "setExpanded",
+          "lineNumber": 39
+        },
+        {
+          "caller": "BundleCard",
+          "callee": "bundle.skills.map",
+          "lineNumber": 62
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/components/CategoryFilter.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "CategoryFilter",
+          "startLine": 10,
+          "endLine": 49,
+          "params": [
+            "{\r\n  categories,\r\n  selected,\r\n  onSelect,\r\n  getCategoryColor,\r\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CategoryFilter",
+          "line": 10,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "CategoryFilter",
+          "callee": "onSelect",
+          "lineNumber": 23
+        },
+        {
+          "caller": "CategoryFilter",
+          "callee": "categories.map",
+          "lineNumber": 32
+        },
+        {
+          "caller": "CategoryFilter",
+          "callee": "onSelect",
+          "lineNumber": 35
+        },
+        {
+          "caller": "CategoryFilter",
+          "callee": "getCategoryColor",
+          "lineNumber": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/components/InstallCommand.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 79,
+      "functions": [
+        {
+          "name": "InstallCommand",
+          "startLine": 11,
+          "endLine": 84,
+          "params": [
+            "{\r\n  command,\r\n  label,\r\n  compact = false,\r\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "InstallCommand",
+          "line": 11,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "InstallCommand",
+          "callee": "useState",
+          "lineNumber": 16
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "navigator.clipboard.writeText",
+          "lineNumber": 20
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "setCopied",
+          "lineNumber": 21
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "setTimeout",
+          "lineNumber": 22
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "setCopied",
+          "lineNumber": 22
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "document.createElement",
+          "lineNumber": 25
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "document.body.appendChild",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "textArea.select",
+          "lineNumber": 28
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "document.execCommand",
+          "lineNumber": 29
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "document.body.removeChild",
+          "lineNumber": 30
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "setCopied",
+          "lineNumber": 31
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "setTimeout",
+          "lineNumber": 32
+        },
+        {
+          "caller": "handleCopy",
+          "callee": "setCopied",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/components/PipelineFlow.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "PipelineFlow",
+          "startLine": 7,
+          "endLine": 78,
+          "params": [
+            "{ pipeline }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PipelineFlow",
+          "line": 7,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PipelineFlow",
+          "callee": "pipeline.steps.map",
+          "lineNumber": 29
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/components/SearchBar.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "SearchBar",
+          "startLine": 9,
+          "endLine": 61,
+          "params": [
+            "{\r\n  value,\r\n  onChange,\r\n  placeholder = \"Search...\",\r\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SearchBar",
+          "line": 9,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SearchBar",
+          "callee": "onChange",
+          "lineNumber": 33
+        },
+        {
+          "caller": "SearchBar",
+          "callee": "onChange",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/components/SkillCard.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "SkillCard",
+          "startLine": 9,
+          "endLine": 51,
+          "params": [
+            "{ skill }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SkillCard",
+          "line": 9,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "SkillCard",
+          "callee": "getPriorityColor",
+          "lineNumber": 20
+        },
+        {
+          "caller": "SkillCard",
+          "callee": "getCategoryColor",
+          "lineNumber": 32
+        },
+        {
+          "caller": "SkillCard",
+          "callee": "skill.platforms.slice(0, 5).map",
+          "lineNumber": 40
+        },
+        {
+          "caller": "SkillCard",
+          "callee": "skill.platforms.slice",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/lib/registry.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 154,
+      "nonEmptyLines": 131,
+      "functions": [
+        {
+          "name": "getAllSkills",
+          "startLine": 19,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "getSkillBySlug",
+          "startLine": 23,
+          "endLine": 25,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "getSkillsByCategory",
+          "startLine": 27,
+          "endLine": 29,
+          "params": [
+            "category"
+          ]
+        },
+        {
+          "name": "searchSkills",
+          "startLine": 31,
+          "endLine": 39,
+          "params": [
+            "query"
+          ]
+        },
+        {
+          "name": "getSkillCategories",
+          "startLine": 41,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "getAllSkillSlugs",
+          "startLine": 53,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "getAllAgents",
+          "startLine": 58,
+          "endLine": 60,
+          "params": []
+        },
+        {
+          "name": "getAgentBySlug",
+          "startLine": 62,
+          "endLine": 64,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "getAllPipelines",
+          "startLine": 67,
+          "endLine": 69,
+          "params": []
+        },
+        {
+          "name": "getPipelineBySlug",
+          "startLine": 71,
+          "endLine": 73,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "getAllBundles",
+          "startLine": 76,
+          "endLine": 78,
+          "params": []
+        },
+        {
+          "name": "getBundleBySlug",
+          "startLine": 80,
+          "endLine": 82,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "getAllSynapses",
+          "startLine": 85,
+          "endLine": 87,
+          "params": []
+        },
+        {
+          "name": "getSynapseBySlug",
+          "startLine": 89,
+          "endLine": 91,
+          "params": [
+            "slug"
+          ]
+        },
+        {
+          "name": "getAllSynapseSlugs",
+          "startLine": 93,
+          "endLine": 95,
+          "params": []
+        },
+        {
+          "name": "getSynapseCategories",
+          "startLine": 97,
+          "endLine": 100,
+          "params": []
+        },
+        {
+          "name": "getAllPlatforms",
+          "startLine": 103,
+          "endLine": 105,
+          "params": []
+        },
+        {
+          "name": "getStats",
+          "startLine": 108,
+          "endLine": 110,
+          "params": []
+        },
+        {
+          "name": "getMeta",
+          "startLine": 113,
+          "endLine": 115,
+          "params": []
+        },
+        {
+          "name": "getCategoryColor",
+          "startLine": 118,
+          "endLine": 129,
+          "params": [
+            "category"
+          ]
+        },
+        {
+          "name": "getPriorityColor",
+          "startLine": 131,
+          "endLine": 141,
+          "params": [
+            "priority"
+          ]
+        },
+        {
+          "name": "getCategoryEmoji",
+          "startLine": 143,
+          "endLine": 154,
+          "params": [
+            "category"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getAllSkills",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "getSkillBySlug",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "getSkillsByCategory",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "searchSkills",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "getSkillCategories",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "getAllSkillSlugs",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "getAllAgents",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "getAgentBySlug",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "getAllPipelines",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "getPipelineBySlug",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "getAllBundles",
+          "line": 76,
+          "isDefault": false
+        },
+        {
+          "name": "getBundleBySlug",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "getAllSynapses",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "getSynapseBySlug",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "getAllSynapseSlugs",
+          "line": 93,
+          "isDefault": false
+        },
+        {
+          "name": "getSynapseCategories",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "getAllPlatforms",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "getStats",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "getMeta",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "getCategoryColor",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "getPriorityColor",
+          "line": 131,
+          "isDefault": false
+        },
+        {
+          "name": "getCategoryEmoji",
+          "line": 143,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getSkillBySlug",
+          "callee": "registry.skills.find",
+          "lineNumber": 24
+        },
+        {
+          "caller": "getSkillsByCategory",
+          "callee": "registry.skills.filter",
+          "lineNumber": 28
+        },
+        {
+          "caller": "searchSkills",
+          "callee": "query.toLowerCase",
+          "lineNumber": 32
+        },
+        {
+          "caller": "searchSkills",
+          "callee": "registry.skills.filter",
+          "lineNumber": 33
+        },
+        {
+          "caller": "searchSkills",
+          "callee": "s.name.toLowerCase().includes",
+          "lineNumber": 35
+        },
+        {
+          "caller": "searchSkills",
+          "callee": "s.name.toLowerCase",
+          "lineNumber": 35
+        },
+        {
+          "caller": "searchSkills",
+          "callee": "s.description.toLowerCase().includes",
+          "lineNumber": 36
+        },
+        {
+          "caller": "searchSkills",
+          "callee": "s.description.toLowerCase",
+          "lineNumber": 36
+        },
+        {
+          "caller": "searchSkills",
+          "callee": "s.tags.some",
+          "lineNumber": 37
+        },
+        {
+          "caller": "searchSkills",
+          "callee": "t.toLowerCase().includes",
+          "lineNumber": 37
+        },
+        {
+          "caller": "searchSkills",
+          "callee": "t.toLowerCase",
+          "lineNumber": 37
+        },
+        {
+          "caller": "getAllSkillSlugs",
+          "callee": "registry.skills.map",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getAgentBySlug",
+          "callee": "registry.agents.find",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getPipelineBySlug",
+          "callee": "registry.pipelines.find",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getBundleBySlug",
+          "callee": "registry.bundles.find",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getSynapseBySlug",
+          "callee": "(registry.synapses || []).find",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getAllSynapseSlugs",
+          "callee": "(registry.synapses || []).map",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getSynapseCategories",
+          "callee": "(registry.synapses || []).map",
+          "lineNumber": 98
+        },
+        {
+          "caller": "getSynapseCategories",
+          "callee": "Array.from",
+          "lineNumber": 99
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 22,
+        "functionCount": 22,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "webapp/src/lib/types.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 107,
+      "nonEmptyLines": 97,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

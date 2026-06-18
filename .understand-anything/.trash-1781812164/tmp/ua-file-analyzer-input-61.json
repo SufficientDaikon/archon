@@ -1,0 +1,31 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [
+    {"path": "skills/windows-network-optimizer/manifest.yaml", "language": "yaml", "sizeLines": 29, "fileCategory": "config"},
+    {"path": "skills/windows-network-optimizer/SKILL.md", "language": "markdown", "sizeLines": 190, "fileCategory": "docs"},
+    {"path": "skills/windows-registry-editor/manifest.yaml", "language": "yaml", "sizeLines": 40, "fileCategory": "config"},
+    {"path": "skills/windows-registry-editor/references/optimization-presets.md", "language": "markdown", "sizeLines": 187, "fileCategory": "docs"},
+    {"path": "skills/windows-registry-editor/references/presets/network-deep.md", "language": "markdown", "sizeLines": 673, "fileCategory": "docs"},
+    {"path": "skills/windows-registry-editor/references/safety-rules.md", "language": "markdown", "sizeLines": 140, "fileCategory": "docs"},
+    {"path": "skills/windows-registry-editor/SKILL.md", "language": "markdown", "sizeLines": 222, "fileCategory": "docs"},
+    {"path": "skills/wireframing/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/wireframing/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/wireframing/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/wireframing/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/wireframing/SKILL.md", "language": "markdown", "sizeLines": 879, "fileCategory": "docs"},
+    {"path": "skills/wireframing/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/writing-plans/manifest.yaml", "language": "yaml", "sizeLines": 6, "fileCategory": "config"},
+    {"path": "skills/writing-plans/SKILL.md", "language": "markdown", "sizeLines": 92, "fileCategory": "docs"},
+    {"path": "skills/writing-skills/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/writing-skills/examples/CLAUDE_MD_TESTING.md", "language": "markdown", "sizeLines": 189, "fileCategory": "docs"},
+    {"path": "skills/writing-skills/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/writing-skills/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/writing-skills/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/writing-skills/SKILL.md", "language": "markdown", "sizeLines": 655, "fileCategory": "docs"},
+    {"path": "skills/writing-skills/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/yaml-prompt-library/manifest.yaml", "language": "yaml", "sizeLines": 30, "fileCategory": "config"},
+    {"path": "skills/yaml-prompt-library/resources/prompt-yaml-schema.md", "language": "markdown", "sizeLines": 171, "fileCategory": "docs"},
+    {"path": "skills/yaml-prompt-library/SKILL.md", "language": "markdown", "sizeLines": 108, "fileCategory": "docs"}
+  ],
+  "batchImportData": {}
+}

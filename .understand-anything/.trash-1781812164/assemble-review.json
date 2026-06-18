@@ -1,0 +1,17 @@
+{
+  "fixedSectionOk": true,
+  "nodesRecovered": 0,
+  "edgesRestored": 0,
+  "crossBatchEdgesAdded": 0,
+  "typesRemapped": 374,
+  "complexityRemapped": 0,
+  "notes": [
+    "374 node type fixes applied: 134 'file:' → 'file', 131 'document:' → 'document', 109 'config:' → 'config'. All IDs were already clean (no double-colon artifacts) so only the type field needed stripping.",
+    "No empty source/target edges found — the merge script had already dropped them before this review ran. Edge count is 925, unchanged.",
+    "Complexity values: 939 moderate, 350 simple, 60 complex. The 627 nodes that had null complexity and the 95 'trivial' nodes were already normalized to 'moderate' by the merge script. No null or invalid complexity values remained in the assembled graph at review time.",
+    "No import map cross-batch gaps found: scan-result.json importMap contained 87 files with actual imports; all 227 import pairs where both source and target exist in the graph already had corresponding 'imports' edges. Zero new edges needed.",
+    "No nodes with missing 'id' field found.",
+    "No unknown node types found beyond the trailing-colon variants which were fixed.",
+    "Valid node types after fix: file (435), function (351), document (265), config (211), class (82), pipeline (5). All map to the approved type list."
+  ]
+}

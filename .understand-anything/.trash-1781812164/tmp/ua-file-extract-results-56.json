@@ -1,0 +1,1498 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "skills/react-best-practices/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/react-best-practices/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/react-best-practices/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/react-best-practices/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 22,
+      "nonEmptyLines": 16,
+      "sections": [
+        {
+          "heading": "React Best Practices",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Source",
+          "level": 2,
+          "line": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "skills/react-best-practices/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 23,
+      "nonEmptyLines": 16,
+      "sections": [
+        {
+          "heading": "Skills",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Template",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Skill Index",
+          "level": 2,
+          "line": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "skills/receiving-code-review/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "category",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "skills/receiving-code-review/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 88,
+      "nonEmptyLines": 68,
+      "sections": [
+        {
+          "heading": "Receiving Code Review — The Response Protocol",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Iron Law",
+          "level": 2,
+          "line": 6
+        },
+        {
+          "heading": "Purpose",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "The Protocol",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "Step 1: Read ALL Feedback",
+          "level": 3,
+          "line": 18
+        },
+        {
+          "heading": "Step 2: Understand",
+          "level": 3,
+          "line": 23
+        },
+        {
+          "heading": "Step 3: Verify Against Codebase",
+          "level": 3,
+          "line": 29
+        },
+        {
+          "heading": "Step 4: Evaluate",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "Step 5: Respond Technically",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "Step 6: Implement One at a Time",
+          "level": 3,
+          "line": 48
+        },
+        {
+          "heading": "Forbidden Phrases",
+          "level": 2,
+          "line": 53
+        },
+        {
+          "heading": "YAGNI Check Protocol",
+          "level": 2,
+          "line": 63
+        },
+        {
+          "heading": "When Feedback is Unclear",
+          "level": 2,
+          "line": 73
+        },
+        {
+          "heading": "Rationalization Table",
+          "level": 2,
+          "line": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "skills/rename-project/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 27,
+      "nonEmptyLines": 22,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 17
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/rename-project/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 311,
+      "nonEmptyLines": 243,
+      "sections": [
+        {
+          "heading": "Rename Project",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Workflow",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "Step 1: Choose New Name",
+          "level": 3,
+          "line": 33
+        },
+        {
+          "heading": "Step 2: Fork Repository",
+          "level": 3,
+          "line": 40
+        },
+        {
+          "heading": "Step 3: Global Find-and-Replace",
+          "level": 3,
+          "line": 56
+        },
+        {
+          "heading": "Step 4: Rename Files",
+          "level": 3,
+          "line": 81
+        },
+        {
+          "heading": "Step 5: Update Root Files",
+          "level": 3,
+          "line": 100
+        },
+        {
+          "heading": "Step 6: Update Documentation",
+          "level": 3,
+          "line": 136
+        },
+        {
+          "heading": "Step 7: Update HTML/Website (if exists)",
+          "level": 3,
+          "line": 151
+        },
+        {
+          "heading": "Step 8: Update Skills and Bundles",
+          "level": 3,
+          "line": 159
+        },
+        {
+          "heading": "Step 9: Customize for Your Domain (Optional)",
+          "level": 3,
+          "line": 172
+        },
+        {
+          "heading": "Step 10: Verification Checklist",
+          "level": 3,
+          "line": 181
+        },
+        {
+          "heading": "Step 11: Initialize Git Repository",
+          "level": 3,
+          "line": 211
+        },
+        {
+          "heading": "Step 12: Update Installation Instructions",
+          "level": 3,
+          "line": 229
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 244
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 246
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 258
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 269
+        },
+        {
+          "heading": "Output Checklist",
+          "level": 3,
+          "line": 276
+        },
+        {
+          "heading": "Resources",
+          "level": 2,
+          "line": 294
+        },
+        {
+          "heading": "Handoff",
+          "level": 2,
+          "line": 300
+        },
+        {
+          "heading": "Platform Notes",
+          "level": 2,
+          "line": 307
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 24
+      }
+    },
+    {
+      "path": "skills/requesting-code-review/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 6,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "category",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "skills/requesting-code-review/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 79,
+      "nonEmptyLines": 60,
+      "sections": [
+        {
+          "heading": "Requesting Code Review — The Quality Gate",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Iron Law",
+          "level": 2,
+          "line": 6
+        },
+        {
+          "heading": "Purpose",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "When to Request Review",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "Mandatory (always request):",
+          "level": 3,
+          "line": 18
+        },
+        {
+          "heading": "Optional (use judgment):",
+          "level": 3,
+          "line": 24
+        },
+        {
+          "heading": "Process",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "Step 1: Prepare Review Context",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "Step 2: Dispatch Code Reviewer",
+          "level": 3,
+          "line": 39
+        },
+        {
+          "heading": "Step 3: Act on Feedback",
+          "level": 3,
+          "line": 46
+        },
+        {
+          "heading": "Step 4: Re-Review if Needed",
+          "level": 3,
+          "line": 55
+        },
+        {
+          "heading": "Two-Stage Review Order",
+          "level": 2,
+          "line": 61
+        },
+        {
+          "heading": "Rationalization Table",
+          "level": 2,
+          "line": 72
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    },
+    {
+      "path": "skills/research-paper-to-course/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 38,
+      "nonEmptyLines": 38,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "composes",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 36
+        },
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "skills/research-paper-to-course/references/academic-elements.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 1299,
+      "nonEmptyLines": 1123,
+      "sections": [
+        {
+          "heading": "Academic Elements Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Equation Walkthrough",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "HTML",
+          "level": 3,
+          "line": 13
+        },
+        {
+          "heading": "CSS",
+          "level": 3,
+          "line": 101
+        },
+        {
+          "heading": "JS",
+          "level": 3,
+          "line": 199
+        },
+        {
+          "heading": "Results Comparator",
+          "level": 2,
+          "line": 247
+        },
+        {
+          "heading": "HTML",
+          "level": 3,
+          "line": 251
+        },
+        {
+          "heading": "CSS",
+          "level": 3,
+          "line": 309
+        },
+        {
+          "heading": "JS",
+          "level": 3,
+          "line": 382
+        },
+        {
+          "heading": "Assumption Audit Cards",
+          "level": 2,
+          "line": 419
+        },
+        {
+          "heading": "HTML",
+          "level": 3,
+          "line": 423
+        },
+        {
+          "heading": "CSS",
+          "level": 3,
+          "line": 471
+        },
+        {
+          "heading": "JS",
+          "level": 3,
+          "line": 561
+        },
+        {
+          "heading": "Method Pipeline Diagram",
+          "level": 2,
+          "line": 571
+        },
+        {
+          "heading": "HTML",
+          "level": 3,
+          "line": 575
+        },
+        {
+          "heading": "CSS",
+          "level": 3,
+          "line": 623
+        },
+        {
+          "heading": "JS",
+          "level": 3,
+          "line": 730
+        },
+        {
+          "heading": "Citation Context Cards",
+          "level": 2,
+          "line": 751
+        },
+        {
+          "heading": "HTML",
+          "level": 3,
+          "line": 755
+        },
+        {
+          "heading": "CSS",
+          "level": 3,
+          "line": 782
+        },
+        {
+          "heading": "Ablation Explorer",
+          "level": 2,
+          "line": 835
+        },
+        {
+          "heading": "HTML",
+          "level": 3,
+          "line": 839
+        },
+        {
+          "heading": "CSS",
+          "level": 3,
+          "line": 900
+        },
+        {
+          "heading": "JS",
+          "level": 3,
+          "line": 1000
+        },
+        {
+          "heading": "Scale & Impact Gauge",
+          "level": 2,
+          "line": 1038
+        },
+        {
+          "heading": "HTML",
+          "level": 3,
+          "line": 1042
+        },
+        {
+          "heading": "CSS",
+          "level": 3,
+          "line": 1084
+        },
+        {
+          "heading": "\"What the Paper Actually Says\" Callout",
+          "level": 2,
+          "line": 1138
+        },
+        {
+          "heading": "HTML",
+          "level": 3,
+          "line": 1142
+        },
+        {
+          "heading": "CSS",
+          "level": 3,
+          "line": 1158
+        },
+        {
+          "heading": "\"What This Course Doesn't Cover\" Section",
+          "level": 2,
+          "line": 1206
+        },
+        {
+          "heading": "HTML",
+          "level": 3,
+          "line": 1210
+        },
+        {
+          "heading": "CSS",
+          "level": 3,
+          "line": 1246
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 33
+      }
+    },
+    {
+      "path": "skills/research-paper-to-course/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 388,
+      "nonEmptyLines": 272,
+      "sections": [
+        {
+          "heading": "Research Paper to Course",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "Phase 0: Honesty Gates (MANDATORY — NEVER SKIP)",
+          "level": 2,
+          "line": 41
+        },
+        {
+          "heading": "Gate 1: Source Verification",
+          "level": 3,
+          "line": 45
+        },
+        {
+          "heading": "Gate 2: Hallucination Prevention",
+          "level": 3,
+          "line": 53
+        },
+        {
+          "heading": "Gate 3: Confidence Rating",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "Phase 1: Paper Analysis",
+          "level": 2,
+          "line": 79
+        },
+        {
+          "heading": "Step 1: Structural Parse",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "Step 2: Claims Inventory",
+          "level": 3,
+          "line": 91
+        },
+        {
+          "heading": "Step 3: Prerequisite Map",
+          "level": 3,
+          "line": 106
+        },
+        {
+          "heading": "Step 4: Figure & Equation Inventory",
+          "level": 3,
+          "line": 114
+        },
+        {
+          "heading": "Phase 2: Curriculum Design",
+          "level": 2,
+          "line": 123
+        },
+        {
+          "heading": "Standard Module Arc for Research Papers",
+          "level": 3,
+          "line": 127
+        },
+        {
+          "heading": "Phase 3: Build",
+          "level": 2,
+          "line": 152
+        },
+        {
+          "heading": "HTML Structure",
+          "level": 3,
+          "line": 158
+        },
+        {
+          "heading": "Research-Paper-Specific Interactive Elements",
+          "level": 3,
+          "line": 182
+        },
+        {
+          "heading": "Build Rules",
+          "level": 3,
+          "line": 200
+        },
+        {
+          "heading": "Phase 4: Honesty Verification Pass (MANDATORY)",
+          "level": 2,
+          "line": 213
+        },
+        {
+          "heading": "Claim Audit Checklist",
+          "level": 3,
+          "line": 217
+        },
+        {
+          "heading": "The 5-Second Peer Review Test",
+          "level": 3,
+          "line": 228
+        },
+        {
+          "heading": "Phase 5: Review & Polish",
+          "level": 2,
+          "line": 234
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 254
+        },
+        {
+          "heading": "Intellectual Honesty Rules (HIGHEST PRIORITY)",
+          "level": 3,
+          "line": 256
+        },
+        {
+          "heading": "Design & Pedagogy Rules",
+          "level": 3,
+          "line": 265
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 278
+        },
+        {
+          "heading": "Handoff",
+          "level": 2,
+          "line": 291
+        },
+        {
+          "heading": "Content Philosophy",
+          "level": 2,
+          "line": 303
+        },
+        {
+          "heading": "Papers Are Written for Reviewers — Courses Are Written for Learners",
+          "level": 3,
+          "line": 305
+        },
+        {
+          "heading": "Make Numbers Mean Something",
+          "level": 3,
+          "line": 315
+        },
+        {
+          "heading": "The Limitation Module Is Not Optional",
+          "level": 3,
+          "line": 322
+        },
+        {
+          "heading": "Critical Thinking Over Hero Worship",
+          "level": 3,
+          "line": 329
+        },
+        {
+          "heading": "Design Identity",
+          "level": 2,
+          "line": 340
+        },
+        {
+          "heading": "Gotchas — Common Failure Points",
+          "level": 2,
+          "line": 354
+        },
+        {
+          "heading": "Fabricated Citation Summaries",
+          "level": 3,
+          "line": 356
+        },
+        {
+          "heading": "Overstated Claims",
+          "level": 3,
+          "line": 359
+        },
+        {
+          "heading": "Missing Context for Numbers",
+          "level": 3,
+          "line": 362
+        },
+        {
+          "heading": "Equation Without Explanation",
+          "level": 3,
+          "line": 365
+        },
+        {
+          "heading": "Skipping Assumptions",
+          "level": 3,
+          "line": 368
+        },
+        {
+          "heading": "Hero Worship",
+          "level": 3,
+          "line": 371
+        },
+        {
+          "heading": "Text Walls from Paper Quotes",
+          "level": 3,
+          "line": 374
+        },
+        {
+          "heading": "Mobile Equation Overflow",
+          "level": 3,
+          "line": 377
+        },
+        {
+          "heading": "Reference Files",
+          "level": 2,
+          "line": 382
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 43
+      }
+    },
+    {
+      "path": "skills/reviewer/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/reviewer/examples/report-template.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 909,
+      "nonEmptyLines": 840,
+      "metrics": {}
+    },
+    {
+      "path": "skills/reviewer/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/reviewer/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/reviewer/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/reviewer/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 133,
+      "nonEmptyLines": 102,
+      "sections": [
+        {
+          "heading": "Reviewer Skill",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "When to Use This Skill",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Review Process",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "Step 1: Gather Inputs",
+          "level": 3,
+          "line": 23
+        },
+        {
+          "heading": "Step 2: Systematic Audit",
+          "level": 3,
+          "line": 33
+        },
+        {
+          "heading": "A. User Story Coverage",
+          "level": 4,
+          "line": 37
+        },
+        {
+          "heading": "B. Functional Requirements Coverage",
+          "level": 4,
+          "line": 48
+        },
+        {
+          "heading": "C. Non-Functional Requirements",
+          "level": 4,
+          "line": 56
+        },
+        {
+          "heading": "D. Success Criteria",
+          "level": 4,
+          "line": 63
+        },
+        {
+          "heading": "E. Edge Cases",
+          "level": 4,
+          "line": 70
+        },
+        {
+          "heading": "Step 3: Calculate Scores",
+          "level": 3,
+          "line": 77
+        },
+        {
+          "heading": "Step 4: Generate HTML Report",
+          "level": 3,
+          "line": 93
+        },
+        {
+          "heading": "Step 5: Save & Report",
+          "level": 3,
+          "line": 110
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 119
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 121
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 128
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 16
+      }
+    },
+    {
+      "path": "skills/reviewer/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/sdk-beside-app/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 31,
+      "nonEmptyLines": 26,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 26
+        },
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "skills/sdk-beside-app/resources/sdk-scaffold.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 232,
+      "nonEmptyLines": 203,
+      "sections": [
+        {
+          "heading": "SDK Scaffold Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. Package.json",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "2. tsup.config.ts",
+          "level": 2,
+          "line": 63
+        },
+        {
+          "heading": "3. tsconfig.json",
+          "level": 2,
+          "line": 97
+        },
+        {
+          "heading": "4. Barrel Export (src/index.ts)",
+          "level": 2,
+          "line": 120
+        },
+        {
+          "heading": "5. Self-Consumption Pattern",
+          "level": 2,
+          "line": 137
+        },
+        {
+          "heading": "6. CLI with Ink (Optional)",
+          "level": 2,
+          "line": 161
+        },
+        {
+          "heading": "7. Auto-Generated API Docs Script",
+          "level": 2,
+          "line": 204
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/sdk-beside-app/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 128,
+      "nonEmptyLines": 100,
+      "sections": [
+        {
+          "heading": "SDK Beside App",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Workflow",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Step 1: Identify Extractable Logic",
+          "level": 3,
+          "line": 28
+        },
+        {
+          "heading": "Step 2: Create Package Structure",
+          "level": 3,
+          "line": 34
+        },
+        {
+          "heading": "Step 3: Configure tsup Build",
+          "level": 3,
+          "line": 40
+        },
+        {
+          "heading": "Step 4: Design Exports Map",
+          "level": 3,
+          "line": 47
+        },
+        {
+          "heading": "Step 5: Add CLI Layer (Optional)",
+          "level": 3,
+          "line": 53
+        },
+        {
+          "heading": "Step 6: Wire Self-Consumption",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "Step 7: Add Auto-Generated Docs",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 69
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 71
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 78
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 85
+        },
+        {
+          "heading": "Output Template",
+          "level": 3,
+          "line": 91
+        },
+        {
+          "heading": "Resources",
+          "level": 2,
+          "line": 112
+        },
+        {
+          "heading": "Handoff",
+          "level": 2,
+          "line": 118
+        },
+        {
+          "heading": "Platform Notes",
+          "level": 2,
+          "line": 124
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 19
+      }
+    }
+  ]
+}

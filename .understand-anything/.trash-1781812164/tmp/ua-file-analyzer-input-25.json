@@ -1,0 +1,5 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [{"path": "skills/eyes/resources/gemini-api-reference.md", "language": "markdown", "sizeLines": 171, "fileCategory": "docs"}, {"path": "skills/eyes/resources/presets.md", "language": "markdown", "sizeLines": 102, "fileCategory": "docs"}, {"path": "skills/eyes/resources/prompt-formulas.md", "language": "markdown", "sizeLines": 99, "fileCategory": "docs"}],
+  "batchImportData": {"skills/eyes/resources/gemini-api-reference.md": [], "skills/eyes/resources/presets.md": [], "skills/eyes/resources/prompt-formulas.md": []}
+}

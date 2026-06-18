@@ -1,0 +1,144 @@
+{
+  "batchIndex": 10,
+  "nodes": [
+    {
+      "id": "file:webapp/src/app/layout.tsx",
+      "type": "file",
+      "path": "webapp/src/app/layout.tsx",
+      "label": "layout.tsx",
+      "language": "typescript",
+      "sizeLines": 57,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 57,
+        "nonEmptyLines": 55,
+        "metrics": {
+          "importCount": 3,
+          "exportCount": 2,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/app/layout.tsx:RootLayout",
+      "type": "function",
+      "path": "webapp/src/app/layout.tsx",
+      "label": "RootLayout",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 31,
+        "endLine": 57,
+        "lineCount": 27,
+        "params": [
+          "{\n  children,\n}"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/components/Footer.tsx",
+      "type": "file",
+      "path": "webapp/src/components/Footer.tsx",
+      "label": "Footer.tsx",
+      "language": "typescript",
+      "sizeLines": 126,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 126,
+        "nonEmptyLines": 121,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/components/Footer.tsx:Footer",
+      "type": "function",
+      "path": "webapp/src/components/Footer.tsx",
+      "label": "Footer",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 3,
+        "endLine": 126,
+        "lineCount": 124,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:webapp/src/components/Navbar.tsx",
+      "type": "file",
+      "path": "webapp/src/components/Navbar.tsx",
+      "label": "Navbar.tsx",
+      "language": "typescript",
+      "sizeLines": 134,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 134,
+        "nonEmptyLines": 127,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:webapp/src/components/Navbar.tsx:Navbar",
+      "type": "function",
+      "path": "webapp/src/components/Navbar.tsx",
+      "label": "Navbar",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 15,
+        "endLine": 134,
+        "lineCount": 120,
+        "params": [],
+        "exported": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "type": "contains",
+      "source": "file:webapp/src/app/layout.tsx",
+      "target": "function:webapp/src/app/layout.tsx:RootLayout",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/layout.tsx",
+      "target": "file:webapp/src/app/globals.css",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/layout.tsx",
+      "target": "file:webapp/src/components/Footer.tsx",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:webapp/src/app/layout.tsx",
+      "target": "file:webapp/src/components/Navbar.tsx",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/components/Footer.tsx",
+      "target": "function:webapp/src/components/Footer.tsx:Footer",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:webapp/src/components/Navbar.tsx",
+      "target": "function:webapp/src/components/Navbar.tsx:Navbar",
+      "weight": 1
+    }
+  ]
+}

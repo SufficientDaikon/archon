@@ -1,0 +1,33 @@
+{
+  "batchIndex": 27,
+  "nodes": [
+    {
+      "id": "file:skills/fastmcp/resources/check-versions.sh",
+      "type": "file:",
+      "name": "check-versions.sh",
+      "filePath": "skills/fastmcp/resources/check-versions.sh",
+      "summary": "Shell script that verifies FastMCP and its core dependencies (fastmcp, httpx, python-dotenv, pydantic) are installed and meet minimum version requirements. Includes optional checks for psutil and pytest.",
+      "tags": ["shell", "fastmcp", "version-check", "dependencies", "python"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/fastmcp/resources/deploy-cloud.sh",
+      "type": "file:",
+      "name": "deploy-cloud.sh",
+      "filePath": "skills/fastmcp/resources/deploy-cloud.sh",
+      "summary": "Shell script that validates a FastMCP server is ready for cloud deployment. Checks server file existence, Python syntax, module-level server object, requirements.txt validity, absence of hardcoded secrets, .gitignore, git state, and server execution. Outputs a deployment readiness summary.",
+      "tags": ["shell", "fastmcp", "deployment", "cloud", "validation", "security"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/fastmcp/resources/test-server.sh",
+      "type": "file:",
+      "name": "test-server.sh",
+      "filePath": "skills/fastmcp/resources/test-server.sh",
+      "summary": "Shell script that tests a FastMCP server by generating and running a temporary Python test script using the FastMCP Client. Supports both stdio and HTTP transports, listing tools, resources, and prompts, and calling the first tool/resource.",
+      "tags": ["shell", "fastmcp", "testing", "mcp", "client", "stdio", "http"],
+      "complexity": "medium"
+    }
+  ],
+  "edges": []
+}

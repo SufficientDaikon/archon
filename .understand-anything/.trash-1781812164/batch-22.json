@@ -1,0 +1,33 @@
+{
+  "batchIndex": 22,
+  "nodes": [
+    {
+      "id": "document:skills/design-system/examples/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "skills/design-system/examples/README.md",
+      "summary": "Index for the design-system skill's reference examples directory, listing available DESIGN.md reference files (Linear and Vercel), how to use them as inspiration for creating new design systems, and how to add more examples.",
+      "tags": ["design-system", "examples", "readme", "reference"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:skills/design-system/examples/linear-DESIGN.md",
+      "type": "document",
+      "name": "linear-DESIGN.md",
+      "filePath": "skills/design-system/examples/linear-DESIGN.md",
+      "summary": "Complete design system reference inspired by Linear's dark minimal aesthetic, covering visual theme, color palette (dark backgrounds, purple accents, status colors), typography rules, component stylings (buttons, cards, inputs, badges, navigation), layout principles, depth/elevation system, do's and don'ts, responsive behavior, and agent prompt guide.",
+      "tags": ["design-system", "linear", "dark-theme", "ui-components", "reference"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:skills/design-system/examples/vercel-DESIGN.md",
+      "type": "document",
+      "name": "vercel-DESIGN.md",
+      "filePath": "skills/design-system/examples/vercel-DESIGN.md",
+      "summary": "Complete design system reference inspired by Vercel's high-contrast developer aesthetic, covering visual theme, color palette (black/white with workflow accent colors), typography rules, component stylings (buttons, cards, inputs, navigation, distinctive terminal-style components), layout principles, depth/elevation, do's and don'ts, responsive behavior, and agent prompt guide.",
+      "tags": ["design-system", "vercel", "developer-aesthetic", "ui-components", "reference"],
+      "complexity": "complex"
+    }
+  ],
+  "edges": []
+}

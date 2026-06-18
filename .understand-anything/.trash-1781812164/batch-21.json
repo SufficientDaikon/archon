@@ -1,0 +1,42 @@
+{
+  "batchIndex": 21,
+  "nodes": [
+    {
+      "id": "document:skills/adaptive-teacher/references/adaptive-learning.md",
+      "type": "document",
+      "name": "adaptive-learning.md",
+      "filePath": "skills/adaptive-teacher/references/adaptive-learning.md",
+      "summary": "Deep-dive reference for adaptive learning in the adaptive-teacher skill, covering the 5-level learner system (Explorer through Sage), the CAMP framework (Context/Anchor/Map/Practice), continuous recalibration signals, learning style detection, difficulty targeting with the 70% rule, and session pacing strategies.",
+      "tags": ["adaptive-learning", "teaching", "leveling-system", "camp-framework", "pedagogy"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:skills/adaptive-teacher/references/arabic-translation.md",
+      "type": "document",
+      "name": "arabic-translation.md",
+      "filePath": "skills/adaptive-teacher/references/arabic-translation.md",
+      "summary": "Comprehensive Egyptian Arabic translation guide for the adaptive-teacher skill, covering the golden rules for code-switching between Arabic and English, technical term handling, sentence structure patterns, common teaching phrases, RTL layout considerations, and common translation mistakes to avoid.",
+      "tags": ["arabic", "translation", "egyptian-arabic", "localization", "teaching"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:skills/adaptive-teacher/references/reverse-prompting.md",
+      "type": "document",
+      "name": "reverse-prompting.md",
+      "filePath": "skills/adaptive-teacher/references/reverse-prompting.md",
+      "summary": "Reference guide for the reverse prompting technique used in the adaptive-teacher skill, covering 5 prompt types (Prediction, Decision, Debug, Teach-Back, What-If), escalation protocol, response handling patterns, anti-patterns, and advanced techniques like the Socratic Chain.",
+      "tags": ["reverse-prompting", "teaching", "socratic", "pedagogy", "engagement"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:skills/adaptive-teacher/references/teaching-techniques.md",
+      "type": "document",
+      "name": "teaching-techniques.md",
+      "filePath": "skills/adaptive-teacher/references/teaching-techniques.md",
+      "summary": "Large reference document (1306 lines) for interactive teaching artifact techniques including HTML/CSS/JS patterns for adaptive difficulty systems, code-to-plain-English translation blocks, reverse prompt pause points, scenario-based quizzes, concept animations, glossary tooltips, metaphor callout boxes, progressive disclosure toggles, confidence check cards, and design system tokens.",
+      "tags": ["teaching-techniques", "html", "interactive", "quiz", "design-system"],
+      "complexity": "complex"
+    }
+  ],
+  "edges": []
+}

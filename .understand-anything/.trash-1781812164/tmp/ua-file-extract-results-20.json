@@ -1,0 +1,767 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 15,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "schemas/agent-manifest.schema.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 215,
+      "nonEmptyLines": 197,
+      "sections": [
+        {
+          "heading": "schema_version",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "required_fields",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "optional_fields",
+          "level": 1,
+          "line": 29
+        },
+        {
+          "heading": "required_files",
+          "level": 1,
+          "line": 198
+        },
+        {
+          "heading": "agent_md_required_sections",
+          "level": 1,
+          "line": 203
+        },
+        {
+          "heading": "agent_md_optional_sections",
+          "level": 1,
+          "line": 213
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "schemas/bundle-manifest.schema.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 92,
+      "nonEmptyLines": 75,
+      "sections": [
+        {
+          "heading": "schema_version",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "required_fields",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "optional_fields",
+          "level": 1,
+          "line": 40
+        },
+        {
+          "heading": "required_structure",
+          "level": 1,
+          "line": 68
+        },
+        {
+          "heading": "optional_structure",
+          "level": 1,
+          "line": 74
+        },
+        {
+          "heading": "validation_rules",
+          "level": 1,
+          "line": 78
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "schemas/context-handoff.schema.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 146,
+      "nonEmptyLines": 135,
+      "sections": [
+        {
+          "heading": "$schema",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "title",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "type",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "required",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "properties",
+          "level": 1,
+          "line": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "schemas/deviation-log.schema.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 94,
+      "nonEmptyLines": 79,
+      "sections": [
+        {
+          "heading": "$schema",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "title",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "type",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "required",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "properties",
+          "level": 1,
+          "line": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "schemas/guardrails.schema.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 156,
+      "nonEmptyLines": 141,
+      "sections": [
+        {
+          "heading": "$schema",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "title",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "type",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "required",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "properties",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "definitions",
+          "level": 1,
+          "line": 105
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "schemas/hook-event.schema.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 77,
+      "nonEmptyLines": 67,
+      "sections": [
+        {
+          "heading": "$schema",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "title",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "type",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "required",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "properties",
+          "level": 1,
+          "line": 15
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "schemas/mcp-catalog.schema.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 62,
+      "nonEmptyLines": 58,
+      "sections": [
+        {
+          "heading": "schema_version",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "root_fields",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "server_entry",
+          "level": 1,
+          "line": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "schemas/permission.schema.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 100,
+      "nonEmptyLines": 92,
+      "sections": [
+        {
+          "heading": "$schema",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "title",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "type",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "required",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "properties",
+          "level": 1,
+          "line": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "schemas/pipeline.schema.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 129,
+      "nonEmptyLines": 111,
+      "sections": [
+        {
+          "heading": "schema_version",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "required_fields",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "optional_fields",
+          "level": 1,
+          "line": 78
+        },
+        {
+          "heading": "validation_rules",
+          "level": 1,
+          "line": 112
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "schemas/session.schema.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 119,
+      "nonEmptyLines": 107,
+      "sections": [
+        {
+          "heading": "$schema",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "title",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "type",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "required",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "properties",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "state_transitions",
+          "level": 1,
+          "line": 111
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "schemas/skill-manifest.schema.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 138,
+      "nonEmptyLines": 120,
+      "sections": [
+        {
+          "heading": "schema_version",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "required_fields",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "optional_fields",
+          "level": 1,
+          "line": 34
+        },
+        {
+          "heading": "required_files",
+          "level": 1,
+          "line": 115
+        },
+        {
+          "heading": "optional_directories",
+          "level": 1,
+          "line": 119
+        },
+        {
+          "heading": "skill_md_required_sections",
+          "level": 1,
+          "line": 128
+        },
+        {
+          "heading": "skill_md_optional_sections",
+          "level": 1,
+          "line": 136
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "schemas/synapse-manifest.schema.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 99,
+      "nonEmptyLines": 85,
+      "sections": [
+        {
+          "heading": "schema_version",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "required_fields",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "optional_fields",
+          "level": 1,
+          "line": 56
+        },
+        {
+          "heading": "required_files",
+          "level": 1,
+          "line": 83
+        },
+        {
+          "heading": "optional_directories",
+          "level": 1,
+          "line": 87
+        },
+        {
+          "heading": "synapse_md_required_sections",
+          "level": 1,
+          "line": 91
+        },
+        {
+          "heading": "synapse_md_optional_sections",
+          "level": 1,
+          "line": 98
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "schemas/telemetry-envelope.schema.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 88,
+      "nonEmptyLines": 76,
+      "sections": [
+        {
+          "heading": "$schema",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "title",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "type",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "required",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "properties",
+          "level": 1,
+          "line": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "schemas/thinking-trace.schema.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 184,
+      "nonEmptyLines": 176,
+      "sections": [
+        {
+          "heading": "$schema",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "title",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "type",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "required",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "properties",
+          "level": 1,
+          "line": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "schemas/tool-invocation.schema.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 92,
+      "nonEmptyLines": 82,
+      "sections": [
+        {
+          "heading": "$schema",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "title",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "type",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "required",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "properties",
+          "level": 1,
+          "line": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    }
+  ]
+}

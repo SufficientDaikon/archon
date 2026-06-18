@@ -1,0 +1,141 @@
+{
+  "batchIndex": 20,
+  "nodes": [
+    {
+      "id": "config:schemas/agent-manifest.schema.yaml",
+      "type": "config",
+      "name": "agent-manifest.schema.yaml",
+      "filePath": "schemas/agent-manifest.schema.yaml",
+      "summary": "YAML schema definition for Archon agent manifests, specifying required and optional fields, required files, and mandatory/optional sections for AGENT.md. Validates agent component structure for the registry.",
+      "tags": ["schema", "agent", "manifest", "validation", "yaml"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:schemas/bundle-manifest.schema.yaml",
+      "type": "config",
+      "name": "bundle-manifest.schema.yaml",
+      "filePath": "schemas/bundle-manifest.schema.yaml",
+      "summary": "YAML schema definition for Archon bundle manifests, specifying required and optional fields, required directory structure, optional structure, and validation rules for bundle components.",
+      "tags": ["schema", "bundle", "manifest", "validation", "yaml"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:schemas/context-handoff.schema.yaml",
+      "type": "config",
+      "name": "context-handoff.schema.yaml",
+      "filePath": "schemas/context-handoff.schema.yaml",
+      "summary": "JSON Schema definition for context handoff documents used when passing session state between Archon agents across context windows. Defines required fields and properties for structured handoffs.",
+      "tags": ["schema", "context-handoff", "session-state", "json-schema", "agents"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:schemas/deviation-log.schema.yaml",
+      "type": "config",
+      "name": "deviation-log.schema.yaml",
+      "filePath": "schemas/deviation-log.schema.yaml",
+      "summary": "JSON Schema for deviation log entries created during the STOP-DOCUMENT-ASK-LOG deviation protocol, capturing when agents deviate from expected behavior.",
+      "tags": ["schema", "deviation-log", "guardrails", "json-schema", "protocol"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:schemas/guardrails.schema.yaml",
+      "type": "config",
+      "name": "guardrails.schema.yaml",
+      "filePath": "schemas/guardrails.schema.yaml",
+      "summary": "JSON Schema for Archon guardrails definitions embedded in agent manifests, specifying must-do and must-not rules with severity levels, on-violation strategies, and rule definitions.",
+      "tags": ["schema", "guardrails", "json-schema", "validation", "rules"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:schemas/hook-event.schema.yaml",
+      "type": "config",
+      "name": "hook-event.schema.yaml",
+      "filePath": "schemas/hook-event.schema.yaml",
+      "summary": "JSON Schema for hook event payloads passed to Claude Code hook scripts (session_boot, prompt_router, guard_bash, etc.), defining required fields and event properties.",
+      "tags": ["schema", "hooks", "events", "json-schema", "claude-code"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:schemas/mcp-catalog.schema.yaml",
+      "type": "config",
+      "name": "mcp-catalog.schema.yaml",
+      "filePath": "schemas/mcp-catalog.schema.yaml",
+      "summary": "YAML schema for the MCP integration catalog file, defining root-level fields and server entry structure for Archon's integration catalog system.",
+      "tags": ["schema", "mcp", "catalog", "yaml", "integration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:schemas/permission.schema.yaml",
+      "type": "config",
+      "name": "permission.schema.yaml",
+      "filePath": "schemas/permission.schema.yaml",
+      "summary": "JSON Schema for permission definitions used in Archon's Claude Code settings, specifying the structure of allowed/denied tool permissions.",
+      "tags": ["schema", "permissions", "json-schema", "claude-code", "security"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:schemas/pipeline.schema.yaml",
+      "type": "config",
+      "name": "pipeline.schema.yaml",
+      "filePath": "schemas/pipeline.schema.yaml",
+      "summary": "YAML schema for Archon pipeline definition files, specifying required fields (name, version, steps), optional fields (synapse-mode, config, state), and validation rules for pipeline YAML structure.",
+      "tags": ["schema", "pipeline", "yaml", "validation", "orchestration"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:schemas/session.schema.yaml",
+      "type": "config",
+      "name": "session.schema.yaml",
+      "filePath": "schemas/session.schema.yaml",
+      "summary": "JSON Schema for Archon session state objects persisted to archon-state.json, defining required fields, session properties, and valid state transitions.",
+      "tags": ["schema", "session", "state", "json-schema", "persistence"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:schemas/skill-manifest.schema.yaml",
+      "type": "config",
+      "name": "skill-manifest.schema.yaml",
+      "filePath": "schemas/skill-manifest.schema.yaml",
+      "summary": "YAML schema for Archon skill manifests (manifest.yaml), defining required and optional fields, required files (SKILL.md), optional directories (resources/), and mandatory/optional SKILL.md sections.",
+      "tags": ["schema", "skill", "manifest", "validation", "yaml"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:schemas/synapse-manifest.schema.yaml",
+      "type": "config",
+      "name": "synapse-manifest.schema.yaml",
+      "filePath": "schemas/synapse-manifest.schema.yaml",
+      "summary": "YAML schema for Archon synapse manifests, defining required and optional fields, required files (SYNAPSE.md), optional resource directories, and mandatory/optional SYNAPSE.md sections.",
+      "tags": ["schema", "synapse", "manifest", "validation", "yaml"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:schemas/telemetry-envelope.schema.yaml",
+      "type": "config",
+      "name": "telemetry-envelope.schema.yaml",
+      "filePath": "schemas/telemetry-envelope.schema.yaml",
+      "summary": "JSON Schema for telemetry envelope objects used in Archon's telemetry and replay system, defining the structure for capturing and replaying session events.",
+      "tags": ["schema", "telemetry", "json-schema", "replay", "observability"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:schemas/thinking-trace.schema.yaml",
+      "type": "config",
+      "name": "thinking-trace.schema.yaml",
+      "filePath": "schemas/thinking-trace.schema.yaml",
+      "summary": "JSON Schema for sequential thinking trace objects produced by the sequential-thinking synapse, defining the structure for THINKING blocks captured as audit artifacts in pipelines.",
+      "tags": ["schema", "thinking-trace", "sequential-thinking", "json-schema", "audit"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:schemas/tool-invocation.schema.yaml",
+      "type": "config",
+      "name": "tool-invocation.schema.yaml",
+      "filePath": "schemas/tool-invocation.schema.yaml",
+      "summary": "JSON Schema for tool invocation records captured during Archon sessions, defining the structure for tracking which tools were called with what inputs and outputs.",
+      "tags": ["schema", "tool-invocation", "json-schema", "telemetry", "tracking"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

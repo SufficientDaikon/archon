@@ -1,0 +1,31 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [
+    {"path": "skills/pr-quality-agent/SKILL.md", "language": "markdown", "sizeLines": 261, "fileCategory": "docs"},
+    {"path": "skills/pr-to-course/manifest.yaml", "language": "yaml", "sizeLines": 40, "fileCategory": "config"},
+    {"path": "skills/pr-to-course/references/design-system.md", "language": "markdown", "sizeLines": 487, "fileCategory": "docs"},
+    {"path": "skills/pr-to-course/references/interactive-elements.md", "language": "markdown", "sizeLines": 1092, "fileCategory": "docs"},
+    {"path": "skills/pr-to-course/SKILL.md", "language": "markdown", "sizeLines": 315, "fileCategory": "docs"},
+    {"path": "skills/prisma-orm-patterns/manifest.yaml", "language": "yaml", "sizeLines": 42, "fileCategory": "config"},
+    {"path": "skills/prisma-orm-patterns/resources/prisma-reference.md", "language": "markdown", "sizeLines": 208, "fileCategory": "docs"},
+    {"path": "skills/prisma-orm-patterns/SKILL.md", "language": "markdown", "sizeLines": 124, "fileCategory": "docs"},
+    {"path": "skills/prompt-architect/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/prompt-architect/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/prompt-architect/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/prompt-architect/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/prompt-architect/resources/framework_analyzer.py", "language": "python", "sizeLines": 321, "fileCategory": "code"},
+    {"path": "skills/prompt-architect/resources/prompt_evaluator.py", "language": "python", "sizeLines": 336, "fileCategory": "code"},
+    {"path": "skills/prompt-architect/SKILL.md", "language": "markdown", "sizeLines": 203, "fileCategory": "docs"},
+    {"path": "skills/prompt-architect/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/qa-test-planner/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/qa-test-planner/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/qa-test-planner/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/qa-test-planner/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/qa-test-planner/resources/create_bug_report.sh", "language": "shell", "sizeLines": 276, "fileCategory": "script"},
+    {"path": "skills/qa-test-planner/resources/generate_test_cases.sh", "language": "shell", "sizeLines": 302, "fileCategory": "script"},
+    {"path": "skills/qa-test-planner/SKILL.md", "language": "markdown", "sizeLines": 757, "fileCategory": "docs"},
+    {"path": "skills/qa-test-planner/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/react-best-practices/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"}
+  ],
+  "batchImportData": {}
+}

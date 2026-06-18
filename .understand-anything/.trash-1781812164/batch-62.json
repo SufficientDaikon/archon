@@ -1,0 +1,314 @@
+{
+  "batchIndex": 62,
+  "nodes": [
+    {
+      "id": "file:src/archon/commands/__init__.py",
+      "type": "file",
+      "name": "__init__.py (commands)",
+      "filePath": "src/archon/commands/__init__.py",
+      "summary": "Package init for the Archon CLI commands subpackage.",
+      "tags": ["python", "package", "init", "commands"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:src/archon/core/__init__.py",
+      "type": "file",
+      "name": "__init__.py (core)",
+      "filePath": "src/archon/core/__init__.py",
+      "summary": "Package init for the Archon core subpackage.",
+      "tags": ["python", "package", "init", "core"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:src/archon/core/agent_mcp.py",
+      "type": "file",
+      "name": "agent_mcp.py",
+      "filePath": "src/archon/core/agent_mcp.py",
+      "summary": "Archon v3 agent/skill/MCP expansion providing deterministic routing and trust: agent capability profiles, signed skill manifest checks, and MCP connector manager with trust tiers.",
+      "tags": ["agent", "mcp", "trust", "routing", "v3"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:src/archon/core/artifact_validator.py",
+      "type": "file",
+      "name": "artifact_validator.py",
+      "filePath": "src/archon/core/artifact_validator.py",
+      "summary": "Validates pipeline step output artifacts by checking file existence, required markdown sections, minimum content length, schema compliance, and compliance score thresholds.",
+      "tags": ["artifact", "validator", "pipeline", "schema", "compliance"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:src/archon/core/design_spec.py",
+      "type": "file",
+      "name": "design_spec.py",
+      "filePath": "src/archon/core/design_spec.py",
+      "summary": "Typed input validator DesignSpec for the Archon design agent, using stdlib dataclasses to validate component, mode, tokens, constraints, and target fields.",
+      "tags": ["design", "spec", "validator", "dataclass", "input"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/archon/core/migration.py",
+      "type": "file",
+      "name": "migration.py",
+      "filePath": "src/archon/core/migration.py",
+      "summary": "Archon v3 migration runner and release gate validator with dry-run diff support, remediation output, and release gates for validation, security, context-integrity, and docs readiness.",
+      "tags": ["migration", "release-gate", "v3", "validation", "dry-run"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:src/archon/core/pipeline_engine.py",
+      "type": "file",
+      "name": "pipeline_engine.py",
+      "filePath": "src/archon/core/pipeline_engine.py",
+      "summary": "Core pipeline state machine executor for Archon, handling step execution, available-when conditions, synapse firing, artifact validation, resume logic with full guardrail parity.",
+      "tags": ["pipeline", "engine", "state-machine", "executor", "synapses"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:src/archon/core/policy_engine.py",
+      "type": "file",
+      "name": "policy_engine.py",
+      "filePath": "src/archon/core/policy_engine.py",
+      "summary": "Central policy engine for tool, hook, and permission decisions, producing machine-readable PolicyDecision artifacts with rationale for every allow/deny/escalate outcome.",
+      "tags": ["policy", "engine", "decisions", "permissions", "v3"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:src/archon/core/schema_validator.py",
+      "type": "file",
+      "name": "schema_validator.py",
+      "filePath": "src/archon/core/schema_validator.py",
+      "summary": "Validates Archon v3 YAML schema contracts, linting required fields, enum values, pattern constraints, and detecting contradictory state transitions.",
+      "tags": ["schema", "validator", "yaml", "lint", "v3"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:src/archon/core/session_manager.py",
+      "type": "file",
+      "name": "session_manager.py",
+      "filePath": "src/archon/core/session_manager.py",
+      "summary": "Archon v3 session lifecycle orchestration with enforced state machine (CREATED→ACTIVE→IDLE→ARCHIVED), restart/recovery policies, and correlation ID linking to pipeline traces.",
+      "tags": ["session", "manager", "state-machine", "lifecycle", "v3"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:src/archon/core/skill_mcp_schema.py",
+      "type": "file",
+      "name": "skill_mcp_schema.py",
+      "filePath": "src/archon/core/skill_mcp_schema.py",
+      "summary": "Converts Archon skill YAML manifests into MCP tool definitions, synthesizing inputSchema from triggers.keywords and surfacing output-schema in annotations.outputSchema.",
+      "tags": ["skill", "mcp", "schema", "conversion", "tool-definition"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:src/archon/core/synapse_engine_v2.py",
+      "type": "file",
+      "name": "synapse_engine_v2.py",
+      "filePath": "src/archon/core/synapse_engine_v2.py",
+      "summary": "Production synapse execution engine (v2 is canon) with OWASP A1-A10 pattern detection (13 patterns), CRITICAL→HALT and HIGH/MEDIUM→WARN tier mapping.",
+      "tags": ["synapse", "engine", "v2", "owasp", "security"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:src/archon/core/synapse_engine.py",
+      "type": "file",
+      "name": "synapse_engine.py",
+      "filePath": "src/archon/core/synapse_engine.py",
+      "summary": "Legacy v1 synapse engine preserved for compatibility; production code uses synapse_engine_v2.py.",
+      "tags": ["synapse", "engine", "v1", "legacy", "compatibility"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:src/archon/core/synapse_hardener.py",
+      "type": "file",
+      "name": "synapse_hardener.py",
+      "filePath": "src/archon/core/synapse_hardener.py",
+      "summary": "Hardening layer for Archon synapses implementing CircuitBreaker (CLOSED/OPEN/HALF_OPEN), RetryPolicy with exponential backoff, and GracefulDegrader for safe fallback decisions.",
+      "tags": ["circuit-breaker", "retry", "hardening", "resilience", "synapse"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:src/archon/core/synapse_router.py",
+      "type": "file",
+      "name": "synapse_router.py",
+      "filePath": "src/archon/core/synapse_router.py",
+      "summary": "Auto-selects synapses by complexity tier and lifecycle phase using a routing table (pre-execution, post-build, post-handoff, post-cycle), computing hash-based cache keys.",
+      "tags": ["synapse", "router", "routing", "complexity-tier", "lifecycle"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:src/archon/core/telemetry.py",
+      "type": "file",
+      "name": "telemetry.py",
+      "filePath": "src/archon/core/telemetry.py",
+      "summary": "Archon v3 telemetry providing versioned TelemetryEnvelope (schema 3.0.0) for all runtime events, enabling replay, observability, and audit across session, tool, policy, and hook events.",
+      "tags": ["telemetry", "observability", "replay", "events", "v3"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:src/archon/utils/__init__.py",
+      "type": "file",
+      "name": "__init__.py (utils)",
+      "filePath": "src/archon/utils/__init__.py",
+      "summary": "Package init for the Archon utilities subpackage.",
+      "tags": ["python", "package", "init", "utils"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:stress_test_fixed.py",
+      "type": "file",
+      "name": "stress_test_fixed.py",
+      "filePath": "stress_test_fixed.py",
+      "summary": "Fixed variant of the file-ops MCP server stress test, performing sequential multi-line edits, atomic batch operations, and content integrity verification after each operation.",
+      "tags": ["stress-test", "file-ops", "mcp", "testing", "atomic"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:stress_test.py",
+      "type": "file",
+      "name": "stress_test.py",
+      "filePath": "stress_test.py",
+      "summary": "Maximal load test for the file-ops MCP server creating large files, running 10 sequential edits, atomic batch ops, and SHA-256 integrity verification.",
+      "tags": ["stress-test", "file-ops", "mcp", "load-test", "sha256"],
+      "complexity": "high"
+    },
+    {
+      "id": "config:synapses/_template/manifest.yaml",
+      "type": "config",
+      "name": "_template synapse manifest",
+      "filePath": "synapses/_template/manifest.yaml",
+      "summary": "Template manifest for creating new Archon synapses, defining required fields, activation conditions, and check patterns.",
+      "tags": ["synapse", "template", "manifest", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:synapses/_template/SYNAPSE.md",
+      "type": "document",
+      "name": "_template SYNAPSE.md",
+      "filePath": "synapses/_template/SYNAPSE.md",
+      "summary": "Template documentation for creating new Archon synapses, covering activation conditions, check implementation patterns, and integration points.",
+      "tags": ["synapse", "template", "docs", "activation"],
+      "complexity": "low"
+    },
+    {
+      "id": "config:synapses/anti-rationalization/manifest.yaml",
+      "type": "config",
+      "name": "anti-rationalization synapse manifest",
+      "filePath": "synapses/anti-rationalization/manifest.yaml",
+      "summary": "Manifest for the anti-rationalization synapse activating at MODERATE+ tiers to prevent 10 Iron Laws violations such as cutting corners and skipping validations.",
+      "tags": ["synapse", "anti-rationalization", "manifest", "yaml", "iron-laws"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:synapses/anti-rationalization/SYNAPSE.md",
+      "type": "document",
+      "name": "anti-rationalization SYNAPSE.md",
+      "filePath": "synapses/anti-rationalization/SYNAPSE.md",
+      "summary": "Comprehensive synapse documentation for the anti-rationalization synapse defining 10 Iron Laws that prevent cognitive shortcuts, false assumptions, and validation bypasses.",
+      "tags": ["synapse", "anti-rationalization", "iron-laws", "docs", "cognitive"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:synapses/metacognition/manifest.yaml",
+      "type": "config",
+      "name": "metacognition synapse manifest",
+      "filePath": "synapses/metacognition/manifest.yaml",
+      "summary": "Manifest for the metacognition synapse activating at MODERATE+ tiers to enforce planning before action, confidence monitoring, and quality reflection.",
+      "tags": ["synapse", "metacognition", "manifest", "yaml", "planning"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:synapses/metacognition/SYNAPSE.md",
+      "type": "document",
+      "name": "metacognition SYNAPSE.md",
+      "filePath": "synapses/metacognition/SYNAPSE.md",
+      "summary": "Extensive synapse documentation for metacognition covering plan-before-act protocol, confidence monitoring, reflection phases, and self-correction triggers.",
+      "tags": ["synapse", "metacognition", "docs", "planning", "reflection"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:src/archon/core/AgentCapabilityProfile",
+      "type": "file",
+      "name": "AgentCapabilityProfile (class)",
+      "filePath": "src/archon/core/agent_mcp.py",
+      "summary": "Dataclass defining an agent's runtime capability profile including allowed modes, skills, guardrails, concurrency limits, and trust tier.",
+      "tags": ["class", "agent", "capability", "trust", "profile"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:src/archon/core/ValidationResult",
+      "type": "file",
+      "name": "ValidationResult (class)",
+      "filePath": "src/archon/core/artifact_validator.py",
+      "summary": "Dataclass representing the result of artifact validation with passed flag, check list, errors, warnings, and compliance score.",
+      "tags": ["class", "validation", "artifact", "result"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/archon/core/PolicyDecision",
+      "type": "file",
+      "name": "PolicyDecision (class)",
+      "filePath": "src/archon/core/policy_engine.py",
+      "summary": "Immutable dataclass for policy decision artifacts capturing action (allow/deny/escalate), rationale, policy ID, and correlation metadata.",
+      "tags": ["class", "policy", "decision", "immutable", "audit"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:src/archon/core/SessionStatus",
+      "type": "file",
+      "name": "SessionStatus (enum)",
+      "filePath": "src/archon/core/session_manager.py",
+      "summary": "Enum defining session lifecycle states: CREATED, ACTIVE, WAITING_TOOL, WAITING_PERMISSION, IDLE, RECOVERING, ARCHIVED, ERROR.",
+      "tags": ["enum", "session", "lifecycle", "states"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:src/archon/core/TelemetryEnvelope",
+      "type": "file",
+      "name": "TelemetryEnvelope (class)",
+      "filePath": "src/archon/core/telemetry.py",
+      "summary": "Versioned telemetry envelope (schema 3.0.0) normalizing all runtime events for replay, observability, and audit.",
+      "tags": ["class", "telemetry", "envelope", "events", "v3"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:src/archon/core/CircuitBreaker",
+      "type": "file",
+      "name": "CircuitBreaker (class)",
+      "filePath": "src/archon/core/synapse_hardener.py",
+      "summary": "Per-synapse circuit breaker with CLOSED/OPEN/HALF_OPEN states, configurable failure threshold, recovery timeout, and success threshold.",
+      "tags": ["class", "circuit-breaker", "resilience", "synapse"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:src/archon/core/DesignSpec",
+      "type": "file",
+      "name": "DesignSpec (class)",
+      "filePath": "src/archon/core/design_spec.py",
+      "summary": "Validated input contract dataclass for design agent invocations with modes: generate, apply, audit, tokens, adapt.",
+      "tags": ["class", "design", "spec", "dataclass", "validation"],
+      "complexity": "low"
+    }
+  ],
+  "edges": [
+    {"source": "file:src/archon/core/pipeline_engine.py", "target": "file:src/archon/core/synapse_engine_v2.py", "type": "imports", "weight": 0.7},
+    {"source": "file:src/archon/core/synapse_router.py", "target": "file:src/archon/core/synapse_engine_v2.py", "type": "imports", "weight": 0.7},
+    {"source": "file:src/archon/core/synapse_hardener.py", "target": "file:src/archon/core/synapse_engine_v2.py", "type": "imports", "weight": 0.7},
+    {"source": "file:src/archon/core/agent_mcp.py", "target": "file:src/archon/core/AgentCapabilityProfile", "type": "contains", "weight": 1.0},
+    {"source": "file:src/archon/core/artifact_validator.py", "target": "file:src/archon/core/ValidationResult", "type": "contains", "weight": 1.0},
+    {"source": "file:src/archon/core/policy_engine.py", "target": "file:src/archon/core/PolicyDecision", "type": "contains", "weight": 1.0},
+    {"source": "file:src/archon/core/session_manager.py", "target": "file:src/archon/core/SessionStatus", "type": "contains", "weight": 1.0},
+    {"source": "file:src/archon/core/telemetry.py", "target": "file:src/archon/core/TelemetryEnvelope", "type": "contains", "weight": 1.0},
+    {"source": "file:src/archon/core/synapse_hardener.py", "target": "file:src/archon/core/CircuitBreaker", "type": "contains", "weight": 1.0},
+    {"source": "file:src/archon/core/design_spec.py", "target": "file:src/archon/core/DesignSpec", "type": "contains", "weight": 1.0},
+    {"source": "file:src/archon/core/pipeline_engine.py", "target": "file:src/archon/core/artifact_validator.py", "type": "imports", "weight": 0.7},
+    {"source": "file:src/archon/core/pipeline_engine.py", "target": "file:src/archon/core/policy_engine.py", "type": "imports", "weight": 0.7},
+    {"source": "file:src/archon/core/session_manager.py", "target": "file:src/archon/core/telemetry.py", "type": "imports", "weight": 0.7},
+    {"source": "file:src/archon/core/skill_mcp_schema.py", "target": "file:src/archon/core/agent_mcp.py", "type": "imports", "weight": 0.7},
+    {"source": "config:synapses/anti-rationalization/manifest.yaml", "target": "document:synapses/anti-rationalization/SYNAPSE.md", "type": "configures", "weight": 0.6},
+    {"source": "config:synapses/metacognition/manifest.yaml", "target": "document:synapses/metacognition/SYNAPSE.md", "type": "configures", "weight": 0.6},
+    {"source": "config:synapses/_template/manifest.yaml", "target": "document:synapses/_template/SYNAPSE.md", "type": "configures", "weight": 0.6},
+    {"source": "file:src/archon/core/synapse_router.py", "target": "config:synapses/anti-rationalization/manifest.yaml", "type": "configures", "weight": 0.6},
+    {"source": "file:src/archon/core/synapse_router.py", "target": "config:synapses/metacognition/manifest.yaml", "type": "configures", "weight": 0.6}
+  ]
+}

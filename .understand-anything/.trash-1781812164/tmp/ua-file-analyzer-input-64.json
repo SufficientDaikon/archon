@@ -1,0 +1,51 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [
+    {"path": "tests/test_security_awareness.py", "language": "python", "sizeLines": 28, "fileCategory": "code"},
+    {"path": "tests/test_sequential_thinking.py", "language": "python", "sizeLines": 27, "fileCategory": "code"},
+    {"path": "tests/test_synapses_executable.py", "language": "python", "sizeLines": 32, "fileCategory": "code"},
+    {"path": "tests/test_trust_verification.py", "language": "python", "sizeLines": 29, "fileCategory": "code"},
+    {"path": "tests/test_v3_agent_mcp.py", "language": "python", "sizeLines": 224, "fileCategory": "code"},
+    {"path": "tests/test_v3_contracts.py", "language": "python", "sizeLines": 336, "fileCategory": "code"},
+    {"path": "tests/test_v3_migration.py", "language": "python", "sizeLines": 225, "fileCategory": "code"},
+    {"path": "tests/test_v3_policy.py", "language": "python", "sizeLines": 351, "fileCategory": "code"},
+    {"path": "tests/test_v3_session.py", "language": "python", "sizeLines": 371, "fileCategory": "code"},
+    {"path": "tests/test_v3_telemetry.py", "language": "python", "sizeLines": 361, "fileCategory": "code"},
+    {"path": "virtuoso/README.md", "language": "markdown", "sizeLines": 75, "fileCategory": "docs"},
+    {"path": "virtuoso/virtuoso.xml", "language": "xml", "sizeLines": 601, "fileCategory": "config"},
+    {"path": "vscode-extension/.vscodeignore", "language": "unknown", "sizeLines": 10, "fileCategory": "code"},
+    {"path": "vscode-extension/esbuild.config.mjs", "language": "javascript", "sizeLines": 37, "fileCategory": "code"},
+    {"path": "webapp/next.config.js", "language": "javascript", "sizeLines": 10, "fileCategory": "code"},
+    {"path": "webapp/postcss.config.js", "language": "javascript", "sizeLines": 6, "fileCategory": "code"},
+    {"path": "webapp/src/app/docs/page.tsx", "language": "typescript", "sizeLines": 169, "fileCategory": "code"},
+    {"path": "webapp/src/app/globals.css", "language": "css", "sizeLines": 73, "fileCategory": "markup"},
+    {"path": "webapp/src/data/registry.json", "language": "json", "sizeLines": 1517, "fileCategory": "config"},
+    {"path": "webapp/tailwind.config.js", "language": "javascript", "sizeLines": 55, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "tests/test_security_awareness.py": [],
+    "tests/test_sequential_thinking.py": [],
+    "tests/test_synapses_executable.py": [],
+    "tests/test_trust_verification.py": [],
+    "tests/test_v3_agent_mcp.py": [],
+    "tests/test_v3_contracts.py": [],
+    "tests/test_v3_migration.py": [],
+    "tests/test_v3_policy.py": [],
+    "tests/test_v3_session.py": [],
+    "tests/test_v3_telemetry.py": [],
+    "virtuoso/README.md": [],
+    "virtuoso/virtuoso.xml": [],
+    "vscode-extension/.vscodeignore": [],
+    "vscode-extension/esbuild.config.mjs": [],
+    "webapp/next.config.js": [],
+    "webapp/postcss.config.js": [],
+    "webapp/src/app/docs/page.tsx": [],
+    "webapp/src/app/globals.css": [],
+    "webapp/src/data/registry.json": [],
+    "webapp/tailwind.config.js": []
+  },
+  "neighborMap": {
+    "webapp/src/app/globals.css": [{"path": "webapp/src/app/layout.tsx", "batchIndex": 10, "symbols": ["metadata", "RootLayout"]}],
+    "webapp/src/data/registry.json": [{"path": "webapp/src/lib/registry.ts", "batchIndex": 3, "symbols": ["getAllSkills", "getSkillBySlug", "getSkillsByCategory", "searchSkills", "getSkillCategories", "getAllSkillSlugs", "getAllAgents", "getAgentBySlug", "getAllPipelines", "getPipelineBySlug", "getAllBundles", "getBundleBySlug", "getAllSynapses", "getSynapseBySlug", "getAllSynapseSlugs", "getSynapseCategories", "getAllPlatforms", "getStats", "getMeta", "getCategoryColor", "getPriorityColor", "getCategoryEmoji"]}]
+  }
+}

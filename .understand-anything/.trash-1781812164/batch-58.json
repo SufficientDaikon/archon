@@ -1,0 +1,242 @@
+{
+  "batchIndex": 58,
+  "nodes": [
+    {
+      "id": "document:skills/systematic-debugging/SKILL.md",
+      "type": "document",
+      "name": "systematic-debugging SKILL.md",
+      "filePath": "skills/systematic-debugging/SKILL.md",
+      "summary": "Comprehensive skill documentation for systematic debugging using hypothesis-driven investigation, binary search, root cause analysis, and structured fix validation.",
+      "tags": ["docs", "systematic-debugging", "skill", "debugging", "methodology"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:skills/systematic-debugging/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (systematic-debugging tests)",
+      "filePath": "skills/systematic-debugging/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/template-variables/manifest.yaml",
+      "type": "config",
+      "name": "template-variables manifest",
+      "filePath": "skills/template-variables/manifest.yaml",
+      "summary": "Skill manifest for the template-variables skill with references to variable format documentation.",
+      "tags": ["manifest", "skill", "template-variables", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/template-variables/resources/variable-formats.md",
+      "type": "document",
+      "name": "variable-formats.md",
+      "filePath": "skills/template-variables/resources/variable-formats.md",
+      "summary": "Reference documentation for template variable formats across different templating systems including Jinja2, Handlebars, Mustache, and custom token patterns.",
+      "tags": ["template", "variables", "formats", "reference", "jinja2"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:skills/template-variables/SKILL.md",
+      "type": "document",
+      "name": "template-variables SKILL.md",
+      "filePath": "skills/template-variables/SKILL.md",
+      "summary": "Skill documentation for managing template variables and substitution patterns across configuration files, prompts, and code templates.",
+      "tags": ["docs", "template-variables", "skill", "templates", "substitution"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/test-driven-development/manifest.yaml",
+      "type": "config",
+      "name": "test-driven-development manifest",
+      "filePath": "skills/test-driven-development/manifest.yaml",
+      "summary": "Minimal skill manifest for the test-driven-development (TDD) skill.",
+      "tags": ["manifest", "skill", "tdd", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/test-driven-development/SKILL.md",
+      "type": "document",
+      "name": "test-driven-development SKILL.md",
+      "filePath": "skills/test-driven-development/SKILL.md",
+      "summary": "Skill documentation for applying TDD methodology with red-green-refactor cycles, test design principles, and coverage strategies.",
+      "tags": ["docs", "tdd", "skill", "testing", "methodology"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/ui-ux-designer/manifest.yaml",
+      "type": "config",
+      "name": "ui-ux-designer manifest",
+      "filePath": "skills/ui-ux-designer/manifest.yaml",
+      "summary": "Skill manifest for the UI/UX designer skill providing design system and interaction pattern guidance.",
+      "tags": ["manifest", "skill", "ui-ux", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/ui-ux-designer/SKILL.md",
+      "type": "document",
+      "name": "ui-ux-designer SKILL.md",
+      "filePath": "skills/ui-ux-designer/SKILL.md",
+      "summary": "Skill documentation for UI/UX design covering user research, wireframing, component design, accessibility, and usability testing.",
+      "tags": ["docs", "ui-ux-designer", "skill", "design", "accessibility"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/ui-ux-designer/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ui-ux-designer examples)",
+      "filePath": "skills/ui-ux-designer/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/ui-ux-designer/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ui-ux-designer overrides)",
+      "filePath": "skills/ui-ux-designer/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/ui-ux-designer/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ui-ux-designer resources)",
+      "filePath": "skills/ui-ux-designer/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/ui-ux-designer/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ui-ux-designer tests)",
+      "filePath": "skills/ui-ux-designer/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/ui-visual-design/manifest.yaml",
+      "type": "config",
+      "name": "ui-visual-design manifest",
+      "filePath": "skills/ui-visual-design/manifest.yaml",
+      "summary": "Skill manifest for the ui-visual-design skill providing visual design principles, typography, and color system guidance.",
+      "tags": ["manifest", "skill", "visual-design", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/ui-visual-design/SKILL.md",
+      "type": "document",
+      "name": "ui-visual-design SKILL.md",
+      "filePath": "skills/ui-visual-design/SKILL.md",
+      "summary": "Extensive skill documentation for visual design covering typography scales, color systems, spacing grids, motion design, dark mode, and Awwwards-level aesthetics.",
+      "tags": ["docs", "visual-design", "skill", "typography", "color"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:skills/ui-visual-design/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ui-visual-design examples)",
+      "filePath": "skills/ui-visual-design/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/ui-visual-design/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ui-visual-design overrides)",
+      "filePath": "skills/ui-visual-design/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/ui-visual-design/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ui-visual-design resources)",
+      "filePath": "skills/ui-visual-design/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/ui-visual-design/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ui-visual-design tests)",
+      "filePath": "skills/ui-visual-design/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/using-git-worktrees/manifest.yaml",
+      "type": "config",
+      "name": "using-git-worktrees manifest",
+      "filePath": "skills/using-git-worktrees/manifest.yaml",
+      "summary": "Minimal skill manifest for the git worktrees skill.",
+      "tags": ["manifest", "skill", "git", "worktrees", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/using-git-worktrees/SKILL.md",
+      "type": "document",
+      "name": "using-git-worktrees SKILL.md",
+      "filePath": "skills/using-git-worktrees/SKILL.md",
+      "summary": "Skill documentation for using git worktrees to run parallel branches, isolate experiments, and enable multi-context development.",
+      "tags": ["docs", "git-worktrees", "skill", "git", "parallel"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/using-superpowers/manifest.yaml",
+      "type": "config",
+      "name": "using-superpowers manifest",
+      "filePath": "skills/using-superpowers/manifest.yaml",
+      "summary": "Minimal skill manifest for the using-superpowers skill about leveraging Archon capabilities fully.",
+      "tags": ["manifest", "skill", "superpowers", "archon", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/using-superpowers/SKILL.md",
+      "type": "document",
+      "name": "using-superpowers SKILL.md",
+      "filePath": "skills/using-superpowers/SKILL.md",
+      "summary": "Skill documentation for maximizing Archon's capabilities including skill stacking, agent orchestration, and harness utilization.",
+      "tags": ["docs", "superpowers", "skill", "archon", "orchestration"],
+      "complexity": "low"
+    },
+    {
+      "id": "config:skills/ux-interaction-design/manifest.yaml",
+      "type": "config",
+      "name": "ux-interaction-design manifest",
+      "filePath": "skills/ux-interaction-design/manifest.yaml",
+      "summary": "Skill manifest for the UX interaction design skill providing micro-interaction and motion design guidance.",
+      "tags": ["manifest", "skill", "ux", "interaction-design", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/ux-interaction-design/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ux-interaction-design examples)",
+      "filePath": "skills/ux-interaction-design/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    }
+  ],
+  "edges": [
+    {"source": "config:skills/systematic-debugging/manifest.yaml", "target": "document:skills/systematic-debugging/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/template-variables/manifest.yaml", "target": "document:skills/template-variables/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/template-variables/manifest.yaml", "target": "document:skills/template-variables/resources/variable-formats.md", "type": "configures", "weight": 0.6},
+    {"source": "document:skills/template-variables/SKILL.md", "target": "document:skills/template-variables/resources/variable-formats.md", "type": "documents", "weight": 0.5},
+    {"source": "config:skills/test-driven-development/manifest.yaml", "target": "document:skills/test-driven-development/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/ui-ux-designer/manifest.yaml", "target": "document:skills/ui-ux-designer/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/ui-visual-design/manifest.yaml", "target": "document:skills/ui-visual-design/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/using-git-worktrees/manifest.yaml", "target": "document:skills/using-git-worktrees/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/using-superpowers/manifest.yaml", "target": "document:skills/using-superpowers/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/ux-interaction-design/manifest.yaml", "target": "document:skills/ux-interaction-design/SKILL.md", "type": "configures", "weight": 0.6}
+  ]
+}

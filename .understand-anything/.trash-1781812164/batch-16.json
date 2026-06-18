@@ -1,0 +1,150 @@
+{
+  "batchIndex": 16,
+  "nodes": [
+    {
+      "id": "document:docs/creating-synapses.md",
+      "type": "document",
+      "name": "creating-synapses.md",
+      "filePath": "docs/creating-synapses.md",
+      "summary": "Comprehensive guide for creating Archon cognitive synapses covering synapse anatomy, core vs optional types, SYNAPSE.md authoring, manifest.yaml format, firing phase design, resources, validation, a step-by-step tutorial, best practices, and full examples for metacognition, security-awareness, and pattern-recognition synapses.",
+      "tags": ["synapses", "cognitive", "manifest", "firing-phases", "documentation"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:docs/faq.html",
+      "type": "file",
+      "name": "faq.html",
+      "filePath": "docs/faq.html",
+      "summary": "HTML documentation page for Archon FAQ, rendered from faq.md for web-based viewing.",
+      "tags": ["html", "faq", "documentation", "web"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/faq.md",
+      "type": "document",
+      "name": "faq.md",
+      "filePath": "docs/faq.md",
+      "summary": "Frequently asked questions for Archon covering general concepts, skills, bundles, pipelines, complexity router, knowledge sources, self-customization skills, prompt library, SDK, admin dashboard, contributing, guardrails engine, synapses, hook system, and pipeline engine for v2.0.",
+      "tags": ["faq", "reference", "skills", "pipelines", "documentation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/getting-started.html",
+      "type": "file",
+      "name": "getting-started.html",
+      "filePath": "docs/getting-started.html",
+      "summary": "HTML documentation page for getting started with Archon, rendered from getting-started.md for web-based viewing.",
+      "tags": ["html", "getting-started", "documentation", "web"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/getting-started.md",
+      "type": "document",
+      "name": "getting-started.md",
+      "filePath": "docs/getting-started.md",
+      "summary": "Getting started guide for Archon covering prerequisites, installation steps, creating your first skill using the skill factory or manually, using bundles and pipelines, knowledge sources, self-customization, SDK usage, next steps, and v2.0 features including guardrails and sequential thinking.",
+      "tags": ["getting-started", "installation", "skills", "bundles", "documentation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/guardrails.md",
+      "type": "document",
+      "name": "guardrails.md",
+      "filePath": "docs/guardrails.md",
+      "summary": "Archon v2.0 guardrails guide documenting the anti-rationalization synapse with 10 iron laws and forbidden phrases, hook system (pre_step, post_step, on_failure, on_deviation), the STOP-DOCUMENT-ASK-LOG deviation protocol, agent manifest guardrail authoring, and schema reference.",
+      "tags": ["guardrails", "anti-rationalization", "hooks", "deviation-protocol", "v2"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:docs/index.html",
+      "type": "file",
+      "name": "index.html",
+      "filePath": "docs/index.html",
+      "summary": "Documentation site entry point HTML file that redirects or serves as the root page for the Archon documentation. Minimal 13-line file.",
+      "tags": ["html", "index", "documentation", "entry-point"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:docs/integration-catalog.html",
+      "type": "file",
+      "name": "integration-catalog.html",
+      "filePath": "docs/integration-catalog.html",
+      "summary": "HTML documentation page for the Archon integration catalog, rendered from integration-catalog.md for web-based viewing.",
+      "tags": ["html", "integration-catalog", "mcp", "documentation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/integration-catalog.md",
+      "type": "document",
+      "name": "integration-catalog.md",
+      "filePath": "docs/integration-catalog.md",
+      "summary": "Guide for the Archon MCP integration catalog covering server entry format, required and optional fields, CLI commands for listing/searching/recommending/installing catalog entries, MCP config format for Claude Code, how recommendations work, adding custom servers, and troubleshooting.",
+      "tags": ["integration-catalog", "mcp", "cli", "servers", "documentation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/llms-txt.html",
+      "type": "file",
+      "name": "llms-txt.html",
+      "filePath": "docs/llms-txt.html",
+      "summary": "HTML documentation page for Archon's llms.txt feature, rendered from llms-txt.md for web-based viewing.",
+      "tags": ["html", "llms-txt", "documentation", "web"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/llms-txt.md",
+      "type": "document",
+      "name": "llms-txt.md",
+      "filePath": "docs/llms-txt.md",
+      "summary": "Documentation for Archon's llms.txt and llms-full.txt generation, explaining the standard, what each file contains, how to generate using CLI or standalone script, deployment locations, and validation.",
+      "tags": ["llms-txt", "documentation", "cli", "llm-integration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/pipeline-orchestration.md",
+      "type": "document",
+      "name": "pipeline-orchestration.md",
+      "filePath": "docs/pipeline-orchestration.md",
+      "summary": "Archon v2.0 pipeline orchestration guide covering running pipelines via CLI and trigger phrases, YAML format, state management with PipelineState, artifact validation, failure handling strategies (halt/skip/loop), resuming paused pipelines, and context curation between steps.",
+      "tags": ["pipeline-orchestration", "state-management", "artifact-validation", "v2", "documentation"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:docs/platform-guide.html",
+      "type": "file",
+      "name": "platform-guide.html",
+      "filePath": "docs/platform-guide.html",
+      "summary": "HTML documentation page for the Archon platform guide, rendered from platform-guide.md for web-based viewing.",
+      "tags": ["html", "platform-guide", "documentation", "web"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/platform-guide.md",
+      "type": "document",
+      "name": "platform-guide.md",
+      "filePath": "docs/platform-guide.md",
+      "summary": "Platform guide for Archon documenting the supported Claude Code platform, installation instructions, how the skill system works within Claude Code, verification steps, and the SDK as an alternative integration path.",
+      "tags": ["platform-guide", "claude-code", "installation", "sdk"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/sequential-thinking.md",
+      "type": "document",
+      "name": "sequential-thinking.md",
+      "filePath": "docs/sequential-thinking.md",
+      "summary": "Archon v2.0 sequential thinking guide covering the four phases (Decompose, Reason, Validate, Synthesize), THINKING block format rules, thinking trace schema, BrowseComp reasoning pattern (Detect/Hypothesize/Enumerate/Verify/Continue), complexity scaling, and pipeline integration.",
+      "tags": ["sequential-thinking", "reasoning", "thinking-trace", "v2", "documentation"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:docs/styles.css",
+      "type": "file",
+      "name": "styles.css",
+      "filePath": "docs/styles.css",
+      "summary": "CSS stylesheet for the Archon HTML documentation site, providing visual design, layout, typography, and component styling. Large stylesheet (1142 lines) covering all documentation page appearances.",
+      "tags": ["css", "styling", "documentation", "web-design"],
+      "complexity": "complex"
+    }
+  ],
+  "edges": []
+}

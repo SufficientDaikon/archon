@@ -1,0 +1,238 @@
+{
+  "batchIndex": 59,
+  "nodes": [
+    {
+      "id": "document:skills/ux-interaction-design/SKILL.md",
+      "type": "document",
+      "name": "ux-interaction-design SKILL.md",
+      "filePath": "skills/ux-interaction-design/SKILL.md",
+      "summary": "Extensive skill documentation for UX interaction design covering micro-interactions, animation principles, gesture patterns, state transitions, and feedback design.",
+      "tags": ["docs", "ux-interaction-design", "skill", "micro-interactions", "animation"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:skills/ux-interaction-design/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ux-interaction-design overrides)",
+      "filePath": "skills/ux-interaction-design/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/ux-interaction-design/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ux-interaction-design resources)",
+      "filePath": "skills/ux-interaction-design/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/ux-interaction-design/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ux-interaction-design tests)",
+      "filePath": "skills/ux-interaction-design/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/ux-research/manifest.yaml",
+      "type": "config",
+      "name": "ux-research manifest",
+      "filePath": "skills/ux-research/manifest.yaml",
+      "summary": "Skill manifest for the UX research skill providing user research methodologies and interview frameworks.",
+      "tags": ["manifest", "skill", "ux-research", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/ux-research/SKILL.md",
+      "type": "document",
+      "name": "ux-research SKILL.md",
+      "filePath": "skills/ux-research/SKILL.md",
+      "summary": "Skill documentation for conducting UX research including user interviews, usability testing, journey mapping, and persona development.",
+      "tags": ["docs", "ux-research", "skill", "user-research", "personas"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/ux-research/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ux-research examples)",
+      "filePath": "skills/ux-research/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/ux-research/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ux-research overrides)",
+      "filePath": "skills/ux-research/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/ux-research/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ux-research resources)",
+      "filePath": "skills/ux-research/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/ux-research/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ux-research tests)",
+      "filePath": "skills/ux-research/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/ux-test-suite/manifest.yaml",
+      "type": "config",
+      "name": "ux-test-suite manifest",
+      "filePath": "skills/ux-test-suite/manifest.yaml",
+      "summary": "Skill manifest for the UX test suite skill providing structured UX testing and accessibility audit workflows.",
+      "tags": ["manifest", "skill", "ux-test-suite", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/ux-test-suite/SKILL.md",
+      "type": "document",
+      "name": "ux-test-suite SKILL.md",
+      "filePath": "skills/ux-test-suite/SKILL.md",
+      "summary": "Extensive skill documentation for UX testing covering accessibility audits, usability heuristics, task-based testing, and WCAG compliance verification.",
+      "tags": ["docs", "ux-test-suite", "skill", "accessibility", "wcag"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:skills/ux-test-suite/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ux-test-suite examples)",
+      "filePath": "skills/ux-test-suite/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/ux-test-suite/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ux-test-suite overrides)",
+      "filePath": "skills/ux-test-suite/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/ux-test-suite/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ux-test-suite resources)",
+      "filePath": "skills/ux-test-suite/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/ux-test-suite/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (ux-test-suite tests)",
+      "filePath": "skills/ux-test-suite/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/ux-writer/manifest.yaml",
+      "type": "config",
+      "name": "ux-writer manifest",
+      "filePath": "skills/ux-writer/manifest.yaml",
+      "summary": "Skill manifest for the UX writer skill covering microcopy, content design, and product voice guidelines.",
+      "tags": ["manifest", "skill", "ux-writer", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/ux-writer/SKILL.md",
+      "type": "document",
+      "name": "ux-writer SKILL.md",
+      "filePath": "skills/ux-writer/SKILL.md",
+      "summary": "Comprehensive skill documentation for UX writing covering microcopy, onboarding flows, error messages, empty states, and content voice and tone guidelines.",
+      "tags": ["docs", "ux-writer", "skill", "microcopy", "content-design"],
+      "complexity": "high"
+    },
+    {
+      "id": "config:skills/vercel-react-best-practices/manifest.yaml",
+      "type": "config",
+      "name": "vercel-react-best-practices manifest",
+      "filePath": "skills/vercel-react-best-practices/manifest.yaml",
+      "summary": "Skill manifest for the Vercel + React best practices skill.",
+      "tags": ["manifest", "skill", "vercel", "react", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/vercel-react-best-practices/SKILL.md",
+      "type": "document",
+      "name": "vercel-react-best-practices SKILL.md",
+      "filePath": "skills/vercel-react-best-practices/SKILL.md",
+      "summary": "Skill documentation for React applications deployed on Vercel, covering ISR, edge functions, image optimization, and deployment configuration.",
+      "tags": ["docs", "vercel", "react", "skill", "deployment"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/vercel-react-best-practices/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (vercel-react-best-practices examples)",
+      "filePath": "skills/vercel-react-best-practices/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/vercel-react-best-practices/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (vercel-react-best-practices overrides)",
+      "filePath": "skills/vercel-react-best-practices/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/vercel-react-best-practices/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (vercel-react-best-practices resources)",
+      "filePath": "skills/vercel-react-best-practices/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/vercel-react-best-practices/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (vercel-react-best-practices tests)",
+      "filePath": "skills/vercel-react-best-practices/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/verification-before-completion/manifest.yaml",
+      "type": "config",
+      "name": "verification-before-completion manifest",
+      "filePath": "skills/verification-before-completion/manifest.yaml",
+      "summary": "Minimal skill manifest for the verification-before-completion skill enforcing output validation before declaring tasks done.",
+      "tags": ["manifest", "skill", "verification", "yaml", "config"],
+      "complexity": "low"
+    }
+  ],
+  "edges": [
+    {"source": "config:skills/ux-interaction-design/manifest.yaml", "target": "document:skills/ux-interaction-design/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/ux-research/manifest.yaml", "target": "document:skills/ux-research/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/ux-test-suite/manifest.yaml", "target": "document:skills/ux-test-suite/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/ux-writer/manifest.yaml", "target": "document:skills/ux-writer/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/vercel-react-best-practices/manifest.yaml", "target": "document:skills/vercel-react-best-practices/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/verification-before-completion/manifest.yaml", "target": "document:skills/verification-before-completion/SKILL.md", "type": "configures", "weight": 0.6}
+  ]
+}

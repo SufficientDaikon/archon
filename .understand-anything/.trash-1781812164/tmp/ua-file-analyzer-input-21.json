@@ -1,0 +1,5 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [{"path": "skills/adaptive-teacher/references/adaptive-learning.md", "language": "markdown", "sizeLines": 312, "fileCategory": "docs"}, {"path": "skills/adaptive-teacher/references/arabic-translation.md", "language": "markdown", "sizeLines": 473, "fileCategory": "docs"}, {"path": "skills/adaptive-teacher/references/reverse-prompting.md", "language": "markdown", "sizeLines": 368, "fileCategory": "docs"}, {"path": "skills/adaptive-teacher/references/teaching-techniques.md", "language": "markdown", "sizeLines": 1306, "fileCategory": "docs"}],
+  "batchImportData": {"skills/adaptive-teacher/references/adaptive-learning.md": [], "skills/adaptive-teacher/references/arabic-translation.md": [], "skills/adaptive-teacher/references/reverse-prompting.md": [], "skills/adaptive-teacher/references/teaching-techniques.md": []}
+}
