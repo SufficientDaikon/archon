@@ -1,0 +1,5 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [{"path": "batch-runs/google-adk-improvements/continue.md", "language": "markdown", "sizeLines": 134, "fileCategory": "docs"}, {"path": "batch-runs/google-adk-improvements/handoff-template.md", "language": "markdown", "sizeLines": 37, "fileCategory": "docs"}, {"path": "batch-runs/google-adk-improvements/state.yaml", "language": "yaml", "sizeLines": 209, "fileCategory": "config"}],
+  "batchImportData": {"batch-runs/google-adk-improvements/continue.md": [], "batch-runs/google-adk-improvements/handoff-template.md": [], "batch-runs/google-adk-improvements/state.yaml": []}
+}

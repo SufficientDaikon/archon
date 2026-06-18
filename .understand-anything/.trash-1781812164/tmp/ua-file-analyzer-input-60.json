@@ -1,0 +1,31 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [
+    {"path": "skills/verification-before-completion/SKILL.md", "language": "markdown", "sizeLines": 84, "fileCategory": "docs"},
+    {"path": "skills/vitest-unit-patterns/manifest.yaml", "language": "yaml", "sizeLines": 32, "fileCategory": "config"},
+    {"path": "skills/vitest-unit-patterns/resources/vitest-reference.md", "language": "markdown", "sizeLines": 727, "fileCategory": "docs"},
+    {"path": "skills/vitest-unit-patterns/SKILL.md", "language": "markdown", "sizeLines": 141, "fileCategory": "docs"},
+    {"path": "skills/web-design-guidelines/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/web-design-guidelines/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/web-design-guidelines/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/web-design-guidelines/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/web-design-guidelines/SKILL.md", "language": "markdown", "sizeLines": 39, "fileCategory": "docs"},
+    {"path": "skills/web-design-guidelines/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/webapp-testing/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/webapp-testing/examples/console_logging.py", "language": "python", "sizeLines": 34, "fileCategory": "code"},
+    {"path": "skills/webapp-testing/examples/element_discovery.py", "language": "python", "sizeLines": 39, "fileCategory": "code"},
+    {"path": "skills/webapp-testing/examples/static_html_automation.py", "language": "python", "sizeLines": 32, "fileCategory": "code"},
+    {"path": "skills/webapp-testing/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/webapp-testing/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/webapp-testing/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/webapp-testing/resources/with_server.py", "language": "python", "sizeLines": 105, "fileCategory": "code"},
+    {"path": "skills/webapp-testing/SKILL.md", "language": "markdown", "sizeLines": 95, "fileCategory": "docs"},
+    {"path": "skills/webapp-testing/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/white-label-config/manifest.yaml", "language": "yaml", "sizeLines": 30, "fileCategory": "config"},
+    {"path": "skills/white-label-config/resources/config-patterns.md", "language": "markdown", "sizeLines": 189, "fileCategory": "docs"},
+    {"path": "skills/white-label-config/SKILL.md", "language": "markdown", "sizeLines": 107, "fileCategory": "docs"},
+    {"path": "skills/windows-error-debugger/manifest.yaml", "language": "yaml", "sizeLines": 47, "fileCategory": "config"},
+    {"path": "skills/windows-error-debugger/SKILL.md", "language": "markdown", "sizeLines": 340, "fileCategory": "docs"}
+  ],
+  "batchImportData": {}
+}

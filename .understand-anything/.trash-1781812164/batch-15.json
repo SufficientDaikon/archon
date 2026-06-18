@@ -1,0 +1,186 @@
+{
+  "batchIndex": 15,
+  "nodes": [
+    {
+      "id": "document:docs/AUDIT_REPORT.md",
+      "type": "document",
+      "name": "AUDIT_REPORT.md",
+      "filePath": "docs/AUDIT_REPORT.md",
+      "summary": "Adversarial code audit report for the Archon Synapse Engine using the STRIKE protocol, cataloging blockers, major, and minor issues across safety, types, resources, invariants, coverage, efficiency, error handling, documentation, edge cases, and blast radius. Includes a verdict and prioritized findings.",
+      "tags": ["audit", "synapse-engine", "strike-protocol", "code-quality", "thread-safety"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/DDE-METHODOLOGY.md",
+      "type": "document",
+      "name": "DDE-METHODOLOGY.md",
+      "filePath": "docs/DDE-METHODOLOGY.md",
+      "summary": "Documents the Dissection-Driven Enhancement (DDE) methodology used by Archon to systematically analyze and improve skills and pipelines through an 8-step loop. Covers stages from dissection through composition with quality gates and examples.",
+      "tags": ["dde-methodology", "skill-enhancement", "quality-gates", "pipeline", "documentation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "docs/README.md",
+      "summary": "Index and navigation guide for all Archon documentation pages, covering getting started, component creation guides, v2.0 guides, and reference material. Includes quick start instructions and links to HTML documentation.",
+      "tags": ["documentation", "index", "getting-started", "readme", "navigation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/REMEDIATION_PLAN.md",
+      "type": "document",
+      "name": "REMEDIATION_PLAN.md",
+      "filePath": "docs/REMEDIATION_PLAN.md",
+      "summary": "Detailed remediation plan for fixing all blocker and major issues found in the Archon Synapse Engine audit, with code fixes, implementation schedule, verification checklist, and timeline. Covers thread-safety, exception handling, async/sync validation, and integration issues.",
+      "tags": ["remediation", "synapse-engine", "bug-fixes", "thread-safety", "implementation-plan"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/SYNAPSES_EXECUTABLE.md",
+      "type": "document",
+      "name": "SYNAPSES_EXECUTABLE.md",
+      "filePath": "docs/SYNAPSES_EXECUTABLE.md",
+      "summary": "Documentation for the executable synapses architecture in Archon v2, explaining the SynapseEngine, individual synapse types (anti-rationalization, security-awareness, metacognition), policy engine integration, and extension guide.",
+      "tags": ["synapses", "executable", "architecture", "policy-engine", "v2"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/agent-cards.html",
+      "type": "file",
+      "name": "agent-cards.html",
+      "filePath": "docs/agent-cards.html",
+      "summary": "HTML documentation page for Archon agent cards, rendered from the corresponding markdown source for web-based viewing. Contains the full agent cards reference in formatted HTML layout.",
+      "tags": ["html", "documentation", "agent-cards", "web"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/agent-cards.md",
+      "type": "document",
+      "name": "agent-cards.md",
+      "filePath": "docs/agent-cards.md",
+      "summary": "Guide to Archon agent cards covering the card schema, example card definition, CLI commands for generating and validating agent-cards.json, and programmatic usage in Python and JavaScript. Explains how to add cards to agents.",
+      "tags": ["agent-cards", "a2a", "cli", "schema", "documentation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/architecture.html",
+      "type": "file",
+      "name": "architecture.html",
+      "filePath": "docs/architecture.html",
+      "summary": "HTML documentation page for Archon's 6-layer architecture, rendered from the architecture.md source for web-based presentation. Contains full architecture diagrams and explanations in formatted HTML.",
+      "tags": ["html", "architecture", "documentation", "web"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/architecture.md",
+      "type": "document",
+      "name": "architecture.md",
+      "filePath": "docs/architecture.md",
+      "summary": "Comprehensive documentation of the Archon v3.0 six-layer architecture (Bootstrap/Hooks, Agent, Skill, Pipeline, Artifact, Runtime Contracts), covering data flow, synapse types, DDE pipeline framework, session lifecycle, MCP trust routing, and v3 schemas.",
+      "tags": ["architecture", "v3", "layers", "pipeline", "synapses"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:docs/cli-guide.html",
+      "type": "file",
+      "name": "cli-guide.html",
+      "filePath": "docs/cli-guide.html",
+      "summary": "HTML documentation page for the Archon CLI guide, rendered from the cli-guide.md source. Large HTML document covering all CLI commands and usage patterns.",
+      "tags": ["html", "cli", "documentation", "web"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/cli-guide.md",
+      "type": "document",
+      "name": "cli-guide.md",
+      "filePath": "docs/cli-guide.md",
+      "summary": "Comprehensive CLI reference guide for Archon covering all commands (init, install, uninstall, doctor, validate, list, search, info, pipeline, update, migrate, admin, config), global flags, exit codes, configuration, platform detection, JSON output, shell completions, and common workflows.",
+      "tags": ["cli", "reference", "commands", "workflow", "documentation"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:docs/creating-agents.html",
+      "type": "file",
+      "name": "creating-agents.html",
+      "filePath": "docs/creating-agents.html",
+      "summary": "HTML documentation page for creating Archon agents, rendered from creating-agents.md for web-based viewing.",
+      "tags": ["html", "agents", "documentation", "web"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/creating-agents.md",
+      "type": "document",
+      "name": "creating-agents.md",
+      "filePath": "docs/creating-agents.md",
+      "summary": "Guide for creating Archon agents covering agent structure, manifest definition, AGENT.md authoring, validation, the routing agent pattern, existing agents reference, and v2.0 guardrails enforcement with severity levels and the anti-rationalization synapse.",
+      "tags": ["agents", "manifest", "guardrails", "routing-agent", "documentation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/creating-bundles.html",
+      "type": "file",
+      "name": "creating-bundles.html",
+      "filePath": "docs/creating-bundles.html",
+      "summary": "HTML documentation page for creating Archon bundles, rendered from creating-bundles.md for web-based viewing.",
+      "tags": ["html", "bundles", "documentation", "web"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/creating-bundles.md",
+      "type": "document",
+      "name": "creating-bundles.md",
+      "filePath": "docs/creating-bundles.md",
+      "summary": "Guide for creating Archon skill bundles covering bundle structure, bundle.yaml definition, meta-skill creation, shared resources, and validation. Includes existing bundles reference.",
+      "tags": ["bundles", "skills", "manifest", "meta-skill", "documentation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:docs/creating-pipelines.html",
+      "type": "file",
+      "name": "creating-pipelines.html",
+      "filePath": "docs/creating-pipelines.html",
+      "summary": "HTML documentation page for creating Archon pipelines, rendered from creating-pipelines.md for web-based viewing.",
+      "tags": ["html", "pipelines", "documentation", "web"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/creating-pipelines.md",
+      "type": "document",
+      "name": "creating-pipelines.md",
+      "filePath": "docs/creating-pipelines.md",
+      "summary": "Guide for creating Archon pipelines covering pipeline format, complexity router pre-step, step configuration options (on-failure, input references), existing pipelines, and v2.0 pipeline execution engine with state machine, persistence, artifact validation, and CLI commands.",
+      "tags": ["pipelines", "yaml", "state-machine", "artifact-validation", "documentation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/creating-skills.html",
+      "type": "file",
+      "name": "creating-skills.html",
+      "filePath": "docs/creating-skills.html",
+      "summary": "HTML documentation page for creating Archon skills, rendered from creating-skills.md for web-based viewing.",
+      "tags": ["html", "skills", "documentation", "web"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/creating-skills.md",
+      "type": "document",
+      "name": "creating-skills.md",
+      "filePath": "docs/creating-skills.md",
+      "summary": "Guide for creating Archon skills covering skill anatomy, manifest.yaml authoring, SKILL.md sections (identity, when to use, workflow, rules, output format, handoff), optional resources, test writing, validation, self-customization skills, and the generator tool pattern.",
+      "tags": ["skills", "manifest", "skill-anatomy", "documentation", "self-customization"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/creating-synapses.html",
+      "type": "file",
+      "name": "creating-synapses.html",
+      "filePath": "docs/creating-synapses.html",
+      "summary": "HTML documentation page for creating Archon synapses, rendered from creating-synapses.md for web-based viewing. Large comprehensive HTML document.",
+      "tags": ["html", "synapses", "documentation", "web"],
+      "complexity": "complex"
+    }
+  ],
+  "edges": []
+}

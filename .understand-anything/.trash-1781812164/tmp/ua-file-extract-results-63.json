@@ -1,0 +1,5133 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "synapses/pattern-recognition/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 128,
+      "nonEmptyLines": 99,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "synapse-type",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "firing-phases",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 24
+        },
+        {
+          "heading": "pattern-registry",
+          "level": 1,
+          "line": 30
+        },
+        {
+          "heading": "related-synapses",
+          "level": 1,
+          "line": 115
+        },
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 119
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "synapses/pattern-recognition/resources/detection-heuristics.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 93,
+      "nonEmptyLines": 71,
+      "sections": [
+        {
+          "heading": "Detection Heuristics — Confidence Scoring & False Positive Prevention",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Confidence Levels",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "STRONG (auto-surface)",
+          "level": 3,
+          "line": 5
+        },
+        {
+          "heading": "PROBABLE (auto-surface)",
+          "level": 3,
+          "line": 10
+        },
+        {
+          "heading": "WEAK (accumulate)",
+          "level": 3,
+          "line": 15
+        },
+        {
+          "heading": "False Positive Prevention",
+          "level": 2,
+          "line": 22
+        },
+        {
+          "heading": "Rule 1: Context Matters",
+          "level": 3,
+          "line": 24
+        },
+        {
+          "heading": "Rule 2: File Type Awareness",
+          "level": 3,
+          "line": 30
+        },
+        {
+          "heading": "Rule 3: Framework Self-Reference",
+          "level": 3,
+          "line": 39
+        },
+        {
+          "heading": "Rule 4: Import-Only Detection",
+          "level": 3,
+          "line": 43
+        },
+        {
+          "heading": "Rule 5: Comment/String Exclusion",
+          "level": 3,
+          "line": 48
+        },
+        {
+          "heading": "Detection Caps",
+          "level": 2,
+          "line": 55
+        },
+        {
+          "heading": "Promotion Rules",
+          "level": 2,
+          "line": 66
+        },
+        {
+          "heading": "Edge Cases",
+          "level": 2,
+          "line": 77
+        },
+        {
+          "heading": "Multi-Pattern Files",
+          "level": 3,
+          "line": 79
+        },
+        {
+          "heading": "Partial Pattern Matches",
+          "level": 3,
+          "line": 85
+        },
+        {
+          "heading": "Generated/Vendored Code",
+          "level": 3,
+          "line": 91
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 17
+      }
+    },
+    {
+      "path": "synapses/pattern-recognition/resources/pattern-registry.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 256,
+      "nonEmptyLines": 186,
+      "sections": [
+        {
+          "heading": "Pattern Registry — Complete Signature Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Plugin/Registry Pattern → `plugin-system`",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Template Variables → `template-variables`",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "Fluent Builder → `fluent-builder`",
+          "level": 2,
+          "line": 38
+        },
+        {
+          "heading": "Guard Chain / Middleware → `guard-chain`",
+          "level": 2,
+          "line": 57
+        },
+        {
+          "heading": "Singleton → `singleton-patterns`",
+          "level": 2,
+          "line": 74
+        },
+        {
+          "heading": "Async Side Effects → `async-side-effects`",
+          "level": 2,
+          "line": 91
+        },
+        {
+          "heading": "Prisma ORM → `prisma-orm-patterns`",
+          "level": 2,
+          "line": 111
+        },
+        {
+          "heading": "Event Webhooks → `event-webhooks`",
+          "level": 2,
+          "line": 121
+        },
+        {
+          "heading": "Lazy Import → `lazy-import-patterns`",
+          "level": 2,
+          "line": 131
+        },
+        {
+          "heading": "Server Components → `server-component-patterns`",
+          "level": 2,
+          "line": 141
+        },
+        {
+          "heading": "Content Dedup → `content-deduplication`",
+          "level": 2,
+          "line": 151
+        },
+        {
+          "heading": "Structured Logging → `structured-logging`",
+          "level": 2,
+          "line": 161
+        },
+        {
+          "heading": "Docker Production → `docker-production-build`",
+          "level": 2,
+          "line": 171
+        },
+        {
+          "heading": "Vitest Testing → `vitest-unit-patterns`",
+          "level": 2,
+          "line": 181
+        },
+        {
+          "heading": "i18n → `i18n-strategy`",
+          "level": 2,
+          "line": 190
+        },
+        {
+          "heading": "Content Moderation → `content-moderation-pipeline`",
+          "level": 2,
+          "line": 200
+        },
+        {
+          "heading": "White Label → `white-label-config`",
+          "level": 2,
+          "line": 210
+        },
+        {
+          "heading": "YAML Prompts → `yaml-prompt-library`",
+          "level": 2,
+          "line": 220
+        },
+        {
+          "heading": "SDK-beside-App → `sdk-beside-app`",
+          "level": 2,
+          "line": 230
+        },
+        {
+          "heading": "Error Architecture → `error-handling-architecture`",
+          "level": 2,
+          "line": 240
+        },
+        {
+          "heading": "E2E Testing → `e2e-testing-patterns`",
+          "level": 2,
+          "line": 250
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 22
+      }
+    },
+    {
+      "path": "synapses/pattern-recognition/SYNAPSE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 154,
+      "nonEmptyLines": 113,
+      "sections": [
+        {
+          "heading": "Pattern Recognition Synapse",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "When Active",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "Firing Phases",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "Phase 1 — DETECT (Active-Fire)",
+          "level": 3,
+          "line": 23
+        },
+        {
+          "heading": "Phase 2 — SUGGEST (Active-Fire)",
+          "level": 3,
+          "line": 62
+        },
+        {
+          "heading": "Phase 3 — APPLY (Active-Fire)",
+          "level": 3,
+          "line": 85
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 107
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 109
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 117
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 127
+        },
+        {
+          "heading": "Integration",
+          "level": 2,
+          "line": 141
+        },
+        {
+          "heading": "Resources",
+          "level": 2,
+          "line": 149
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    },
+    {
+      "path": "synapses/security-awareness/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 46,
+      "nonEmptyLines": 39,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "synapse-type",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "firing-phases",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "activation",
+          "level": 1,
+          "line": 22
+        },
+        {
+          "heading": "related-skills",
+          "level": 1,
+          "line": 32
+        },
+        {
+          "heading": "related-agent",
+          "level": 1,
+          "line": 38
+        },
+        {
+          "heading": "owasp-coverage",
+          "level": 1,
+          "line": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "synapses/security-awareness/SYNAPSE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 75,
+      "nonEmptyLines": 51,
+      "sections": [
+        {
+          "heading": "Security Awareness Synapse",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "When Active",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "Firing Phases",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "Phase 1 — SCAN (During Code Production)",
+          "level": 3,
+          "line": 22
+        },
+        {
+          "heading": "Phase 2 — FLAG (Post-Production Review)",
+          "level": 3,
+          "line": 48
+        },
+        {
+          "heading": "Integration",
+          "level": 2,
+          "line": 64
+        },
+        {
+          "heading": "Output",
+          "level": 2,
+          "line": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "synapses/sequential-thinking/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 49,
+      "nonEmptyLines": 40,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "synapse-type",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "firing-phases",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 28
+        },
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "synapses/sequential-thinking/SYNAPSE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 306,
+      "nonEmptyLines": 236,
+      "sections": [
+        {
+          "heading": "Sequential Thinking Synapse",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "When Active",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Firing Phases",
+          "level": 2,
+          "line": 22
+        },
+        {
+          "heading": "Phase 1 — DECOMPOSE (Pre-Task)",
+          "level": 3,
+          "line": 24
+        },
+        {
+          "heading": "Phase 2 — REASON (Per-Step)",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "Phase 3 — VALIDATE (Per-Step)",
+          "level": 3,
+          "line": 99
+        },
+        {
+          "heading": "Phase 4 — SYNTHESIZE (Post-Task)",
+          "level": 3,
+          "line": 130
+        },
+        {
+          "heading": "BrowseComp Reasoning Pattern",
+          "level": 2,
+          "line": 161
+        },
+        {
+          "heading": "Stuck-Loop Detection",
+          "level": 2,
+          "line": 175
+        },
+        {
+          "heading": "Decomposition Patterns",
+          "level": 2,
+          "line": 189
+        },
+        {
+          "heading": "Feature Implementation",
+          "level": 3,
+          "line": 191
+        },
+        {
+          "heading": "Bug Investigation",
+          "level": 3,
+          "line": 202
+        },
+        {
+          "heading": "Code Review",
+          "level": 3,
+          "line": 213
+        },
+        {
+          "heading": "Refactoring",
+          "level": 3,
+          "line": 223
+        },
+        {
+          "heading": "Reasoning Templates",
+          "level": 2,
+          "line": 235
+        },
+        {
+          "heading": "Decision Template",
+          "level": 3,
+          "line": 237
+        },
+        {
+          "heading": "Investigation Template",
+          "level": 3,
+          "line": 252
+        },
+        {
+          "heading": "Error Analysis Template",
+          "level": 3,
+          "line": 264
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 282
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 284
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 291
+        },
+        {
+          "heading": "Resources",
+          "level": 2,
+          "line": 300
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 23
+      }
+    },
+    {
+      "path": "test_file_ops.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 250,
+      "nonEmptyLines": 201,
+      "functions": [
+        {
+          "name": "_read_file_lines",
+          "startLine": 14,
+          "endLine": 28,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "_detect_language",
+          "startLine": 30,
+          "endLine": 42,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "_structure_python",
+          "startLine": 44,
+          "endLine": 76,
+          "params": [
+            "lines"
+          ]
+        },
+        {
+          "name": "_atomic_write",
+          "startLine": 78,
+          "endLine": 98,
+          "params": [
+            "path",
+            "lines",
+            "encoding",
+            "line_ending"
+          ]
+        },
+        {
+          "name": "_content_hash",
+          "startLine": 100,
+          "endLine": 103,
+          "params": [
+            "lines"
+          ]
+        },
+        {
+          "name": "_unified_diff",
+          "startLine": 105,
+          "endLine": 115,
+          "params": [
+            "original",
+            "modified"
+          ]
+        },
+        {
+          "name": "test_encoding_detection",
+          "startLine": 119,
+          "endLine": 134,
+          "params": []
+        },
+        {
+          "name": "test_language_detection",
+          "startLine": 136,
+          "endLine": 150,
+          "params": []
+        },
+        {
+          "name": "test_python_structure",
+          "startLine": 152,
+          "endLine": 179,
+          "params": []
+        },
+        {
+          "name": "test_atomic_write",
+          "startLine": 181,
+          "endLine": 201,
+          "params": []
+        },
+        {
+          "name": "test_content_hash",
+          "startLine": 203,
+          "endLine": 219,
+          "params": []
+        },
+        {
+          "name": "test_unified_diff",
+          "startLine": 221,
+          "endLine": 232,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_read_file_lines",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "_detect_language",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "_structure_python",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "_atomic_write",
+          "line": 78,
+          "isDefault": false
+        },
+        {
+          "name": "_content_hash",
+          "line": 100,
+          "isDefault": false
+        },
+        {
+          "name": "_unified_diff",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "test_encoding_detection",
+          "line": 119,
+          "isDefault": false
+        },
+        {
+          "name": "test_language_detection",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "test_python_structure",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "test_atomic_write",
+          "line": 181,
+          "isDefault": false
+        },
+        {
+          "name": "test_content_hash",
+          "line": 203,
+          "isDefault": false
+        },
+        {
+          "name": "test_unified_diff",
+          "line": 221,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_read_file_lines",
+          "callee": "Path",
+          "lineNumber": 16
+        },
+        {
+          "caller": "_read_file_lines",
+          "callee": "p.read_bytes",
+          "lineNumber": 17
+        },
+        {
+          "caller": "_read_file_lines",
+          "callee": "raw.decode",
+          "lineNumber": 21
+        },
+        {
+          "caller": "_read_file_lines",
+          "callee": "raw.decode",
+          "lineNumber": 24
+        },
+        {
+          "caller": "_read_file_lines",
+          "callee": "content.splitlines",
+          "lineNumber": 27
+        },
+        {
+          "caller": "_detect_language",
+          "callee": "ext_map.get",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_detect_language",
+          "callee": "Path",
+          "lineNumber": 42
+        },
+        {
+          "caller": "_structure_python",
+          "callee": "enumerate",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_structure_python",
+          "callee": "line.lstrip",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_structure_python",
+          "callee": "stripped.startswith",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_structure_python",
+          "callee": "re.match",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_structure_python",
+          "callee": "outline.append",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_structure_python",
+          "callee": "match.group",
+          "lineNumber": 56
+        },
+        {
+          "caller": "_structure_python",
+          "callee": "len",
+          "lineNumber": 58
+        },
+        {
+          "caller": "_structure_python",
+          "callee": "len",
+          "lineNumber": 58
+        },
+        {
+          "caller": "_structure_python",
+          "callee": "stripped.startswith",
+          "lineNumber": 61
+        },
+        {
+          "caller": "_structure_python",
+          "callee": "re.match",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_structure_python",
+          "callee": "len",
+          "lineNumber": 64
+        },
+        {
+          "caller": "_structure_python",
+          "callee": "len",
+          "lineNumber": 64
+        },
+        {
+          "caller": "_structure_python",
+          "callee": "outline.append",
+          "lineNumber": 65
+        },
+        {
+          "caller": "_structure_python",
+          "callee": "match.group",
+          "lineNumber": 67
+        },
+        {
+          "caller": "_structure_python",
+          "callee": "len",
+          "lineNumber": 75
+        },
+        {
+          "caller": "_atomic_write",
+          "callee": "Path",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_atomic_write",
+          "callee": "line_ending.join",
+          "lineNumber": 83
+        },
+        {
+          "caller": "_atomic_write",
+          "callee": "tempfile.NamedTemporaryFile",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_atomic_write",
+          "callee": "tmp.write",
+          "lineNumber": 91
+        },
+        {
+          "caller": "_atomic_write",
+          "callee": "os.replace",
+          "lineNumber": 95
+        },
+        {
+          "caller": "_atomic_write",
+          "callee": "Path(tmp_path).unlink",
+          "lineNumber": 97
+        },
+        {
+          "caller": "_atomic_write",
+          "callee": "Path",
+          "lineNumber": 97
+        },
+        {
+          "caller": "_content_hash",
+          "callee": "'\\n'.join",
+          "lineNumber": 102
+        },
+        {
+          "caller": "_content_hash",
+          "callee": "sha256(content.encode()).hexdigest",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_content_hash",
+          "callee": "sha256",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_content_hash",
+          "callee": "content.encode",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_unified_diff",
+          "callee": "difflib.unified_diff",
+          "lineNumber": 108
+        },
+        {
+          "caller": "_unified_diff",
+          "callee": "'\\n'.join",
+          "lineNumber": 115
+        },
+        {
+          "caller": "test_encoding_detection",
+          "callee": "print",
+          "lineNumber": 121
+        },
+        {
+          "caller": "test_encoding_detection",
+          "callee": "tempfile.NamedTemporaryFile",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_encoding_detection",
+          "callee": "f.write",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_encoding_detection",
+          "callee": "_read_file_lines",
+          "lineNumber": 128
+        },
+        {
+          "caller": "test_encoding_detection",
+          "callee": "repr",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_encoding_detection",
+          "callee": "print",
+          "lineNumber": 132
+        },
+        {
+          "caller": "test_encoding_detection",
+          "callee": "repr",
+          "lineNumber": 132
+        },
+        {
+          "caller": "test_encoding_detection",
+          "callee": "Path(fname).unlink",
+          "lineNumber": 134
+        },
+        {
+          "caller": "test_encoding_detection",
+          "callee": "Path",
+          "lineNumber": 134
+        },
+        {
+          "caller": "test_language_detection",
+          "callee": "print",
+          "lineNumber": 138
+        },
+        {
+          "caller": "test_language_detection",
+          "callee": "_detect_language",
+          "lineNumber": 148
+        },
+        {
+          "caller": "test_language_detection",
+          "callee": "print",
+          "lineNumber": 150
+        },
+        {
+          "caller": "test_python_structure",
+          "callee": "print",
+          "lineNumber": 154
+        },
+        {
+          "caller": "test_python_structure",
+          "callee": "py_code.splitlines",
+          "lineNumber": 167
+        },
+        {
+          "caller": "test_python_structure",
+          "callee": "_structure_python",
+          "lineNumber": 168
+        },
+        {
+          "caller": "test_python_structure",
+          "callee": "any",
+          "lineNumber": 174
+        },
+        {
+          "caller": "test_python_structure",
+          "callee": "any",
+          "lineNumber": 175
+        },
+        {
+          "caller": "test_python_structure",
+          "callee": "print",
+          "lineNumber": 177
+        },
+        {
+          "caller": "test_python_structure",
+          "callee": "len",
+          "lineNumber": 177
+        },
+        {
+          "caller": "test_python_structure",
+          "callee": "print",
+          "lineNumber": 179
+        },
+        {
+          "caller": "test_atomic_write",
+          "callee": "print",
+          "lineNumber": 183
+        },
+        {
+          "caller": "test_atomic_write",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 185
+        },
+        {
+          "caller": "test_atomic_write",
+          "callee": "Path",
+          "lineNumber": 186
+        },
+        {
+          "caller": "test_atomic_write",
+          "callee": "_atomic_write",
+          "lineNumber": 189
+        },
+        {
+          "caller": "test_atomic_write",
+          "callee": "str",
+          "lineNumber": 189
+        },
+        {
+          "caller": "test_atomic_write",
+          "callee": "fpath.exists",
+          "lineNumber": 191
+        },
+        {
+          "caller": "test_atomic_write",
+          "callee": "fpath.read_text",
+          "lineNumber": 192
+        },
+        {
+          "caller": "test_atomic_write",
+          "callee": "print",
+          "lineNumber": 194
+        },
+        {
+          "caller": "test_atomic_write",
+          "callee": "_atomic_write",
+          "lineNumber": 197
+        },
+        {
+          "caller": "test_atomic_write",
+          "callee": "str",
+          "lineNumber": 197
+        },
+        {
+          "caller": "test_atomic_write",
+          "callee": "fpath.read_text",
+          "lineNumber": 199
+        },
+        {
+          "caller": "test_atomic_write",
+          "callee": "print",
+          "lineNumber": 201
+        },
+        {
+          "caller": "test_content_hash",
+          "callee": "print",
+          "lineNumber": 205
+        },
+        {
+          "caller": "test_content_hash",
+          "callee": "_content_hash",
+          "lineNumber": 211
+        },
+        {
+          "caller": "test_content_hash",
+          "callee": "_content_hash",
+          "lineNumber": 212
+        },
+        {
+          "caller": "test_content_hash",
+          "callee": "_content_hash",
+          "lineNumber": 213
+        },
+        {
+          "caller": "test_content_hash",
+          "callee": "len",
+          "lineNumber": 217
+        },
+        {
+          "caller": "test_content_hash",
+          "callee": "print",
+          "lineNumber": 219
+        },
+        {
+          "caller": "test_unified_diff",
+          "callee": "print",
+          "lineNumber": 223
+        },
+        {
+          "caller": "test_unified_diff",
+          "callee": "_unified_diff",
+          "lineNumber": 228
+        },
+        {
+          "caller": "test_unified_diff",
+          "callee": "print",
+          "lineNumber": 232
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 12,
+        "functionCount": 12,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/conftest.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 37,
+      "functions": [
+        {
+          "name": "all_synapses",
+          "startLine": 22,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "halt_expected",
+          "startLine": 38,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "allow_expected",
+          "startLine": 44,
+          "endLine": 46,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "all_synapses",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "halt_expected",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "allow_expected",
+          "line": 43,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/stress/test_stress.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 234,
+      "nonEmptyLines": 181,
+      "classes": [
+        {
+          "name": "TestLargePipeline",
+          "startLine": 22,
+          "endLine": 61,
+          "methods": [
+            "test_20_step_pipeline"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestCascadingFailures",
+          "startLine": 64,
+          "endLine": 113,
+          "methods": [
+            "test_failure_at_step_5_halts"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestStateCorruption",
+          "startLine": 116,
+          "endLine": 147,
+          "methods": [
+            "test_corrupted_json_returns_none",
+            "test_empty_json_returns_none",
+            "test_partial_json_returns_none"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestArtifactEdgeCases",
+          "startLine": 150,
+          "endLine": 201,
+          "methods": [
+            "test_empty_file",
+            "test_very_large_file",
+            "test_binary_file",
+            "test_nested_glob_pattern",
+            "test_unicode_content"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestHealthScoreEdgeCases",
+          "startLine": 204,
+          "endLine": 230,
+          "methods": [
+            "test_many_critical_deviations",
+            "test_mixed_severity_deviations",
+            "test_failed_steps_reduce_health"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestLargePipeline",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "TestCascadingFailures",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "TestStateCorruption",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "TestArtifactEdgeCases",
+          "line": 150,
+          "isDefault": false
+        },
+        {
+          "name": "TestHealthScoreEdgeCases",
+          "line": 204,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_20_step_pipeline",
+          "callee": "range",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_20_step_pipeline",
+          "callee": "PipelineDefinition",
+          "lineNumber": 35
+        },
+        {
+          "caller": "handler",
+          "callee": "step_config.get",
+          "lineNumber": 48
+        },
+        {
+          "caller": "handler",
+          "callee": "executed.append",
+          "lineNumber": 49
+        },
+        {
+          "caller": "handler",
+          "callee": "StepResult",
+          "lineNumber": 50
+        },
+        {
+          "caller": "test_20_step_pipeline",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 52
+        },
+        {
+          "caller": "test_20_step_pipeline",
+          "callee": "PipelineExecutor",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_20_step_pipeline",
+          "callee": "Path",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_20_step_pipeline",
+          "callee": "executor.execute",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_20_step_pipeline",
+          "callee": "len",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_failure_at_step_5_halts",
+          "callee": "range",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_failure_at_step_5_halts",
+          "callee": "PipelineDefinition",
+          "lineNumber": 77
+        },
+        {
+          "caller": "failing_at_5",
+          "callee": "step_config.get",
+          "lineNumber": 92
+        },
+        {
+          "caller": "failing_at_5",
+          "callee": "StepResult",
+          "lineNumber": 94
+        },
+        {
+          "caller": "failing_at_5",
+          "callee": "StepResult",
+          "lineNumber": 99
+        },
+        {
+          "caller": "test_failure_at_step_5_halts",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 101
+        },
+        {
+          "caller": "test_failure_at_step_5_halts",
+          "callee": "PipelineExecutor",
+          "lineNumber": 102
+        },
+        {
+          "caller": "test_failure_at_step_5_halts",
+          "callee": "Path",
+          "lineNumber": 104
+        },
+        {
+          "caller": "test_failure_at_step_5_halts",
+          "callee": "executor.execute",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_corrupted_json_returns_none",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 122
+        },
+        {
+          "caller": "test_corrupted_json_returns_none",
+          "callee": "Path",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_corrupted_json_returns_none",
+          "callee": "state_file.write_text",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_corrupted_json_returns_none",
+          "callee": "PipelineState.load",
+          "lineNumber": 126
+        },
+        {
+          "caller": "test_corrupted_json_returns_none",
+          "callee": "Path",
+          "lineNumber": 126
+        },
+        {
+          "caller": "test_empty_json_returns_none",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 132
+        },
+        {
+          "caller": "test_empty_json_returns_none",
+          "callee": "Path",
+          "lineNumber": 133
+        },
+        {
+          "caller": "test_empty_json_returns_none",
+          "callee": "state_file.write_text",
+          "lineNumber": 134
+        },
+        {
+          "caller": "test_empty_json_returns_none",
+          "callee": "PipelineState.load",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_empty_json_returns_none",
+          "callee": "Path",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_partial_json_returns_none",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 142
+        },
+        {
+          "caller": "test_partial_json_returns_none",
+          "callee": "Path",
+          "lineNumber": 143
+        },
+        {
+          "caller": "test_partial_json_returns_none",
+          "callee": "state_file.write_text",
+          "lineNumber": 144
+        },
+        {
+          "caller": "test_partial_json_returns_none",
+          "callee": "PipelineState.load",
+          "lineNumber": 146
+        },
+        {
+          "caller": "test_partial_json_returns_none",
+          "callee": "Path",
+          "lineNumber": 146
+        },
+        {
+          "caller": "test_empty_file",
+          "callee": "ArtifactValidator",
+          "lineNumber": 156
+        },
+        {
+          "caller": "test_empty_file",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 157
+        },
+        {
+          "caller": "test_empty_file",
+          "callee": "Path(tmpdir, \"empty.md\").write_text",
+          "lineNumber": 158
+        },
+        {
+          "caller": "test_empty_file",
+          "callee": "Path",
+          "lineNumber": 158
+        },
+        {
+          "caller": "test_empty_file",
+          "callee": "validator.validate_min_content",
+          "lineNumber": 159
+        },
+        {
+          "caller": "test_empty_file",
+          "callee": "str",
+          "lineNumber": 159
+        },
+        {
+          "caller": "test_empty_file",
+          "callee": "Path",
+          "lineNumber": 159
+        },
+        {
+          "caller": "test_very_large_file",
+          "callee": "ArtifactValidator",
+          "lineNumber": 165
+        },
+        {
+          "caller": "test_very_large_file",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 166
+        },
+        {
+          "caller": "test_very_large_file",
+          "callee": "Path(tmpdir, \"large.md\").write_text",
+          "lineNumber": 168
+        },
+        {
+          "caller": "test_very_large_file",
+          "callee": "Path",
+          "lineNumber": 168
+        },
+        {
+          "caller": "test_very_large_file",
+          "callee": "validator.validate_min_content",
+          "lineNumber": 169
+        },
+        {
+          "caller": "test_very_large_file",
+          "callee": "str",
+          "lineNumber": 169
+        },
+        {
+          "caller": "test_very_large_file",
+          "callee": "Path",
+          "lineNumber": 169
+        },
+        {
+          "caller": "test_binary_file",
+          "callee": "ArtifactValidator",
+          "lineNumber": 175
+        },
+        {
+          "caller": "test_binary_file",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 176
+        },
+        {
+          "caller": "test_binary_file",
+          "callee": "Path(tmpdir, \"binary.bin\").write_bytes",
+          "lineNumber": 177
+        },
+        {
+          "caller": "test_binary_file",
+          "callee": "Path",
+          "lineNumber": 177
+        },
+        {
+          "caller": "test_binary_file",
+          "callee": "validator.validate_exists",
+          "lineNumber": 178
+        },
+        {
+          "caller": "test_nested_glob_pattern",
+          "callee": "ArtifactValidator",
+          "lineNumber": 184
+        },
+        {
+          "caller": "test_nested_glob_pattern",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 185
+        },
+        {
+          "caller": "test_nested_glob_pattern",
+          "callee": "Path",
+          "lineNumber": 186
+        },
+        {
+          "caller": "test_nested_glob_pattern",
+          "callee": "nested.mkdir",
+          "lineNumber": 187
+        },
+        {
+          "caller": "test_nested_glob_pattern",
+          "callee": "(nested / \"deep.md\").write_text",
+          "lineNumber": 188
+        },
+        {
+          "caller": "test_nested_glob_pattern",
+          "callee": "validator.validate_exists",
+          "lineNumber": 189
+        },
+        {
+          "caller": "test_unicode_content",
+          "callee": "ArtifactValidator",
+          "lineNumber": 195
+        },
+        {
+          "caller": "test_unicode_content",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 196
+        },
+        {
+          "caller": "test_unicode_content",
+          "callee": "str",
+          "lineNumber": 198
+        },
+        {
+          "caller": "test_unicode_content",
+          "callee": "Path",
+          "lineNumber": 198
+        },
+        {
+          "caller": "test_unicode_content",
+          "callee": "Path(filepath).write_text",
+          "lineNumber": 199
+        },
+        {
+          "caller": "test_unicode_content",
+          "callee": "Path",
+          "lineNumber": 199
+        },
+        {
+          "caller": "test_unicode_content",
+          "callee": "validator.validate_sections",
+          "lineNumber": 200
+        },
+        {
+          "caller": "test_many_critical_deviations",
+          "callee": "PipelineState",
+          "lineNumber": 210
+        },
+        {
+          "caller": "test_many_critical_deviations",
+          "callee": "range",
+          "lineNumber": 211
+        },
+        {
+          "caller": "test_many_critical_deviations",
+          "callee": "state.record_deviation",
+          "lineNumber": 212
+        },
+        {
+          "caller": "test_many_critical_deviations",
+          "callee": "state.get_health_score",
+          "lineNumber": 213
+        },
+        {
+          "caller": "test_mixed_severity_deviations",
+          "callee": "PipelineState",
+          "lineNumber": 218
+        },
+        {
+          "caller": "test_mixed_severity_deviations",
+          "callee": "state.record_deviation",
+          "lineNumber": 219
+        },
+        {
+          "caller": "test_mixed_severity_deviations",
+          "callee": "state.record_deviation",
+          "lineNumber": 220
+        },
+        {
+          "caller": "test_mixed_severity_deviations",
+          "callee": "state.record_deviation",
+          "lineNumber": 221
+        },
+        {
+          "caller": "test_mixed_severity_deviations",
+          "callee": "state.get_health_score",
+          "lineNumber": 222
+        },
+        {
+          "caller": "test_failed_steps_reduce_health",
+          "callee": "PipelineState",
+          "lineNumber": 227
+        },
+        {
+          "caller": "test_failed_steps_reduce_health",
+          "callee": "range",
+          "lineNumber": 228
+        },
+        {
+          "caller": "test_failed_steps_reduce_health",
+          "callee": "state.record_step",
+          "lineNumber": 229
+        },
+        {
+          "caller": "test_failed_steps_reduce_health",
+          "callee": "state.get_health_score",
+          "lineNumber": 230
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 0,
+        "classCount": 5
+      }
+    },
+    {
+      "path": "tests/test_agent_guardrails.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 165,
+      "nonEmptyLines": 120,
+      "functions": [
+        {
+          "name": "_load_manifest",
+          "startLine": 27,
+          "endLine": 30,
+          "params": [
+            "agent_dir"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TestAgentDiscovery",
+          "startLine": 36,
+          "endLine": 53,
+          "methods": [
+            "test_agents_directory_exists",
+            "test_at_least_nine_agents_found",
+            "test_manifest_file_exists",
+            "test_manifest_parses_as_dict"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestGuardrailEnforcement",
+          "startLine": 59,
+          "endLine": 73,
+          "methods": [
+            "test_has_guardrail_enforcement_key",
+            "test_enforcement_is_strict_or_standard"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestGuardrailsStructure",
+          "startLine": 79,
+          "endLine": 107,
+          "methods": [
+            "test_has_guardrails_key",
+            "test_has_must_not_subkey",
+            "test_has_must_do_subkey",
+            "test_must_not_is_nonempty_list",
+            "test_must_do_is_nonempty_list"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestGuardrailRuleSchema",
+          "startLine": 113,
+          "endLine": 136,
+          "methods": [
+            "test_must_not_rules_schema",
+            "test_must_do_rules_schema"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestCriticalRulesPolicy",
+          "startLine": 142,
+          "endLine": 161,
+          "methods": [
+            "test_at_least_one_critical_rule",
+            "test_critical_rules_enforce_halt"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "_load_manifest",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "TestAgentDiscovery",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "TestGuardrailEnforcement",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "TestGuardrailsStructure",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "TestGuardrailRuleSchema",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "TestCriticalRulesPolicy",
+          "line": 142,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_load_manifest",
+          "callee": "open",
+          "lineNumber": 29
+        },
+        {
+          "caller": "_load_manifest",
+          "callee": "yaml.safe_load",
+          "lineNumber": 30
+        },
+        {
+          "caller": "test_agents_directory_exists",
+          "callee": "(ARCHON_ROOT / \"agents\").is_dir",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_at_least_nine_agents_found",
+          "callee": "len",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_at_least_nine_agents_found",
+          "callee": "len",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_manifest_file_exists",
+          "callee": "(agent_dir / \"agent-manifest.yaml\").exists",
+          "lineNumber": 47
+        },
+        {
+          "caller": "test_manifest_parses_as_dict",
+          "callee": "_load_manifest",
+          "lineNumber": 52
+        },
+        {
+          "caller": "test_manifest_parses_as_dict",
+          "callee": "isinstance",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_has_guardrail_enforcement_key",
+          "callee": "_load_manifest",
+          "lineNumber": 64
+        },
+        {
+          "caller": "test_enforcement_is_strict_or_standard",
+          "callee": "_load_manifest",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_has_guardrails_key",
+          "callee": "_load_manifest",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_has_must_not_subkey",
+          "callee": "_load_manifest",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_has_must_do_subkey",
+          "callee": "_load_manifest",
+          "lineNumber": 94
+        },
+        {
+          "caller": "test_must_not_is_nonempty_list",
+          "callee": "_load_manifest",
+          "lineNumber": 99
+        },
+        {
+          "caller": "test_must_not_is_nonempty_list",
+          "callee": "isinstance",
+          "lineNumber": 100
+        },
+        {
+          "caller": "test_must_not_is_nonempty_list",
+          "callee": "len",
+          "lineNumber": 100
+        },
+        {
+          "caller": "test_must_do_is_nonempty_list",
+          "callee": "_load_manifest",
+          "lineNumber": 105
+        },
+        {
+          "caller": "test_must_do_is_nonempty_list",
+          "callee": "isinstance",
+          "lineNumber": 106
+        },
+        {
+          "caller": "test_must_do_is_nonempty_list",
+          "callee": "len",
+          "lineNumber": 106
+        },
+        {
+          "caller": "test_must_not_rules_schema",
+          "callee": "_load_manifest",
+          "lineNumber": 118
+        },
+        {
+          "caller": "test_must_not_rules_schema",
+          "callee": "enumerate",
+          "lineNumber": 119
+        },
+        {
+          "caller": "test_must_not_rules_schema",
+          "callee": "isinstance",
+          "lineNumber": 120
+        },
+        {
+          "caller": "test_must_not_rules_schema",
+          "callee": "rule.get",
+          "lineNumber": 122
+        },
+        {
+          "caller": "test_must_not_rules_schema",
+          "callee": "rule.get",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_must_not_rules_schema",
+          "callee": "rule.get",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_must_not_rules_schema",
+          "callee": "rule.get",
+          "lineNumber": 125
+        },
+        {
+          "caller": "test_must_do_rules_schema",
+          "callee": "_load_manifest",
+          "lineNumber": 129
+        },
+        {
+          "caller": "test_must_do_rules_schema",
+          "callee": "enumerate",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_must_do_rules_schema",
+          "callee": "isinstance",
+          "lineNumber": 131
+        },
+        {
+          "caller": "test_must_do_rules_schema",
+          "callee": "rule.get",
+          "lineNumber": 133
+        },
+        {
+          "caller": "test_must_do_rules_schema",
+          "callee": "rule.get",
+          "lineNumber": 134
+        },
+        {
+          "caller": "test_must_do_rules_schema",
+          "callee": "rule.get",
+          "lineNumber": 135
+        },
+        {
+          "caller": "test_must_do_rules_schema",
+          "callee": "rule.get",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_at_least_one_critical_rule",
+          "callee": "_load_manifest",
+          "lineNumber": 147
+        },
+        {
+          "caller": "test_at_least_one_critical_rule",
+          "callee": "len",
+          "lineNumber": 150
+        },
+        {
+          "caller": "test_critical_rules_enforce_halt",
+          "callee": "_load_manifest",
+          "lineNumber": 154
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 1,
+        "classCount": 5
+      }
+    },
+    {
+      "path": "tests/test_anti_rationalization.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 29,
+      "classes": [
+        {
+          "name": "TestAntiRationalization",
+          "startLine": 7,
+          "endLine": 36,
+          "methods": [
+            "test_probably_blocked_2",
+            "test_probably_blocked",
+            "test_clean_reasoning",
+            "test_empty"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestAntiRationalization",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_probably_blocked_2",
+          "callee": "anti_rationalization.validate",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_probably_blocked",
+          "callee": "anti_rationalization.validate",
+          "lineNumber": 18
+        },
+        {
+          "caller": "test_clean_reasoning",
+          "callee": "anti_rationalization.validate",
+          "lineNumber": 25
+        },
+        {
+          "caller": "test_empty",
+          "callee": "anti_rationalization.validate",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "tests/test_artifact_validator.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 213,
+      "nonEmptyLines": 156,
+      "classes": [
+        {
+          "name": "TestValidateExists",
+          "startLine": 17,
+          "endLine": 47,
+          "methods": [
+            "test_existing_file",
+            "test_missing_file",
+            "test_glob_pattern"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestValidateSections",
+          "startLine": 50,
+          "endLine": 95,
+          "methods": [
+            "test_all_sections_present",
+            "test_missing_section",
+            "test_file_not_found",
+            "test_case_insensitive_sections"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestValidateMinContent",
+          "startLine": 98,
+          "endLine": 134,
+          "methods": [
+            "test_sufficient_words",
+            "test_insufficient_words",
+            "test_empty_file"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestValidateComplianceScore",
+          "startLine": 137,
+          "endLine": 159,
+          "methods": [
+            "test_passing_score",
+            "test_failing_score",
+            "test_exact_threshold"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestValidateStepOutput",
+          "startLine": 162,
+          "endLine": 190,
+          "methods": [
+            "test_full_validation_pass",
+            "test_full_validation_fail_missing_artifact"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestValidationResult",
+          "startLine": 193,
+          "endLine": 209,
+          "methods": [
+            "test_to_dict"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestValidateExists",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "TestValidateSections",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "TestValidateMinContent",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "TestValidateComplianceScore",
+          "line": 137,
+          "isDefault": false
+        },
+        {
+          "name": "TestValidateStepOutput",
+          "line": 162,
+          "isDefault": false
+        },
+        {
+          "name": "TestValidationResult",
+          "line": 193,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_existing_file",
+          "callee": "ArtifactValidator",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_existing_file",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_existing_file",
+          "callee": "Path(tmpdir, \"test.md\").write_text",
+          "lineNumber": 25
+        },
+        {
+          "caller": "test_existing_file",
+          "callee": "Path",
+          "lineNumber": 25
+        },
+        {
+          "caller": "test_existing_file",
+          "callee": "validator.validate_exists",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_missing_file",
+          "callee": "ArtifactValidator",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_missing_file",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_missing_file",
+          "callee": "validator.validate_exists",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_missing_file",
+          "callee": "len",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_glob_pattern",
+          "callee": "ArtifactValidator",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_glob_pattern",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_glob_pattern",
+          "callee": "Path(tmpdir, \"spec.md\").write_text",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_glob_pattern",
+          "callee": "Path",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_glob_pattern",
+          "callee": "Path(tmpdir, \"design.md\").write_text",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_glob_pattern",
+          "callee": "Path",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_glob_pattern",
+          "callee": "validator.validate_exists",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_all_sections_present",
+          "callee": "ArtifactValidator",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_all_sections_present",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_all_sections_present",
+          "callee": "str",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_all_sections_present",
+          "callee": "Path",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_all_sections_present",
+          "callee": "Path(filepath).write_text",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_all_sections_present",
+          "callee": "Path",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_all_sections_present",
+          "callee": "validator.validate_sections",
+          "lineNumber": 62
+        },
+        {
+          "caller": "test_missing_section",
+          "callee": "ArtifactValidator",
+          "lineNumber": 68
+        },
+        {
+          "caller": "test_missing_section",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_missing_section",
+          "callee": "str",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_missing_section",
+          "callee": "Path",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_missing_section",
+          "callee": "Path(filepath).write_text",
+          "lineNumber": 72
+        },
+        {
+          "caller": "test_missing_section",
+          "callee": "Path",
+          "lineNumber": 72
+        },
+        {
+          "caller": "test_missing_section",
+          "callee": "validator.validate_sections",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_missing_section",
+          "callee": "any",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_file_not_found",
+          "callee": "ArtifactValidator",
+          "lineNumber": 81
+        },
+        {
+          "caller": "test_file_not_found",
+          "callee": "validator.validate_sections",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_case_insensitive_sections",
+          "callee": "ArtifactValidator",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_case_insensitive_sections",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_case_insensitive_sections",
+          "callee": "str",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_case_insensitive_sections",
+          "callee": "Path",
+          "lineNumber": 91
+        },
+        {
+          "caller": "test_case_insensitive_sections",
+          "callee": "Path(filepath).write_text",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_case_insensitive_sections",
+          "callee": "Path",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_case_insensitive_sections",
+          "callee": "validator.validate_sections",
+          "lineNumber": 94
+        },
+        {
+          "caller": "test_sufficient_words",
+          "callee": "ArtifactValidator",
+          "lineNumber": 104
+        },
+        {
+          "caller": "test_sufficient_words",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 105
+        },
+        {
+          "caller": "test_sufficient_words",
+          "callee": "\" \".join",
+          "lineNumber": 106
+        },
+        {
+          "caller": "test_sufficient_words",
+          "callee": "str",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_sufficient_words",
+          "callee": "Path",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_sufficient_words",
+          "callee": "Path(filepath).write_text",
+          "lineNumber": 108
+        },
+        {
+          "caller": "test_sufficient_words",
+          "callee": "Path",
+          "lineNumber": 108
+        },
+        {
+          "caller": "test_sufficient_words",
+          "callee": "validator.validate_min_content",
+          "lineNumber": 110
+        },
+        {
+          "caller": "test_insufficient_words",
+          "callee": "ArtifactValidator",
+          "lineNumber": 116
+        },
+        {
+          "caller": "test_insufficient_words",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 117
+        },
+        {
+          "caller": "test_insufficient_words",
+          "callee": "str",
+          "lineNumber": 119
+        },
+        {
+          "caller": "test_insufficient_words",
+          "callee": "Path",
+          "lineNumber": 119
+        },
+        {
+          "caller": "test_insufficient_words",
+          "callee": "Path(filepath).write_text",
+          "lineNumber": 120
+        },
+        {
+          "caller": "test_insufficient_words",
+          "callee": "Path",
+          "lineNumber": 120
+        },
+        {
+          "caller": "test_insufficient_words",
+          "callee": "validator.validate_min_content",
+          "lineNumber": 122
+        },
+        {
+          "caller": "test_empty_file",
+          "callee": "ArtifactValidator",
+          "lineNumber": 128
+        },
+        {
+          "caller": "test_empty_file",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 129
+        },
+        {
+          "caller": "test_empty_file",
+          "callee": "str",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_empty_file",
+          "callee": "Path",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_empty_file",
+          "callee": "Path(filepath).write_text",
+          "lineNumber": 131
+        },
+        {
+          "caller": "test_empty_file",
+          "callee": "Path",
+          "lineNumber": 131
+        },
+        {
+          "caller": "test_empty_file",
+          "callee": "validator.validate_min_content",
+          "lineNumber": 133
+        },
+        {
+          "caller": "test_passing_score",
+          "callee": "ArtifactValidator",
+          "lineNumber": 143
+        },
+        {
+          "caller": "test_passing_score",
+          "callee": "validator.validate_compliance_score",
+          "lineNumber": 144
+        },
+        {
+          "caller": "test_failing_score",
+          "callee": "ArtifactValidator",
+          "lineNumber": 150
+        },
+        {
+          "caller": "test_failing_score",
+          "callee": "validator.validate_compliance_score",
+          "lineNumber": 151
+        },
+        {
+          "caller": "test_exact_threshold",
+          "callee": "ArtifactValidator",
+          "lineNumber": 157
+        },
+        {
+          "caller": "test_exact_threshold",
+          "callee": "validator.validate_compliance_score",
+          "lineNumber": 158
+        },
+        {
+          "caller": "test_full_validation_pass",
+          "callee": "ArtifactValidator",
+          "lineNumber": 168
+        },
+        {
+          "caller": "test_full_validation_pass",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 169
+        },
+        {
+          "caller": "test_full_validation_pass",
+          "callee": "\" \".join",
+          "lineNumber": 170
+        },
+        {
+          "caller": "test_full_validation_pass",
+          "callee": "Path(tmpdir, \"spec.md\").write_text",
+          "lineNumber": 171
+        },
+        {
+          "caller": "test_full_validation_pass",
+          "callee": "Path",
+          "lineNumber": 171
+        },
+        {
+          "caller": "test_full_validation_pass",
+          "callee": "validator.validate_step_output",
+          "lineNumber": 178
+        },
+        {
+          "caller": "test_full_validation_fail_missing_artifact",
+          "callee": "ArtifactValidator",
+          "lineNumber": 184
+        },
+        {
+          "caller": "test_full_validation_fail_missing_artifact",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 185
+        },
+        {
+          "caller": "test_full_validation_fail_missing_artifact",
+          "callee": "validator.validate_step_output",
+          "lineNumber": 189
+        },
+        {
+          "caller": "test_to_dict",
+          "callee": "ValidationResult",
+          "lineNumber": 199
+        },
+        {
+          "caller": "test_to_dict",
+          "callee": "result.to_dict",
+          "lineNumber": 206
+        },
+        {
+          "caller": "test_to_dict",
+          "callee": "len",
+          "lineNumber": 209
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 0,
+        "classCount": 6
+      }
+    },
+    {
+      "path": "tests/test_cli_pipeline.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 180,
+      "nonEmptyLines": 132,
+      "classes": [
+        {
+          "name": "TestPipelineAppStructure",
+          "startLine": 33,
+          "endLine": 48,
+          "methods": [
+            "test_pipeline_app_is_not_none",
+            "test_all_five_subcommands_registered",
+            "test_no_args_shows_help"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestPipelineRun",
+          "startLine": 54,
+          "endLine": 86,
+          "methods": [
+            "test_run_creates_executor_and_executes",
+            "test_run_invalid_pipeline_exits_nonzero"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestPipelineList",
+          "startLine": 92,
+          "endLine": 121,
+          "methods": [
+            "test_list_empty_state_dir",
+            "test_list_returns_entries_from_state_files"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestPipelineCancel",
+          "startLine": 127,
+          "endLine": 156,
+          "methods": [
+            "test_cancel_nonexistent_state_returns_error",
+            "test_cancel_active_pipeline_updates_status",
+            "test_cancel_already_completed_exits_zero"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestHelpers",
+          "startLine": 162,
+          "endLine": 176,
+          "methods": [
+            "test_create_executor_returns_instance",
+            "test_pipelines_dir_points_to_pipelines",
+            "test_state_dir_ends_with_pipeline_states"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestPipelineAppStructure",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "TestPipelineRun",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "TestPipelineList",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "TestPipelineCancel",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "TestHelpers",
+          "line": 162,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_all_five_subcommands_registered",
+          "callee": "expected.issubset",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_no_args_shows_help",
+          "callee": "runner.invoke",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_no_args_shows_help",
+          "callee": "result.output.lower",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_run_creates_executor_and_executes",
+          "callee": "MagicMock",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_run_creates_executor_and_executes",
+          "callee": "MagicMock",
+          "lineNumber": 60
+        },
+        {
+          "caller": "test_run_creates_executor_and_executes",
+          "callee": "MagicMock",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_run_creates_executor_and_executes",
+          "callee": "MagicMock",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_run_creates_executor_and_executes",
+          "callee": "runner.invoke",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_run_creates_executor_and_executes",
+          "callee": "mock_executor.load_pipeline.assert_called_once_with",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_run_creates_executor_and_executes",
+          "callee": "mock_executor.execute.assert_called_once",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_run_invalid_pipeline_exits_nonzero",
+          "callee": "MagicMock",
+          "lineNumber": 81
+        },
+        {
+          "caller": "test_run_invalid_pipeline_exits_nonzero",
+          "callee": "FileNotFoundError",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_run_invalid_pipeline_exits_nonzero",
+          "callee": "runner.invoke",
+          "lineNumber": 85
+        },
+        {
+          "caller": "test_list_empty_state_dir",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 96
+        },
+        {
+          "caller": "test_list_empty_state_dir",
+          "callee": "patch",
+          "lineNumber": 97
+        },
+        {
+          "caller": "test_list_empty_state_dir",
+          "callee": "Path",
+          "lineNumber": 97
+        },
+        {
+          "caller": "test_list_empty_state_dir",
+          "callee": "runner.invoke",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_list_returns_entries_from_state_files",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 103
+        },
+        {
+          "caller": "test_list_returns_entries_from_state_files",
+          "callee": "Path",
+          "lineNumber": 104
+        },
+        {
+          "caller": "test_list_returns_entries_from_state_files",
+          "callee": "(tmp / \"pipe-001.json\").write_text",
+          "lineNumber": 105
+        },
+        {
+          "caller": "test_list_returns_entries_from_state_files",
+          "callee": "(tmp / \"pipe-002.json\").write_text",
+          "lineNumber": 106
+        },
+        {
+          "caller": "test_list_returns_entries_from_state_files",
+          "callee": "MagicMock",
+          "lineNumber": 108
+        },
+        {
+          "caller": "test_list_returns_entries_from_state_files",
+          "callee": "patch",
+          "lineNumber": 119
+        },
+        {
+          "caller": "test_list_returns_entries_from_state_files",
+          "callee": "runner.invoke",
+          "lineNumber": 120
+        },
+        {
+          "caller": "test_cancel_nonexistent_state_returns_error",
+          "callee": "runner.invoke",
+          "lineNumber": 133
+        },
+        {
+          "caller": "test_cancel_active_pipeline_updates_status",
+          "callee": "MagicMock",
+          "lineNumber": 138
+        },
+        {
+          "caller": "test_cancel_active_pipeline_updates_status",
+          "callee": "runner.invoke",
+          "lineNumber": 145
+        },
+        {
+          "caller": "test_cancel_active_pipeline_updates_status",
+          "callee": "mock_state.update_status.assert_called_once",
+          "lineNumber": 146
+        },
+        {
+          "caller": "test_cancel_active_pipeline_updates_status",
+          "callee": "mock_state.save.assert_called_once",
+          "lineNumber": 147
+        },
+        {
+          "caller": "test_cancel_already_completed_exits_zero",
+          "callee": "MagicMock",
+          "lineNumber": 151
+        },
+        {
+          "caller": "test_cancel_already_completed_exits_zero",
+          "callee": "runner.invoke",
+          "lineNumber": 155
+        },
+        {
+          "caller": "test_create_executor_returns_instance",
+          "callee": "MagicMock",
+          "lineNumber": 167
+        },
+        {
+          "caller": "test_create_executor_returns_instance",
+          "callee": "_create_executor",
+          "lineNumber": 168
+        },
+        {
+          "caller": "test_create_executor_returns_instance",
+          "callee": "mock_cls.assert_called_once",
+          "lineNumber": 169
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 0,
+        "classCount": 5
+      }
+    },
+    {
+      "path": "tests/test_code_quality.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 39,
+      "classes": [
+        {
+          "name": "TestCodeQualityMetrics",
+          "startLine": 7,
+          "endLine": 47,
+          "methods": [
+            "test_good_quality",
+            "test_low_pylint_score",
+            "test_high_complexity",
+            "test_missing_type_hints",
+            "test_missing_docstrings"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestCodeQualityMetrics",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_good_quality",
+          "callee": "code_quality.validate",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_low_pylint_score",
+          "callee": "code_quality.validate",
+          "lineNumber": 21
+        },
+        {
+          "caller": "test_high_complexity",
+          "callee": "code_quality.validate",
+          "lineNumber": 29
+        },
+        {
+          "caller": "test_missing_type_hints",
+          "callee": "code_quality.validate",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_missing_docstrings",
+          "callee": "code_quality.validate",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "tests/test_completeness.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 50,
+      "nonEmptyLines": 43,
+      "classes": [
+        {
+          "name": "TestCompletenessAcceptanceCriteria",
+          "startLine": 7,
+          "endLine": 50,
+          "methods": [
+            "test_all_critical_met",
+            "test_critical_unmet",
+            "test_todos_remaining",
+            "test_low_completion_rate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestCompletenessAcceptanceCriteria",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_all_critical_met",
+          "callee": "completeness.validate",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_critical_unmet",
+          "callee": "completeness.validate",
+          "lineNumber": 22
+        },
+        {
+          "caller": "test_todos_remaining",
+          "callee": "completeness.validate",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_low_completion_rate",
+          "callee": "completeness.validate",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "tests/test_consistency.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "TestConsistencyNames",
+          "startLine": 7,
+          "endLine": 32,
+          "methods": [
+            "test_consistent_names",
+            "test_inconsistent_names",
+            "test_mixed_imports"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestConsistencyNames",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_consistent_names",
+          "callee": "consistency.validate",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_inconsistent_names",
+          "callee": "consistency.validate",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_mixed_imports",
+          "callee": "consistency.validate",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "tests/test_guardrails.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 188,
+      "nonEmptyLines": 145,
+      "functions": [
+        {
+          "name": "_contains_forbidden_phrase",
+          "startLine": 106,
+          "endLine": 125,
+          "params": [
+            "text"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "TestAntiRationalizationSynapse",
+          "startLine": 18,
+          "endLine": 76,
+          "methods": [
+            "synapse_dir",
+            "test_synapse_directory_exists",
+            "test_synapse_md_exists",
+            "test_manifest_exists",
+            "test_manifest_is_core_type",
+            "test_manifest_has_firing_phases",
+            "test_iron_laws_resource_exists",
+            "test_rationalization_tables_exist",
+            "test_red_flags_exist",
+            "test_forbidden_phrases_exist",
+            "test_iron_laws_has_10_laws",
+            "test_synapse_md_has_iron_laws_table",
+            "test_forbidden_phrases_has_alternatives",
+            "test_red_flags_has_checklists"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestForbiddenPhrasesDetection",
+          "startLine": 79,
+          "endLine": 103,
+          "methods": [
+            "test_forbidden_phrases_detected",
+            "test_clean_text_not_flagged"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestGuardrailsSchema",
+          "startLine": 128,
+          "endLine": 159,
+          "methods": [
+            "test_schema_exists",
+            "test_schema_parses",
+            "test_schema_defines_types",
+            "test_schema_defines_severity"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestDeviationLogSchema",
+          "startLine": 162,
+          "endLine": 171,
+          "methods": [
+            "test_schema_exists",
+            "test_schema_parses"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestThinkingTraceSchema",
+          "startLine": 174,
+          "endLine": 184,
+          "methods": [
+            "test_schema_exists",
+            "test_schema_parses"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestAntiRationalizationSynapse",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "TestForbiddenPhrasesDetection",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "_contains_forbidden_phrase",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "TestGuardrailsSchema",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "TestDeviationLogSchema",
+          "line": 162,
+          "isDefault": false
+        },
+        {
+          "name": "TestThinkingTraceSchema",
+          "line": 174,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_synapse_directory_exists",
+          "callee": "synapse_dir.exists",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_synapse_md_exists",
+          "callee": "(synapse_dir / \"SYNAPSE.md\").exists",
+          "lineNumber": 29
+        },
+        {
+          "caller": "test_manifest_exists",
+          "callee": "(synapse_dir / \"manifest.yaml\").exists",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_manifest_is_core_type",
+          "callee": "open",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_manifest_is_core_type",
+          "callee": "yaml.safe_load",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_manifest_has_firing_phases",
+          "callee": "open",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_manifest_has_firing_phases",
+          "callee": "yaml.safe_load",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_iron_laws_resource_exists",
+          "callee": "(synapse_dir / \"resources\" / \"iron-laws.md\").exists",
+          "lineNumber": 49
+        },
+        {
+          "caller": "test_rationalization_tables_exist",
+          "callee": "(synapse_dir / \"resources\" / \"rationalization-tables.md\").exists",
+          "lineNumber": 52
+        },
+        {
+          "caller": "test_red_flags_exist",
+          "callee": "(synapse_dir / \"resources\" / \"red-flags.md\").exists",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_forbidden_phrases_exist",
+          "callee": "(synapse_dir / \"resources\" / \"forbidden-phrases.md\").exists",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_iron_laws_has_10_laws",
+          "callee": "(synapse_dir / \"resources\" / \"iron-laws.md\").read_text",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_iron_laws_has_10_laws",
+          "callee": "content.count",
+          "lineNumber": 62
+        },
+        {
+          "caller": "test_synapse_md_has_iron_laws_table",
+          "callee": "(synapse_dir / \"SYNAPSE.md\").read_text",
+          "lineNumber": 66
+        },
+        {
+          "caller": "test_forbidden_phrases_has_alternatives",
+          "callee": "(synapse_dir / \"resources\" / \"forbidden-phrases.md\").read_text",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_red_flags_has_checklists",
+          "callee": "(synapse_dir / \"resources\" / \"red-flags.md\").read_text",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_forbidden_phrases_detected",
+          "callee": "_contains_forbidden_phrase",
+          "lineNumber": 94
+        },
+        {
+          "caller": "test_clean_text_not_flagged",
+          "callee": "_contains_forbidden_phrase",
+          "lineNumber": 103
+        },
+        {
+          "caller": "_contains_forbidden_phrase",
+          "callee": "text.lower",
+          "lineNumber": 124
+        },
+        {
+          "caller": "_contains_forbidden_phrase",
+          "callee": "any",
+          "lineNumber": 125
+        },
+        {
+          "caller": "test_schema_exists",
+          "callee": "schema_path.exists",
+          "lineNumber": 133
+        },
+        {
+          "caller": "test_schema_parses",
+          "callee": "open",
+          "lineNumber": 137
+        },
+        {
+          "caller": "test_schema_parses",
+          "callee": "yaml.safe_load",
+          "lineNumber": 138
+        },
+        {
+          "caller": "test_schema_defines_types",
+          "callee": "open",
+          "lineNumber": 144
+        },
+        {
+          "caller": "test_schema_defines_types",
+          "callee": "yaml.safe_load",
+          "lineNumber": 145
+        },
+        {
+          "caller": "test_schema_defines_severity",
+          "callee": "open",
+          "lineNumber": 153
+        },
+        {
+          "caller": "test_schema_defines_severity",
+          "callee": "yaml.safe_load",
+          "lineNumber": 154
+        },
+        {
+          "caller": "test_schema_exists",
+          "callee": "(ARCHON_ROOT / \"schemas\" / \"deviation-log.schema.yaml\").exists",
+          "lineNumber": 166
+        },
+        {
+          "caller": "test_schema_parses",
+          "callee": "open",
+          "lineNumber": 169
+        },
+        {
+          "caller": "test_schema_parses",
+          "callee": "yaml.safe_load",
+          "lineNumber": 170
+        },
+        {
+          "caller": "test_schema_exists",
+          "callee": "(ARCHON_ROOT / \"schemas\" / \"thinking-trace.schema.yaml\").exists",
+          "lineNumber": 178
+        },
+        {
+          "caller": "test_schema_parses",
+          "callee": "open",
+          "lineNumber": 181
+        },
+        {
+          "caller": "test_schema_parses",
+          "callee": "yaml.safe_load",
+          "lineNumber": 182
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 1,
+        "classCount": 5
+      }
+    },
+    {
+      "path": "tests/test_hooks.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 249,
+      "nonEmptyLines": 207,
+      "classes": [
+        {
+          "name": "TestHookConfiguration",
+          "startLine": 19,
+          "endLine": 45,
+          "methods": [
+            "test_hooks_yaml_exists",
+            "test_hooks_yaml_parses",
+            "test_all_hook_types_defined",
+            "test_all_hooks_enabled"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestSessionStartHook",
+          "startLine": 48,
+          "endLine": 71,
+          "methods": [
+            "test_hook_file_exists",
+            "test_hook_executes",
+            "test_hook_injects_discipline",
+            "test_hook_loads_core_synapses"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestPreStepHook",
+          "startLine": 74,
+          "endLine": 107,
+          "methods": [
+            "test_hook_file_exists",
+            "test_hook_passes_for_first_step",
+            "test_hook_returns_errors_and_warnings"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestPostStepHook",
+          "startLine": 110,
+          "endLine": 162,
+          "methods": [
+            "test_hook_file_exists",
+            "test_hook_passes_with_no_validation",
+            "test_hook_fails_on_missing_artifact",
+            "test_hook_checks_word_count"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestOnFailureHook",
+          "startLine": 165,
+          "endLine": 214,
+          "methods": [
+            "test_hook_file_exists",
+            "test_retry_policy",
+            "test_halt_policy",
+            "test_escape_hatch_at_3_attempts",
+            "test_skip_policy"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestOnDeviationHook",
+          "startLine": 217,
+          "endLine": 245,
+          "methods": [
+            "test_hook_file_exists",
+            "test_deviation_logged",
+            "test_critical_deviation_escalated"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestHookConfiguration",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "TestSessionStartHook",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "TestPreStepHook",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "TestPostStepHook",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "TestOnFailureHook",
+          "line": 165,
+          "isDefault": false
+        },
+        {
+          "name": "TestOnDeviationHook",
+          "line": 217,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_hooks_yaml_exists",
+          "callee": "(ARCHON_ROOT / \"hooks\" / \"hooks.yaml\").exists",
+          "lineNumber": 23
+        },
+        {
+          "caller": "test_hooks_yaml_parses",
+          "callee": "open",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_hooks_yaml_parses",
+          "callee": "yaml.safe_load",
+          "lineNumber": 27
+        },
+        {
+          "caller": "test_all_hook_types_defined",
+          "callee": "open",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_all_hook_types_defined",
+          "callee": "yaml.safe_load",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_all_hooks_enabled",
+          "callee": "open",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_all_hooks_enabled",
+          "callee": "yaml.safe_load",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_all_hooks_enabled",
+          "callee": "config[\"hooks\"].items",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_all_hooks_enabled",
+          "callee": "hook.get",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_hook_file_exists",
+          "callee": "(ARCHON_ROOT / \"hooks\" / \"session_start.py\").exists",
+          "lineNumber": 52
+        },
+        {
+          "caller": "test_hook_executes",
+          "callee": "execute",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_hook_injects_discipline",
+          "callee": "execute",
+          "lineNumber": 62
+        },
+        {
+          "caller": "test_hook_loads_core_synapses",
+          "callee": "execute",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_hook_loads_core_synapses",
+          "callee": "len",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_hook_file_exists",
+          "callee": "(ARCHON_ROOT / \"hooks\" / \"pre_step.py\").exists",
+          "lineNumber": 78
+        },
+        {
+          "caller": "test_hook_passes_for_first_step",
+          "callee": "execute",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_hook_returns_errors_and_warnings",
+          "callee": "execute",
+          "lineNumber": 93
+        },
+        {
+          "caller": "test_hook_returns_errors_and_warnings",
+          "callee": "len",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_hook_file_exists",
+          "callee": "(ARCHON_ROOT / \"hooks\" / \"post_step.py\").exists",
+          "lineNumber": 114
+        },
+        {
+          "caller": "test_hook_passes_with_no_validation",
+          "callee": "execute",
+          "lineNumber": 118
+        },
+        {
+          "caller": "test_hook_fails_on_missing_artifact",
+          "callee": "execute",
+          "lineNumber": 129
+        },
+        {
+          "caller": "test_hook_checks_word_count",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 147
+        },
+        {
+          "caller": "test_hook_checks_word_count",
+          "callee": "Path(tmpdir, \"short.md\").write_text",
+          "lineNumber": 148
+        },
+        {
+          "caller": "test_hook_checks_word_count",
+          "callee": "Path",
+          "lineNumber": 148
+        },
+        {
+          "caller": "test_hook_checks_word_count",
+          "callee": "execute",
+          "lineNumber": 149
+        },
+        {
+          "caller": "test_hook_checks_word_count",
+          "callee": "any",
+          "lineNumber": 162
+        },
+        {
+          "caller": "test_hook_file_exists",
+          "callee": "(ARCHON_ROOT / \"hooks\" / \"on_failure.py\").exists",
+          "lineNumber": 169
+        },
+        {
+          "caller": "test_retry_policy",
+          "callee": "execute",
+          "lineNumber": 173
+        },
+        {
+          "caller": "test_halt_policy",
+          "callee": "execute",
+          "lineNumber": 184
+        },
+        {
+          "caller": "test_escape_hatch_at_3_attempts",
+          "callee": "execute",
+          "lineNumber": 196
+        },
+        {
+          "caller": "test_skip_policy",
+          "callee": "execute",
+          "lineNumber": 208
+        },
+        {
+          "caller": "test_hook_file_exists",
+          "callee": "(ARCHON_ROOT / \"hooks\" / \"on_deviation.py\").exists",
+          "lineNumber": 221
+        },
+        {
+          "caller": "test_deviation_logged",
+          "callee": "execute",
+          "lineNumber": 225
+        },
+        {
+          "caller": "test_deviation_logged",
+          "callee": "result[\"deviation_id\"].startswith",
+          "lineNumber": 234
+        },
+        {
+          "caller": "test_critical_deviation_escalated",
+          "callee": "execute",
+          "lineNumber": 238
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 0,
+        "classCount": 6
+      }
+    },
+    {
+      "path": "tests/test_integration.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 244,
+      "nonEmptyLines": 197,
+      "classes": [
+        {
+          "name": "TestEndToEndPipelineFlow",
+          "startLine": 23,
+          "endLine": 127,
+          "methods": [
+            "test_load_execute_persist",
+            "test_pipeline_state_survives_reload",
+            "test_accumulated_state_persists"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestHookIntegration",
+          "startLine": 130,
+          "endLine": 163,
+          "methods": [
+            "test_session_start_fires",
+            "test_pre_post_step_chain"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestSDKIntegration",
+          "startLine": 166,
+          "endLine": 200,
+          "methods": [
+            "test_sdk_health_check_includes_synapses",
+            "test_sdk_list_synapses",
+            "test_sdk_get_core_synapses",
+            "test_sdk_version"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestManifestConsistency",
+          "startLine": 203,
+          "endLine": 240,
+          "methods": [
+            "test_version_is_1_0_0",
+            "test_all_synapse_paths_exist",
+            "test_all_pipeline_paths_exist",
+            "test_hooks_directory_exists",
+            "test_new_schemas_exist"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestEndToEndPipelineFlow",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "TestHookIntegration",
+          "line": 130,
+          "isDefault": false
+        },
+        {
+          "name": "TestSDKIntegration",
+          "line": 166,
+          "isDefault": false
+        },
+        {
+          "name": "TestManifestConsistency",
+          "line": 203,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_load_execute_persist",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 32
+        },
+        {
+          "caller": "test_load_execute_persist",
+          "callee": "PipelineExecutor",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_load_execute_persist",
+          "callee": "Path",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_load_execute_persist",
+          "callee": "executor.load_pipeline",
+          "lineNumber": 38
+        },
+        {
+          "caller": "mock_handler",
+          "callee": "step_config.get",
+          "lineNumber": 41
+        },
+        {
+          "caller": "mock_handler",
+          "callee": "step_config.get",
+          "lineNumber": 42
+        },
+        {
+          "caller": "mock_handler",
+          "callee": "Path(context[\"project_dir\"], output).write_text",
+          "lineNumber": 44
+        },
+        {
+          "caller": "mock_handler",
+          "callee": "Path",
+          "lineNumber": 44
+        },
+        {
+          "caller": "mock_handler",
+          "callee": "StepResult",
+          "lineNumber": 47
+        },
+        {
+          "caller": "test_load_execute_persist",
+          "callee": "executor.execute",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_load_execute_persist",
+          "callee": "len",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_load_execute_persist",
+          "callee": "len",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_load_execute_persist",
+          "callee": "list",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_load_execute_persist",
+          "callee": "Path(tmpdir).glob",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_load_execute_persist",
+          "callee": "Path",
+          "lineNumber": 61
+        },
+        {
+          "caller": "test_load_execute_persist",
+          "callee": "len",
+          "lineNumber": 62
+        },
+        {
+          "caller": "test_pipeline_state_survives_reload",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_pipeline_state_survives_reload",
+          "callee": "PipelineExecutor",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_pipeline_state_survives_reload",
+          "callee": "Path",
+          "lineNumber": 72
+        },
+        {
+          "caller": "test_pipeline_state_survives_reload",
+          "callee": "executor.load_pipeline",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_pipeline_state_survives_reload",
+          "callee": "executor.execute",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_pipeline_state_survives_reload",
+          "callee": "PipelineState.load",
+          "lineNumber": 79
+        },
+        {
+          "caller": "test_pipeline_state_survives_reload",
+          "callee": "Path",
+          "lineNumber": 79
+        },
+        {
+          "caller": "test_accumulated_state_persists",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_accumulated_state_persists",
+          "callee": "PipelineExecutor",
+          "lineNumber": 93
+        },
+        {
+          "caller": "test_accumulated_state_persists",
+          "callee": "Path",
+          "lineNumber": 95
+        },
+        {
+          "caller": "test_accumulated_state_persists",
+          "callee": "executor.load_pipeline",
+          "lineNumber": 98
+        },
+        {
+          "caller": "handler_with_decisions",
+          "callee": "step_config.get",
+          "lineNumber": 103
+        },
+        {
+          "caller": "handler_with_decisions",
+          "callee": "decisions_made.append",
+          "lineNumber": 105
+        },
+        {
+          "caller": "handler_with_decisions",
+          "callee": "PipelineState.load",
+          "lineNumber": 108
+        },
+        {
+          "caller": "handler_with_decisions",
+          "callee": "Path",
+          "lineNumber": 108
+        },
+        {
+          "caller": "handler_with_decisions",
+          "callee": "state.add_decision",
+          "lineNumber": 110
+        },
+        {
+          "caller": "handler_with_decisions",
+          "callee": "state.add_tech_stack",
+          "lineNumber": 111
+        },
+        {
+          "caller": "handler_with_decisions",
+          "callee": "state.save",
+          "lineNumber": 112
+        },
+        {
+          "caller": "handler_with_decisions",
+          "callee": "Path",
+          "lineNumber": 112
+        },
+        {
+          "caller": "handler_with_decisions",
+          "callee": "StepResult",
+          "lineNumber": 113
+        },
+        {
+          "caller": "test_accumulated_state_persists",
+          "callee": "executor.execute",
+          "lineNumber": 118
+        },
+        {
+          "caller": "test_accumulated_state_persists",
+          "callee": "PipelineState.load",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_accumulated_state_persists",
+          "callee": "Path",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_accumulated_state_persists",
+          "callee": "len",
+          "lineNumber": 125
+        },
+        {
+          "caller": "test_accumulated_state_persists",
+          "callee": "len",
+          "lineNumber": 126
+        },
+        {
+          "caller": "test_session_start_fires",
+          "callee": "execute",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_pre_post_step_chain",
+          "callee": "pre_execute",
+          "lineNumber": 146
+        },
+        {
+          "caller": "test_pre_post_step_chain",
+          "callee": "post_execute",
+          "lineNumber": 156
+        },
+        {
+          "caller": "test_sdk_health_check_includes_synapses",
+          "callee": "Archon",
+          "lineNumber": 172
+        },
+        {
+          "caller": "test_sdk_health_check_includes_synapses",
+          "callee": "os_sdk.health_check",
+          "lineNumber": 173
+        },
+        {
+          "caller": "test_sdk_list_synapses",
+          "callee": "Archon",
+          "lineNumber": 180
+        },
+        {
+          "caller": "test_sdk_list_synapses",
+          "callee": "os_sdk.list_synapses",
+          "lineNumber": 181
+        },
+        {
+          "caller": "test_sdk_list_synapses",
+          "callee": "len",
+          "lineNumber": 182
+        },
+        {
+          "caller": "test_sdk_get_core_synapses",
+          "callee": "Archon",
+          "lineNumber": 191
+        },
+        {
+          "caller": "test_sdk_get_core_synapses",
+          "callee": "os_sdk.get_core_synapses",
+          "lineNumber": 192
+        },
+        {
+          "caller": "test_sdk_get_core_synapses",
+          "callee": "len",
+          "lineNumber": 193
+        },
+        {
+          "caller": "test_sdk_version",
+          "callee": "Archon",
+          "lineNumber": 198
+        },
+        {
+          "caller": "test_sdk_version",
+          "callee": "os_sdk.health_check",
+          "lineNumber": 199
+        },
+        {
+          "caller": "test_version_is_1_0_0",
+          "callee": "open",
+          "lineNumber": 208
+        },
+        {
+          "caller": "test_version_is_1_0_0",
+          "callee": "yaml.safe_load",
+          "lineNumber": 209
+        },
+        {
+          "caller": "test_all_synapse_paths_exist",
+          "callee": "open",
+          "lineNumber": 214
+        },
+        {
+          "caller": "test_all_synapse_paths_exist",
+          "callee": "yaml.safe_load",
+          "lineNumber": 215
+        },
+        {
+          "caller": "test_all_synapse_paths_exist",
+          "callee": "manifest.get",
+          "lineNumber": 216
+        },
+        {
+          "caller": "test_all_synapse_paths_exist",
+          "callee": "path.exists",
+          "lineNumber": 218
+        },
+        {
+          "caller": "test_all_pipeline_paths_exist",
+          "callee": "open",
+          "lineNumber": 222
+        },
+        {
+          "caller": "test_all_pipeline_paths_exist",
+          "callee": "yaml.safe_load",
+          "lineNumber": 223
+        },
+        {
+          "caller": "test_all_pipeline_paths_exist",
+          "callee": "manifest.get",
+          "lineNumber": 224
+        },
+        {
+          "caller": "test_all_pipeline_paths_exist",
+          "callee": "path.exists",
+          "lineNumber": 226
+        },
+        {
+          "caller": "test_hooks_directory_exists",
+          "callee": "(ARCHON_ROOT / \"hooks\").exists",
+          "lineNumber": 229
+        },
+        {
+          "caller": "test_hooks_directory_exists",
+          "callee": "(ARCHON_ROOT / \"hooks\" / \"hooks.yaml\").exists",
+          "lineNumber": 230
+        },
+        {
+          "caller": "test_new_schemas_exist",
+          "callee": "path.exists",
+          "lineNumber": 240
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "tests/test_metacognition.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 51,
+      "classes": [
+        {
+          "name": "TestMetacognitionPlanning",
+          "startLine": 7,
+          "endLine": 59,
+          "methods": [
+            "test_trivial_allows",
+            "test_simple_with_reasoning",
+            "test_moderate_without_plan",
+            "test_complex_without_plan",
+            "test_complex_with_full_context",
+            "test_overconfident_without_evidence"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestMetacognitionPlanning",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_trivial_allows",
+          "callee": "metacognition.validate",
+          "lineNumber": 9
+        },
+        {
+          "caller": "test_simple_with_reasoning",
+          "callee": "metacognition.validate",
+          "lineNumber": 17
+        },
+        {
+          "caller": "test_moderate_without_plan",
+          "callee": "metacognition.validate",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_complex_without_plan",
+          "callee": "metacognition.validate",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_complex_with_full_context",
+          "callee": "metacognition.validate",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_overconfident_without_evidence",
+          "callee": "metacognition.validate",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "tests/test_pattern_recognition.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 48,
+      "classes": [
+        {
+          "name": "TestPatternRecognition",
+          "startLine": 7,
+          "endLine": 55,
+          "methods": [
+            "test_repeated_error_pattern",
+            "test_no_repeated_pattern",
+            "test_empty_history",
+            "test_threshold_exceeded"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestPatternRecognition",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_repeated_error_pattern",
+          "callee": "pattern_recognition.validate",
+          "lineNumber": 11
+        },
+        {
+          "caller": "test_no_repeated_pattern",
+          "callee": "pattern_recognition.validate",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_empty_history",
+          "callee": "pattern_recognition.validate",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_threshold_exceeded",
+          "callee": "pattern_recognition.validate",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_threshold_exceeded",
+          "callee": "range",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "tests/test_pipeline_engine.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 238,
+      "nonEmptyLines": 187,
+      "classes": [
+        {
+          "name": "TestPipelineDefinition",
+          "startLine": 18,
+          "endLine": 61,
+          "methods": [
+            "test_load_sdd_pipeline",
+            "test_load_all_pipelines",
+            "test_pipeline_has_steps_with_agents"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestStepResult",
+          "startLine": 64,
+          "endLine": 99,
+          "methods": [
+            "test_step_result_creation",
+            "test_step_result_to_dict",
+            "test_step_result_defaults"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestPipelineExecutor",
+          "startLine": 102,
+          "endLine": 210,
+          "methods": [
+            "test_executor_init",
+            "test_load_pipeline_not_found",
+            "test_execute_pipeline_default_handler",
+            "test_execute_with_custom_handler",
+            "test_execute_with_failing_step"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestPipelineStateMachine",
+          "startLine": 213,
+          "endLine": 234,
+          "methods": [
+            "test_status_values",
+            "test_step_status_values"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestPipelineDefinition",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "TestStepResult",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "TestPipelineExecutor",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "TestPipelineStateMachine",
+          "line": 213,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_load_sdd_pipeline",
+          "callee": "pipeline_path.exists",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_load_sdd_pipeline",
+          "callee": "pytest.skip",
+          "lineNumber": 27
+        },
+        {
+          "caller": "test_load_sdd_pipeline",
+          "callee": "PipelineDefinition.from_yaml",
+          "lineNumber": 29
+        },
+        {
+          "caller": "test_load_sdd_pipeline",
+          "callee": "len",
+          "lineNumber": 31
+        },
+        {
+          "caller": "test_load_all_pipelines",
+          "callee": "pipelines_dir.exists",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_load_all_pipelines",
+          "callee": "pytest.skip",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_load_all_pipelines",
+          "callee": "pipelines_dir.glob",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_load_all_pipelines",
+          "callee": "PipelineDefinition.from_yaml",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_load_all_pipelines",
+          "callee": "len",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_pipeline_has_steps_with_agents",
+          "callee": "pipeline_path.exists",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_pipeline_has_steps_with_agents",
+          "callee": "pytest.skip",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_pipeline_has_steps_with_agents",
+          "callee": "PipelineDefinition.from_yaml",
+          "lineNumber": 59
+        },
+        {
+          "caller": "test_step_result_creation",
+          "callee": "StepResult",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_step_result_to_dict",
+          "callee": "StepResult",
+          "lineNumber": 83
+        },
+        {
+          "caller": "test_step_result_to_dict",
+          "callee": "result.to_dict",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_step_result_defaults",
+          "callee": "StepResult",
+          "lineNumber": 95
+        },
+        {
+          "caller": "test_executor_init",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 108
+        },
+        {
+          "caller": "test_executor_init",
+          "callee": "PipelineExecutor",
+          "lineNumber": 109
+        },
+        {
+          "caller": "test_executor_init",
+          "callee": "Path",
+          "lineNumber": 111
+        },
+        {
+          "caller": "test_executor_init",
+          "callee": "executor.hooks_dir.exists",
+          "lineNumber": 114
+        },
+        {
+          "caller": "test_load_pipeline_not_found",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 119
+        },
+        {
+          "caller": "test_load_pipeline_not_found",
+          "callee": "PipelineExecutor",
+          "lineNumber": 120
+        },
+        {
+          "caller": "test_load_pipeline_not_found",
+          "callee": "Path",
+          "lineNumber": 122
+        },
+        {
+          "caller": "test_load_pipeline_not_found",
+          "callee": "pytest.raises",
+          "lineNumber": 125
+        },
+        {
+          "caller": "test_load_pipeline_not_found",
+          "callee": "executor.load_pipeline",
+          "lineNumber": 126
+        },
+        {
+          "caller": "test_execute_pipeline_default_handler",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 132
+        },
+        {
+          "caller": "test_execute_pipeline_default_handler",
+          "callee": "PipelineExecutor",
+          "lineNumber": 133
+        },
+        {
+          "caller": "test_execute_pipeline_default_handler",
+          "callee": "Path",
+          "lineNumber": 135
+        },
+        {
+          "caller": "test_execute_pipeline_default_handler",
+          "callee": "executor.load_pipeline",
+          "lineNumber": 138
+        },
+        {
+          "caller": "test_execute_pipeline_default_handler",
+          "callee": "executor.execute",
+          "lineNumber": 139
+        },
+        {
+          "caller": "custom_handler",
+          "callee": "step_config.get",
+          "lineNumber": 154
+        },
+        {
+          "caller": "custom_handler",
+          "callee": "executed_steps.append",
+          "lineNumber": 155
+        },
+        {
+          "caller": "custom_handler",
+          "callee": "StepResult",
+          "lineNumber": 156
+        },
+        {
+          "caller": "test_execute_with_custom_handler",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 162
+        },
+        {
+          "caller": "test_execute_with_custom_handler",
+          "callee": "PipelineExecutor",
+          "lineNumber": 163
+        },
+        {
+          "caller": "test_execute_with_custom_handler",
+          "callee": "Path",
+          "lineNumber": 165
+        },
+        {
+          "caller": "test_execute_with_custom_handler",
+          "callee": "executor.load_pipeline",
+          "lineNumber": 168
+        },
+        {
+          "caller": "test_execute_with_custom_handler",
+          "callee": "executor.execute",
+          "lineNumber": 169
+        },
+        {
+          "caller": "test_execute_with_custom_handler",
+          "callee": "len",
+          "lineNumber": 174
+        },
+        {
+          "caller": "test_execute_with_custom_handler",
+          "callee": "len",
+          "lineNumber": 174
+        },
+        {
+          "caller": "failing_handler",
+          "callee": "StepResult",
+          "lineNumber": 188
+        },
+        {
+          "caller": "failing_handler",
+          "callee": "step_config.get",
+          "lineNumber": 189
+        },
+        {
+          "caller": "failing_handler",
+          "callee": "StepResult",
+          "lineNumber": 193
+        },
+        {
+          "caller": "failing_handler",
+          "callee": "step_config.get",
+          "lineNumber": 194
+        },
+        {
+          "caller": "test_execute_with_failing_step",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 198
+        },
+        {
+          "caller": "test_execute_with_failing_step",
+          "callee": "PipelineExecutor",
+          "lineNumber": 199
+        },
+        {
+          "caller": "test_execute_with_failing_step",
+          "callee": "Path",
+          "lineNumber": 201
+        },
+        {
+          "caller": "test_execute_with_failing_step",
+          "callee": "executor.load_pipeline",
+          "lineNumber": 204
+        },
+        {
+          "caller": "test_execute_with_failing_step",
+          "callee": "executor.execute",
+          "lineNumber": 205
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "tests/test_pipeline_state.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 264,
+      "nonEmptyLines": 189,
+      "classes": [
+        {
+          "name": "TestPipelineStateCreation",
+          "startLine": 18,
+          "endLine": 45,
+          "methods": [
+            "test_create_state",
+            "test_state_has_accumulated",
+            "test_state_id_unique"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestPipelineStatePersistence",
+          "startLine": 48,
+          "endLine": 98,
+          "methods": [
+            "test_save_and_load",
+            "test_load_nonexistent",
+            "test_state_persists_on_update",
+            "test_state_file_is_valid_json"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestAccumulatedState",
+          "startLine": 101,
+          "endLine": 156,
+          "methods": [
+            "test_add_decision",
+            "test_no_duplicate_decisions",
+            "test_add_constraint",
+            "test_add_tech_stack",
+            "test_accumulated_state_grows",
+            "test_add_context_brief"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestStepRecording",
+          "startLine": 159,
+          "endLine": 200,
+          "methods": [
+            "test_record_step",
+            "test_record_step_updates_existing",
+            "test_completed_step_names",
+            "test_current_step"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestDeviations",
+          "startLine": 203,
+          "endLine": 222,
+          "methods": [
+            "test_record_deviation",
+            "test_multiple_deviations"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TestHealthScore",
+          "startLine": 225,
+          "endLine": 260,
+          "methods": [
+            "test_perfect_health",
+            "test_health_decreases_with_deviations",
+            "test_health_decreases_with_failed_steps",
+            "test_health_minimum_zero"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TestPipelineStateCreation",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "TestPipelineStatePersistence",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "TestAccumulatedState",
+          "line": 101,
+          "isDefault": false
+        },
+        {
+          "name": "TestStepRecording",
+          "line": 159,
+          "isDefault": false
+        },
+        {
+          "name": "TestDeviations",
+          "line": 203,
+          "isDefault": false
+        },
+        {
+          "name": "TestHealthScore",
+          "line": 225,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_create_state",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_create_state",
+          "callee": "PipelineState.create",
+          "lineNumber": 25
+        },
+        {
+          "caller": "test_create_state",
+          "callee": "state.state_id.startswith",
+          "lineNumber": 28
+        },
+        {
+          "caller": "test_state_has_accumulated",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_state_has_accumulated",
+          "callee": "PipelineState.create",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_state_id_unique",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_state_id_unique",
+          "callee": "PipelineState.create",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_state_id_unique",
+          "callee": "PipelineState.create",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "PipelineState.create",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "state.save",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "Path",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "PipelineState.load",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_save_and_load",
+          "callee": "Path",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_load_nonexistent",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 67
+        },
+        {
+          "caller": "test_load_nonexistent",
+          "callee": "PipelineState.load",
+          "lineNumber": 68
+        },
+        {
+          "caller": "test_load_nonexistent",
+          "callee": "Path",
+          "lineNumber": 68
+        },
+        {
+          "caller": "test_state_persists_on_update",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_state_persists_on_update",
+          "callee": "PipelineState.create",
+          "lineNumber": 75
+        },
+        {
+          "caller": "test_state_persists_on_update",
+          "callee": "Path",
+          "lineNumber": 76
+        },
+        {
+          "caller": "test_state_persists_on_update",
+          "callee": "state.save",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_state_persists_on_update",
+          "callee": "state.update_status",
+          "lineNumber": 79
+        },
+        {
+          "caller": "test_state_persists_on_update",
+          "callee": "state.save",
+          "lineNumber": 80
+        },
+        {
+          "caller": "test_state_persists_on_update",
+          "callee": "PipelineState.load",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_state_file_is_valid_json",
+          "callee": "tempfile.TemporaryDirectory",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_state_file_is_valid_json",
+          "callee": "PipelineState.create",
+          "lineNumber": 89
+        },
+        {
+          "caller": "test_state_file_is_valid_json",
+          "callee": "state.save",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_state_file_is_valid_json",
+          "callee": "Path",
+          "lineNumber": 90
+        },
+        {
+          "caller": "test_state_file_is_valid_json",
+          "callee": "open",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_state_file_is_valid_json",
+          "callee": "json.load",
+          "lineNumber": 93
+        },
+        {
+          "caller": "test_add_decision",
+          "callee": "PipelineState",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_add_decision",
+          "callee": "state.add_decision",
+          "lineNumber": 108
+        },
+        {
+          "caller": "test_no_duplicate_decisions",
+          "callee": "PipelineState",
+          "lineNumber": 114
+        },
+        {
+          "caller": "test_no_duplicate_decisions",
+          "callee": "state.add_decision",
+          "lineNumber": 115
+        },
+        {
+          "caller": "test_no_duplicate_decisions",
+          "callee": "state.add_decision",
+          "lineNumber": 116
+        },
+        {
+          "caller": "test_no_duplicate_decisions",
+          "callee": "state.accumulated[\"decisions\"].count",
+          "lineNumber": 117
+        },
+        {
+          "caller": "test_add_constraint",
+          "callee": "PipelineState",
+          "lineNumber": 122
+        },
+        {
+          "caller": "test_add_constraint",
+          "callee": "state.add_constraint",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_add_tech_stack",
+          "callee": "PipelineState",
+          "lineNumber": 129
+        },
+        {
+          "caller": "test_add_tech_stack",
+          "callee": "state.add_tech_stack",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_add_tech_stack",
+          "callee": "state.add_tech_stack",
+          "lineNumber": 131
+        },
+        {
+          "caller": "test_accumulated_state_grows",
+          "callee": "PipelineState",
+          "lineNumber": 138
+        },
+        {
+          "caller": "test_accumulated_state_grows",
+          "callee": "state.add_decision",
+          "lineNumber": 141
+        },
+        {
+          "caller": "test_accumulated_state_grows",
+          "callee": "state.add_decision",
+          "lineNumber": 142
+        },
+        {
+          "caller": "test_accumulated_state_grows",
+          "callee": "state.add_constraint",
+          "lineNumber": 143
+        },
+        {
+          "caller": "test_accumulated_state_grows",
+          "callee": "state.add_tech_stack",
+          "lineNumber": 144
+        },
+        {
+          "caller": "test_accumulated_state_grows",
+          "callee": "len",
+          "lineNumber": 146
+        },
+        {
+          "caller": "test_accumulated_state_grows",
+          "callee": "len",
+          "lineNumber": 147
+        },
+        {
+          "caller": "test_accumulated_state_grows",
+          "callee": "len",
+          "lineNumber": 148
+        },
+        {
+          "caller": "test_add_context_brief",
+          "callee": "PipelineState",
+          "lineNumber": 153
+        },
+        {
+          "caller": "test_add_context_brief",
+          "callee": "state.add_context_brief",
+          "lineNumber": 154
+        },
+        {
+          "caller": "test_add_context_brief",
+          "callee": "len",
+          "lineNumber": 155
+        },
+        {
+          "caller": "test_record_step",
+          "callee": "PipelineState",
+          "lineNumber": 165
+        },
+        {
+          "caller": "test_record_step",
+          "callee": "state.record_step",
+          "lineNumber": 166
+        },
+        {
+          "caller": "test_record_step",
+          "callee": "len",
+          "lineNumber": 167
+        },
+        {
+          "caller": "test_record_step_updates_existing",
+          "callee": "PipelineState",
+          "lineNumber": 174
+        },
+        {
+          "caller": "test_record_step_updates_existing",
+          "callee": "state.record_step",
+          "lineNumber": 175
+        },
+        {
+          "caller": "test_record_step_updates_existing",
+          "callee": "state.record_step",
+          "lineNumber": 176
+        },
+        {
+          "caller": "test_record_step_updates_existing",
+          "callee": "len",
+          "lineNumber": 177
+        },
+        {
+          "caller": "test_completed_step_names",
+          "callee": "PipelineState",
+          "lineNumber": 183
+        },
+        {
+          "caller": "test_completed_step_names",
+          "callee": "state.record_step",
+          "lineNumber": 184
+        },
+        {
+          "caller": "test_completed_step_names",
+          "callee": "state.record_step",
+          "lineNumber": 185
+        },
+        {
+          "caller": "test_completed_step_names",
+          "callee": "state.record_step",
+          "lineNumber": 186
+        },
+        {
+          "caller": "test_completed_step_names",
+          "callee": "state.completed_step_names",
+          "lineNumber": 188
+        },
+        {
+          "caller": "test_current_step",
+          "callee": "PipelineState",
+          "lineNumber": 196
+        },
+        {
+          "caller": "test_current_step",
+          "callee": "state.record_step",
+          "lineNumber": 197
+        },
+        {
+          "caller": "test_current_step",
+          "callee": "state.record_step",
+          "lineNumber": 198
+        },
+        {
+          "caller": "test_current_step",
+          "callee": "state.current_step",
+          "lineNumber": 200
+        },
+        {
+          "caller": "test_record_deviation",
+          "callee": "PipelineState",
+          "lineNumber": 209
+        },
+        {
+          "caller": "test_record_deviation",
+          "callee": "state.record_deviation",
+          "lineNumber": 210
+        },
+        {
+          "caller": "test_record_deviation",
+          "callee": "len",
+          "lineNumber": 212
+        },
+        {
+          "caller": "test_multiple_deviations",
+          "callee": "PipelineState",
+          "lineNumber": 217
+        },
+        {
+          "caller": "test_multiple_deviations",
+          "callee": "state.record_deviation",
+          "lineNumber": 218
+        },
+        {
+          "caller": "test_multiple_deviations",
+          "callee": "state.record_deviation",
+          "lineNumber": 219
+        },
+        {
+          "caller": "test_multiple_deviations",
+          "callee": "state.record_deviation",
+          "lineNumber": 220
+        },
+        {
+          "caller": "test_multiple_deviations",
+          "callee": "len",
+          "lineNumber": 221
+        },
+        {
+          "caller": "test_perfect_health",
+          "callee": "PipelineState",
+          "lineNumber": 231
+        },
+        {
+          "caller": "test_perfect_health",
+          "callee": "state.get_health_score",
+          "lineNumber": 232
+        },
+        {
+          "caller": "test_health_decreases_with_deviations",
+          "callee": "PipelineState",
+          "lineNumber": 237
+        },
+        {
+          "caller": "test_health_decreases_with_deviations",
+          "callee": "state.record_deviation",
+          "lineNumber": 238
+        },
+        {
+          "caller": "test_health_decreases_with_deviations",
+          "callee": "state.get_health_score",
+          "lineNumber": 239
+        },
+        {
+          "caller": "test_health_decreases_with_deviations",
+          "callee": "state.record_deviation",
+          "lineNumber": 241
+        },
+        {
+          "caller": "test_health_decreases_with_deviations",
+          "callee": "state.get_health_score",
+          "lineNumber": 242
+        },
+        {
+          "caller": "test_health_decreases_with_deviations",
+          "callee": "state.record_deviation",
+          "lineNumber": 244
+        },
+        {
+          "caller": "test_health_decreases_with_deviations",
+          "callee": "state.get_health_score",
+          "lineNumber": 245
+        },
+        {
+          "caller": "test_health_decreases_with_failed_steps",
+          "callee": "PipelineState",
+          "lineNumber": 250
+        },
+        {
+          "caller": "test_health_decreases_with_failed_steps",
+          "callee": "state.record_step",
+          "lineNumber": 251
+        },
+        {
+          "caller": "test_health_decreases_with_failed_steps",
+          "callee": "state.get_health_score",
+          "lineNumber": 252
+        },
+        {
+          "caller": "test_health_minimum_zero",
+          "callee": "PipelineState",
+          "lineNumber": 257
+        },
+        {
+          "caller": "test_health_minimum_zero",
+          "callee": "range",
+          "lineNumber": 258
+        },
+        {
+          "caller": "test_health_minimum_zero",
+          "callee": "state.record_deviation",
+          "lineNumber": 259
+        },
+        {
+          "caller": "test_health_minimum_zero",
+          "callee": "state.get_health_score",
+          "lineNumber": 260
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 0,
+        "classCount": 6
+      }
+    }
+  ]
+}

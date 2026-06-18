@@ -1,0 +1,5 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [{"path": "skills/fastmcp/examples/.env.example", "language": "config", "sizeLines": 49, "fileCategory": "config"}, {"path": "skills/fastmcp/examples/pyproject.toml", "language": "toml", "sizeLines": 92, "fileCategory": "config"}, {"path": "skills/fastmcp/examples/requirements.txt", "language": "txt", "sizeLines": 37, "fileCategory": "docs"}],
+  "batchImportData": {"skills/fastmcp/examples/.env.example": [], "skills/fastmcp/examples/pyproject.toml": [], "skills/fastmcp/examples/requirements.txt": []}
+}

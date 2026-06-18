@@ -1,0 +1,96 @@
+{
+  "batchIndex": 12,
+  "nodes": [
+    {
+      "id": "config:.claude/file-daemon-architecture.xml",
+      "type": "config",
+      "path": ".claude/file-daemon-architecture.xml",
+      "label": "file-daemon-architecture.xml",
+      "language": "xml",
+      "sizeLines": 998,
+      "metadata": {
+        "fileCategory": "config",
+        "totalLines": 998,
+        "nonEmptyLines": 916,
+        "metrics": {}
+      }
+    },
+    {
+      "id": "config:.claude/forge-progress.xml",
+      "type": "config",
+      "path": ".claude/forge-progress.xml",
+      "label": "forge-progress.xml",
+      "language": "xml",
+      "sizeLines": 65,
+      "metadata": {
+        "fileCategory": "config",
+        "totalLines": 65,
+        "nonEmptyLines": 57,
+        "metrics": {}
+      }
+    },
+    {
+      "id": "config:.claude/handoff-2026-04-12.xml",
+      "type": "config",
+      "path": ".claude/handoff-2026-04-12.xml",
+      "label": "handoff-2026-04-12.xml",
+      "language": "xml",
+      "sizeLines": 119,
+      "metadata": {
+        "fileCategory": "config",
+        "totalLines": 119,
+        "nonEmptyLines": 103,
+        "metrics": {}
+      }
+    },
+    {
+      "id": "config:.claude/handoff-file-ops-2026-04-12.xml",
+      "type": "config",
+      "path": ".claude/handoff-file-ops-2026-04-12.xml",
+      "label": "handoff-file-ops-2026-04-12.xml",
+      "language": "xml",
+      "sizeLines": 233,
+      "metadata": {
+        "fileCategory": "config",
+        "totalLines": 233,
+        "nonEmptyLines": 191,
+        "metrics": {}
+      }
+    },
+    {
+      "id": "config:.claude/rw-tools-plan.xml",
+      "type": "config",
+      "path": ".claude/rw-tools-plan.xml",
+      "label": "rw-tools-plan.xml",
+      "language": "xml",
+      "sizeLines": 906,
+      "metadata": {
+        "fileCategory": "config",
+        "totalLines": 906,
+        "nonEmptyLines": 797,
+        "metrics": {}
+      }
+    },
+    {
+      "id": "config:.claude/settings.json",
+      "type": "config",
+      "path": ".claude/settings.json",
+      "label": "settings.json",
+      "language": "json",
+      "sizeLines": 105,
+      "metadata": {
+        "fileCategory": "config",
+        "totalLines": 105,
+        "nonEmptyLines": 105,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 2
+        }
+      }
+    }
+  ],
+  "edges": []
+}

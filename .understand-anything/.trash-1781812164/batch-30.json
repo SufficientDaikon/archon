@@ -1,0 +1,42 @@
+{
+  "batchIndex": 30,
+  "nodes": [
+    {
+      "id": "file:skills/packager/examples/install-template.ps1",
+      "type": "file:",
+      "name": "install-template.ps1",
+      "filePath": "skills/packager/examples/install-template.ps1",
+      "summary": "PowerShell installer template for Archon skill packages targeting Windows. Creates the required directory structure under ~/.copilot, copies agents and skills, and supports -Force and -DryRun flags. Uses {{PACKAGE_NAME}} as a placeholder for customization.",
+      "tags": ["powershell", "installer", "template", "windows", "packager", "copilot"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/packager/examples/install-template.sh",
+      "type": "file:",
+      "name": "install-template.sh",
+      "filePath": "skills/packager/examples/install-template.sh",
+      "summary": "Shell installer template for Archon skill packages targeting macOS/Linux. Creates directory structure under ~/.copilot, copies skill artifacts, and supports --force and --dry-run flags. Uses {{PACKAGE_NAME}} as a placeholder for customization.",
+      "tags": ["shell", "installer", "template", "macos", "linux", "packager", "copilot"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:skills/packager/examples/readme-template.md",
+      "type": "document:",
+      "name": "readme-template.md",
+      "filePath": "skills/packager/examples/readme-template.md",
+      "summary": "README template for packaged Archon skills. Provides markdown structure for documenting package name, description, installation instructions, available skills/agents, usage examples, and license information.",
+      "tags": ["readme", "template", "documentation", "packager", "markdown"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/packager/examples/website-template.html",
+      "type": "file:",
+      "name": "website-template.html",
+      "filePath": "skills/packager/examples/website-template.html",
+      "summary": "HTML landing page template for packaged Archon skills. A large (1405-line) self-contained HTML file with inline styles providing a professional website layout for skill package marketing pages.",
+      "tags": ["html", "template", "website", "packager", "landing-page", "marketing"],
+      "complexity": "high"
+    }
+  ],
+  "edges": []
+}

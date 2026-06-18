@@ -1,0 +1,33 @@
+{
+  "batchIndex": 33,
+  "nodes": [
+    {
+      "id": "file:skills/windows-error-debugger/scripts/Deep-Dive-Drivers.ps1",
+      "type": "file:",
+      "name": "Deep-Dive-Drivers.ps1",
+      "filePath": "skills/windows-error-debugger/scripts/Deep-Dive-Drivers.ps1",
+      "summary": "PowerShell script for in-depth driver health analysis on Windows. Checks for PnP devices with errors, driver service failures in the system event log, recently changed/installed drivers, third-party kernel modules, and WHQL signature status. Accepts -DaysBack parameter.",
+      "tags": ["powershell", "windows", "drivers", "diagnostics", "kernel", "pnp", "event-log"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/windows-error-debugger/scripts/Preserve-Dumps.ps1",
+      "type": "file:",
+      "name": "Preserve-Dumps.ps1",
+      "filePath": "skills/windows-error-debugger/scripts/Preserve-Dumps.ps1",
+      "summary": "PowerShell script that preserves Windows memory dump files by copying them to a designated safe location before they are overwritten. Ensures crash dump evidence is retained for later analysis.",
+      "tags": ["powershell", "windows", "crash-dump", "minidump", "bsod", "preservation"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/windows-error-debugger/scripts/Triage-Crash.ps1",
+      "type": "file:",
+      "name": "Triage-Crash.ps1",
+      "filePath": "skills/windows-error-debugger/scripts/Triage-Crash.ps1",
+      "summary": "PowerShell script that automates Windows crash triage. Reads recent BSOD stop codes from the event log, analyzes minidump metadata, cross-references with the driver watchlist, and produces a structured triage report.",
+      "tags": ["powershell", "windows", "bsod", "crash", "triage", "minidump", "event-log"],
+      "complexity": "medium"
+    }
+  ],
+  "edges": []
+}

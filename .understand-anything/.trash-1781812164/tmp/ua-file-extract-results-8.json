@@ -1,0 +1,290 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 6,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "file-ops-rs/src/utils/diff.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "functions": [
+        {
+          "name": "generate",
+          "startLine": 4,
+          "endLine": 6,
+          "params": [
+            "_original",
+            "_modified"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UnifiedDiff",
+          "startLine": 1,
+          "endLine": 1,
+          "methods": [
+            "generate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "UnifiedDiff",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "generate",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generate",
+          "callee": "\"--- original\\n+++ modified\\n\".to_string",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "file-ops-rs/src/utils/file_io.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "functions": [
+        {
+          "name": "read_file_lines",
+          "startLine": 4,
+          "endLine": 6,
+          "params": [
+            "_path"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FileIo",
+          "startLine": 1,
+          "endLine": 1,
+          "methods": [
+            "read_file_lines"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "FileIo",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "read_file_lines",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "read_file_lines",
+          "callee": "Ok",
+          "lineNumber": 5
+        },
+        {
+          "caller": "read_file_lines",
+          "callee": "\"utf-8\".to_string",
+          "lineNumber": 5
+        },
+        {
+          "caller": "read_file_lines",
+          "callee": "\"\\n\".to_string",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "file-ops-rs/src/utils/hashing.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "functions": [
+        {
+          "name": "hash",
+          "startLine": 4,
+          "endLine": 6,
+          "params": [
+            "_lines"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ContentHash",
+          "startLine": 1,
+          "endLine": 1,
+          "methods": [
+            "hash"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ContentHash",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "hash",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "hash",
+          "callee": "\"0000000000000000\".to_string",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "file-ops-rs/src/utils/mod.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 10,
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "file-ops-rs/src/utils/parser.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "functions": [
+        {
+          "name": "parse_python",
+          "startLine": 4,
+          "endLine": 6,
+          "params": [
+            "_lines"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LanguageParser",
+          "startLine": 1,
+          "endLine": 1,
+          "methods": [
+            "parse_python"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "LanguageParser",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "parse_python",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "file-ops-rs/src/utils/validation.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "functions": [
+        {
+          "name": "validate_params",
+          "startLine": 4,
+          "endLine": 6,
+          "params": [
+            "_params",
+            "_schema"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Validation",
+          "startLine": 1,
+          "endLine": 1,
+          "methods": [
+            "validate_params"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Validation",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "validate_params",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validate_params",
+          "callee": "Ok",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

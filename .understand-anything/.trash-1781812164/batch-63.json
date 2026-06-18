@@ -1,0 +1,317 @@
+{
+  "batchIndex": 63,
+  "nodes": [
+    {
+      "id": "synapses/pattern-recognition/manifest.yaml",
+      "type": "config",
+      "label": "pattern-recognition manifest.yaml",
+      "file": "synapses/pattern-recognition/manifest.yaml",
+      "language": "yaml",
+      "summary": "Manifest for the pattern-recognition synapse defining firing phases, tags, pattern registry entries, related synapses, and resource references. Controls when and how the synapse activates at EXPERT tier.",
+      "metadata": {"complexity": "moderate", "tags": ["configuration", "synapse", "pattern-recognition"]}
+    },
+    {
+      "id": "synapses/pattern-recognition/resources/detection-heuristics.md",
+      "type": "document",
+      "label": "detection-heuristics.md",
+      "file": "synapses/pattern-recognition/resources/detection-heuristics.md",
+      "language": "markdown",
+      "summary": "Reference guide for the pattern-recognition synapse's confidence scoring system, covering STRONG/PROBABLE/WEAK confidence levels, false-positive prevention rules, detection caps, and promotion rules.",
+      "metadata": {"complexity": "moderate", "tags": ["documentation", "pattern-recognition", "heuristics"]}
+    },
+    {
+      "id": "synapses/pattern-recognition/resources/pattern-registry.md",
+      "type": "document",
+      "label": "pattern-registry.md",
+      "file": "synapses/pattern-recognition/resources/pattern-registry.md",
+      "language": "markdown",
+      "summary": "Complete catalog of 21 architectural and code patterns (plugin-system, fluent-builder, singleton, async-side-effects, etc.) with detection signatures for the pattern-recognition synapse.",
+      "metadata": {"complexity": "complex", "tags": ["documentation", "pattern-recognition", "schema-definition"]}
+    },
+    {
+      "id": "synapses/pattern-recognition/SYNAPSE.md",
+      "type": "document",
+      "label": "SYNAPSE.md",
+      "file": "synapses/pattern-recognition/SYNAPSE.md",
+      "language": "markdown",
+      "summary": "Operational specification for the pattern-recognition synapse covering 3 firing phases (DETECT, SUGGEST, APPLY), rules, output format, and integration details.",
+      "metadata": {"complexity": "moderate", "tags": ["documentation", "synapse", "pattern-recognition"]}
+    },
+    {
+      "id": "synapses/security-awareness/manifest.yaml",
+      "type": "config",
+      "label": "security-awareness manifest.yaml",
+      "file": "synapses/security-awareness/manifest.yaml",
+      "language": "yaml",
+      "summary": "Manifest for the security-awareness synapse defining firing phases, keyword-based activation triggers, OWASP A1-A10 coverage, and related skill/agent references.",
+      "metadata": {"complexity": "simple", "tags": ["configuration", "synapse", "security"]}
+    },
+    {
+      "id": "synapses/security-awareness/SYNAPSE.md",
+      "type": "document",
+      "label": "SYNAPSE.md",
+      "file": "synapses/security-awareness/SYNAPSE.md",
+      "language": "markdown",
+      "summary": "Operational specification for the security-awareness synapse covering SCAN (code production) and FLAG (post-review) phases, OWASP pattern checklist, and output format.",
+      "metadata": {"complexity": "simple", "tags": ["documentation", "synapse", "security"]}
+    },
+    {
+      "id": "synapses/sequential-thinking/manifest.yaml",
+      "type": "config",
+      "label": "sequential-thinking manifest.yaml",
+      "file": "synapses/sequential-thinking/manifest.yaml",
+      "language": "yaml",
+      "summary": "Manifest for the sequential-thinking synapse defining firing phases for COMPLEX/EXPERT tasks, tags, and resource file references.",
+      "metadata": {"complexity": "simple", "tags": ["configuration", "synapse", "sequential-thinking"]}
+    },
+    {
+      "id": "synapses/sequential-thinking/SYNAPSE.md",
+      "type": "document",
+      "label": "SYNAPSE.md",
+      "file": "synapses/sequential-thinking/SYNAPSE.md",
+      "language": "markdown",
+      "summary": "Comprehensive specification for the sequential-thinking synapse with 4 firing phases (DECOMPOSE, REASON, VALIDATE, SYNTHESIZE), BrowseComp reasoning patterns, stuck-loop detection, and reasoning templates for common task types.",
+      "metadata": {"complexity": "complex", "tags": ["documentation", "synapse", "sequential-thinking"]}
+    },
+    {
+      "id": "test_file_ops.py",
+      "type": "file",
+      "label": "test_file_ops.py",
+      "file": "test_file_ops.py",
+      "language": "python",
+      "summary": "Standalone test script implementing and testing file operation utilities: read with encoding detection, language detection by extension, Python structure parsing, atomic writes, content hashing, and unified diff generation.",
+      "metadata": {"complexity": "complex", "tags": ["test", "utility", "file-operations"]}
+    },
+    {
+      "id": "test_file_ops.py::_read_file_lines",
+      "type": "function",
+      "label": "_read_file_lines",
+      "file": "test_file_ops.py",
+      "language": "python",
+      "summary": "Reads a file with UTF-8/Latin-1 encoding fallback, returning lines as a list of strings.",
+      "metadata": {"lineRange": [14, 28], "complexity": "simple", "tags": ["utility", "file-io"]}
+    },
+    {
+      "id": "test_file_ops.py::_atomic_write",
+      "type": "function",
+      "label": "_atomic_write",
+      "file": "test_file_ops.py",
+      "language": "python",
+      "summary": "Writes lines to a file atomically via a temp file and os.replace, supporting configurable encoding and line endings.",
+      "metadata": {"lineRange": [78, 98], "complexity": "moderate", "tags": ["utility", "file-io", "atomicity"]}
+    },
+    {
+      "id": "tests/conftest.py",
+      "type": "file",
+      "label": "conftest.py",
+      "file": "tests/conftest.py",
+      "language": "python",
+      "summary": "Pytest configuration providing shared fixtures: all_synapses (list of synapse directories), halt_expected and allow_expected (sample synapse validation inputs for guardrail tests).",
+      "metadata": {"complexity": "simple", "tags": ["test", "configuration", "fixtures"]}
+    },
+    {
+      "id": "tests/stress/test_stress.py",
+      "type": "file",
+      "label": "test_stress.py",
+      "file": "tests/stress/test_stress.py",
+      "language": "python",
+      "summary": "Stress and edge-case tests for pipeline engine and artifact validation: large 20-step pipelines, cascading failures, state corruption recovery, artifact edge cases (empty/large/binary/unicode files), and health score boundary conditions.",
+      "metadata": {"complexity": "complex", "tags": ["test", "stress-test", "pipeline"]}
+    },
+    {
+      "id": "tests/test_agent_guardrails.py",
+      "type": "file",
+      "label": "test_agent_guardrails.py",
+      "file": "tests/test_agent_guardrails.py",
+      "language": "python",
+      "summary": "Tests verifying agent manifest guardrail schemas: directory existence, manifest parsing, guardrail enforcement mode (strict/standard), must-not/must-do rule structures, and presence of at least one CRITICAL halt rule per agent.",
+      "metadata": {"complexity": "moderate", "tags": ["test", "agent", "guardrails"]}
+    },
+    {
+      "id": "tests/test_anti_rationalization.py",
+      "type": "file",
+      "label": "test_anti_rationalization.py",
+      "file": "tests/test_anti_rationalization.py",
+      "language": "python",
+      "summary": "Unit tests for the anti-rationalization synapse validator, checking detection of rationalization patterns and acceptance of clean reasoning text.",
+      "metadata": {"complexity": "simple", "tags": ["test", "synapse", "anti-rationalization"]}
+    },
+    {
+      "id": "tests/test_artifact_validator.py",
+      "type": "file",
+      "label": "test_artifact_validator.py",
+      "file": "tests/test_artifact_validator.py",
+      "language": "python",
+      "summary": "Comprehensive unit tests for the ArtifactValidator class covering file existence checks (including glob patterns), section presence validation, minimum word count enforcement, compliance score thresholds, full step output validation, and ValidationResult serialization.",
+      "metadata": {"complexity": "complex", "tags": ["test", "artifact-validator", "pipeline"]}
+    },
+    {
+      "id": "tests/test_cli_pipeline.py",
+      "type": "file",
+      "label": "test_cli_pipeline.py",
+      "file": "tests/test_cli_pipeline.py",
+      "language": "python",
+      "summary": "Tests for the pipeline CLI subcommands: verifies app structure and registered subcommands, run/list/cancel command behavior using mocked executors, and helper function correctness.",
+      "metadata": {"complexity": "complex", "tags": ["test", "cli", "pipeline"]}
+    },
+    {
+      "id": "tests/test_code_quality.py",
+      "type": "file",
+      "label": "test_code_quality.py",
+      "file": "tests/test_code_quality.py",
+      "language": "python",
+      "summary": "Unit tests for the code_quality synapse validator checking pylint score thresholds, cyclomatic complexity limits, type hint coverage, and docstring presence.",
+      "metadata": {"complexity": "simple", "tags": ["test", "synapse", "code-quality"]}
+    },
+    {
+      "id": "tests/test_completeness.py",
+      "type": "file",
+      "label": "test_completeness.py",
+      "file": "tests/test_completeness.py",
+      "language": "python",
+      "summary": "Unit tests for the completeness synapse validator, covering acceptance criteria scenarios: all critical met, unmet critical items, remaining TODOs, and low completion rates.",
+      "metadata": {"complexity": "simple", "tags": ["test", "synapse", "completeness"]}
+    },
+    {
+      "id": "tests/test_consistency.py",
+      "type": "file",
+      "label": "test_consistency.py",
+      "file": "tests/test_consistency.py",
+      "language": "python",
+      "summary": "Unit tests for the consistency synapse validator checking consistent/inconsistent naming and mixed import patterns.",
+      "metadata": {"complexity": "simple", "tags": ["test", "synapse", "consistency"]}
+    },
+    {
+      "id": "tests/test_guardrails.py",
+      "type": "file",
+      "label": "test_guardrails.py",
+      "file": "tests/test_guardrails.py",
+      "language": "python",
+      "summary": "Tests for the anti-rationalization synapse structure (files, manifest, resources) and forbidden phrase detection, plus schema validation for guardrails, deviation-log, and thinking-trace YAML schemas.",
+      "metadata": {"complexity": "complex", "tags": ["test", "guardrails", "synapse"]}
+    },
+    {
+      "id": "tests/test_hooks.py",
+      "type": "file",
+      "label": "test_hooks.py",
+      "file": "tests/test_hooks.py",
+      "language": "python",
+      "summary": "Integration tests for all Claude Code hook scripts: session start, pre-step, post-step, on-failure (retry/halt/escape hatch/skip policies), and on-deviation hooks, verifying both file existence and runtime behavior.",
+      "metadata": {"complexity": "complex", "tags": ["test", "hooks", "integration"]}
+    },
+    {
+      "id": "tests/test_integration.py",
+      "type": "file",
+      "label": "test_integration.py",
+      "file": "tests/test_integration.py",
+      "language": "python",
+      "summary": "End-to-end integration tests spanning pipeline load-execute-persist cycles, hook integration, SDK health checks and synapse listing, and manifest consistency verification across paths and schemas.",
+      "metadata": {"complexity": "complex", "tags": ["test", "integration", "pipeline"]}
+    },
+    {
+      "id": "tests/test_metacognition.py",
+      "type": "file",
+      "label": "test_metacognition.py",
+      "file": "tests/test_metacognition.py",
+      "language": "python",
+      "summary": "Unit tests for the metacognition synapse validator covering complexity tier routing: trivial allows, simple with reasoning, moderate/complex plan requirements, and overconfidence detection.",
+      "metadata": {"complexity": "simple", "tags": ["test", "synapse", "metacognition"]}
+    },
+    {
+      "id": "tests/test_pattern_recognition.py",
+      "type": "file",
+      "label": "test_pattern_recognition.py",
+      "file": "tests/test_pattern_recognition.py",
+      "language": "python",
+      "summary": "Unit tests for the pattern-recognition synapse validator checking repeated error detection, clean history acceptance, empty history handling, and threshold-exceeded behavior.",
+      "metadata": {"complexity": "simple", "tags": ["test", "synapse", "pattern-recognition"]}
+    },
+    {
+      "id": "tests/test_pipeline_engine.py",
+      "type": "file",
+      "label": "test_pipeline_engine.py",
+      "file": "tests/test_pipeline_engine.py",
+      "language": "python",
+      "summary": "Unit tests for the pipeline engine: PipelineDefinition loading from YAML, StepResult creation/serialization/defaults, PipelineExecutor initialization and execution with default/custom/failing handlers, and status enum values.",
+      "metadata": {"complexity": "complex", "tags": ["test", "pipeline-engine", "unit"]}
+    },
+    {
+      "id": "tests/test_pipeline_state.py",
+      "type": "file",
+      "label": "test_pipeline_state.py",
+      "file": "tests/test_pipeline_state.py",
+      "language": "python",
+      "summary": "Comprehensive unit tests for PipelineState: creation and unique IDs, JSON persistence (save/load/update), accumulated state mutations (decisions/constraints/tech-stack), step recording and current-step tracking, deviation recording, and health score calculations.",
+      "metadata": {"complexity": "complex", "tags": ["test", "pipeline-state", "unit"]}
+    }
+  ],
+  "edges": [
+    {
+      "from": "synapses/pattern-recognition/SYNAPSE.md",
+      "to": "synapses/pattern-recognition/manifest.yaml",
+      "type": "references",
+      "label": "documents synapse manifest"
+    },
+    {
+      "from": "synapses/pattern-recognition/manifest.yaml",
+      "to": "synapses/pattern-recognition/resources/detection-heuristics.md",
+      "type": "references",
+      "label": "resources"
+    },
+    {
+      "from": "synapses/pattern-recognition/manifest.yaml",
+      "to": "synapses/pattern-recognition/resources/pattern-registry.md",
+      "type": "references",
+      "label": "resources"
+    },
+    {
+      "from": "synapses/security-awareness/SYNAPSE.md",
+      "to": "synapses/security-awareness/manifest.yaml",
+      "type": "references",
+      "label": "documents synapse manifest"
+    },
+    {
+      "from": "synapses/sequential-thinking/SYNAPSE.md",
+      "to": "synapses/sequential-thinking/manifest.yaml",
+      "type": "references",
+      "label": "documents synapse manifest"
+    },
+    {
+      "from": "test_file_ops.py",
+      "to": "test_file_ops.py::_read_file_lines",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "from": "test_file_ops.py",
+      "to": "test_file_ops.py::_atomic_write",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "from": "tests/test_anti_rationalization.py",
+      "to": "synapses/pattern-recognition/manifest.yaml",
+      "type": "tests",
+      "label": "tests anti-rationalization synapse"
+    },
+    {
+      "from": "tests/test_guardrails.py",
+      "to": "synapses/security-awareness/manifest.yaml",
+      "type": "tests",
+      "label": "tests guardrail schemas"
+    },
+    {
+      "from": "tests/test_pattern_recognition.py",
+      "to": "synapses/pattern-recognition/manifest.yaml",
+      "type": "tests",
+      "label": "tests pattern recognition synapse"
+    },
+    {
+      "from": "tests/test_metacognition.py",
+      "to": "synapses/sequential-thinking/manifest.yaml",
+      "type": "tests",
+      "label": "tests metacognition synapse"
+    }
+  ],
+  "warnings": []
+}

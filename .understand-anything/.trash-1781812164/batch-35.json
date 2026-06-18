@@ -1,0 +1,42 @@
+{
+  "batchIndex": 35,
+  "nodes": [
+    {
+      "id": "document:synapses/anti-rationalization/resources/forbidden-phrases.md",
+      "type": "document:",
+      "name": "forbidden-phrases.md",
+      "filePath": "synapses/anti-rationalization/resources/forbidden-phrases.md",
+      "summary": "Reference list of 15 forbidden speculative phrases (e.g., 'should work', 'I believe', 'probably fine') with evidence-based verified alternatives. Core resource for the anti-rationalization synapse that enforces epistemic hygiene in agent outputs.",
+      "tags": ["synapse", "anti-rationalization", "epistemic", "phrases", "evidence", "quality"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:synapses/anti-rationalization/resources/iron-laws.md",
+      "type": "document:",
+      "name": "iron-laws.md",
+      "filePath": "synapses/anti-rationalization/resources/iron-laws.md",
+      "summary": "The 10 iron laws for agent behavior including: no production code without a failing test, no fixes without root cause investigation, no completion claims without fresh verification evidence. Each law includes escape conditions. Core enforcement document for the anti-rationalization synapse.",
+      "tags": ["synapse", "anti-rationalization", "laws", "tdd", "verification", "quality"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:synapses/anti-rationalization/resources/rationalization-tables.md",
+      "type": "document:",
+      "name": "rationalization-tables.md",
+      "filePath": "synapses/anti-rationalization/resources/rationalization-tables.md",
+      "summary": "Structured tables mapping common AI rationalization patterns to their detection signals and correct counter-responses. Enables systematic identification of rationalization in agent reasoning chains.",
+      "tags": ["synapse", "anti-rationalization", "patterns", "detection", "tables", "reasoning"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:synapses/anti-rationalization/resources/red-flags.md",
+      "type": "document:",
+      "name": "red-flags.md",
+      "filePath": "synapses/anti-rationalization/resources/red-flags.md",
+      "summary": "Catalog of red-flag behaviors and thought patterns that indicate an agent is rationalizing rather than reasoning. Used by the anti-rationalization synapse to trigger self-correction protocols.",
+      "tags": ["synapse", "anti-rationalization", "red-flags", "behaviors", "self-correction"],
+      "complexity": "medium"
+    }
+  ],
+  "edges": []
+}

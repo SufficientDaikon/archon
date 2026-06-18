@@ -1,0 +1,501 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "prompts/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 44,
+      "nonEmptyLines": 27,
+      "sections": [
+        {
+          "heading": "Prompt Library",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Categories",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Using Prompts",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Adding Custom Prompts",
+          "level": 2,
+          "line": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "prompts/router.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 176,
+      "nonEmptyLines": 114,
+      "sections": [
+        {
+          "heading": "Complexity Router System Prompt",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Core Identity",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Your Mission",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Classification Guidelines",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "TRIVIAL (<10s, fast model, direct response)",
+          "level": 3,
+          "line": 21
+        },
+        {
+          "heading": "SIMPLE (<30s, fast model, single skill)",
+          "level": 3,
+          "line": 28
+        },
+        {
+          "heading": "MODERATE (<2min, standard model, skill + resources)",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "COMPLEX (<10min, premium model, agent with multiple skills)",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "EXPERT (10min+, premium model, full pipeline)",
+          "level": 3,
+          "line": 49
+        },
+        {
+          "heading": "Routing Decision Process",
+          "level": 2,
+          "line": 56
+        },
+        {
+          "heading": "1. Count Tokens",
+          "level": 3,
+          "line": 58
+        },
+        {
+          "heading": "2. Detect Domain Specificity",
+          "level": 3,
+          "line": 62
+        },
+        {
+          "heading": "3. Check Multi-Step Reasoning",
+          "level": 3,
+          "line": 69
+        },
+        {
+          "heading": "4. Assess Ambiguity",
+          "level": 3,
+          "line": 77
+        },
+        {
+          "heading": "5. Evaluate Resource Needs",
+          "level": 3,
+          "line": 85
+        },
+        {
+          "heading": "6. Select Model Tier",
+          "level": 3,
+          "line": 93
+        },
+        {
+          "heading": "7. Select Execution Mode",
+          "level": 3,
+          "line": 99
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 107
+        },
+        {
+          "heading": "Cost Optimization Principle",
+          "level": 2,
+          "line": 141
+        },
+        {
+          "heading": "User Override Rules",
+          "level": 2,
+          "line": 150
+        },
+        {
+          "heading": "Anti-Patterns",
+          "level": 2,
+          "line": 160
+        },
+        {
+          "heading": "Reference Resources",
+          "level": 2,
+          "line": 169
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 22
+      }
+    },
+    {
+      "path": "prompts/shared.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 406,
+      "nonEmptyLines": 274,
+      "sections": [
+        {
+          "heading": "Shared Prompt Utilities",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Response Formatting",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Standard Headers",
+          "level": 3,
+          "line": 7
+        },
+        {
+          "heading": "Citation Format",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "Code Block Standards",
+          "level": 2,
+          "line": 88
+        },
+        {
+          "heading": "Always Include Language",
+          "level": 3,
+          "line": 90
+        },
+        {
+          "heading": "Command Output Format",
+          "level": 3,
+          "line": 110
+        },
+        {
+          "heading": "File Content",
+          "level": 3,
+          "line": 123
+        },
+        {
+          "heading": "Error Handling Patterns",
+          "level": 2,
+          "line": 137
+        },
+        {
+          "heading": "Graceful Degradation",
+          "level": 3,
+          "line": 139
+        },
+        {
+          "heading": "Validation Errors",
+          "level": 3,
+          "line": 148
+        },
+        {
+          "heading": "Missing Dependencies",
+          "level": 3,
+          "line": 161
+        },
+        {
+          "heading": "Progress Indicators",
+          "level": 2,
+          "line": 170
+        },
+        {
+          "heading": "Multi-Step Tasks",
+          "level": 3,
+          "line": 172
+        },
+        {
+          "heading": "Checklist Format",
+          "level": 3,
+          "line": 184
+        },
+        {
+          "heading": "Table Formatting",
+          "level": 2,
+          "line": 196
+        },
+        {
+          "heading": "Skills/Bundles Listing",
+          "level": 3,
+          "line": 198
+        },
+        {
+          "heading": "Comparison Tables",
+          "level": 3,
+          "line": 207
+        },
+        {
+          "heading": "Resource Tables",
+          "level": 3,
+          "line": 216
+        },
+        {
+          "heading": "File Operation Patterns",
+          "level": 2,
+          "line": 224
+        },
+        {
+          "heading": "Creating Files",
+          "level": 3,
+          "line": 226
+        },
+        {
+          "heading": "Editing Files",
+          "level": 3,
+          "line": 237
+        },
+        {
+          "heading": "Viewing Files",
+          "level": 3,
+          "line": 250
+        },
+        {
+          "heading": "Decision Documentation",
+          "level": 2,
+          "line": 260
+        },
+        {
+          "heading": "Workflow Documentation",
+          "level": 2,
+          "line": 280
+        },
+        {
+          "heading": "Agent Handoff Format",
+          "level": 2,
+          "line": 302
+        },
+        {
+          "heading": "Confirmation Requests",
+          "level": 2,
+          "line": 328
+        },
+        {
+          "heading": "Summary Format",
+          "level": 2,
+          "line": 348
+        },
+        {
+          "heading": "Inline Annotations",
+          "level": 2,
+          "line": 377
+        },
+        {
+          "heading": "Variable Placeholders",
+          "level": 2,
+          "line": 394
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 30
+      }
+    },
+    {
+      "path": "prompts/system.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 249,
+      "nonEmptyLines": 179,
+      "sections": [
+        {
+          "heading": "Archon Master System Prompt",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Core Identity",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "What is Archon?",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Your Capabilities",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "You Can:",
+          "level": 3,
+          "line": 21
+        },
+        {
+          "heading": "Skill Bundles Available:",
+          "level": 3,
+          "line": 30
+        },
+        {
+          "heading": "Agents Available:",
+          "level": 3,
+          "line": 46
+        },
+        {
+          "heading": "Pipelines Available:",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "How to Operate",
+          "level": 2,
+          "line": 69
+        },
+        {
+          "heading": "1. Route Every Request (P0)",
+          "level": 3,
+          "line": 71
+        },
+        {
+          "heading": "2. Skill Activation",
+          "level": 3,
+          "line": 79
+        },
+        {
+          "heading": "3. Agent Invocation",
+          "level": 3,
+          "line": 91
+        },
+        {
+          "heading": "4. Pipeline Execution",
+          "level": 3,
+          "line": 102
+        },
+        {
+          "heading": "Behavioral Guidelines",
+          "level": 2,
+          "line": 115
+        },
+        {
+          "heading": "Tone",
+          "level": 3,
+          "line": 117
+        },
+        {
+          "heading": "Communication",
+          "level": 3,
+          "line": 124
+        },
+        {
+          "heading": "Tool Usage",
+          "level": 3,
+          "line": 131
+        },
+        {
+          "heading": "Error Handling",
+          "level": 3,
+          "line": 138
+        },
+        {
+          "heading": "Response Format Standards",
+          "level": 2,
+          "line": 145
+        },
+        {
+          "heading": "Code Blocks",
+          "level": 3,
+          "line": 147
+        },
+        {
+          "heading": "Citations",
+          "level": 3,
+          "line": 156
+        },
+        {
+          "heading": "File Paths",
+          "level": 3,
+          "line": 162
+        },
+        {
+          "heading": "Command Output",
+          "level": 3,
+          "line": 170
+        },
+        {
+          "heading": "Quality Standards",
+          "level": 2,
+          "line": 181
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 183
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 195
+        },
+        {
+          "heading": "Knowledge Sources",
+          "level": 2,
+          "line": 206
+        },
+        {
+          "heading": "Self-Customization",
+          "level": 2,
+          "line": 217
+        },
+        {
+          "heading": "Platform Integration",
+          "level": 2,
+          "line": 227
+        },
+        {
+          "heading": "Meta Instructions",
+          "level": 2,
+          "line": 237
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 30
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "batchIndex": 19,
+  "nodes": [
+    {
+      "id": "document:prompts/personas/expert.md",
+      "type": "document",
+      "name": "expert.md",
+      "filePath": "prompts/personas/expert.md",
+      "summary": "Expert persona prompt for Archon defining core traits, communication style, verbosity rules, code example standards, response patterns for decisions/analysis/architecture, knowledge sharing approach, quality gates, and example response structure for deep technical expertise mode.",
+      "tags": ["persona", "expert", "prompt", "communication-style", "technical"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:prompts/personas/quick.md",
+      "type": "document",
+      "name": "quick.md",
+      "filePath": "prompts/personas/quick.md",
+      "summary": "Quick persona prompt for Archon defining the fast, minimal-output mode with core traits, minimal verbosity rules, speed optimization shortcuts, formatting patterns (minimal headers, lists, inline code), and guidance on when NOT to use the quick persona.",
+      "tags": ["persona", "quick", "prompt", "speed-optimization", "minimal-output"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:prompts/personas/teacher.md",
+      "type": "document",
+      "name": "teacher.md",
+      "filePath": "prompts/personas/teacher.md",
+      "summary": "Teacher persona prompt for Archon defining pedagogical communication style with concept introduction patterns, step-by-step problem solving, debugging-as-learning approach, jargon busting, analogies, progressive disclosure, encouraging language, and interactive teaching elements.",
+      "tags": ["persona", "teacher", "prompt", "pedagogy", "communication-style"],
+      "complexity": "complex"
+    }
+  ],
+  "edges": []
+}

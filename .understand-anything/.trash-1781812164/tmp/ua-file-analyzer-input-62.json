@@ -1,0 +1,33 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [
+    {"path": "src/archon/commands/__init__.py", "language": "python", "sizeLines": 1, "fileCategory": "code"},
+    {"path": "src/archon/core/__init__.py", "language": "python", "sizeLines": 1, "fileCategory": "code"},
+    {"path": "src/archon/core/agent_mcp.py", "language": "python", "sizeLines": 247, "fileCategory": "code"},
+    {"path": "src/archon/core/artifact_validator.py", "language": "python", "sizeLines": 322, "fileCategory": "code"},
+    {"path": "src/archon/core/design_spec.py", "language": "python", "sizeLines": 56, "fileCategory": "code"},
+    {"path": "src/archon/core/migration.py", "language": "python", "sizeLines": 506, "fileCategory": "code"},
+    {"path": "src/archon/core/pipeline_engine.py", "language": "python", "sizeLines": 626, "fileCategory": "code"},
+    {"path": "src/archon/core/policy_engine.py", "language": "python", "sizeLines": 436, "fileCategory": "code"},
+    {"path": "src/archon/core/schema_validator.py", "language": "python", "sizeLines": 329, "fileCategory": "code"},
+    {"path": "src/archon/core/session_manager.py", "language": "python", "sizeLines": 341, "fileCategory": "code"},
+    {"path": "src/archon/core/skill_mcp_schema.py", "language": "python", "sizeLines": 148, "fileCategory": "code"},
+    {"path": "src/archon/core/synapse_engine_v2.py", "language": "python", "sizeLines": 326, "fileCategory": "code"},
+    {"path": "src/archon/core/synapse_engine.py", "language": "python", "sizeLines": 154, "fileCategory": "code"},
+    {"path": "src/archon/core/synapse_hardener.py", "language": "python", "sizeLines": 198, "fileCategory": "code"},
+    {"path": "src/archon/core/synapse_router.py", "language": "python", "sizeLines": 152, "fileCategory": "code"},
+    {"path": "src/archon/core/telemetry.py", "language": "python", "sizeLines": 263, "fileCategory": "code"},
+    {"path": "src/archon/utils/__init__.py", "language": "python", "sizeLines": 1, "fileCategory": "code"},
+    {"path": "stress_test_fixed.py", "language": "python", "sizeLines": 368, "fileCategory": "code"},
+    {"path": "stress_test.py", "language": "python", "sizeLines": 622, "fileCategory": "code"},
+    {"path": "synapses/_template/manifest.yaml", "language": "yaml", "sizeLines": 33, "fileCategory": "config"},
+    {"path": "synapses/_template/SYNAPSE.md", "language": "markdown", "sizeLines": 97, "fileCategory": "docs"},
+    {"path": "synapses/anti-rationalization/manifest.yaml", "language": "yaml", "sizeLines": 50, "fileCategory": "config"},
+    {"path": "synapses/anti-rationalization/SYNAPSE.md", "language": "markdown", "sizeLines": 255, "fileCategory": "docs"},
+    {"path": "synapses/metacognition/manifest.yaml", "language": "yaml", "sizeLines": 46, "fileCategory": "config"},
+    {"path": "synapses/metacognition/SYNAPSE.md", "language": "markdown", "sizeLines": 331, "fileCategory": "docs"}
+  ],
+  "batchImportData": {
+    "src/archon/core/pipeline_engine.py": ["src/archon/core/synapse_engine_v2.py"]
+  }
+}

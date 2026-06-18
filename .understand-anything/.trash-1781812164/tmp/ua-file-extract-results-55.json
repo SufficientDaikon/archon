@@ -1,0 +1,2258 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "skills/pr-quality-agent/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 261,
+      "nonEmptyLines": 211,
+      "sections": [
+        {
+          "heading": "PR Quality Agent",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "The 7 Rules (Non-Negotiable)",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "Pipeline: The Self-Review Loop",
+          "level": 2,
+          "line": 47
+        },
+        {
+          "heading": "Phase 1: Gather (Research)",
+          "level": 3,
+          "line": 70
+        },
+        {
+          "heading": "Phase 2: Draft (Write)",
+          "level": 3,
+          "line": 79
+        },
+        {
+          "heading": "Phase 3: Audit (Self-Review)",
+          "level": 3,
+          "line": 109
+        },
+        {
+          "heading": "Citation Audit",
+          "level": 4,
+          "line": 113
+        },
+        {
+          "heading": "Structure Audit",
+          "level": 4,
+          "line": 120
+        },
+        {
+          "heading": "Accuracy Audit",
+          "level": 4,
+          "line": 128
+        },
+        {
+          "heading": "Voice Audit",
+          "level": 4,
+          "line": 134
+        },
+        {
+          "heading": "Markdown Audit",
+          "level": 4,
+          "line": 141
+        },
+        {
+          "heading": "Phase 4: Fix & Iterate",
+          "level": 3,
+          "line": 149
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 157
+        },
+        {
+          "heading": "Scaling: Minimum Viable vs Full Treatment",
+          "level": 2,
+          "line": 165
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 174
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 176
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 187
+        },
+        {
+          "heading": "Citation Format Reference",
+          "level": 2,
+          "line": 199
+        },
+        {
+          "heading": "Inline (in body text):",
+          "level": 3,
+          "line": 201
+        },
+        {
+          "heading": "Citation index table:",
+          "level": 3,
+          "line": 206
+        },
+        {
+          "heading": "Permalink URL format:",
+          "level": 3,
+          "line": 213
+        },
+        {
+          "heading": "Before/After/Source Table Template",
+          "level": 2,
+          "line": 218
+        },
+        {
+          "heading": "Scope and Limitations Template",
+          "level": 2,
+          "line": 231
+        },
+        {
+          "heading": "Handoff",
+          "level": 2,
+          "line": 249
+        },
+        {
+          "heading": "Platform Notes",
+          "level": 2,
+          "line": 257
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 27
+      }
+    },
+    {
+      "path": "skills/pr-to-course/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 40,
+      "nonEmptyLines": 35,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 18
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 32
+        },
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "skills/pr-to-course/references/design-system.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 487,
+      "nonEmptyLines": 423,
+      "sections": [
+        {
+          "heading": "Design System Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Color Palette",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Typography",
+          "level": 2,
+          "line": 61
+        },
+        {
+          "heading": "Spacing & Layout",
+          "level": 2,
+          "line": 116
+        },
+        {
+          "heading": "Shadows & Depth",
+          "level": 2,
+          "line": 175
+        },
+        {
+          "heading": "Animations & Transitions",
+          "level": 2,
+          "line": 190
+        },
+        {
+          "heading": "Navigation & Progress",
+          "level": 2,
+          "line": 239
+        },
+        {
+          "heading": "PR-Specific Elements",
+          "level": 2,
+          "line": 268
+        },
+        {
+          "heading": "Before/After Visual",
+          "level": 3,
+          "line": 270
+        },
+        {
+          "heading": "Source File Cards",
+          "level": 3,
+          "line": 300
+        },
+        {
+          "heading": "Test Coverage Cards",
+          "level": 3,
+          "line": 340
+        },
+        {
+          "heading": "Responsive Breakpoints",
+          "level": 2,
+          "line": 369
+        },
+        {
+          "heading": "Code Blocks",
+          "level": 2,
+          "line": 409
+        },
+        {
+          "heading": "Scrollbar & Background",
+          "level": 2,
+          "line": 460
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "skills/pr-to-course/references/interactive-elements.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 1092,
+      "nonEmptyLines": 989,
+      "sections": [
+        {
+          "heading": "Interactive Elements Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Code ↔ English Translation Blocks",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Multiple-Choice Quizzes",
+          "level": 2,
+          "line": 104
+        },
+        {
+          "heading": "Before/After Visual",
+          "level": 2,
+          "line": 225
+        },
+        {
+          "heading": "Data Flow / Decision Flow Animation",
+          "level": 2,
+          "line": 298
+        },
+        {
+          "heading": "Behavior Matrix",
+          "level": 2,
+          "line": 432
+        },
+        {
+          "heading": "Test Coverage Cards",
+          "level": 2,
+          "line": 513
+        },
+        {
+          "heading": "Source File Cards",
+          "level": 2,
+          "line": 602
+        },
+        {
+          "heading": "Group Chat Animation",
+          "level": 2,
+          "line": 652
+        },
+        {
+          "heading": "Callout Boxes",
+          "level": 2,
+          "line": 805
+        },
+        {
+          "heading": "Numbered Step Cards",
+          "level": 2,
+          "line": 872
+        },
+        {
+          "heading": "Stats Grid",
+          "level": 2,
+          "line": 945
+        },
+        {
+          "heading": "PR/Issue Link Buttons",
+          "level": 2,
+          "line": 1015
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    },
+    {
+      "path": "skills/pr-to-course/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 315,
+      "nonEmptyLines": 226,
+      "sections": [
+        {
+          "heading": "PR-to-Course",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Workflow",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "Phase 1: PR Analysis",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "Phase 2: Curriculum Design",
+          "level": 3,
+          "line": 52
+        },
+        {
+          "heading": "Phase 3: Build",
+          "level": 3,
+          "line": 74
+        },
+        {
+          "heading": "HTML Structure",
+          "level": 4,
+          "line": 81
+        },
+        {
+          "heading": "PR-Specific Interactive Elements",
+          "level": 4,
+          "line": 105
+        },
+        {
+          "heading": "Build Rules",
+          "level": 4,
+          "line": 121
+        },
+        {
+          "heading": "Phase 4: Review & Polish",
+          "level": 3,
+          "line": 132
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 155
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 168
+        },
+        {
+          "heading": "Handoff",
+          "level": 2,
+          "line": 183
+        },
+        {
+          "heading": "Content Philosophy",
+          "level": 2,
+          "line": 194
+        },
+        {
+          "heading": "The PR Has a Story — Find It",
+          "level": 3,
+          "line": 196
+        },
+        {
+          "heading": "Show the Code, Explain the Why",
+          "level": 3,
+          "line": 207
+        },
+        {
+          "heading": "Test Cards Tell a Story Too",
+          "level": 3,
+          "line": 216
+        },
+        {
+          "heading": "Behavior Matrices Are Decision Tables",
+          "level": 3,
+          "line": 223
+        },
+        {
+          "heading": "Design Identity",
+          "level": 2,
+          "line": 232
+        },
+        {
+          "heading": "Gotchas — Common Failure Points",
+          "level": 2,
+          "line": 248
+        },
+        {
+          "heading": "Quiz Answer Spoilers",
+          "level": 3,
+          "line": 252
+        },
+        {
+          "heading": "Stats Grid Layout",
+          "level": 3,
+          "line": 255
+        },
+        {
+          "heading": "Test Count Accuracy",
+          "level": 3,
+          "line": 258
+        },
+        {
+          "heading": "Flow Animation Visibility",
+          "level": 3,
+          "line": 261
+        },
+        {
+          "heading": "Module Numbers",
+          "level": 3,
+          "line": 264
+        },
+        {
+          "heading": "Before/After Visual Missing",
+          "level": 3,
+          "line": 267
+        },
+        {
+          "heading": "Code Modifications",
+          "level": 3,
+          "line": 270
+        },
+        {
+          "heading": "Mobile Responsiveness",
+          "level": 3,
+          "line": 273
+        },
+        {
+          "heading": "Reference Files",
+          "level": 2,
+          "line": 278
+        },
+        {
+          "heading": "Example Output",
+          "level": 2,
+          "line": 287
+        },
+        {
+          "heading": "Deployment",
+          "level": 2,
+          "line": 303
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 32
+      }
+    },
+    {
+      "path": "skills/prisma-orm-patterns/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 42,
+      "nonEmptyLines": 35,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 15
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 31
+        },
+        {
+          "heading": "source-dissection",
+          "level": 1,
+          "line": 33
+        },
+        {
+          "heading": "source-repo",
+          "level": 1,
+          "line": 34
+        },
+        {
+          "heading": "composes",
+          "level": 1,
+          "line": 36
+        },
+        {
+          "heading": "resources",
+          "level": 1,
+          "line": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 12
+      }
+    },
+    {
+      "path": "skills/prisma-orm-patterns/resources/prisma-reference.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 208,
+      "nonEmptyLines": 169,
+      "sections": [
+        {
+          "heading": "Prisma ORM Reference Patterns",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "globalThis Singleton",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Cursor Pagination with perPage+1 Trick",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Soft Deletion Pattern",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "Strategic Indexing (20+ indexes)",
+          "level": 2,
+          "line": 92
+        },
+        {
+          "heading": "Version History Pattern",
+          "level": 2,
+          "line": 135
+        },
+        {
+          "heading": "Custom NextAuth Adapter",
+          "level": 2,
+          "line": 156
+        },
+        {
+          "heading": "Content Fingerprinting for Deduplication",
+          "level": 2,
+          "line": 182
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/prisma-orm-patterns/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 124,
+      "nonEmptyLines": 97,
+      "sections": [
+        {
+          "heading": "Prisma ORM Patterns",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Identity",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Workflow",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "Step 1: Design Schema",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "Step 2: Configure Client Singleton",
+          "level": 3,
+          "line": 38
+        },
+        {
+          "heading": "Step 3: Build Query Patterns",
+          "level": 3,
+          "line": 44
+        },
+        {
+          "heading": "Step 4: Add Strategic Indexes",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "Step 5: Create Migration Strategy",
+          "level": 3,
+          "line": 58
+        },
+        {
+          "heading": "Step 6: Wire Custom Adapters",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "Rules",
+          "level": 2,
+          "line": 70
+        },
+        {
+          "heading": "DO:",
+          "level": 3,
+          "line": 72
+        },
+        {
+          "heading": "DON'T:",
+          "level": 3,
+          "line": 80
+        },
+        {
+          "heading": "Output Format",
+          "level": 2,
+          "line": 88
+        },
+        {
+          "heading": "Output Template",
+          "level": 3,
+          "line": 94
+        },
+        {
+          "heading": "Resources",
+          "level": 2,
+          "line": 107
+        },
+        {
+          "heading": "Handoff",
+          "level": 2,
+          "line": 113
+        },
+        {
+          "heading": "Platform Notes",
+          "level": 2,
+          "line": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    },
+    {
+      "path": "skills/prompt-architect/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/prompt-architect/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/prompt-architect/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/prompt-architect/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/prompt-architect/resources/framework_analyzer.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 321,
+      "nonEmptyLines": 297,
+      "functions": [
+        {
+          "name": "analyze_use_case",
+          "startLine": 132,
+          "endLine": 230,
+          "params": [
+            "prompt_text"
+          ]
+        },
+        {
+          "name": "get_framework_questions",
+          "startLine": 232,
+          "endLine": 299,
+          "params": [
+            "framework_id"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "analyze_use_case",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "get_framework_questions",
+          "line": 232,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "analyze_use_case",
+          "callee": "prompt_text.lower",
+          "lineNumber": 142
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "FRAMEWORKS.items",
+          "lineNumber": 145
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "matches.append",
+          "lineNumber": 153
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "any",
+          "lineNumber": 157
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "matches.append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "any",
+          "lineNumber": 162
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "matches.append",
+          "lineNumber": 164
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "any",
+          "lineNumber": 167
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "matches.append",
+          "lineNumber": 169
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "any",
+          "lineNumber": 170
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "matches.append",
+          "lineNumber": 172
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "any",
+          "lineNumber": 175
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "matches.append",
+          "lineNumber": 177
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "any",
+          "lineNumber": 178
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "matches.append",
+          "lineNumber": 180
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "any",
+          "lineNumber": 183
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "matches.append",
+          "lineNumber": 185
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "any",
+          "lineNumber": 186
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "matches.append",
+          "lineNumber": 188
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "any",
+          "lineNumber": 189
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "matches.append",
+          "lineNumber": 191
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "len",
+          "lineNumber": 194
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "prompt_text.split",
+          "lineNumber": 194
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "matches.append",
+          "lineNumber": 196
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "any",
+          "lineNumber": 199
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "matches.append",
+          "lineNumber": 201
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "any",
+          "lineNumber": 204
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "matches.append",
+          "lineNumber": 206
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "sorted",
+          "lineNumber": 215
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "scores.items",
+          "lineNumber": 215
+        },
+        {
+          "caller": "analyze_use_case",
+          "callee": "recommendations.append",
+          "lineNumber": 221
+        },
+        {
+          "caller": "get_framework_questions",
+          "callee": "questions.get",
+          "lineNumber": 299
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "skills/prompt-architect/resources/prompt_evaluator.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 336,
+      "nonEmptyLines": 287,
+      "functions": [
+        {
+          "name": "evaluate_prompt",
+          "startLine": 5,
+          "endLine": 26,
+          "params": [
+            "prompt_text"
+          ]
+        },
+        {
+          "name": "evaluate_clarity",
+          "startLine": 28,
+          "endLine": 64,
+          "params": [
+            "prompt_text"
+          ]
+        },
+        {
+          "name": "evaluate_specificity",
+          "startLine": 66,
+          "endLine": 110,
+          "params": [
+            "prompt_text"
+          ]
+        },
+        {
+          "name": "evaluate_context",
+          "startLine": 112,
+          "endLine": 151,
+          "params": [
+            "prompt_text"
+          ]
+        },
+        {
+          "name": "evaluate_completeness",
+          "startLine": 153,
+          "endLine": 196,
+          "params": [
+            "prompt_text"
+          ]
+        },
+        {
+          "name": "evaluate_structure",
+          "startLine": 198,
+          "endLine": 244,
+          "params": [
+            "prompt_text"
+          ]
+        },
+        {
+          "name": "generate_improvement_suggestions",
+          "startLine": 246,
+          "endLine": 303,
+          "params": [
+            "evaluation"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "evaluate_prompt",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "evaluate_clarity",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "evaluate_specificity",
+          "line": 66,
+          "isDefault": false
+        },
+        {
+          "name": "evaluate_context",
+          "line": 112,
+          "isDefault": false
+        },
+        {
+          "name": "evaluate_completeness",
+          "line": 153,
+          "isDefault": false
+        },
+        {
+          "name": "evaluate_structure",
+          "line": 198,
+          "isDefault": false
+        },
+        {
+          "name": "generate_improvement_suggestions",
+          "line": 246,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "evaluate_prompt",
+          "callee": "evaluate_clarity",
+          "lineNumber": 16
+        },
+        {
+          "caller": "evaluate_prompt",
+          "callee": "evaluate_specificity",
+          "lineNumber": 17
+        },
+        {
+          "caller": "evaluate_prompt",
+          "callee": "evaluate_context",
+          "lineNumber": 18
+        },
+        {
+          "caller": "evaluate_prompt",
+          "callee": "evaluate_completeness",
+          "lineNumber": 19
+        },
+        {
+          "caller": "evaluate_prompt",
+          "callee": "evaluate_structure",
+          "lineNumber": 20
+        },
+        {
+          "caller": "evaluate_prompt",
+          "callee": "sum",
+          "lineNumber": 24
+        },
+        {
+          "caller": "evaluate_prompt",
+          "callee": "results.values",
+          "lineNumber": 24
+        },
+        {
+          "caller": "evaluate_prompt",
+          "callee": "len",
+          "lineNumber": 24
+        },
+        {
+          "caller": "evaluate_clarity",
+          "callee": "sum",
+          "lineNumber": 36
+        },
+        {
+          "caller": "evaluate_clarity",
+          "callee": "prompt_text.lower",
+          "lineNumber": 36
+        },
+        {
+          "caller": "evaluate_clarity",
+          "callee": "min",
+          "lineNumber": 38
+        },
+        {
+          "caller": "evaluate_clarity",
+          "callee": "issues.append",
+          "lineNumber": 39
+        },
+        {
+          "caller": "evaluate_clarity",
+          "callee": "strengths.append",
+          "lineNumber": 41
+        },
+        {
+          "caller": "evaluate_clarity",
+          "callee": "any",
+          "lineNumber": 45
+        },
+        {
+          "caller": "evaluate_clarity",
+          "callee": "prompt_text.lower",
+          "lineNumber": 45
+        },
+        {
+          "caller": "evaluate_clarity",
+          "callee": "strengths.append",
+          "lineNumber": 48
+        },
+        {
+          "caller": "evaluate_clarity",
+          "callee": "issues.append",
+          "lineNumber": 50
+        },
+        {
+          "caller": "evaluate_clarity",
+          "callee": "prompt_text.split()[0].lower",
+          "lineNumber": 55
+        },
+        {
+          "caller": "evaluate_clarity",
+          "callee": "prompt_text.split",
+          "lineNumber": 55
+        },
+        {
+          "caller": "evaluate_clarity",
+          "callee": "prompt_text.split",
+          "lineNumber": 55
+        },
+        {
+          "caller": "evaluate_clarity",
+          "callee": "issues.append",
+          "lineNumber": 58
+        },
+        {
+          "caller": "evaluate_clarity",
+          "callee": "max",
+          "lineNumber": 61
+        },
+        {
+          "caller": "evaluate_clarity",
+          "callee": "min",
+          "lineNumber": 61
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "len",
+          "lineNumber": 72
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "prompt_text.split",
+          "lineNumber": 72
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "issues.append",
+          "lineNumber": 77
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "issues.append",
+          "lineNumber": 80
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "strengths.append",
+          "lineNumber": 82
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "any",
+          "lineNumber": 86
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "char.isdigit",
+          "lineNumber": 86
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "strengths.append",
+          "lineNumber": 89
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "sum",
+          "lineNumber": 92
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "prompt_text.split",
+          "lineNumber": 92
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "word[0].isupper",
+          "lineNumber": 92
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "strengths.append",
+          "lineNumber": 95
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "sum",
+          "lineNumber": 99
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "prompt_text.lower",
+          "lineNumber": 99
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "min",
+          "lineNumber": 101
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "strengths.append",
+          "lineNumber": 102
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "issues.append",
+          "lineNumber": 104
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "max",
+          "lineNumber": 107
+        },
+        {
+          "caller": "evaluate_specificity",
+          "callee": "min",
+          "lineNumber": 107
+        },
+        {
+          "caller": "evaluate_context",
+          "callee": "sum",
+          "lineNumber": 123
+        },
+        {
+          "caller": "evaluate_context",
+          "callee": "prompt_text.lower",
+          "lineNumber": 123
+        },
+        {
+          "caller": "evaluate_context",
+          "callee": "issues.append",
+          "lineNumber": 127
+        },
+        {
+          "caller": "evaluate_context",
+          "callee": "strengths.append",
+          "lineNumber": 130
+        },
+        {
+          "caller": "evaluate_context",
+          "callee": "strengths.append",
+          "lineNumber": 133
+        },
+        {
+          "caller": "evaluate_context",
+          "callee": "any",
+          "lineNumber": 140
+        },
+        {
+          "caller": "evaluate_context",
+          "callee": "prompt_text.lower",
+          "lineNumber": 140
+        },
+        {
+          "caller": "evaluate_context",
+          "callee": "strengths.append",
+          "lineNumber": 143
+        },
+        {
+          "caller": "evaluate_context",
+          "callee": "issues.append",
+          "lineNumber": 145
+        },
+        {
+          "caller": "evaluate_context",
+          "callee": "max",
+          "lineNumber": 148
+        },
+        {
+          "caller": "evaluate_context",
+          "callee": "min",
+          "lineNumber": 148
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "any",
+          "lineNumber": 160
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "prompt_text.lower",
+          "lineNumber": 160
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "any",
+          "lineNumber": 161
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "prompt_text.lower",
+          "lineNumber": 161
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "any",
+          "lineNumber": 162
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "prompt_text.lower",
+          "lineNumber": 162
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "strengths.append",
+          "lineNumber": 166
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "issues.append",
+          "lineNumber": 169
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "strengths.append",
+          "lineNumber": 173
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "issues.append",
+          "lineNumber": 175
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "strengths.append",
+          "lineNumber": 179
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "issues.append",
+          "lineNumber": 181
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "any",
+          "lineNumber": 185
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "prompt_text.lower",
+          "lineNumber": 185
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "strengths.append",
+          "lineNumber": 188
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "issues.append",
+          "lineNumber": 190
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "max",
+          "lineNumber": 193
+        },
+        {
+          "caller": "evaluate_completeness",
+          "callee": "min",
+          "lineNumber": 193
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "s.strip",
+          "lineNumber": 205
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "prompt_text.split",
+          "lineNumber": 205
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "s.strip",
+          "lineNumber": 205
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "len",
+          "lineNumber": 206
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "strengths.append",
+          "lineNumber": 208
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "len",
+          "lineNumber": 208
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "issues.append",
+          "lineNumber": 210
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "any",
+          "lineNumber": 213
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "strengths.append",
+          "lineNumber": 216
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "any",
+          "lineNumber": 220
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "strengths.append",
+          "lineNumber": 223
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "any",
+          "lineNumber": 226
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "len",
+          "lineNumber": 226
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "s.split",
+          "lineNumber": 226
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "issues.append",
+          "lineNumber": 229
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "len",
+          "lineNumber": 232
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "prompt_text.split",
+          "lineNumber": 232
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "issues.append",
+          "lineNumber": 235
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "strengths.append",
+          "lineNumber": 237
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "max",
+          "lineNumber": 241
+        },
+        {
+          "caller": "evaluate_structure",
+          "callee": "min",
+          "lineNumber": 241
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 252
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "issue.lower",
+          "lineNumber": 254
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 255
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "issue.lower",
+          "lineNumber": 256
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 257
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "issue.lower",
+          "lineNumber": 258
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 259
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 263
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "issue.lower",
+          "lineNumber": 265
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 266
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "issue.lower",
+          "lineNumber": 267
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 268
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 272
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "issue.lower",
+          "lineNumber": 274
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 275
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "issue.lower",
+          "lineNumber": 276
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 277
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 281
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "issue.lower",
+          "lineNumber": 283
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 284
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "issue.lower",
+          "lineNumber": 285
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "issue.lower",
+          "lineNumber": 285
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 286
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "issue.lower",
+          "lineNumber": 287
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "issue.lower",
+          "lineNumber": 287
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 288
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "issue.lower",
+          "lineNumber": 289
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 290
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 294
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "issue.lower",
+          "lineNumber": 296
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 297
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "issue.lower",
+          "lineNumber": 298
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 299
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "issue.lower",
+          "lineNumber": 300
+        },
+        {
+          "caller": "generate_improvement_suggestions",
+          "callee": "suggestions.append",
+          "lineNumber": 301
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "skills/prompt-architect/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 203,
+      "nonEmptyLines": 156,
+      "sections": [
+        {
+          "heading": "Prompt Architect",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "Core Process",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "1. Initial Assessment",
+          "level": 3,
+          "line": 12
+        },
+        {
+          "heading": "2. Framework Recommendation",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "3. Clarification Questions",
+          "level": 3,
+          "line": 47
+        },
+        {
+          "heading": "4. Apply Framework",
+          "level": 3,
+          "line": 60
+        },
+        {
+          "heading": "5. Present Improvements",
+          "level": 3,
+          "line": 68
+        },
+        {
+          "heading": "6. Iterate",
+          "level": 3,
+          "line": 76
+        },
+        {
+          "heading": "Framework References",
+          "level": 2,
+          "line": 83
+        },
+        {
+          "heading": "Templates",
+          "level": 2,
+          "line": 96
+        },
+        {
+          "heading": "Key Principles",
+          "level": 2,
+          "line": 107
+        },
+        {
+          "heading": "Example Interaction",
+          "level": 2,
+          "line": 115
+        },
+        {
+          "heading": "Usage Notes",
+          "level": 2,
+          "line": 195
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    },
+    {
+      "path": "skills/prompt-architect/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/qa-test-planner/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/qa-test-planner/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/qa-test-planner/overrides/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/qa-test-planner/resources/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/qa-test-planner/resources/create_bug_report.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 276,
+      "nonEmptyLines": 203,
+      "functions": [
+        {
+          "name": "prompt_input",
+          "startLine": 22,
+          "endLine": 41,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "skills/qa-test-planner/resources/generate_test_cases.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 302,
+      "nonEmptyLines": 223,
+      "functions": [
+        {
+          "name": "prompt_input",
+          "startLine": 23,
+          "endLine": 42,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "skills/qa-test-planner/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 757,
+      "nonEmptyLines": 584,
+      "sections": [
+        {
+          "heading": "QA Test Planner",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "Quick Start",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Quick Reference",
+          "level": 2,
+          "line": 44
+        },
+        {
+          "heading": "How It Works",
+          "level": 2,
+          "line": 56
+        },
+        {
+          "heading": "Commands",
+          "level": 2,
+          "line": 85
+        },
+        {
+          "heading": "Interactive Scripts",
+          "level": 3,
+          "line": 87
+        },
+        {
+          "heading": "Natural Language",
+          "level": 3,
+          "line": 94
+        },
+        {
+          "heading": "Core Deliverables",
+          "level": 2,
+          "line": 106
+        },
+        {
+          "heading": "1. Test Plans",
+          "level": 3,
+          "line": 108
+        },
+        {
+          "heading": "2. Manual Test Cases",
+          "level": 3,
+          "line": 116
+        },
+        {
+          "heading": "3. Regression Suites",
+          "level": 3,
+          "line": 123
+        },
+        {
+          "heading": "4. Figma Validation",
+          "level": 3,
+          "line": 129
+        },
+        {
+          "heading": "5. Bug Reports",
+          "level": 3,
+          "line": 135
+        },
+        {
+          "heading": "Anti-Patterns",
+          "level": 2,
+          "line": 143
+        },
+        {
+          "heading": "Verification Checklist",
+          "level": 2,
+          "line": 155
+        },
+        {
+          "heading": "References",
+          "level": 2,
+          "line": 177
+        },
+        {
+          "heading": "Standard Test Case Format",
+          "level": 3,
+          "line": 189
+        },
+        {
+          "heading": "Test Types",
+          "level": 3,
+          "line": 231
+        },
+        {
+          "heading": "Test Plan Structure",
+          "level": 3,
+          "line": 247
+        },
+        {
+          "heading": "Bug Report Template",
+          "level": 3,
+          "line": 326
+        },
+        {
+          "heading": "Severity Definitions",
+          "level": 3,
+          "line": 373
+        },
+        {
+          "heading": "Design Validation Workflow",
+          "level": 3,
+          "line": 387
+        },
+        {
+          "heading": "What to Validate",
+          "level": 3,
+          "line": 431
+        },
+        {
+          "heading": "Example Queries",
+          "level": 3,
+          "line": 442
+        },
+        {
+          "heading": "Suite Structure",
+          "level": 3,
+          "line": 455
+        },
+        {
+          "heading": "Building a Regression Suite",
+          "level": 3,
+          "line": 464
+        },
+        {
+          "heading": "Pass/Fail Criteria",
+          "level": 3,
+          "line": 486
+        },
+        {
+          "heading": "Test Run Report Template",
+          "level": 3,
+          "line": 509
+        },
+        {
+          "heading": "Coverage Tracking",
+          "level": 3,
+          "line": 555
+        },
+        {
+          "heading": "Phase 1: Planning",
+          "level": 3,
+          "line": 572
+        },
+        {
+          "heading": "Phase 2: Test Design",
+          "level": 3,
+          "line": 579
+        },
+        {
+          "heading": "Phase 3: Execution",
+          "level": 3,
+          "line": 586
+        },
+        {
+          "heading": "Phase 4: Reporting",
+          "level": 3,
+          "line": 593
+        },
+        {
+          "heading": "Test Case Writing",
+          "level": 3,
+          "line": 605
+        },
+        {
+          "heading": "Bug Reporting",
+          "level": 3,
+          "line": 621
+        },
+        {
+          "heading": "Regression Testing",
+          "level": 3,
+          "line": 637
+        },
+        {
+          "heading": "Examples",
+          "level": 2,
+          "line": 656
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 37
+      }
+    },
+    {
+      "path": "skills/qa-test-planner/tests/cases/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    },
+    {
+      "path": "skills/react-best-practices/examples/.gitkeep",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 0,
+      "metrics": {}
+    }
+  ]
+}

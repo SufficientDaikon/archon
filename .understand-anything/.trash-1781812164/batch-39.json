@@ -1,0 +1,46 @@
+{
+  "batchIndex": 39,
+  "nodes": [
+    {
+      "id": "document:webapp/README.md",
+      "type": "document:",
+      "name": "README.md",
+      "filePath": "webapp/README.md",
+      "summary": "README for the Archon web application (Next.js 14 + TypeScript 5.4 + Tailwind CSS 3.4). Describes a statically exported website featuring landing page, skill marketplace (61 skills), skill detail pages, agent directory (8 agents), pipeline gallery (5 pipelines), bundle showcase (8 bundles), and documentation hub. Data sourced from archon.yaml JSON registry.",
+      "tags": ["webapp", "nextjs", "typescript", "tailwind", "readme", "static", "archon"],
+      "complexity": "low"
+    },
+    {
+      "id": "config:webapp/package.json",
+      "type": "config:",
+      "name": "package.json",
+      "filePath": "webapp/package.json",
+      "summary": "npm package manifest for the Archon web app (archon-webapp v1.0.0). Declares Next.js 14, React 18, TypeScript 5.4, Tailwind CSS 3.4, PostCSS, and Autoprefixer dependencies. Scripts: dev, build, start, lint.",
+      "tags": ["webapp", "package", "nextjs", "react", "typescript", "tailwind", "npm"],
+      "complexity": "low"
+    },
+    {
+      "id": "config:webapp/tsconfig.json",
+      "type": "config:",
+      "name": "tsconfig.json",
+      "filePath": "webapp/tsconfig.json",
+      "summary": "TypeScript compiler configuration for the Archon webapp. Targets ES5 with ESNext module, bundler moduleResolution for Next.js, strict mode, JSX preserve, incremental compilation, path alias @/* -> ./src/*, and the next plugin.",
+      "tags": ["typescript", "tsconfig", "webapp", "nextjs", "compiler", "config"],
+      "complexity": "low"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:webapp/README.md",
+      "target": "config:webapp/package.json",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:webapp/tsconfig.json",
+      "target": "config:webapp/package.json",
+      "type": "configures",
+      "weight": 0.6
+    }
+  ]
+}

@@ -1,0 +1,1456 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 14,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "CHANGELOG.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 85,
+      "nonEmptyLines": 61,
+      "sections": [
+        {
+          "heading": "[1.0.0-production] - 2026-04-21",
+          "level": 2,
+          "line": 1
+        },
+        {
+          "heading": "Production Hardening Release",
+          "level": 3,
+          "line": 3
+        },
+        {
+          "heading": "Changelog",
+          "level": 1,
+          "line": 34
+        },
+        {
+          "heading": "[Unreleased]",
+          "level": 2,
+          "line": 41
+        },
+        {
+          "heading": "Added",
+          "level": 3,
+          "line": 43
+        },
+        {
+          "heading": "Changed",
+          "level": 3,
+          "line": 57
+        },
+        {
+          "heading": "[1.0.0] - 2026-03-24",
+          "level": 2,
+          "line": 62
+        },
+        {
+          "heading": "The Virtuoso Engine for AI Agents",
+          "level": 3,
+          "line": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "CLAUDE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 201,
+      "nonEmptyLines": 146,
+      "sections": [
+        {
+          "heading": "Archon — CLAUDE.md",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "What Archon Is",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Directory Map (source of truth)",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Critical Data Types — Do Not Guess",
+          "level": 2,
+          "line": 66
+        },
+        {
+          "heading": "AgentCard (src/archon/core/registry.py)",
+          "level": 3,
+          "line": 68
+        },
+        {
+          "heading": "_validate_* return contract (sdk/archon.py)",
+          "level": 3,
+          "line": 77
+        },
+        {
+          "heading": "_validate_bundle specifics",
+          "level": 3,
+          "line": 87
+        },
+        {
+          "heading": "Hook Injection Budget (measured, not guessed)",
+          "level": 2,
+          "line": 96
+        },
+        {
+          "heading": "Synapse Activation Matrix (classifier.py)",
+          "level": 2,
+          "line": 115
+        },
+        {
+          "heading": "Pipeline Engine Rules (pipeline_engine.py)",
+          "level": 2,
+          "line": 129
+        },
+        {
+          "heading": "MCP Schema Rules (skill_mcp_schema.py)",
+          "level": 2,
+          "line": 138
+        },
+        {
+          "heading": "Synapse Engine Version",
+          "level": 2,
+          "line": 146
+        },
+        {
+          "heading": "Security Scanner (scanner.py)",
+          "level": 2,
+          "line": 152
+        },
+        {
+          "heading": "Test Suite",
+          "level": 2,
+          "line": 160
+        },
+        {
+          "heading": "CLI Usage",
+          "level": 2,
+          "line": 169
+        },
+        {
+          "heading": "Known Gotchas",
+          "level": 2,
+          "line": 182
+        },
+        {
+          "heading": "Files That Are Sensitive — Change With Care",
+          "level": 2,
+          "line": 195
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 17
+      }
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 108,
+      "nonEmptyLines": 79,
+      "sections": [
+        {
+          "heading": "Contributing to Archon",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "How to Contribute",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Adding a New Skill",
+          "level": 3,
+          "line": 7
+        },
+        {
+          "heading": "Skill Quality Standards",
+          "level": 3,
+          "line": 22
+        },
+        {
+          "heading": "Adding a Skill to a Bundle",
+          "level": 3,
+          "line": 38
+        },
+        {
+          "heading": "Creating a New Bundle",
+          "level": 3,
+          "line": 45
+        },
+        {
+          "heading": "Modifying an Agent",
+          "level": 3,
+          "line": 53
+        },
+        {
+          "heading": "Pull Request Process",
+          "level": 2,
+          "line": 60
+        },
+        {
+          "heading": "Naming Conventions",
+          "level": 2,
+          "line": 69
+        },
+        {
+          "heading": "Adding a Synapse",
+          "level": 3,
+          "line": 80
+        },
+        {
+          "heading": "Adding a Hook",
+          "level": 3,
+          "line": 89
+        },
+        {
+          "heading": "Validation Commands",
+          "level": 3,
+          "line": 95
+        },
+        {
+          "heading": "Code of Conduct",
+          "level": 2,
+          "line": 106
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 13
+      }
+    },
+    {
+      "path": "FINAL_COMPREHENSIVE_REPORT.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 305,
+      "nonEmptyLines": 240,
+      "sections": [
+        {
+          "heading": "[COMPLETE] File-Ops MCP Server — Maximum Stress Test & Bug Fix Report",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "What You Asked For",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Test Execution & Results",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "Initial Test Run (FAILED - Bug Discovered)",
+          "level": 3,
+          "line": 26
+        },
+        {
+          "heading": "Bug Investigation",
+          "level": 3,
+          "line": 37
+        },
+        {
+          "heading": "After Bug Fix",
+          "level": 3,
+          "line": 43
+        },
+        {
+          "heading": "The Bug: What Went Wrong",
+          "level": 2,
+          "line": 59
+        },
+        {
+          "heading": "Code Before Fix",
+          "level": 3,
+          "line": 61
+        },
+        {
+          "heading": "Why It Failed",
+          "level": 3,
+          "line": 77
+        },
+        {
+          "heading": "Code After Fix",
+          "level": 3,
+          "line": 103
+        },
+        {
+          "heading": "Why The Fix Works",
+          "level": 3,
+          "line": 131
+        },
+        {
+          "heading": "Test Documentation",
+          "level": 2,
+          "line": 161
+        },
+        {
+          "heading": "Test 1: Create 1000+ Line File",
+          "level": 3,
+          "line": 163
+        },
+        {
+          "heading": "Test 2: Simple Single-Line Edit",
+          "level": 3,
+          "line": 170
+        },
+        {
+          "heading": "Test 3: Block Replacement",
+          "level": 3,
+          "line": 178
+        },
+        {
+          "heading": "Test 4: Mass Insertion",
+          "level": 3,
+          "line": 186
+        },
+        {
+          "heading": "Test 5: Mass Deletion",
+          "level": 3,
+          "line": 193
+        },
+        {
+          "heading": "Test 6: Rapid Sequential Edits",
+          "level": 3,
+          "line": 200
+        },
+        {
+          "heading": "Test 7: Alternating Operations",
+          "level": 3,
+          "line": 208
+        },
+        {
+          "heading": "Test 8: Hash Stability",
+          "level": 3,
+          "line": 216
+        },
+        {
+          "heading": "Files Modified",
+          "level": 2,
+          "line": 227
+        },
+        {
+          "heading": "Metrics & Statistics",
+          "level": 2,
+          "line": 236
+        },
+        {
+          "heading": "Files Generated",
+          "level": 2,
+          "line": 259
+        },
+        {
+          "heading": "Test Reports",
+          "level": 3,
+          "line": 261
+        },
+        {
+          "heading": "Code Files",
+          "level": 3,
+          "line": 266
+        },
+        {
+          "heading": "Implementation",
+          "level": 3,
+          "line": 272
+        },
+        {
+          "heading": "Conclusion",
+          "level": 2,
+          "line": 278
+        },
+        {
+          "heading": "Tested Capabilities",
+          "level": 3,
+          "line": 282
+        },
+        {
+          "heading": "Bugs Fixed",
+          "level": 3,
+          "line": 290
+        },
+        {
+          "heading": "Performance",
+          "level": 3,
+          "line": 295
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 30
+      }
+    },
+    {
+      "path": "LAUNCH.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 117,
+      "nonEmptyLines": 86,
+      "sections": [
+        {
+          "heading": "Archon v1.0.0 — Launch Checklist",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Core Framework",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "Quality Assurance",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "Production Hardening",
+          "level": 2,
+          "line": 34
+        },
+        {
+          "heading": "Documentation Landing",
+          "level": 2,
+          "line": 47
+        },
+        {
+          "heading": "Known Good State",
+          "level": 2,
+          "line": 61
+        },
+        {
+          "heading": "Deployment",
+          "level": 2,
+          "line": 83
+        },
+        {
+          "heading": "Post-Launch Monitoring",
+          "level": 2,
+          "line": 95
+        },
+        {
+          "heading": "Sign-Off",
+          "level": 2,
+          "line": 103
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "PHASE_3_COMPLETION.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 165,
+      "nonEmptyLines": 127,
+      "sections": [
+        {
+          "heading": "ARCHON FRAMEWORK - PHASE 3 COMPLETION REPORT",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Executive Summary",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Synapses Implemented (Total: 9)",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "Original 5 (Phase 1-2)",
+          "level": 3,
+          "line": 12
+        },
+        {
+          "heading": "New 4 (Phase 3)",
+          "level": 3,
+          "line": 19
+        },
+        {
+          "heading": "Test Coverage",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "Architecture Overview",
+          "level": 2,
+          "line": 42
+        },
+        {
+          "heading": "Integration Points (Phase 2)",
+          "level": 2,
+          "line": 67
+        },
+        {
+          "heading": "What's Next",
+          "level": 2,
+          "line": 88
+        },
+        {
+          "heading": "Phase 4: Expand Test Suite (4 days estimated)",
+          "level": 3,
+          "line": 90
+        },
+        {
+          "heading": "Phase 5: MCP Integration (5 days)",
+          "level": 3,
+          "line": 96
+        },
+        {
+          "heading": "Phase 6: Auto-Selection (2 days)",
+          "level": 3,
+          "line": 101
+        },
+        {
+          "heading": "Phase 7: Hardening (5 days)",
+          "level": 3,
+          "line": 106
+        },
+        {
+          "heading": "Phase 8: Documentation (3 days)",
+          "level": 3,
+          "line": 111
+        },
+        {
+          "heading": "Key Metrics",
+          "level": 2,
+          "line": 119
+        },
+        {
+          "heading": "Files Created/Modified",
+          "level": 2,
+          "line": 133
+        },
+        {
+          "heading": "Created (Phase 3)",
+          "level": 3,
+          "line": 135
+        },
+        {
+          "heading": "Existing (Phase 1-2)",
+          "level": 3,
+          "line": 143
+        },
+        {
+          "heading": "Verification Status",
+          "level": 2,
+          "line": 154
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 19
+      }
+    },
+    {
+      "path": "PHASE_4_COMPLETION.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 142,
+      "nonEmptyLines": 110,
+      "sections": [
+        {
+          "heading": "ARCHON FRAMEWORK - PHASE 4 COMPLETION REPORT",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Executive Summary",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Test Coverage Breakdown",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "Test Files Created",
+          "level": 2,
+          "line": 28
+        },
+        {
+          "heading": "Test Categories",
+          "level": 2,
+          "line": 43
+        },
+        {
+          "heading": "Core Synapse Tests (45 cases)",
+          "level": 3,
+          "line": 45
+        },
+        {
+          "heading": "Integration Tests (80+ cases)",
+          "level": 3,
+          "line": 56
+        },
+        {
+          "heading": "V3 Migration Tests (500+ cases)",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "Test Execution Results",
+          "level": 2,
+          "line": 73
+        },
+        {
+          "heading": "What's Next",
+          "level": 2,
+          "line": 88
+        },
+        {
+          "heading": "Phase 5: MCP Integration (5 days)",
+          "level": 3,
+          "line": 90
+        },
+        {
+          "heading": "Phase 6: Auto-Selection (2 days)",
+          "level": 3,
+          "line": 96
+        },
+        {
+          "heading": "Phase 7: Hardening (5 days)",
+          "level": 3,
+          "line": 101
+        },
+        {
+          "heading": "Phase 8: Documentation (3 days)",
+          "level": 3,
+          "line": 107
+        },
+        {
+          "heading": "Verification Status",
+          "level": 2,
+          "line": 115
+        },
+        {
+          "heading": "Architecture Quality",
+          "level": 2,
+          "line": 125
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 16
+      }
+    },
+    {
+      "path": "PHASE_5_COMPLETION.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 185,
+      "nonEmptyLines": 140,
+      "sections": [
+        {
+          "heading": "ARCHON FRAMEWORK - PHASE 5 COMPLETION REPORT",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Executive Summary",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "What Was Built",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "New Modules (Phase 5)",
+          "level": 3,
+          "line": 12
+        },
+        {
+          "heading": "Integration Architecture",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "File-ops MCP Server Integration",
+          "level": 3,
+          "line": 45
+        },
+        {
+          "heading": "Context Expectations (MCP Validators)",
+          "level": 3,
+          "line": 58
+        },
+        {
+          "heading": "Test Results",
+          "level": 2,
+          "line": 80
+        },
+        {
+          "heading": "MCP Integration Test",
+          "level": 3,
+          "line": 82
+        },
+        {
+          "heading": "What's Next",
+          "level": 2,
+          "line": 108
+        },
+        {
+          "heading": "Phase 6: Auto-Selection (2 days)",
+          "level": 3,
+          "line": 110
+        },
+        {
+          "heading": "Phase 7: Hardening (5 days)",
+          "level": 3,
+          "line": 116
+        },
+        {
+          "heading": "Phase 8: Documentation (3 days)",
+          "level": 3,
+          "line": 123
+        },
+        {
+          "heading": "Key Achievements",
+          "level": 2,
+          "line": 131
+        },
+        {
+          "heading": "Files Created",
+          "level": 2,
+          "line": 141
+        },
+        {
+          "heading": "Performance & Reliability",
+          "level": 2,
+          "line": 149
+        },
+        {
+          "heading": "Verification Status",
+          "level": 2,
+          "line": 163
+        },
+        {
+          "heading": "Migration Path (Next Phases)",
+          "level": 2,
+          "line": 174
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 18
+      }
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 498,
+      "nonEmptyLines": 372,
+      "sections": [
+        {
+          "heading": "🚀 What's New in v1.0.0",
+          "level": 2,
+          "line": 40
+        },
+        {
+          "heading": "Core Engine Upgrades",
+          "level": 3,
+          "line": 44
+        },
+        {
+          "heading": "New Capabilities",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "Quality Assurance",
+          "level": 3,
+          "line": 57
+        },
+        {
+          "heading": "Release Status: v1.0.0 Production Ready",
+          "level": 2,
+          "line": 69
+        },
+        {
+          "heading": "The Problem",
+          "level": 2,
+          "line": 82
+        },
+        {
+          "heading": "Release Status: v1.0.0 Production Ready",
+          "level": 2,
+          "line": 86
+        },
+        {
+          "heading": "The Problem",
+          "level": 2,
+          "line": 99
+        },
+        {
+          "heading": "⚡ Quick Start",
+          "level": 2,
+          "line": 111
+        },
+        {
+          "heading": "🏗 Architecture",
+          "level": 2,
+          "line": 138
+        },
+        {
+          "heading": "🧠 Cognitive Synapses",
+          "level": 2,
+          "line": 187
+        },
+        {
+          "heading": "📚 Skills & Bundles",
+          "level": 2,
+          "line": 237
+        },
+        {
+          "heading": "🤖 Agents",
+          "level": 2,
+          "line": 298
+        },
+        {
+          "heading": "🔄 Pipelines",
+          "level": 2,
+          "line": 346
+        },
+        {
+          "heading": "🔒 Guardrails",
+          "level": 2,
+          "line": 395
+        },
+        {
+          "heading": "📖 Documentation",
+          "level": 2,
+          "line": 418
+        },
+        {
+          "heading": "CLI Reference",
+          "level": 2,
+          "line": 436
+        },
+        {
+          "heading": "Comparison",
+          "level": 2,
+          "line": 461
+        },
+        {
+          "heading": "Contributing",
+          "level": 2,
+          "line": 482
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 19
+      }
+    },
+    {
+      "path": "RELEASE_NOTES.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 210,
+      "nonEmptyLines": 149,
+      "sections": [
+        {
+          "heading": "Archon v1.0.0 — Production Release",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "Major Changes",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Core Synapse Engine v2",
+          "level": 3,
+          "line": 16
+        },
+        {
+          "heading": "All 12 Synapses Fully Operational",
+          "level": 3,
+          "line": 40
+        },
+        {
+          "heading": "Testing Coverage Now Enforced",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "MCP Servers Completed",
+          "level": 3,
+          "line": 87
+        },
+        {
+          "heading": "Packaging Hygiene",
+          "level": 3,
+          "line": 98
+        },
+        {
+          "heading": "Breaking Changes",
+          "level": 2,
+          "line": 133
+        },
+        {
+          "heading": "Migration Guide",
+          "level": 2,
+          "line": 139
+        },
+        {
+          "heading": "Upgrading from v0.x",
+          "level": 3,
+          "line": 141
+        },
+        {
+          "heading": "Known Limitations",
+          "level": 2,
+          "line": 162
+        },
+        {
+          "heading": "Performance",
+          "level": 2,
+          "line": 172
+        },
+        {
+          "heading": "Security",
+          "level": 2,
+          "line": 180
+        },
+        {
+          "heading": "Roadmap (v1.1 / v2.0)",
+          "level": 2,
+          "line": 189
+        },
+        {
+          "heading": "Contributors",
+          "level": 2,
+          "line": 199
+        },
+        {
+          "heading": "License",
+          "level": 2,
+          "line": 204
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 17
+      }
+    },
+    {
+      "path": "STRESS_TEST_FINAL_REPORT.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 289,
+      "nonEmptyLines": 213,
+      "sections": [
+        {
+          "heading": "File-Ops MCP Server — Final Stress Test Report",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Executive Summary",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "Critical Bug Found & Fixed",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "The Bug: Windows Text Mode Line Ending Corruption",
+          "level": 3,
+          "line": 27
+        },
+        {
+          "heading": "The Fix: Binary Mode + Explicit Encoding",
+          "level": 3,
+          "line": 49
+        },
+        {
+          "heading": "Stress Test Results",
+          "level": 2,
+          "line": 69
+        },
+        {
+          "heading": "Test Suite Execution",
+          "level": 3,
+          "line": 71
+        },
+        {
+          "heading": "Test Coverage Analysis",
+          "level": 2,
+          "line": 130
+        },
+        {
+          "heading": "1. File Creation (1000+ Lines)",
+          "level": 3,
+          "line": 132
+        },
+        {
+          "heading": "2. Simple Single-Line Edit",
+          "level": 3,
+          "line": 137
+        },
+        {
+          "heading": "3. Block Replacement",
+          "level": 3,
+          "line": 142
+        },
+        {
+          "heading": "4. Mass Insertion",
+          "level": 3,
+          "line": 147
+        },
+        {
+          "heading": "5. Mass Deletion",
+          "level": 3,
+          "line": 152
+        },
+        {
+          "heading": "6. Rapid Sequential Operations",
+          "level": 3,
+          "line": 157
+        },
+        {
+          "heading": "7. Alternating Operations",
+          "level": 3,
+          "line": 162
+        },
+        {
+          "heading": "8. Hash Stability",
+          "level": 3,
+          "line": 167
+        },
+        {
+          "heading": "Performance Metrics",
+          "level": 2,
+          "line": 174
+        },
+        {
+          "heading": "Files Changed",
+          "level": 2,
+          "line": 189
+        },
+        {
+          "heading": "1. Server Implementation",
+          "level": 3,
+          "line": 191
+        },
+        {
+          "heading": "2. Test File",
+          "level": 3,
+          "line": 197
+        },
+        {
+          "heading": "3. Debug Test",
+          "level": 3,
+          "line": 202
+        },
+        {
+          "heading": "Regression Test Summary",
+          "level": 2,
+          "line": 209
+        },
+        {
+          "heading": "Original Problems (Session 190bc9f5...)",
+          "level": 3,
+          "line": 211
+        },
+        {
+          "heading": "New Issues Found & Fixed",
+          "level": 3,
+          "line": 215
+        },
+        {
+          "heading": "Production Readiness Checklist",
+          "level": 2,
+          "line": 223
+        },
+        {
+          "heading": "Lessons Learned",
+          "level": 2,
+          "line": 238
+        },
+        {
+          "heading": "Why the Bug Occurred",
+          "level": 3,
+          "line": 240
+        },
+        {
+          "heading": "The Solution Pattern",
+          "level": 3,
+          "line": 256
+        },
+        {
+          "heading": "Next Steps",
+          "level": 2,
+          "line": 276
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 29
+      }
+    },
+    {
+      "path": "TEST_REPORT.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 347,
+      "nonEmptyLines": 259,
+      "sections": [
+        {
+          "heading": "File-Ops MCP Server: Complete Test Report",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Executive Summary",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Problem Statement",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "P-1: Edit Tool Fragility",
+          "level": 3,
+          "line": 27
+        },
+        {
+          "heading": "P-2: Read Tool Pollution",
+          "level": 3,
+          "line": 37
+        },
+        {
+          "heading": "Test Results",
+          "level": 2,
+          "line": 49
+        },
+        {
+          "heading": "Test 1: Unit Tests (Core Utilities)",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "Test 2: Integration Tests (Problem Solutions)",
+          "level": 3,
+          "line": 94
+        },
+        {
+          "heading": "TEST: P-1 (Edit Fragility) — Line-based Editing",
+          "level": 4,
+          "line": 99
+        },
+        {
+          "heading": "TEST: P-2 (Line Number Pollution) — Clean Content",
+          "level": 4,
+          "line": 120
+        },
+        {
+          "heading": "TEST: Atomic Multi-line Edits",
+          "level": 4,
+          "line": 139
+        },
+        {
+          "heading": "TEST: Structure-aware Navigation",
+          "level": 4,
+          "line": 167
+        },
+        {
+          "heading": "Implementation Details",
+          "level": 2,
+          "line": 188
+        },
+        {
+          "heading": "Server Configuration",
+          "level": 3,
+          "line": 190
+        },
+        {
+          "heading": "Registered Tools",
+          "level": 3,
+          "line": 197
+        },
+        {
+          "heading": "Registration",
+          "level": 3,
+          "line": 228
+        },
+        {
+          "heading": "Reliability Analysis",
+          "level": 2,
+          "line": 253
+        },
+        {
+          "heading": "Atomic Writes",
+          "level": 3,
+          "line": 255
+        },
+        {
+          "heading": "Encoding Safety",
+          "level": 3,
+          "line": 260
+        },
+        {
+          "heading": "Error Handling",
+          "level": 3,
+          "line": 265
+        },
+        {
+          "heading": "Performance",
+          "level": 3,
+          "line": 271
+        },
+        {
+          "heading": "Bugs Fixed During Implementation",
+          "level": 2,
+          "line": 278
+        },
+        {
+          "heading": "Issue 1: FastMCP API Mismatch",
+          "level": 3,
+          "line": 280
+        },
+        {
+          "heading": "Issue 2: Missing Import",
+          "level": 3,
+          "line": 286
+        },
+        {
+          "heading": "Issue 3: Windows Line Ending Handling",
+          "level": 3,
+          "line": 292
+        },
+        {
+          "heading": "Comparison: file-ops vs Built-in Tools",
+          "level": 2,
+          "line": 300
+        },
+        {
+          "heading": "Recommendation",
+          "level": 2,
+          "line": 316
+        },
+        {
+          "heading": "Files",
+          "level": 2,
+          "line": 335
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 28
+      }
+    },
+    {
+      "path": "archon.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 694,
+      "nonEmptyLines": 670,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "repository",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "virtuoso",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "skills",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "bundles",
+          "level": 1,
+          "line": 434
+        },
+        {
+          "heading": "agents",
+          "level": 1,
+          "line": 598
+        },
+        {
+          "heading": "synapses",
+          "level": 1,
+          "line": 630
+        },
+        {
+          "heading": "pipelines",
+          "level": 1,
+          "line": 653
+        },
+        {
+          "heading": "platforms",
+          "level": 1,
+          "line": 687
+        },
+        {
+          "heading": "catalog",
+          "level": 1,
+          "line": 692
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "pyproject.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 56,
+      "nonEmptyLines": 49,
+      "sections": [
+        {
+          "heading": "build-system",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "project",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "project.urls",
+          "level": 2,
+          "line": 30
+        },
+        {
+          "heading": "project.scripts",
+          "level": 2,
+          "line": 35
+        },
+        {
+          "heading": "project.optional-dependencies",
+          "level": 2,
+          "line": 38
+        },
+        {
+          "heading": "tool.pytest.ini_options",
+          "level": 3,
+          "line": 45
+        },
+        {
+          "heading": "tool.coverage.run",
+          "level": 3,
+          "line": 50
+        },
+        {
+          "heading": "tool.coverage.report",
+          "level": 3,
+          "line": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    }
+  ]
+}

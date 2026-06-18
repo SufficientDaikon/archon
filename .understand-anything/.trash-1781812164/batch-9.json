@@ -1,0 +1,429 @@
+{
+  "batchIndex": 9,
+  "nodes": [
+    {
+      "id": "file:scripts/admin.py",
+      "type": "file",
+      "path": "scripts/admin.py",
+      "label": "admin.py",
+      "language": "python",
+      "sizeLines": 424,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 424,
+        "nonEmptyLines": 331,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 13,
+          "functionCount": 12,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:scripts/admin.py:print_header",
+      "type": "function",
+      "path": "scripts/admin.py",
+      "label": "print_header",
+      "language": "python",
+      "metadata": {
+        "startLine": 32,
+        "endLine": 36,
+        "lineCount": 5,
+        "params": [
+          "text"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:scripts/admin.py:print_success",
+      "type": "function",
+      "path": "scripts/admin.py",
+      "label": "print_success",
+      "language": "python",
+      "metadata": {
+        "startLine": 39,
+        "endLine": 41,
+        "lineCount": 3,
+        "params": [
+          "text"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:scripts/admin.py:print_error",
+      "type": "function",
+      "path": "scripts/admin.py",
+      "label": "print_error",
+      "language": "python",
+      "metadata": {
+        "startLine": 44,
+        "endLine": 46,
+        "lineCount": 3,
+        "params": [
+          "text"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:scripts/admin.py:print_warning",
+      "type": "function",
+      "path": "scripts/admin.py",
+      "label": "print_warning",
+      "language": "python",
+      "metadata": {
+        "startLine": 49,
+        "endLine": 51,
+        "lineCount": 3,
+        "params": [
+          "text"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:scripts/admin.py:print_info",
+      "type": "function",
+      "path": "scripts/admin.py",
+      "label": "print_info",
+      "language": "python",
+      "metadata": {
+        "startLine": 54,
+        "endLine": 56,
+        "lineCount": 3,
+        "params": [
+          "text"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:scripts/admin.py:cmd_stats",
+      "type": "function",
+      "path": "scripts/admin.py",
+      "label": "cmd_stats",
+      "language": "python",
+      "metadata": {
+        "startLine": 59,
+        "endLine": 99,
+        "lineCount": 41,
+        "params": [
+          "os_sdk"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:scripts/admin.py:cmd_errors",
+      "type": "function",
+      "path": "scripts/admin.py",
+      "label": "cmd_errors",
+      "language": "python",
+      "metadata": {
+        "startLine": 102,
+        "endLine": 121,
+        "lineCount": 20,
+        "params": [
+          "os_sdk"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:scripts/admin.py:cmd_sources",
+      "type": "function",
+      "path": "scripts/admin.py",
+      "label": "cmd_sources",
+      "language": "python",
+      "metadata": {
+        "startLine": 124,
+        "endLine": 162,
+        "lineCount": 39,
+        "params": [
+          "os_sdk"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:scripts/admin.py:cmd_sync",
+      "type": "function",
+      "path": "scripts/admin.py",
+      "label": "cmd_sync",
+      "language": "python",
+      "metadata": {
+        "startLine": 165,
+        "endLine": 176,
+        "lineCount": 12,
+        "params": [
+          "os_sdk",
+          "source_id",
+          "force"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:scripts/admin.py:cmd_report",
+      "type": "function",
+      "path": "scripts/admin.py",
+      "label": "cmd_report",
+      "language": "python",
+      "metadata": {
+        "startLine": 179,
+        "endLine": 274,
+        "lineCount": 96,
+        "params": [
+          "os_sdk",
+          "format",
+          "output"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:scripts/admin.py:cmd_list",
+      "type": "function",
+      "path": "scripts/admin.py",
+      "label": "cmd_list",
+      "language": "python",
+      "metadata": {
+        "startLine": 277,
+        "endLine": 338,
+        "lineCount": 62,
+        "params": [
+          "os_sdk",
+          "what",
+          "tags",
+          "bundle"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:scripts/admin.py:main",
+      "type": "function",
+      "path": "scripts/admin.py",
+      "label": "main",
+      "language": "python",
+      "metadata": {
+        "startLine": 341,
+        "endLine": 420,
+        "lineCount": 80,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:scripts/admin.py:Colors",
+      "type": "class",
+      "path": "scripts/admin.py",
+      "label": "Colors",
+      "language": "python",
+      "metadata": {
+        "startLine": 20,
+        "endLine": 29,
+        "lineCount": 10,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:sdk/__init__.py",
+      "type": "file",
+      "path": "sdk/__init__.py",
+      "label": "__init__.py",
+      "language": "python",
+      "sizeLines": 12,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 12,
+        "nonEmptyLines": 9,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "file:sdk/archon.py",
+      "type": "file",
+      "path": "sdk/archon.py",
+      "label": "archon.py",
+      "language": "python",
+      "sizeLines": 654,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 654,
+        "nonEmptyLines": 541,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 2,
+          "functionCount": 1,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:sdk/archon.py:load_skill",
+      "type": "function",
+      "path": "sdk/archon.py",
+      "label": "load_skill",
+      "language": "python",
+      "metadata": {
+        "startLine": 651,
+        "endLine": 654,
+        "lineCount": 4,
+        "params": [
+          "name"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:sdk/archon.py:Archon",
+      "type": "class",
+      "path": "sdk/archon.py",
+      "label": "Archon",
+      "language": "python",
+      "metadata": {
+        "startLine": 12,
+        "endLine": 647,
+        "lineCount": 636,
+        "methods": [
+          "__init__",
+          "_detect_root",
+          "_load_manifest",
+          "list_skills",
+          "list_bundles",
+          "get_skill",
+          "route",
+          "install",
+          "validate",
+          "_validate_skill",
+          "_validate_bundle",
+          "_validate_agent",
+          "sync_sources",
+          "health_check",
+          "execute_pipeline",
+          "resume_pipeline",
+          "get_pipeline_status",
+          "list_active_pipelines",
+          "cancel_pipeline",
+          "list_synapses",
+          "get_core_synapses"
+        ],
+        "exported": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "type": "contains",
+      "source": "file:scripts/admin.py",
+      "target": "function:scripts/admin.py:print_header",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:scripts/admin.py",
+      "target": "function:scripts/admin.py:print_success",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:scripts/admin.py",
+      "target": "function:scripts/admin.py:print_error",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:scripts/admin.py",
+      "target": "function:scripts/admin.py:print_warning",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:scripts/admin.py",
+      "target": "function:scripts/admin.py:print_info",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:scripts/admin.py",
+      "target": "function:scripts/admin.py:cmd_stats",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:scripts/admin.py",
+      "target": "function:scripts/admin.py:cmd_errors",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:scripts/admin.py",
+      "target": "function:scripts/admin.py:cmd_sources",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:scripts/admin.py",
+      "target": "function:scripts/admin.py:cmd_sync",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:scripts/admin.py",
+      "target": "function:scripts/admin.py:cmd_report",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:scripts/admin.py",
+      "target": "function:scripts/admin.py:cmd_list",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:scripts/admin.py",
+      "target": "function:scripts/admin.py:main",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:scripts/admin.py",
+      "target": "class:scripts/admin.py:Colors",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:scripts/admin.py",
+      "target": "file:sdk/__init__.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:sdk/__init__.py",
+      "target": "file:sdk/archon.py",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:sdk/archon.py",
+      "target": "function:sdk/archon.py:load_skill",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:sdk/archon.py",
+      "target": "class:sdk/archon.py:Archon",
+      "weight": 1
+    }
+  ]
+}

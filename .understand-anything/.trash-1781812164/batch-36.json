@@ -1,0 +1,33 @@
+{
+  "batchIndex": 36,
+  "nodes": [
+    {
+      "id": "document:synapses/metacognition/resources/confidence-rubric.md",
+      "type": "document:",
+      "name": "confidence-rubric.md",
+      "filePath": "synapses/metacognition/resources/confidence-rubric.md",
+      "summary": "Calibrated confidence rating rubric for the metacognition synapse. Defines three-level confidence tags (HIGH, MEDIUM, LOW) with explicit criteria for each level. Goal is calibrated epistemic honesty — a 7/10 rating should correlate with ~70% correctness.",
+      "tags": ["synapse", "metacognition", "confidence", "calibration", "rubric", "epistemic"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:synapses/metacognition/resources/reflection-template.md",
+      "type": "document:",
+      "name": "reflection-template.md",
+      "filePath": "synapses/metacognition/resources/reflection-template.md",
+      "summary": "Structured reflection template for the metacognition synapse. Guides agents through post-task reflection covering what was done, what was uncertain, what assumptions were made, and what should be verified before claiming completion.",
+      "tags": ["synapse", "metacognition", "reflection", "template", "review", "verification"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:synapses/metacognition/resources/stuck-detection.md",
+      "type": "document:",
+      "name": "stuck-detection.md",
+      "filePath": "synapses/metacognition/resources/stuck-detection.md",
+      "summary": "Heuristics and signals for detecting when an agent is stuck in an unproductive loop. Defines stuck patterns, escalation thresholds, and intervention strategies used by the metacognition synapse to trigger course correction.",
+      "tags": ["synapse", "metacognition", "stuck", "detection", "loops", "escalation"],
+      "complexity": "medium"
+    }
+  ],
+  "edges": []
+}

@@ -1,0 +1,694 @@
+{
+  "batchIndex": 5,
+  "nodes": [
+    {
+      "id": "file:src/archon/synapses/__init__.py",
+      "type": "file",
+      "path": "src/archon/synapses/__init__.py",
+      "label": "__init__.py",
+      "language": "python",
+      "sizeLines": 29,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 29,
+        "nonEmptyLines": 28,
+        "metrics": {
+          "importCount": 12,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "file:src/archon/synapses/anti_rationalization.py",
+      "type": "file",
+      "path": "src/archon/synapses/anti_rationalization.py",
+      "label": "anti_rationalization.py",
+      "language": "python",
+      "sizeLines": 14,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 14,
+        "nonEmptyLines": 12,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/synapses/anti_rationalization.py:validate",
+      "type": "function",
+      "path": "src/archon/synapses/anti_rationalization.py",
+      "label": "validate",
+      "language": "python",
+      "metadata": {
+        "startLine": 9,
+        "endLine": 14,
+        "lineCount": 6,
+        "params": [
+          "context"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/synapses/code_quality.py",
+      "type": "file",
+      "path": "src/archon/synapses/code_quality.py",
+      "label": "code_quality.py",
+      "language": "python",
+      "sizeLines": 89,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 89,
+        "nonEmptyLines": 73,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/synapses/code_quality.py:validate",
+      "type": "function",
+      "path": "src/archon/synapses/code_quality.py",
+      "label": "validate",
+      "language": "python",
+      "metadata": {
+        "startLine": 17,
+        "endLine": 78,
+        "lineCount": 62,
+        "params": [
+          "context"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/synapses/code_quality_mcp.py",
+      "type": "file",
+      "path": "src/archon/synapses/code_quality_mcp.py",
+      "label": "code_quality_mcp.py",
+      "language": "python",
+      "sizeLines": 72,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 72,
+        "nonEmptyLines": 58,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/synapses/code_quality_mcp.py:validate",
+      "type": "function",
+      "path": "src/archon/synapses/code_quality_mcp.py",
+      "label": "validate",
+      "language": "python",
+      "metadata": {
+        "startLine": 12,
+        "endLine": 72,
+        "lineCount": 61,
+        "params": [
+          "context"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/synapses/completeness.py",
+      "type": "file",
+      "path": "src/archon/synapses/completeness.py",
+      "label": "completeness.py",
+      "language": "python",
+      "sizeLines": 92,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 92,
+        "nonEmptyLines": 75,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/synapses/completeness.py:validate",
+      "type": "function",
+      "path": "src/archon/synapses/completeness.py",
+      "label": "validate",
+      "language": "python",
+      "metadata": {
+        "startLine": 17,
+        "endLine": 83,
+        "lineCount": 67,
+        "params": [
+          "context"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/synapses/consistency.py",
+      "type": "file",
+      "path": "src/archon/synapses/consistency.py",
+      "label": "consistency.py",
+      "language": "python",
+      "sizeLines": 106,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 106,
+        "nonEmptyLines": 87,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/synapses/consistency.py:validate",
+      "type": "function",
+      "path": "src/archon/synapses/consistency.py",
+      "label": "validate",
+      "language": "python",
+      "metadata": {
+        "startLine": 17,
+        "endLine": 96,
+        "lineCount": 80,
+        "params": [
+          "context"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/synapses/mcp_client.py",
+      "type": "file",
+      "path": "src/archon/synapses/mcp_client.py",
+      "label": "mcp_client.py",
+      "language": "python",
+      "sizeLines": 109,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 109,
+        "nonEmptyLines": 89,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 2,
+          "functionCount": 1,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/synapses/mcp_client.py:get_mcp_client",
+      "type": "function",
+      "path": "src/archon/synapses/mcp_client.py",
+      "label": "get_mcp_client",
+      "language": "python",
+      "metadata": {
+        "startLine": 104,
+        "endLine": 109,
+        "lineCount": 6,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:src/archon/synapses/mcp_client.py:MCPFileOpsClient",
+      "type": "class",
+      "path": "src/archon/synapses/mcp_client.py",
+      "label": "MCPFileOpsClient",
+      "language": "python",
+      "metadata": {
+        "startLine": 9,
+        "endLine": 97,
+        "lineCount": 89,
+        "methods": [
+          "__init__",
+          "read_file",
+          "analyze_code_quality",
+          "scan_security",
+          "_detect_language",
+          "_estimate_complexity"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/synapses/metacognition.py",
+      "type": "file",
+      "path": "src/archon/synapses/metacognition.py",
+      "label": "metacognition.py",
+      "language": "python",
+      "sizeLines": 108,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 108,
+        "nonEmptyLines": 90,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/synapses/metacognition.py:validate",
+      "type": "function",
+      "path": "src/archon/synapses/metacognition.py",
+      "label": "validate",
+      "language": "python",
+      "metadata": {
+        "startLine": 35,
+        "endLine": 99,
+        "lineCount": 65,
+        "params": [
+          "context"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/synapses/pattern_recognition.py",
+      "type": "file",
+      "path": "src/archon/synapses/pattern_recognition.py",
+      "label": "pattern_recognition.py",
+      "language": "python",
+      "sizeLines": 87,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 87,
+        "nonEmptyLines": 72,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 2,
+          "functionCount": 2,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/synapses/pattern_recognition.py:validate",
+      "type": "function",
+      "path": "src/archon/synapses/pattern_recognition.py",
+      "label": "validate",
+      "language": "python",
+      "metadata": {
+        "startLine": 16,
+        "endLine": 74,
+        "lineCount": 59,
+        "params": [
+          "context"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/synapses/pattern_recognition.py:pd_normalize_action",
+      "type": "function",
+      "path": "src/archon/synapses/pattern_recognition.py",
+      "label": "pd_normalize_action",
+      "language": "python",
+      "metadata": {
+        "startLine": 77,
+        "endLine": 79,
+        "lineCount": 3,
+        "params": [
+          "action"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/synapses/security_awareness.py",
+      "type": "file",
+      "path": "src/archon/synapses/security_awareness.py",
+      "label": "security_awareness.py",
+      "language": "python",
+      "sizeLines": 62,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 62,
+        "nonEmptyLines": 52,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/synapses/security_awareness.py:validate",
+      "type": "function",
+      "path": "src/archon/synapses/security_awareness.py",
+      "label": "validate",
+      "language": "python",
+      "metadata": {
+        "startLine": 35,
+        "endLine": 62,
+        "lineCount": 28,
+        "params": [
+          "context"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/synapses/security_awareness_mcp.py",
+      "type": "file",
+      "path": "src/archon/synapses/security_awareness_mcp.py",
+      "label": "security_awareness_mcp.py",
+      "language": "python",
+      "sizeLines": 52,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 52,
+        "nonEmptyLines": 41,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/synapses/security_awareness_mcp.py:validate",
+      "type": "function",
+      "path": "src/archon/synapses/security_awareness_mcp.py",
+      "label": "validate",
+      "language": "python",
+      "metadata": {
+        "startLine": 12,
+        "endLine": 52,
+        "lineCount": 41,
+        "params": [
+          "context"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/synapses/sequential_thinking.py",
+      "type": "file",
+      "path": "src/archon/synapses/sequential_thinking.py",
+      "label": "sequential_thinking.py",
+      "language": "python",
+      "sizeLines": 95,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 95,
+        "nonEmptyLines": 78,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 1,
+          "functionCount": 1,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/synapses/sequential_thinking.py:validate",
+      "type": "function",
+      "path": "src/archon/synapses/sequential_thinking.py",
+      "label": "validate",
+      "language": "python",
+      "metadata": {
+        "startLine": 16,
+        "endLine": 87,
+        "lineCount": 72,
+        "params": [
+          "context"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/synapses/trust_verification.py",
+      "type": "file",
+      "path": "src/archon/synapses/trust_verification.py",
+      "label": "trust_verification.py",
+      "language": "python",
+      "sizeLines": 115,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 115,
+        "nonEmptyLines": 91,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 3,
+          "functionCount": 3,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/synapses/trust_verification.py:_extract_key_terms",
+      "type": "function",
+      "path": "src/archon/synapses/trust_verification.py",
+      "label": "_extract_key_terms",
+      "language": "python",
+      "metadata": {
+        "startLine": 26,
+        "endLine": 33,
+        "lineCount": 8,
+        "params": [
+          "text"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/synapses/trust_verification.py:_contradicts",
+      "type": "function",
+      "path": "src/archon/synapses/trust_verification.py",
+      "label": "_contradicts",
+      "language": "python",
+      "metadata": {
+        "startLine": 36,
+        "endLine": 52,
+        "lineCount": 17,
+        "params": [
+          "reasoning",
+          "prior_text"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/synapses/trust_verification.py:validate",
+      "type": "function",
+      "path": "src/archon/synapses/trust_verification.py",
+      "label": "validate",
+      "language": "python",
+      "metadata": {
+        "startLine": 55,
+        "endLine": 107,
+        "lineCount": 53,
+        "params": [
+          "context"
+        ],
+        "exported": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "type": "imports",
+      "source": "file:src/archon/synapses/__init__.py",
+      "target": "file:src/archon/synapses/anti_rationalization.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/synapses/__init__.py",
+      "target": "file:src/archon/synapses/code_quality_mcp.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/synapses/__init__.py",
+      "target": "file:src/archon/synapses/code_quality.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/synapses/__init__.py",
+      "target": "file:src/archon/synapses/completeness.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/synapses/__init__.py",
+      "target": "file:src/archon/synapses/consistency.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/synapses/__init__.py",
+      "target": "file:src/archon/synapses/mcp_client.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/synapses/__init__.py",
+      "target": "file:src/archon/synapses/metacognition.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/synapses/__init__.py",
+      "target": "file:src/archon/synapses/pattern_recognition.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/synapses/__init__.py",
+      "target": "file:src/archon/synapses/security_awareness_mcp.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/synapses/__init__.py",
+      "target": "file:src/archon/synapses/security_awareness.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/synapses/__init__.py",
+      "target": "file:src/archon/synapses/sequential_thinking.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/synapses/__init__.py",
+      "target": "file:src/archon/synapses/trust_verification.py",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/synapses/anti_rationalization.py",
+      "target": "function:src/archon/synapses/anti_rationalization.py:validate",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/synapses/code_quality.py",
+      "target": "function:src/archon/synapses/code_quality.py:validate",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/synapses/code_quality_mcp.py",
+      "target": "function:src/archon/synapses/code_quality_mcp.py:validate",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/synapses/code_quality_mcp.py",
+      "target": "file:src/archon/synapses/mcp_client.py",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/synapses/completeness.py",
+      "target": "function:src/archon/synapses/completeness.py:validate",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/synapses/consistency.py",
+      "target": "function:src/archon/synapses/consistency.py:validate",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/synapses/mcp_client.py",
+      "target": "function:src/archon/synapses/mcp_client.py:get_mcp_client",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/synapses/mcp_client.py",
+      "target": "class:src/archon/synapses/mcp_client.py:MCPFileOpsClient",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/synapses/metacognition.py",
+      "target": "function:src/archon/synapses/metacognition.py:validate",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/synapses/pattern_recognition.py",
+      "target": "function:src/archon/synapses/pattern_recognition.py:validate",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/synapses/pattern_recognition.py",
+      "target": "function:src/archon/synapses/pattern_recognition.py:pd_normalize_action",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/synapses/security_awareness.py",
+      "target": "function:src/archon/synapses/security_awareness.py:validate",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/synapses/security_awareness_mcp.py",
+      "target": "function:src/archon/synapses/security_awareness_mcp.py:validate",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/synapses/security_awareness_mcp.py",
+      "target": "file:src/archon/synapses/mcp_client.py",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/synapses/sequential_thinking.py",
+      "target": "function:src/archon/synapses/sequential_thinking.py:validate",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/synapses/trust_verification.py",
+      "target": "function:src/archon/synapses/trust_verification.py:_extract_key_terms",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/synapses/trust_verification.py",
+      "target": "function:src/archon/synapses/trust_verification.py:_contradicts",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/synapses/trust_verification.py",
+      "target": "function:src/archon/synapses/trust_verification.py:validate",
+      "weight": 1
+    }
+  ]
+}

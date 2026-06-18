@@ -1,0 +1,292 @@
+{
+  "batchIndex": 51,
+  "nodes": [
+    {
+      "id": "document:skills/frontend-design/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (frontend-design)",
+      "filePath": "skills/frontend-design/SKILL.md",
+      "summary": "Skill documentation for frontend-design, a brief skill providing guidelines for UI component design and frontend styling conventions.",
+      "tags": ["frontend-design", "documentation", "frontend", "ui", "styling"],
+      "complexity": 2
+    },
+    {
+      "id": "file:skills/frontend-design/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (frontend-design test cases)",
+      "filePath": "skills/frontend-design/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the frontend-design skill.",
+      "tags": ["frontend-design", "placeholder", "git", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/godot-best-practices/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-best-practices examples)",
+      "filePath": "skills/godot-best-practices/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory for the godot-best-practices skill.",
+      "tags": ["godot-best-practices", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/godot-best-practices/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (godot-best-practices)",
+      "filePath": "skills/godot-best-practices/manifest.yaml",
+      "summary": "Skill manifest for godot-best-practices, a minimal manifest defining triggers for Godot engine best practice guidance.",
+      "tags": ["godot-best-practices", "skill", "manifest", "godot", "best-practices"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/godot-best-practices/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-best-practices overrides)",
+      "filePath": "skills/godot-best-practices/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the godot-best-practices skill.",
+      "tags": ["godot-best-practices", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/godot-best-practices/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-best-practices resources)",
+      "filePath": "skills/godot-best-practices/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the godot-best-practices skill.",
+      "tags": ["godot-best-practices", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/godot-best-practices/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (godot-best-practices)",
+      "filePath": "skills/godot-best-practices/SKILL.md",
+      "summary": "Skill documentation for godot-best-practices, covering Godot scene organization, node architecture, resource management, and performance optimization patterns.",
+      "tags": ["godot-best-practices", "documentation", "godot", "scene-management", "performance"],
+      "complexity": 4
+    },
+    {
+      "id": "file:skills/godot-best-practices/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-best-practices test cases)",
+      "filePath": "skills/godot-best-practices/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the godot-best-practices skill.",
+      "tags": ["godot-best-practices", "placeholder", "git", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/godot-debugging/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-debugging examples)",
+      "filePath": "skills/godot-debugging/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory for the godot-debugging skill.",
+      "tags": ["godot-debugging", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/godot-debugging/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (godot-debugging)",
+      "filePath": "skills/godot-debugging/manifest.yaml",
+      "summary": "Skill manifest for godot-debugging, a minimal manifest defining triggers for Godot engine debugging and profiling tasks.",
+      "tags": ["godot-debugging", "skill", "manifest", "godot", "debugging"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/godot-debugging/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-debugging overrides)",
+      "filePath": "skills/godot-debugging/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the godot-debugging skill.",
+      "tags": ["godot-debugging", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/godot-debugging/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-debugging resources)",
+      "filePath": "skills/godot-debugging/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the godot-debugging skill.",
+      "tags": ["godot-debugging", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/godot-debugging/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (godot-debugging)",
+      "filePath": "skills/godot-debugging/SKILL.md",
+      "summary": "Skill documentation for godot-debugging, covering Godot debugger usage, breakpoints, remote debugging, performance profiling, and crash analysis.",
+      "tags": ["godot-debugging", "documentation", "godot", "debugging", "profiling"],
+      "complexity": 5
+    },
+    {
+      "id": "file:skills/godot-debugging/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-debugging test cases)",
+      "filePath": "skills/godot-debugging/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the godot-debugging skill.",
+      "tags": ["godot-debugging", "placeholder", "git", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/godot-gdscript-mastery/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-gdscript-mastery examples)",
+      "filePath": "skills/godot-gdscript-mastery/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory for the godot-gdscript-mastery skill.",
+      "tags": ["godot-gdscript-mastery", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/godot-gdscript-mastery/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (godot-gdscript-mastery)",
+      "filePath": "skills/godot-gdscript-mastery/manifest.yaml",
+      "summary": "Skill manifest for godot-gdscript-mastery, a minimal manifest defining triggers for advanced GDScript programming tasks.",
+      "tags": ["godot-gdscript-mastery", "skill", "manifest", "gdscript", "godot"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/godot-gdscript-mastery/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-gdscript-mastery overrides)",
+      "filePath": "skills/godot-gdscript-mastery/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the godot-gdscript-mastery skill.",
+      "tags": ["godot-gdscript-mastery", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/godot-gdscript-mastery/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-gdscript-mastery resources)",
+      "filePath": "skills/godot-gdscript-mastery/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the godot-gdscript-mastery skill.",
+      "tags": ["godot-gdscript-mastery", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/godot-gdscript-mastery/resources/advanced_lambdas.gd",
+      "type": "file:",
+      "name": "advanced_lambdas.gd",
+      "filePath": "skills/godot-gdscript-mastery/resources/advanced_lambdas.gd",
+      "summary": "GDScript resource file demonstrating advanced lambda and callable patterns for the godot-gdscript-mastery skill.",
+      "tags": ["godot-gdscript-mastery", "gdscript", "lambdas", "functional-programming"],
+      "complexity": 3
+    },
+    {
+      "id": "file:skills/godot-gdscript-mastery/resources/performance_analyzer.gd",
+      "type": "file:",
+      "name": "performance_analyzer.gd",
+      "filePath": "skills/godot-gdscript-mastery/resources/performance_analyzer.gd",
+      "summary": "GDScript resource file implementing a performance analysis tool for profiling GDScript code in the Godot engine.",
+      "tags": ["godot-gdscript-mastery", "gdscript", "performance", "profiling"],
+      "complexity": 4
+    },
+    {
+      "id": "file:skills/godot-gdscript-mastery/resources/signal_architecture_validator.gd",
+      "type": "file:",
+      "name": "signal_architecture_validator.gd",
+      "filePath": "skills/godot-gdscript-mastery/resources/signal_architecture_validator.gd",
+      "summary": "GDScript resource file implementing a validator for signal architecture patterns in Godot projects.",
+      "tags": ["godot-gdscript-mastery", "gdscript", "signals", "architecture", "validation"],
+      "complexity": 4
+    },
+    {
+      "id": "file:skills/godot-gdscript-mastery/resources/type_checker.gd",
+      "type": "file:",
+      "name": "type_checker.gd",
+      "filePath": "skills/godot-gdscript-mastery/resources/type_checker.gd",
+      "summary": "GDScript resource file implementing runtime type checking utilities for enforcing type safety in GDScript code.",
+      "tags": ["godot-gdscript-mastery", "gdscript", "type-checking", "type-safety"],
+      "complexity": 4
+    },
+    {
+      "id": "document:skills/godot-gdscript-mastery/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (godot-gdscript-mastery)",
+      "filePath": "skills/godot-gdscript-mastery/SKILL.md",
+      "summary": "Skill documentation for godot-gdscript-mastery, covering advanced GDScript features including typed variables, signals, lambdas, and performance optimization.",
+      "tags": ["godot-gdscript-mastery", "documentation", "gdscript", "godot", "advanced"],
+      "complexity": 3
+    },
+    {
+      "id": "file:skills/godot-gdscript-mastery/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-gdscript-mastery test cases)",
+      "filePath": "skills/godot-gdscript-mastery/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the godot-gdscript-mastery skill.",
+      "tags": ["godot-gdscript-mastery", "placeholder", "git", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/godot-gdscript-patterns/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-gdscript-patterns examples)",
+      "filePath": "skills/godot-gdscript-patterns/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory for the godot-gdscript-patterns skill.",
+      "tags": ["godot-gdscript-patterns", "placeholder", "git"],
+      "complexity": 1
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:skills/frontend-design/SKILL.md",
+      "target": "config:skills/frontend-design/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/godot-best-practices/SKILL.md",
+      "target": "config:skills/godot-best-practices/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/godot-debugging/SKILL.md",
+      "target": "config:skills/godot-debugging/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/godot-gdscript-mastery/SKILL.md",
+      "target": "config:skills/godot-gdscript-mastery/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "file:skills/godot-gdscript-mastery/resources/advanced_lambdas.gd",
+      "target": "config:skills/godot-gdscript-mastery/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "file:skills/godot-gdscript-mastery/resources/performance_analyzer.gd",
+      "target": "config:skills/godot-gdscript-mastery/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "file:skills/godot-gdscript-mastery/resources/signal_architecture_validator.gd",
+      "target": "config:skills/godot-gdscript-mastery/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "file:skills/godot-gdscript-mastery/resources/type_checker.gd",
+      "target": "config:skills/godot-gdscript-mastery/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:skills/godot-debugging/SKILL.md",
+      "target": "document:skills/godot-best-practices/SKILL.md",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "document:skills/godot-gdscript-mastery/SKILL.md",
+      "target": "document:skills/godot-best-practices/SKILL.md",
+      "type": "imports",
+      "weight": 0.7
+    }
+  ]
+}

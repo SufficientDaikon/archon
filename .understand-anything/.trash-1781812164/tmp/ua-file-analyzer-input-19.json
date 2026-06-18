@@ -1,0 +1,5 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [{"path": "prompts/personas/expert.md", "language": "markdown", "sizeLines": 400, "fileCategory": "docs"}, {"path": "prompts/personas/quick.md", "language": "markdown", "sizeLines": 438, "fileCategory": "docs"}, {"path": "prompts/personas/teacher.md", "language": "markdown", "sizeLines": 515, "fileCategory": "docs"}],
+  "batchImportData": {"prompts/personas/expert.md": [], "prompts/personas/quick.md": [], "prompts/personas/teacher.md": []}
+}

@@ -1,0 +1,33 @@
+{
+  "batchIndex": 37,
+  "nodes": [
+    {
+      "id": "document:synapses/sequential-thinking/resources/decomposition-patterns.md",
+      "type": "document:",
+      "name": "decomposition-patterns.md",
+      "filePath": "synapses/sequential-thinking/resources/decomposition-patterns.md",
+      "summary": "Catalog of task decomposition patterns for the sequential-thinking synapse. Covers Feature Implementation Pattern (8 steps: understand → design → setup → test → implement → edge cases → verify → document), Bug Investigation Pattern, and other structured breakdown approaches.",
+      "tags": ["synapse", "sequential-thinking", "decomposition", "patterns", "tdd", "planning"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:synapses/sequential-thinking/resources/reasoning-templates.md",
+      "type": "document:",
+      "name": "reasoning-templates.md",
+      "filePath": "synapses/sequential-thinking/resources/reasoning-templates.md",
+      "summary": "Reasoning templates for the sequential-thinking synapse. Provides structured thought frameworks for different problem types including analysis, decision-making, debugging, and design tasks.",
+      "tags": ["synapse", "sequential-thinking", "reasoning", "templates", "frameworks", "analysis"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:synapses/sequential-thinking/resources/validation-checklist.md",
+      "type": "document:",
+      "name": "validation-checklist.md",
+      "filePath": "synapses/sequential-thinking/resources/validation-checklist.md",
+      "summary": "Step validation checklist for the sequential-thinking synapse. Ensures each reasoning step meets completeness, correctness, and evidence standards before proceeding to the next step in a sequential chain.",
+      "tags": ["synapse", "sequential-thinking", "validation", "checklist", "quality", "steps"],
+      "complexity": "low"
+    }
+  ],
+  "edges": []
+}

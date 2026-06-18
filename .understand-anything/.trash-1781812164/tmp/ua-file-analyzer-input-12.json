@@ -1,0 +1,5 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [{"path": ".claude/file-daemon-architecture.xml", "language": "xml", "sizeLines": 998, "fileCategory": "config"}, {"path": ".claude/forge-progress.xml", "language": "xml", "sizeLines": 65, "fileCategory": "config"}, {"path": ".claude/handoff-2026-04-12.xml", "language": "xml", "sizeLines": 119, "fileCategory": "config"}, {"path": ".claude/handoff-file-ops-2026-04-12.xml", "language": "xml", "sizeLines": 233, "fileCategory": "config"}, {"path": ".claude/rw-tools-plan.xml", "language": "xml", "sizeLines": 906, "fileCategory": "config"}, {"path": ".claude/settings.json", "language": "json", "sizeLines": 105, "fileCategory": "config"}],
+  "batchImportData": {".claude/file-daemon-architecture.xml": [], ".claude/forge-progress.xml": [], ".claude/handoff-2026-04-12.xml": [], ".claude/handoff-file-ops-2026-04-12.xml": [], ".claude/rw-tools-plan.xml": [], ".claude/settings.json": []}
+}

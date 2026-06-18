@@ -1,0 +1,248 @@
+{
+  "batchIndex": 55,
+  "nodes": [
+    {
+      "id": "document:skills/pr-quality-agent/SKILL.md",
+      "type": "document",
+      "name": "pr-quality-agent SKILL.md",
+      "filePath": "skills/pr-quality-agent/SKILL.md",
+      "summary": "Comprehensive skill documentation for the PR quality agent providing automated pull request analysis, review heuristics, and quality scoring guidance.",
+      "tags": ["docs", "pr-quality", "skill", "code-review", "automation"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/pr-to-course/manifest.yaml",
+      "type": "config",
+      "name": "pr-to-course manifest",
+      "filePath": "skills/pr-to-course/manifest.yaml",
+      "summary": "Skill manifest for the pr-to-course skill that converts pull requests into structured learning courses with interactive elements.",
+      "tags": ["manifest", "skill", "pr-to-course", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/pr-to-course/references/design-system.md",
+      "type": "document",
+      "name": "design-system.md (pr-to-course)",
+      "filePath": "skills/pr-to-course/references/design-system.md",
+      "summary": "Design system reference for generating course content from PRs, defining typography, color, spacing, and visual component standards for learning materials.",
+      "tags": ["design-system", "pr-to-course", "reference", "courses", "visual"],
+      "complexity": "high"
+    },
+    {
+      "id": "document:skills/pr-to-course/references/interactive-elements.md",
+      "type": "document",
+      "name": "interactive-elements.md (pr-to-course)",
+      "filePath": "skills/pr-to-course/references/interactive-elements.md",
+      "summary": "Extensive reference covering interactive course elements including quizzes, code playgrounds, progressive disclosure panels, and assessment frameworks for PR-derived courses.",
+      "tags": ["interactive", "course", "elements", "pr-to-course", "reference"],
+      "complexity": "high"
+    },
+    {
+      "id": "document:skills/pr-to-course/SKILL.md",
+      "type": "document",
+      "name": "pr-to-course SKILL.md",
+      "filePath": "skills/pr-to-course/SKILL.md",
+      "summary": "Skill documentation for converting pull request diffs into structured educational courses with explanations, exercises, and knowledge checks.",
+      "tags": ["docs", "pr-to-course", "skill", "education", "learning"],
+      "complexity": "high"
+    },
+    {
+      "id": "config:skills/prisma-orm-patterns/manifest.yaml",
+      "type": "config",
+      "name": "prisma-orm-patterns manifest",
+      "filePath": "skills/prisma-orm-patterns/manifest.yaml",
+      "summary": "Skill manifest for the Prisma ORM patterns skill with references to schema and query optimization resources.",
+      "tags": ["manifest", "skill", "prisma", "orm", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/prisma-orm-patterns/resources/prisma-reference.md",
+      "type": "document",
+      "name": "prisma-reference.md",
+      "filePath": "skills/prisma-orm-patterns/resources/prisma-reference.md",
+      "summary": "Reference documentation for Prisma ORM patterns covering schema definition, relation modeling, query optimization, migrations, and type safety.",
+      "tags": ["prisma", "orm", "reference", "database", "patterns"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:skills/prisma-orm-patterns/SKILL.md",
+      "type": "document",
+      "name": "prisma-orm-patterns SKILL.md",
+      "filePath": "skills/prisma-orm-patterns/SKILL.md",
+      "summary": "Skill documentation guiding users through Prisma ORM usage, relation modeling, and production-grade query patterns.",
+      "tags": ["docs", "prisma", "orm", "skill", "database"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/prompt-architect/manifest.yaml",
+      "type": "config",
+      "name": "prompt-architect manifest",
+      "filePath": "skills/prompt-architect/manifest.yaml",
+      "summary": "Skill manifest for the prompt-architect skill providing LLM prompt design and evaluation capabilities.",
+      "tags": ["manifest", "skill", "prompt-architect", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/prompt-architect/resources/framework_analyzer.py",
+      "type": "file",
+      "name": "framework_analyzer.py",
+      "filePath": "skills/prompt-architect/resources/framework_analyzer.py",
+      "summary": "Recommends appropriate LLM prompting frameworks (CO-STAR, RISEN, RISE-IE, etc.) based on task type analysis using keyword and indicator matching.",
+      "tags": ["prompt", "framework", "analyzer", "co-star", "risen"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/prompt-architect/resources/prompt_evaluator.py",
+      "type": "file",
+      "name": "prompt_evaluator.py",
+      "filePath": "skills/prompt-architect/resources/prompt_evaluator.py",
+      "summary": "Evaluates LLM prompt quality across clarity, completeness, structure, and effectiveness dimensions, producing scored assessments and improvement suggestions.",
+      "tags": ["prompt", "evaluator", "llm", "quality", "scoring"],
+      "complexity": "high"
+    },
+    {
+      "id": "document:skills/prompt-architect/SKILL.md",
+      "type": "document",
+      "name": "prompt-architect SKILL.md",
+      "filePath": "skills/prompt-architect/SKILL.md",
+      "summary": "Skill documentation for designing high-quality LLM prompts using established frameworks, evaluation criteria, and iterative refinement.",
+      "tags": ["docs", "prompt-architect", "skill", "llm", "prompting"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/prompt-architect/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (prompt-architect examples)",
+      "filePath": "skills/prompt-architect/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/prompt-architect/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (prompt-architect overrides)",
+      "filePath": "skills/prompt-architect/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/prompt-architect/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (prompt-architect resources)",
+      "filePath": "skills/prompt-architect/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/prompt-architect/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (prompt-architect tests)",
+      "filePath": "skills/prompt-architect/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/qa-test-planner/manifest.yaml",
+      "type": "config",
+      "name": "qa-test-planner manifest",
+      "filePath": "skills/qa-test-planner/manifest.yaml",
+      "summary": "Skill manifest for the QA test planner skill, providing test planning and bug report generation capabilities.",
+      "tags": ["manifest", "skill", "qa", "testing", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/qa-test-planner/resources/create_bug_report.sh",
+      "type": "file",
+      "name": "create_bug_report.sh",
+      "filePath": "skills/qa-test-planner/resources/create_bug_report.sh",
+      "summary": "Interactive shell script for generating structured, reproducible bug reports with color-coded prompts and formatted output.",
+      "tags": ["shell", "bug-report", "qa", "script", "testing"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/qa-test-planner/resources/generate_test_cases.sh",
+      "type": "file",
+      "name": "generate_test_cases.sh",
+      "filePath": "skills/qa-test-planner/resources/generate_test_cases.sh",
+      "summary": "Shell script for generating structured test case documents from user input covering positive, negative, and edge case scenarios.",
+      "tags": ["shell", "test-cases", "qa", "script", "generation"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:skills/qa-test-planner/SKILL.md",
+      "type": "document",
+      "name": "qa-test-planner SKILL.md",
+      "filePath": "skills/qa-test-planner/SKILL.md",
+      "summary": "Extensive skill documentation for QA test planning including test strategy, test case design, bug triage, and regression prevention workflows.",
+      "tags": ["docs", "qa-test-planner", "skill", "testing", "quality"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:skills/qa-test-planner/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (qa-test-planner examples)",
+      "filePath": "skills/qa-test-planner/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/qa-test-planner/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (qa-test-planner overrides)",
+      "filePath": "skills/qa-test-planner/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/qa-test-planner/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (qa-test-planner resources)",
+      "filePath": "skills/qa-test-planner/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/qa-test-planner/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (qa-test-planner tests)",
+      "filePath": "skills/qa-test-planner/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/react-best-practices/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (react-best-practices examples)",
+      "filePath": "skills/react-best-practices/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep", "react"],
+      "complexity": "trivial"
+    }
+  ],
+  "edges": [
+    {"source": "config:skills/pr-quality-agent/manifest.yaml", "target": "document:skills/pr-quality-agent/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/pr-to-course/manifest.yaml", "target": "document:skills/pr-to-course/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/pr-to-course/manifest.yaml", "target": "document:skills/pr-to-course/references/design-system.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/pr-to-course/manifest.yaml", "target": "document:skills/pr-to-course/references/interactive-elements.md", "type": "configures", "weight": 0.6},
+    {"source": "document:skills/pr-to-course/SKILL.md", "target": "document:skills/pr-to-course/references/design-system.md", "type": "documents", "weight": 0.5},
+    {"source": "document:skills/pr-to-course/SKILL.md", "target": "document:skills/pr-to-course/references/interactive-elements.md", "type": "documents", "weight": 0.5},
+    {"source": "config:skills/prisma-orm-patterns/manifest.yaml", "target": "document:skills/prisma-orm-patterns/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/prisma-orm-patterns/manifest.yaml", "target": "document:skills/prisma-orm-patterns/resources/prisma-reference.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/prompt-architect/manifest.yaml", "target": "document:skills/prompt-architect/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/prompt-architect/manifest.yaml", "target": "file:skills/prompt-architect/resources/framework_analyzer.py", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/prompt-architect/manifest.yaml", "target": "file:skills/prompt-architect/resources/prompt_evaluator.py", "type": "configures", "weight": 0.6},
+    {"source": "document:skills/prompt-architect/SKILL.md", "target": "file:skills/prompt-architect/resources/framework_analyzer.py", "type": "documents", "weight": 0.5},
+    {"source": "document:skills/prompt-architect/SKILL.md", "target": "file:skills/prompt-architect/resources/prompt_evaluator.py", "type": "documents", "weight": 0.5},
+    {"source": "config:skills/qa-test-planner/manifest.yaml", "target": "document:skills/qa-test-planner/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/qa-test-planner/manifest.yaml", "target": "file:skills/qa-test-planner/resources/create_bug_report.sh", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/qa-test-planner/manifest.yaml", "target": "file:skills/qa-test-planner/resources/generate_test_cases.sh", "type": "configures", "weight": 0.6}
+  ]
+}

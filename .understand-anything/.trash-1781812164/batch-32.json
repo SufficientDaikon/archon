@@ -1,0 +1,42 @@
+{
+  "batchIndex": 32,
+  "nodes": [
+    {
+      "id": "document:skills/windows-error-debugger/knowledge-base/driver-watchlist.md",
+      "type": "document:",
+      "name": "driver-watchlist.md",
+      "filePath": "skills/windows-error-debugger/knowledge-base/driver-watchlist.md",
+      "summary": "Knowledge base document listing Windows drivers known to cause issues on the user's machine. Provides a template for tracking driver status (BROKEN/UNSTABLE/MONITORING), impact, action, and safe versions. References common problematic drivers including AMD Ryzen Master, Intel WiFi, anti-cheat, and USB hub drivers.",
+      "tags": ["windows", "drivers", "watchlist", "knowledge-base", "bsod", "debugging"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/windows-error-debugger/knowledge-base/machine-profile.md",
+      "type": "document:",
+      "name": "machine-profile.md",
+      "filePath": "skills/windows-error-debugger/knowledge-base/machine-profile.md",
+      "summary": "Knowledge base document storing the hardware and software profile of the user's machine for context during Windows error debugging. Used by the windows-error-debugger skill to provide machine-specific triage.",
+      "tags": ["windows", "machine-profile", "hardware", "knowledge-base", "debugging"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/windows-error-debugger/knowledge-base/recurring-patterns.md",
+      "type": "document:",
+      "name": "recurring-patterns.md",
+      "filePath": "skills/windows-error-debugger/knowledge-base/recurring-patterns.md",
+      "summary": "Knowledge base document tracking recurring crash or error patterns observed on the user's Windows machine. Captures pattern descriptions, frequency, and historical context to accelerate triage.",
+      "tags": ["windows", "patterns", "crashes", "bsod", "knowledge-base", "debugging"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/windows-error-debugger/knowledge-base/resolved-issues.md",
+      "type": "document:",
+      "name": "resolved-issues.md",
+      "filePath": "skills/windows-error-debugger/knowledge-base/resolved-issues.md",
+      "summary": "Knowledge base document logging previously resolved Windows errors and crashes with their root causes and fixes. Serves as institutional memory for the windows-error-debugger skill.",
+      "tags": ["windows", "resolved", "issues", "fixes", "knowledge-base", "debugging"],
+      "complexity": "low"
+    }
+  ],
+  "edges": []
+}

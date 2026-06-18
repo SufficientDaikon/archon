@@ -1,0 +1,1167 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 16,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "docs/creating-synapses.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 643,
+      "nonEmptyLines": 460,
+      "sections": [
+        {
+          "heading": "Creating Synapses",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "🧬 Synapse Anatomy",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "🏷️ Core vs Optional Types",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "Core Synapses",
+          "level": 3,
+          "line": 22
+        },
+        {
+          "heading": "Optional Synapses",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "Step 1: SYNAPSE.md",
+          "level": 2,
+          "line": 42
+        },
+        {
+          "heading": "🎭 Identity",
+          "level": 3,
+          "line": 46
+        },
+        {
+          "heading": "🎯 When Active",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "🔥 Firing Phases",
+          "level": 3,
+          "line": 78
+        },
+        {
+          "heading": "📏 Rules",
+          "level": 3,
+          "line": 101
+        },
+        {
+          "heading": "📦 Output Format",
+          "level": 3,
+          "line": 119
+        },
+        {
+          "heading": "🤝 Resources",
+          "level": 3,
+          "line": 137
+        },
+        {
+          "heading": "Step 2: manifest.yaml",
+          "level": 2,
+          "line": 151
+        },
+        {
+          "heading": "Manifest Field Reference",
+          "level": 3,
+          "line": 197
+        },
+        {
+          "heading": "Required Fields",
+          "level": 4,
+          "line": 199
+        },
+        {
+          "heading": "Optional Fields",
+          "level": 4,
+          "line": 209
+        },
+        {
+          "heading": "🔥 Firing Phase Design",
+          "level": 2,
+          "line": 215
+        },
+        {
+          "heading": "Pre-Task Phases",
+          "level": 3,
+          "line": 219
+        },
+        {
+          "heading": "Active Phases",
+          "level": 3,
+          "line": 229
+        },
+        {
+          "heading": "Post-Task Phases",
+          "level": 3,
+          "line": 239
+        },
+        {
+          "heading": "Step 3: Resources (Optional but Recommended)",
+          "level": 2,
+          "line": 255
+        },
+        {
+          "heading": "Resource Types",
+          "level": 3,
+          "line": 282
+        },
+        {
+          "heading": "Step 4: Validate",
+          "level": 2,
+          "line": 290
+        },
+        {
+          "heading": "🛠️ Tutorial: Create a New Synapse",
+          "level": 2,
+          "line": 313
+        },
+        {
+          "heading": "1. Copy the Template",
+          "level": 3,
+          "line": 317
+        },
+        {
+          "heading": "2. Edit manifest.yaml",
+          "level": 3,
+          "line": 323
+        },
+        {
+          "heading": "3. Write SYNAPSE.md",
+          "level": 3,
+          "line": 359
+        },
+        {
+          "heading": "4. Add Resources",
+          "level": 3,
+          "line": 447
+        },
+        {
+          "heading": "5. Validate",
+          "level": 3,
+          "line": 474
+        },
+        {
+          "heading": "✨ Best Practices",
+          "level": 2,
+          "line": 482
+        },
+        {
+          "heading": "1. Start Optional",
+          "level": 3,
+          "line": 484
+        },
+        {
+          "heading": "2. Design Clear Output Formats",
+          "level": 3,
+          "line": 488
+        },
+        {
+          "heading": "3. Scale to Complexity",
+          "level": 3,
+          "line": 492
+        },
+        {
+          "heading": "4. Keep Phases Independent",
+          "level": 3,
+          "line": 496
+        },
+        {
+          "heading": "5. Provide Rich Resources",
+          "level": 3,
+          "line": 500
+        },
+        {
+          "heading": "6. Study the Metacognition Synapse",
+          "level": 3,
+          "line": 504
+        },
+        {
+          "heading": "📖 Example: Metacognition Synapse",
+          "level": 2,
+          "line": 508
+        },
+        {
+          "heading": "📖 Example: Security-Awareness Synapse",
+          "level": 2,
+          "line": 559
+        },
+        {
+          "heading": "📖 Example: Pattern-Recognition Synapse",
+          "level": 2,
+          "line": 599
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 39
+      }
+    },
+    {
+      "path": "docs/faq.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 602,
+      "nonEmptyLines": 552,
+      "metrics": {}
+    },
+    {
+      "path": "docs/faq.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 177,
+      "nonEmptyLines": 113,
+      "sections": [
+        {
+          "heading": "FAQ",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "General",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Skills",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Bundles",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "Pipelines",
+          "level": 2,
+          "line": 30
+        },
+        {
+          "heading": "Complexity Router",
+          "level": 2,
+          "line": 38
+        },
+        {
+          "heading": "Knowledge Sources",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "Self-Customization Skills",
+          "level": 2,
+          "line": 66
+        },
+        {
+          "heading": "Prompt Library",
+          "level": 2,
+          "line": 77
+        },
+        {
+          "heading": "SDK",
+          "level": 2,
+          "line": 88
+        },
+        {
+          "heading": "Admin Dashboard",
+          "level": 2,
+          "line": 99
+        },
+        {
+          "heading": "Contributing",
+          "level": 2,
+          "line": 110
+        },
+        {
+          "heading": "Guardrails Engine (v2.0)",
+          "level": 2,
+          "line": 115
+        },
+        {
+          "heading": "Synapses (v2.0)",
+          "level": 2,
+          "line": 129
+        },
+        {
+          "heading": "Hook System (v2.0)",
+          "level": 2,
+          "line": 146
+        },
+        {
+          "heading": "Pipeline Engine (v2.0)",
+          "level": 2,
+          "line": 157
+        },
+        {
+          "heading": "HTML Documentation (v2.0)",
+          "level": 2,
+          "line": 171
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 17
+      }
+    },
+    {
+      "path": "docs/getting-started.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 533,
+      "nonEmptyLines": 470,
+      "metrics": {}
+    },
+    {
+      "path": "docs/getting-started.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 174,
+      "nonEmptyLines": 119,
+      "sections": [
+        {
+          "heading": "Getting Started with Archon",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Prerequisites",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Installation",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Full Install",
+          "level": 3,
+          "line": 11
+        },
+        {
+          "heading": "Install a Specific Bundle",
+          "level": 3,
+          "line": 19
+        },
+        {
+          "heading": "Verify Installation",
+          "level": 3,
+          "line": 26
+        },
+        {
+          "heading": "Your First Skill",
+          "level": 2,
+          "line": 32
+        },
+        {
+          "heading": "Option A: Use the Skill Factory (recommended)",
+          "level": 3,
+          "line": 34
+        },
+        {
+          "heading": "Option B: Manual Creation",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "Using Bundles",
+          "level": 2,
+          "line": 50
+        },
+        {
+          "heading": "Using Pipelines",
+          "level": 2,
+          "line": 63
+        },
+        {
+          "heading": "Knowledge Sources",
+          "level": 2,
+          "line": 74
+        },
+        {
+          "heading": "Self-Customization",
+          "level": 2,
+          "line": 89
+        },
+        {
+          "heading": "Using the SDK",
+          "level": 2,
+          "line": 100
+        },
+        {
+          "heading": "Next Steps",
+          "level": 2,
+          "line": 122
+        },
+        {
+          "heading": "v2.0 Features",
+          "level": 2,
+          "line": 137
+        },
+        {
+          "heading": "Guardrails Engine",
+          "level": 3,
+          "line": 139
+        },
+        {
+          "heading": "Sequential Thinking",
+          "level": 3,
+          "line": 155
+        },
+        {
+          "heading": "Pipeline Execution",
+          "level": 3,
+          "line": 164
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 19
+      }
+    },
+    {
+      "path": "docs/guardrails.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 289,
+      "nonEmptyLines": 215,
+      "sections": [
+        {
+          "heading": "Archon v2.0 — Guardrails Guide",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Anti-Rationalization Synapse",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "The 10 Iron Laws",
+          "level": 3,
+          "line": 15
+        },
+        {
+          "heading": "Forbidden Phrases",
+          "level": 3,
+          "line": 30
+        },
+        {
+          "heading": "How Detection Works",
+          "level": 3,
+          "line": 45
+        },
+        {
+          "heading": "Hook System",
+          "level": 2,
+          "line": 55
+        },
+        {
+          "heading": "pre_step.py — Prerequisite Validation",
+          "level": 3,
+          "line": 57
+        },
+        {
+          "heading": "post_step.py — Output Validation",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "on_failure.py — Failure Handling",
+          "level": 3,
+          "line": 109
+        },
+        {
+          "heading": "on_deviation.py — Deviation Detection",
+          "level": 3,
+          "line": 119
+        },
+        {
+          "heading": "Deviation Protocol: STOP → DOCUMENT → ASK → LOG",
+          "level": 2,
+          "line": 128
+        },
+        {
+          "heading": "Step 1: STOP",
+          "level": 3,
+          "line": 132
+        },
+        {
+          "heading": "Step 2: DOCUMENT",
+          "level": 3,
+          "line": 136
+        },
+        {
+          "heading": "Step 3: ASK",
+          "level": 3,
+          "line": 151
+        },
+        {
+          "heading": "Step 4: LOG",
+          "level": 3,
+          "line": 158
+        },
+        {
+          "heading": "Writing Guardrails in Agent Manifests",
+          "level": 2,
+          "line": 164
+        },
+        {
+          "heading": "Structure",
+          "level": 3,
+          "line": 168
+        },
+        {
+          "heading": "must-do Rules",
+          "level": 3,
+          "line": 181
+        },
+        {
+          "heading": "must-not Rules",
+          "level": 3,
+          "line": 195
+        },
+        {
+          "heading": "on-violation Strategies",
+          "level": 3,
+          "line": 209
+        },
+        {
+          "heading": "Composing Guardrails",
+          "level": 3,
+          "line": 218
+        },
+        {
+          "heading": "Schema Reference",
+          "level": 2,
+          "line": 229
+        },
+        {
+          "heading": "guardrails.schema.yaml",
+          "level": 3,
+          "line": 231
+        },
+        {
+          "heading": "Validation",
+          "level": 3,
+          "line": 269
+        },
+        {
+          "heading": "Quick Reference",
+          "level": 2,
+          "line": 277
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 26
+      }
+    },
+    {
+      "path": "docs/index.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 13,
+      "nonEmptyLines": 13,
+      "metrics": {}
+    },
+    {
+      "path": "docs/integration-catalog.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 395,
+      "nonEmptyLines": 370,
+      "metrics": {}
+    },
+    {
+      "path": "docs/integration-catalog.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 189,
+      "nonEmptyLines": 131,
+      "sections": [
+        {
+          "heading": "Integration Catalog",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Quick Start",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Server Entry Format",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "Required Fields",
+          "level": 3,
+          "line": 50
+        },
+        {
+          "heading": "Optional Fields",
+          "level": 3,
+          "line": 61
+        },
+        {
+          "heading": "CLI Reference",
+          "level": 2,
+          "line": 71
+        },
+        {
+          "heading": "`archon catalog list`",
+          "level": 3,
+          "line": 73
+        },
+        {
+          "heading": "`archon catalog search <query>`",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "`archon catalog info <server>`",
+          "level": 3,
+          "line": 94
+        },
+        {
+          "heading": "`archon catalog recommend`",
+          "level": 3,
+          "line": 105
+        },
+        {
+          "heading": "`archon catalog install <server>`",
+          "level": 3,
+          "line": 117
+        },
+        {
+          "heading": "`archon catalog check`",
+          "level": 3,
+          "line": 126
+        },
+        {
+          "heading": "MCP Config Format",
+          "level": 2,
+          "line": 137
+        },
+        {
+          "heading": "Claude Code (`~/.claude/mcp.json`)",
+          "level": 3,
+          "line": 141
+        },
+        {
+          "heading": "How Recommendations Work",
+          "level": 2,
+          "line": 155
+        },
+        {
+          "heading": "Adding Custom Servers",
+          "level": 2,
+          "line": 163
+        },
+        {
+          "heading": "Troubleshooting",
+          "level": 2,
+          "line": 173
+        },
+        {
+          "heading": "\"MCP catalog not found\"",
+          "level": 3,
+          "line": 175
+        },
+        {
+          "heading": "\"Existing config is not valid JSON\"",
+          "level": 3,
+          "line": 179
+        },
+        {
+          "heading": "Environment variable warnings",
+          "level": 3,
+          "line": 183
+        },
+        {
+          "heading": "\"Server already configured\"",
+          "level": 3,
+          "line": 187
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 22
+      }
+    },
+    {
+      "path": "docs/llms-txt.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 262,
+      "nonEmptyLines": 236,
+      "metrics": {}
+    },
+    {
+      "path": "docs/llms-txt.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 117,
+      "nonEmptyLines": 80,
+      "sections": [
+        {
+          "heading": "llms.txt",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "What is llms.txt?",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "What Archon's llms.txt Contains",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Concise Index (`llms.txt`)",
+          "level": 3,
+          "line": 16
+        },
+        {
+          "heading": "Full Dump (`llms-full.txt`)",
+          "level": 3,
+          "line": 28
+        },
+        {
+          "heading": "How to Generate",
+          "level": 2,
+          "line": 43
+        },
+        {
+          "heading": "CLI Command (recommended)",
+          "level": 3,
+          "line": 45
+        },
+        {
+          "heading": "Standalone Script",
+          "level": 3,
+          "line": 67
+        },
+        {
+          "heading": "Where It's Deployed",
+          "level": 2,
+          "line": 85
+        },
+        {
+          "heading": "Validation",
+          "level": 2,
+          "line": 99
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "docs/pipeline-orchestration.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 461,
+      "nonEmptyLines": 356,
+      "sections": [
+        {
+          "heading": "Archon v2.0 — Pipeline Orchestration Guide",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Running Pipelines",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "CLI Usage",
+          "level": 3,
+          "line": 11
+        },
+        {
+          "heading": "Trigger Phrases",
+          "level": 3,
+          "line": 30
+        },
+        {
+          "heading": "Pipeline YAML Format",
+          "level": 2,
+          "line": 44
+        },
+        {
+          "heading": "Key Fields",
+          "level": 3,
+          "line": 113
+        },
+        {
+          "heading": "State Management",
+          "level": 2,
+          "line": 128
+        },
+        {
+          "heading": "PipelineState Class",
+          "level": 3,
+          "line": 130
+        },
+        {
+          "heading": "The Accumulated State Pattern",
+          "level": 3,
+          "line": 161
+        },
+        {
+          "heading": "State Persistence",
+          "level": 3,
+          "line": 183
+        },
+        {
+          "heading": "Artifact Validation",
+          "level": 2,
+          "line": 229
+        },
+        {
+          "heading": "Validation Checks",
+          "level": 3,
+          "line": 233
+        },
+        {
+          "heading": "Validation Failure",
+          "level": 3,
+          "line": 262
+        },
+        {
+          "heading": "Failure Handling",
+          "level": 2,
+          "line": 268
+        },
+        {
+          "heading": "Strategy: halt",
+          "level": 3,
+          "line": 270
+        },
+        {
+          "heading": "Strategy: skip",
+          "level": 3,
+          "line": 280
+        },
+        {
+          "heading": "Strategy: loop",
+          "level": 3,
+          "line": 290
+        },
+        {
+          "heading": "The 3-Fix Escape Hatch",
+          "level": 3,
+          "line": 306
+        },
+        {
+          "heading": "Resuming Paused Pipelines",
+          "level": 2,
+          "line": 329
+        },
+        {
+          "heading": "Resume Command",
+          "level": 3,
+          "line": 337
+        },
+        {
+          "heading": "What Happens on Resume",
+          "level": 3,
+          "line": 343
+        },
+        {
+          "heading": "Manual State Editing",
+          "level": 3,
+          "line": 351
+        },
+        {
+          "heading": "Context Curation Between Steps",
+          "level": 2,
+          "line": 366
+        },
+        {
+          "heading": "The Problem",
+          "level": 3,
+          "line": 370
+        },
+        {
+          "heading": "The Solution",
+          "level": 3,
+          "line": 374
+        },
+        {
+          "heading": "Curation Rules",
+          "level": 3,
+          "line": 383
+        },
+        {
+          "heading": "Pipeline Flow with Curation",
+          "level": 3,
+          "line": 401
+        },
+        {
+          "heading": "Quick Reference",
+          "level": 2,
+          "line": 425
+        },
+        {
+          "heading": "Pipeline YAML Cheat Sheet",
+          "level": 3,
+          "line": 444
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 30
+      }
+    },
+    {
+      "path": "docs/platform-guide.html",
+      "language": "html",
+      "fileCategory": "markup",
+      "totalLines": 330,
+      "nonEmptyLines": 286,
+      "metrics": {}
+    },
+    {
+      "path": "docs/platform-guide.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 48,
+      "nonEmptyLines": 31,
+      "sections": [
+        {
+          "heading": "Platform Guide",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Supported Platform",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Claude Code",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Installation",
+          "level": 3,
+          "line": 12
+        },
+        {
+          "heading": "How It Works",
+          "level": 3,
+          "line": 18
+        },
+        {
+          "heading": "Verify",
+          "level": 3,
+          "line": 25
+        },
+        {
+          "heading": "SDK as an Alternative",
+          "level": 2,
+          "line": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "docs/sequential-thinking.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 387,
+      "nonEmptyLines": 308,
+      "sections": [
+        {
+          "heading": "Archon v2.0 — Sequential Thinking Guide",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Overview",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "The 4 Phases",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Phase 1: DECOMPOSE",
+          "level": 3,
+          "line": 17
+        },
+        {
+          "heading": "Phase 2: REASON",
+          "level": 3,
+          "line": 42
+        },
+        {
+          "heading": "Phase 3: VALIDATE",
+          "level": 3,
+          "line": 72
+        },
+        {
+          "heading": "Phase 4: SYNTHESIZE",
+          "level": 3,
+          "line": 100
+        },
+        {
+          "heading": "[THINKING] Block Format",
+          "level": 2,
+          "line": 122
+        },
+        {
+          "heading": "Format Rules",
+          "level": 3,
+          "line": 131
+        },
+        {
+          "heading": "Thinking Trace Schema",
+          "level": 2,
+          "line": 148
+        },
+        {
+          "heading": "BrowseComp Reasoning Pattern",
+          "level": 2,
+          "line": 252
+        },
+        {
+          "heading": "DETECT",
+          "level": 3,
+          "line": 260
+        },
+        {
+          "heading": "HYPOTHESIZE",
+          "level": 3,
+          "line": 273
+        },
+        {
+          "heading": "ENUMERATE",
+          "level": 3,
+          "line": 286
+        },
+        {
+          "heading": "VERIFY",
+          "level": 3,
+          "line": 301
+        },
+        {
+          "heading": "CONTINUE",
+          "level": 3,
+          "line": 305
+        },
+        {
+          "heading": "Complexity Scaling",
+          "level": 2,
+          "line": 311
+        },
+        {
+          "heading": "Complexity Assessment",
+          "level": 3,
+          "line": 323
+        },
+        {
+          "heading": "Pipeline Integration",
+          "level": 2,
+          "line": 342
+        },
+        {
+          "heading": "Traces as Audit Artifacts",
+          "level": 3,
+          "line": 346
+        },
+        {
+          "heading": "Example: Trace in Pipeline State",
+          "level": 3,
+          "line": 355
+        },
+        {
+          "heading": "Reviewer Trace Inspection",
+          "level": 3,
+          "line": 378
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 22
+      }
+    },
+    {
+      "path": "docs/styles.css",
+      "language": "css",
+      "fileCategory": "markup",
+      "totalLines": 1142,
+      "nonEmptyLines": 1003,
+      "metrics": {}
+    }
+  ]
+}

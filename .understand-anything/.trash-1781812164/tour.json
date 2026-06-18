@@ -1,0 +1,90 @@
+[
+  {
+    "order": 1,
+    "title": "Project Overview",
+    "description": "Start with the CLAUDE.md project instructions to understand Archon's philosophy: a skills framework and cognitive harness for Claude Code, not a guardrail system. This file encodes verified facts, architectural conventions, and the two-surface design — runtime hooks that inject context and the skill/agent/synapse layer installed to ~/.claude/skills/. Reading it first gives you the mental model that makes everything else coherent.",
+    "nodeIds": ["document:CLAUDE.md"],
+    "concepts": ["harness-not-guardrail", "two-surface-architecture", "skills-framework"]
+  },
+  {
+    "order": 2,
+    "title": "CLI Entry Point",
+    "description": "The __main__.py and cli.py files are the user-facing entry points. __main__.py enables `python -m archon`, while cli.py wires the Typer CLI with all subcommands: install, validate, doctor, list, pipeline, and more. Understanding this layer shows you how the entire framework is operated and what capabilities it exposes to developers.",
+    "nodeIds": ["file:src/archon/__main__.py", "file:src/archon/cli.py"],
+    "concepts": ["typer-cli", "subcommands", "entry-point"],
+    "languageLesson": "Python's __main__.py makes a package directly executable with `python -m package`. Typer builds CLI commands from type-annotated functions, auto-generating help text and argument validation."
+  },
+  {
+    "order": 3,
+    "title": "The Registry — Single Source of Truth",
+    "description": "registry.py is the backbone of the entire system. It parses archon.yaml into typed dataclasses (Skill, Agent, Bundle, Pipeline, Synapse, Registry) that every other component relies on. A critical rule encoded here: these are dataclasses, not dicts — never subscript them. The Registry class holds all parsed components and is the single authoritative view of what's installed.",
+    "nodeIds": ["file:src/archon/core/registry.py"],
+    "concepts": ["dataclasses", "manifest-parsing", "central-registry"],
+    "languageLesson": "Python dataclasses with @dataclass auto-generate __init__, __repr__, and __eq__. Using dataclasses instead of dicts provides type safety and attribute access syntax — critical in Archon where dict subscripting would crash."
+  },
+  {
+    "order": 4,
+    "title": "The Root Manifest",
+    "description": "archon.yaml is the root manifest that the Registry parses — the master declaration of all skills, agents, bundles, pipelines, and synapses in the framework. It also declares platform install targets (where skills land on each OS), which is why hardcoding ~/.claude/skills/ in Python code is forbidden. Everything in the CLI ultimately reads from this file.",
+    "nodeIds": ["config:archon.yaml", "config:pyproject.toml"],
+    "concepts": ["manifest-driven-design", "platform-targets", "component-declaration"]
+  },
+  {
+    "order": 5,
+    "title": "The Installer",
+    "description": "installer.py translates the registry into files on disk — copying skill manifests, SKILL.md files, and synapse resources into the platform-specific target directory. It's the bridge between the archon.yaml declaration and the ~/.claude/skills/ directory that Claude Code reads at runtime. The install command is what makes a skill actually usable.",
+    "nodeIds": ["file:src/archon/core/installer.py"],
+    "concepts": ["installation-pipeline", "platform-abstraction", "skill-deployment"]
+  },
+  {
+    "order": 6,
+    "title": "Skills and Agents — The Component Model",
+    "description": "A skill is a YAML manifest plus a SKILL.md file that Claude Code reads on Skill tool invocation. An agent adds an agent.md with role-specific behavioral instructions. Examine a representative skill manifest and the agent template to understand the schema: triggers (keywords and patterns), description, version, author, and the markdown content Claude actually reads when the skill is invoked.",
+    "nodeIds": ["config:agents/_template/agent-manifest.yaml", "document:agents/_template/AGENT.md", "document:agents/README.md"],
+    "concepts": ["skill-manifest", "agent-manifest", "trigger-keywords", "yaml-schema"]
+  },
+  {
+    "order": 7,
+    "title": "The Hook Runtime Layer",
+    "description": "hooks/claude/ contains eight Python scripts that Claude Code's hook system fires at lifecycle events. They form the runtime intelligence of Archon: session_boot.py snapshots project state on session start, prompt_router.py classifies every prompt and injects routing context, guard_bash.py and guard_write.py block dangerous operations before they execute, and quality_*.py scripts track outcomes afterward. Together they turn every Claude Code session into a supervised, context-aware workflow.",
+    "nodeIds": ["file:hooks/claude/session_boot.py", "file:hooks/claude/prompt_router.py", "file:hooks/claude/guard_bash.py", "file:hooks/claude/guard_write.py"],
+    "concepts": ["hook-lifecycle", "pre-tool-use", "post-tool-use", "context-injection"]
+  },
+  {
+    "order": 8,
+    "title": "Hook Configuration",
+    "description": "hooks/hooks.yaml declares which hook script handles which Claude Code event. This is the wiring layer that binds Python scripts to lifecycle events like SessionStart, UserPromptSubmit, PreToolUse, and Stop. The hook matcher patterns (e.g. 'Write|Edit|NotebookEdit') must be exact — a wrong matcher causes silent failures.",
+    "nodeIds": ["config:hooks/hooks.yaml"],
+    "concepts": ["event-binding", "hook-matchers", "lifecycle-events"]
+  },
+  {
+    "order": 9,
+    "title": "The Classifier and Shared State",
+    "description": "hooks/claude/shared/ contains three foundational utilities shared across all hooks. classifier.py uses pure regex (no LLM) to determine prompt complexity tier (TRIVIAL through EXPERT) and which synapses to activate. state.py provides a persistent JSON session state at ~/.claude/archon-state.json that all hooks read and write. scanner.py detects dangerous bash commands and secrets in file writes.",
+    "nodeIds": ["file:hooks/claude/shared/classifier.py", "file:hooks/claude/shared/state.py", "file:hooks/claude/shared/scanner.py"],
+    "concepts": ["complexity-routing", "session-state", "secret-scanning", "synapse-activation"]
+  },
+  {
+    "order": 10,
+    "title": "Synapses — Cognitive Modules",
+    "description": "Synapses are cognitive enhancement modules injected into the prompt when classifier.py detects the right complexity tier. The five synapses are: metacognition (self-awareness about reasoning quality), anti-rationalization (blocks speculative claims), sequential-thinking (decomposes complex tasks), security-awareness (activates on auth/vuln keywords at any tier), and pattern-recognition (EXPERT only). Crucially, what gets injected is the compact text in SYNAPSE_INSTRUCTIONS in classifier.py — the full SYNAPSE.md files are documentation, not runtime content.",
+    "nodeIds": ["file:src/archon/core/synapse_engine_v2.py", "file:hooks/claude/shared/classifier.py"],
+    "concepts": ["synapse-injection", "cognitive-modules", "complexity-tiers", "prompt-augmentation"],
+    "languageLesson": "Synapses demonstrate a key pattern: documentation (SYNAPSE.md) and runtime behavior (SYNAPSE_INSTRUCTIONS dict) are deliberately separated. This keeps the injected context minimal (~35 tokens each) while rich documentation exists for human readers."
+  },
+  {
+    "order": 11,
+    "title": "Pipeline Engine",
+    "description": "pipeline_engine.py implements a state-machine executor for multi-step workflows defined in YAML pipeline files. Pipelines declare steps with available-when conditions, state_vars seeded as defaults, and hook integrations. The resume() method maintains full guardrail parity with execute() — every step fires available-when evaluation and synapse checks regardless of whether it's a fresh run or a resumed one.",
+    "nodeIds": ["file:src/archon/core/pipeline_engine.py", "file:src/archon/core/pipeline_state.py"],
+    "concepts": ["state-machine", "pipeline-yaml", "step-execution", "available-when"],
+    "languageLesson": "Python's asyncio.run() in a daemon thread is the safe pattern for mixing sync and async code. Archon uses this in synapse firing to avoid the deprecated asyncio.get_event_loop() which raises DeprecationWarning in Python 3.10+."
+  },
+  {
+    "order": 12,
+    "title": "The SDK — External Integration",
+    "description": "sdk/archon.py exposes the ArchonSDK class for external tools to interact with the framework. Every _validate_* method must return exactly {valid: bool, errors: list[str], warnings: list[str]} — missing the 'warnings' key breaks callers silently. This contract was hard-won and is the canonical pattern for all validation logic in the system.",
+    "nodeIds": ["file:src/archon/core/synapse_router.py", "file:src/archon/core/synapse_hardener.py"],
+    "concepts": ["sdk-pattern", "validation-contract", "circuit-breaker", "retry-policy"]
+  }
+]

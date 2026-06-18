@@ -1,0 +1,304 @@
+{
+  "batchIndex": 50,
+  "nodes": [
+    {
+      "id": "file:skills/fastmcp/examples/openapi-integration.py",
+      "type": "file:",
+      "name": "openapi-integration.py",
+      "filePath": "skills/fastmcp/examples/openapi-integration.py",
+      "summary": "Example file demonstrating FastMCP OpenAPI integration, showing how to auto-generate MCP tools from OpenAPI specifications.",
+      "tags": ["fastmcp", "example", "openapi", "mcp", "auto-generation"],
+      "complexity": 4
+    },
+    {
+      "id": "file:skills/fastmcp/examples/prompts-examples.py",
+      "type": "file:",
+      "name": "prompts-examples.py",
+      "filePath": "skills/fastmcp/examples/prompts-examples.py",
+      "summary": "Example file showing FastMCP prompt template registration and dynamic prompt generation patterns.",
+      "tags": ["fastmcp", "example", "prompts", "mcp", "templates"],
+      "complexity": 4
+    },
+    {
+      "id": "file:skills/fastmcp/examples/resources-examples.py",
+      "type": "file:",
+      "name": "resources-examples.py",
+      "filePath": "skills/fastmcp/examples/resources-examples.py",
+      "summary": "Example file demonstrating FastMCP resource definition patterns including file resources, database resources, and dynamic resource templates.",
+      "tags": ["fastmcp", "example", "resources", "mcp", "resource-templates"],
+      "complexity": 4
+    },
+    {
+      "id": "file:skills/fastmcp/examples/self-contained-server.py",
+      "type": "file:",
+      "name": "self-contained-server.py",
+      "filePath": "skills/fastmcp/examples/self-contained-server.py",
+      "summary": "Example showing a complete self-contained FastMCP server with tools, resources, and prompts in a single file.",
+      "tags": ["fastmcp", "example", "mcp-server", "self-contained", "complete"],
+      "complexity": 5
+    },
+    {
+      "id": "file:skills/fastmcp/examples/tools-examples.py",
+      "type": "file:",
+      "name": "tools-examples.py",
+      "filePath": "skills/fastmcp/examples/tools-examples.py",
+      "summary": "Example file showing FastMCP tool registration patterns including typed parameters, async tools, and tool documentation.",
+      "tags": ["fastmcp", "example", "tools", "mcp", "typed-parameters"],
+      "complexity": 4
+    },
+    {
+      "id": "config:skills/fastmcp/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (fastmcp)",
+      "filePath": "skills/fastmcp/manifest.yaml",
+      "summary": "Skill manifest for fastmcp, a minimal manifest defining triggers for FastMCP server development tasks.",
+      "tags": ["fastmcp", "skill", "manifest", "mcp", "python"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/fastmcp/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (fastmcp overrides)",
+      "filePath": "skills/fastmcp/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the fastmcp skill.",
+      "tags": ["fastmcp", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/fastmcp/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (fastmcp resources)",
+      "filePath": "skills/fastmcp/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the fastmcp skill.",
+      "tags": ["fastmcp", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/fastmcp/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (fastmcp)",
+      "filePath": "skills/fastmcp/SKILL.md",
+      "summary": "Very large skill documentation for fastmcp (2614 lines), providing the comprehensive FastMCP framework reference including server creation, tools, resources, prompts, and client patterns.",
+      "tags": ["fastmcp", "documentation", "mcp", "python", "server-development"],
+      "complexity": 5
+    },
+    {
+      "id": "file:skills/fastmcp/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (fastmcp test cases)",
+      "filePath": "skills/fastmcp/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the fastmcp skill.",
+      "tags": ["fastmcp", "placeholder", "git", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/find-skills/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (find-skills examples)",
+      "filePath": "skills/find-skills/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory for the find-skills skill.",
+      "tags": ["find-skills", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/find-skills/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (find-skills)",
+      "filePath": "skills/find-skills/manifest.yaml",
+      "summary": "Skill manifest for find-skills, a minimal manifest defining triggers for skill discovery and search tasks within the Archon framework.",
+      "tags": ["find-skills", "skill", "manifest", "discovery", "search"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/find-skills/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (find-skills overrides)",
+      "filePath": "skills/find-skills/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the find-skills skill.",
+      "tags": ["find-skills", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/find-skills/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (find-skills resources)",
+      "filePath": "skills/find-skills/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the find-skills skill.",
+      "tags": ["find-skills", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/find-skills/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (find-skills)",
+      "filePath": "skills/find-skills/SKILL.md",
+      "summary": "Skill documentation for find-skills, providing a workflow for discovering and recommending relevant Archon skills using the skill-router MCP server.",
+      "tags": ["find-skills", "documentation", "skill-discovery", "archon", "search"],
+      "complexity": 3
+    },
+    {
+      "id": "file:skills/find-skills/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (find-skills test cases)",
+      "filePath": "skills/find-skills/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the find-skills skill.",
+      "tags": ["find-skills", "placeholder", "git", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/finishing-a-development-branch/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (finishing-a-development-branch)",
+      "filePath": "skills/finishing-a-development-branch/manifest.yaml",
+      "summary": "Skill manifest for finishing-a-development-branch, a minimal manifest defining triggers for branch completion and PR submission tasks.",
+      "tags": ["finishing-branch", "skill", "manifest", "git", "pr"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/finishing-a-development-branch/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (finishing-a-development-branch)",
+      "filePath": "skills/finishing-a-development-branch/SKILL.md",
+      "summary": "Skill documentation for finishing-a-development-branch, covering the checklist for completing a feature branch including tests, linting, and PR creation.",
+      "tags": ["finishing-branch", "documentation", "git", "pr", "checklist"],
+      "complexity": 3
+    },
+    {
+      "id": "config:skills/fluent-builder/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (fluent-builder)",
+      "filePath": "skills/fluent-builder/manifest.yaml",
+      "summary": "Skill manifest for fluent-builder, defining triggers for implementing fluent builder pattern APIs.",
+      "tags": ["fluent-builder", "skill", "manifest", "design-patterns", "builder"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/fluent-builder/resources/builder-reference.md",
+      "type": "document:",
+      "name": "builder-reference.md",
+      "filePath": "skills/fluent-builder/resources/builder-reference.md",
+      "summary": "Reference document for the fluent builder pattern, providing code examples and anti-patterns to avoid when designing builder APIs.",
+      "tags": ["fluent-builder", "builder-reference", "design-patterns", "reference"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/fluent-builder/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (fluent-builder)",
+      "filePath": "skills/fluent-builder/SKILL.md",
+      "summary": "Skill documentation for fluent-builder, covering fluent builder API design with method chaining, immutability, and validation strategies.",
+      "tags": ["fluent-builder", "documentation", "design-patterns", "builder", "method-chaining"],
+      "complexity": 3
+    },
+    {
+      "id": "file:skills/frontend-design/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (frontend-design examples)",
+      "filePath": "skills/frontend-design/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory for the frontend-design skill.",
+      "tags": ["frontend-design", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/frontend-design/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (frontend-design)",
+      "filePath": "skills/frontend-design/manifest.yaml",
+      "summary": "Skill manifest for frontend-design, a minimal manifest defining triggers for frontend UI design and implementation tasks.",
+      "tags": ["frontend-design", "skill", "manifest", "frontend", "ui"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/frontend-design/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (frontend-design overrides)",
+      "filePath": "skills/frontend-design/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the frontend-design skill.",
+      "tags": ["frontend-design", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/frontend-design/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (frontend-design resources)",
+      "filePath": "skills/frontend-design/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the frontend-design skill.",
+      "tags": ["frontend-design", "placeholder", "git"],
+      "complexity": 1
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:skills/fastmcp/SKILL.md",
+      "target": "config:skills/fastmcp/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "file:skills/fastmcp/examples/basic-server.py",
+      "target": "config:skills/fastmcp/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "file:skills/fastmcp/examples/self-contained-server.py",
+      "target": "config:skills/fastmcp/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "file:skills/fastmcp/examples/openapi-integration.py",
+      "target": "file:skills/fastmcp/examples/basic-server.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:skills/fastmcp/examples/prompts-examples.py",
+      "target": "file:skills/fastmcp/examples/basic-server.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:skills/fastmcp/examples/resources-examples.py",
+      "target": "file:skills/fastmcp/examples/basic-server.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:skills/fastmcp/examples/tools-examples.py",
+      "target": "file:skills/fastmcp/examples/basic-server.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "document:skills/find-skills/SKILL.md",
+      "target": "config:skills/find-skills/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/find-skills/SKILL.md",
+      "target": "file:servers/skill-router/server.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "document:skills/finishing-a-development-branch/SKILL.md",
+      "target": "config:skills/finishing-a-development-branch/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/fluent-builder/SKILL.md",
+      "target": "config:skills/fluent-builder/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/fluent-builder/resources/builder-reference.md",
+      "target": "config:skills/fluent-builder/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    }
+  ]
+}

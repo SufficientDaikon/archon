@@ -1,0 +1,241 @@
+{
+  "batchIndex": 57,
+  "nodes": [
+    {
+      "id": "config:skills/server-component-patterns/manifest.yaml",
+      "type": "config",
+      "name": "server-component-patterns manifest",
+      "filePath": "skills/server-component-patterns/manifest.yaml",
+      "summary": "Skill manifest for the server-component-patterns skill providing React Server Components guidance and pattern references.",
+      "tags": ["manifest", "skill", "rsc", "react", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/server-component-patterns/resources/rsc-patterns.md",
+      "type": "document",
+      "name": "rsc-patterns.md",
+      "filePath": "skills/server-component-patterns/resources/rsc-patterns.md",
+      "summary": "Extensive reference for React Server Component patterns covering data fetching, streaming, client/server boundaries, caching strategies, and composition patterns.",
+      "tags": ["rsc", "react", "server-components", "patterns", "reference"],
+      "complexity": "high"
+    },
+    {
+      "id": "document:skills/server-component-patterns/SKILL.md",
+      "type": "document",
+      "name": "server-component-patterns SKILL.md",
+      "filePath": "skills/server-component-patterns/SKILL.md",
+      "summary": "Skill documentation for applying React Server Component patterns in Next.js and similar frameworks, including boundary decisions and performance trade-offs.",
+      "tags": ["docs", "server-components", "skill", "nextjs", "react"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/singleton-patterns/manifest.yaml",
+      "type": "config",
+      "name": "singleton-patterns manifest",
+      "filePath": "skills/singleton-patterns/manifest.yaml",
+      "summary": "Skill manifest for the singleton-patterns skill covering singleton implementation and pitfall avoidance.",
+      "tags": ["manifest", "skill", "singleton", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/singleton-patterns/SKILL.md",
+      "type": "document",
+      "name": "singleton-patterns SKILL.md",
+      "filePath": "skills/singleton-patterns/SKILL.md",
+      "summary": "Skill documentation for implementing safe singleton patterns, including module-level singletons, registry patterns, and avoiding global-state anti-patterns.",
+      "tags": ["docs", "singleton", "skill", "design-patterns"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/skills-index/manifest.yaml",
+      "type": "config",
+      "name": "skills-index manifest",
+      "filePath": "skills/skills-index/manifest.yaml",
+      "summary": "Skill manifest for the skills-index skill providing discovery and browsing of available Archon skills.",
+      "tags": ["manifest", "skill", "skills-index", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/skills-index/SKILL.md",
+      "type": "document",
+      "name": "skills-index SKILL.md",
+      "filePath": "skills/skills-index/SKILL.md",
+      "summary": "Skill documentation for the skills index, helping users discover and navigate the full Archon skill catalog by category and use case.",
+      "tags": ["docs", "skills-index", "skill", "discovery", "catalog"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/skills-index/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (skills-index examples)",
+      "filePath": "skills/skills-index/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/skills-index/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (skills-index overrides)",
+      "filePath": "skills/skills-index/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/skills-index/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (skills-index resources)",
+      "filePath": "skills/skills-index/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/skills-index/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (skills-index tests)",
+      "filePath": "skills/skills-index/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/spec-writer/manifest.yaml",
+      "type": "config",
+      "name": "spec-writer manifest",
+      "filePath": "skills/spec-writer/manifest.yaml",
+      "summary": "Skill manifest for the spec-writer skill providing technical specification writing guidance.",
+      "tags": ["manifest", "skill", "spec-writer", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/spec-writer/SKILL.md",
+      "type": "document",
+      "name": "spec-writer SKILL.md",
+      "filePath": "skills/spec-writer/SKILL.md",
+      "summary": "Skill documentation for writing high-quality technical specifications covering requirements, API contracts, data models, and acceptance criteria.",
+      "tags": ["docs", "spec-writer", "skill", "specifications", "technical-writing"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/spec-writer/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (spec-writer examples)",
+      "filePath": "skills/spec-writer/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/spec-writer/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (spec-writer overrides)",
+      "filePath": "skills/spec-writer/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/spec-writer/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (spec-writer resources)",
+      "filePath": "skills/spec-writer/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/spec-writer/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (spec-writer tests)",
+      "filePath": "skills/spec-writer/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/structured-logging/manifest.yaml",
+      "type": "config",
+      "name": "structured-logging manifest",
+      "filePath": "skills/structured-logging/manifest.yaml",
+      "summary": "Skill manifest for the structured-logging skill providing JSON-based logging patterns and observability guidance.",
+      "tags": ["manifest", "skill", "logging", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/structured-logging/SKILL.md",
+      "type": "document",
+      "name": "structured-logging SKILL.md",
+      "filePath": "skills/structured-logging/SKILL.md",
+      "summary": "Skill documentation for implementing structured JSON logging with correlation IDs, log levels, and observability best practices.",
+      "tags": ["docs", "structured-logging", "skill", "observability", "json"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/subagent-driven-development/manifest.yaml",
+      "type": "config",
+      "name": "subagent-driven-development manifest",
+      "filePath": "skills/subagent-driven-development/manifest.yaml",
+      "summary": "Minimal skill manifest for the subagent-driven-development skill for orchestrating parallel AI subagents.",
+      "tags": ["manifest", "skill", "subagent", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/subagent-driven-development/SKILL.md",
+      "type": "document",
+      "name": "subagent-driven-development SKILL.md",
+      "filePath": "skills/subagent-driven-development/SKILL.md",
+      "summary": "Skill documentation for orchestrating multi-agent development workflows using subagents for parallel task execution and synthesis.",
+      "tags": ["docs", "subagent", "skill", "orchestration", "parallel"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/systematic-debugging/manifest.yaml",
+      "type": "config",
+      "name": "systematic-debugging manifest",
+      "filePath": "skills/systematic-debugging/manifest.yaml",
+      "summary": "Skill manifest for the systematic-debugging skill providing structured debugging methodologies.",
+      "tags": ["manifest", "skill", "debugging", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/systematic-debugging/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (systematic-debugging examples)",
+      "filePath": "skills/systematic-debugging/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/systematic-debugging/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (systematic-debugging overrides)",
+      "filePath": "skills/systematic-debugging/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/systematic-debugging/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (systematic-debugging resources)",
+      "filePath": "skills/systematic-debugging/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    }
+  ],
+  "edges": [
+    {"source": "config:skills/server-component-patterns/manifest.yaml", "target": "document:skills/server-component-patterns/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/server-component-patterns/manifest.yaml", "target": "document:skills/server-component-patterns/resources/rsc-patterns.md", "type": "configures", "weight": 0.6},
+    {"source": "document:skills/server-component-patterns/SKILL.md", "target": "document:skills/server-component-patterns/resources/rsc-patterns.md", "type": "documents", "weight": 0.5},
+    {"source": "config:skills/singleton-patterns/manifest.yaml", "target": "document:skills/singleton-patterns/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/skills-index/manifest.yaml", "target": "document:skills/skills-index/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/spec-writer/manifest.yaml", "target": "document:skills/spec-writer/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/structured-logging/manifest.yaml", "target": "document:skills/structured-logging/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/subagent-driven-development/manifest.yaml", "target": "document:skills/subagent-driven-development/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/systematic-debugging/manifest.yaml", "target": "document:skills/systematic-debugging/SKILL.md", "type": "configures", "weight": 0.6}
+  ]
+}

@@ -1,0 +1,1559 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 19,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "file-ops-rs/src/errors.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 66,
+      "functions": [
+        {
+          "name": "to_json_rpc_error",
+          "startLine": 60,
+          "endLine": 84,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "FileOpsError",
+          "startLine": 8,
+          "endLine": 56,
+          "methods": [
+            "to_json_rpc_error"
+          ],
+          "properties": [
+            "FileNotFound",
+            "IsDirectory",
+            "OutOfBounds",
+            "ExternalChange",
+            "InvalidRegex",
+            "RateLimitExceeded",
+            "SchemaValidation",
+            "NoParentDir",
+            "FileExists",
+            "DirCreationFailed",
+            "EncodingError",
+            "IoError",
+            "JsonError",
+            "UnicodeError",
+            "InvalidRequest",
+            "Internal"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FileOpsError",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "to_json_rpc_error",
+          "line": 60,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "file-ops-rs/src/lib.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 23,
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "file-ops-rs/src/rpc/mod.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "file-ops-rs/src/rpc/router.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "new",
+          "startLine": 6,
+          "endLine": 8,
+          "params": []
+        },
+        {
+          "name": "dispatch",
+          "startLine": 10,
+          "endLine": 12,
+          "params": [
+            "request"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RpcRouter",
+          "startLine": 3,
+          "endLine": 3,
+          "methods": [
+            "new",
+            "dispatch"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RpcRouter",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "new",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "dispatch",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "dispatch",
+          "callee": "JsonRpcResponse::method_not_found",
+          "lineNumber": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "file-ops-rs/src/rpc/schema.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "functions": [
+        {
+          "name": "validate_request",
+          "startLine": 4,
+          "endLine": 6,
+          "params": [
+            "_request"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "SchemaValidator",
+          "startLine": 1,
+          "endLine": 1,
+          "methods": [
+            "validate_request"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "SchemaValidator",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "validate_request",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validate_request",
+          "callee": "Ok",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "file-ops-rs/src/services/logging.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 9,
+      "functions": [
+        {
+          "name": "setup_logging",
+          "startLine": 1,
+          "endLine": 3,
+          "params": []
+        },
+        {
+          "name": "log_request",
+          "startLine": 5,
+          "endLine": 7,
+          "params": [
+            "_id",
+            "_method"
+          ]
+        },
+        {
+          "name": "log_response",
+          "startLine": 9,
+          "endLine": 11,
+          "params": [
+            "_id",
+            "_latency_ms"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "setup_logging",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "log_request",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "log_response",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "file-ops-rs/src/services/metrics.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 34,
+      "functions": [
+        {
+          "name": "new",
+          "startLine": 11,
+          "endLine": 17,
+          "params": []
+        },
+        {
+          "name": "record_request",
+          "startLine": 19,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "record_success",
+          "startLine": 23,
+          "endLine": 25,
+          "params": []
+        },
+        {
+          "name": "record_error",
+          "startLine": 27,
+          "endLine": 29,
+          "params": []
+        },
+        {
+          "name": "clone",
+          "startLine": 33,
+          "endLine": 39,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "Metrics",
+          "startLine": 4,
+          "endLine": 8,
+          "methods": [
+            "new",
+            "record_request",
+            "record_success",
+            "record_error",
+            "clone"
+          ],
+          "properties": [
+            "requests_total",
+            "requests_success",
+            "requests_error"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Metrics",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "new",
+          "line": 11,
+          "isDefault": false
+        },
+        {
+          "name": "record_request",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "record_success",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "record_error",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "new",
+          "callee": "Arc::new",
+          "lineNumber": 13
+        },
+        {
+          "caller": "new",
+          "callee": "AtomicU64::new",
+          "lineNumber": 13
+        },
+        {
+          "caller": "new",
+          "callee": "Arc::new",
+          "lineNumber": 14
+        },
+        {
+          "caller": "new",
+          "callee": "AtomicU64::new",
+          "lineNumber": 14
+        },
+        {
+          "caller": "new",
+          "callee": "Arc::new",
+          "lineNumber": 15
+        },
+        {
+          "caller": "new",
+          "callee": "AtomicU64::new",
+          "lineNumber": 15
+        },
+        {
+          "caller": "record_request",
+          "callee": "self.requests_total.fetch_add",
+          "lineNumber": 20
+        },
+        {
+          "caller": "record_success",
+          "callee": "self.requests_success.fetch_add",
+          "lineNumber": 24
+        },
+        {
+          "caller": "record_error",
+          "callee": "self.requests_error.fetch_add",
+          "lineNumber": 28
+        },
+        {
+          "caller": "clone",
+          "callee": "Arc::clone",
+          "lineNumber": 35
+        },
+        {
+          "caller": "clone",
+          "callee": "Arc::clone",
+          "lineNumber": 36
+        },
+        {
+          "caller": "clone",
+          "callee": "Arc::clone",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "file-ops-rs/src/services/mod.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 7,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "file-ops-rs/src/services/rate_limit.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 9,
+      "functions": [
+        {
+          "name": "new",
+          "startLine": 4,
+          "endLine": 6,
+          "params": []
+        },
+        {
+          "name": "check_rate",
+          "startLine": 8,
+          "endLine": 10,
+          "params": [
+            "_request"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "RateLimiter",
+          "startLine": 1,
+          "endLine": 1,
+          "methods": [
+            "new",
+            "check_rate"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "RateLimiter",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "new",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "check_rate",
+          "line": 8,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "check_rate",
+          "callee": "Ok",
+          "lineNumber": 9
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "file-ops-rs/src/tools/file_create.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "new",
+          "startLine": 6,
+          "endLine": 8,
+          "params": []
+        },
+        {
+          "name": "call",
+          "startLine": 10,
+          "endLine": 12,
+          "params": [
+            "_params"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FileCreateTool",
+          "startLine": 3,
+          "endLine": 3,
+          "methods": [
+            "new",
+            "call"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "FileCreateTool",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "new",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "call",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "call",
+          "callee": "Ok",
+          "lineNumber": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "file-ops-rs/src/tools/file_edit.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "new",
+          "startLine": 6,
+          "endLine": 8,
+          "params": []
+        },
+        {
+          "name": "call",
+          "startLine": 10,
+          "endLine": 12,
+          "params": [
+            "_params"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FileEditTool",
+          "startLine": 3,
+          "endLine": 3,
+          "methods": [
+            "new",
+            "call"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "FileEditTool",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "new",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "call",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "call",
+          "callee": "Ok",
+          "lineNumber": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "file-ops-rs/src/tools/file_insert.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "new",
+          "startLine": 6,
+          "endLine": 8,
+          "params": []
+        },
+        {
+          "name": "call",
+          "startLine": 10,
+          "endLine": 12,
+          "params": [
+            "_params"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FileInsertTool",
+          "startLine": 3,
+          "endLine": 3,
+          "methods": [
+            "new",
+            "call"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "FileInsertTool",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "new",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "call",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "call",
+          "callee": "Ok",
+          "lineNumber": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "file-ops-rs/src/tools/file_read.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "new",
+          "startLine": 6,
+          "endLine": 8,
+          "params": []
+        },
+        {
+          "name": "call",
+          "startLine": 10,
+          "endLine": 12,
+          "params": [
+            "_params"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FileReadTool",
+          "startLine": 3,
+          "endLine": 3,
+          "methods": [
+            "new",
+            "call"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "FileReadTool",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "new",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "call",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "call",
+          "callee": "Ok",
+          "lineNumber": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "file-ops-rs/src/tools/file_search.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "new",
+          "startLine": 6,
+          "endLine": 8,
+          "params": []
+        },
+        {
+          "name": "call",
+          "startLine": 10,
+          "endLine": 12,
+          "params": [
+            "_params"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FileSearchTool",
+          "startLine": 3,
+          "endLine": 3,
+          "methods": [
+            "new",
+            "call"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "FileSearchTool",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "new",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "call",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "call",
+          "callee": "Ok",
+          "lineNumber": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "file-ops-rs/src/tools/file_structure.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "new",
+          "startLine": 6,
+          "endLine": 8,
+          "params": []
+        },
+        {
+          "name": "call",
+          "startLine": 10,
+          "endLine": 12,
+          "params": [
+            "_params"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FileStructureTool",
+          "startLine": 3,
+          "endLine": 3,
+          "methods": [
+            "new",
+            "call"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "FileStructureTool",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "new",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "call",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "call",
+          "callee": "Ok",
+          "lineNumber": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "file-ops-rs/src/tools/mod.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "file-ops-rs/src/transport/message.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 128,
+      "nonEmptyLines": 116,
+      "functions": [
+        {
+          "name": "as_json",
+          "startLine": 25,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "success",
+          "startLine": 55,
+          "endLine": 62,
+          "params": [
+            "id",
+            "result"
+          ]
+        },
+        {
+          "name": "error",
+          "startLine": 64,
+          "endLine": 75,
+          "params": [
+            "id",
+            "code",
+            "message"
+          ]
+        },
+        {
+          "name": "parse_error",
+          "startLine": 77,
+          "endLine": 88,
+          "params": []
+        },
+        {
+          "name": "invalid_request",
+          "startLine": 90,
+          "endLine": 101,
+          "params": [
+            "reason"
+          ]
+        },
+        {
+          "name": "method_not_found",
+          "startLine": 103,
+          "endLine": 114,
+          "params": [
+            "method"
+          ]
+        },
+        {
+          "name": "internal_error",
+          "startLine": 116,
+          "endLine": 127,
+          "params": [
+            "reason"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "JsonRpcRequest",
+          "startLine": 8,
+          "endLine": 14,
+          "methods": [],
+          "properties": [
+            "jsonrpc",
+            "id",
+            "method",
+            "params"
+          ]
+        },
+        {
+          "name": "RequestId",
+          "startLine": 19,
+          "endLine": 22,
+          "methods": [
+            "as_json"
+          ],
+          "properties": [
+            "Number",
+            "String"
+          ]
+        },
+        {
+          "name": "JsonRpcResponse",
+          "startLine": 35,
+          "endLine": 43,
+          "methods": [
+            "success",
+            "error",
+            "parse_error",
+            "invalid_request",
+            "method_not_found",
+            "internal_error"
+          ],
+          "properties": [
+            "jsonrpc",
+            "id",
+            "result",
+            "error"
+          ]
+        },
+        {
+          "name": "JsonRpcError",
+          "startLine": 47,
+          "endLine": 52,
+          "methods": [],
+          "properties": [
+            "code",
+            "message",
+            "data"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "JsonRpcRequest",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "RequestId",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "as_json",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "JsonRpcResponse",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "JsonRpcError",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "success",
+          "line": 55,
+          "isDefault": false
+        },
+        {
+          "name": "error",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "parse_error",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "invalid_request",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "method_not_found",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "internal_error",
+          "line": 116,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "as_json",
+          "callee": "Value::Number",
+          "lineNumber": 27
+        },
+        {
+          "caller": "as_json",
+          "callee": "(*n).into",
+          "lineNumber": 27
+        },
+        {
+          "caller": "as_json",
+          "callee": "Value::String",
+          "lineNumber": 28
+        },
+        {
+          "caller": "as_json",
+          "callee": "s.clone",
+          "lineNumber": 28
+        },
+        {
+          "caller": "success",
+          "callee": "\"2.0\".to_string",
+          "lineNumber": 57
+        },
+        {
+          "caller": "success",
+          "callee": "Some",
+          "lineNumber": 58
+        },
+        {
+          "caller": "success",
+          "callee": "Some",
+          "lineNumber": 59
+        },
+        {
+          "caller": "error",
+          "callee": "\"2.0\".to_string",
+          "lineNumber": 66
+        },
+        {
+          "caller": "error",
+          "callee": "Some",
+          "lineNumber": 69
+        },
+        {
+          "caller": "error",
+          "callee": "message.into",
+          "lineNumber": 71
+        },
+        {
+          "caller": "parse_error",
+          "callee": "\"2.0\".to_string",
+          "lineNumber": 79
+        },
+        {
+          "caller": "parse_error",
+          "callee": "Some",
+          "lineNumber": 82
+        },
+        {
+          "caller": "parse_error",
+          "callee": "\"Parse error\".to_string",
+          "lineNumber": 84
+        },
+        {
+          "caller": "invalid_request",
+          "callee": "\"2.0\".to_string",
+          "lineNumber": 92
+        },
+        {
+          "caller": "invalid_request",
+          "callee": "Some",
+          "lineNumber": 95
+        },
+        {
+          "caller": "method_not_found",
+          "callee": "\"2.0\".to_string",
+          "lineNumber": 105
+        },
+        {
+          "caller": "method_not_found",
+          "callee": "Some",
+          "lineNumber": 108
+        },
+        {
+          "caller": "internal_error",
+          "callee": "\"2.0\".to_string",
+          "lineNumber": 118
+        },
+        {
+          "caller": "internal_error",
+          "callee": "Some",
+          "lineNumber": 121
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 7,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "file-ops-rs/src/transport/mod.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "file-ops-rs/src/transport/stdio.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 152,
+      "nonEmptyLines": 129,
+      "functions": [
+        {
+          "name": "new",
+          "startLine": 24,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "read_request",
+          "startLine": 36,
+          "endLine": 77,
+          "params": []
+        },
+        {
+          "name": "send_response",
+          "startLine": 80,
+          "endLine": 109,
+          "params": [
+            "response"
+          ]
+        },
+        {
+          "name": "get_request_latency",
+          "startLine": 112,
+          "endLine": 117,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "cleanup_old_requests",
+          "startLine": 120,
+          "endLine": 124,
+          "params": []
+        },
+        {
+          "name": "clone",
+          "startLine": 128,
+          "endLine": 134,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "StdioTransport",
+          "startLine": 17,
+          "endLine": 21,
+          "methods": [
+            "new",
+            "read_request",
+            "send_response",
+            "get_request_latency",
+            "cleanup_old_requests",
+            "clone"
+          ],
+          "properties": [
+            "reader",
+            "writer",
+            "request_tracker"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "StdioTransport",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "new",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "read_request",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "send_response",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "get_request_latency",
+          "line": 112,
+          "isDefault": false
+        },
+        {
+          "name": "cleanup_old_requests",
+          "line": 120,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "new",
+          "callee": "io::stdin",
+          "lineNumber": 25
+        },
+        {
+          "caller": "new",
+          "callee": "io::stdout",
+          "lineNumber": 26
+        },
+        {
+          "caller": "new",
+          "callee": "Arc::new",
+          "lineNumber": 29
+        },
+        {
+          "caller": "new",
+          "callee": "Mutex::new",
+          "lineNumber": 29
+        },
+        {
+          "caller": "new",
+          "callee": "BufReader::new",
+          "lineNumber": 29
+        },
+        {
+          "caller": "new",
+          "callee": "Arc::new",
+          "lineNumber": 30
+        },
+        {
+          "caller": "new",
+          "callee": "Mutex::new",
+          "lineNumber": 30
+        },
+        {
+          "caller": "new",
+          "callee": "BufWriter::new",
+          "lineNumber": 30
+        },
+        {
+          "caller": "new",
+          "callee": "Arc::new",
+          "lineNumber": 31
+        },
+        {
+          "caller": "new",
+          "callee": "DashMap::new",
+          "lineNumber": 31
+        },
+        {
+          "caller": "read_request",
+          "callee": "self.reader.lock",
+          "lineNumber": 37
+        },
+        {
+          "caller": "read_request",
+          "callee": "String::new",
+          "lineNumber": 38
+        },
+        {
+          "caller": "read_request",
+          "callee": "line.clear",
+          "lineNumber": 41
+        },
+        {
+          "caller": "read_request",
+          "callee": "reader.read_line",
+          "lineNumber": 42
+        },
+        {
+          "caller": "read_request",
+          "callee": "Err",
+          "lineNumber": 45
+        },
+        {
+          "caller": "read_request",
+          "callee": "crate::errors::FileOpsError::Internal",
+          "lineNumber": 45
+        },
+        {
+          "caller": "read_request",
+          "callee": "\"EOF on stdin\".to_string",
+          "lineNumber": 46
+        },
+        {
+          "caller": "read_request",
+          "callee": "line.trim",
+          "lineNumber": 50
+        },
+        {
+          "caller": "read_request",
+          "callee": "trimmed.is_empty",
+          "lineNumber": 51
+        },
+        {
+          "caller": "read_request",
+          "callee": "serde_json::from_str(&line).map_err",
+          "lineNumber": 59
+        },
+        {
+          "caller": "read_request",
+          "callee": "serde_json::from_str",
+          "lineNumber": 59
+        },
+        {
+          "caller": "read_request",
+          "callee": "crate::errors::FileOpsError::JsonError",
+          "lineNumber": 60
+        },
+        {
+          "caller": "read_request",
+          "callee": "Err",
+          "lineNumber": 64
+        },
+        {
+          "caller": "read_request",
+          "callee": "crate::errors::FileOpsError::InvalidRequest",
+          "lineNumber": 64
+        },
+        {
+          "caller": "read_request",
+          "callee": "\"jsonrpc field must be '2.0'\".to_string",
+          "lineNumber": 65
+        },
+        {
+          "caller": "read_request",
+          "callee": "self.request_tracker.insert",
+          "lineNumber": 71
+        },
+        {
+          "caller": "read_request",
+          "callee": "Instant::now",
+          "lineNumber": 71
+        },
+        {
+          "caller": "read_request",
+          "callee": "Ok",
+          "lineNumber": 76
+        },
+        {
+          "caller": "send_response",
+          "callee": "self.writer.lock",
+          "lineNumber": 81
+        },
+        {
+          "caller": "send_response",
+          "callee": "serde_json::to_string",
+          "lineNumber": 84
+        },
+        {
+          "caller": "send_response",
+          "callee": "writer.write_all",
+          "lineNumber": 87
+        },
+        {
+          "caller": "send_response",
+          "callee": "json.as_bytes",
+          "lineNumber": 87
+        },
+        {
+          "caller": "send_response",
+          "callee": "writer.write_all",
+          "lineNumber": 88
+        },
+        {
+          "caller": "send_response",
+          "callee": "writer.flush",
+          "lineNumber": 89
+        },
+        {
+          "caller": "send_response",
+          "callee": "response.error.is_some",
+          "lineNumber": 93
+        },
+        {
+          "caller": "send_response",
+          "callee": "Ok",
+          "lineNumber": 108
+        },
+        {
+          "caller": "get_request_latency",
+          "callee": "self.request_tracker.remove(&id_str).map",
+          "lineNumber": 114
+        },
+        {
+          "caller": "get_request_latency",
+          "callee": "self.request_tracker.remove",
+          "lineNumber": 114
+        },
+        {
+          "caller": "get_request_latency",
+          "callee": "start.elapsed().as_millis",
+          "lineNumber": 115
+        },
+        {
+          "caller": "get_request_latency",
+          "callee": "start.elapsed",
+          "lineNumber": 115
+        },
+        {
+          "caller": "cleanup_old_requests",
+          "callee": "Instant::now",
+          "lineNumber": 121
+        },
+        {
+          "caller": "cleanup_old_requests",
+          "callee": "self.request_tracker.retain",
+          "lineNumber": 122
+        },
+        {
+          "caller": "cleanup_old_requests",
+          "callee": "now.duration_since(*start).as_secs",
+          "lineNumber": 123
+        },
+        {
+          "caller": "cleanup_old_requests",
+          "callee": "now.duration_since",
+          "lineNumber": 123
+        },
+        {
+          "caller": "clone",
+          "callee": "Arc::clone",
+          "lineNumber": 130
+        },
+        {
+          "caller": "clone",
+          "callee": "Arc::clone",
+          "lineNumber": 131
+        },
+        {
+          "caller": "clone",
+          "callee": "Arc::clone",
+          "lineNumber": 132
+        },
+        {
+          "caller": "test_message_serialization",
+          "callee": "JsonRpcResponse::success",
+          "lineNumber": 143
+        },
+        {
+          "caller": "test_message_serialization",
+          "callee": "RequestId::Number",
+          "lineNumber": 144
+        },
+        {
+          "caller": "test_message_serialization",
+          "callee": "serde_json::to_string(&response).unwrap",
+          "lineNumber": 148
+        },
+        {
+          "caller": "test_message_serialization",
+          "callee": "serde_json::to_string",
+          "lineNumber": 148
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    }
+  ]
+}

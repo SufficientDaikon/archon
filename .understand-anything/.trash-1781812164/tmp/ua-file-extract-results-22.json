@@ -1,0 +1,470 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "skills/design-system/examples/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 27,
+      "nonEmptyLines": 19,
+      "sections": [
+        {
+          "heading": "DESIGN.md Reference Examples",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Files",
+          "level": 2,
+          "line": 6
+        },
+        {
+          "heading": "How to Use",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Add More Examples",
+          "level": 2,
+          "line": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "skills/design-system/examples/linear-DESIGN.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 367,
+      "nonEmptyLines": 310,
+      "sections": [
+        {
+          "heading": "Design System Inspired by Linear",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. Visual Theme & Atmosphere",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "2. Color Palette & Roles",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "Background Surfaces",
+          "level": 3,
+          "line": 25
+        },
+        {
+          "heading": "Text & Content",
+          "level": 3,
+          "line": 31
+        },
+        {
+          "heading": "Brand & Accent",
+          "level": 3,
+          "line": 37
+        },
+        {
+          "heading": "Status Colors",
+          "level": 3,
+          "line": 43
+        },
+        {
+          "heading": "Border & Divider",
+          "level": 3,
+          "line": 47
+        },
+        {
+          "heading": "Light Mode Neutrals (for light theme contexts)",
+          "level": 3,
+          "line": 56
+        },
+        {
+          "heading": "Overlay",
+          "level": 3,
+          "line": 63
+        },
+        {
+          "heading": "3. Typography Rules",
+          "level": 2,
+          "line": 66
+        },
+        {
+          "heading": "Font Family",
+          "level": 3,
+          "line": 68
+        },
+        {
+          "heading": "Hierarchy",
+          "level": 3,
+          "line": 73
+        },
+        {
+          "heading": "Principles",
+          "level": 3,
+          "line": 105
+        },
+        {
+          "heading": "4. Component Stylings",
+          "level": 2,
+          "line": 111
+        },
+        {
+          "heading": "Buttons",
+          "level": 3,
+          "line": 113
+        },
+        {
+          "heading": "Cards & Containers",
+          "level": 3,
+          "line": 164
+        },
+        {
+          "heading": "Inputs & Forms",
+          "level": 3,
+          "line": 171
+        },
+        {
+          "heading": "Badges & Pills",
+          "level": 3,
+          "line": 191
+        },
+        {
+          "heading": "Navigation",
+          "level": 3,
+          "line": 218
+        },
+        {
+          "heading": "Image Treatment",
+          "level": 3,
+          "line": 227
+        },
+        {
+          "heading": "5. Layout Principles",
+          "level": 2,
+          "line": 233
+        },
+        {
+          "heading": "Spacing System",
+          "level": 3,
+          "line": 235
+        },
+        {
+          "heading": "Grid & Container",
+          "level": 3,
+          "line": 241
+        },
+        {
+          "heading": "Whitespace Philosophy",
+          "level": 3,
+          "line": 248
+        },
+        {
+          "heading": "Border Radius Scale",
+          "level": 3,
+          "line": 253
+        },
+        {
+          "heading": "6. Depth & Elevation",
+          "level": 2,
+          "line": 263
+        },
+        {
+          "heading": "7. Do's and Don'ts",
+          "level": 2,
+          "line": 278
+        },
+        {
+          "heading": "Do",
+          "level": 3,
+          "line": 280
+        },
+        {
+          "heading": "Don't",
+          "level": 3,
+          "line": 291
+        },
+        {
+          "heading": "8. Responsive Behavior",
+          "level": 2,
+          "line": 302
+        },
+        {
+          "heading": "Breakpoints",
+          "level": 3,
+          "line": 304
+        },
+        {
+          "heading": "Touch Targets",
+          "level": 3,
+          "line": 314
+        },
+        {
+          "heading": "Collapsing Strategy",
+          "level": 3,
+          "line": 321
+        },
+        {
+          "heading": "Image Behavior",
+          "level": 3,
+          "line": 330
+        },
+        {
+          "heading": "9. Agent Prompt Guide",
+          "level": 2,
+          "line": 336
+        },
+        {
+          "heading": "Quick Color Reference",
+          "level": 3,
+          "line": 338
+        },
+        {
+          "heading": "Example Component Prompts",
+          "level": 3,
+          "line": 353
+        },
+        {
+          "heading": "Iteration Guide",
+          "level": 3,
+          "line": 360
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 39
+      }
+    },
+    {
+      "path": "skills/design-system/examples/vercel-DESIGN.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 310,
+      "nonEmptyLines": 257,
+      "sections": [
+        {
+          "heading": "Design System Inspired by Vercel",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "1. Visual Theme & Atmosphere",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "2. Color Palette & Roles",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "Primary",
+          "level": 3,
+          "line": 23
+        },
+        {
+          "heading": "Workflow Accent Colors",
+          "level": 3,
+          "line": 28
+        },
+        {
+          "heading": "Console / Code Colors",
+          "level": 3,
+          "line": 33
+        },
+        {
+          "heading": "Interactive",
+          "level": 3,
+          "line": 38
+        },
+        {
+          "heading": "Neutral Scale",
+          "level": 3,
+          "line": 43
+        },
+        {
+          "heading": "Surface & Overlay",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "Shadows & Depth",
+          "level": 3,
+          "line": 57
+        },
+        {
+          "heading": "3. Typography Rules",
+          "level": 2,
+          "line": 63
+        },
+        {
+          "heading": "Font Family",
+          "level": 3,
+          "line": 65
+        },
+        {
+          "heading": "Hierarchy",
+          "level": 3,
+          "line": 70
+        },
+        {
+          "heading": "Principles",
+          "level": 3,
+          "line": 93
+        },
+        {
+          "heading": "4. Component Stylings",
+          "level": 2,
+          "line": 99
+        },
+        {
+          "heading": "Buttons",
+          "level": 3,
+          "line": 101
+        },
+        {
+          "heading": "Cards & Containers",
+          "level": 3,
+          "line": 133
+        },
+        {
+          "heading": "Inputs & Forms",
+          "level": 3,
+          "line": 141
+        },
+        {
+          "heading": "Navigation",
+          "level": 3,
+          "line": 147
+        },
+        {
+          "heading": "Image Treatment",
+          "level": 3,
+          "line": 156
+        },
+        {
+          "heading": "Distinctive Components",
+          "level": 3,
+          "line": 162
+        },
+        {
+          "heading": "5. Layout Principles",
+          "level": 2,
+          "line": 181
+        },
+        {
+          "heading": "Spacing System",
+          "level": 3,
+          "line": 183
+        },
+        {
+          "heading": "Grid & Container",
+          "level": 3,
+          "line": 188
+        },
+        {
+          "heading": "Whitespace Philosophy",
+          "level": 3,
+          "line": 195
+        },
+        {
+          "heading": "Border Radius Scale",
+          "level": 3,
+          "line": 200
+        },
+        {
+          "heading": "6. Depth & Elevation",
+          "level": 2,
+          "line": 211
+        },
+        {
+          "heading": "Decorative Depth",
+          "level": 3,
+          "line": 224
+        },
+        {
+          "heading": "7. Do's and Don'ts",
+          "level": 2,
+          "line": 229
+        },
+        {
+          "heading": "Do",
+          "level": 3,
+          "line": 231
+        },
+        {
+          "heading": "Don't",
+          "level": 3,
+          "line": 241
+        },
+        {
+          "heading": "8. Responsive Behavior",
+          "level": 2,
+          "line": 252
+        },
+        {
+          "heading": "Breakpoints",
+          "level": 3,
+          "line": 254
+        },
+        {
+          "heading": "Touch Targets",
+          "level": 3,
+          "line": 265
+        },
+        {
+          "heading": "Collapsing Strategy",
+          "level": 3,
+          "line": 271
+        },
+        {
+          "heading": "Image Behavior",
+          "level": 3,
+          "line": 280
+        },
+        {
+          "heading": "9. Agent Prompt Guide",
+          "level": 2,
+          "line": 286
+        },
+        {
+          "heading": "Quick Color Reference",
+          "level": 3,
+          "line": 288
+        },
+        {
+          "heading": "Example Component Prompts",
+          "level": 3,
+          "line": 297
+        },
+        {
+          "heading": "Iteration Guide",
+          "level": 3,
+          "line": 304
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 40
+      }
+    }
+  ]
+}

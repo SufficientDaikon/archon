@@ -1,0 +1,943 @@
+{
+  "scriptCompleted": true,
+  "entryPointCandidates": [
+    {
+      "id": "document:README.md",
+      "score": 5,
+      "name": "README.md",
+      "summary": ""
+    },
+    {
+      "id": "document:virtuoso/README.md",
+      "score": 5,
+      "name": "README.md",
+      "summary": "Documentation for the Virtuoso Engine component describing what it is, how it gets installed into Claude's context, its design philosophy as a compact XML prompt injection layer, file structure, and version history."
+    },
+    {
+      "id": "file:src/archon/__main__.py",
+      "score": 4,
+      "name": "__main__.py",
+      "summary": ""
+    },
+    {
+      "id": "file:src/archon/cli.py",
+      "score": 4,
+      "name": "cli.py",
+      "summary": ""
+    },
+    {
+      "id": "file:src/archon/core/installer.py",
+      "score": 2,
+      "name": "installer.py",
+      "summary": ""
+    }
+  ],
+  "fanInRanking": [
+    {
+      "id": "file:hooks/claude/shared/state.py",
+      "fanIn": 6,
+      "name": "state.py"
+    },
+    {
+      "id": "file:hooks/claude/shared/scanner.py",
+      "fanIn": 3,
+      "name": "scanner.py"
+    },
+    {
+      "id": "file:src/archon/core/synapse_engine_v2.py",
+      "fanIn": 3,
+      "name": "synapse_engine_v2.py"
+    },
+    {
+      "id": "file:src/archon/__init__.py",
+      "fanIn": 2,
+      "name": "__init__.py"
+    },
+    {
+      "id": "file:src/archon/core/registry.py",
+      "fanIn": 2,
+      "name": "registry.py"
+    },
+    {
+      "id": "file:src/archon/utils/output.py",
+      "fanIn": 2,
+      "name": "output.py"
+    },
+    {
+      "id": "file:src/archon/utils/paths.py",
+      "fanIn": 2,
+      "name": "paths.py"
+    },
+    {
+      "id": "config:agents/context-curator-agent/agent-manifest.yaml",
+      "fanIn": 2,
+      "name": "agent-manifest.yaml (context-curator)"
+    },
+    {
+      "id": "config:agents/debugger-agent/agent-manifest.yaml",
+      "fanIn": 2,
+      "name": "agent-manifest.yaml (debugger)"
+    },
+    {
+      "id": "file:src/archon/cli.py",
+      "fanIn": 1,
+      "name": "cli.py"
+    },
+    {
+      "id": "file:src/archon/core/config.py",
+      "fanIn": 1,
+      "name": "config.py"
+    },
+    {
+      "id": "file:src/archon/core/platform.py",
+      "fanIn": 1,
+      "name": "platform.py"
+    },
+    {
+      "id": "file:hooks/claude/shared/classifier.py",
+      "fanIn": 1,
+      "name": "classifier.py"
+    },
+    {
+      "id": "file:src/archon/core/policy_engine.py",
+      "fanIn": 1,
+      "name": "policy_engine.py"
+    },
+    {
+      "id": "file:src/archon/core/PolicyDecision",
+      "fanIn": 1,
+      "name": "PolicyDecision (class)"
+    },
+    {
+      "id": "file:src/archon/core/CircuitBreaker",
+      "fanIn": 1,
+      "name": "CircuitBreaker (class)"
+    },
+    {
+      "id": "document:synapses/_template/SYNAPSE.md",
+      "fanIn": 1,
+      "name": "_template SYNAPSE.md"
+    },
+    {
+      "id": "config:synapses/anti-rationalization/manifest.yaml",
+      "fanIn": 1,
+      "name": "anti-rationalization synapse manifest"
+    },
+    {
+      "id": "document:synapses/anti-rationalization/SYNAPSE.md",
+      "fanIn": 1,
+      "name": "anti-rationalization SYNAPSE.md"
+    },
+    {
+      "id": "config:synapses/metacognition/manifest.yaml",
+      "fanIn": 1,
+      "name": "metacognition synapse manifest"
+    }
+  ],
+  "fanOutRanking": [
+    {
+      "id": "file:src/archon/core/installer.py",
+      "fanOut": 4,
+      "name": "installer.py"
+    },
+    {
+      "id": "file:src/archon/core/synapse_router.py",
+      "fanOut": 3,
+      "name": "synapse_router.py"
+    },
+    {
+      "id": "file:src/archon/cli.py",
+      "fanOut": 2,
+      "name": "cli.py"
+    },
+    {
+      "id": "file:hooks/claude/prompt_router.py",
+      "fanOut": 2,
+      "name": "prompt_router.py"
+    },
+    {
+      "id": "file:hooks/claude/quality_bash.py",
+      "fanOut": 2,
+      "name": "quality_bash.py"
+    },
+    {
+      "id": "document:agents/README.md",
+      "fanOut": 2,
+      "name": "README.md (agents)"
+    },
+    {
+      "id": "file:src/archon/core/pipeline_engine.py",
+      "fanOut": 2,
+      "name": "pipeline_engine.py"
+    },
+    {
+      "id": "file:src/archon/core/synapse_hardener.py",
+      "fanOut": 2,
+      "name": "synapse_hardener.py"
+    },
+    {
+      "id": "config:agents/_template/agent-manifest.yaml",
+      "fanOut": 2,
+      "name": "agent-manifest.yaml (template)"
+    },
+    {
+      "id": "file:src/archon/__main__.py",
+      "fanOut": 1,
+      "name": "__main__.py"
+    },
+    {
+      "id": "file:src/archon/core/agent_cards.py",
+      "fanOut": 1,
+      "name": "agent_cards.py"
+    },
+    {
+      "id": "file:src/archon/core/config.py",
+      "fanOut": 1,
+      "name": "config.py"
+    },
+    {
+      "id": "file:src/archon/core/registry.py",
+      "fanOut": 1,
+      "name": "registry.py"
+    },
+    {
+      "id": "file:src/archon/utils/output.py",
+      "fanOut": 1,
+      "name": "output.py"
+    },
+    {
+      "id": "file:hooks/claude/agent_context.py",
+      "fanOut": 1,
+      "name": "agent_context.py"
+    },
+    {
+      "id": "file:hooks/claude/completion_gate.py",
+      "fanOut": 1,
+      "name": "completion_gate.py"
+    },
+    {
+      "id": "file:hooks/claude/guard_bash.py",
+      "fanOut": 1,
+      "name": "guard_bash.py"
+    },
+    {
+      "id": "file:hooks/claude/guard_write.py",
+      "fanOut": 1,
+      "name": "guard_write.py"
+    },
+    {
+      "id": "file:hooks/claude/quality_write.py",
+      "fanOut": 1,
+      "name": "quality_write.py"
+    },
+    {
+      "id": "file:hooks/claude/session_boot.py",
+      "fanOut": 1,
+      "name": "session_boot.py"
+    }
+  ],
+  "bfsTraversal": {
+    "startNode": "file:src/archon/__main__.py",
+    "order": [
+      "file:src/archon/__main__.py",
+      "file:src/archon/cli.py",
+      "file:src/archon/__init__.py",
+      "file:src/archon/utils/output.py"
+    ],
+    "depthMap": {
+      "file:src/archon/__main__.py": 0,
+      "file:src/archon/cli.py": 1,
+      "file:src/archon/__init__.py": 2,
+      "file:src/archon/utils/output.py": 2
+    },
+    "byDepth": {
+      "0": [
+        "file:src/archon/__main__.py"
+      ],
+      "1": [
+        "file:src/archon/cli.py"
+      ],
+      "2": [
+        "file:src/archon/__init__.py",
+        "file:src/archon/utils/output.py"
+      ]
+    }
+  },
+  "nonCodeFiles": {
+    "documentation": [
+      {
+        "id": "document:CLAUDE.md",
+        "name": "CLAUDE.md",
+        "summary": ""
+      },
+      {
+        "id": "document:README.md",
+        "name": "README.md",
+        "summary": ""
+      },
+      {
+        "id": "document:docs/README.md",
+        "name": "README.md",
+        "summary": "Index and navigation guide for all Archon documentation pages, covering getting started, component creation guides, v2.0 guides, and reference material. Includes quick start instructions and links to HTML documentation."
+      },
+      {
+        "id": "document:docs/SYNAPSES_EXECUTABLE.md",
+        "name": "SYNAPSES_EXECUTABLE.md",
+        "summary": "Documentation for the executable synapses architecture in Archon v2, explaining the SynapseEngine, individual synapse types (anti-rationalization, security-awareness, metacognition), policy engine integration, and extension guide."
+      },
+      {
+        "id": "document:pipelines/README.md",
+        "name": "README.md",
+        "summary": "Brief overview of the Archon pipelines directory, explaining what pipelines are, how they work within the system, and pointing to the schema for pipeline YAML definitions."
+      },
+      {
+        "id": "document:prompts/README.md",
+        "name": "README.md",
+        "summary": "Overview of the Archon prompt library, covering categories of prompts (router, system, shared utilities, persona prompts), how to use them, and how to add custom prompts."
+      },
+      {
+        "id": "document:skills/design-system/examples/README.md",
+        "name": "README.md",
+        "summary": "Index for the design-system skill's reference examples directory, listing available DESIGN.md reference files (Linear and Vercel), how to use them as inspiration for creating new design systems, and how to add more examples."
+      },
+      {
+        "id": "document:vscode-extension/README.md",
+        "name": "README.md",
+        "summary": "README for the Archon VS Code extension. Documents features including Skills Explorer (49+ skills), Agents Panel (8 agents), Pipeline Dashboard (5 pipelines), Bundle Management, Health Report, and Status Bar. Covers quick start, settings, and platform compatibility."
+      },
+      {
+        "id": "document:webapp/README.md",
+        "name": "README.md",
+        "summary": "README for the Archon web application (Next.js 14 + TypeScript 5.4 + Tailwind CSS 3.4). Describes a statically exported website featuring landing page, skill marketplace (61 skills), skill detail pages, agent directory (8 agents), pipeline gallery (5 pipelines), bundle showcase (8 bundles), and documentation hub. Data sourced from archon.yaml JSON registry."
+      },
+      {
+        "id": "document:agents/README.md",
+        "name": "README.md (agents)",
+        "summary": "Overview documentation for the agents directory, listing available Archon agents and their primary roles in the framework."
+      },
+      {
+        "id": "document:batch-runs/README.md",
+        "name": "README.md (batch-runs)",
+        "summary": "Documentation for the batch-runs directory, explaining its purpose for storing output from bulk skill upgrade and batch processing operations."
+      },
+      {
+        "id": "document:bundles/README.md",
+        "name": "README.md (bundles)",
+        "summary": "Overview documentation for the bundles directory, explaining the bundle concept and how skills are grouped into thematic kits."
+      },
+      {
+        "id": "document:catalog/README.md",
+        "name": "README.md (catalog)",
+        "summary": "Documentation for the catalog directory, explaining the purpose and structure of the MCP server catalog."
+      },
+      {
+        "id": "document:scripts/README.md",
+        "name": "README.md (scripts)",
+        "summary": "Comprehensive documentation for the scripts directory, describing each utility script's purpose, usage, and expected outputs."
+      },
+      {
+        "id": "document:skills/README.md",
+        "name": "skills/README.md",
+        "summary": "Index readme for the skills directory, providing an overview of available skill categories and usage guidance."
+      },
+      {
+        "id": "document:virtuoso/README.md",
+        "name": "README.md",
+        "summary": "Documentation for the Virtuoso Engine component describing what it is, how it gets installed into Claude's context, its design philosophy as a compact XML prompt injection layer, file structure, and version history."
+      },
+      {
+        "id": "document:synapses/anti-rationalization/resources/forbidden-phrases.md",
+        "name": "forbidden-phrases.md",
+        "summary": "Reference list of 15 forbidden speculative phrases (e.g., 'should work', 'I believe', 'probably fine') with evidence-based verified alternatives. Core resource for the anti-rationalization synapse that enforces epistemic hygiene in agent outputs."
+      },
+      {
+        "id": "document:synapses/anti-rationalization/resources/iron-laws.md",
+        "name": "iron-laws.md",
+        "summary": "The 10 iron laws for agent behavior including: no production code without a failing test, no fixes without root cause investigation, no completion claims without fresh verification evidence. Each law includes escape conditions. Core enforcement document for the anti-rationalization synapse."
+      },
+      {
+        "id": "document:synapses/anti-rationalization/resources/rationalization-tables.md",
+        "name": "rationalization-tables.md",
+        "summary": "Structured tables mapping common AI rationalization patterns to their detection signals and correct counter-responses. Enables systematic identification of rationalization in agent reasoning chains."
+      },
+      {
+        "id": "document:synapses/anti-rationalization/resources/red-flags.md",
+        "name": "red-flags.md",
+        "summary": "Catalog of red-flag behaviors and thought patterns that indicate an agent is rationalizing rather than reasoning. Used by the anti-rationalization synapse to trigger self-correction protocols."
+      },
+      {
+        "id": "document:synapses/metacognition/resources/confidence-rubric.md",
+        "name": "confidence-rubric.md",
+        "summary": "Calibrated confidence rating rubric for the metacognition synapse. Defines three-level confidence tags (HIGH, MEDIUM, LOW) with explicit criteria for each level. Goal is calibrated epistemic honesty — a 7/10 rating should correlate with ~70% correctness."
+      },
+      {
+        "id": "document:synapses/metacognition/resources/reflection-template.md",
+        "name": "reflection-template.md",
+        "summary": "Structured reflection template for the metacognition synapse. Guides agents through post-task reflection covering what was done, what was uncertain, what assumptions were made, and what should be verified before claiming completion."
+      },
+      {
+        "id": "document:synapses/metacognition/resources/stuck-detection.md",
+        "name": "stuck-detection.md",
+        "summary": "Heuristics and signals for detecting when an agent is stuck in an unproductive loop. Defines stuck patterns, escalation thresholds, and intervention strategies used by the metacognition synapse to trigger course correction."
+      },
+      {
+        "id": "document:synapses/sequential-thinking/resources/decomposition-patterns.md",
+        "name": "decomposition-patterns.md",
+        "summary": "Catalog of task decomposition patterns for the sequential-thinking synapse. Covers Feature Implementation Pattern (8 steps: understand → design → setup → test → implement → edge cases → verify → document), Bug Investigation Pattern, and other structured breakdown approaches."
+      },
+      {
+        "id": "document:synapses/sequential-thinking/resources/reasoning-templates.md",
+        "name": "reasoning-templates.md",
+        "summary": "Reasoning templates for the sequential-thinking synapse. Provides structured thought frameworks for different problem types including analysis, decision-making, debugging, and design tasks."
+      },
+      {
+        "id": "document:synapses/sequential-thinking/resources/validation-checklist.md",
+        "name": "validation-checklist.md",
+        "summary": "Step validation checklist for the sequential-thinking synapse. Ensures each reasoning step meets completeness, correctness, and evidence standards before proceeding to the next step in a sequential chain."
+      },
+      {
+        "id": "document:synapses/_template/SYNAPSE.md",
+        "name": "_template SYNAPSE.md",
+        "summary": "Template documentation for creating new Archon synapses, covering activation conditions, check implementation patterns, and integration points."
+      },
+      {
+        "id": "document:synapses/anti-rationalization/SYNAPSE.md",
+        "name": "anti-rationalization SYNAPSE.md",
+        "summary": "Comprehensive synapse documentation for the anti-rationalization synapse defining 10 Iron Laws that prevent cognitive shortcuts, false assumptions, and validation bypasses."
+      },
+      {
+        "id": "document:synapses/metacognition/SYNAPSE.md",
+        "name": "metacognition SYNAPSE.md",
+        "summary": "Extensive synapse documentation for metacognition covering plan-before-act protocol, confidence monitoring, reflection phases, and self-correction triggers."
+      },
+      {
+        "id": "document:synapses/pattern-recognition/resources/detection-heuristics.md",
+        "name": "detection-heuristics.md",
+        "summary": "Reference guide for the pattern-recognition synapse's confidence scoring system, covering STRONG/PROBABLE/WEAK confidence levels, false-positive prevention rules, detection caps, and promotion rules."
+      },
+      {
+        "id": "document:synapses/pattern-recognition/resources/pattern-registry.md",
+        "name": "pattern-registry.md",
+        "summary": "Complete catalog of 21 architectural and code patterns (plugin-system, fluent-builder, singleton, async-side-effects, etc.) with detection signatures for the pattern-recognition synapse."
+      },
+      {
+        "id": "document:synapses/pattern-recognition/SYNAPSE.md",
+        "name": "SYNAPSE.md",
+        "summary": "Operational specification for the pattern-recognition synapse covering 3 firing phases (DETECT, SUGGEST, APPLY), rules, output format, and integration details."
+      },
+      {
+        "id": "document:synapses/security-awareness/SYNAPSE.md",
+        "name": "SYNAPSE.md",
+        "summary": "Operational specification for the security-awareness synapse covering SCAN (code production) and FLAG (post-review) phases, OWASP pattern checklist, and output format."
+      },
+      {
+        "id": "document:synapses/sequential-thinking/SYNAPSE.md",
+        "name": "SYNAPSE.md",
+        "summary": "Comprehensive specification for the sequential-thinking synapse with 4 firing phases (DECOMPOSE, REASON, VALIDATE, SYNTHESIZE), BrowseComp reasoning patterns, stuck-loop detection, and reasoning templates for common task types."
+      }
+    ],
+    "infrastructure": [],
+    "data": [],
+    "config": [
+      {
+        "id": "config:archon.yaml",
+        "name": "archon.yaml",
+        "summary": ""
+      },
+      {
+        "id": "config:pyproject.toml",
+        "name": "pyproject.toml",
+        "summary": ""
+      },
+      {
+        "id": "config:skills/fastmcp/examples/pyproject.toml",
+        "name": "pyproject.toml",
+        "summary": "Python project configuration for FastMCP skill examples, defining project metadata, optional dependencies, build system (setuptools), ruff linting rules, mypy type checking settings, pytest configuration, and coverage reporting."
+      },
+      {
+        "id": "config:hooks/hooks.yaml",
+        "name": "hooks.yaml",
+        "summary": "YAML configuration for the hooks pipeline system, defining hook event types, triggers, and script mappings for pipeline execution."
+      },
+      {
+        "id": "config:synapses/_template/manifest.yaml",
+        "name": "_template synapse manifest",
+        "summary": "Template manifest for creating new Archon synapses, defining required fields, activation conditions, and check patterns."
+      },
+      {
+        "id": "config:synapses/anti-rationalization/manifest.yaml",
+        "name": "anti-rationalization synapse manifest",
+        "summary": "Manifest for the anti-rationalization synapse activating at MODERATE+ tiers to prevent 10 Iron Laws violations such as cutting corners and skipping validations."
+      },
+      {
+        "id": "config:synapses/metacognition/manifest.yaml",
+        "name": "metacognition synapse manifest",
+        "summary": "Manifest for the metacognition synapse activating at MODERATE+ tiers to enforce planning before action, confidence monitoring, and quality reflection."
+      },
+      {
+        "id": "config:synapses/pattern-recognition/manifest.yaml",
+        "name": "pattern-recognition manifest.yaml",
+        "summary": "Manifest for the pattern-recognition synapse defining firing phases, tags, pattern registry entries, related synapses, and resource references. Controls when and how the synapse activates at EXPERT tier."
+      },
+      {
+        "id": "config:synapses/security-awareness/manifest.yaml",
+        "name": "security-awareness manifest.yaml",
+        "summary": "Manifest for the security-awareness synapse defining firing phases, keyword-based activation triggers, OWASP A1-A10 coverage, and related skill/agent references."
+      },
+      {
+        "id": "config:synapses/sequential-thinking/manifest.yaml",
+        "name": "sequential-thinking manifest.yaml",
+        "summary": "Manifest for the sequential-thinking synapse defining firing phases for COMPLEX/EXPERT tasks, tags, and resource file references."
+      },
+      {
+        "id": "config:skills/docker-build/manifest.yaml",
+        "name": "manifest.yaml",
+        "summary": "Archon skill manifest for the docker-build skill defining name, version, description, author, license, tags, trigger keywords, and priority for automatic skill activation during Docker build operations."
+      },
+      {
+        "id": "config:skills/docker-mcp-ops/manifest.yaml",
+        "name": "manifest.yaml",
+        "summary": "Archon skill manifest for the docker-mcp-ops skill defining name, version, description, author, license, tags, trigger keywords, and priority for automatic activation during Docker MCP operations."
+      },
+      {
+        "id": "config:skills/github-markdown-mastery/manifest.yaml",
+        "name": "manifest.yaml",
+        "summary": "Archon skill manifest for github-markdown-mastery v1.0.0. Declares triggers (keywords and patterns), priority P1, and on-demand resource references for badges-reference.md, mermaid-reference.md, and pr-patterns.md."
+      },
+      {
+        "id": "config:agents/_template/agent-manifest.yaml",
+        "name": "agent-manifest.yaml (template)",
+        "summary": "Template YAML manifest defining the schema and structure for Archon agent definitions, including metadata, capabilities, and tool configurations."
+      },
+      {
+        "id": "config:agents/context-curator-agent/agent-manifest.yaml",
+        "name": "agent-manifest.yaml (context-curator)",
+        "summary": "Agent manifest for the Context Curator agent, which compresses and curates context from prior conversation phases to fit within token budgets."
+      },
+      {
+        "id": "config:agents/debugger-agent/agent-manifest.yaml",
+        "name": "agent-manifest.yaml (debugger)",
+        "summary": "Agent manifest for the Debugger agent, defining its capabilities for systematic debugging, error analysis, and root cause identification."
+      }
+    ]
+  },
+  "clusters": [],
+  "layers": {
+    "count": 0,
+    "list": []
+  },
+  "nodeSummaryIndex": {
+    "file:src/archon/__init__.py": {
+      "name": "__init__.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:src/archon/__main__.py": {
+      "name": "__main__.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:src/archon/cli.py": {
+      "name": "cli.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:src/archon/core/agent_cards.py": {
+      "name": "agent_cards.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:src/archon/core/config.py": {
+      "name": "config.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:src/archon/core/installer.py": {
+      "name": "installer.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:src/archon/core/pipeline_state.py": {
+      "name": "pipeline_state.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:src/archon/core/platform.py": {
+      "name": "platform.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:src/archon/core/registry.py": {
+      "name": "registry.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:src/archon/utils/output.py": {
+      "name": "output.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:src/archon/utils/paths.py": {
+      "name": "paths.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:hooks/claude/agent_context.py": {
+      "name": "agent_context.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:hooks/claude/completion_gate.py": {
+      "name": "completion_gate.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:hooks/claude/guard_bash.py": {
+      "name": "guard_bash.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:hooks/claude/guard_write.py": {
+      "name": "guard_write.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:hooks/claude/prompt_router.py": {
+      "name": "prompt_router.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:hooks/claude/quality_bash.py": {
+      "name": "quality_bash.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:hooks/claude/quality_write.py": {
+      "name": "quality_write.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:hooks/claude/session_boot.py": {
+      "name": "session_boot.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:hooks/claude/shared/classifier.py": {
+      "name": "classifier.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:hooks/claude/shared/scanner.py": {
+      "name": "scanner.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:hooks/claude/shared/state.py": {
+      "name": "state.py",
+      "type": "file",
+      "summary": ""
+    },
+    "file:sdk/archon.py": {
+      "name": "archon.py",
+      "type": "file",
+      "summary": ""
+    },
+    "document:CLAUDE.md": {
+      "name": "CLAUDE.md",
+      "type": "document",
+      "summary": ""
+    },
+    "document:README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": ""
+    },
+    "config:archon.yaml": {
+      "name": "archon.yaml",
+      "type": "config",
+      "summary": ""
+    },
+    "config:pyproject.toml": {
+      "name": "pyproject.toml",
+      "type": "config",
+      "summary": ""
+    },
+    "document:docs/README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Index and navigation guide for all Archon documentation pages, covering getting started, component creation guides, v2.0 guides, and reference material. Includes quick start instructions and links to HTML documentation."
+    },
+    "document:docs/SYNAPSES_EXECUTABLE.md": {
+      "name": "SYNAPSES_EXECUTABLE.md",
+      "type": "document",
+      "summary": "Documentation for the executable synapses architecture in Archon v2, explaining the SynapseEngine, individual synapse types (anti-rationalization, security-awareness, metacognition), policy engine integration, and extension guide."
+    },
+    "document:pipelines/README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Brief overview of the Archon pipelines directory, explaining what pipelines are, how they work within the system, and pointing to the schema for pipeline YAML definitions."
+    },
+    "document:prompts/README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Overview of the Archon prompt library, covering categories of prompts (router, system, shared utilities, persona prompts), how to use them, and how to add custom prompts."
+    },
+    "document:skills/design-system/examples/README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Index for the design-system skill's reference examples directory, listing available DESIGN.md reference files (Linear and Vercel), how to use them as inspiration for creating new design systems, and how to add more examples."
+    },
+    "config:skills/fastmcp/examples/pyproject.toml": {
+      "name": "pyproject.toml",
+      "type": "config",
+      "summary": "Python project configuration for FastMCP skill examples, defining project metadata, optional dependencies, build system (setuptools), ruff linting rules, mypy type checking settings, pytest configuration, and coverage reporting."
+    },
+    "document:vscode-extension/README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "README for the Archon VS Code extension. Documents features including Skills Explorer (49+ skills), Agents Panel (8 agents), Pipeline Dashboard (5 pipelines), Bundle Management, Health Report, and Status Bar. Covers quick start, settings, and platform compatibility."
+    },
+    "document:webapp/README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "README for the Archon web application (Next.js 14 + TypeScript 5.4 + Tailwind CSS 3.4). Describes a statically exported website featuring landing page, skill marketplace (61 skills), skill detail pages, agent directory (8 agents), pipeline gallery (5 pipelines), bundle showcase (8 bundles), and documentation hub. Data sourced from archon.yaml JSON registry."
+    },
+    "document:agents/README.md": {
+      "name": "README.md (agents)",
+      "type": "document",
+      "summary": "Overview documentation for the agents directory, listing available Archon agents and their primary roles in the framework."
+    },
+    "document:batch-runs/README.md": {
+      "name": "README.md (batch-runs)",
+      "type": "document",
+      "summary": "Documentation for the batch-runs directory, explaining its purpose for storing output from bulk skill upgrade and batch processing operations."
+    },
+    "document:bundles/README.md": {
+      "name": "README.md (bundles)",
+      "type": "document",
+      "summary": "Overview documentation for the bundles directory, explaining the bundle concept and how skills are grouped into thematic kits."
+    },
+    "document:catalog/README.md": {
+      "name": "README.md (catalog)",
+      "type": "document",
+      "summary": "Documentation for the catalog directory, explaining the purpose and structure of the MCP server catalog."
+    },
+    "file:hooks/claude/shared/agent_roles.py": {
+      "name": "agent_roles.py",
+      "type": "file",
+      "summary": "Defines agent role definitions and context slice configurations injected by the SubagentStart hook to provide role-specific context to spawned agents."
+    },
+    "config:hooks/hooks.yaml": {
+      "name": "hooks.yaml",
+      "type": "config",
+      "summary": "YAML configuration for the hooks pipeline system, defining hook event types, triggers, and script mappings for pipeline execution."
+    },
+    "document:scripts/README.md": {
+      "name": "README.md (scripts)",
+      "type": "document",
+      "summary": "Comprehensive documentation for the scripts directory, describing each utility script's purpose, usage, and expected outputs."
+    },
+    "document:skills/README.md": {
+      "name": "skills/README.md",
+      "type": "document",
+      "summary": "Index readme for the skills directory, providing an overview of available skill categories and usage guidance."
+    },
+    "file:src/archon/core/pipeline_engine.py": {
+      "name": "pipeline_engine.py",
+      "type": "file",
+      "summary": "Core pipeline state machine executor for Archon, handling step execution, available-when conditions, synapse firing, artifact validation, resume logic with full guardrail parity."
+    },
+    "file:src/archon/core/policy_engine.py": {
+      "name": "policy_engine.py",
+      "type": "file",
+      "summary": "Central policy engine for tool, hook, and permission decisions, producing machine-readable PolicyDecision artifacts with rationale for every allow/deny/escalate outcome."
+    },
+    "file:src/archon/core/skill_mcp_schema.py": {
+      "name": "skill_mcp_schema.py",
+      "type": "file",
+      "summary": "Converts Archon skill YAML manifests into MCP tool definitions, synthesizing inputSchema from triggers.keywords and surfacing output-schema in annotations.outputSchema."
+    },
+    "file:src/archon/core/synapse_engine_v2.py": {
+      "name": "synapse_engine_v2.py",
+      "type": "file",
+      "summary": "Production synapse execution engine (v2 is canon) with OWASP A1-A10 pattern detection (13 patterns), CRITICAL→HALT and HIGH/MEDIUM→WARN tier mapping."
+    },
+    "file:src/archon/core/synapse_hardener.py": {
+      "name": "synapse_hardener.py",
+      "type": "file",
+      "summary": "Hardening layer for Archon synapses implementing CircuitBreaker (CLOSED/OPEN/HALF_OPEN), RetryPolicy with exponential backoff, and GracefulDegrader for safe fallback decisions."
+    },
+    "file:src/archon/core/synapse_router.py": {
+      "name": "synapse_router.py",
+      "type": "file",
+      "summary": "Auto-selects synapses by complexity tier and lifecycle phase using a routing table (pre-execution, post-build, post-handoff, post-cycle), computing hash-based cache keys."
+    },
+    "file:src/archon/core/PolicyDecision": {
+      "name": "PolicyDecision (class)",
+      "type": "file",
+      "summary": "Immutable dataclass for policy decision artifacts capturing action (allow/deny/escalate), rationale, policy ID, and correlation metadata."
+    },
+    "file:src/archon/core/CircuitBreaker": {
+      "name": "CircuitBreaker (class)",
+      "type": "file",
+      "summary": "Per-synapse circuit breaker with CLOSED/OPEN/HALF_OPEN states, configurable failure threshold, recovery timeout, and success threshold."
+    },
+    "document:virtuoso/README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Documentation for the Virtuoso Engine component describing what it is, how it gets installed into Claude's context, its design philosophy as a compact XML prompt injection layer, file structure, and version history."
+    },
+    "document:synapses/anti-rationalization/resources/forbidden-phrases.md": {
+      "name": "forbidden-phrases.md",
+      "type": "document",
+      "summary": "Reference list of 15 forbidden speculative phrases (e.g., 'should work', 'I believe', 'probably fine') with evidence-based verified alternatives. Core resource for the anti-rationalization synapse that enforces epistemic hygiene in agent outputs."
+    },
+    "document:synapses/anti-rationalization/resources/iron-laws.md": {
+      "name": "iron-laws.md",
+      "type": "document",
+      "summary": "The 10 iron laws for agent behavior including: no production code without a failing test, no fixes without root cause investigation, no completion claims without fresh verification evidence. Each law includes escape conditions. Core enforcement document for the anti-rationalization synapse."
+    },
+    "document:synapses/anti-rationalization/resources/rationalization-tables.md": {
+      "name": "rationalization-tables.md",
+      "type": "document",
+      "summary": "Structured tables mapping common AI rationalization patterns to their detection signals and correct counter-responses. Enables systematic identification of rationalization in agent reasoning chains."
+    },
+    "document:synapses/anti-rationalization/resources/red-flags.md": {
+      "name": "red-flags.md",
+      "type": "document",
+      "summary": "Catalog of red-flag behaviors and thought patterns that indicate an agent is rationalizing rather than reasoning. Used by the anti-rationalization synapse to trigger self-correction protocols."
+    },
+    "document:synapses/metacognition/resources/confidence-rubric.md": {
+      "name": "confidence-rubric.md",
+      "type": "document",
+      "summary": "Calibrated confidence rating rubric for the metacognition synapse. Defines three-level confidence tags (HIGH, MEDIUM, LOW) with explicit criteria for each level. Goal is calibrated epistemic honesty — a 7/10 rating should correlate with ~70% correctness."
+    },
+    "document:synapses/metacognition/resources/reflection-template.md": {
+      "name": "reflection-template.md",
+      "type": "document",
+      "summary": "Structured reflection template for the metacognition synapse. Guides agents through post-task reflection covering what was done, what was uncertain, what assumptions were made, and what should be verified before claiming completion."
+    },
+    "document:synapses/metacognition/resources/stuck-detection.md": {
+      "name": "stuck-detection.md",
+      "type": "document",
+      "summary": "Heuristics and signals for detecting when an agent is stuck in an unproductive loop. Defines stuck patterns, escalation thresholds, and intervention strategies used by the metacognition synapse to trigger course correction."
+    },
+    "document:synapses/sequential-thinking/resources/decomposition-patterns.md": {
+      "name": "decomposition-patterns.md",
+      "type": "document",
+      "summary": "Catalog of task decomposition patterns for the sequential-thinking synapse. Covers Feature Implementation Pattern (8 steps: understand → design → setup → test → implement → edge cases → verify → document), Bug Investigation Pattern, and other structured breakdown approaches."
+    },
+    "document:synapses/sequential-thinking/resources/reasoning-templates.md": {
+      "name": "reasoning-templates.md",
+      "type": "document",
+      "summary": "Reasoning templates for the sequential-thinking synapse. Provides structured thought frameworks for different problem types including analysis, decision-making, debugging, and design tasks."
+    },
+    "document:synapses/sequential-thinking/resources/validation-checklist.md": {
+      "name": "validation-checklist.md",
+      "type": "document",
+      "summary": "Step validation checklist for the sequential-thinking synapse. Ensures each reasoning step meets completeness, correctness, and evidence standards before proceeding to the next step in a sequential chain."
+    },
+    "config:synapses/_template/manifest.yaml": {
+      "name": "_template synapse manifest",
+      "type": "config",
+      "summary": "Template manifest for creating new Archon synapses, defining required fields, activation conditions, and check patterns."
+    },
+    "document:synapses/_template/SYNAPSE.md": {
+      "name": "_template SYNAPSE.md",
+      "type": "document",
+      "summary": "Template documentation for creating new Archon synapses, covering activation conditions, check implementation patterns, and integration points."
+    },
+    "config:synapses/anti-rationalization/manifest.yaml": {
+      "name": "anti-rationalization synapse manifest",
+      "type": "config",
+      "summary": "Manifest for the anti-rationalization synapse activating at MODERATE+ tiers to prevent 10 Iron Laws violations such as cutting corners and skipping validations."
+    },
+    "document:synapses/anti-rationalization/SYNAPSE.md": {
+      "name": "anti-rationalization SYNAPSE.md",
+      "type": "document",
+      "summary": "Comprehensive synapse documentation for the anti-rationalization synapse defining 10 Iron Laws that prevent cognitive shortcuts, false assumptions, and validation bypasses."
+    },
+    "config:synapses/metacognition/manifest.yaml": {
+      "name": "metacognition synapse manifest",
+      "type": "config",
+      "summary": "Manifest for the metacognition synapse activating at MODERATE+ tiers to enforce planning before action, confidence monitoring, and quality reflection."
+    },
+    "document:synapses/metacognition/SYNAPSE.md": {
+      "name": "metacognition SYNAPSE.md",
+      "type": "document",
+      "summary": "Extensive synapse documentation for metacognition covering plan-before-act protocol, confidence monitoring, reflection phases, and self-correction triggers."
+    },
+    "config:synapses/pattern-recognition/manifest.yaml": {
+      "name": "pattern-recognition manifest.yaml",
+      "type": "config",
+      "summary": "Manifest for the pattern-recognition synapse defining firing phases, tags, pattern registry entries, related synapses, and resource references. Controls when and how the synapse activates at EXPERT tier."
+    },
+    "document:synapses/pattern-recognition/resources/detection-heuristics.md": {
+      "name": "detection-heuristics.md",
+      "type": "document",
+      "summary": "Reference guide for the pattern-recognition synapse's confidence scoring system, covering STRONG/PROBABLE/WEAK confidence levels, false-positive prevention rules, detection caps, and promotion rules."
+    },
+    "document:synapses/pattern-recognition/resources/pattern-registry.md": {
+      "name": "pattern-registry.md",
+      "type": "document",
+      "summary": "Complete catalog of 21 architectural and code patterns (plugin-system, fluent-builder, singleton, async-side-effects, etc.) with detection signatures for the pattern-recognition synapse."
+    },
+    "document:synapses/pattern-recognition/SYNAPSE.md": {
+      "name": "SYNAPSE.md",
+      "type": "document",
+      "summary": "Operational specification for the pattern-recognition synapse covering 3 firing phases (DETECT, SUGGEST, APPLY), rules, output format, and integration details."
+    },
+    "config:synapses/security-awareness/manifest.yaml": {
+      "name": "security-awareness manifest.yaml",
+      "type": "config",
+      "summary": "Manifest for the security-awareness synapse defining firing phases, keyword-based activation triggers, OWASP A1-A10 coverage, and related skill/agent references."
+    },
+    "document:synapses/security-awareness/SYNAPSE.md": {
+      "name": "SYNAPSE.md",
+      "type": "document",
+      "summary": "Operational specification for the security-awareness synapse covering SCAN (code production) and FLAG (post-review) phases, OWASP pattern checklist, and output format."
+    },
+    "config:synapses/sequential-thinking/manifest.yaml": {
+      "name": "sequential-thinking manifest.yaml",
+      "type": "config",
+      "summary": "Manifest for the sequential-thinking synapse defining firing phases for COMPLEX/EXPERT tasks, tags, and resource file references."
+    },
+    "document:synapses/sequential-thinking/SYNAPSE.md": {
+      "name": "SYNAPSE.md",
+      "type": "document",
+      "summary": "Comprehensive specification for the sequential-thinking synapse with 4 firing phases (DECOMPOSE, REASON, VALIDATE, SYNTHESIZE), BrowseComp reasoning patterns, stuck-loop detection, and reasoning templates for common task types."
+    },
+    "config:skills/docker-build/manifest.yaml": {
+      "name": "manifest.yaml",
+      "type": "config",
+      "summary": "Archon skill manifest for the docker-build skill defining name, version, description, author, license, tags, trigger keywords, and priority for automatic skill activation during Docker build operations."
+    },
+    "config:skills/docker-mcp-ops/manifest.yaml": {
+      "name": "manifest.yaml",
+      "type": "config",
+      "summary": "Archon skill manifest for the docker-mcp-ops skill defining name, version, description, author, license, tags, trigger keywords, and priority for automatic activation during Docker MCP operations."
+    },
+    "config:skills/github-markdown-mastery/manifest.yaml": {
+      "name": "manifest.yaml",
+      "type": "config",
+      "summary": "Archon skill manifest for github-markdown-mastery v1.0.0. Declares triggers (keywords and patterns), priority P1, and on-demand resource references for badges-reference.md, mermaid-reference.md, and pr-patterns.md."
+    },
+    "config:agents/_template/agent-manifest.yaml": {
+      "name": "agent-manifest.yaml (template)",
+      "type": "config",
+      "summary": "Template YAML manifest defining the schema and structure for Archon agent definitions, including metadata, capabilities, and tool configurations."
+    },
+    "config:agents/context-curator-agent/agent-manifest.yaml": {
+      "name": "agent-manifest.yaml (context-curator)",
+      "type": "config",
+      "summary": "Agent manifest for the Context Curator agent, which compresses and curates context from prior conversation phases to fit within token budgets."
+    },
+    "config:agents/debugger-agent/agent-manifest.yaml": {
+      "name": "agent-manifest.yaml (debugger)",
+      "type": "config",
+      "summary": "Agent manifest for the Debugger agent, defining its capabilities for systematic debugging, error analysis, and root cause identification."
+    }
+  },
+  "totalNodes": 82,
+  "totalEdges": 36
+}

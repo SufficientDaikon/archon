@@ -1,0 +1,1551 @@
+{
+  "batchIndex": 4,
+  "nodes": [
+    {
+      "id": "file:vscode-extension/src/cli.ts",
+      "type": "file",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "cli.ts",
+      "language": "typescript",
+      "sizeLines": 412,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 412,
+        "nonEmptyLines": 360,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 24,
+          "functionCount": 24,
+          "classCount": 2
+        }
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:execCli",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "execCli",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 49,
+        "endLine": 161,
+        "lineCount": 113,
+        "params": [
+          "command",
+          "args",
+          "options"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:execCliStreaming",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "execCliStreaming",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 167,
+        "endLine": 227,
+        "lineCount": 61,
+        "params": [
+          "command",
+          "args",
+          "onData",
+          "onComplete",
+          "options"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:checkCliAvailable",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "checkCliAvailable",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 233,
+        "endLine": 251,
+        "lineCount": 19,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:resetCliCache",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "resetCliCache",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 257,
+        "endLine": 259,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:showInstallPrompt",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "showInstallPrompt",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 265,
+        "endLine": 290,
+        "lineCount": 26,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:listSkills",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "listSkills",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 314,
+        "endLine": 316,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:listAgents",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "listAgents",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 319,
+        "endLine": 321,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:listPipelines",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "listPipelines",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 324,
+        "endLine": 326,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:listBundles",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "listBundles",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 329,
+        "endLine": 331,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:listSynapses",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "listSynapses",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 334,
+        "endLine": 336,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:getSkillInfo",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "getSkillInfo",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 339,
+        "endLine": 341,
+        "lineCount": 3,
+        "params": [
+          "skillName"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:getAgentInfo",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "getAgentInfo",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 344,
+        "endLine": 350,
+        "lineCount": 7,
+        "params": [
+          "agentName"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:installSkill",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "installSkill",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 353,
+        "endLine": 360,
+        "lineCount": 8,
+        "params": [
+          "skillName",
+          "platform"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:installBundle",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "installBundle",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 363,
+        "endLine": 370,
+        "lineCount": 8,
+        "params": [
+          "bundleName",
+          "platform"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:uninstallComponent",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "uninstallComponent",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 373,
+        "endLine": 375,
+        "lineCount": 3,
+        "params": [
+          "name"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:runDoctor",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "runDoctor",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 378,
+        "endLine": 382,
+        "lineCount": 5,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:searchSkills",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "searchSkills",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 385,
+        "endLine": 387,
+        "lineCount": 3,
+        "params": [
+          "query"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:validateWorkspace",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "validateWorkspace",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 390,
+        "endLine": 392,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:getAdminStats",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "getAdminStats",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 395,
+        "endLine": 397,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:initArchon",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "initArchon",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 400,
+        "endLine": 402,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:checkUpdate",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "checkUpdate",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 405,
+        "endLine": 407,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/cli.ts:applyUpdate",
+      "type": "function",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "applyUpdate",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 410,
+        "endLine": 412,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/cli.ts:CliNotFoundError",
+      "type": "class",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "CliNotFoundError",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 294,
+        "endLine": 299,
+        "lineCount": 6,
+        "methods": [
+          "constructor"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/cli.ts:CliCommandError",
+      "type": "class",
+      "path": "vscode-extension/src/cli.ts",
+      "label": "CliCommandError",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 301,
+        "endLine": 309,
+        "lineCount": 9,
+        "methods": [
+          "constructor"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:vscode-extension/src/commands.ts",
+      "type": "file",
+      "path": "vscode-extension/src/commands.ts",
+      "label": "commands.ts",
+      "language": "typescript",
+      "sizeLines": 730,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 730,
+        "nonEmptyLines": 653,
+        "metrics": {
+          "importCount": 12,
+          "exportCount": 1,
+          "functionCount": 2,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/commands.ts:registerCommands",
+      "type": "function",
+      "path": "vscode-extension/src/commands.ts",
+      "label": "registerCommands",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 27,
+        "endLine": 620,
+        "lineCount": 594,
+        "params": [
+          "context",
+          "skillsTree",
+          "agentsTree",
+          "pipelinesTree",
+          "bundlesTree",
+          "synapsesTree",
+          "statusBar"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/commands.ts:getAgentDetailHtml",
+      "type": "function",
+      "path": "vscode-extension/src/commands.ts",
+      "label": "getAgentDetailHtml",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 624,
+        "endLine": 730,
+        "lineCount": 107,
+        "params": [
+          "agent",
+          "documentation"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "file:vscode-extension/src/extension.ts",
+      "type": "file",
+      "path": "vscode-extension/src/extension.ts",
+      "label": "extension.ts",
+      "language": "typescript",
+      "sizeLines": 137,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 137,
+        "nonEmptyLines": 127,
+        "metrics": {
+          "importCount": 8,
+          "exportCount": 2,
+          "functionCount": 2,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/extension.ts:activate",
+      "type": "function",
+      "path": "vscode-extension/src/extension.ts",
+      "label": "activate",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 29,
+        "endLine": 130,
+        "lineCount": 102,
+        "params": [
+          "context"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:vscode-extension/src/extension.ts:deactivate",
+      "type": "function",
+      "path": "vscode-extension/src/extension.ts",
+      "label": "deactivate",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 135,
+        "endLine": 137,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:vscode-extension/src/statusBar.ts",
+      "type": "file",
+      "path": "vscode-extension/src/statusBar.ts",
+      "label": "statusBar.ts",
+      "language": "typescript",
+      "sizeLines": 178,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 178,
+        "nonEmptyLines": 156,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 1,
+          "functionCount": 0,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/statusBar.ts:StatusBarManager",
+      "type": "class",
+      "path": "vscode-extension/src/statusBar.ts",
+      "label": "StatusBarManager",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 11,
+        "endLine": 178,
+        "lineCount": 168,
+        "methods": [
+          "constructor",
+          "setPipelineIdle",
+          "setPipelineRunning",
+          "setPipelineComplete",
+          "setPipelineFailed",
+          "setBudget",
+          "show",
+          "hide",
+          "updateFromSettings",
+          "dispose",
+          "_updateVisibility",
+          "_formatTokens"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:vscode-extension/src/types.ts",
+      "type": "file",
+      "path": "vscode-extension/src/types.ts",
+      "label": "types.ts",
+      "language": "typescript",
+      "sizeLines": 268,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 268,
+        "nonEmptyLines": 227,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "file:vscode-extension/src/views/agentsTree.ts",
+      "type": "file",
+      "path": "vscode-extension/src/views/agentsTree.ts",
+      "label": "agentsTree.ts",
+      "language": "typescript",
+      "sizeLines": 127,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 127,
+        "nonEmptyLines": 108,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 1,
+          "functionCount": 0,
+          "classCount": 2
+        }
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/views/agentsTree.ts:AgentItem",
+      "type": "class",
+      "path": "vscode-extension/src/views/agentsTree.ts",
+      "label": "AgentItem",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 15,
+        "endLine": 57,
+        "lineCount": 43,
+        "methods": [
+          "constructor"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/views/agentsTree.ts:AgentsTreeProvider",
+      "type": "class",
+      "path": "vscode-extension/src/views/agentsTree.ts",
+      "label": "AgentsTreeProvider",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 61,
+        "endLine": 127,
+        "lineCount": 67,
+        "methods": [
+          "refresh",
+          "getTreeItem",
+          "getChildren",
+          "fetchAgents",
+          "getAllAgents"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:vscode-extension/src/views/bundlesTree.ts",
+      "type": "file",
+      "path": "vscode-extension/src/views/bundlesTree.ts",
+      "label": "bundlesTree.ts",
+      "language": "typescript",
+      "sizeLines": 165,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 165,
+        "nonEmptyLines": 138,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 1,
+          "functionCount": 0,
+          "classCount": 3
+        }
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/views/bundlesTree.ts:BundleItem",
+      "type": "class",
+      "path": "vscode-extension/src/views/bundlesTree.ts",
+      "label": "BundleItem",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 19,
+        "endLine": 56,
+        "lineCount": 38,
+        "methods": [
+          "constructor"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/views/bundlesTree.ts:BundleSkillItem",
+      "type": "class",
+      "path": "vscode-extension/src/views/bundlesTree.ts",
+      "label": "BundleSkillItem",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 58,
+        "endLine": 80,
+        "lineCount": 23,
+        "methods": [
+          "constructor"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/views/bundlesTree.ts:BundlesTreeProvider",
+      "type": "class",
+      "path": "vscode-extension/src/views/bundlesTree.ts",
+      "label": "BundlesTreeProvider",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 84,
+        "endLine": 165,
+        "lineCount": 82,
+        "methods": [
+          "refresh",
+          "getTreeItem",
+          "getChildren",
+          "fetchBundles",
+          "getAllBundles"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:vscode-extension/src/views/pipelinesTree.ts",
+      "type": "file",
+      "path": "vscode-extension/src/views/pipelinesTree.ts",
+      "label": "pipelinesTree.ts",
+      "language": "typescript",
+      "sizeLines": 161,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 161,
+        "nonEmptyLines": 136,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 1,
+          "functionCount": 0,
+          "classCount": 3
+        }
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/views/pipelinesTree.ts:PipelineItem",
+      "type": "class",
+      "path": "vscode-extension/src/views/pipelinesTree.ts",
+      "label": "PipelineItem",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 19,
+        "endLine": 41,
+        "lineCount": 23,
+        "methods": [
+          "constructor"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/views/pipelinesTree.ts:StepItem",
+      "type": "class",
+      "path": "vscode-extension/src/views/pipelinesTree.ts",
+      "label": "StepItem",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 43,
+        "endLine": 82,
+        "lineCount": 40,
+        "methods": [
+          "constructor"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/views/pipelinesTree.ts:PipelinesTreeProvider",
+      "type": "class",
+      "path": "vscode-extension/src/views/pipelinesTree.ts",
+      "label": "PipelinesTreeProvider",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 86,
+        "endLine": 161,
+        "lineCount": 76,
+        "methods": [
+          "refresh",
+          "getTreeItem",
+          "getChildren",
+          "fetchPipelines",
+          "getAllPipelines"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:vscode-extension/src/views/skillsTree.ts",
+      "type": "file",
+      "path": "vscode-extension/src/views/skillsTree.ts",
+      "label": "skillsTree.ts",
+      "language": "typescript",
+      "sizeLines": 262,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 262,
+        "nonEmptyLines": 222,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 1,
+          "functionCount": 0,
+          "classCount": 3
+        }
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/views/skillsTree.ts:CategoryItem",
+      "type": "class",
+      "path": "vscode-extension/src/views/skillsTree.ts",
+      "label": "CategoryItem",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 20,
+        "endLine": 41,
+        "lineCount": 22,
+        "methods": [
+          "constructor"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/views/skillsTree.ts:SkillItem",
+      "type": "class",
+      "path": "vscode-extension/src/views/skillsTree.ts",
+      "label": "SkillItem",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 43,
+        "endLine": 76,
+        "lineCount": 34,
+        "methods": [
+          "constructor"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/views/skillsTree.ts:SkillsTreeProvider",
+      "type": "class",
+      "path": "vscode-extension/src/views/skillsTree.ts",
+      "label": "SkillsTreeProvider",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 80,
+        "endLine": 262,
+        "lineCount": 183,
+        "methods": [
+          "refresh",
+          "setFilter",
+          "clearFilter",
+          "getTreeItem",
+          "getChildren",
+          "getRootCategories",
+          "getSkillsForCategory",
+          "getFilteredCategories",
+          "fetchSkills",
+          "buildCategories",
+          "getAllSkills"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:vscode-extension/src/views/synapsesTree.ts",
+      "type": "file",
+      "path": "vscode-extension/src/views/synapsesTree.ts",
+      "label": "synapsesTree.ts",
+      "language": "typescript",
+      "sizeLines": 140,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 140,
+        "nonEmptyLines": 117,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 1,
+          "functionCount": 0,
+          "classCount": 2
+        }
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/views/synapsesTree.ts:SynapseItem",
+      "type": "class",
+      "path": "vscode-extension/src/views/synapsesTree.ts",
+      "label": "SynapseItem",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 19,
+        "endLine": 49,
+        "lineCount": 31,
+        "methods": [
+          "constructor"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/views/synapsesTree.ts:SynapsesTreeProvider",
+      "type": "class",
+      "path": "vscode-extension/src/views/synapsesTree.ts",
+      "label": "SynapsesTreeProvider",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 53,
+        "endLine": 140,
+        "lineCount": 88,
+        "methods": [
+          "refresh",
+          "getTreeItem",
+          "getChildren",
+          "getRootItems",
+          "fetchSynapses",
+          "getAllSynapses"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:vscode-extension/src/webviews/dashboardPanel.ts",
+      "type": "file",
+      "path": "vscode-extension/src/webviews/dashboardPanel.ts",
+      "label": "dashboardPanel.ts",
+      "language": "typescript",
+      "sizeLines": 496,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 496,
+        "nonEmptyLines": 433,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 1,
+          "functionCount": 0,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/webviews/dashboardPanel.ts:DashboardPanel",
+      "type": "class",
+      "path": "vscode-extension/src/webviews/dashboardPanel.ts",
+      "label": "DashboardPanel",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 12,
+        "endLine": 496,
+        "lineCount": 485,
+        "methods": [
+          "constructor",
+          "show",
+          "updateRun",
+          "showIdle",
+          "dispose",
+          "_getHtml"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:vscode-extension/src/webviews/healthPanel.ts",
+      "type": "file",
+      "path": "vscode-extension/src/webviews/healthPanel.ts",
+      "label": "healthPanel.ts",
+      "language": "typescript",
+      "sizeLines": 421,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 421,
+        "nonEmptyLines": 377,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 1,
+          "functionCount": 0,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/webviews/healthPanel.ts:HealthPanel",
+      "type": "class",
+      "path": "vscode-extension/src/webviews/healthPanel.ts",
+      "label": "HealthPanel",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 16,
+        "endLine": 421,
+        "lineCount": 406,
+        "methods": [
+          "constructor",
+          "show",
+          "_loadData",
+          "dispose",
+          "_getLoadingHtml",
+          "_getErrorHtml",
+          "_getHtml",
+          "_esc"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:vscode-extension/src/webviews/skillDetailPanel.ts",
+      "type": "file",
+      "path": "vscode-extension/src/webviews/skillDetailPanel.ts",
+      "label": "skillDetailPanel.ts",
+      "language": "typescript",
+      "sizeLines": 330,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 330,
+        "nonEmptyLines": 284,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 1,
+          "functionCount": 0,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/webviews/skillDetailPanel.ts:SkillDetailPanel",
+      "type": "class",
+      "path": "vscode-extension/src/webviews/skillDetailPanel.ts",
+      "label": "SkillDetailPanel",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 11,
+        "endLine": 330,
+        "lineCount": 320,
+        "methods": [
+          "constructor",
+          "show",
+          "dispose",
+          "_getHtml",
+          "_renderMarkdown",
+          "_esc"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:vscode-extension/src/webviews/synapseDetailPanel.ts",
+      "type": "file",
+      "path": "vscode-extension/src/webviews/synapseDetailPanel.ts",
+      "label": "synapseDetailPanel.ts",
+      "language": "typescript",
+      "sizeLines": 231,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 231,
+        "nonEmptyLines": 215,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 1,
+          "functionCount": 0,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "class:vscode-extension/src/webviews/synapseDetailPanel.ts:SynapseDetailPanel",
+      "type": "class",
+      "path": "vscode-extension/src/webviews/synapseDetailPanel.ts",
+      "label": "SynapseDetailPanel",
+      "language": "typescript",
+      "metadata": {
+        "startLine": 11,
+        "endLine": 231,
+        "lineCount": 221,
+        "methods": [
+          "constructor",
+          "show",
+          "dispose",
+          "_getHtml",
+          "_esc"
+        ],
+        "exported": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:execCli",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:execCliStreaming",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:checkCliAvailable",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:resetCliCache",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:showInstallPrompt",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:listSkills",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:listAgents",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:listPipelines",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:listBundles",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:listSynapses",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:getSkillInfo",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:getAgentInfo",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:installSkill",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:installBundle",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:uninstallComponent",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:runDoctor",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:searchSkills",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:validateWorkspace",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:getAdminStats",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:initArchon",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:checkUpdate",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "function:vscode-extension/src/cli.ts:applyUpdate",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "class:vscode-extension/src/cli.ts:CliNotFoundError",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "class:vscode-extension/src/cli.ts:CliCommandError",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/cli.ts",
+      "target": "file:vscode-extension/src/types.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/commands.ts",
+      "target": "function:vscode-extension/src/commands.ts:registerCommands",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/commands.ts",
+      "target": "function:vscode-extension/src/commands.ts:getAgentDetailHtml",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/commands.ts",
+      "target": "file:vscode-extension/src/cli.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/commands.ts",
+      "target": "file:vscode-extension/src/statusBar.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/commands.ts",
+      "target": "file:vscode-extension/src/types.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/commands.ts",
+      "target": "file:vscode-extension/src/views/agentsTree.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/commands.ts",
+      "target": "file:vscode-extension/src/views/bundlesTree.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/commands.ts",
+      "target": "file:vscode-extension/src/views/pipelinesTree.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/commands.ts",
+      "target": "file:vscode-extension/src/views/skillsTree.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/commands.ts",
+      "target": "file:vscode-extension/src/views/synapsesTree.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/commands.ts",
+      "target": "file:vscode-extension/src/webviews/dashboardPanel.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/commands.ts",
+      "target": "file:vscode-extension/src/webviews/healthPanel.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/commands.ts",
+      "target": "file:vscode-extension/src/webviews/skillDetailPanel.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/commands.ts",
+      "target": "file:vscode-extension/src/webviews/synapseDetailPanel.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/extension.ts",
+      "target": "function:vscode-extension/src/extension.ts:activate",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/extension.ts",
+      "target": "function:vscode-extension/src/extension.ts:deactivate",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/extension.ts",
+      "target": "file:vscode-extension/src/cli.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/extension.ts",
+      "target": "file:vscode-extension/src/commands.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/extension.ts",
+      "target": "file:vscode-extension/src/statusBar.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/extension.ts",
+      "target": "file:vscode-extension/src/views/agentsTree.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/extension.ts",
+      "target": "file:vscode-extension/src/views/bundlesTree.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/extension.ts",
+      "target": "file:vscode-extension/src/views/pipelinesTree.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/extension.ts",
+      "target": "file:vscode-extension/src/views/skillsTree.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/extension.ts",
+      "target": "file:vscode-extension/src/views/synapsesTree.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/statusBar.ts",
+      "target": "class:vscode-extension/src/statusBar.ts:StatusBarManager",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/views/agentsTree.ts",
+      "target": "class:vscode-extension/src/views/agentsTree.ts:AgentItem",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/views/agentsTree.ts",
+      "target": "class:vscode-extension/src/views/agentsTree.ts:AgentsTreeProvider",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/views/agentsTree.ts",
+      "target": "file:vscode-extension/src/cli.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/views/agentsTree.ts",
+      "target": "file:vscode-extension/src/types.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/views/bundlesTree.ts",
+      "target": "class:vscode-extension/src/views/bundlesTree.ts:BundleItem",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/views/bundlesTree.ts",
+      "target": "class:vscode-extension/src/views/bundlesTree.ts:BundleSkillItem",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/views/bundlesTree.ts",
+      "target": "class:vscode-extension/src/views/bundlesTree.ts:BundlesTreeProvider",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/views/bundlesTree.ts",
+      "target": "file:vscode-extension/src/cli.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/views/bundlesTree.ts",
+      "target": "file:vscode-extension/src/types.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/views/pipelinesTree.ts",
+      "target": "class:vscode-extension/src/views/pipelinesTree.ts:PipelineItem",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/views/pipelinesTree.ts",
+      "target": "class:vscode-extension/src/views/pipelinesTree.ts:StepItem",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/views/pipelinesTree.ts",
+      "target": "class:vscode-extension/src/views/pipelinesTree.ts:PipelinesTreeProvider",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/views/pipelinesTree.ts",
+      "target": "file:vscode-extension/src/cli.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/views/pipelinesTree.ts",
+      "target": "file:vscode-extension/src/types.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/views/skillsTree.ts",
+      "target": "class:vscode-extension/src/views/skillsTree.ts:CategoryItem",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/views/skillsTree.ts",
+      "target": "class:vscode-extension/src/views/skillsTree.ts:SkillItem",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/views/skillsTree.ts",
+      "target": "class:vscode-extension/src/views/skillsTree.ts:SkillsTreeProvider",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/views/skillsTree.ts",
+      "target": "file:vscode-extension/src/cli.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/views/skillsTree.ts",
+      "target": "file:vscode-extension/src/types.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/views/synapsesTree.ts",
+      "target": "class:vscode-extension/src/views/synapsesTree.ts:SynapseItem",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/views/synapsesTree.ts",
+      "target": "class:vscode-extension/src/views/synapsesTree.ts:SynapsesTreeProvider",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/views/synapsesTree.ts",
+      "target": "file:vscode-extension/src/cli.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/views/synapsesTree.ts",
+      "target": "file:vscode-extension/src/types.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/webviews/dashboardPanel.ts",
+      "target": "class:vscode-extension/src/webviews/dashboardPanel.ts:DashboardPanel",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/webviews/dashboardPanel.ts",
+      "target": "file:vscode-extension/src/types.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/webviews/healthPanel.ts",
+      "target": "class:vscode-extension/src/webviews/healthPanel.ts:HealthPanel",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/webviews/healthPanel.ts",
+      "target": "file:vscode-extension/src/cli.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/webviews/healthPanel.ts",
+      "target": "file:vscode-extension/src/types.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/webviews/skillDetailPanel.ts",
+      "target": "class:vscode-extension/src/webviews/skillDetailPanel.ts:SkillDetailPanel",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/webviews/skillDetailPanel.ts",
+      "target": "file:vscode-extension/src/cli.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/webviews/skillDetailPanel.ts",
+      "target": "file:vscode-extension/src/types.ts",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:vscode-extension/src/webviews/synapseDetailPanel.ts",
+      "target": "class:vscode-extension/src/webviews/synapseDetailPanel.ts:SynapseDetailPanel",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:vscode-extension/src/webviews/synapseDetailPanel.ts",
+      "target": "file:vscode-extension/src/types.ts",
+      "weight": 0.7
+    }
+  ]
+}

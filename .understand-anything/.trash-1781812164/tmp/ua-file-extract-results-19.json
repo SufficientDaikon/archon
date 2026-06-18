@@ -1,0 +1,495 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "prompts/personas/expert.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 400,
+      "nonEmptyLines": 250,
+      "sections": [
+        {
+          "heading": "Expert Persona",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Core Traits",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Tone",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Communication Style",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "Verbosity",
+          "level": 3,
+          "line": 35
+        },
+        {
+          "heading": "Structure",
+          "level": 3,
+          "line": 45
+        },
+        {
+          "heading": "Code Examples",
+          "level": 3,
+          "line": 81
+        },
+        {
+          "heading": "Response Patterns",
+          "level": 2,
+          "line": 105
+        },
+        {
+          "heading": "Decision Documentation",
+          "level": 3,
+          "line": 107
+        },
+        {
+          "heading": "Problem Analysis",
+          "level": 3,
+          "line": 146
+        },
+        {
+          "heading": "Architecture Proposals",
+          "level": 3,
+          "line": 185
+        },
+        {
+          "heading": "Knowledge Sharing",
+          "level": 2,
+          "line": 262
+        },
+        {
+          "heading": "Teaching Approach",
+          "level": 3,
+          "line": 264
+        },
+        {
+          "heading": "Reference Everything",
+          "level": 3,
+          "line": 274
+        },
+        {
+          "heading": "Quality Gates",
+          "level": 2,
+          "line": 289
+        },
+        {
+          "heading": "Before Delivering",
+          "level": 3,
+          "line": 291
+        },
+        {
+          "heading": "Common Phrases",
+          "level": 2,
+          "line": 306
+        },
+        {
+          "heading": "Example Response Structure",
+          "level": 2,
+          "line": 321
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 19
+      }
+    },
+    {
+      "path": "prompts/personas/quick.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 438,
+      "nonEmptyLines": 290,
+      "sections": [
+        {
+          "heading": "Quick Persona",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Core Traits",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Tone",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "Communication Style",
+          "level": 2,
+          "line": 32
+        },
+        {
+          "heading": "Verbosity",
+          "level": 3,
+          "line": 34
+        },
+        {
+          "heading": "Structure",
+          "level": 3,
+          "line": 44
+        },
+        {
+          "heading": "Code Examples",
+          "level": 3,
+          "line": 62
+        },
+        {
+          "heading": "Response Patterns",
+          "level": 2,
+          "line": 74
+        },
+        {
+          "heading": "Quick Answer",
+          "level": 3,
+          "line": 76
+        },
+        {
+          "heading": "Quick Fix",
+          "level": 3,
+          "line": 88
+        },
+        {
+          "heading": "Quick Command Sequence",
+          "level": 3,
+          "line": 104
+        },
+        {
+          "heading": "Quick Decision",
+          "level": 3,
+          "line": 116
+        },
+        {
+          "heading": "Formatting",
+          "level": 2,
+          "line": 126
+        },
+        {
+          "heading": "Minimal Headers",
+          "level": 3,
+          "line": 128
+        },
+        {
+          "heading": "Lists Over Prose",
+          "level": 3,
+          "line": 142
+        },
+        {
+          "heading": "Tables for Comparisons",
+          "level": 3,
+          "line": 160
+        },
+        {
+          "heading": "Code Blocks Without Explanation",
+          "level": 3,
+          "line": 171
+        },
+        {
+          "heading": "Common Phrases",
+          "level": 2,
+          "line": 188
+        },
+        {
+          "heading": "Shortcuts",
+          "level": 2,
+          "line": 211
+        },
+        {
+          "heading": "File Operations",
+          "level": 3,
+          "line": 213
+        },
+        {
+          "heading": "Commands",
+          "level": 3,
+          "line": 223
+        },
+        {
+          "heading": "Edits",
+          "level": 3,
+          "line": 231
+        },
+        {
+          "heading": "Omit When Obvious",
+          "level": 2,
+          "line": 240
+        },
+        {
+          "heading": "Skip When User Knows",
+          "level": 3,
+          "line": 242
+        },
+        {
+          "heading": "Skip Validation Steps",
+          "level": 3,
+          "line": 249
+        },
+        {
+          "heading": "Example Responses",
+          "level": 2,
+          "line": 257
+        },
+        {
+          "heading": "Trivial Question",
+          "level": 3,
+          "line": 259
+        },
+        {
+          "heading": "Simple Task",
+          "level": 3,
+          "line": 269
+        },
+        {
+          "heading": "Quick Debug",
+          "level": 3,
+          "line": 281
+        },
+        {
+          "heading": "Quick Feature",
+          "level": 3,
+          "line": 301
+        },
+        {
+          "heading": "Quick Command Sequence",
+          "level": 3,
+          "line": 319
+        },
+        {
+          "heading": "Speed Optimization",
+          "level": 2,
+          "line": 331
+        },
+        {
+          "heading": "Lead with Action",
+          "level": 3,
+          "line": 333
+        },
+        {
+          "heading": "Skip Transitional Phrases",
+          "level": 3,
+          "line": 343
+        },
+        {
+          "heading": "Use Symbols",
+          "level": 3,
+          "line": 357
+        },
+        {
+          "heading": "Inline Code",
+          "level": 3,
+          "line": 365
+        },
+        {
+          "heading": "Quality Shortcuts",
+          "level": 2,
+          "line": 371
+        },
+        {
+          "heading": "Minimal Validation",
+          "level": 3,
+          "line": 373
+        },
+        {
+          "heading": "Trust User Context",
+          "level": 3,
+          "line": 391
+        },
+        {
+          "heading": "When NOT to Use Quick Persona",
+          "level": 2,
+          "line": 401
+        },
+        {
+          "heading": "Example Full Response",
+          "level": 2,
+          "line": 412
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 42
+      }
+    },
+    {
+      "path": "prompts/personas/teacher.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 515,
+      "nonEmptyLines": 332,
+      "sections": [
+        {
+          "heading": "Teacher Persona",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Core Traits",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "When to Use",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Tone",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "Communication Style",
+          "level": 2,
+          "line": 32
+        },
+        {
+          "heading": "Verbosity",
+          "level": 3,
+          "line": 34
+        },
+        {
+          "heading": "Structure",
+          "level": 3,
+          "line": 44
+        },
+        {
+          "heading": "Code Examples",
+          "level": 3,
+          "line": 76
+        },
+        {
+          "heading": "Teaching Patterns",
+          "level": 2,
+          "line": 116
+        },
+        {
+          "heading": "Concept Introduction",
+          "level": 3,
+          "line": 118
+        },
+        {
+          "heading": "Step-by-Step Problem Solving",
+          "level": 3,
+          "line": 149
+        },
+        {
+          "heading": "Debugging as Learning",
+          "level": 3,
+          "line": 220
+        },
+        {
+          "heading": "Explanatory Patterns",
+          "level": 2,
+          "line": 263
+        },
+        {
+          "heading": "Jargon Busting",
+          "level": 3,
+          "line": 265
+        },
+        {
+          "heading": "Analogies",
+          "level": 3,
+          "line": 277
+        },
+        {
+          "heading": "Progressive Disclosure",
+          "level": 3,
+          "line": 296
+        },
+        {
+          "heading": "Encouraging Language",
+          "level": 2,
+          "line": 316
+        },
+        {
+          "heading": "Positive Reinforcement",
+          "level": 3,
+          "line": 318
+        },
+        {
+          "heading": "Normalizing Mistakes",
+          "level": 3,
+          "line": 326
+        },
+        {
+          "heading": "Building Confidence",
+          "level": 3,
+          "line": 333
+        },
+        {
+          "heading": "Interactive Elements",
+          "level": 2,
+          "line": 340
+        },
+        {
+          "heading": "Check for Understanding",
+          "level": 3,
+          "line": 342
+        },
+        {
+          "heading": "Invite Questions",
+          "level": 3,
+          "line": 356
+        },
+        {
+          "heading": "Practice Suggestions",
+          "level": 3,
+          "line": 368
+        },
+        {
+          "heading": "Common Explanatory Phrases",
+          "level": 2,
+          "line": 382
+        },
+        {
+          "heading": "Avoid",
+          "level": 2,
+          "line": 397
+        },
+        {
+          "heading": "Example Full Response",
+          "level": 2,
+          "line": 415
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 27
+      }
+    }
+  ]
+}

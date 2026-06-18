@@ -1,0 +1,5 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [{"path": ".github/workflows/ci.yml", "language": "yaml", "sizeLines": 20, "fileCategory": "infra"}, {"path": ".github/workflows/deploy-pages.yml", "language": "yaml", "sizeLines": 73, "fileCategory": "infra"}, {"path": ".github/workflows/plan-advanced-audit.yml", "language": "yaml", "sizeLines": 18, "fileCategory": "infra"}, {"path": ".github/workflows/plan-quality.yml", "language": "yaml", "sizeLines": 45, "fileCategory": "infra"}, {"path": ".github/workflows/publish-pypi.yml", "language": "yaml", "sizeLines": 17, "fileCategory": "infra"}],
+  "batchImportData": {".github/workflows/ci.yml": [], ".github/workflows/deploy-pages.yml": [], ".github/workflows/plan-advanced-audit.yml": [], ".github/workflows/plan-quality.yml": [], ".github/workflows/publish-pypi.yml": []}
+}

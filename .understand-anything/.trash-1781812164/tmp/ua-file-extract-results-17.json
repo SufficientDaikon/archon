@@ -1,0 +1,536 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 9,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "pipelines/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 28,
+      "nonEmptyLines": 20,
+      "sections": [
+        {
+          "heading": "Pipelines",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "How Pipelines Work",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Schema",
+          "level": 2,
+          "line": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "pipelines/batch-sdd-pipeline.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 87,
+      "nonEmptyLines": 75,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "trigger",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "synapse-mode",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "config",
+          "level": 1,
+          "line": 13
+        },
+        {
+          "heading": "steps",
+          "level": 1,
+          "line": 21
+        },
+        {
+          "heading": "resumable",
+          "level": 1,
+          "line": 75
+        },
+        {
+          "heading": "artifact-persistence",
+          "level": 1,
+          "line": 76
+        },
+        {
+          "heading": "state",
+          "level": 1,
+          "line": 79
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "pipelines/debug-pipeline.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 51,
+      "nonEmptyLines": 44,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "trigger",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "synapse-mode",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "steps",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "resumable",
+          "level": 1,
+          "line": 50
+        },
+        {
+          "heading": "artifact-persistence",
+          "level": 1,
+          "line": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "pipelines/dissect-to-skill.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 60,
+      "nonEmptyLines": 52,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "trigger",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "synapse-mode",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "steps",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "resumable",
+          "level": 1,
+          "line": 59
+        },
+        {
+          "heading": "artifact-persistence",
+          "level": 1,
+          "line": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "pipelines/full-product.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 70,
+      "nonEmptyLines": 60,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "trigger",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "synapse-mode",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "steps",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "resumable",
+          "level": 1,
+          "line": 69
+        },
+        {
+          "heading": "artifact-persistence",
+          "level": 1,
+          "line": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "pipelines/sdd-pipeline.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 48,
+      "nonEmptyLines": 41,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "trigger",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "synapse-mode",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "steps",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "resumable",
+          "level": 1,
+          "line": 47
+        },
+        {
+          "heading": "artifact-persistence",
+          "level": 1,
+          "line": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "pipelines/skill-factory.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 58,
+      "nonEmptyLines": 50,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "trigger",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "synapse-mode",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "steps",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "resumable",
+          "level": 1,
+          "line": 57
+        },
+        {
+          "heading": "artifact-persistence",
+          "level": 1,
+          "line": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "pipelines/skill-upgrade.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 45,
+      "nonEmptyLines": 39,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "trigger",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "synapse-mode",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "steps",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "resumable",
+          "level": 1,
+          "line": 44
+        },
+        {
+          "heading": "artifact-persistence",
+          "level": 1,
+          "line": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "pipelines/ux-pipeline.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 62,
+      "nonEmptyLines": 53,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "trigger",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "synapse-mode",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "steps",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "resumable",
+          "level": 1,
+          "line": 61
+        },
+        {
+          "heading": "artifact-persistence",
+          "level": 1,
+          "line": 62
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    }
+  ]
+}

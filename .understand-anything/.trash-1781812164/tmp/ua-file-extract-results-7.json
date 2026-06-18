@@ -1,0 +1,3157 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 9,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "servers/forge/src/buffer.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 398,
+      "nonEmptyLines": 344,
+      "functions": [
+        {
+          "name": "open",
+          "startLine": 48,
+          "endLine": 70,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "meta",
+          "startLine": 73,
+          "endLine": 83,
+          "params": []
+        },
+        {
+          "name": "content",
+          "startLine": 86,
+          "endLine": 88,
+          "params": []
+        },
+        {
+          "name": "read_range",
+          "startLine": 91,
+          "endLine": 122,
+          "params": [
+            "start",
+            "end"
+          ]
+        },
+        {
+          "name": "push_undo",
+          "startLine": 125,
+          "endLine": 132,
+          "params": [
+            "description"
+          ]
+        },
+        {
+          "name": "apply_single_edit",
+          "startLine": 137,
+          "endLine": 181,
+          "params": [
+            "start",
+            "end",
+            "content"
+          ]
+        },
+        {
+          "name": "apply_edits",
+          "startLine": 185,
+          "endLine": 233,
+          "params": [
+            "edits",
+            "expected_hash"
+          ]
+        },
+        {
+          "name": "insert_at",
+          "startLine": 236,
+          "endLine": 273,
+          "params": [
+            "line",
+            "content"
+          ]
+        },
+        {
+          "name": "delete_range",
+          "startLine": 276,
+          "endLine": 294,
+          "params": [
+            "start",
+            "end"
+          ]
+        },
+        {
+          "name": "undo",
+          "startLine": 297,
+          "endLine": 328,
+          "params": [
+            "steps"
+          ]
+        },
+        {
+          "name": "redo",
+          "startLine": 331,
+          "endLine": 366,
+          "params": [
+            "steps"
+          ]
+        },
+        {
+          "name": "flush",
+          "startLine": 369,
+          "endLine": 391,
+          "params": []
+        },
+        {
+          "name": "update_hash",
+          "startLine": 394,
+          "endLine": 397,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "UndoEntry",
+          "startLine": 15,
+          "endLine": 18,
+          "methods": [],
+          "properties": [
+            "rope",
+            "description"
+          ]
+        },
+        {
+          "name": "Buffer",
+          "startLine": 21,
+          "endLine": 33,
+          "methods": [
+            "open",
+            "meta",
+            "content",
+            "read_range",
+            "push_undo",
+            "apply_single_edit",
+            "apply_edits",
+            "insert_at",
+            "delete_range",
+            "undo",
+            "redo",
+            "flush",
+            "update_hash"
+          ],
+          "properties": [
+            "path",
+            "rope",
+            "encoding",
+            "line_ending",
+            "content_hash",
+            "disk_hash",
+            "undo_stack",
+            "redo_stack",
+            "dirty",
+            "last_modified",
+            "externally_modified"
+          ]
+        },
+        {
+          "name": "BufferMeta",
+          "startLine": 37,
+          "endLine": 44,
+          "methods": [],
+          "properties": [
+            "total_lines",
+            "size_bytes",
+            "encoding",
+            "line_ending",
+            "content_hash",
+            "is_dirty"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "UndoEntry",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "Buffer",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "BufferMeta",
+          "line": 37,
+          "isDefault": false
+        },
+        {
+          "name": "open",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "meta",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "content",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "read_range",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "apply_edits",
+          "line": 185,
+          "isDefault": false
+        },
+        {
+          "name": "insert_at",
+          "line": 236,
+          "isDefault": false
+        },
+        {
+          "name": "delete_range",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "undo",
+          "line": 297,
+          "isDefault": false
+        },
+        {
+          "name": "redo",
+          "line": 331,
+          "isDefault": false
+        },
+        {
+          "name": "flush",
+          "line": 369,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "open",
+          "callee": "read_file_bytes",
+          "lineNumber": 49
+        },
+        {
+          "caller": "open",
+          "callee": "detect_line_ending",
+          "lineNumber": 50
+        },
+        {
+          "caller": "open",
+          "callee": "normalize_to_lf",
+          "lineNumber": 51
+        },
+        {
+          "caller": "open",
+          "callee": "Rope::from_str",
+          "lineNumber": 52
+        },
+        {
+          "caller": "open",
+          "callee": "xxh64",
+          "lineNumber": 53
+        },
+        {
+          "caller": "open",
+          "callee": "normalized.as_bytes",
+          "lineNumber": 53
+        },
+        {
+          "caller": "open",
+          "callee": "std::fs::metadata(path).ok().and_then",
+          "lineNumber": 55
+        },
+        {
+          "caller": "open",
+          "callee": "std::fs::metadata(path).ok",
+          "lineNumber": 55
+        },
+        {
+          "caller": "open",
+          "callee": "std::fs::metadata",
+          "lineNumber": 55
+        },
+        {
+          "caller": "open",
+          "callee": "m.modified().ok",
+          "lineNumber": 55
+        },
+        {
+          "caller": "open",
+          "callee": "m.modified",
+          "lineNumber": 55
+        },
+        {
+          "caller": "open",
+          "callee": "Ok",
+          "lineNumber": 57
+        },
+        {
+          "caller": "open",
+          "callee": "path.to_path_buf",
+          "lineNumber": 58
+        },
+        {
+          "caller": "open",
+          "callee": "Vec::new",
+          "lineNumber": 64
+        },
+        {
+          "caller": "open",
+          "callee": "Vec::new",
+          "lineNumber": 65
+        },
+        {
+          "caller": "meta",
+          "callee": "self.rope.len_bytes",
+          "lineNumber": 74
+        },
+        {
+          "caller": "meta",
+          "callee": "self.rope.len_lines",
+          "lineNumber": 76
+        },
+        {
+          "caller": "content",
+          "callee": "self.rope.to_string",
+          "lineNumber": 87
+        },
+        {
+          "caller": "read_range",
+          "callee": "self.rope.len_lines",
+          "lineNumber": 92
+        },
+        {
+          "caller": "read_range",
+          "callee": "self.rope.len_chars",
+          "lineNumber": 94
+        },
+        {
+          "caller": "read_range",
+          "callee": "Err",
+          "lineNumber": 96
+        },
+        {
+          "caller": "read_range",
+          "callee": "ForgeError::LineOutOfRange",
+          "lineNumber": 96
+        },
+        {
+          "caller": "read_range",
+          "callee": "Ok",
+          "lineNumber": 100
+        },
+        {
+          "caller": "read_range",
+          "callee": "String::new",
+          "lineNumber": 100
+        },
+        {
+          "caller": "read_range",
+          "callee": "Err",
+          "lineNumber": 104
+        },
+        {
+          "caller": "read_range",
+          "callee": "ForgeError::LineOutOfRange",
+          "lineNumber": 104
+        },
+        {
+          "caller": "read_range",
+          "callee": "end.min",
+          "lineNumber": 108
+        },
+        {
+          "caller": "read_range",
+          "callee": "Err",
+          "lineNumber": 110
+        },
+        {
+          "caller": "read_range",
+          "callee": "ForgeError::LineOutOfRange",
+          "lineNumber": 110
+        },
+        {
+          "caller": "read_range",
+          "callee": "String::new",
+          "lineNumber": 116
+        },
+        {
+          "caller": "read_range",
+          "callee": "self.rope.line",
+          "lineNumber": 118
+        },
+        {
+          "caller": "read_range",
+          "callee": "result.push_str",
+          "lineNumber": 119
+        },
+        {
+          "caller": "read_range",
+          "callee": "line.to_string",
+          "lineNumber": 119
+        },
+        {
+          "caller": "read_range",
+          "callee": "Ok",
+          "lineNumber": 121
+        },
+        {
+          "caller": "push_undo",
+          "callee": "self.undo_stack.push",
+          "lineNumber": 126
+        },
+        {
+          "caller": "push_undo",
+          "callee": "self.rope.clone",
+          "lineNumber": 127
+        },
+        {
+          "caller": "push_undo",
+          "callee": "self.redo_stack.clear",
+          "lineNumber": 131
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "self.rope.len_lines",
+          "lineNumber": 138
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "Err",
+          "lineNumber": 141
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "ForgeError::LineOutOfRange",
+          "lineNumber": 141
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "\"start_line must be >= 1\".to_string",
+          "lineNumber": 142
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "Err",
+          "lineNumber": 146
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "ForgeError::LineOutOfRange",
+          "lineNumber": 146
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "Err",
+          "lineNumber": 151
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "ForgeError::LineOutOfRange",
+          "lineNumber": 151
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "Err",
+          "lineNumber": 156
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "ForgeError::LineOutOfRange",
+          "lineNumber": 156
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "self.rope.line_to_char",
+          "lineNumber": 162
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "self.rope.len_chars",
+          "lineNumber": 164
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "self.rope.line_to_char",
+          "lineNumber": 166
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "content.to_string",
+          "lineNumber": 170
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "content.is_empty",
+          "lineNumber": 171
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "content.ends_with",
+          "lineNumber": 171
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "replacement.push",
+          "lineNumber": 172
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "self.rope.remove",
+          "lineNumber": 175
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "replacement.is_empty",
+          "lineNumber": 176
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "self.rope.insert",
+          "lineNumber": 177
+        },
+        {
+          "caller": "apply_single_edit",
+          "callee": "Ok",
+          "lineNumber": 180
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "Err",
+          "lineNumber": 194
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "ForgeError::HashMismatch",
+          "lineNumber": 194
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "edits.sort_by",
+          "lineNumber": 201
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "a.0.cmp",
+          "lineNumber": 201
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "edits.windows",
+          "lineNumber": 202
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "Err",
+          "lineNumber": 204
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "ForgeError::OverlappingRanges",
+          "lineNumber": 204
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "self.content",
+          "lineNumber": 211
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "edits.len",
+          "lineNumber": 214
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "self.push_undo",
+          "lineNumber": 219
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "edits.sort_by",
+          "lineNumber": 222
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "b.0.cmp",
+          "lineNumber": 222
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "edits.iter",
+          "lineNumber": 223
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "self.apply_single_edit",
+          "lineNumber": 224
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "self.update_hash",
+          "lineNumber": 227
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "self.content",
+          "lineNumber": 230
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "crate::diff::unified_diff",
+          "lineNumber": 231
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "self.path.display().to_string",
+          "lineNumber": 231
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "self.path.display",
+          "lineNumber": 231
+        },
+        {
+          "caller": "apply_edits",
+          "callee": "Ok",
+          "lineNumber": 232
+        },
+        {
+          "caller": "insert_at",
+          "callee": "self.content",
+          "lineNumber": 237
+        },
+        {
+          "caller": "insert_at",
+          "callee": "self.rope.len_lines",
+          "lineNumber": 238
+        },
+        {
+          "caller": "insert_at",
+          "callee": "self.push_undo",
+          "lineNumber": 240
+        },
+        {
+          "caller": "insert_at",
+          "callee": "content.to_string",
+          "lineNumber": 242
+        },
+        {
+          "caller": "insert_at",
+          "callee": "text.ends_with",
+          "lineNumber": 243
+        },
+        {
+          "caller": "insert_at",
+          "callee": "text.push",
+          "lineNumber": 244
+        },
+        {
+          "caller": "insert_at",
+          "callee": "self.rope.len_chars",
+          "lineNumber": 249
+        },
+        {
+          "caller": "insert_at",
+          "callee": "self.rope.char",
+          "lineNumber": 252
+        },
+        {
+          "caller": "insert_at",
+          "callee": "self.rope.insert",
+          "lineNumber": 254
+        },
+        {
+          "caller": "insert_at",
+          "callee": "self.rope.len_chars",
+          "lineNumber": 257
+        },
+        {
+          "caller": "insert_at",
+          "callee": "self.rope.insert",
+          "lineNumber": 258
+        },
+        {
+          "caller": "insert_at",
+          "callee": "Err",
+          "lineNumber": 260
+        },
+        {
+          "caller": "insert_at",
+          "callee": "ForgeError::LineOutOfRange",
+          "lineNumber": 260
+        },
+        {
+          "caller": "insert_at",
+          "callee": "\"line must be >= 1\".to_string",
+          "lineNumber": 261
+        },
+        {
+          "caller": "insert_at",
+          "callee": "self.rope.line_to_char",
+          "lineNumber": 264
+        },
+        {
+          "caller": "insert_at",
+          "callee": "self.rope.insert",
+          "lineNumber": 265
+        },
+        {
+          "caller": "insert_at",
+          "callee": "self.update_hash",
+          "lineNumber": 268
+        },
+        {
+          "caller": "insert_at",
+          "callee": "self.content",
+          "lineNumber": 271
+        },
+        {
+          "caller": "insert_at",
+          "callee": "Ok",
+          "lineNumber": 272
+        },
+        {
+          "caller": "insert_at",
+          "callee": "crate::diff::unified_diff",
+          "lineNumber": 272
+        },
+        {
+          "caller": "insert_at",
+          "callee": "self.path.display().to_string",
+          "lineNumber": 272
+        },
+        {
+          "caller": "insert_at",
+          "callee": "self.path.display",
+          "lineNumber": 272
+        },
+        {
+          "caller": "delete_range",
+          "callee": "self.content",
+          "lineNumber": 280
+        },
+        {
+          "caller": "delete_range",
+          "callee": "self.push_undo",
+          "lineNumber": 281
+        },
+        {
+          "caller": "delete_range",
+          "callee": "edits.sort_by",
+          "lineNumber": 284
+        },
+        {
+          "caller": "delete_range",
+          "callee": "b.0.cmp",
+          "lineNumber": 284
+        },
+        {
+          "caller": "delete_range",
+          "callee": "self.apply_single_edit",
+          "lineNumber": 286
+        },
+        {
+          "caller": "delete_range",
+          "callee": "self.update_hash",
+          "lineNumber": 289
+        },
+        {
+          "caller": "delete_range",
+          "callee": "self.content",
+          "lineNumber": 292
+        },
+        {
+          "caller": "delete_range",
+          "callee": "Ok",
+          "lineNumber": 293
+        },
+        {
+          "caller": "delete_range",
+          "callee": "crate::diff::unified_diff",
+          "lineNumber": 293
+        },
+        {
+          "caller": "delete_range",
+          "callee": "self.path.display().to_string",
+          "lineNumber": 293
+        },
+        {
+          "caller": "delete_range",
+          "callee": "self.path.display",
+          "lineNumber": 293
+        },
+        {
+          "caller": "undo",
+          "callee": "self.undo_stack.is_empty",
+          "lineNumber": 298
+        },
+        {
+          "caller": "undo",
+          "callee": "Err",
+          "lineNumber": 299
+        },
+        {
+          "caller": "undo",
+          "callee": "ForgeError::NothingToUndo",
+          "lineNumber": 299
+        },
+        {
+          "caller": "undo",
+          "callee": "\"no undo history\".to_string",
+          "lineNumber": 299
+        },
+        {
+          "caller": "undo",
+          "callee": "self.undo_stack.len",
+          "lineNumber": 301
+        },
+        {
+          "caller": "undo",
+          "callee": "Err",
+          "lineNumber": 302
+        },
+        {
+          "caller": "undo",
+          "callee": "ForgeError::InsufficientHistory",
+          "lineNumber": 302
+        },
+        {
+          "caller": "undo",
+          "callee": "self.content",
+          "lineNumber": 308
+        },
+        {
+          "caller": "undo",
+          "callee": "Vec::new",
+          "lineNumber": 309
+        },
+        {
+          "caller": "undo",
+          "callee": "self.undo_stack.pop().unwrap",
+          "lineNumber": 312
+        },
+        {
+          "caller": "undo",
+          "callee": "self.undo_stack.pop",
+          "lineNumber": 312
+        },
+        {
+          "caller": "undo",
+          "callee": "descriptions.push",
+          "lineNumber": 313
+        },
+        {
+          "caller": "undo",
+          "callee": "entry.description.clone",
+          "lineNumber": 313
+        },
+        {
+          "caller": "undo",
+          "callee": "self.redo_stack.push",
+          "lineNumber": 315
+        },
+        {
+          "caller": "undo",
+          "callee": "self.rope.clone",
+          "lineNumber": 316
+        },
+        {
+          "caller": "undo",
+          "callee": "self.update_hash",
+          "lineNumber": 322
+        },
+        {
+          "caller": "undo",
+          "callee": "self.content",
+          "lineNumber": 325
+        },
+        {
+          "caller": "undo",
+          "callee": "crate::diff::unified_diff",
+          "lineNumber": 326
+        },
+        {
+          "caller": "undo",
+          "callee": "self.path.display().to_string",
+          "lineNumber": 326
+        },
+        {
+          "caller": "undo",
+          "callee": "self.path.display",
+          "lineNumber": 326
+        },
+        {
+          "caller": "undo",
+          "callee": "Ok",
+          "lineNumber": 327
+        },
+        {
+          "caller": "redo",
+          "callee": "self.redo_stack.is_empty",
+          "lineNumber": 332
+        },
+        {
+          "caller": "redo",
+          "callee": "Err",
+          "lineNumber": 333
+        },
+        {
+          "caller": "redo",
+          "callee": "ForgeError::NothingToRedo",
+          "lineNumber": 333
+        },
+        {
+          "caller": "redo",
+          "callee": "\"no redo history (any new write clears the redo stack)\".to_string",
+          "lineNumber": 334
+        },
+        {
+          "caller": "redo",
+          "callee": "self.redo_stack.len",
+          "lineNumber": 337
+        },
+        {
+          "caller": "redo",
+          "callee": "Err",
+          "lineNumber": 338
+        },
+        {
+          "caller": "redo",
+          "callee": "ForgeError::InsufficientHistory",
+          "lineNumber": 338
+        },
+        {
+          "caller": "redo",
+          "callee": "self.content",
+          "lineNumber": 344
+        },
+        {
+          "caller": "redo",
+          "callee": "Vec::new",
+          "lineNumber": 345
+        },
+        {
+          "caller": "redo",
+          "callee": "self.redo_stack.pop().unwrap",
+          "lineNumber": 348
+        },
+        {
+          "caller": "redo",
+          "callee": "self.redo_stack.pop",
+          "lineNumber": 348
+        },
+        {
+          "caller": "redo",
+          "callee": "descriptions.push",
+          "lineNumber": 349
+        },
+        {
+          "caller": "redo",
+          "callee": "entry.description.clone",
+          "lineNumber": 349
+        },
+        {
+          "caller": "redo",
+          "callee": "self.undo_stack.push",
+          "lineNumber": 350
+        },
+        {
+          "caller": "redo",
+          "callee": "self.rope.clone",
+          "lineNumber": 351
+        },
+        {
+          "caller": "redo",
+          "callee": "descriptions.reverse",
+          "lineNumber": 358
+        },
+        {
+          "caller": "redo",
+          "callee": "self.update_hash",
+          "lineNumber": 360
+        },
+        {
+          "caller": "redo",
+          "callee": "self.content",
+          "lineNumber": 363
+        },
+        {
+          "caller": "redo",
+          "callee": "crate::diff::unified_diff",
+          "lineNumber": 364
+        },
+        {
+          "caller": "redo",
+          "callee": "self.path.display().to_string",
+          "lineNumber": 364
+        },
+        {
+          "caller": "redo",
+          "callee": "self.path.display",
+          "lineNumber": 364
+        },
+        {
+          "caller": "redo",
+          "callee": "Ok",
+          "lineNumber": 365
+        },
+        {
+          "caller": "flush",
+          "callee": "Ok",
+          "lineNumber": 371
+        },
+        {
+          "caller": "flush",
+          "callee": "self.content",
+          "lineNumber": 374
+        },
+        {
+          "caller": "flush",
+          "callee": "apply_line_ending",
+          "lineNumber": 375
+        },
+        {
+          "caller": "flush",
+          "callee": "self.path.parent().unwrap_or",
+          "lineNumber": 377
+        },
+        {
+          "caller": "flush",
+          "callee": "self.path.parent",
+          "lineNumber": 377
+        },
+        {
+          "caller": "flush",
+          "callee": "Path::new",
+          "lineNumber": 377
+        },
+        {
+          "caller": "flush",
+          "callee": "tempfile::NamedTempFile::new_in",
+          "lineNumber": 378
+        },
+        {
+          "caller": "flush",
+          "callee": "std::io::Write::write_all",
+          "lineNumber": 379
+        },
+        {
+          "caller": "flush",
+          "callee": "disk_content.as_bytes",
+          "lineNumber": 379
+        },
+        {
+          "caller": "flush",
+          "callee": "tmp.persist(&self.path).map_err",
+          "lineNumber": 380
+        },
+        {
+          "caller": "flush",
+          "callee": "tmp.persist",
+          "lineNumber": 380
+        },
+        {
+          "caller": "flush",
+          "callee": "ForgeError::Internal",
+          "lineNumber": 381
+        },
+        {
+          "caller": "flush",
+          "callee": "std::fs::metadata(&self.path)\n            .ok().and_then",
+          "lineNumber": 386
+        },
+        {
+          "caller": "flush",
+          "callee": "std::fs::metadata(&self.path).ok",
+          "lineNumber": 386
+        },
+        {
+          "caller": "flush",
+          "callee": "std::fs::metadata",
+          "lineNumber": 386
+        },
+        {
+          "caller": "flush",
+          "callee": "m.modified().ok",
+          "lineNumber": 388
+        },
+        {
+          "caller": "flush",
+          "callee": "m.modified",
+          "lineNumber": 388
+        },
+        {
+          "caller": "flush",
+          "callee": "Ok",
+          "lineNumber": 390
+        },
+        {
+          "caller": "update_hash",
+          "callee": "self.rope.to_string",
+          "lineNumber": 395
+        },
+        {
+          "caller": "update_hash",
+          "callee": "xxh64",
+          "lineNumber": 396
+        },
+        {
+          "caller": "update_hash",
+          "callee": "content.as_bytes",
+          "lineNumber": 396
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 13,
+        "functionCount": 13,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "servers/forge/src/diff.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 11,
+      "nonEmptyLines": 10,
+      "functions": [
+        {
+          "name": "unified_diff",
+          "startLine": 5,
+          "endLine": 11,
+          "params": [
+            "original",
+            "modified",
+            "path"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "unified_diff",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "unified_diff",
+          "callee": "TextDiff::from_lines",
+          "lineNumber": 6
+        },
+        {
+          "caller": "unified_diff",
+          "callee": "diff.unified_diff()\n        .context_radius(3)\n        .header(&format!(\"--- {path}\"), &format!(\"+++ {path}\")).to_string",
+          "lineNumber": 7
+        },
+        {
+          "caller": "unified_diff",
+          "callee": "diff.unified_diff()\n        .context_radius(3).header",
+          "lineNumber": 7
+        },
+        {
+          "caller": "unified_diff",
+          "callee": "diff.unified_diff().context_radius",
+          "lineNumber": 7
+        },
+        {
+          "caller": "unified_diff",
+          "callee": "diff.unified_diff",
+          "lineNumber": 7
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "servers/forge/src/encoding.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 92,
+      "nonEmptyLines": 80,
+      "functions": [
+        {
+          "name": "as_str",
+          "startLine": 16,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "is_binary",
+          "startLine": 33,
+          "endLine": 36,
+          "params": [
+            "bytes"
+          ]
+        },
+        {
+          "name": "detect_line_ending",
+          "startLine": 39,
+          "endLine": 51,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "read_file_bytes",
+          "startLine": 54,
+          "endLine": 78,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "normalize_to_lf",
+          "startLine": 82,
+          "endLine": 84,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "apply_line_ending",
+          "startLine": 87,
+          "endLine": 92,
+          "params": [
+            "content",
+            "ending"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LineEnding",
+          "startLine": 8,
+          "endLine": 12,
+          "methods": [
+            "as_str"
+          ],
+          "properties": [
+            "Lf",
+            "Crlf",
+            "Mixed"
+          ]
+        },
+        {
+          "name": "Encoding",
+          "startLine": 27,
+          "endLine": 30,
+          "methods": [],
+          "properties": [
+            "Utf8",
+            "Latin1"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LineEnding",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "as_str",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "Encoding",
+          "line": 27,
+          "isDefault": false
+        },
+        {
+          "name": "is_binary",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "detect_line_ending",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "read_file_bytes",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "normalize_to_lf",
+          "line": 82,
+          "isDefault": false
+        },
+        {
+          "name": "apply_line_ending",
+          "line": 87,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "is_binary",
+          "callee": "bytes.len().min",
+          "lineNumber": 34
+        },
+        {
+          "caller": "is_binary",
+          "callee": "bytes.len",
+          "lineNumber": 34
+        },
+        {
+          "caller": "is_binary",
+          "callee": "bytes[..check_len].contains",
+          "lineNumber": 35
+        },
+        {
+          "caller": "detect_line_ending",
+          "callee": "content.contains",
+          "lineNumber": 40
+        },
+        {
+          "caller": "detect_line_ending",
+          "callee": "content.bytes().enumerate().any",
+          "lineNumber": 42
+        },
+        {
+          "caller": "detect_line_ending",
+          "callee": "content.bytes().enumerate",
+          "lineNumber": 42
+        },
+        {
+          "caller": "detect_line_ending",
+          "callee": "content.bytes",
+          "lineNumber": 42
+        },
+        {
+          "caller": "detect_line_ending",
+          "callee": "content.as_bytes",
+          "lineNumber": 43
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "std::fs::read(path).map_err",
+          "lineNumber": 55
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "std::fs::read",
+          "lineNumber": 55
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "e.kind",
+          "lineNumber": 56
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "ForgeError::FileNotFound",
+          "lineNumber": 57
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "path.display().to_string",
+          "lineNumber": 57
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "path.display",
+          "lineNumber": 57
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "e.kind",
+          "lineNumber": 58
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "ForgeError::PermissionDenied",
+          "lineNumber": 59
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "path.display().to_string",
+          "lineNumber": 59
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "path.display",
+          "lineNumber": 59
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "ForgeError::Io",
+          "lineNumber": 61
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "is_binary",
+          "lineNumber": 65
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "Err",
+          "lineNumber": 66
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "ForgeError::BinaryFile",
+          "lineNumber": 66
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "path.display().to_string",
+          "lineNumber": 66
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "path.display",
+          "lineNumber": 66
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "std::str::from_utf8",
+          "lineNumber": 70
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "Ok",
+          "lineNumber": 71
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "s.to_string",
+          "lineNumber": 71
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "encoding_rs::WINDOWS_1252.decode",
+          "lineNumber": 74
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "Ok",
+          "lineNumber": 75
+        },
+        {
+          "caller": "read_file_bytes",
+          "callee": "decoded.into_owned",
+          "lineNumber": 75
+        },
+        {
+          "caller": "normalize_to_lf",
+          "callee": "content.replace",
+          "lineNumber": 83
+        },
+        {
+          "caller": "apply_line_ending",
+          "callee": "content.to_string",
+          "lineNumber": 89
+        },
+        {
+          "caller": "apply_line_ending",
+          "callee": "content.replace",
+          "lineNumber": 90
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 8,
+        "functionCount": 6,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "servers/forge/src/engine.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 326,
+      "nonEmptyLines": 288,
+      "functions": [
+        {
+          "name": "new",
+          "startLine": 14,
+          "endLine": 18,
+          "params": []
+        },
+        {
+          "name": "normalize_path",
+          "startLine": 21,
+          "endLine": 31,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "open",
+          "startLine": 34,
+          "endLine": 41,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "get_buffer",
+          "startLine": 44,
+          "endLine": 51,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "get_buffer_mut",
+          "startLine": 54,
+          "endLine": 61,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "is_open",
+          "startLine": 64,
+          "endLine": 68,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "read",
+          "startLine": 71,
+          "endLine": 105,
+          "params": [
+            "path",
+            "start_line",
+            "end_line",
+            "max_lines"
+          ]
+        },
+        {
+          "name": "edit",
+          "startLine": 108,
+          "endLine": 152,
+          "params": [
+            "path",
+            "edits",
+            "expected_hash",
+            "dry_run"
+          ]
+        },
+        {
+          "name": "insert",
+          "startLine": 155,
+          "endLine": 168,
+          "params": [
+            "path",
+            "line",
+            "content"
+          ]
+        },
+        {
+          "name": "delete",
+          "startLine": 171,
+          "endLine": 184,
+          "params": [
+            "path",
+            "start",
+            "end"
+          ]
+        },
+        {
+          "name": "create",
+          "startLine": 187,
+          "endLine": 225,
+          "params": [
+            "path",
+            "content",
+            "line_ending"
+          ]
+        },
+        {
+          "name": "undo",
+          "startLine": 228,
+          "endLine": 243,
+          "params": [
+            "path",
+            "steps"
+          ]
+        },
+        {
+          "name": "redo",
+          "startLine": 246,
+          "endLine": 261,
+          "params": [
+            "path",
+            "steps"
+          ]
+        },
+        {
+          "name": "close",
+          "startLine": 264,
+          "endLine": 282,
+          "params": [
+            "path"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Engine",
+          "startLine": 9,
+          "endLine": 11,
+          "methods": [
+            "new",
+            "normalize_path",
+            "open",
+            "get_buffer",
+            "get_buffer_mut",
+            "is_open",
+            "read",
+            "edit",
+            "insert",
+            "delete",
+            "create",
+            "undo",
+            "redo",
+            "close"
+          ],
+          "properties": [
+            "buffers"
+          ]
+        },
+        {
+          "name": "ReadResult",
+          "startLine": 288,
+          "endLine": 296,
+          "methods": [],
+          "properties": [
+            "content",
+            "start",
+            "end",
+            "total",
+            "content_hash",
+            "truncated",
+            "externally_modified"
+          ]
+        },
+        {
+          "name": "EditResult",
+          "startLine": 299,
+          "endLine": 304,
+          "methods": [],
+          "properties": [
+            "diff",
+            "new_total_lines",
+            "new_content_hash",
+            "applied"
+          ]
+        },
+        {
+          "name": "CreateResult",
+          "startLine": 307,
+          "endLine": 311,
+          "methods": [],
+          "properties": [
+            "total_lines",
+            "size_bytes",
+            "content_hash"
+          ]
+        },
+        {
+          "name": "UndoResult",
+          "startLine": 314,
+          "endLine": 320,
+          "methods": [],
+          "properties": [
+            "diff",
+            "descriptions",
+            "remaining_undos",
+            "remaining_redos",
+            "new_content_hash"
+          ]
+        },
+        {
+          "name": "CloseResult",
+          "startLine": 323,
+          "endLine": 326,
+          "methods": [],
+          "properties": [
+            "status",
+            "flushed"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Engine",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "new",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "open",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "get_buffer",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "get_buffer_mut",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "is_open",
+          "line": 64,
+          "isDefault": false
+        },
+        {
+          "name": "read",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "edit",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "insert",
+          "line": 155,
+          "isDefault": false
+        },
+        {
+          "name": "delete",
+          "line": 171,
+          "isDefault": false
+        },
+        {
+          "name": "create",
+          "line": 187,
+          "isDefault": false
+        },
+        {
+          "name": "undo",
+          "line": 228,
+          "isDefault": false
+        },
+        {
+          "name": "redo",
+          "line": 246,
+          "isDefault": false
+        },
+        {
+          "name": "close",
+          "line": 264,
+          "isDefault": false
+        },
+        {
+          "name": "ReadResult",
+          "line": 288,
+          "isDefault": false
+        },
+        {
+          "name": "EditResult",
+          "line": 299,
+          "isDefault": false
+        },
+        {
+          "name": "CreateResult",
+          "line": 307,
+          "isDefault": false
+        },
+        {
+          "name": "UndoResult",
+          "line": 314,
+          "isDefault": false
+        },
+        {
+          "name": "CloseResult",
+          "line": 323,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "new",
+          "callee": "HashMap::new",
+          "lineNumber": 16
+        },
+        {
+          "caller": "normalize_path",
+          "callee": "PathBuf::from",
+          "lineNumber": 22
+        },
+        {
+          "caller": "normalize_path",
+          "callee": "std::fs::canonicalize",
+          "lineNumber": 24
+        },
+        {
+          "caller": "normalize_path",
+          "callee": "Ok",
+          "lineNumber": 25
+        },
+        {
+          "caller": "normalize_path",
+          "callee": "Ok",
+          "lineNumber": 28
+        },
+        {
+          "caller": "open",
+          "callee": "Self::normalize_path",
+          "lineNumber": 35
+        },
+        {
+          "caller": "open",
+          "callee": "self.buffers.contains_key",
+          "lineNumber": 36
+        },
+        {
+          "caller": "open",
+          "callee": "Buffer::open",
+          "lineNumber": 37
+        },
+        {
+          "caller": "open",
+          "callee": "self.buffers.insert",
+          "lineNumber": 38
+        },
+        {
+          "caller": "open",
+          "callee": "norm.clone",
+          "lineNumber": 38
+        },
+        {
+          "caller": "open",
+          "callee": "Ok",
+          "lineNumber": 40
+        },
+        {
+          "caller": "open",
+          "callee": "self.buffers.get(&norm).unwrap",
+          "lineNumber": 40
+        },
+        {
+          "caller": "open",
+          "callee": "self.buffers.get",
+          "lineNumber": 40
+        },
+        {
+          "caller": "get_buffer",
+          "callee": "Self::normalize_path",
+          "lineNumber": 45
+        },
+        {
+          "caller": "get_buffer",
+          "callee": "self.buffers\n            .get(&norm).ok_or_else",
+          "lineNumber": 46
+        },
+        {
+          "caller": "get_buffer",
+          "callee": "self.buffers.get",
+          "lineNumber": 46
+        },
+        {
+          "caller": "get_buffer",
+          "callee": "ForgeError::FileNotOpen",
+          "lineNumber": 48
+        },
+        {
+          "caller": "get_buffer_mut",
+          "callee": "Self::normalize_path",
+          "lineNumber": 55
+        },
+        {
+          "caller": "get_buffer_mut",
+          "callee": "self.buffers\n            .get_mut(&norm).ok_or_else",
+          "lineNumber": 56
+        },
+        {
+          "caller": "get_buffer_mut",
+          "callee": "self.buffers.get_mut",
+          "lineNumber": 56
+        },
+        {
+          "caller": "get_buffer_mut",
+          "callee": "ForgeError::FileNotOpen",
+          "lineNumber": 58
+        },
+        {
+          "caller": "is_open",
+          "callee": "Self::normalize_path(path)\n            .map(|norm| self.buffers.contains_key(&norm)).unwrap_or",
+          "lineNumber": 65
+        },
+        {
+          "caller": "is_open",
+          "callee": "Self::normalize_path(path).map",
+          "lineNumber": 65
+        },
+        {
+          "caller": "is_open",
+          "callee": "Self::normalize_path",
+          "lineNumber": 65
+        },
+        {
+          "caller": "is_open",
+          "callee": "self.buffers.contains_key",
+          "lineNumber": 66
+        },
+        {
+          "caller": "read",
+          "callee": "self.open",
+          "lineNumber": 79
+        },
+        {
+          "caller": "read",
+          "callee": "self.get_buffer",
+          "lineNumber": 80
+        },
+        {
+          "caller": "read",
+          "callee": "buf.rope.len_lines",
+          "lineNumber": 82
+        },
+        {
+          "caller": "read",
+          "callee": "start_line.unwrap_or",
+          "lineNumber": 83
+        },
+        {
+          "caller": "read",
+          "callee": "max_lines.unwrap_or(500).min",
+          "lineNumber": 84
+        },
+        {
+          "caller": "read",
+          "callee": "max_lines.unwrap_or",
+          "lineNumber": 84
+        },
+        {
+          "caller": "read",
+          "callee": "end_line.unwrap_or",
+          "lineNumber": 85
+        },
+        {
+          "caller": "read",
+          "callee": "end.min",
+          "lineNumber": 92
+        },
+        {
+          "caller": "read",
+          "callee": "buf.read_range",
+          "lineNumber": 94
+        },
+        {
+          "caller": "read",
+          "callee": "Ok",
+          "lineNumber": 96
+        },
+        {
+          "caller": "edit",
+          "callee": "self.get_buffer_mut",
+          "lineNumber": 115
+        },
+        {
+          "caller": "edit",
+          "callee": "buf.path.clone",
+          "lineNumber": 120
+        },
+        {
+          "caller": "edit",
+          "callee": "buf.rope.clone",
+          "lineNumber": 121
+        },
+        {
+          "caller": "edit",
+          "callee": "Vec::new",
+          "lineNumber": 126
+        },
+        {
+          "caller": "edit",
+          "callee": "Vec::new",
+          "lineNumber": 127
+        },
+        {
+          "caller": "edit",
+          "callee": "clone.apply_edits",
+          "lineNumber": 132
+        },
+        {
+          "caller": "edit",
+          "callee": "Ok",
+          "lineNumber": 133
+        },
+        {
+          "caller": "edit",
+          "callee": "clone.rope.len_lines",
+          "lineNumber": 135
+        },
+        {
+          "caller": "edit",
+          "callee": "buf.apply_edits",
+          "lineNumber": 141
+        },
+        {
+          "caller": "edit",
+          "callee": "buf.rope.len_lines",
+          "lineNumber": 142
+        },
+        {
+          "caller": "edit",
+          "callee": "buf.flush",
+          "lineNumber": 144
+        },
+        {
+          "caller": "edit",
+          "callee": "Ok",
+          "lineNumber": 146
+        },
+        {
+          "caller": "insert",
+          "callee": "self.get_buffer_mut",
+          "lineNumber": 156
+        },
+        {
+          "caller": "insert",
+          "callee": "buf.insert_at",
+          "lineNumber": 157
+        },
+        {
+          "caller": "insert",
+          "callee": "buf.rope.len_lines",
+          "lineNumber": 158
+        },
+        {
+          "caller": "insert",
+          "callee": "buf.flush",
+          "lineNumber": 160
+        },
+        {
+          "caller": "insert",
+          "callee": "Ok",
+          "lineNumber": 162
+        },
+        {
+          "caller": "delete",
+          "callee": "self.get_buffer_mut",
+          "lineNumber": 172
+        },
+        {
+          "caller": "delete",
+          "callee": "buf.delete_range",
+          "lineNumber": 173
+        },
+        {
+          "caller": "delete",
+          "callee": "buf.rope.len_lines",
+          "lineNumber": 174
+        },
+        {
+          "caller": "delete",
+          "callee": "buf.flush",
+          "lineNumber": 176
+        },
+        {
+          "caller": "delete",
+          "callee": "Ok",
+          "lineNumber": 178
+        },
+        {
+          "caller": "create",
+          "callee": "PathBuf::from",
+          "lineNumber": 193
+        },
+        {
+          "caller": "create",
+          "callee": "p.exists",
+          "lineNumber": 194
+        },
+        {
+          "caller": "create",
+          "callee": "Err",
+          "lineNumber": 195
+        },
+        {
+          "caller": "create",
+          "callee": "ForgeError::FileExists",
+          "lineNumber": 195
+        },
+        {
+          "caller": "create",
+          "callee": "p.parent",
+          "lineNumber": 201
+        },
+        {
+          "caller": "create",
+          "callee": "std::fs::create_dir_all",
+          "lineNumber": 202
+        },
+        {
+          "caller": "create",
+          "callee": "normalize_to_lf",
+          "lineNumber": 210
+        },
+        {
+          "caller": "create",
+          "callee": "crate::encoding::apply_line_ending",
+          "lineNumber": 211
+        },
+        {
+          "caller": "create",
+          "callee": "std::fs::write",
+          "lineNumber": 212
+        },
+        {
+          "caller": "create",
+          "callee": "disk_content.as_bytes",
+          "lineNumber": 212
+        },
+        {
+          "caller": "create",
+          "callee": "Buffer::open",
+          "lineNumber": 215
+        },
+        {
+          "caller": "create",
+          "callee": "buf.meta",
+          "lineNumber": 216
+        },
+        {
+          "caller": "create",
+          "callee": "Self::normalize_path",
+          "lineNumber": 217
+        },
+        {
+          "caller": "create",
+          "callee": "self.buffers.insert",
+          "lineNumber": 218
+        },
+        {
+          "caller": "create",
+          "callee": "Ok",
+          "lineNumber": 220
+        },
+        {
+          "caller": "undo",
+          "callee": "self.get_buffer_mut",
+          "lineNumber": 229
+        },
+        {
+          "caller": "undo",
+          "callee": "buf.undo",
+          "lineNumber": 230
+        },
+        {
+          "caller": "undo",
+          "callee": "buf.undo_stack.len",
+          "lineNumber": 231
+        },
+        {
+          "caller": "undo",
+          "callee": "buf.redo_stack.len",
+          "lineNumber": 232
+        },
+        {
+          "caller": "undo",
+          "callee": "buf.flush",
+          "lineNumber": 234
+        },
+        {
+          "caller": "undo",
+          "callee": "Ok",
+          "lineNumber": 236
+        },
+        {
+          "caller": "redo",
+          "callee": "self.get_buffer_mut",
+          "lineNumber": 247
+        },
+        {
+          "caller": "redo",
+          "callee": "buf.redo",
+          "lineNumber": 248
+        },
+        {
+          "caller": "redo",
+          "callee": "buf.undo_stack.len",
+          "lineNumber": 249
+        },
+        {
+          "caller": "redo",
+          "callee": "buf.redo_stack.len",
+          "lineNumber": 250
+        },
+        {
+          "caller": "redo",
+          "callee": "buf.flush",
+          "lineNumber": 252
+        },
+        {
+          "caller": "redo",
+          "callee": "Ok",
+          "lineNumber": 254
+        },
+        {
+          "caller": "close",
+          "callee": "Self::normalize_path",
+          "lineNumber": 265
+        },
+        {
+          "caller": "close",
+          "callee": "self.buffers.remove",
+          "lineNumber": 266
+        },
+        {
+          "caller": "close",
+          "callee": "buf.flush",
+          "lineNumber": 270
+        },
+        {
+          "caller": "close",
+          "callee": "Ok",
+          "lineNumber": 272
+        },
+        {
+          "caller": "close",
+          "callee": "\"closed\".to_string",
+          "lineNumber": 273
+        },
+        {
+          "caller": "close",
+          "callee": "Ok",
+          "lineNumber": 277
+        },
+        {
+          "caller": "close",
+          "callee": "\"not_open\".to_string",
+          "lineNumber": 278
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 19,
+        "functionCount": 14,
+        "classCount": 6
+      }
+    },
+    {
+      "path": "servers/forge/src/errors.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "code",
+          "startLine": 48,
+          "endLine": 64,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ForgeError",
+          "startLine": 5,
+          "endLine": 44,
+          "methods": [
+            "code"
+          ],
+          "properties": [
+            "FileNotFound",
+            "BinaryFile",
+            "PermissionDenied",
+            "LineOutOfRange",
+            "FileNotOpen",
+            "FileExists",
+            "HashMismatch",
+            "OverlappingRanges",
+            "NothingToUndo",
+            "NothingToRedo",
+            "InsufficientHistory",
+            "Io",
+            "Internal"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ForgeError",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "code",
+          "line": 48,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "servers/forge/src/main.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 358,
+      "nonEmptyLines": 321,
+      "functions": [
+        {
+          "name": "new",
+          "startLine": 31,
+          "endLine": 36,
+          "params": []
+        },
+        {
+          "name": "forge_err",
+          "startLine": 40,
+          "endLine": 46,
+          "params": [
+            "e"
+          ]
+        },
+        {
+          "name": "file_open",
+          "startLine": 57,
+          "endLine": 76,
+          "params": [
+            "Parameters(p)"
+          ]
+        },
+        {
+          "name": "file_close",
+          "startLine": 80,
+          "endLine": 93,
+          "params": [
+            "Parameters(p)"
+          ]
+        },
+        {
+          "name": "file_read",
+          "startLine": 100,
+          "endLine": 122,
+          "params": [
+            "Parameters(p)"
+          ]
+        },
+        {
+          "name": "file_info",
+          "startLine": 126,
+          "endLine": 170,
+          "params": [
+            "Parameters(p)"
+          ]
+        },
+        {
+          "name": "file_edit",
+          "startLine": 178,
+          "endLine": 204,
+          "params": [
+            "Parameters(p)"
+          ]
+        },
+        {
+          "name": "file_insert",
+          "startLine": 209,
+          "endLine": 223,
+          "params": [
+            "Parameters(p)"
+          ]
+        },
+        {
+          "name": "file_delete",
+          "startLine": 227,
+          "endLine": 243,
+          "params": [
+            "Parameters(p)"
+          ]
+        },
+        {
+          "name": "file_create",
+          "startLine": 247,
+          "endLine": 263,
+          "params": [
+            "Parameters(p)"
+          ]
+        },
+        {
+          "name": "file_undo",
+          "startLine": 268,
+          "endLine": 285,
+          "params": [
+            "Parameters(p)"
+          ]
+        },
+        {
+          "name": "file_redo",
+          "startLine": 289,
+          "endLine": 306,
+          "params": [
+            "Parameters(p)"
+          ]
+        },
+        {
+          "name": "get_info",
+          "startLine": 313,
+          "endLine": 333,
+          "params": []
+        },
+        {
+          "name": "main",
+          "startLine": 339,
+          "endLine": 358,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "ForgeServer",
+          "startLine": 25,
+          "endLine": 28,
+          "methods": [
+            "new",
+            "file_open",
+            "file_close",
+            "file_read",
+            "file_info",
+            "file_edit",
+            "file_insert",
+            "file_delete",
+            "file_create",
+            "file_undo",
+            "file_redo",
+            "get_info"
+          ],
+          "properties": [
+            "engine",
+            "tool_router"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ForgeServer",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "new",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "new",
+          "callee": "Arc::new",
+          "lineNumber": 33
+        },
+        {
+          "caller": "new",
+          "callee": "Mutex::new",
+          "lineNumber": 33
+        },
+        {
+          "caller": "new",
+          "callee": "Engine::new",
+          "lineNumber": 33
+        },
+        {
+          "caller": "new",
+          "callee": "Self::tool_router",
+          "lineNumber": 34
+        },
+        {
+          "caller": "forge_err",
+          "callee": "ErrorData::new",
+          "lineNumber": 41
+        },
+        {
+          "caller": "forge_err",
+          "callee": "e.to_string",
+          "lineNumber": 43
+        },
+        {
+          "caller": "forge_err",
+          "callee": "Some",
+          "lineNumber": 44
+        },
+        {
+          "caller": "file_open",
+          "callee": "self.engine.lock",
+          "lineNumber": 61
+        },
+        {
+          "caller": "file_open",
+          "callee": "eng.open(&p.path).map_err",
+          "lineNumber": 62
+        },
+        {
+          "caller": "file_open",
+          "callee": "eng.open",
+          "lineNumber": 62
+        },
+        {
+          "caller": "file_open",
+          "callee": "buf.meta",
+          "lineNumber": 63
+        },
+        {
+          "caller": "file_open",
+          "callee": "Ok",
+          "lineNumber": 73
+        },
+        {
+          "caller": "file_open",
+          "callee": "CallToolResult::success",
+          "lineNumber": 73
+        },
+        {
+          "caller": "file_close",
+          "callee": "self.engine.lock",
+          "lineNumber": 84
+        },
+        {
+          "caller": "file_close",
+          "callee": "eng.close(&p.path).map_err",
+          "lineNumber": 85
+        },
+        {
+          "caller": "file_close",
+          "callee": "eng.close",
+          "lineNumber": 85
+        },
+        {
+          "caller": "file_close",
+          "callee": "Ok",
+          "lineNumber": 86
+        },
+        {
+          "caller": "file_close",
+          "callee": "CallToolResult::success",
+          "lineNumber": 86
+        },
+        {
+          "caller": "file_read",
+          "callee": "self.engine.lock",
+          "lineNumber": 104
+        },
+        {
+          "caller": "file_read",
+          "callee": "eng\n            .read(&p.path, p.start_line, p.end_line, p.max_lines).map_err",
+          "lineNumber": 105
+        },
+        {
+          "caller": "file_read",
+          "callee": "eng.read",
+          "lineNumber": 105
+        },
+        {
+          "caller": "file_read",
+          "callee": "Ok",
+          "lineNumber": 119
+        },
+        {
+          "caller": "file_read",
+          "callee": "CallToolResult::success",
+          "lineNumber": 119
+        },
+        {
+          "caller": "file_info",
+          "callee": "self.engine.lock",
+          "lineNumber": 130
+        },
+        {
+          "caller": "file_info",
+          "callee": "std::path::Path::new",
+          "lineNumber": 133
+        },
+        {
+          "caller": "file_info",
+          "callee": "path.exists",
+          "lineNumber": 134
+        },
+        {
+          "caller": "file_info",
+          "callee": "Ok",
+          "lineNumber": 146
+        },
+        {
+          "caller": "file_info",
+          "callee": "CallToolResult::success",
+          "lineNumber": 146
+        },
+        {
+          "caller": "file_info",
+          "callee": "eng.open(&p.path).map_err",
+          "lineNumber": 152
+        },
+        {
+          "caller": "file_info",
+          "callee": "eng.open",
+          "lineNumber": 152
+        },
+        {
+          "caller": "file_info",
+          "callee": "eng.get_buffer(&p.path).map_err",
+          "lineNumber": 153
+        },
+        {
+          "caller": "file_info",
+          "callee": "eng.get_buffer",
+          "lineNumber": 153
+        },
+        {
+          "caller": "file_info",
+          "callee": "buf.meta",
+          "lineNumber": 154
+        },
+        {
+          "caller": "file_info",
+          "callee": "Ok",
+          "lineNumber": 167
+        },
+        {
+          "caller": "file_info",
+          "callee": "CallToolResult::success",
+          "lineNumber": 167
+        },
+        {
+          "caller": "file_edit",
+          "callee": "self.engine.lock",
+          "lineNumber": 182
+        },
+        {
+          "caller": "file_edit",
+          "callee": "p\n            .edits\n            .into_iter()\n            .map(|e| (e.start_line, e.end_line, e.content)).collect",
+          "lineNumber": 183
+        },
+        {
+          "caller": "file_edit",
+          "callee": "p\n            .edits\n            .into_iter().map",
+          "lineNumber": 183
+        },
+        {
+          "caller": "file_edit",
+          "callee": "p\n            .edits.into_iter",
+          "lineNumber": 183
+        },
+        {
+          "caller": "file_edit",
+          "callee": "p.dry_run.unwrap_or",
+          "lineNumber": 188
+        },
+        {
+          "caller": "file_edit",
+          "callee": "p.expected_hash.as_deref",
+          "lineNumber": 189
+        },
+        {
+          "caller": "file_edit",
+          "callee": "eng\n            .edit(&p.path, &mut edits, expected_hash, dry_run).map_err",
+          "lineNumber": 191
+        },
+        {
+          "caller": "file_edit",
+          "callee": "eng.edit",
+          "lineNumber": 191
+        },
+        {
+          "caller": "file_edit",
+          "callee": "Ok",
+          "lineNumber": 201
+        },
+        {
+          "caller": "file_edit",
+          "callee": "CallToolResult::success",
+          "lineNumber": 201
+        },
+        {
+          "caller": "file_insert",
+          "callee": "self.engine.lock",
+          "lineNumber": 213
+        },
+        {
+          "caller": "file_insert",
+          "callee": "eng.insert(&p.path, p.line, &p.content).map_err",
+          "lineNumber": 214
+        },
+        {
+          "caller": "file_insert",
+          "callee": "eng.insert",
+          "lineNumber": 214
+        },
+        {
+          "caller": "file_insert",
+          "callee": "Ok",
+          "lineNumber": 220
+        },
+        {
+          "caller": "file_insert",
+          "callee": "CallToolResult::success",
+          "lineNumber": 220
+        },
+        {
+          "caller": "file_delete",
+          "callee": "self.engine.lock",
+          "lineNumber": 231
+        },
+        {
+          "caller": "file_delete",
+          "callee": "eng\n            .delete(&p.path, p.start_line, p.end_line).map_err",
+          "lineNumber": 232
+        },
+        {
+          "caller": "file_delete",
+          "callee": "eng.delete",
+          "lineNumber": 232
+        },
+        {
+          "caller": "file_delete",
+          "callee": "Ok",
+          "lineNumber": 240
+        },
+        {
+          "caller": "file_delete",
+          "callee": "CallToolResult::success",
+          "lineNumber": 240
+        },
+        {
+          "caller": "file_create",
+          "callee": "self.engine.lock",
+          "lineNumber": 251
+        },
+        {
+          "caller": "file_create",
+          "callee": "eng\n            .create(&p.path, &p.content, p.line_ending.as_deref()).map_err",
+          "lineNumber": 252
+        },
+        {
+          "caller": "file_create",
+          "callee": "eng.create",
+          "lineNumber": 252
+        },
+        {
+          "caller": "file_create",
+          "callee": "p.line_ending.as_deref",
+          "lineNumber": 253
+        },
+        {
+          "caller": "file_create",
+          "callee": "Ok",
+          "lineNumber": 260
+        },
+        {
+          "caller": "file_create",
+          "callee": "CallToolResult::success",
+          "lineNumber": 260
+        },
+        {
+          "caller": "file_undo",
+          "callee": "self.engine.lock",
+          "lineNumber": 272
+        },
+        {
+          "caller": "file_undo",
+          "callee": "p.steps.unwrap_or",
+          "lineNumber": 273
+        },
+        {
+          "caller": "file_undo",
+          "callee": "eng.undo(&p.path, steps).map_err",
+          "lineNumber": 274
+        },
+        {
+          "caller": "file_undo",
+          "callee": "eng.undo",
+          "lineNumber": 274
+        },
+        {
+          "caller": "file_undo",
+          "callee": "Ok",
+          "lineNumber": 282
+        },
+        {
+          "caller": "file_undo",
+          "callee": "CallToolResult::success",
+          "lineNumber": 282
+        },
+        {
+          "caller": "file_redo",
+          "callee": "self.engine.lock",
+          "lineNumber": 293
+        },
+        {
+          "caller": "file_redo",
+          "callee": "p.steps.unwrap_or",
+          "lineNumber": 294
+        },
+        {
+          "caller": "file_redo",
+          "callee": "eng.redo(&p.path, steps).map_err",
+          "lineNumber": 295
+        },
+        {
+          "caller": "file_redo",
+          "callee": "eng.redo",
+          "lineNumber": 295
+        },
+        {
+          "caller": "file_redo",
+          "callee": "Ok",
+          "lineNumber": 303
+        },
+        {
+          "caller": "file_redo",
+          "callee": "CallToolResult::success",
+          "lineNumber": 303
+        },
+        {
+          "caller": "get_info",
+          "callee": "ServerInfo::new(\n            ServerCapabilities::builder().enable_tools().build(),\n        ).with_instructions",
+          "lineNumber": 330
+        },
+        {
+          "caller": "get_info",
+          "callee": "ServerInfo::new",
+          "lineNumber": 330
+        },
+        {
+          "caller": "get_info",
+          "callee": "ServerCapabilities::builder().enable_tools().build",
+          "lineNumber": 331
+        },
+        {
+          "caller": "get_info",
+          "callee": "ServerCapabilities::builder().enable_tools",
+          "lineNumber": 331
+        },
+        {
+          "caller": "get_info",
+          "callee": "ServerCapabilities::builder",
+          "lineNumber": 331
+        },
+        {
+          "caller": "main",
+          "callee": "tracing_subscriber::fmt()\n        .with_writer(std::io::stderr)\n        .with_ansi(false)\n        .with_env_filter(\n            tracing_subscriber::EnvFilter::from_default_env()\n                .add_directive(\"forge=info\".parse().unwrap()),\n        ).init",
+          "lineNumber": 341
+        },
+        {
+          "caller": "main",
+          "callee": "tracing_subscriber::fmt()\n        .with_writer(std::io::stderr)\n        .with_ansi(false).with_env_filter",
+          "lineNumber": 341
+        },
+        {
+          "caller": "main",
+          "callee": "tracing_subscriber::fmt()\n        .with_writer(std::io::stderr).with_ansi",
+          "lineNumber": 341
+        },
+        {
+          "caller": "main",
+          "callee": "tracing_subscriber::fmt().with_writer",
+          "lineNumber": 341
+        },
+        {
+          "caller": "main",
+          "callee": "tracing_subscriber::fmt",
+          "lineNumber": 341
+        },
+        {
+          "caller": "main",
+          "callee": "tracing_subscriber::EnvFilter::from_default_env().add_directive",
+          "lineNumber": 345
+        },
+        {
+          "caller": "main",
+          "callee": "tracing_subscriber::EnvFilter::from_default_env",
+          "lineNumber": 345
+        },
+        {
+          "caller": "main",
+          "callee": "\"forge=info\".parse().unwrap",
+          "lineNumber": 346
+        },
+        {
+          "caller": "main",
+          "callee": "\"forge=info\".parse",
+          "lineNumber": 346
+        },
+        {
+          "caller": "main",
+          "callee": "ForgeServer::new",
+          "lineNumber": 352
+        },
+        {
+          "caller": "main",
+          "callee": "server.serve",
+          "lineNumber": 353
+        },
+        {
+          "caller": "main",
+          "callee": "rmcp::transport::stdio",
+          "lineNumber": 353
+        },
+        {
+          "caller": "main",
+          "callee": "service.waiting",
+          "lineNumber": 354
+        },
+        {
+          "caller": "main",
+          "callee": "Ok",
+          "lineNumber": 357
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 2,
+        "functionCount": 14,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "servers/forge/src/tools/mod.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "servers/forge/src/tools/read.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 26,
+      "classes": [
+        {
+          "name": "FileOpenParams",
+          "startLine": 6,
+          "endLine": 9,
+          "methods": [],
+          "properties": [
+            "path"
+          ]
+        },
+        {
+          "name": "FileReadParams",
+          "startLine": 13,
+          "endLine": 22,
+          "methods": [],
+          "properties": [
+            "path",
+            "start_line",
+            "end_line",
+            "max_lines"
+          ]
+        },
+        {
+          "name": "FileInfoParams",
+          "startLine": 26,
+          "endLine": 29,
+          "methods": [],
+          "properties": [
+            "path"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FileOpenParams",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "FileReadParams",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "FileInfoParams",
+          "line": 26,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "servers/forge/src/tools/write.rs",
+      "language": "rust",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 76,
+      "classes": [
+        {
+          "name": "EditOp",
+          "startLine": 6,
+          "endLine": 13,
+          "methods": [],
+          "properties": [
+            "start_line",
+            "end_line",
+            "content"
+          ]
+        },
+        {
+          "name": "FileEditParams",
+          "startLine": 17,
+          "endLine": 26,
+          "methods": [],
+          "properties": [
+            "path",
+            "edits",
+            "expected_hash",
+            "dry_run"
+          ]
+        },
+        {
+          "name": "FileInsertParams",
+          "startLine": 30,
+          "endLine": 37,
+          "methods": [],
+          "properties": [
+            "path",
+            "line",
+            "content"
+          ]
+        },
+        {
+          "name": "FileDeleteParams",
+          "startLine": 41,
+          "endLine": 48,
+          "methods": [],
+          "properties": [
+            "path",
+            "start_line",
+            "end_line"
+          ]
+        },
+        {
+          "name": "FileCreateParams",
+          "startLine": 52,
+          "endLine": 59,
+          "methods": [],
+          "properties": [
+            "path",
+            "content",
+            "line_ending"
+          ]
+        },
+        {
+          "name": "FileUndoParams",
+          "startLine": 63,
+          "endLine": 68,
+          "methods": [],
+          "properties": [
+            "path",
+            "steps"
+          ]
+        },
+        {
+          "name": "FileRedoParams",
+          "startLine": 72,
+          "endLine": 77,
+          "methods": [],
+          "properties": [
+            "path",
+            "steps"
+          ]
+        },
+        {
+          "name": "FileCloseParams",
+          "startLine": 81,
+          "endLine": 84,
+          "methods": [],
+          "properties": [
+            "path"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "EditOp",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "FileEditParams",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "FileInsertParams",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "FileDeleteParams",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "FileCreateParams",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "FileUndoParams",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "FileRedoParams",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "FileCloseParams",
+          "line": 81,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 0,
+        "classCount": 8
+      }
+    }
+  ]
+}

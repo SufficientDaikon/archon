@@ -1,0 +1,31 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [
+    {"path": "skills/systematic-debugging/SKILL.md", "language": "markdown", "sizeLines": 296, "fileCategory": "docs"},
+    {"path": "skills/systematic-debugging/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/template-variables/manifest.yaml", "language": "yaml", "sizeLines": 30, "fileCategory": "config"},
+    {"path": "skills/template-variables/resources/variable-formats.md", "language": "markdown", "sizeLines": 114, "fileCategory": "docs"},
+    {"path": "skills/template-variables/SKILL.md", "language": "markdown", "sizeLines": 106, "fileCategory": "docs"},
+    {"path": "skills/test-driven-development/manifest.yaml", "language": "yaml", "sizeLines": 6, "fileCategory": "config"},
+    {"path": "skills/test-driven-development/SKILL.md", "language": "markdown", "sizeLines": 87, "fileCategory": "docs"},
+    {"path": "skills/ui-ux-designer/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ui-ux-designer/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/ui-ux-designer/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ui-ux-designer/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ui-ux-designer/SKILL.md", "language": "markdown", "sizeLines": 187, "fileCategory": "docs"},
+    {"path": "skills/ui-ux-designer/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ui-visual-design/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ui-visual-design/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/ui-visual-design/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ui-visual-design/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ui-visual-design/SKILL.md", "language": "markdown", "sizeLines": 861, "fileCategory": "docs"},
+    {"path": "skills/ui-visual-design/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/using-git-worktrees/manifest.yaml", "language": "yaml", "sizeLines": 6, "fileCategory": "config"},
+    {"path": "skills/using-git-worktrees/SKILL.md", "language": "markdown", "sizeLines": 100, "fileCategory": "docs"},
+    {"path": "skills/using-superpowers/manifest.yaml", "language": "yaml", "sizeLines": 6, "fileCategory": "config"},
+    {"path": "skills/using-superpowers/SKILL.md", "language": "markdown", "sizeLines": 63, "fileCategory": "docs"},
+    {"path": "skills/ux-interaction-design/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/ux-interaction-design/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"}
+  ],
+  "batchImportData": {}
+}

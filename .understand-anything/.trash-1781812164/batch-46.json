@@ -1,0 +1,304 @@
+{
+  "batchIndex": 46,
+  "nodes": [
+    {
+      "id": "file:skills/backend-development/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (backend-development overrides)",
+      "filePath": "skills/backend-development/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the backend-development skill.",
+      "tags": ["backend-development", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/backend-development/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (backend-development resources)",
+      "filePath": "skills/backend-development/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the backend-development skill.",
+      "tags": ["backend-development", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/backend-development/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (backend-development)",
+      "filePath": "skills/backend-development/SKILL.md",
+      "summary": "Skill documentation for backend-development, covering patterns for server-side API design, database integration, and backend service architecture.",
+      "tags": ["backend-development", "documentation", "api-design", "server-side", "architecture"],
+      "complexity": 4
+    },
+    {
+      "id": "file:skills/backend-development/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (backend-development test cases)",
+      "filePath": "skills/backend-development/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the backend-development skill.",
+      "tags": ["backend-development", "placeholder", "git", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/brainstorming/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (brainstorming)",
+      "filePath": "skills/brainstorming/manifest.yaml",
+      "summary": "Skill manifest for brainstorming, a minimal manifest defining triggers for ideation and creative problem-solving tasks.",
+      "tags": ["brainstorming", "skill", "manifest", "ideation"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/brainstorming/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (brainstorming)",
+      "filePath": "skills/brainstorming/SKILL.md",
+      "summary": "Skill documentation for brainstorming, providing structured ideation frameworks and divergent thinking techniques.",
+      "tags": ["brainstorming", "documentation", "ideation", "creativity", "problem-solving"],
+      "complexity": 2
+    },
+    {
+      "id": "file:skills/capacitor-best-practices/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (capacitor-best-practices examples)",
+      "filePath": "skills/capacitor-best-practices/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory for the capacitor-best-practices skill.",
+      "tags": ["capacitor", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/capacitor-best-practices/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (capacitor-best-practices)",
+      "filePath": "skills/capacitor-best-practices/manifest.yaml",
+      "summary": "Skill manifest for capacitor-best-practices, defining triggers for Capacitor mobile framework development tasks.",
+      "tags": ["capacitor-best-practices", "skill", "manifest", "capacitor", "mobile"],
+      "complexity": 2
+    },
+    {
+      "id": "file:skills/capacitor-best-practices/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (capacitor-best-practices overrides)",
+      "filePath": "skills/capacitor-best-practices/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the capacitor-best-practices skill.",
+      "tags": ["capacitor", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/capacitor-best-practices/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (capacitor-best-practices resources)",
+      "filePath": "skills/capacitor-best-practices/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the capacitor-best-practices skill.",
+      "tags": ["capacitor", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/capacitor-best-practices/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (capacitor-best-practices)",
+      "filePath": "skills/capacitor-best-practices/SKILL.md",
+      "summary": "Comprehensive skill documentation for capacitor-best-practices, covering Capacitor plugin integration, native bridge usage, and cross-platform deployment.",
+      "tags": ["capacitor-best-practices", "documentation", "capacitor", "mobile", "native-bridge"],
+      "complexity": 5
+    },
+    {
+      "id": "file:skills/capacitor-best-practices/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (capacitor-best-practices test cases)",
+      "filePath": "skills/capacitor-best-practices/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the capacitor-best-practices skill.",
+      "tags": ["capacitor", "placeholder", "git", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/claude-plugin-archetype/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (claude-plugin-archetype)",
+      "filePath": "skills/claude-plugin-archetype/manifest.yaml",
+      "summary": "Skill manifest for claude-plugin-archetype, defining triggers for creating Claude Code plugin and skill scaffolding.",
+      "tags": ["claude-plugin-archetype", "skill", "manifest", "plugin", "scaffolding"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/claude-plugin-archetype/resources/plugin-scaffold.md",
+      "type": "document:",
+      "name": "plugin-scaffold.md",
+      "filePath": "skills/claude-plugin-archetype/resources/plugin-scaffold.md",
+      "summary": "Reference scaffold document for creating Claude Code plugins, providing template structures and required file layouts.",
+      "tags": ["claude-plugin-archetype", "plugin-scaffold", "template", "claude-code", "reference"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/claude-plugin-archetype/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (claude-plugin-archetype)",
+      "filePath": "skills/claude-plugin-archetype/SKILL.md",
+      "summary": "Skill documentation for claude-plugin-archetype, guiding creation of Claude Code plugins following the Archon skill structure.",
+      "tags": ["claude-plugin-archetype", "documentation", "plugin", "claude-code", "archon"],
+      "complexity": 3
+    },
+    {
+      "id": "config:skills/codebase-to-course/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (codebase-to-course)",
+      "filePath": "skills/codebase-to-course/manifest.yaml",
+      "summary": "Skill manifest for codebase-to-course, defining triggers for converting codebases into structured educational course content.",
+      "tags": ["codebase-to-course", "skill", "manifest", "education", "course-creation"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/codebase-to-course/references/design-system.md",
+      "type": "document:",
+      "name": "design-system.md (codebase-to-course)",
+      "filePath": "skills/codebase-to-course/references/design-system.md",
+      "summary": "Design system reference for course content created by the codebase-to-course skill, defining visual and layout standards for generated courses.",
+      "tags": ["codebase-to-course", "design-system", "reference", "course-design"],
+      "complexity": 4
+    },
+    {
+      "id": "document:skills/codebase-to-course/references/interactive-elements.md",
+      "type": "document:",
+      "name": "interactive-elements.md",
+      "filePath": "skills/codebase-to-course/references/interactive-elements.md",
+      "summary": "Large reference document defining interactive elements available for course content generation, including quizzes, code exercises, and visual aids.",
+      "tags": ["codebase-to-course", "interactive-elements", "reference", "course-content"],
+      "complexity": 5
+    },
+    {
+      "id": "document:skills/codebase-to-course/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (codebase-to-course)",
+      "filePath": "skills/codebase-to-course/SKILL.md",
+      "summary": "Skill documentation for codebase-to-course, providing a structured workflow for analyzing codebases and generating educational course materials.",
+      "tags": ["codebase-to-course", "documentation", "education", "course-creation", "curriculum"],
+      "complexity": 4
+    },
+    {
+      "id": "config:skills/complexity-router/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (complexity-router)",
+      "filePath": "skills/complexity-router/manifest.yaml",
+      "summary": "Skill manifest for complexity-router, defining triggers for task complexity assessment and routing to appropriate skill tiers.",
+      "tags": ["complexity-router", "skill", "manifest", "routing", "task-complexity"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/complexity-router/resources/complexity-signals.md",
+      "type": "document:",
+      "name": "complexity-signals.md",
+      "filePath": "skills/complexity-router/resources/complexity-signals.md",
+      "summary": "Reference document defining the signals and heuristics used by the complexity-router skill to classify task complexity tiers.",
+      "tags": ["complexity-router", "complexity-signals", "reference", "classification"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/complexity-router/resources/routing-table.md",
+      "type": "document:",
+      "name": "routing-table.md",
+      "filePath": "skills/complexity-router/resources/routing-table.md",
+      "summary": "Reference document providing the routing decision table mapping task signals to appropriate skill tiers and agent types.",
+      "tags": ["complexity-router", "routing-table", "reference", "decision-table"],
+      "complexity": 4
+    },
+    {
+      "id": "document:skills/complexity-router/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (complexity-router)",
+      "filePath": "skills/complexity-router/SKILL.md",
+      "summary": "Skill documentation for complexity-router, describing the classification algorithm and routing logic for matching tasks to appropriate processing tiers.",
+      "tags": ["complexity-router", "documentation", "routing", "classification", "tiers"],
+      "complexity": 4
+    },
+    {
+      "id": "config:skills/content-deduplication/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (content-deduplication)",
+      "filePath": "skills/content-deduplication/manifest.yaml",
+      "summary": "Skill manifest for content-deduplication, defining triggers for detecting and resolving duplicate content across documents and codebases.",
+      "tags": ["content-deduplication", "skill", "manifest", "deduplication"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/content-deduplication/resources/similarity-algorithms.md",
+      "type": "document:",
+      "name": "similarity-algorithms.md",
+      "filePath": "skills/content-deduplication/resources/similarity-algorithms.md",
+      "summary": "Reference document describing algorithms used for content similarity detection in the content-deduplication skill.",
+      "tags": ["content-deduplication", "similarity-algorithms", "reference", "algorithms"],
+      "complexity": 3
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:skills/backend-development/SKILL.md",
+      "target": "config:skills/backend-development/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/brainstorming/SKILL.md",
+      "target": "config:skills/brainstorming/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/capacitor-best-practices/SKILL.md",
+      "target": "config:skills/capacitor-best-practices/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/claude-plugin-archetype/SKILL.md",
+      "target": "config:skills/claude-plugin-archetype/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/claude-plugin-archetype/resources/plugin-scaffold.md",
+      "target": "config:skills/claude-plugin-archetype/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/codebase-to-course/SKILL.md",
+      "target": "config:skills/codebase-to-course/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/codebase-to-course/references/design-system.md",
+      "target": "config:skills/codebase-to-course/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/codebase-to-course/references/interactive-elements.md",
+      "target": "config:skills/codebase-to-course/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/complexity-router/SKILL.md",
+      "target": "config:skills/complexity-router/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/complexity-router/resources/complexity-signals.md",
+      "target": "config:skills/complexity-router/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/complexity-router/resources/routing-table.md",
+      "target": "config:skills/complexity-router/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/content-deduplication/resources/similarity-algorithms.md",
+      "target": "config:skills/content-deduplication/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    }
+  ]
+}

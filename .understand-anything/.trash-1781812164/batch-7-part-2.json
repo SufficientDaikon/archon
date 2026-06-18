@@ -1,0 +1,385 @@
+{
+  "batchIndex": 7,
+  "part": 2,
+  "totalParts": 2,
+  "nodes": [
+    {
+      "id": "function:servers/forge/src/main.rs:file_undo",
+      "type": "function",
+      "path": "servers/forge/src/main.rs",
+      "label": "file_undo",
+      "language": "rust",
+      "metadata": {
+        "startLine": 268,
+        "endLine": 285,
+        "lineCount": 18,
+        "params": [
+          "Parameters(p)"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "function:servers/forge/src/main.rs:file_redo",
+      "type": "function",
+      "path": "servers/forge/src/main.rs",
+      "label": "file_redo",
+      "language": "rust",
+      "metadata": {
+        "startLine": 289,
+        "endLine": 306,
+        "lineCount": 18,
+        "params": [
+          "Parameters(p)"
+        ],
+        "exported": false
+      }
+    },
+    {
+      "id": "function:servers/forge/src/main.rs:get_info",
+      "type": "function",
+      "path": "servers/forge/src/main.rs",
+      "label": "get_info",
+      "language": "rust",
+      "metadata": {
+        "startLine": 313,
+        "endLine": 333,
+        "lineCount": 21,
+        "params": [],
+        "exported": false
+      }
+    },
+    {
+      "id": "function:servers/forge/src/main.rs:main",
+      "type": "function",
+      "path": "servers/forge/src/main.rs",
+      "label": "main",
+      "language": "rust",
+      "metadata": {
+        "startLine": 339,
+        "endLine": 358,
+        "lineCount": 20,
+        "params": [],
+        "exported": false
+      }
+    },
+    {
+      "id": "class:servers/forge/src/main.rs:ForgeServer",
+      "type": "class",
+      "path": "servers/forge/src/main.rs",
+      "label": "ForgeServer",
+      "language": "rust",
+      "metadata": {
+        "startLine": 25,
+        "endLine": 28,
+        "lineCount": 4,
+        "methods": [
+          "new",
+          "file_open",
+          "file_close",
+          "file_read",
+          "file_info",
+          "file_edit",
+          "file_insert",
+          "file_delete",
+          "file_create",
+          "file_undo",
+          "file_redo",
+          "get_info"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:servers/forge/src/tools/mod.rs",
+      "type": "file",
+      "path": "servers/forge/src/tools/mod.rs",
+      "label": "mod.rs",
+      "language": "rust",
+      "sizeLines": 2,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 2,
+        "nonEmptyLines": 2,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "file:servers/forge/src/tools/read.rs",
+      "type": "file",
+      "path": "servers/forge/src/tools/read.rs",
+      "label": "read.rs",
+      "language": "rust",
+      "sizeLines": 29,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 29,
+        "nonEmptyLines": 26,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 3,
+          "functionCount": 0,
+          "classCount": 3
+        }
+      }
+    },
+    {
+      "id": "class:servers/forge/src/tools/read.rs:FileOpenParams",
+      "type": "class",
+      "path": "servers/forge/src/tools/read.rs",
+      "label": "FileOpenParams",
+      "language": "rust",
+      "metadata": {
+        "startLine": 6,
+        "endLine": 9,
+        "lineCount": 4,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/tools/read.rs:FileReadParams",
+      "type": "class",
+      "path": "servers/forge/src/tools/read.rs",
+      "label": "FileReadParams",
+      "language": "rust",
+      "metadata": {
+        "startLine": 13,
+        "endLine": 22,
+        "lineCount": 10,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/tools/read.rs:FileInfoParams",
+      "type": "class",
+      "path": "servers/forge/src/tools/read.rs",
+      "label": "FileInfoParams",
+      "language": "rust",
+      "metadata": {
+        "startLine": 26,
+        "endLine": 29,
+        "lineCount": 4,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:servers/forge/src/tools/write.rs",
+      "type": "file",
+      "path": "servers/forge/src/tools/write.rs",
+      "label": "write.rs",
+      "language": "rust",
+      "sizeLines": 84,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 84,
+        "nonEmptyLines": 76,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 8,
+          "functionCount": 0,
+          "classCount": 8
+        }
+      }
+    },
+    {
+      "id": "class:servers/forge/src/tools/write.rs:EditOp",
+      "type": "class",
+      "path": "servers/forge/src/tools/write.rs",
+      "label": "EditOp",
+      "language": "rust",
+      "metadata": {
+        "startLine": 6,
+        "endLine": 13,
+        "lineCount": 8,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/tools/write.rs:FileEditParams",
+      "type": "class",
+      "path": "servers/forge/src/tools/write.rs",
+      "label": "FileEditParams",
+      "language": "rust",
+      "metadata": {
+        "startLine": 17,
+        "endLine": 26,
+        "lineCount": 10,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/tools/write.rs:FileInsertParams",
+      "type": "class",
+      "path": "servers/forge/src/tools/write.rs",
+      "label": "FileInsertParams",
+      "language": "rust",
+      "metadata": {
+        "startLine": 30,
+        "endLine": 37,
+        "lineCount": 8,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/tools/write.rs:FileDeleteParams",
+      "type": "class",
+      "path": "servers/forge/src/tools/write.rs",
+      "label": "FileDeleteParams",
+      "language": "rust",
+      "metadata": {
+        "startLine": 41,
+        "endLine": 48,
+        "lineCount": 8,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/tools/write.rs:FileCreateParams",
+      "type": "class",
+      "path": "servers/forge/src/tools/write.rs",
+      "label": "FileCreateParams",
+      "language": "rust",
+      "metadata": {
+        "startLine": 52,
+        "endLine": 59,
+        "lineCount": 8,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/tools/write.rs:FileUndoParams",
+      "type": "class",
+      "path": "servers/forge/src/tools/write.rs",
+      "label": "FileUndoParams",
+      "language": "rust",
+      "metadata": {
+        "startLine": 63,
+        "endLine": 68,
+        "lineCount": 6,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/tools/write.rs:FileRedoParams",
+      "type": "class",
+      "path": "servers/forge/src/tools/write.rs",
+      "label": "FileRedoParams",
+      "language": "rust",
+      "metadata": {
+        "startLine": 72,
+        "endLine": 77,
+        "lineCount": 6,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:servers/forge/src/tools/write.rs:FileCloseParams",
+      "type": "class",
+      "path": "servers/forge/src/tools/write.rs",
+      "label": "FileCloseParams",
+      "language": "rust",
+      "metadata": {
+        "startLine": 81,
+        "endLine": 84,
+        "lineCount": 4,
+        "methods": [],
+        "exported": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "type": "imports",
+      "source": "file:servers/forge/src/tools/mod.rs",
+      "target": "file:servers/forge/src/tools/read.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:servers/forge/src/tools/mod.rs",
+      "target": "file:servers/forge/src/tools/write.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/tools/read.rs",
+      "target": "class:servers/forge/src/tools/read.rs:FileOpenParams",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/tools/read.rs",
+      "target": "class:servers/forge/src/tools/read.rs:FileReadParams",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/tools/read.rs",
+      "target": "class:servers/forge/src/tools/read.rs:FileInfoParams",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/tools/write.rs",
+      "target": "class:servers/forge/src/tools/write.rs:EditOp",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/tools/write.rs",
+      "target": "class:servers/forge/src/tools/write.rs:FileEditParams",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/tools/write.rs",
+      "target": "class:servers/forge/src/tools/write.rs:FileInsertParams",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/tools/write.rs",
+      "target": "class:servers/forge/src/tools/write.rs:FileDeleteParams",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/tools/write.rs",
+      "target": "class:servers/forge/src/tools/write.rs:FileCreateParams",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/tools/write.rs",
+      "target": "class:servers/forge/src/tools/write.rs:FileUndoParams",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/tools/write.rs",
+      "target": "class:servers/forge/src/tools/write.rs:FileRedoParams",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:servers/forge/src/tools/write.rs",
+      "target": "class:servers/forge/src/tools/write.rs:FileCloseParams",
+      "weight": 1
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "batchIndex": 45,
+  "nodes": [
+    {
+      "id": "document:skills/_template/resources/tool-pattern.md",
+      "type": "document:",
+      "name": "tool-pattern.md",
+      "filePath": "skills/_template/resources/tool-pattern.md",
+      "summary": "Reference documentation defining the tool pattern for Archon skills, describing how skills should interface with Claude Code tools and MCP protocol.",
+      "tags": ["skill-template", "tool-pattern", "documentation", "mcp", "reference"],
+      "complexity": 4
+    },
+    {
+      "id": "document:skills/_template/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (template)",
+      "filePath": "skills/_template/SKILL.md",
+      "summary": "Template SKILL.md file providing the required structure and placeholder content for new Archon skill documentation.",
+      "tags": ["skill-template", "documentation", "template", "markdown"],
+      "complexity": 2
+    },
+    {
+      "id": "file:skills/_template/templates/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (template templates)",
+      "filePath": "skills/_template/templates/.gitkeep",
+      "summary": "Placeholder file to maintain the templates directory in git for skill templates.",
+      "tags": ["template", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/_template/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (template test cases)",
+      "filePath": "skills/_template/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory in git for skill templates.",
+      "tags": ["template", "placeholder", "git", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/adaptive-teacher/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (adaptive-teacher)",
+      "filePath": "skills/adaptive-teacher/manifest.yaml",
+      "summary": "Skill manifest for the adaptive-teacher skill, defining its triggers for educational tasks and adaptive teaching activation conditions.",
+      "tags": ["adaptive-teacher", "skill", "manifest", "education", "teaching"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/adaptive-teacher/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (adaptive-teacher)",
+      "filePath": "skills/adaptive-teacher/SKILL.md",
+      "summary": "Skill documentation for adaptive-teacher, providing protocols for adjusting explanation depth and teaching style based on learner responses.",
+      "tags": ["adaptive-teacher", "documentation", "education", "adaptive-teaching", "pedagogy"],
+      "complexity": 4
+    },
+    {
+      "id": "config:skills/add-adapter/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (add-adapter)",
+      "filePath": "skills/add-adapter/manifest.yaml",
+      "summary": "Skill manifest for the add-adapter skill, defining triggers for creating adapter pattern implementations.",
+      "tags": ["add-adapter", "skill", "manifest", "adapter-pattern"],
+      "complexity": 2
+    },
+    {
+      "id": "document:skills/add-adapter/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (add-adapter)",
+      "filePath": "skills/add-adapter/SKILL.md",
+      "summary": "Skill documentation for add-adapter, guiding creation of adapter classes to bridge incompatible interfaces.",
+      "tags": ["add-adapter", "documentation", "adapter-pattern", "design-patterns"],
+      "complexity": 3
+    },
+    {
+      "id": "config:skills/add-agent/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (add-agent)",
+      "filePath": "skills/add-agent/manifest.yaml",
+      "summary": "Skill manifest for the add-agent skill, defining triggers for adding new agents to the Archon framework.",
+      "tags": ["add-agent", "skill", "manifest", "agent-authoring", "archon"],
+      "complexity": 2
+    },
+    {
+      "id": "document:skills/add-agent/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (add-agent)",
+      "filePath": "skills/add-agent/SKILL.md",
+      "summary": "Skill documentation for add-agent, providing a step-by-step workflow for creating new agent manifests and AGENT.md files in Archon.",
+      "tags": ["add-agent", "documentation", "agent-authoring", "archon", "meta"],
+      "complexity": 4
+    },
+    {
+      "id": "config:skills/add-bundle/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (add-bundle)",
+      "filePath": "skills/add-bundle/manifest.yaml",
+      "summary": "Skill manifest for the add-bundle skill, defining triggers for creating new skill bundles in the Archon framework.",
+      "tags": ["add-bundle", "skill", "manifest", "bundle-authoring", "archon"],
+      "complexity": 2
+    },
+    {
+      "id": "document:skills/add-bundle/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (add-bundle)",
+      "filePath": "skills/add-bundle/SKILL.md",
+      "summary": "Skill documentation for add-bundle, guiding creation of bundle.yaml and meta-skill files to group related Archon skills.",
+      "tags": ["add-bundle", "documentation", "bundle-authoring", "archon", "meta"],
+      "complexity": 4
+    },
+    {
+      "id": "config:skills/add-skill/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (add-skill)",
+      "filePath": "skills/add-skill/manifest.yaml",
+      "summary": "Skill manifest for the add-skill skill, defining triggers for creating new skills in the Archon framework.",
+      "tags": ["add-skill", "skill", "manifest", "skill-authoring", "archon"],
+      "complexity": 2
+    },
+    {
+      "id": "document:skills/add-skill/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (add-skill)",
+      "filePath": "skills/add-skill/SKILL.md",
+      "summary": "Skill documentation for add-skill, providing a complete workflow for creating new manifest.yaml and SKILL.md files following Archon conventions.",
+      "tags": ["add-skill", "documentation", "skill-authoring", "archon", "meta"],
+      "complexity": 4
+    },
+    {
+      "id": "config:skills/archon-adversarial-review/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (archon-adversarial-review)",
+      "filePath": "skills/archon-adversarial-review/manifest.yaml",
+      "summary": "Skill manifest for archon-adversarial-review, defining triggers for adversarial testing of Archon skill definitions and hook logic.",
+      "tags": ["adversarial-review", "skill", "manifest", "security", "testing"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/archon-adversarial-review/resources/probe-vectors-quick-ref.md",
+      "type": "document:",
+      "name": "probe-vectors-quick-ref.md",
+      "filePath": "skills/archon-adversarial-review/resources/probe-vectors-quick-ref.md",
+      "summary": "Quick reference card for adversarial probe vectors used in testing Archon skill robustness and security boundaries.",
+      "tags": ["adversarial-review", "probe-vectors", "security", "testing", "reference"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/archon-adversarial-review/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (archon-adversarial-review)",
+      "filePath": "skills/archon-adversarial-review/SKILL.md",
+      "summary": "Skill documentation for archon-adversarial-review, providing protocols for stress-testing skill definitions against adversarial inputs and edge cases.",
+      "tags": ["adversarial-review", "documentation", "security-testing", "archon", "robustness"],
+      "complexity": 5
+    },
+    {
+      "id": "config:skills/archon-scout/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (archon-scout)",
+      "filePath": "skills/archon-scout/manifest.yaml",
+      "summary": "Skill manifest for archon-scout, defining triggers for codebase exploration and skill discovery tasks within the Archon framework.",
+      "tags": ["archon-scout", "skill", "manifest", "exploration", "discovery"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/archon-scout/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (archon-scout)",
+      "filePath": "skills/archon-scout/SKILL.md",
+      "summary": "Skill documentation for archon-scout, guiding systematic codebase exploration and mapping of components within an Archon-based project.",
+      "tags": ["archon-scout", "documentation", "codebase-exploration", "archon", "discovery"],
+      "complexity": 3
+    },
+    {
+      "id": "config:skills/astro-islands-expert/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (astro-islands-expert)",
+      "filePath": "skills/astro-islands-expert/manifest.yaml",
+      "summary": "Skill manifest for astro-islands-expert, defining triggers for Astro framework island architecture development tasks.",
+      "tags": ["astro-islands-expert", "skill", "manifest", "astro", "islands"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/astro-islands-expert/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (astro-islands-expert)",
+      "filePath": "skills/astro-islands-expert/SKILL.md",
+      "summary": "Skill documentation for astro-islands-expert, providing guidance on Astro island architecture, partial hydration, and component integration patterns.",
+      "tags": ["astro-islands-expert", "documentation", "astro", "islands", "partial-hydration"],
+      "complexity": 4
+    },
+    {
+      "id": "config:skills/async-side-effects/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (async-side-effects)",
+      "filePath": "skills/async-side-effects/manifest.yaml",
+      "summary": "Skill manifest for async-side-effects, defining triggers for managing async side effects in JavaScript and TypeScript code.",
+      "tags": ["async-side-effects", "skill", "manifest", "async", "javascript"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/async-side-effects/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (async-side-effects)",
+      "filePath": "skills/async-side-effects/SKILL.md",
+      "summary": "Skill documentation for async-side-effects, covering patterns for handling async state, cleanup, and error propagation in frontend applications.",
+      "tags": ["async-side-effects", "documentation", "async", "javascript", "state-management"],
+      "complexity": 3
+    },
+    {
+      "id": "file:skills/backend-development/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (backend-development examples)",
+      "filePath": "skills/backend-development/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory for the backend-development skill.",
+      "tags": ["backend-development", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/backend-development/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (backend-development)",
+      "filePath": "skills/backend-development/manifest.yaml",
+      "summary": "Skill manifest for backend-development, a minimal manifest defining the skill's identity and basic trigger configuration.",
+      "tags": ["backend-development", "skill", "manifest"],
+      "complexity": 1
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:skills/_template/SKILL.md",
+      "target": "config:skills/_template/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/_template/resources/tool-pattern.md",
+      "target": "config:skills/_template/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/adaptive-teacher/SKILL.md",
+      "target": "config:skills/adaptive-teacher/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/add-adapter/SKILL.md",
+      "target": "config:skills/add-adapter/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/add-agent/SKILL.md",
+      "target": "config:skills/add-agent/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/add-bundle/SKILL.md",
+      "target": "config:skills/add-bundle/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/add-skill/SKILL.md",
+      "target": "config:skills/add-skill/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/archon-adversarial-review/SKILL.md",
+      "target": "config:skills/archon-adversarial-review/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/archon-adversarial-review/resources/probe-vectors-quick-ref.md",
+      "target": "config:skills/archon-adversarial-review/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/archon-scout/SKILL.md",
+      "target": "config:skills/archon-scout/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/astro-islands-expert/SKILL.md",
+      "target": "config:skills/astro-islands-expert/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/async-side-effects/SKILL.md",
+      "target": "config:skills/async-side-effects/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:skills/backend-development/manifest.yaml",
+      "target": "file:skills/backend-development/examples/.gitkeep",
+      "type": "contains",
+      "weight": 1.0
+    }
+  ]
+}

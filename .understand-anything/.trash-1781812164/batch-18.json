@@ -1,0 +1,42 @@
+{
+  "batchIndex": 18,
+  "nodes": [
+    {
+      "id": "document:prompts/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "prompts/README.md",
+      "summary": "Overview of the Archon prompt library, covering categories of prompts (router, system, shared utilities, persona prompts), how to use them, and how to add custom prompts.",
+      "tags": ["prompts", "readme", "documentation", "prompt-library"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:prompts/router.md",
+      "type": "document",
+      "name": "router.md",
+      "filePath": "prompts/router.md",
+      "summary": "System prompt for the Archon complexity router agent, defining classification guidelines for TRIVIAL/SIMPLE/MODERATE/COMPLEX/EXPERT tiers, routing decision process (7 steps), output format, cost optimization principles, and user override rules.",
+      "tags": ["router", "complexity-router", "prompt", "classification", "system-prompt"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:prompts/shared.md",
+      "type": "document",
+      "name": "shared.md",
+      "filePath": "prompts/shared.md",
+      "summary": "Shared prompt utilities library covering response formatting standards, citation format, code block standards, error handling patterns, progress indicators, table formatting, file operation patterns, decision documentation, agent handoff format, and summary formats.",
+      "tags": ["shared-utilities", "prompt", "formatting", "citation", "documentation"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:prompts/system.md",
+      "type": "document",
+      "name": "system.md",
+      "filePath": "prompts/system.md",
+      "summary": "Master system prompt for Archon defining core identity, capabilities (skills bundles, agents, pipelines), operational procedures (routing, skill activation, agent invocation, pipeline execution), behavioral guidelines, response format standards, quality standards, knowledge sources, and meta instructions.",
+      "tags": ["system-prompt", "archon", "core-identity", "capabilities", "master-prompt"],
+      "complexity": "complex"
+    }
+  ],
+  "edges": []
+}

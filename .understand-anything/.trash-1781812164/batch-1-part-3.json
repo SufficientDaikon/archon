@@ -1,0 +1,1062 @@
+{
+  "batchIndex": 1,
+  "part": 3,
+  "totalParts": 3,
+  "nodes": [
+    {
+      "id": "function:src/archon/core/llms_txt.py:_section_separator",
+      "type": "function",
+      "path": "src/archon/core/llms_txt.py",
+      "label": "_section_separator",
+      "language": "python",
+      "metadata": {
+        "startLine": 453,
+        "endLine": 455,
+        "lineCount": 3,
+        "params": [
+          "title",
+          "source_path"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/core/llms_txt.py:_read_file_safe",
+      "type": "function",
+      "path": "src/archon/core/llms_txt.py",
+      "label": "_read_file_safe",
+      "language": "python",
+      "metadata": {
+        "startLine": 458,
+        "endLine": 466,
+        "lineCount": 9,
+        "params": [
+          "path"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/core/llms_txt.py:_docs_display_name",
+      "type": "function",
+      "path": "src/archon/core/llms_txt.py",
+      "label": "_docs_display_name",
+      "language": "python",
+      "metadata": {
+        "startLine": 469,
+        "endLine": 472,
+        "lineCount": 4,
+        "params": [
+          "filename"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/core/pipeline_state.py",
+      "type": "file",
+      "path": "src/archon/core/pipeline_state.py",
+      "label": "pipeline_state.py",
+      "language": "python",
+      "sizeLines": 250,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 250,
+        "nonEmptyLines": 216,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 1,
+          "functionCount": 0,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "class:src/archon/core/pipeline_state.py:PipelineState",
+      "type": "class",
+      "path": "src/archon/core/pipeline_state.py",
+      "label": "PipelineState",
+      "language": "python",
+      "metadata": {
+        "startLine": 19,
+        "endLine": 250,
+        "lineCount": 232,
+        "methods": [
+          "__init__",
+          "create",
+          "load",
+          "save",
+          "update_status",
+          "record_step",
+          "record_deviation",
+          "add_decision",
+          "add_constraint",
+          "add_tech_stack",
+          "add_context_brief",
+          "completed_step_names",
+          "current_step",
+          "get_health_score",
+          "to_dict",
+          "__repr__"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/core/platform.py",
+      "type": "file",
+      "path": "src/archon/core/platform.py",
+      "label": "platform.py",
+      "language": "python",
+      "sizeLines": 114,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 114,
+        "nonEmptyLines": 91,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 4,
+          "functionCount": 3,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/core/platform.py:detect_platforms",
+      "type": "function",
+      "path": "src/archon/core/platform.py",
+      "label": "detect_platforms",
+      "language": "python",
+      "metadata": {
+        "startLine": 41,
+        "endLine": 101,
+        "lineCount": 61,
+        "params": [
+          "cwd"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/core/platform.py:get_detected_platform_ids",
+      "type": "function",
+      "path": "src/archon/core/platform.py",
+      "label": "get_detected_platform_ids",
+      "language": "python",
+      "metadata": {
+        "startLine": 104,
+        "endLine": 106,
+        "lineCount": 3,
+        "params": [
+          "cwd"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/core/platform.py:get_platform_info",
+      "type": "function",
+      "path": "src/archon/core/platform.py",
+      "label": "get_platform_info",
+      "language": "python",
+      "metadata": {
+        "startLine": 109,
+        "endLine": 114,
+        "lineCount": 6,
+        "params": [
+          "platform_id",
+          "cwd"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:src/archon/core/platform.py:PlatformInfo",
+      "type": "class",
+      "path": "src/archon/core/platform.py",
+      "label": "PlatformInfo",
+      "language": "python",
+      "metadata": {
+        "startLine": 15,
+        "endLine": 24,
+        "lineCount": 10,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/core/registry.py",
+      "type": "file",
+      "path": "src/archon/core/registry.py",
+      "label": "registry.py",
+      "language": "python",
+      "sizeLines": 376,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 376,
+        "nonEmptyLines": 327,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 7,
+          "functionCount": 0,
+          "classCount": 7
+        }
+      }
+    },
+    {
+      "id": "class:src/archon/core/registry.py:Skill",
+      "type": "class",
+      "path": "src/archon/core/registry.py",
+      "label": "Skill",
+      "language": "python",
+      "metadata": {
+        "startLine": 22,
+        "endLine": 33,
+        "lineCount": 12,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:src/archon/core/registry.py:AgentCard",
+      "type": "class",
+      "path": "src/archon/core/registry.py",
+      "label": "AgentCard",
+      "language": "python",
+      "metadata": {
+        "startLine": 37,
+        "endLine": 45,
+        "lineCount": 9,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:src/archon/core/registry.py:Agent",
+      "type": "class",
+      "path": "src/archon/core/registry.py",
+      "label": "Agent",
+      "language": "python",
+      "metadata": {
+        "startLine": 49,
+        "endLine": 56,
+        "lineCount": 8,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:src/archon/core/registry.py:Bundle",
+      "type": "class",
+      "path": "src/archon/core/registry.py",
+      "label": "Bundle",
+      "language": "python",
+      "metadata": {
+        "startLine": 60,
+        "endLine": 66,
+        "lineCount": 7,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:src/archon/core/registry.py:Pipeline",
+      "type": "class",
+      "path": "src/archon/core/registry.py",
+      "label": "Pipeline",
+      "language": "python",
+      "metadata": {
+        "startLine": 70,
+        "endLine": 77,
+        "lineCount": 8,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:src/archon/core/registry.py:Synapse",
+      "type": "class",
+      "path": "src/archon/core/registry.py",
+      "label": "Synapse",
+      "language": "python",
+      "metadata": {
+        "startLine": 81,
+        "endLine": 90,
+        "lineCount": 10,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:src/archon/core/registry.py:Registry",
+      "type": "class",
+      "path": "src/archon/core/registry.py",
+      "label": "Registry",
+      "language": "python",
+      "metadata": {
+        "startLine": 95,
+        "endLine": 372,
+        "lineCount": 278,
+        "methods": [
+          "__init__",
+          "load",
+          "ensure_loaded",
+          "find_skill",
+          "find_agent",
+          "find_bundle",
+          "find_pipeline",
+          "find_synapse",
+          "find_component",
+          "similar_names",
+          "load_skill_manifest",
+          "load_agent_manifest",
+          "load_bundle_manifest",
+          "load_pipeline_manifest",
+          "load_synapse_manifest"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/core/virtuoso.py",
+      "type": "file",
+      "path": "src/archon/core/virtuoso.py",
+      "label": "virtuoso.py",
+      "language": "python",
+      "sizeLines": 220,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 220,
+        "nonEmptyLines": 170,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 7,
+          "functionCount": 7,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/core/virtuoso.py:get_virtuoso_xml_path",
+      "type": "function",
+      "path": "src/archon/core/virtuoso.py",
+      "label": "get_virtuoso_xml_path",
+      "language": "python",
+      "metadata": {
+        "startLine": 35,
+        "endLine": 38,
+        "lineCount": 4,
+        "params": [
+          "archon_root"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/core/virtuoso.py:build_virtuoso_skill",
+      "type": "function",
+      "path": "src/archon/core/virtuoso.py",
+      "label": "build_virtuoso_skill",
+      "language": "python",
+      "metadata": {
+        "startLine": 41,
+        "endLine": 51,
+        "lineCount": 11,
+        "params": [
+          "archon_root"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/core/virtuoso.py:install_virtuoso_skill",
+      "type": "function",
+      "path": "src/archon/core/virtuoso.py",
+      "label": "install_virtuoso_skill",
+      "language": "python",
+      "metadata": {
+        "startLine": 54,
+        "endLine": 77,
+        "lineCount": 24,
+        "params": [
+          "archon_root",
+          "skills_target"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/core/virtuoso.py:install_all_synapses",
+      "type": "function",
+      "path": "src/archon/core/virtuoso.py",
+      "label": "install_all_synapses",
+      "language": "python",
+      "metadata": {
+        "startLine": 80,
+        "endLine": 129,
+        "lineCount": 50,
+        "params": [
+          "archon_root",
+          "skills_target"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/core/virtuoso.py:_rebuild_synapse_index",
+      "type": "function",
+      "path": "src/archon/core/virtuoso.py",
+      "label": "_rebuild_synapse_index",
+      "language": "python",
+      "metadata": {
+        "startLine": 132,
+        "endLine": 157,
+        "lineCount": 26,
+        "params": [
+          "synapses_dir"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/core/virtuoso.py:update_claude_md",
+      "type": "function",
+      "path": "src/archon/core/virtuoso.py",
+      "label": "update_claude_md",
+      "language": "python",
+      "metadata": {
+        "startLine": 160,
+        "endLine": 186,
+        "lineCount": 27,
+        "params": [
+          "claude_dir"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/core/virtuoso.py:install_virtuoso",
+      "type": "function",
+      "path": "src/archon/core/virtuoso.py",
+      "label": "install_virtuoso",
+      "language": "python",
+      "metadata": {
+        "startLine": 189,
+        "endLine": 220,
+        "lineCount": 32,
+        "params": [
+          "archon_root",
+          "skills_target",
+          "claude_dir"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/utils/output.py",
+      "type": "file",
+      "path": "src/archon/utils/output.py",
+      "label": "output.py",
+      "language": "python",
+      "sizeLines": 168,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 168,
+        "nonEmptyLines": 123,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 15,
+          "functionCount": 15,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/utils/output.py:_safe_file",
+      "type": "function",
+      "path": "src/archon/utils/output.py",
+      "label": "_safe_file",
+      "language": "python",
+      "metadata": {
+        "startLine": 39,
+        "endLine": 49,
+        "lineCount": 11,
+        "params": [
+          "stream"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/output.py:set_output_flags",
+      "type": "function",
+      "path": "src/archon/utils/output.py",
+      "label": "set_output_flags",
+      "language": "python",
+      "metadata": {
+        "startLine": 66,
+        "endLine": 71,
+        "lineCount": 6,
+        "params": [
+          "json_flag",
+          "quiet",
+          "verbose"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/output.py:is_json",
+      "type": "function",
+      "path": "src/archon/utils/output.py",
+      "label": "is_json",
+      "language": "python",
+      "metadata": {
+        "startLine": 74,
+        "endLine": 75,
+        "lineCount": 2,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/output.py:is_quiet",
+      "type": "function",
+      "path": "src/archon/utils/output.py",
+      "label": "is_quiet",
+      "language": "python",
+      "metadata": {
+        "startLine": 78,
+        "endLine": 79,
+        "lineCount": 2,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/output.py:is_verbose",
+      "type": "function",
+      "path": "src/archon/utils/output.py",
+      "label": "is_verbose",
+      "language": "python",
+      "metadata": {
+        "startLine": 82,
+        "endLine": 83,
+        "lineCount": 2,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/output.py:json_envelope",
+      "type": "function",
+      "path": "src/archon/utils/output.py",
+      "label": "json_envelope",
+      "language": "python",
+      "metadata": {
+        "startLine": 88,
+        "endLine": 106,
+        "lineCount": 19,
+        "params": [
+          "command",
+          "status",
+          "data",
+          "errors",
+          "diagnostics"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/output.py:print_json",
+      "type": "function",
+      "path": "src/archon/utils/output.py",
+      "label": "print_json",
+      "language": "python",
+      "metadata": {
+        "startLine": 109,
+        "endLine": 113,
+        "lineCount": 5,
+        "params": [
+          "envelope"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/output.py:print_success",
+      "type": "function",
+      "path": "src/archon/utils/output.py",
+      "label": "print_success",
+      "language": "python",
+      "metadata": {
+        "startLine": 118,
+        "endLine": 120,
+        "lineCount": 3,
+        "params": [
+          "msg"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/output.py:print_error",
+      "type": "function",
+      "path": "src/archon/utils/output.py",
+      "label": "print_error",
+      "language": "python",
+      "metadata": {
+        "startLine": 123,
+        "endLine": 125,
+        "lineCount": 3,
+        "params": [
+          "msg"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/output.py:print_warning",
+      "type": "function",
+      "path": "src/archon/utils/output.py",
+      "label": "print_warning",
+      "language": "python",
+      "metadata": {
+        "startLine": 128,
+        "endLine": 130,
+        "lineCount": 3,
+        "params": [
+          "msg"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/output.py:print_info",
+      "type": "function",
+      "path": "src/archon/utils/output.py",
+      "label": "print_info",
+      "language": "python",
+      "metadata": {
+        "startLine": 133,
+        "endLine": 135,
+        "lineCount": 3,
+        "params": [
+          "msg"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/output.py:print_verbose",
+      "type": "function",
+      "path": "src/archon/utils/output.py",
+      "label": "print_verbose",
+      "language": "python",
+      "metadata": {
+        "startLine": 138,
+        "endLine": 140,
+        "lineCount": 3,
+        "params": [
+          "msg"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/output.py:make_table",
+      "type": "function",
+      "path": "src/archon/utils/output.py",
+      "label": "make_table",
+      "language": "python",
+      "metadata": {
+        "startLine": 143,
+        "endLine": 153,
+        "lineCount": 11,
+        "params": [
+          "title",
+          "columns",
+          "rows"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/output.py:make_panel",
+      "type": "function",
+      "path": "src/archon/utils/output.py",
+      "label": "make_panel",
+      "language": "python",
+      "metadata": {
+        "startLine": 156,
+        "endLine": 157,
+        "lineCount": 2,
+        "params": [
+          "content",
+          "title",
+          "border_style"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/output.py:get_progress",
+      "type": "function",
+      "path": "src/archon/utils/output.py",
+      "label": "get_progress",
+      "language": "python",
+      "metadata": {
+        "startLine": 160,
+        "endLine": 168,
+        "lineCount": 9,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:src/archon/utils/paths.py",
+      "type": "file",
+      "path": "src/archon/utils/paths.py",
+      "label": "paths.py",
+      "language": "python",
+      "sizeLines": 90,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 90,
+        "nonEmptyLines": 68,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 5,
+          "functionCount": 5,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "function:src/archon/utils/paths.py:get_archon_home",
+      "type": "function",
+      "path": "src/archon/utils/paths.py",
+      "label": "get_archon_home",
+      "language": "python",
+      "metadata": {
+        "startLine": 16,
+        "endLine": 26,
+        "lineCount": 11,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/paths.py:get_config_path",
+      "type": "function",
+      "path": "src/archon/utils/paths.py",
+      "label": "get_config_path",
+      "language": "python",
+      "metadata": {
+        "startLine": 29,
+        "endLine": 39,
+        "lineCount": 11,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/paths.py:get_state_path",
+      "type": "function",
+      "path": "src/archon/utils/paths.py",
+      "label": "get_state_path",
+      "language": "python",
+      "metadata": {
+        "startLine": 42,
+        "endLine": 44,
+        "lineCount": 3,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/paths.py:get_archon_root",
+      "type": "function",
+      "path": "src/archon/utils/paths.py",
+      "label": "get_archon_root",
+      "language": "python",
+      "metadata": {
+        "startLine": 47,
+        "endLine": 76,
+        "lineCount": 30,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:src/archon/utils/paths.py:get_platform_target",
+      "type": "function",
+      "path": "src/archon/utils/paths.py",
+      "label": "get_platform_target",
+      "language": "python",
+      "metadata": {
+        "startLine": 79,
+        "endLine": 90,
+        "lineCount": 12,
+        "params": [
+          "platform_id"
+        ],
+        "exported": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/pipeline_state.py",
+      "target": "class:src/archon/core/pipeline_state.py:PipelineState",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/platform.py",
+      "target": "function:src/archon/core/platform.py:detect_platforms",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/platform.py",
+      "target": "function:src/archon/core/platform.py:get_detected_platform_ids",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/platform.py",
+      "target": "function:src/archon/core/platform.py:get_platform_info",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/platform.py",
+      "target": "class:src/archon/core/platform.py:PlatformInfo",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/registry.py",
+      "target": "class:src/archon/core/registry.py:Skill",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/registry.py",
+      "target": "class:src/archon/core/registry.py:AgentCard",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/registry.py",
+      "target": "class:src/archon/core/registry.py:Agent",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/registry.py",
+      "target": "class:src/archon/core/registry.py:Bundle",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/registry.py",
+      "target": "class:src/archon/core/registry.py:Pipeline",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/registry.py",
+      "target": "class:src/archon/core/registry.py:Synapse",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/registry.py",
+      "target": "class:src/archon/core/registry.py:Registry",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/core/registry.py",
+      "target": "file:src/archon/utils/paths.py",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/virtuoso.py",
+      "target": "function:src/archon/core/virtuoso.py:get_virtuoso_xml_path",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/virtuoso.py",
+      "target": "function:src/archon/core/virtuoso.py:build_virtuoso_skill",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/virtuoso.py",
+      "target": "function:src/archon/core/virtuoso.py:install_virtuoso_skill",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/virtuoso.py",
+      "target": "function:src/archon/core/virtuoso.py:install_all_synapses",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/virtuoso.py",
+      "target": "function:src/archon/core/virtuoso.py:_rebuild_synapse_index",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/virtuoso.py",
+      "target": "function:src/archon/core/virtuoso.py:update_claude_md",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/core/virtuoso.py",
+      "target": "function:src/archon/core/virtuoso.py:install_virtuoso",
+      "weight": 1
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/core/virtuoso.py",
+      "target": "file:src/archon/utils/output.py",
+      "weight": 0.7
+    },
+    {
+      "type": "imports",
+      "source": "file:src/archon/core/virtuoso.py",
+      "target": "file:src/archon/utils/paths.py",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/output.py",
+      "target": "function:src/archon/utils/output.py:_safe_file",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/output.py",
+      "target": "function:src/archon/utils/output.py:set_output_flags",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/output.py",
+      "target": "function:src/archon/utils/output.py:is_json",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/output.py",
+      "target": "function:src/archon/utils/output.py:is_quiet",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/output.py",
+      "target": "function:src/archon/utils/output.py:is_verbose",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/output.py",
+      "target": "function:src/archon/utils/output.py:json_envelope",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/output.py",
+      "target": "function:src/archon/utils/output.py:print_json",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/output.py",
+      "target": "function:src/archon/utils/output.py:print_success",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/output.py",
+      "target": "function:src/archon/utils/output.py:print_error",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/output.py",
+      "target": "function:src/archon/utils/output.py:print_warning",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/output.py",
+      "target": "function:src/archon/utils/output.py:print_info",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/output.py",
+      "target": "function:src/archon/utils/output.py:print_verbose",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/output.py",
+      "target": "function:src/archon/utils/output.py:make_table",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/output.py",
+      "target": "function:src/archon/utils/output.py:make_panel",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/output.py",
+      "target": "function:src/archon/utils/output.py:get_progress",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/paths.py",
+      "target": "function:src/archon/utils/paths.py:get_archon_home",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/paths.py",
+      "target": "function:src/archon/utils/paths.py:get_config_path",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/paths.py",
+      "target": "function:src/archon/utils/paths.py:get_state_path",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/paths.py",
+      "target": "function:src/archon/utils/paths.py:get_archon_root",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:src/archon/utils/paths.py",
+      "target": "function:src/archon/utils/paths.py:get_platform_target",
+      "weight": 1
+    }
+  ]
+}

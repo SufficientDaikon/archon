@@ -1,0 +1,257 @@
+{
+  "batchIndex": 64,
+  "nodes": [
+    {
+      "id": "tests/test_security_awareness.py",
+      "type": "file",
+      "label": "test_security_awareness.py",
+      "file": "tests/test_security_awareness.py",
+      "language": "python",
+      "summary": "Unit tests for the security-awareness synapse validator checking blocking of exec/eval usage, hardcoded passwords, and acceptance of safe code.",
+      "metadata": {"complexity": "simple", "tags": ["test", "synapse", "security"]}
+    },
+    {
+      "id": "tests/test_sequential_thinking.py",
+      "type": "file",
+      "label": "test_sequential_thinking.py",
+      "file": "tests/test_sequential_thinking.py",
+      "language": "python",
+      "summary": "Unit tests for the sequential-thinking synapse validator, covering circular reasoning detection and acceptance of valid linear reasoning.",
+      "metadata": {"complexity": "simple", "tags": ["test", "synapse", "sequential-thinking"]}
+    },
+    {
+      "id": "tests/test_synapses_executable.py",
+      "type": "file",
+      "label": "test_synapses_executable.py",
+      "file": "tests/test_synapses_executable.py",
+      "language": "python",
+      "summary": "Smoke tests confirming all major synapse validators are importable and executable: anti-rationalization, security-awareness, and metacognition validate calls run without error.",
+      "metadata": {"complexity": "simple", "tags": ["test", "synapse", "smoke-test"]}
+    },
+    {
+      "id": "tests/test_trust_verification.py",
+      "type": "file",
+      "label": "test_trust_verification.py",
+      "file": "tests/test_trust_verification.py",
+      "language": "python",
+      "summary": "Unit tests for the trust-verification synapse validator checking that critical claims without evidence are blocked and claims with evidence are accepted.",
+      "metadata": {"complexity": "simple", "tags": ["test", "synapse", "trust"]}
+    },
+    {
+      "id": "tests/test_v3_agent_mcp.py",
+      "type": "file",
+      "label": "test_v3_agent_mcp.py",
+      "file": "tests/test_v3_agent_mcp.py",
+      "language": "python",
+      "summary": "Tests for v3 agent/MCP integration: AgentCapabilityProfile creation, manifest loading, and serialization; SkillManifestChecker validation (required fields, precedence tiers, conflict resolution); and MCPConnectorManager registration, routing by capability/trust tier, health tracking, and determinism.",
+      "metadata": {"complexity": "complex", "tags": ["test", "agent", "mcp"]}
+    },
+    {
+      "id": "tests/test_v3_contracts.py",
+      "type": "file",
+      "label": "test_v3_contracts.py",
+      "file": "tests/test_v3_contracts.py",
+      "language": "python",
+      "summary": "Tests verifying v3 schema contracts: schema existence/structure/required-fields, session state transition validity, tool invocation/permission/context-handoff schema rules, negative fixture validation (ID format rejection), schema linter correctness, and v2 compatibility checks.",
+      "metadata": {"complexity": "complex", "tags": ["test", "schema", "contracts"]}
+    },
+    {
+      "id": "tests/test_v3_migration.py",
+      "type": "file",
+      "label": "test_v3_migration.py",
+      "file": "tests/test_v3_migration.py",
+      "language": "python",
+      "summary": "Tests for the v3 migration dry-run system: validates all v2/v3 schemas present, modules intact, tests exist, release gates (schema, policy, replay, context, prompt quality, migration readiness), scorecard weighted scoring, and docs readiness.",
+      "metadata": {"complexity": "complex", "tags": ["test", "migration", "release-gates"]}
+    },
+    {
+      "id": "tests/test_v3_policy.py",
+      "type": "file",
+      "label": "test_v3_policy.py",
+      "file": "tests/test_v3_policy.py",
+      "language": "python",
+      "summary": "Comprehensive tests for the v3 PolicyEngine: allow/deny/escalate rules, first-match semantics, trust tier precedence, condition evaluation (eq/neq/AND logic), schema validation (required args, type checking, pattern/enum validation), and decision artifact audit trail (format, session filtering, queryability, replayability).",
+      "metadata": {"complexity": "complex", "tags": ["test", "policy-engine", "v3"]}
+    },
+    {
+      "id": "tests/test_v3_session.py",
+      "type": "file",
+      "label": "test_v3_session.py",
+      "file": "tests/test_v3_session.py",
+      "language": "python",
+      "summary": "Comprehensive tests for the v3 Session state machine: all valid/invalid state transitions, recovery policy (max retries, counter increments), lifecycle (ID generation, send, abort), persistence (save/load), accumulated state mutations, correlation linking, and event log validation.",
+      "metadata": {"complexity": "complex", "tags": ["test", "session", "v3"]}
+    },
+    {
+      "id": "tests/test_v3_telemetry.py",
+      "type": "file",
+      "label": "test_v3_telemetry.py",
+      "file": "tests/test_v3_telemetry.py",
+      "language": "python",
+      "summary": "Tests for the v3 telemetry subsystem: TelemetryEnvelope fields/checksum/retention, TelemetryCollector emit/filter operations, ReplaySnapshot determinism and persistence, ReplayHarness comparison, plus stress tests (100 rapid transitions, 1000 policy evaluations, 10000 envelopes) and failure injection scenarios.",
+      "metadata": {"complexity": "complex", "tags": ["test", "telemetry", "v3", "stress-test"]}
+    },
+    {
+      "id": "virtuoso/README.md",
+      "type": "document",
+      "label": "README.md",
+      "file": "virtuoso/README.md",
+      "language": "markdown",
+      "summary": "Documentation for the Virtuoso Engine component describing what it is, how it gets installed into Claude's context, its design philosophy as a compact XML prompt injection layer, file structure, and version history.",
+      "metadata": {"complexity": "simple", "tags": ["documentation", "virtuoso", "overview"]}
+    },
+    {
+      "id": "virtuoso/virtuoso.xml",
+      "type": "config",
+      "label": "virtuoso.xml",
+      "file": "virtuoso/virtuoso.xml",
+      "language": "xml",
+      "summary": "Large XML configuration file defining the Virtuoso engine's complete prompt injection payload, behavioral rules, and structured context for Claude. This is the actual runtime content injected into the Claude prompt.",
+      "metadata": {"complexity": "complex", "tags": ["configuration", "virtuoso", "prompt-engineering"]}
+    },
+    {
+      "id": "vscode-extension/.vscodeignore",
+      "type": "config",
+      "label": ".vscodeignore",
+      "file": "vscode-extension/.vscodeignore",
+      "language": "unknown",
+      "summary": "VS Code extension packaging exclusion list specifying files and directories to omit from the published extension package.",
+      "metadata": {"complexity": "simple", "tags": ["configuration", "vscode-extension", "build-system"]}
+    },
+    {
+      "id": "vscode-extension/esbuild.config.mjs",
+      "type": "file",
+      "label": "esbuild.config.mjs",
+      "file": "vscode-extension/esbuild.config.mjs",
+      "language": "javascript",
+      "summary": "esbuild configuration script for bundling the VS Code extension, supporting both watch mode (for development) and production build mode with error handling.",
+      "metadata": {"complexity": "simple", "tags": ["build-system", "vscode-extension", "bundler"]}
+    },
+    {
+      "id": "webapp/next.config.js",
+      "type": "config",
+      "label": "next.config.js",
+      "file": "webapp/next.config.js",
+      "language": "javascript",
+      "summary": "Next.js configuration for the Archon webapp, exporting minimal configuration options for the Next.js build system.",
+      "metadata": {"complexity": "simple", "tags": ["configuration", "nextjs", "build-system"]}
+    },
+    {
+      "id": "webapp/postcss.config.js",
+      "type": "config",
+      "label": "postcss.config.js",
+      "file": "webapp/postcss.config.js",
+      "language": "javascript",
+      "summary": "PostCSS configuration for the webapp enabling Tailwind CSS processing as a PostCSS plugin.",
+      "metadata": {"complexity": "simple", "tags": ["configuration", "postcss", "tailwind"]}
+    },
+    {
+      "id": "webapp/src/app/docs/page.tsx",
+      "type": "file",
+      "label": "page.tsx",
+      "file": "webapp/src/app/docs/page.tsx",
+      "language": "typescript",
+      "summary": "Next.js documentation page component for the Archon webapp, rendering structured doc sections about the skills framework with metadata for SEO.",
+      "metadata": {"complexity": "moderate", "tags": ["component", "nextjs", "documentation"]}
+    },
+    {
+      "id": "webapp/src/app/docs/page.tsx::DocsPage",
+      "type": "function",
+      "label": "DocsPage",
+      "file": "webapp/src/app/docs/page.tsx",
+      "language": "typescript",
+      "summary": "Default-exported Next.js page component rendering the Archon documentation with structured sections and navigation.",
+      "metadata": {"lineRange": [80, 169], "complexity": "moderate", "tags": ["component", "nextjs", "entry-point"]}
+    },
+    {
+      "id": "webapp/src/app/globals.css",
+      "type": "file",
+      "label": "globals.css",
+      "file": "webapp/src/app/globals.css",
+      "language": "css",
+      "summary": "Global CSS styles for the Archon webapp, establishing base typography, color variables, and Tailwind CSS layer directives applied to all pages.",
+      "metadata": {"complexity": "simple", "tags": ["markup", "css", "global-styles"]}
+    },
+    {
+      "id": "webapp/src/data/registry.json",
+      "type": "config",
+      "label": "registry.json",
+      "file": "webapp/src/data/registry.json",
+      "language": "json",
+      "summary": "Central data registry for the Archon webapp containing metadata, stats, platforms, skills, bundles, agents, pipelines, and synapses — the single source of truth consumed by the registry TypeScript module.",
+      "metadata": {"complexity": "complex", "tags": ["configuration", "data", "registry"]}
+    },
+    {
+      "id": "webapp/tailwind.config.js",
+      "type": "config",
+      "label": "tailwind.config.js",
+      "file": "webapp/tailwind.config.js",
+      "language": "javascript",
+      "summary": "Tailwind CSS configuration for the webapp specifying content paths, theme extensions, and plugin configuration for the design system.",
+      "metadata": {"complexity": "simple", "tags": ["configuration", "tailwind", "build-system"]}
+    }
+  ],
+  "edges": [
+    {
+      "from": "tests/test_security_awareness.py",
+      "to": "synapses/security-awareness/manifest.yaml",
+      "type": "tests",
+      "label": "tests security-awareness synapse"
+    },
+    {
+      "from": "tests/test_sequential_thinking.py",
+      "to": "synapses/sequential-thinking/manifest.yaml",
+      "type": "tests",
+      "label": "tests sequential-thinking synapse"
+    },
+    {
+      "from": "tests/test_synapses_executable.py",
+      "to": "synapses/security-awareness/manifest.yaml",
+      "type": "tests",
+      "label": "smoke tests synapses"
+    },
+    {
+      "from": "webapp/src/app/docs/page.tsx",
+      "to": "webapp/src/app/docs/page.tsx::DocsPage",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "from": "webapp/src/app/globals.css",
+      "to": "file:webapp/src/app/layout.tsx",
+      "type": "references",
+      "label": "imported by layout"
+    },
+    {
+      "from": "webapp/src/data/registry.json",
+      "to": "file:webapp/src/lib/registry.ts",
+      "type": "references",
+      "label": "consumed by registry module"
+    },
+    {
+      "from": "virtuoso/README.md",
+      "to": "virtuoso/virtuoso.xml",
+      "type": "documents",
+      "label": "documents Virtuoso engine"
+    },
+    {
+      "from": "webapp/tailwind.config.js",
+      "to": "webapp/src/app/globals.css",
+      "type": "configures",
+      "label": "configures tailwind styles"
+    },
+    {
+      "from": "webapp/postcss.config.js",
+      "to": "webapp/src/app/globals.css",
+      "type": "configures",
+      "label": "configures postcss processing"
+    },
+    {
+      "from": "webapp/next.config.js",
+      "to": "webapp/src/app/docs/page.tsx",
+      "type": "configures",
+      "label": "configures next.js build"
+    }
+  ],
+  "warnings": []
+}

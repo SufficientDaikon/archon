@@ -1,0 +1,298 @@
+{
+  "batchIndex": 47,
+  "nodes": [
+    {
+      "id": "document:skills/content-deduplication/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (content-deduplication)",
+      "filePath": "skills/content-deduplication/SKILL.md",
+      "summary": "Skill documentation for content-deduplication, covering strategies for identifying and removing duplicate content across large document sets.",
+      "tags": ["content-deduplication", "documentation", "deduplication", "content-analysis"],
+      "complexity": 3
+    },
+    {
+      "id": "config:skills/content-moderation-pipeline/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (content-moderation-pipeline)",
+      "filePath": "skills/content-moderation-pipeline/manifest.yaml",
+      "summary": "Skill manifest for content-moderation-pipeline, defining triggers for content safety analysis and moderation workflow orchestration.",
+      "tags": ["content-moderation", "skill", "manifest", "safety", "pipeline"],
+      "complexity": 2
+    },
+    {
+      "id": "document:skills/content-moderation-pipeline/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (content-moderation-pipeline)",
+      "filePath": "skills/content-moderation-pipeline/SKILL.md",
+      "summary": "Skill documentation for content-moderation-pipeline, describing the multi-stage content safety pipeline with classification, flagging, and review stages.",
+      "tags": ["content-moderation", "documentation", "safety", "pipeline", "classification"],
+      "complexity": 3
+    },
+    {
+      "id": "config:skills/content-quality-gate/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (content-quality-gate)",
+      "filePath": "skills/content-quality-gate/manifest.yaml",
+      "summary": "Skill manifest for content-quality-gate, defining triggers for enforcing content quality standards before publication or deployment.",
+      "tags": ["content-quality-gate", "skill", "manifest", "quality", "gate"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/content-quality-gate/resources/quality-rules.md",
+      "type": "document:",
+      "name": "quality-rules.md",
+      "filePath": "skills/content-quality-gate/resources/quality-rules.md",
+      "summary": "Reference document defining quality rules and acceptance criteria used by the content-quality-gate skill to validate content.",
+      "tags": ["content-quality-gate", "quality-rules", "reference", "validation"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/content-quality-gate/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (content-quality-gate)",
+      "filePath": "skills/content-quality-gate/SKILL.md",
+      "summary": "Skill documentation for content-quality-gate, providing a checklist-driven workflow for validating content against defined quality standards.",
+      "tags": ["content-quality-gate", "documentation", "quality", "validation", "standards"],
+      "complexity": 3
+    },
+    {
+      "id": "config:skills/context-curator/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (context-curator)",
+      "filePath": "skills/context-curator/manifest.yaml",
+      "summary": "Skill manifest for context-curator, defining triggers for context compression and session state management tasks.",
+      "tags": ["context-curator", "skill", "manifest", "context-management", "compression"],
+      "complexity": 4
+    },
+    {
+      "id": "document:skills/context-curator/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (context-curator)",
+      "filePath": "skills/context-curator/SKILL.md",
+      "summary": "Comprehensive skill documentation for context-curator, covering context compression strategies, token budget management, and session state persistence protocols.",
+      "tags": ["context-curator", "documentation", "context-management", "token-budget", "compression"],
+      "complexity": 5
+    },
+    {
+      "id": "file:skills/design-handoff/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (design-handoff examples)",
+      "filePath": "skills/design-handoff/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory for the design-handoff skill.",
+      "tags": ["design-handoff", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/design-handoff/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (design-handoff)",
+      "filePath": "skills/design-handoff/manifest.yaml",
+      "summary": "Skill manifest for design-handoff, defining triggers for design-to-code handoff workflow tasks.",
+      "tags": ["design-handoff", "skill", "manifest", "design-to-code"],
+      "complexity": 2
+    },
+    {
+      "id": "file:skills/design-handoff/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (design-handoff overrides)",
+      "filePath": "skills/design-handoff/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the design-handoff skill.",
+      "tags": ["design-handoff", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/design-handoff/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (design-handoff resources)",
+      "filePath": "skills/design-handoff/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the design-handoff skill.",
+      "tags": ["design-handoff", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/design-handoff/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (design-handoff)",
+      "filePath": "skills/design-handoff/SKILL.md",
+      "summary": "Very large skill documentation for design-handoff, providing a comprehensive design-to-implementation translation guide including token mapping and component scaffolding.",
+      "tags": ["design-handoff", "documentation", "design-to-code", "implementation", "tokens"],
+      "complexity": 5
+    },
+    {
+      "id": "file:skills/design-handoff/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (design-handoff test cases)",
+      "filePath": "skills/design-handoff/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the design-handoff skill.",
+      "tags": ["design-handoff", "placeholder", "git", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/design-review/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (design-review examples)",
+      "filePath": "skills/design-review/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory for the design-review skill.",
+      "tags": ["design-review", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/design-review/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (design-review)",
+      "filePath": "skills/design-review/manifest.yaml",
+      "summary": "Skill manifest for design-review, defining triggers for UI/UX design review and critique workflows.",
+      "tags": ["design-review", "skill", "manifest", "ux-design", "review"],
+      "complexity": 3
+    },
+    {
+      "id": "file:skills/design-review/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (design-review overrides)",
+      "filePath": "skills/design-review/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the design-review skill.",
+      "tags": ["design-review", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/design-review/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (design-review resources)",
+      "filePath": "skills/design-review/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the design-review skill.",
+      "tags": ["design-review", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/design-review/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (design-review)",
+      "filePath": "skills/design-review/SKILL.md",
+      "summary": "Large skill documentation for design-review, providing a systematic UI/UX review framework covering accessibility, visual hierarchy, consistency, and usability.",
+      "tags": ["design-review", "documentation", "ux-design", "accessibility", "usability"],
+      "complexity": 5
+    },
+    {
+      "id": "file:skills/design-review/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (design-review test cases)",
+      "filePath": "skills/design-review/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the design-review skill.",
+      "tags": ["design-review", "placeholder", "git", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/design-system/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (design-system)",
+      "filePath": "skills/design-system/manifest.yaml",
+      "summary": "Skill manifest for design-system, defining triggers for design system creation, maintenance, and documentation tasks.",
+      "tags": ["design-system", "skill", "manifest", "design-tokens", "component-library"],
+      "complexity": 4
+    },
+    {
+      "id": "document:skills/design-system/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (design-system)",
+      "filePath": "skills/design-system/SKILL.md",
+      "summary": "Skill documentation for design-system, covering design token definition, component library architecture, and system documentation practices.",
+      "tags": ["design-system", "documentation", "design-tokens", "component-library", "architecture"],
+      "complexity": 4
+    },
+    {
+      "id": "config:skills/design-tokens/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (design-tokens)",
+      "filePath": "skills/design-tokens/manifest.yaml",
+      "summary": "Skill manifest for design-tokens, defining triggers for design token extraction, transformation, and management tasks.",
+      "tags": ["design-tokens", "skill", "manifest", "css-variables", "theming"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/design-tokens/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (design-tokens)",
+      "filePath": "skills/design-tokens/SKILL.md",
+      "summary": "Skill documentation for design-tokens, covering token naming conventions, CSS variable generation, and token-to-code transformation workflows.",
+      "tags": ["design-tokens", "documentation", "css-variables", "theming", "design-system"],
+      "complexity": 3
+    },
+    {
+      "id": "config:skills/dispatching-parallel-agents/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (dispatching-parallel-agents)",
+      "filePath": "skills/dispatching-parallel-agents/manifest.yaml",
+      "summary": "Skill manifest for dispatching-parallel-agents, a minimal manifest defining triggers for multi-agent parallel task dispatch.",
+      "tags": ["dispatching-parallel-agents", "skill", "manifest", "multi-agent", "parallel"],
+      "complexity": 1
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:skills/content-deduplication/SKILL.md",
+      "target": "config:skills/content-deduplication/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/content-moderation-pipeline/SKILL.md",
+      "target": "config:skills/content-moderation-pipeline/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/content-quality-gate/SKILL.md",
+      "target": "config:skills/content-quality-gate/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/content-quality-gate/resources/quality-rules.md",
+      "target": "config:skills/content-quality-gate/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/context-curator/SKILL.md",
+      "target": "config:skills/context-curator/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/design-handoff/SKILL.md",
+      "target": "config:skills/design-handoff/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/design-review/SKILL.md",
+      "target": "config:skills/design-review/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/design-system/SKILL.md",
+      "target": "config:skills/design-system/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/design-tokens/SKILL.md",
+      "target": "config:skills/design-tokens/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:skills/context-curator/manifest.yaml",
+      "target": "config:agents/context-curator-agent/agent-manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:skills/design-system/SKILL.md",
+      "target": "document:skills/design-tokens/SKILL.md",
+      "type": "imports",
+      "weight": 0.7
+    }
+  ]
+}

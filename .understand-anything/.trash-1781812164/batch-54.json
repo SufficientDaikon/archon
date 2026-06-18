@@ -1,0 +1,241 @@
+{
+  "batchIndex": 54,
+  "nodes": [
+    {
+      "id": "file:skills/mcp-server-index/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (mcp-server-index tests)",
+      "filePath": "skills/mcp-server-index/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/mobile-design/manifest.yaml",
+      "type": "config",
+      "name": "mobile-design manifest",
+      "filePath": "skills/mobile-design/manifest.yaml",
+      "summary": "Skill manifest for the mobile-design skill, registering triggers for mobile UI auditing and design guidance.",
+      "tags": ["manifest", "skill", "mobile-design", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/mobile-design/resources/mobile_audit.py",
+      "type": "file",
+      "name": "mobile_audit.py",
+      "filePath": "skills/mobile-design/resources/mobile_audit.py",
+      "summary": "Comprehensive mobile UX audit script analyzing React Native and Flutter code across touch psychology, performance, navigation, typography, color, and platform-specific guidelines for iOS and Android.",
+      "tags": ["mobile", "audit", "react-native", "flutter", "ux"],
+      "complexity": "high"
+    },
+    {
+      "id": "document:skills/mobile-design/SKILL.md",
+      "type": "document",
+      "name": "mobile-design SKILL.md",
+      "filePath": "skills/mobile-design/SKILL.md",
+      "summary": "Skill documentation for mobile design covering platform conventions, touch targets, navigation patterns, and mobile-first design principles.",
+      "tags": ["docs", "mobile-design", "skill", "ux", "mobile"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/mobile-design/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (mobile-design examples)",
+      "filePath": "skills/mobile-design/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/mobile-design/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (mobile-design overrides)",
+      "filePath": "skills/mobile-design/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/mobile-design/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (mobile-design resources)",
+      "filePath": "skills/mobile-design/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/mobile-design/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (mobile-design tests)",
+      "filePath": "skills/mobile-design/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/omega-gdscript-expert/manifest.yaml",
+      "type": "config",
+      "name": "omega-gdscript-expert manifest",
+      "filePath": "skills/omega-gdscript-expert/manifest.yaml",
+      "summary": "Skill manifest for the GDScript expert skill for Godot game engine development.",
+      "tags": ["manifest", "skill", "gdscript", "godot", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/omega-gdscript-expert/SKILL.md",
+      "type": "document",
+      "name": "omega-gdscript-expert SKILL.md",
+      "filePath": "skills/omega-gdscript-expert/SKILL.md",
+      "summary": "Skill documentation providing GDScript expert guidance for Godot 4 development, covering scripting patterns, node management, and performance tips.",
+      "tags": ["docs", "gdscript", "godot", "game-dev", "skill"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/omega-gdscript-expert/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (omega-gdscript-expert examples)",
+      "filePath": "skills/omega-gdscript-expert/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/omega-gdscript-expert/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (omega-gdscript-expert overrides)",
+      "filePath": "skills/omega-gdscript-expert/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/omega-gdscript-expert/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (omega-gdscript-expert resources)",
+      "filePath": "skills/omega-gdscript-expert/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/omega-gdscript-expert/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (omega-gdscript-expert tests)",
+      "filePath": "skills/omega-gdscript-expert/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/packager/manifest.yaml",
+      "type": "config",
+      "name": "packager manifest",
+      "filePath": "skills/packager/manifest.yaml",
+      "summary": "Skill manifest for the packager skill handling npm/pip/cargo package management and publishing.",
+      "tags": ["manifest", "skill", "packager", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/packager/SKILL.md",
+      "type": "document",
+      "name": "packager SKILL.md",
+      "filePath": "skills/packager/SKILL.md",
+      "summary": "Comprehensive skill documentation for packaging and publishing libraries, covering versioning, build configuration, registry publishing, and release checklists.",
+      "tags": ["docs", "packager", "skill", "publishing", "versioning"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/packager/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (packager examples)",
+      "filePath": "skills/packager/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/packager/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (packager overrides)",
+      "filePath": "skills/packager/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/packager/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (packager resources)",
+      "filePath": "skills/packager/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/packager/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (packager tests)",
+      "filePath": "skills/packager/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/plugin-system/manifest.yaml",
+      "type": "config",
+      "name": "plugin-system manifest",
+      "filePath": "skills/plugin-system/manifest.yaml",
+      "summary": "Skill manifest for the plugin-system skill, providing patterns and guidance for designing extensible plugin architectures.",
+      "tags": ["manifest", "skill", "plugin-system", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/plugin-system/resources/plugin-patterns.md",
+      "type": "document",
+      "name": "plugin-patterns.md",
+      "filePath": "skills/plugin-system/resources/plugin-patterns.md",
+      "summary": "Reference document covering plugin architecture patterns including hook-based systems, event emitters, and dynamic module loading strategies.",
+      "tags": ["plugin", "patterns", "architecture", "hooks", "extension"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:skills/plugin-system/SKILL.md",
+      "type": "document",
+      "name": "plugin-system SKILL.md",
+      "filePath": "skills/plugin-system/SKILL.md",
+      "summary": "Skill documentation for designing and implementing plugin systems, with guidance on lifecycle hooks, registration patterns, and sandboxing.",
+      "tags": ["docs", "plugin-system", "skill", "architecture"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/pr-quality-agent/manifest.yaml",
+      "type": "config",
+      "name": "pr-quality-agent manifest",
+      "filePath": "skills/pr-quality-agent/manifest.yaml",
+      "summary": "Skill manifest for the PR quality agent skill with extended configuration for automated pull request review and audit workflows.",
+      "tags": ["manifest", "skill", "pr-quality", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/pr-quality-agent/resources/audit-checklist.md",
+      "type": "document",
+      "name": "audit-checklist.md",
+      "filePath": "skills/pr-quality-agent/resources/audit-checklist.md",
+      "summary": "Structured checklist for PR audits covering code quality, security, test coverage, documentation, and breaking change detection.",
+      "tags": ["pr", "audit", "checklist", "code-review", "quality"],
+      "complexity": "low"
+    }
+  ],
+  "edges": [
+    {"source": "config:skills/mobile-design/manifest.yaml", "target": "document:skills/mobile-design/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/mobile-design/manifest.yaml", "target": "file:skills/mobile-design/resources/mobile_audit.py", "type": "configures", "weight": 0.6},
+    {"source": "document:skills/mobile-design/SKILL.md", "target": "file:skills/mobile-design/resources/mobile_audit.py", "type": "documents", "weight": 0.5},
+    {"source": "config:skills/omega-gdscript-expert/manifest.yaml", "target": "document:skills/omega-gdscript-expert/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/packager/manifest.yaml", "target": "document:skills/packager/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/plugin-system/manifest.yaml", "target": "document:skills/plugin-system/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/plugin-system/manifest.yaml", "target": "document:skills/plugin-system/resources/plugin-patterns.md", "type": "configures", "weight": 0.6},
+    {"source": "document:skills/plugin-system/SKILL.md", "target": "document:skills/plugin-system/resources/plugin-patterns.md", "type": "documents", "weight": 0.5},
+    {"source": "config:skills/pr-quality-agent/manifest.yaml", "target": "document:skills/pr-quality-agent/resources/audit-checklist.md", "type": "configures", "weight": 0.6}
+  ]
+}

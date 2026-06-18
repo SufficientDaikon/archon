@@ -1,0 +1,328 @@
+{
+  "batchIndex": 42,
+  "nodes": [
+    {
+      "id": "config:bundles/meta-kit/meta-skill/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (meta-kit meta-skill)",
+      "filePath": "bundles/meta-kit/meta-skill/manifest.yaml",
+      "summary": "Skill manifest for the Meta Kit meta-skill, defining triggers for Archon self-management tasks like adding skills and agents.",
+      "tags": ["meta-kit", "meta-skill", "manifest", "archon", "self-management"],
+      "complexity": 2
+    },
+    {
+      "id": "document:bundles/meta-kit/meta-skill/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (meta-kit)",
+      "filePath": "bundles/meta-kit/meta-skill/SKILL.md",
+      "summary": "Skill documentation for the Meta Kit meta-skill, providing guidance on extending the Archon framework by adding new skills, agents, and bundles.",
+      "tags": ["meta-kit", "documentation", "archon", "skill-authoring", "extension"],
+      "complexity": 4
+    },
+    {
+      "id": "config:bundles/mobile-kit/bundle.yaml",
+      "type": "config:",
+      "name": "bundle.yaml (mobile-kit)",
+      "filePath": "bundles/mobile-kit/bundle.yaml",
+      "summary": "Bundle manifest for the Mobile Kit, grouping skills for mobile app development including Capacitor and cross-platform patterns.",
+      "tags": ["mobile-kit", "bundle", "manifest", "mobile", "capacitor"],
+      "complexity": 2
+    },
+    {
+      "id": "config:bundles/mobile-kit/meta-skill/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (mobile-kit meta-skill)",
+      "filePath": "bundles/mobile-kit/meta-skill/manifest.yaml",
+      "summary": "Skill manifest for the Mobile Kit meta-skill, defining activation conditions for mobile app development tasks.",
+      "tags": ["mobile-kit", "meta-skill", "manifest", "mobile"],
+      "complexity": 2
+    },
+    {
+      "id": "document:bundles/mobile-kit/meta-skill/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (mobile-kit)",
+      "filePath": "bundles/mobile-kit/meta-skill/SKILL.md",
+      "summary": "Skill documentation for the Mobile Kit meta-skill, covering Capacitor integration, mobile-specific patterns, and cross-platform development approaches.",
+      "tags": ["mobile-kit", "documentation", "mobile", "capacitor", "cross-platform"],
+      "complexity": 4
+    },
+    {
+      "id": "config:bundles/orchestration-kit/bundle.yaml",
+      "type": "config:",
+      "name": "bundle.yaml (orchestration-kit)",
+      "filePath": "bundles/orchestration-kit/bundle.yaml",
+      "summary": "Bundle manifest for the Orchestration Kit, grouping skills for multi-agent orchestration, parallel task management, and pipeline execution.",
+      "tags": ["orchestration-kit", "bundle", "manifest", "multi-agent", "orchestration"],
+      "complexity": 3
+    },
+    {
+      "id": "config:bundles/orchestration-kit/meta-skill/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (orchestration-kit meta-skill)",
+      "filePath": "bundles/orchestration-kit/meta-skill/manifest.yaml",
+      "summary": "Skill manifest for the Orchestration Kit meta-skill, defining triggers for multi-agent coordination and task orchestration.",
+      "tags": ["orchestration-kit", "meta-skill", "manifest", "multi-agent"],
+      "complexity": 3
+    },
+    {
+      "id": "document:bundles/orchestration-kit/meta-skill/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (orchestration-kit)",
+      "filePath": "bundles/orchestration-kit/meta-skill/SKILL.md",
+      "summary": "Skill documentation for the Orchestration Kit meta-skill, covering parallel agent spawning, pipeline coordination, and multi-agent workflow patterns.",
+      "tags": ["orchestration-kit", "documentation", "multi-agent", "parallel-execution", "pipeline"],
+      "complexity": 4
+    },
+    {
+      "id": "config:bundles/prompts-chat-kit/bundle.yaml",
+      "type": "config:",
+      "name": "bundle.yaml (prompts-chat-kit)",
+      "filePath": "bundles/prompts-chat-kit/bundle.yaml",
+      "summary": "Bundle manifest for the Prompts Chat Kit, a larger bundle grouping skills for prompt engineering and conversational AI design.",
+      "tags": ["prompts-chat-kit", "bundle", "manifest", "prompt-engineering", "conversational-ai"],
+      "complexity": 3
+    },
+    {
+      "id": "config:bundles/prompts-chat-kit/meta-skill/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (prompts-chat-kit meta-skill)",
+      "filePath": "bundles/prompts-chat-kit/meta-skill/manifest.yaml",
+      "summary": "Skill manifest for the Prompts Chat Kit meta-skill, defining triggers for prompt design and conversational AI tasks.",
+      "tags": ["prompts-chat-kit", "meta-skill", "manifest", "prompt-engineering"],
+      "complexity": 3
+    },
+    {
+      "id": "document:bundles/prompts-chat-kit/meta-skill/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (prompts-chat-kit)",
+      "filePath": "bundles/prompts-chat-kit/meta-skill/SKILL.md",
+      "summary": "Skill documentation for the Prompts Chat Kit meta-skill, providing guidance on prompt engineering, few-shot patterns, and conversational AI design.",
+      "tags": ["prompts-chat-kit", "documentation", "prompt-engineering", "llm", "conversational-ai"],
+      "complexity": 5
+    },
+    {
+      "id": "document:bundles/README.md",
+      "type": "document:",
+      "name": "README.md (bundles)",
+      "filePath": "bundles/README.md",
+      "summary": "Overview documentation for the bundles directory, explaining the bundle concept and how skills are grouped into thematic kits.",
+      "tags": ["bundles", "documentation", "readme", "overview"],
+      "complexity": 2
+    },
+    {
+      "id": "config:bundles/sdd-kit/bundle.yaml",
+      "type": "config:",
+      "name": "bundle.yaml (sdd-kit)",
+      "filePath": "bundles/sdd-kit/bundle.yaml",
+      "summary": "Bundle manifest for the SDD (Software Design Document) Kit, grouping skills for structured software design and documentation.",
+      "tags": ["sdd-kit", "bundle", "manifest", "software-design", "documentation"],
+      "complexity": 3
+    },
+    {
+      "id": "config:bundles/sdd-kit/meta-skill/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (sdd-kit meta-skill)",
+      "filePath": "bundles/sdd-kit/meta-skill/manifest.yaml",
+      "summary": "Skill manifest for the SDD Kit meta-skill, defining triggers for software design documentation tasks.",
+      "tags": ["sdd-kit", "meta-skill", "manifest", "software-design"],
+      "complexity": 2
+    },
+    {
+      "id": "document:bundles/sdd-kit/meta-skill/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (sdd-kit)",
+      "filePath": "bundles/sdd-kit/meta-skill/SKILL.md",
+      "summary": "Skill documentation for the SDD Kit meta-skill, providing comprehensive guidance on writing software design documents, architecture specs, and technical RFCs.",
+      "tags": ["sdd-kit", "documentation", "software-design", "architecture", "technical-writing"],
+      "complexity": 5
+    },
+    {
+      "id": "config:bundles/security-kit/bundle.yaml",
+      "type": "config:",
+      "name": "bundle.yaml (security-kit)",
+      "filePath": "bundles/security-kit/bundle.yaml",
+      "summary": "Bundle manifest for the Security Kit, grouping skills for security auditing, vulnerability analysis, and secure coding practices.",
+      "tags": ["security-kit", "bundle", "manifest", "security", "vulnerability"],
+      "complexity": 3
+    },
+    {
+      "id": "config:bundles/security-kit/meta-skill/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (security-kit meta-skill)",
+      "filePath": "bundles/security-kit/meta-skill/manifest.yaml",
+      "summary": "Skill manifest for the Security Kit meta-skill, defining triggers for security review and vulnerability assessment tasks.",
+      "tags": ["security-kit", "meta-skill", "manifest", "security"],
+      "complexity": 3
+    },
+    {
+      "id": "document:bundles/security-kit/meta-skill/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (security-kit)",
+      "filePath": "bundles/security-kit/meta-skill/SKILL.md",
+      "summary": "Skill documentation for the Security Kit meta-skill, covering OWASP Top 10, secure coding patterns, and vulnerability detection techniques.",
+      "tags": ["security-kit", "documentation", "security", "owasp", "vulnerability"],
+      "complexity": 4
+    },
+    {
+      "id": "config:bundles/teaching-kit/bundle.yaml",
+      "type": "config:",
+      "name": "bundle.yaml (teaching-kit)",
+      "filePath": "bundles/teaching-kit/bundle.yaml",
+      "summary": "Bundle manifest for the Teaching Kit, grouping skills for educational content creation, adaptive teaching, and knowledge transfer.",
+      "tags": ["teaching-kit", "bundle", "manifest", "education", "teaching"],
+      "complexity": 2
+    },
+    {
+      "id": "config:bundles/teaching-kit/meta-skill/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (teaching-kit meta-skill)",
+      "filePath": "bundles/teaching-kit/meta-skill/manifest.yaml",
+      "summary": "Skill manifest for the Teaching Kit meta-skill, defining triggers for educational content and teaching workflow tasks.",
+      "tags": ["teaching-kit", "meta-skill", "manifest", "education"],
+      "complexity": 2
+    },
+    {
+      "id": "document:bundles/teaching-kit/meta-skill/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (teaching-kit)",
+      "filePath": "bundles/teaching-kit/meta-skill/SKILL.md",
+      "summary": "Skill documentation for the Teaching Kit meta-skill, covering adaptive teaching methods, lesson structuring, and knowledge assessment strategies.",
+      "tags": ["teaching-kit", "documentation", "education", "adaptive-teaching", "curriculum"],
+      "complexity": 4
+    },
+    {
+      "id": "config:bundles/testing-kit/bundle.yaml",
+      "type": "config:",
+      "name": "bundle.yaml (testing-kit)",
+      "filePath": "bundles/testing-kit/bundle.yaml",
+      "summary": "Bundle manifest for the Testing Kit, grouping skills for unit testing, E2E testing, and test strategy design.",
+      "tags": ["testing-kit", "bundle", "manifest", "testing", "quality-assurance"],
+      "complexity": 3
+    },
+    {
+      "id": "config:bundles/testing-kit/meta-skill/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (testing-kit meta-skill)",
+      "filePath": "bundles/testing-kit/meta-skill/manifest.yaml",
+      "summary": "Skill manifest for the Testing Kit meta-skill, defining triggers for testing and QA workflow tasks.",
+      "tags": ["testing-kit", "meta-skill", "manifest", "testing"],
+      "complexity": 2
+    },
+    {
+      "id": "document:bundles/testing-kit/meta-skill/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (testing-kit)",
+      "filePath": "bundles/testing-kit/meta-skill/SKILL.md",
+      "summary": "Skill documentation for the Testing Kit meta-skill, covering unit test patterns, E2E testing strategies, mocking, and test coverage approaches.",
+      "tags": ["testing-kit", "documentation", "testing", "unit-tests", "e2e"],
+      "complexity": 4
+    },
+    {
+      "id": "config:bundles/ux-design-kit/bundle.yaml",
+      "type": "config:",
+      "name": "bundle.yaml (ux-design-kit)",
+      "filePath": "bundles/ux-design-kit/bundle.yaml",
+      "summary": "Bundle manifest for the UX Design Kit, grouping skills for UI/UX design, design systems, design tokens, and design review.",
+      "tags": ["ux-design-kit", "bundle", "manifest", "ux-design", "design-system"],
+      "complexity": 3
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:bundles/meta-kit/meta-skill/SKILL.md",
+      "target": "config:bundles/meta-kit/meta-skill/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:bundles/meta-kit/bundle.yaml",
+      "target": "config:bundles/meta-kit/meta-skill/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:bundles/mobile-kit/meta-skill/SKILL.md",
+      "target": "config:bundles/mobile-kit/meta-skill/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:bundles/mobile-kit/bundle.yaml",
+      "target": "config:bundles/mobile-kit/meta-skill/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:bundles/orchestration-kit/meta-skill/SKILL.md",
+      "target": "config:bundles/orchestration-kit/meta-skill/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:bundles/orchestration-kit/bundle.yaml",
+      "target": "config:bundles/orchestration-kit/meta-skill/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:bundles/prompts-chat-kit/meta-skill/SKILL.md",
+      "target": "config:bundles/prompts-chat-kit/meta-skill/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:bundles/prompts-chat-kit/bundle.yaml",
+      "target": "config:bundles/prompts-chat-kit/meta-skill/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:bundles/sdd-kit/meta-skill/SKILL.md",
+      "target": "config:bundles/sdd-kit/meta-skill/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:bundles/sdd-kit/bundle.yaml",
+      "target": "config:bundles/sdd-kit/meta-skill/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:bundles/security-kit/meta-skill/SKILL.md",
+      "target": "config:bundles/security-kit/meta-skill/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:bundles/security-kit/bundle.yaml",
+      "target": "config:bundles/security-kit/meta-skill/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:bundles/teaching-kit/meta-skill/SKILL.md",
+      "target": "config:bundles/teaching-kit/meta-skill/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:bundles/teaching-kit/bundle.yaml",
+      "target": "config:bundles/teaching-kit/meta-skill/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:bundles/testing-kit/meta-skill/SKILL.md",
+      "target": "config:bundles/testing-kit/meta-skill/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:bundles/testing-kit/bundle.yaml",
+      "target": "config:bundles/testing-kit/meta-skill/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    }
+  ]
+}

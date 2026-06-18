@@ -1,0 +1,245 @@
+{
+  "batchIndex": 60,
+  "nodes": [
+    {
+      "id": "document:skills/verification-before-completion/SKILL.md",
+      "type": "document",
+      "name": "verification-before-completion SKILL.md",
+      "filePath": "skills/verification-before-completion/SKILL.md",
+      "summary": "Skill documentation for verifying task outputs before declaring completion, covering validation checklists, testing gates, and acceptance criteria review.",
+      "tags": ["docs", "verification", "skill", "quality", "completion"],
+      "complexity": "low"
+    },
+    {
+      "id": "config:skills/vitest-unit-patterns/manifest.yaml",
+      "type": "config",
+      "name": "vitest-unit-patterns manifest",
+      "filePath": "skills/vitest-unit-patterns/manifest.yaml",
+      "summary": "Skill manifest for the vitest-unit-patterns skill providing Vitest testing patterns and reference documentation.",
+      "tags": ["manifest", "skill", "vitest", "testing", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/vitest-unit-patterns/resources/vitest-reference.md",
+      "type": "document",
+      "name": "vitest-reference.md",
+      "filePath": "skills/vitest-unit-patterns/resources/vitest-reference.md",
+      "summary": "Comprehensive Vitest reference covering test setup, matchers, mocking, coverage configuration, async patterns, and snapshot testing.",
+      "tags": ["vitest", "testing", "reference", "mocking", "coverage"],
+      "complexity": "high"
+    },
+    {
+      "id": "document:skills/vitest-unit-patterns/SKILL.md",
+      "type": "document",
+      "name": "vitest-unit-patterns SKILL.md",
+      "filePath": "skills/vitest-unit-patterns/SKILL.md",
+      "summary": "Skill documentation for unit testing with Vitest, covering test organization, assertion patterns, and integration with TypeScript projects.",
+      "tags": ["docs", "vitest", "unit-testing", "skill", "typescript"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/web-design-guidelines/manifest.yaml",
+      "type": "config",
+      "name": "web-design-guidelines manifest",
+      "filePath": "skills/web-design-guidelines/manifest.yaml",
+      "summary": "Skill manifest for the web-design-guidelines skill providing UI design standards and accessibility guidelines.",
+      "tags": ["manifest", "skill", "web-design", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/web-design-guidelines/SKILL.md",
+      "type": "document",
+      "name": "web-design-guidelines SKILL.md",
+      "filePath": "skills/web-design-guidelines/SKILL.md",
+      "summary": "Skill documentation for web design guidelines covering layout, typography, color, and accessibility standards for production-quality web interfaces.",
+      "tags": ["docs", "web-design", "skill", "guidelines", "accessibility"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/web-design-guidelines/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (web-design-guidelines examples)",
+      "filePath": "skills/web-design-guidelines/examples/.gitkeep",
+      "summary": "Placeholder preserving empty examples directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/web-design-guidelines/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (web-design-guidelines overrides)",
+      "filePath": "skills/web-design-guidelines/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/web-design-guidelines/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (web-design-guidelines resources)",
+      "filePath": "skills/web-design-guidelines/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/web-design-guidelines/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (web-design-guidelines tests)",
+      "filePath": "skills/web-design-guidelines/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/webapp-testing/examples/console_logging.py",
+      "type": "file",
+      "name": "console_logging.py",
+      "filePath": "skills/webapp-testing/examples/console_logging.py",
+      "summary": "Playwright example demonstrating browser console log capture during web automation, saving intercepted messages to file.",
+      "tags": ["playwright", "console-logs", "browser-automation", "example"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/webapp-testing/examples/element_discovery.py",
+      "type": "file",
+      "name": "element_discovery.py",
+      "filePath": "skills/webapp-testing/examples/element_discovery.py",
+      "summary": "Playwright example for discovering and listing interactive elements (buttons, links, inputs) on a page.",
+      "tags": ["playwright", "element-discovery", "browser-automation", "example"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/webapp-testing/examples/static_html_automation.py",
+      "type": "file",
+      "name": "static_html_automation.py",
+      "filePath": "skills/webapp-testing/examples/static_html_automation.py",
+      "summary": "Playwright example for automating interactions with static HTML pages without a running server.",
+      "tags": ["playwright", "static-html", "browser-automation", "example"],
+      "complexity": "low"
+    },
+    {
+      "id": "config:skills/webapp-testing/manifest.yaml",
+      "type": "config",
+      "name": "webapp-testing manifest",
+      "filePath": "skills/webapp-testing/manifest.yaml",
+      "summary": "Skill manifest for the webapp-testing skill providing Playwright-based browser automation and testing guidance.",
+      "tags": ["manifest", "skill", "webapp-testing", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/webapp-testing/resources/with_server.py",
+      "type": "file",
+      "name": "with_server.py",
+      "filePath": "skills/webapp-testing/resources/with_server.py",
+      "summary": "Utility script that starts one or more servers, waits for port readiness, runs a test command, then cleans up all server processes.",
+      "tags": ["server", "testing", "subprocess", "port-polling", "utility"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:skills/webapp-testing/SKILL.md",
+      "type": "document",
+      "name": "webapp-testing SKILL.md",
+      "filePath": "skills/webapp-testing/SKILL.md",
+      "summary": "Skill documentation for browser-based webapp testing using Playwright, covering element interaction, network interception, and test server management.",
+      "tags": ["docs", "webapp-testing", "skill", "playwright", "automation"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/webapp-testing/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (webapp-testing examples)",
+      "filePath": "skills/webapp-testing/examples/.gitkeep",
+      "summary": "Placeholder alongside example Python scripts.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/webapp-testing/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (webapp-testing overrides)",
+      "filePath": "skills/webapp-testing/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/webapp-testing/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (webapp-testing resources)",
+      "filePath": "skills/webapp-testing/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/webapp-testing/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (webapp-testing tests)",
+      "filePath": "skills/webapp-testing/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/white-label-config/manifest.yaml",
+      "type": "config",
+      "name": "white-label-config manifest",
+      "filePath": "skills/white-label-config/manifest.yaml",
+      "summary": "Skill manifest for the white-label-config skill providing configuration patterns for white-labeling applications.",
+      "tags": ["manifest", "skill", "white-label", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/white-label-config/resources/config-patterns.md",
+      "type": "document",
+      "name": "config-patterns.md (white-label)",
+      "filePath": "skills/white-label-config/resources/config-patterns.md",
+      "summary": "Reference documentation for white-label configuration patterns covering theme tokens, brand overrides, feature flags, and tenant-specific customization.",
+      "tags": ["white-label", "config-patterns", "reference", "theming", "multi-tenant"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:skills/white-label-config/SKILL.md",
+      "type": "document",
+      "name": "white-label-config SKILL.md",
+      "filePath": "skills/white-label-config/SKILL.md",
+      "summary": "Skill documentation for implementing white-label configurations, separating brand assets from core application logic.",
+      "tags": ["docs", "white-label-config", "skill", "branding", "customization"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/windows-error-debugger/manifest.yaml",
+      "type": "config",
+      "name": "windows-error-debugger manifest",
+      "filePath": "skills/windows-error-debugger/manifest.yaml",
+      "summary": "Skill manifest for the Windows error debugger skill with extended configuration for Windows-specific error diagnosis.",
+      "tags": ["manifest", "skill", "windows", "debugging", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/windows-error-debugger/SKILL.md",
+      "type": "document",
+      "name": "windows-error-debugger SKILL.md",
+      "filePath": "skills/windows-error-debugger/SKILL.md",
+      "summary": "Comprehensive skill documentation for debugging Windows-specific errors including Event Viewer analysis, registry diagnostics, and PowerShell-based troubleshooting.",
+      "tags": ["docs", "windows", "debugging", "skill", "error-diagnosis"],
+      "complexity": "high"
+    }
+  ],
+  "edges": [
+    {"source": "config:skills/verification-before-completion/manifest.yaml", "target": "document:skills/verification-before-completion/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/vitest-unit-patterns/manifest.yaml", "target": "document:skills/vitest-unit-patterns/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/vitest-unit-patterns/manifest.yaml", "target": "document:skills/vitest-unit-patterns/resources/vitest-reference.md", "type": "configures", "weight": 0.6},
+    {"source": "document:skills/vitest-unit-patterns/SKILL.md", "target": "document:skills/vitest-unit-patterns/resources/vitest-reference.md", "type": "documents", "weight": 0.5},
+    {"source": "config:skills/web-design-guidelines/manifest.yaml", "target": "document:skills/web-design-guidelines/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/webapp-testing/manifest.yaml", "target": "document:skills/webapp-testing/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/webapp-testing/manifest.yaml", "target": "file:skills/webapp-testing/resources/with_server.py", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/webapp-testing/manifest.yaml", "target": "file:skills/webapp-testing/examples/console_logging.py", "type": "configures", "weight": 0.6},
+    {"source": "document:skills/webapp-testing/SKILL.md", "target": "file:skills/webapp-testing/resources/with_server.py", "type": "documents", "weight": 0.5},
+    {"source": "document:skills/webapp-testing/SKILL.md", "target": "file:skills/webapp-testing/examples/console_logging.py", "type": "documents", "weight": 0.5},
+    {"source": "config:skills/white-label-config/manifest.yaml", "target": "document:skills/white-label-config/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/white-label-config/manifest.yaml", "target": "document:skills/white-label-config/resources/config-patterns.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/windows-error-debugger/manifest.yaml", "target": "document:skills/windows-error-debugger/SKILL.md", "type": "configures", "weight": 0.6}
+  ]
+}

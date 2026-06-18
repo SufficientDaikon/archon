@@ -1,0 +1,286 @@
+{
+  "batchIndex": 13,
+  "nodes": [
+    {
+      "id": "document:CHANGELOG.md",
+      "type": "document",
+      "path": "CHANGELOG.md",
+      "label": "CHANGELOG.md",
+      "language": "markdown",
+      "sizeLines": 85,
+      "metadata": {
+        "fileCategory": "docs",
+        "totalLines": 85,
+        "nonEmptyLines": 61,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 8
+        }
+      }
+    },
+    {
+      "id": "document:CLAUDE.md",
+      "type": "document",
+      "path": "CLAUDE.md",
+      "label": "CLAUDE.md",
+      "language": "markdown",
+      "sizeLines": 201,
+      "metadata": {
+        "fileCategory": "docs",
+        "totalLines": 201,
+        "nonEmptyLines": 146,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 17
+        }
+      }
+    },
+    {
+      "id": "document:CONTRIBUTING.md",
+      "type": "document",
+      "path": "CONTRIBUTING.md",
+      "label": "CONTRIBUTING.md",
+      "language": "markdown",
+      "sizeLines": 108,
+      "metadata": {
+        "fileCategory": "docs",
+        "totalLines": 108,
+        "nonEmptyLines": 79,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 13
+        }
+      }
+    },
+    {
+      "id": "document:FINAL_COMPREHENSIVE_REPORT.md",
+      "type": "document",
+      "path": "FINAL_COMPREHENSIVE_REPORT.md",
+      "label": "FINAL_COMPREHENSIVE_REPORT.md",
+      "language": "markdown",
+      "sizeLines": 305,
+      "metadata": {
+        "fileCategory": "docs",
+        "totalLines": 305,
+        "nonEmptyLines": 240,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 30
+        }
+      }
+    },
+    {
+      "id": "document:LAUNCH.md",
+      "type": "document",
+      "path": "LAUNCH.md",
+      "label": "LAUNCH.md",
+      "language": "markdown",
+      "sizeLines": 117,
+      "metadata": {
+        "fileCategory": "docs",
+        "totalLines": 117,
+        "nonEmptyLines": 86,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 9
+        }
+      }
+    },
+    {
+      "id": "document:PHASE_3_COMPLETION.md",
+      "type": "document",
+      "path": "PHASE_3_COMPLETION.md",
+      "label": "PHASE_3_COMPLETION.md",
+      "language": "markdown",
+      "sizeLines": 165,
+      "metadata": {
+        "fileCategory": "docs",
+        "totalLines": 165,
+        "nonEmptyLines": 127,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 19
+        }
+      }
+    },
+    {
+      "id": "document:PHASE_4_COMPLETION.md",
+      "type": "document",
+      "path": "PHASE_4_COMPLETION.md",
+      "label": "PHASE_4_COMPLETION.md",
+      "language": "markdown",
+      "sizeLines": 142,
+      "metadata": {
+        "fileCategory": "docs",
+        "totalLines": 142,
+        "nonEmptyLines": 110,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 16
+        }
+      }
+    },
+    {
+      "id": "document:PHASE_5_COMPLETION.md",
+      "type": "document",
+      "path": "PHASE_5_COMPLETION.md",
+      "label": "PHASE_5_COMPLETION.md",
+      "language": "markdown",
+      "sizeLines": 185,
+      "metadata": {
+        "fileCategory": "docs",
+        "totalLines": 185,
+        "nonEmptyLines": 140,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 18
+        }
+      }
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "path": "README.md",
+      "label": "README.md",
+      "language": "markdown",
+      "sizeLines": 498,
+      "metadata": {
+        "fileCategory": "docs",
+        "totalLines": 498,
+        "nonEmptyLines": 372,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 19
+        }
+      }
+    },
+    {
+      "id": "document:RELEASE_NOTES.md",
+      "type": "document",
+      "path": "RELEASE_NOTES.md",
+      "label": "RELEASE_NOTES.md",
+      "language": "markdown",
+      "sizeLines": 210,
+      "metadata": {
+        "fileCategory": "docs",
+        "totalLines": 210,
+        "nonEmptyLines": 149,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 17
+        }
+      }
+    },
+    {
+      "id": "document:STRESS_TEST_FINAL_REPORT.md",
+      "type": "document",
+      "path": "STRESS_TEST_FINAL_REPORT.md",
+      "label": "STRESS_TEST_FINAL_REPORT.md",
+      "language": "markdown",
+      "sizeLines": 289,
+      "metadata": {
+        "fileCategory": "docs",
+        "totalLines": 289,
+        "nonEmptyLines": 213,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 29
+        }
+      }
+    },
+    {
+      "id": "document:TEST_REPORT.md",
+      "type": "document",
+      "path": "TEST_REPORT.md",
+      "label": "TEST_REPORT.md",
+      "language": "markdown",
+      "sizeLines": 347,
+      "metadata": {
+        "fileCategory": "docs",
+        "totalLines": 347,
+        "nonEmptyLines": 259,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 28
+        }
+      }
+    },
+    {
+      "id": "config:archon.yaml",
+      "type": "config",
+      "path": "archon.yaml",
+      "label": "archon.yaml",
+      "language": "yaml",
+      "sizeLines": 694,
+      "metadata": {
+        "fileCategory": "config",
+        "totalLines": 694,
+        "nonEmptyLines": 670,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 14
+        }
+      }
+    },
+    {
+      "id": "config:pyproject.toml",
+      "type": "config",
+      "path": "pyproject.toml",
+      "label": "pyproject.toml",
+      "language": "toml",
+      "sizeLines": 56,
+      "metadata": {
+        "fileCategory": "config",
+        "totalLines": 56,
+        "nonEmptyLines": 49,
+        "metrics": {
+          "importCount": 0,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0,
+          "sectionCount": 8
+        }
+      }
+    }
+  ],
+  "edges": []
+}

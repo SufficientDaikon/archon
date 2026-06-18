@@ -1,0 +1,249 @@
+{
+  "batchIndex": 2,
+  "part": 2,
+  "totalParts": 2,
+  "nodes": [
+    {
+      "id": "class:file-ops-rs/src/transport/message.rs:JsonRpcRequest",
+      "type": "class",
+      "path": "file-ops-rs/src/transport/message.rs",
+      "label": "JsonRpcRequest",
+      "language": "rust",
+      "metadata": {
+        "startLine": 8,
+        "endLine": 14,
+        "lineCount": 7,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/transport/message.rs:RequestId",
+      "type": "class",
+      "path": "file-ops-rs/src/transport/message.rs",
+      "label": "RequestId",
+      "language": "rust",
+      "metadata": {
+        "startLine": 19,
+        "endLine": 22,
+        "lineCount": 4,
+        "methods": [
+          "as_json"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/transport/message.rs:JsonRpcResponse",
+      "type": "class",
+      "path": "file-ops-rs/src/transport/message.rs",
+      "label": "JsonRpcResponse",
+      "language": "rust",
+      "metadata": {
+        "startLine": 35,
+        "endLine": 43,
+        "lineCount": 9,
+        "methods": [
+          "success",
+          "error",
+          "parse_error",
+          "invalid_request",
+          "method_not_found",
+          "internal_error"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/transport/message.rs:JsonRpcError",
+      "type": "class",
+      "path": "file-ops-rs/src/transport/message.rs",
+      "label": "JsonRpcError",
+      "language": "rust",
+      "metadata": {
+        "startLine": 47,
+        "endLine": 52,
+        "lineCount": 6,
+        "methods": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/transport/mod.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/transport/mod.rs",
+      "label": "mod.rs",
+      "language": "rust",
+      "sizeLines": 6,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 6,
+        "nonEmptyLines": 5,
+        "metrics": {
+          "importCount": 2,
+          "exportCount": 0,
+          "functionCount": 0,
+          "classCount": 0
+        }
+      }
+    },
+    {
+      "id": "file:file-ops-rs/src/transport/stdio.rs",
+      "type": "file",
+      "path": "file-ops-rs/src/transport/stdio.rs",
+      "label": "stdio.rs",
+      "language": "rust",
+      "sizeLines": 152,
+      "metadata": {
+        "fileCategory": "code",
+        "totalLines": 152,
+        "nonEmptyLines": 129,
+        "metrics": {
+          "importCount": 1,
+          "exportCount": 6,
+          "functionCount": 6,
+          "classCount": 1
+        }
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/transport/stdio.rs:new",
+      "type": "function",
+      "path": "file-ops-rs/src/transport/stdio.rs",
+      "label": "new",
+      "language": "rust",
+      "metadata": {
+        "startLine": 24,
+        "endLine": 33,
+        "lineCount": 10,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/transport/stdio.rs:read_request",
+      "type": "function",
+      "path": "file-ops-rs/src/transport/stdio.rs",
+      "label": "read_request",
+      "language": "rust",
+      "metadata": {
+        "startLine": 36,
+        "endLine": 77,
+        "lineCount": 42,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/transport/stdio.rs:send_response",
+      "type": "function",
+      "path": "file-ops-rs/src/transport/stdio.rs",
+      "label": "send_response",
+      "language": "rust",
+      "metadata": {
+        "startLine": 80,
+        "endLine": 109,
+        "lineCount": 30,
+        "params": [
+          "response"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/transport/stdio.rs:get_request_latency",
+      "type": "function",
+      "path": "file-ops-rs/src/transport/stdio.rs",
+      "label": "get_request_latency",
+      "language": "rust",
+      "metadata": {
+        "startLine": 112,
+        "endLine": 117,
+        "lineCount": 6,
+        "params": [
+          "id"
+        ],
+        "exported": true
+      }
+    },
+    {
+      "id": "function:file-ops-rs/src/transport/stdio.rs:cleanup_old_requests",
+      "type": "function",
+      "path": "file-ops-rs/src/transport/stdio.rs",
+      "label": "cleanup_old_requests",
+      "language": "rust",
+      "metadata": {
+        "startLine": 120,
+        "endLine": 124,
+        "lineCount": 5,
+        "params": [],
+        "exported": true
+      }
+    },
+    {
+      "id": "class:file-ops-rs/src/transport/stdio.rs:StdioTransport",
+      "type": "class",
+      "path": "file-ops-rs/src/transport/stdio.rs",
+      "label": "StdioTransport",
+      "language": "rust",
+      "metadata": {
+        "startLine": 17,
+        "endLine": 21,
+        "lineCount": 5,
+        "methods": [
+          "new",
+          "read_request",
+          "send_response",
+          "get_request_latency",
+          "cleanup_old_requests",
+          "clone"
+        ],
+        "exported": true
+      }
+    }
+  ],
+  "edges": [
+    {
+      "type": "imports",
+      "source": "file:file-ops-rs/src/transport/mod.rs",
+      "target": "file:file-ops-rs/src/transport/stdio.rs",
+      "weight": 0.7
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/transport/stdio.rs",
+      "target": "function:file-ops-rs/src/transport/stdio.rs:new",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/transport/stdio.rs",
+      "target": "function:file-ops-rs/src/transport/stdio.rs:read_request",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/transport/stdio.rs",
+      "target": "function:file-ops-rs/src/transport/stdio.rs:send_response",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/transport/stdio.rs",
+      "target": "function:file-ops-rs/src/transport/stdio.rs:get_request_latency",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/transport/stdio.rs",
+      "target": "function:file-ops-rs/src/transport/stdio.rs:cleanup_old_requests",
+      "weight": 1
+    },
+    {
+      "type": "contains",
+      "source": "file:file-ops-rs/src/transport/stdio.rs",
+      "target": "class:file-ops-rs/src/transport/stdio.rs:StdioTransport",
+      "weight": 1
+    }
+  ]
+}

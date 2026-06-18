@@ -1,0 +1,3669 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 14,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "vscode-extension/src/cli.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 412,
+      "nonEmptyLines": 360,
+      "functions": [
+        {
+          "name": "getCliPath",
+          "startLine": 27,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "getDefaultPlatform",
+          "startLine": 35,
+          "endLine": 38,
+          "params": []
+        },
+        {
+          "name": "execCli",
+          "startLine": 49,
+          "endLine": 161,
+          "params": [
+            "command",
+            "args",
+            "options"
+          ]
+        },
+        {
+          "name": "execCliStreaming",
+          "startLine": 167,
+          "endLine": 227,
+          "params": [
+            "command",
+            "args",
+            "onData",
+            "onComplete",
+            "options"
+          ]
+        },
+        {
+          "name": "checkCliAvailable",
+          "startLine": 233,
+          "endLine": 251,
+          "params": []
+        },
+        {
+          "name": "resetCliCache",
+          "startLine": 257,
+          "endLine": 259,
+          "params": []
+        },
+        {
+          "name": "showInstallPrompt",
+          "startLine": 265,
+          "endLine": 290,
+          "params": []
+        },
+        {
+          "name": "listSkills",
+          "startLine": 314,
+          "endLine": 316,
+          "params": []
+        },
+        {
+          "name": "listAgents",
+          "startLine": 319,
+          "endLine": 321,
+          "params": []
+        },
+        {
+          "name": "listPipelines",
+          "startLine": 324,
+          "endLine": 326,
+          "params": []
+        },
+        {
+          "name": "listBundles",
+          "startLine": 329,
+          "endLine": 331,
+          "params": []
+        },
+        {
+          "name": "listSynapses",
+          "startLine": 334,
+          "endLine": 336,
+          "params": []
+        },
+        {
+          "name": "getSkillInfo",
+          "startLine": 339,
+          "endLine": 341,
+          "params": [
+            "skillName"
+          ]
+        },
+        {
+          "name": "getAgentInfo",
+          "startLine": 344,
+          "endLine": 350,
+          "params": [
+            "agentName"
+          ]
+        },
+        {
+          "name": "installSkill",
+          "startLine": 353,
+          "endLine": 360,
+          "params": [
+            "skillName",
+            "platform"
+          ]
+        },
+        {
+          "name": "installBundle",
+          "startLine": 363,
+          "endLine": 370,
+          "params": [
+            "bundleName",
+            "platform"
+          ]
+        },
+        {
+          "name": "uninstallComponent",
+          "startLine": 373,
+          "endLine": 375,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "runDoctor",
+          "startLine": 378,
+          "endLine": 382,
+          "params": []
+        },
+        {
+          "name": "searchSkills",
+          "startLine": 385,
+          "endLine": 387,
+          "params": [
+            "query"
+          ]
+        },
+        {
+          "name": "validateWorkspace",
+          "startLine": 390,
+          "endLine": 392,
+          "params": []
+        },
+        {
+          "name": "getAdminStats",
+          "startLine": 395,
+          "endLine": 397,
+          "params": []
+        },
+        {
+          "name": "initArchon",
+          "startLine": 400,
+          "endLine": 402,
+          "params": []
+        },
+        {
+          "name": "checkUpdate",
+          "startLine": 405,
+          "endLine": 407,
+          "params": []
+        },
+        {
+          "name": "applyUpdate",
+          "startLine": 410,
+          "endLine": 412,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "CliNotFoundError",
+          "startLine": 294,
+          "endLine": 299,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        },
+        {
+          "name": "CliCommandError",
+          "startLine": 301,
+          "endLine": 309,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "execCli",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "execCliStreaming",
+          "line": 167,
+          "isDefault": false
+        },
+        {
+          "name": "checkCliAvailable",
+          "line": 233,
+          "isDefault": false
+        },
+        {
+          "name": "resetCliCache",
+          "line": 257,
+          "isDefault": false
+        },
+        {
+          "name": "showInstallPrompt",
+          "line": 265,
+          "isDefault": false
+        },
+        {
+          "name": "CliNotFoundError",
+          "line": 294,
+          "isDefault": false
+        },
+        {
+          "name": "CliCommandError",
+          "line": 301,
+          "isDefault": false
+        },
+        {
+          "name": "listSkills",
+          "line": 314,
+          "isDefault": false
+        },
+        {
+          "name": "listAgents",
+          "line": 319,
+          "isDefault": false
+        },
+        {
+          "name": "listPipelines",
+          "line": 324,
+          "isDefault": false
+        },
+        {
+          "name": "listBundles",
+          "line": 329,
+          "isDefault": false
+        },
+        {
+          "name": "listSynapses",
+          "line": 334,
+          "isDefault": false
+        },
+        {
+          "name": "getSkillInfo",
+          "line": 339,
+          "isDefault": false
+        },
+        {
+          "name": "getAgentInfo",
+          "line": 344,
+          "isDefault": false
+        },
+        {
+          "name": "installSkill",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "installBundle",
+          "line": 363,
+          "isDefault": false
+        },
+        {
+          "name": "uninstallComponent",
+          "line": 373,
+          "isDefault": false
+        },
+        {
+          "name": "runDoctor",
+          "line": 378,
+          "isDefault": false
+        },
+        {
+          "name": "searchSkills",
+          "line": 385,
+          "isDefault": false
+        },
+        {
+          "name": "validateWorkspace",
+          "line": 390,
+          "isDefault": false
+        },
+        {
+          "name": "getAdminStats",
+          "line": 395,
+          "isDefault": false
+        },
+        {
+          "name": "initArchon",
+          "line": 400,
+          "isDefault": false
+        },
+        {
+          "name": "checkUpdate",
+          "line": 405,
+          "isDefault": false
+        },
+        {
+          "name": "applyUpdate",
+          "line": 410,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getCliPath",
+          "callee": "vscode.workspace.getConfiguration",
+          "lineNumber": 28
+        },
+        {
+          "caller": "getCliPath",
+          "callee": "config.get",
+          "lineNumber": 29
+        },
+        {
+          "caller": "getDefaultPlatform",
+          "callee": "vscode.workspace.getConfiguration",
+          "lineNumber": 36
+        },
+        {
+          "caller": "getDefaultPlatform",
+          "callee": "config.get",
+          "lineNumber": 37
+        },
+        {
+          "caller": "execCli",
+          "callee": "getCliPath",
+          "lineNumber": 54
+        },
+        {
+          "caller": "execCli",
+          "callee": "spawn",
+          "lineNumber": 65
+        },
+        {
+          "caller": "execCli",
+          "callee": "setTimeout",
+          "lineNumber": 73
+        },
+        {
+          "caller": "execCli",
+          "callee": "proc.kill",
+          "lineNumber": 76
+        },
+        {
+          "caller": "execCli",
+          "callee": "reject",
+          "lineNumber": 77
+        },
+        {
+          "caller": "execCli",
+          "callee": "args.join",
+          "lineNumber": 79
+        },
+        {
+          "caller": "execCli",
+          "callee": "proc.stdout.on",
+          "lineNumber": 85
+        },
+        {
+          "caller": "execCli",
+          "callee": "chunk.toString",
+          "lineNumber": 86
+        },
+        {
+          "caller": "execCli",
+          "callee": "proc.stderr.on",
+          "lineNumber": 89
+        },
+        {
+          "caller": "execCli",
+          "callee": "chunk.toString",
+          "lineNumber": 90
+        },
+        {
+          "caller": "execCli",
+          "callee": "proc.on",
+          "lineNumber": 93
+        },
+        {
+          "caller": "execCli",
+          "callee": "clearTimeout",
+          "lineNumber": 98
+        },
+        {
+          "caller": "execCli",
+          "callee": "reject",
+          "lineNumber": 102
+        },
+        {
+          "caller": "execCli",
+          "callee": "reject",
+          "lineNumber": 104
+        },
+        {
+          "caller": "execCli",
+          "callee": "proc.on",
+          "lineNumber": 108
+        },
+        {
+          "caller": "execCli",
+          "callee": "clearTimeout",
+          "lineNumber": 113
+        },
+        {
+          "caller": "execCli",
+          "callee": "stdout.trim",
+          "lineNumber": 119
+        },
+        {
+          "caller": "execCli",
+          "callee": "reject",
+          "lineNumber": 122
+        },
+        {
+          "caller": "execCli",
+          "callee": "stderr.trim",
+          "lineNumber": 124
+        },
+        {
+          "caller": "execCli",
+          "callee": "reject",
+          "lineNumber": 128
+        },
+        {
+          "caller": "execCli",
+          "callee": "JSON.parse",
+          "lineNumber": 134
+        },
+        {
+          "caller": "execCli",
+          "callee": "reject",
+          "lineNumber": 136
+        },
+        {
+          "caller": "execCli",
+          "callee": "resolve",
+          "lineNumber": 138
+        },
+        {
+          "caller": "execCli",
+          "callee": "jsonText.match",
+          "lineNumber": 143
+        },
+        {
+          "caller": "execCli",
+          "callee": "JSON.parse",
+          "lineNumber": 146
+        },
+        {
+          "caller": "execCli",
+          "callee": "resolve",
+          "lineNumber": 147
+        },
+        {
+          "caller": "execCli",
+          "callee": "reject",
+          "lineNumber": 153
+        },
+        {
+          "caller": "execCli",
+          "callee": "jsonText.substring",
+          "lineNumber": 155
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "getCliPath",
+          "lineNumber": 174
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "spawn",
+          "lineNumber": 177
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "proc.stdout.on",
+          "lineNumber": 186
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "chunk.toString",
+          "lineNumber": 187
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "buffer.split",
+          "lineNumber": 188
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "lines.pop",
+          "lineNumber": 189
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "line.trim",
+          "lineNumber": 191
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "onData",
+          "lineNumber": 193
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "proc.stderr.on",
+          "lineNumber": 198
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "chunk.toString().trim",
+          "lineNumber": 199
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "chunk.toString",
+          "lineNumber": 199
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "onData",
+          "lineNumber": 201
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "proc.on",
+          "lineNumber": 205
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "buffer.trim",
+          "lineNumber": 206
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "onData",
+          "lineNumber": 207
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "buffer.trim",
+          "lineNumber": 207
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "onComplete",
+          "lineNumber": 209
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "proc.on",
+          "lineNumber": 212
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "onData",
+          "lineNumber": 215
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "onData",
+          "lineNumber": 217
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "onComplete",
+          "lineNumber": 219
+        },
+        {
+          "caller": "execCliStreaming",
+          "callee": "proc.kill",
+          "lineNumber": 224
+        },
+        {
+          "caller": "checkCliAvailable",
+          "callee": "execCli",
+          "lineNumber": 239
+        },
+        {
+          "caller": "showInstallPrompt",
+          "callee": "getCliPath",
+          "lineNumber": 266
+        },
+        {
+          "caller": "showInstallPrompt",
+          "callee": "vscode.window.showErrorMessage",
+          "lineNumber": 267
+        },
+        {
+          "caller": "showInstallPrompt",
+          "callee": "vscode.window.createTerminal",
+          "lineNumber": 276
+        },
+        {
+          "caller": "showInstallPrompt",
+          "callee": "terminal.sendText",
+          "lineNumber": 277
+        },
+        {
+          "caller": "showInstallPrompt",
+          "callee": "terminal.show",
+          "lineNumber": 278
+        },
+        {
+          "caller": "showInstallPrompt",
+          "callee": "resetCliCache",
+          "lineNumber": 279
+        },
+        {
+          "caller": "showInstallPrompt",
+          "callee": "vscode.commands.executeCommand",
+          "lineNumber": 283
+        },
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 296
+        },
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 306
+        },
+        {
+          "caller": "constructor",
+          "callee": "errors.join",
+          "lineNumber": 306
+        },
+        {
+          "caller": "listSkills",
+          "callee": "import",
+          "lineNumber": 315
+        },
+        {
+          "caller": "listAgents",
+          "callee": "import",
+          "lineNumber": 320
+        },
+        {
+          "caller": "listPipelines",
+          "callee": "import",
+          "lineNumber": 325
+        },
+        {
+          "caller": "listBundles",
+          "callee": "import",
+          "lineNumber": 330
+        },
+        {
+          "caller": "listSynapses",
+          "callee": "import",
+          "lineNumber": 335
+        },
+        {
+          "caller": "getSkillInfo",
+          "callee": "import",
+          "lineNumber": 340
+        },
+        {
+          "caller": "getAgentInfo",
+          "callee": "import",
+          "lineNumber": 345
+        },
+        {
+          "caller": "installSkill",
+          "callee": "getDefaultPlatform",
+          "lineNumber": 355
+        },
+        {
+          "caller": "installSkill",
+          "callee": "args.push",
+          "lineNumber": 357
+        },
+        {
+          "caller": "installSkill",
+          "callee": "execCli",
+          "lineNumber": 359
+        },
+        {
+          "caller": "installBundle",
+          "callee": "getDefaultPlatform",
+          "lineNumber": 365
+        },
+        {
+          "caller": "installBundle",
+          "callee": "args.push",
+          "lineNumber": 367
+        },
+        {
+          "caller": "installBundle",
+          "callee": "execCli",
+          "lineNumber": 369
+        },
+        {
+          "caller": "uninstallComponent",
+          "callee": "execCli",
+          "lineNumber": 374
+        },
+        {
+          "caller": "runDoctor",
+          "callee": "import",
+          "lineNumber": 379
+        },
+        {
+          "caller": "searchSkills",
+          "callee": "import",
+          "lineNumber": 386
+        },
+        {
+          "caller": "validateWorkspace",
+          "callee": "import",
+          "lineNumber": 391
+        },
+        {
+          "caller": "getAdminStats",
+          "callee": "import",
+          "lineNumber": 396
+        },
+        {
+          "caller": "initArchon",
+          "callee": "import",
+          "lineNumber": 401
+        },
+        {
+          "caller": "checkUpdate",
+          "callee": "import",
+          "lineNumber": 406
+        },
+        {
+          "caller": "applyUpdate",
+          "callee": "execCli",
+          "lineNumber": 411
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 24,
+        "functionCount": 24,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "vscode-extension/src/commands.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 730,
+      "nonEmptyLines": 653,
+      "functions": [
+        {
+          "name": "registerCommands",
+          "startLine": 27,
+          "endLine": 620,
+          "params": [
+            "context",
+            "skillsTree",
+            "agentsTree",
+            "pipelinesTree",
+            "bundlesTree",
+            "synapsesTree",
+            "statusBar"
+          ]
+        },
+        {
+          "name": "getAgentDetailHtml",
+          "startLine": 624,
+          "endLine": 730,
+          "params": [
+            "agent",
+            "documentation"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "registerCommands",
+          "line": 27,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "register",
+          "callee": "context.subscriptions.push",
+          "lineNumber": 40
+        },
+        {
+          "caller": "register",
+          "callee": "vscode.commands.registerCommand",
+          "lineNumber": 40
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 44
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "cli.checkCliAvailable",
+          "lineNumber": 45
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "cli.showInstallPrompt",
+          "lineNumber": 47
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.withProgress",
+          "lineNumber": 52
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "cli.initArchon",
+          "lineNumber": 58
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInformationMessage",
+          "lineNumber": 60
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "data.platforms_detected.join",
+          "lineNumber": 61
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showErrorMessage",
+          "lineNumber": 67
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 74
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInputBox",
+          "lineNumber": 87
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.withProgress",
+          "lineNumber": 98
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "cli.installSkill",
+          "lineNumber": 104
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInformationMessage",
+          "lineNumber": 105
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "skillsTree.refresh",
+          "lineNumber": 108
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "bundlesTree.refresh",
+          "lineNumber": 109
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showErrorMessage",
+          "lineNumber": 113
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 120
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInputBox",
+          "lineNumber": 134
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.withProgress",
+          "lineNumber": 145
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "cli.installBundle",
+          "lineNumber": 151
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInformationMessage",
+          "lineNumber": 152
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "skillsTree.refresh",
+          "lineNumber": 155
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "bundlesTree.refresh",
+          "lineNumber": 156
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showErrorMessage",
+          "lineNumber": 160
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 167
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInputBox",
+          "lineNumber": 180
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showWarningMessage",
+          "lineNumber": 190
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.withProgress",
+          "lineNumber": 201
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "cli.uninstallComponent",
+          "lineNumber": 207
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInformationMessage",
+          "lineNumber": 208
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "skillsTree.refresh",
+          "lineNumber": 211
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "bundlesTree.refresh",
+          "lineNumber": 212
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showErrorMessage",
+          "lineNumber": 216
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 223
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "pipelinesTree.getAllPipelines",
+          "lineNumber": 236
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showQuickPick",
+          "lineNumber": 238
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "pipelines.map",
+          "lineNumber": 239
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "p.tags.join",
+          "lineNumber": 242
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInputBox",
+          "lineNumber": 248
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "DashboardPanel.show",
+          "lineNumber": 260
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "statusBar.setPipelineRunning",
+          "lineNumber": 261
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "cli.execCliStreaming",
+          "lineNumber": 265
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "JSON.parse",
+          "lineNumber": 271
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "dashboard.updateRun",
+          "lineNumber": 273
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "statusBar.setPipelineRunning",
+          "lineNumber": 274
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "statusBar.setBudget",
+          "lineNumber": 281
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "statusBar.setPipelineComplete",
+          "lineNumber": 293
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInformationMessage",
+          "lineNumber": 294
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "statusBar.setPipelineFailed",
+          "lineNumber": 298
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showErrorMessage",
+          "lineNumber": 299
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "pipelinesTree.refresh",
+          "lineNumber": 303
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "context.subscriptions.push",
+          "lineNumber": 307
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 311
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "DashboardPanel.show",
+          "lineNumber": 312
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 316
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "cli.checkCliAvailable",
+          "lineNumber": 317
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "cli.showInstallPrompt",
+          "lineNumber": 319
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "HealthPanel.show",
+          "lineNumber": 322
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 326
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.withProgress",
+          "lineNumber": 328
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "cli.validateWorkspace",
+          "lineNumber": 333
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInformationMessage",
+          "lineNumber": 338
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "data.checked.join",
+          "lineNumber": 339
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showWarningMessage",
+          "lineNumber": 345
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "data.errors.join",
+          "lineNumber": 346
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showErrorMessage",
+          "lineNumber": 350
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 357
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInputBox",
+          "lineNumber": 358
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "skillsTree.setFilter",
+          "lineNumber": 368
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "cli.searchSkills",
+          "lineNumber": 372
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInformationMessage",
+          "lineNumber": 374
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 384
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.withProgress",
+          "lineNumber": 386
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "cli.getAdminStats",
+          "lineNumber": 391
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "[\n        `Archon v${data.version}`,\n        `Skills: ${data.skills_installed}/${data.skills_total} installed`,\n        `Agents: ${data.agents_total}`,\n        `Pipelines: ${data.pipelines_total}`,\n        `Bundles: ${data.bundles_total}`,\n        `Platforms: ${data.platforms.join(\", \")}`,\n      ].join",
+          "lineNumber": 395
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "data.platforms.join",
+          "lineNumber": 401
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window\n        .showInformationMessage(msg, \"Open Dashboard\")\n        .then",
+          "lineNumber": 404
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window\n        .showInformationMessage",
+          "lineNumber": 404
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "DashboardPanel.show",
+          "lineNumber": 408
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showErrorMessage",
+          "lineNumber": 412
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 419
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.withProgress",
+          "lineNumber": 421
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "cli.checkUpdate",
+          "lineNumber": 426
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInformationMessage",
+          "lineNumber": 431
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInformationMessage",
+          "lineNumber": 437
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.withProgress",
+          "lineNumber": 444
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "cli.applyUpdate",
+          "lineNumber": 450
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInformationMessage",
+          "lineNumber": 451
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "cli.resetCliCache",
+          "lineNumber": 454
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "skillsTree.refresh",
+          "lineNumber": 455
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "agentsTree.refresh",
+          "lineNumber": 456
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "pipelinesTree.refresh",
+          "lineNumber": 457
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "bundlesTree.refresh",
+          "lineNumber": 458
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showErrorMessage",
+          "lineNumber": 463
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 470
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.commands.executeCommand",
+          "lineNumber": 471
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 478
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "import",
+          "lineNumber": 480
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "Math.round",
+          "lineNumber": 488
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "String",
+          "lineNumber": 489
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "Math.round",
+          "lineNumber": 492
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "String",
+          "lineNumber": 493
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "data.breakdown\n            .map(\n              (b) => `  ${b.component}: ${Math.round(b.tokens / 1000)}K tokens`,\n            )\n            .join",
+          "lineNumber": 499
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "data.breakdown\n            .map",
+          "lineNumber": 499
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "Math.round",
+          "lineNumber": 501
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInformationMessage",
+          "lineNumber": 506
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "statusBar.setBudget",
+          "lineNumber": 510
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showWarningMessage",
+          "lineNumber": 512
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 519
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "SkillDetailPanel.show",
+          "lineNumber": 522
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 527
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "cli.getAgentInfo",
+          "lineNumber": 535
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.createWebviewPanel",
+          "lineNumber": 538
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "getAgentDetailHtml",
+          "lineNumber": 545
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.createWebviewPanel",
+          "lineNumber": 548
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "getAgentDetailHtml",
+          "lineNumber": 555
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 563
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInputBox",
+          "lineNumber": 575
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.showInputBox",
+          "lineNumber": 585
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.window.createTerminal",
+          "lineNumber": 595
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.workspace\n      .getConfiguration(\"archon\")\n      .get",
+          "lineNumber": 596
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "vscode.workspace\n      .getConfiguration",
+          "lineNumber": 596
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "terminal.sendText",
+          "lineNumber": 599
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "input.replace",
+          "lineNumber": 600
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "terminal.show",
+          "lineNumber": 602
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 606
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "skillsTree.refresh",
+          "lineNumber": 606
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 607
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "agentsTree.refresh",
+          "lineNumber": 607
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 608
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "pipelinesTree.refresh",
+          "lineNumber": 608
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 609
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "bundlesTree.refresh",
+          "lineNumber": 609
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 610
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "synapsesTree.refresh",
+          "lineNumber": 610
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 611
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "SynapseDetailPanel.show",
+          "lineNumber": 614
+        },
+        {
+          "caller": "registerCommands",
+          "callee": "register",
+          "lineNumber": 617
+        },
+        {
+          "caller": "esc",
+          "callee": "s\n      .replace(/&/g, \"&amp;\")\n      .replace(/</g, \"&lt;\")\n      .replace(/>/g, \"&gt;\")\n      .replace",
+          "lineNumber": 626
+        },
+        {
+          "caller": "esc",
+          "callee": "s\n      .replace(/&/g, \"&amp;\")\n      .replace(/</g, \"&lt;\")\n      .replace",
+          "lineNumber": 626
+        },
+        {
+          "caller": "esc",
+          "callee": "s\n      .replace(/&/g, \"&amp;\")\n      .replace",
+          "lineNumber": 626
+        },
+        {
+          "caller": "esc",
+          "callee": "s\n      .replace",
+          "lineNumber": 626
+        },
+        {
+          "caller": "getAgentDetailHtml",
+          "callee": "esc",
+          "lineNumber": 637
+        },
+        {
+          "caller": "getAgentDetailHtml",
+          "callee": "esc",
+          "lineNumber": 697
+        },
+        {
+          "caller": "getAgentDetailHtml",
+          "callee": "esc",
+          "lineNumber": 698
+        },
+        {
+          "caller": "getAgentDetailHtml",
+          "callee": "esc",
+          "lineNumber": 701
+        },
+        {
+          "caller": "getAgentDetailHtml",
+          "callee": "esc",
+          "lineNumber": 701
+        },
+        {
+          "caller": "getAgentDetailHtml",
+          "callee": "agent.skills.map((s) => `<span class=\"tag\">${esc(s)}</span>`).join",
+          "lineNumber": 708
+        },
+        {
+          "caller": "getAgentDetailHtml",
+          "callee": "agent.skills.map",
+          "lineNumber": 708
+        },
+        {
+          "caller": "getAgentDetailHtml",
+          "callee": "esc",
+          "lineNumber": 708
+        },
+        {
+          "caller": "getAgentDetailHtml",
+          "callee": "agent.capabilities.map((c) => `<span class=\"tag\">${esc(c)}</span>`).join",
+          "lineNumber": 712
+        },
+        {
+          "caller": "getAgentDetailHtml",
+          "callee": "agent.capabilities.map",
+          "lineNumber": 712
+        },
+        {
+          "caller": "getAgentDetailHtml",
+          "callee": "esc",
+          "lineNumber": 712
+        },
+        {
+          "caller": "getAgentDetailHtml",
+          "callee": "esc",
+          "lineNumber": 719
+        },
+        {
+          "caller": "getAgentDetailHtml",
+          "callee": "esc",
+          "lineNumber": 720
+        },
+        {
+          "caller": "getAgentDetailHtml",
+          "callee": "esc",
+          "lineNumber": 727
+        }
+      ],
+      "metrics": {
+        "importCount": 12,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "vscode-extension/src/extension.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 137,
+      "nonEmptyLines": 127,
+      "functions": [
+        {
+          "name": "activate",
+          "startLine": 29,
+          "endLine": 130,
+          "params": [
+            "context"
+          ]
+        },
+        {
+          "name": "deactivate",
+          "startLine": 135,
+          "endLine": 137,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "activate",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "deactivate",
+          "line": 135,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "activate",
+          "callee": "vscode.window.createOutputChannel",
+          "lineNumber": 33
+        },
+        {
+          "caller": "activate",
+          "callee": "context.subscriptions.push",
+          "lineNumber": 34
+        },
+        {
+          "caller": "activate",
+          "callee": "output.appendLine",
+          "lineNumber": 35
+        },
+        {
+          "caller": "activate",
+          "callee": "context.subscriptions.push",
+          "lineNumber": 44
+        },
+        {
+          "caller": "activate",
+          "callee": "vscode.window.registerTreeDataProvider",
+          "lineNumber": 45
+        },
+        {
+          "caller": "activate",
+          "callee": "vscode.window.registerTreeDataProvider",
+          "lineNumber": 46
+        },
+        {
+          "caller": "activate",
+          "callee": "vscode.window.registerTreeDataProvider",
+          "lineNumber": 47
+        },
+        {
+          "caller": "activate",
+          "callee": "vscode.window.registerTreeDataProvider",
+          "lineNumber": 51
+        },
+        {
+          "caller": "activate",
+          "callee": "vscode.window.registerTreeDataProvider",
+          "lineNumber": 52
+        },
+        {
+          "caller": "activate",
+          "callee": "context.subscriptions.push",
+          "lineNumber": 57
+        },
+        {
+          "caller": "activate",
+          "callee": "statusBar.dispose",
+          "lineNumber": 57
+        },
+        {
+          "caller": "activate",
+          "callee": "registerCommands",
+          "lineNumber": 60
+        },
+        {
+          "caller": "activate",
+          "callee": "context.subscriptions.push",
+          "lineNumber": 71
+        },
+        {
+          "caller": "activate",
+          "callee": "vscode.workspace.onDidChangeConfiguration",
+          "lineNumber": 72
+        },
+        {
+          "caller": "activate",
+          "callee": "e.affectsConfiguration",
+          "lineNumber": 73
+        },
+        {
+          "caller": "activate",
+          "callee": "statusBar.updateFromSettings",
+          "lineNumber": 74
+        },
+        {
+          "caller": "activate",
+          "callee": "e.affectsConfiguration",
+          "lineNumber": 76
+        },
+        {
+          "caller": "activate",
+          "callee": "resetCliCache",
+          "lineNumber": 77
+        },
+        {
+          "caller": "activate",
+          "callee": "skillsTree.refresh",
+          "lineNumber": 79
+        },
+        {
+          "caller": "activate",
+          "callee": "agentsTree.refresh",
+          "lineNumber": 80
+        },
+        {
+          "caller": "activate",
+          "callee": "pipelinesTree.refresh",
+          "lineNumber": 81
+        },
+        {
+          "caller": "activate",
+          "callee": "bundlesTree.refresh",
+          "lineNumber": 82
+        },
+        {
+          "caller": "activate",
+          "callee": "synapsesTree.refresh",
+          "lineNumber": 83
+        },
+        {
+          "caller": "activate",
+          "callee": "output.appendLine",
+          "lineNumber": 84
+        },
+        {
+          "caller": "activate",
+          "callee": "e.affectsConfiguration",
+          "lineNumber": 86
+        },
+        {
+          "caller": "activate",
+          "callee": "output.appendLine",
+          "lineNumber": 88
+        },
+        {
+          "caller": "activate",
+          "callee": "checkCliAvailable()\n    .then((available) => {\n      if (available) {\n        output.appendLine(\"Archon CLI detected — extension ready.\");\n      } else {\n        output.appendLine(\n          \"Archon CLI not found — will prompt on first use.\",\n        );\n        // Show a subtle notification (not modal)\n        vscode.window\n          .showWarningMessage(\n            \"Archon CLI not found. Some features require the CLI.\",\n            \"Install\",\n            \"Set Path\",\n          )\n          .then((choice) => {\n            if (choice === \"Install\") {\n              const terminal =\n                vscode.window.createTerminal(\"Archon Install\");\n              terminal.sendText(\"pip install archon\");\n              terminal.show();\n            } else if (choice === \"Set Path\") {\n              vscode.commands.executeCommand(\n                \"workbench.action.openSettings\",\n                \"archon.cliPath\",\n              );\n            }\n          });\n      }\n    })\n    .catch",
+          "lineNumber": 95
+        },
+        {
+          "caller": "activate",
+          "callee": "checkCliAvailable()\n    .then",
+          "lineNumber": 95
+        },
+        {
+          "caller": "activate",
+          "callee": "checkCliAvailable",
+          "lineNumber": 95
+        },
+        {
+          "caller": "activate",
+          "callee": "output.appendLine",
+          "lineNumber": 98
+        },
+        {
+          "caller": "activate",
+          "callee": "output.appendLine",
+          "lineNumber": 100
+        },
+        {
+          "caller": "activate",
+          "callee": "vscode.window\n          .showWarningMessage(\n            \"Archon CLI not found. Some features require the CLI.\",\n            \"Install\",\n            \"Set Path\",\n          )\n          .then",
+          "lineNumber": 104
+        },
+        {
+          "caller": "activate",
+          "callee": "vscode.window\n          .showWarningMessage",
+          "lineNumber": 104
+        },
+        {
+          "caller": "activate",
+          "callee": "vscode.window.createTerminal",
+          "lineNumber": 113
+        },
+        {
+          "caller": "activate",
+          "callee": "terminal.sendText",
+          "lineNumber": 114
+        },
+        {
+          "caller": "activate",
+          "callee": "terminal.show",
+          "lineNumber": 115
+        },
+        {
+          "caller": "activate",
+          "callee": "vscode.commands.executeCommand",
+          "lineNumber": 117
+        },
+        {
+          "caller": "activate",
+          "callee": "output.appendLine",
+          "lineNumber": 126
+        },
+        {
+          "caller": "activate",
+          "callee": "output.appendLine",
+          "lineNumber": 129
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "vscode-extension/src/statusBar.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 178,
+      "nonEmptyLines": 156,
+      "classes": [
+        {
+          "name": "StatusBarManager",
+          "startLine": 11,
+          "endLine": 178,
+          "methods": [
+            "constructor",
+            "setPipelineIdle",
+            "setPipelineRunning",
+            "setPipelineComplete",
+            "setPipelineFailed",
+            "setBudget",
+            "show",
+            "hide",
+            "updateFromSettings",
+            "dispose",
+            "_updateVisibility",
+            "_formatTokens"
+          ],
+          "properties": [
+            "_pipelineItem",
+            "_budgetItem",
+            "_disposed"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "StatusBarManager",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "vscode.window.createStatusBarItem",
+          "lineNumber": 18
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.setPipelineIdle",
+          "lineNumber": 24
+        },
+        {
+          "caller": "constructor",
+          "callee": "vscode.window.createStatusBarItem",
+          "lineNumber": 27
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.setBudget",
+          "lineNumber": 33
+        },
+        {
+          "caller": "constructor",
+          "callee": "this._updateVisibility",
+          "lineNumber": 36
+        },
+        {
+          "caller": "setPipelineComplete",
+          "callee": "setTimeout",
+          "lineNumber": 73
+        },
+        {
+          "caller": "setPipelineComplete",
+          "callee": "this.setPipelineIdle",
+          "lineNumber": 75
+        },
+        {
+          "caller": "setBudget",
+          "callee": "Math.round",
+          "lineNumber": 102
+        },
+        {
+          "caller": "setBudget",
+          "callee": "this._formatTokens",
+          "lineNumber": 103
+        },
+        {
+          "caller": "setBudget",
+          "callee": "this._formatTokens",
+          "lineNumber": 104
+        },
+        {
+          "caller": "setBudget",
+          "callee": "vscode.workspace.getConfiguration",
+          "lineNumber": 110
+        },
+        {
+          "caller": "setBudget",
+          "callee": "config.get",
+          "lineNumber": 111
+        },
+        {
+          "caller": "show",
+          "callee": "this._pipelineItem.show",
+          "lineNumber": 130
+        },
+        {
+          "caller": "show",
+          "callee": "this._budgetItem.show",
+          "lineNumber": 131
+        },
+        {
+          "caller": "hide",
+          "callee": "this._pipelineItem.hide",
+          "lineNumber": 138
+        },
+        {
+          "caller": "hide",
+          "callee": "this._budgetItem.hide",
+          "lineNumber": 139
+        },
+        {
+          "caller": "updateFromSettings",
+          "callee": "this._updateVisibility",
+          "lineNumber": 146
+        },
+        {
+          "caller": "dispose",
+          "callee": "this._pipelineItem.dispose",
+          "lineNumber": 154
+        },
+        {
+          "caller": "dispose",
+          "callee": "this._budgetItem.dispose",
+          "lineNumber": 155
+        },
+        {
+          "caller": "_updateVisibility",
+          "callee": "vscode.workspace.getConfiguration",
+          "lineNumber": 159
+        },
+        {
+          "caller": "_updateVisibility",
+          "callee": "config.get",
+          "lineNumber": 160
+        },
+        {
+          "caller": "_updateVisibility",
+          "callee": "this.show",
+          "lineNumber": 163
+        },
+        {
+          "caller": "_updateVisibility",
+          "callee": "this.hide",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_formatTokens",
+          "callee": "(n / 1_000_000).toFixed",
+          "lineNumber": 171
+        },
+        {
+          "caller": "_formatTokens",
+          "callee": "Math.round",
+          "lineNumber": 174
+        },
+        {
+          "caller": "_formatTokens",
+          "callee": "n.toString",
+          "lineNumber": 176
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "vscode-extension/src/types.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 268,
+      "nonEmptyLines": 227,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "vscode-extension/src/views/agentsTree.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 127,
+      "nonEmptyLines": 108,
+      "classes": [
+        {
+          "name": "AgentItem",
+          "startLine": 15,
+          "endLine": 57,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        },
+        {
+          "name": "AgentsTreeProvider",
+          "startLine": 61,
+          "endLine": 127,
+          "methods": [
+            "refresh",
+            "getTreeItem",
+            "getChildren",
+            "fetchAgents",
+            "getAllAgents"
+          ],
+          "properties": [
+            "_onDidChangeTreeData",
+            "onDidChangeTreeData",
+            "agents",
+            "loading",
+            "loadError"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "AgentsTreeProvider",
+          "line": 61,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 17
+        },
+        {
+          "caller": "constructor",
+          "callee": "agent.skills.join",
+          "lineNumber": 25
+        },
+        {
+          "caller": "constructor",
+          "callee": "agent.capabilities.join",
+          "lineNumber": 26
+        },
+        {
+          "caller": "refresh",
+          "callee": "this._onDidChangeTreeData.fire",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getChildren",
+          "callee": "this.fetchAgents",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getChildren",
+          "callee": "this.agents\n      .sort((a, b) => a.name.localeCompare(b.name))\n      .map",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getChildren",
+          "callee": "this.agents\n      .sort",
+          "lineNumber": 104
+        },
+        {
+          "caller": "getChildren",
+          "callee": "a.name.localeCompare",
+          "lineNumber": 105
+        },
+        {
+          "caller": "fetchAgents",
+          "callee": "listAgents",
+          "lineNumber": 112
+        },
+        {
+          "caller": "fetchAgents",
+          "callee": "String",
+          "lineNumber": 115
+        },
+        {
+          "caller": "fetchAgents",
+          "callee": "msg.includes",
+          "lineNumber": 116
+        },
+        {
+          "caller": "fetchAgents",
+          "callee": "msg.substring",
+          "lineNumber": 118
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "vscode-extension/src/views/bundlesTree.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 165,
+      "nonEmptyLines": 138,
+      "classes": [
+        {
+          "name": "BundleItem",
+          "startLine": 19,
+          "endLine": 56,
+          "methods": [
+            "constructor"
+          ],
+          "properties": [
+            "type"
+          ]
+        },
+        {
+          "name": "BundleSkillItem",
+          "startLine": 58,
+          "endLine": 80,
+          "methods": [
+            "constructor"
+          ],
+          "properties": [
+            "type"
+          ]
+        },
+        {
+          "name": "BundlesTreeProvider",
+          "startLine": 84,
+          "endLine": 165,
+          "methods": [
+            "refresh",
+            "getTreeItem",
+            "getChildren",
+            "fetchBundles",
+            "getAllBundles"
+          ],
+          "properties": [
+            "_onDidChangeTreeData",
+            "onDidChangeTreeData",
+            "bundles",
+            "loading",
+            "loadError"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "BundlesTreeProvider",
+          "line": 84,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 23
+        },
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 66
+        },
+        {
+          "caller": "refresh",
+          "callee": "this._onDidChangeTreeData.fire",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getChildren",
+          "callee": "bundle.skills.map",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getChildren",
+          "callee": "bundle.installed_skills.includes",
+          "lineNumber": 117
+        },
+        {
+          "caller": "getChildren",
+          "callee": "this.fetchBundles",
+          "lineNumber": 125
+        },
+        {
+          "caller": "getChildren",
+          "callee": "this.bundles\n      .sort((a, b) => a.name.localeCompare(b.name))\n      .map",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getChildren",
+          "callee": "this.bundles\n      .sort",
+          "lineNumber": 142
+        },
+        {
+          "caller": "getChildren",
+          "callee": "a.name.localeCompare",
+          "lineNumber": 143
+        },
+        {
+          "caller": "fetchBundles",
+          "callee": "listBundles",
+          "lineNumber": 150
+        },
+        {
+          "caller": "fetchBundles",
+          "callee": "String",
+          "lineNumber": 153
+        },
+        {
+          "caller": "fetchBundles",
+          "callee": "msg.includes",
+          "lineNumber": 154
+        },
+        {
+          "caller": "fetchBundles",
+          "callee": "msg.substring",
+          "lineNumber": 156
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "vscode-extension/src/views/pipelinesTree.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 161,
+      "nonEmptyLines": 136,
+      "classes": [
+        {
+          "name": "PipelineItem",
+          "startLine": 19,
+          "endLine": 41,
+          "methods": [
+            "constructor"
+          ],
+          "properties": [
+            "type"
+          ]
+        },
+        {
+          "name": "StepItem",
+          "startLine": 43,
+          "endLine": 82,
+          "methods": [
+            "constructor"
+          ],
+          "properties": [
+            "type"
+          ]
+        },
+        {
+          "name": "PipelinesTreeProvider",
+          "startLine": 86,
+          "endLine": 161,
+          "methods": [
+            "refresh",
+            "getTreeItem",
+            "getChildren",
+            "fetchPipelines",
+            "getAllPipelines"
+          ],
+          "properties": [
+            "_onDidChangeTreeData",
+            "onDidChangeTreeData",
+            "pipelines",
+            "loading",
+            "loadError"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PipelinesTreeProvider",
+          "line": 86,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 23
+        },
+        {
+          "caller": "constructor",
+          "callee": "pipeline.tags.join",
+          "lineNumber": 30
+        },
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 51
+        },
+        {
+          "caller": "refresh",
+          "callee": "this._onDidChangeTreeData.fire",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getChildren",
+          "callee": "element.pipeline.steps.map",
+          "lineNumber": 114
+        },
+        {
+          "caller": "getChildren",
+          "callee": "this.fetchPipelines",
+          "lineNumber": 121
+        },
+        {
+          "caller": "getChildren",
+          "callee": "this.pipelines\n      .sort((a, b) => a.name.localeCompare(b.name))\n      .map",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getChildren",
+          "callee": "this.pipelines\n      .sort",
+          "lineNumber": 138
+        },
+        {
+          "caller": "getChildren",
+          "callee": "a.name.localeCompare",
+          "lineNumber": 139
+        },
+        {
+          "caller": "fetchPipelines",
+          "callee": "listPipelines",
+          "lineNumber": 146
+        },
+        {
+          "caller": "fetchPipelines",
+          "callee": "String",
+          "lineNumber": 149
+        },
+        {
+          "caller": "fetchPipelines",
+          "callee": "msg.includes",
+          "lineNumber": 150
+        },
+        {
+          "caller": "fetchPipelines",
+          "callee": "msg.substring",
+          "lineNumber": 152
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "vscode-extension/src/views/skillsTree.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 262,
+      "nonEmptyLines": 222,
+      "classes": [
+        {
+          "name": "CategoryItem",
+          "startLine": 20,
+          "endLine": 41,
+          "methods": [
+            "constructor"
+          ],
+          "properties": [
+            "type"
+          ]
+        },
+        {
+          "name": "SkillItem",
+          "startLine": 43,
+          "endLine": 76,
+          "methods": [
+            "constructor"
+          ],
+          "properties": [
+            "type"
+          ]
+        },
+        {
+          "name": "SkillsTreeProvider",
+          "startLine": 80,
+          "endLine": 262,
+          "methods": [
+            "refresh",
+            "setFilter",
+            "clearFilter",
+            "getTreeItem",
+            "getChildren",
+            "getRootCategories",
+            "getSkillsForCategory",
+            "getFilteredCategories",
+            "fetchSkills",
+            "buildCategories",
+            "getAllSkills"
+          ],
+          "properties": [
+            "_onDidChangeTreeData",
+            "onDidChangeTreeData",
+            "categories",
+            "allSkills",
+            "filterQuery",
+            "loading",
+            "loadError"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SkillsTreeProvider",
+          "line": 80,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 27
+        },
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 47
+        },
+        {
+          "caller": "constructor",
+          "callee": "skill.tags.join",
+          "lineNumber": 54
+        },
+        {
+          "caller": "refresh",
+          "callee": "this._onDidChangeTreeData.fire",
+          "lineNumber": 99
+        },
+        {
+          "caller": "setFilter",
+          "callee": "query.toLowerCase().trim",
+          "lineNumber": 106
+        },
+        {
+          "caller": "setFilter",
+          "callee": "query.toLowerCase",
+          "lineNumber": 106
+        },
+        {
+          "caller": "setFilter",
+          "callee": "this._onDidChangeTreeData.fire",
+          "lineNumber": 107
+        },
+        {
+          "caller": "clearFilter",
+          "callee": "this._onDidChangeTreeData.fire",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getChildren",
+          "callee": "this.getSkillsForCategory",
+          "lineNumber": 130
+        },
+        {
+          "caller": "getChildren",
+          "callee": "this.getRootCategories",
+          "lineNumber": 134
+        },
+        {
+          "caller": "getRootCategories",
+          "callee": "this.fetchSkills",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getRootCategories",
+          "callee": "this.getFilteredCategories",
+          "lineNumber": 157
+        },
+        {
+          "caller": "getRootCategories",
+          "callee": "filteredCategories.map",
+          "lineNumber": 167
+        },
+        {
+          "caller": "getRootCategories",
+          "callee": "cat.skills.filter",
+          "lineNumber": 168
+        },
+        {
+          "caller": "getSkillsForCategory",
+          "callee": "skills.filter",
+          "lineNumber": 178
+        },
+        {
+          "caller": "getSkillsForCategory",
+          "callee": "s.name.toLowerCase().includes",
+          "lineNumber": 180
+        },
+        {
+          "caller": "getSkillsForCategory",
+          "callee": "s.name.toLowerCase",
+          "lineNumber": 180
+        },
+        {
+          "caller": "getSkillsForCategory",
+          "callee": "s.description.toLowerCase().includes",
+          "lineNumber": 181
+        },
+        {
+          "caller": "getSkillsForCategory",
+          "callee": "s.description.toLowerCase",
+          "lineNumber": 181
+        },
+        {
+          "caller": "getSkillsForCategory",
+          "callee": "s.tags.some",
+          "lineNumber": 182
+        },
+        {
+          "caller": "getSkillsForCategory",
+          "callee": "t.toLowerCase().includes",
+          "lineNumber": 182
+        },
+        {
+          "caller": "getSkillsForCategory",
+          "callee": "t.toLowerCase",
+          "lineNumber": 182
+        },
+        {
+          "caller": "getSkillsForCategory",
+          "callee": "skills\n      .sort((a, b) => a.name.localeCompare(b.name))\n      .map",
+          "lineNumber": 186
+        },
+        {
+          "caller": "getSkillsForCategory",
+          "callee": "skills\n      .sort",
+          "lineNumber": 186
+        },
+        {
+          "caller": "getSkillsForCategory",
+          "callee": "a.name.localeCompare",
+          "lineNumber": 187
+        },
+        {
+          "caller": "getFilteredCategories",
+          "callee": "this.categories\n      .map((cat) => ({\n        ...cat,\n        skills: cat.skills.filter(\n          (s) =>\n            s.name.toLowerCase().includes(this.filterQuery) ||\n            s.description.toLowerCase().includes(this.filterQuery) ||\n            s.tags.some((t) => t.toLowerCase().includes(this.filterQuery)) ||\n            cat.name.toLowerCase().includes(this.filterQuery),\n        ),\n      }))\n      .filter",
+          "lineNumber": 196
+        },
+        {
+          "caller": "getFilteredCategories",
+          "callee": "this.categories\n      .map",
+          "lineNumber": 196
+        },
+        {
+          "caller": "getFilteredCategories",
+          "callee": "cat.skills.filter",
+          "lineNumber": 199
+        },
+        {
+          "caller": "getFilteredCategories",
+          "callee": "s.name.toLowerCase().includes",
+          "lineNumber": 201
+        },
+        {
+          "caller": "getFilteredCategories",
+          "callee": "s.name.toLowerCase",
+          "lineNumber": 201
+        },
+        {
+          "caller": "getFilteredCategories",
+          "callee": "s.description.toLowerCase().includes",
+          "lineNumber": 202
+        },
+        {
+          "caller": "getFilteredCategories",
+          "callee": "s.description.toLowerCase",
+          "lineNumber": 202
+        },
+        {
+          "caller": "getFilteredCategories",
+          "callee": "s.tags.some",
+          "lineNumber": 203
+        },
+        {
+          "caller": "getFilteredCategories",
+          "callee": "t.toLowerCase().includes",
+          "lineNumber": 203
+        },
+        {
+          "caller": "getFilteredCategories",
+          "callee": "t.toLowerCase",
+          "lineNumber": 203
+        },
+        {
+          "caller": "getFilteredCategories",
+          "callee": "cat.name.toLowerCase().includes",
+          "lineNumber": 204
+        },
+        {
+          "caller": "getFilteredCategories",
+          "callee": "cat.name.toLowerCase",
+          "lineNumber": 204
+        },
+        {
+          "caller": "fetchSkills",
+          "callee": "listSkills",
+          "lineNumber": 213
+        },
+        {
+          "caller": "fetchSkills",
+          "callee": "this.buildCategories",
+          "lineNumber": 222
+        },
+        {
+          "caller": "fetchSkills",
+          "callee": "String",
+          "lineNumber": 225
+        },
+        {
+          "caller": "fetchSkills",
+          "callee": "msg.includes",
+          "lineNumber": 226
+        },
+        {
+          "caller": "fetchSkills",
+          "callee": "msg.substring",
+          "lineNumber": 229
+        },
+        {
+          "caller": "buildCategories",
+          "callee": "categoryMap.has",
+          "lineNumber": 241
+        },
+        {
+          "caller": "buildCategories",
+          "callee": "categoryMap.set",
+          "lineNumber": 242
+        },
+        {
+          "caller": "buildCategories",
+          "callee": "categoryMap.get(cat)!.push",
+          "lineNumber": 244
+        },
+        {
+          "caller": "buildCategories",
+          "callee": "categoryMap.get",
+          "lineNumber": 244
+        },
+        {
+          "caller": "buildCategories",
+          "callee": "Array.from(categoryMap.entries())\n      .sort(([a], [b]) => a.localeCompare(b))\n      .map",
+          "lineNumber": 247
+        },
+        {
+          "caller": "buildCategories",
+          "callee": "Array.from(categoryMap.entries())\n      .sort",
+          "lineNumber": 247
+        },
+        {
+          "caller": "buildCategories",
+          "callee": "Array.from",
+          "lineNumber": 247
+        },
+        {
+          "caller": "buildCategories",
+          "callee": "categoryMap.entries",
+          "lineNumber": 247
+        },
+        {
+          "caller": "buildCategories",
+          "callee": "a.localeCompare",
+          "lineNumber": 248
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "vscode-extension/src/views/synapsesTree.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 140,
+      "nonEmptyLines": 117,
+      "classes": [
+        {
+          "name": "SynapseItem",
+          "startLine": 19,
+          "endLine": 49,
+          "methods": [
+            "constructor"
+          ],
+          "properties": [
+            "type"
+          ]
+        },
+        {
+          "name": "SynapsesTreeProvider",
+          "startLine": 53,
+          "endLine": 140,
+          "methods": [
+            "refresh",
+            "getTreeItem",
+            "getChildren",
+            "getRootItems",
+            "fetchSynapses",
+            "getAllSynapses"
+          ],
+          "properties": [
+            "_onDidChangeTreeData",
+            "onDidChangeTreeData",
+            "synapses",
+            "loading",
+            "loadError"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SynapsesTreeProvider",
+          "line": 53,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 23
+        },
+        {
+          "caller": "constructor",
+          "callee": "synapse.tags.join",
+          "lineNumber": 31
+        },
+        {
+          "caller": "constructor",
+          "callee": "synapse.firing_phases.map((p) => p.name).join",
+          "lineNumber": 32
+        },
+        {
+          "caller": "constructor",
+          "callee": "synapse.firing_phases.map",
+          "lineNumber": 32
+        },
+        {
+          "caller": "refresh",
+          "callee": "this._onDidChangeTreeData.fire",
+          "lineNumber": 71
+        },
+        {
+          "caller": "getChildren",
+          "callee": "this.getRootItems",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getRootItems",
+          "callee": "this.fetchSynapses",
+          "lineNumber": 90
+        },
+        {
+          "caller": "getRootItems",
+          "callee": "this.synapses\n      .sort((a, b) => a.name.localeCompare(b.name))\n      .map",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getRootItems",
+          "callee": "this.synapses\n      .sort",
+          "lineNumber": 112
+        },
+        {
+          "caller": "getRootItems",
+          "callee": "a.name.localeCompare",
+          "lineNumber": 113
+        },
+        {
+          "caller": "fetchSynapses",
+          "callee": "listSynapses",
+          "lineNumber": 120
+        },
+        {
+          "caller": "fetchSynapses",
+          "callee": "String",
+          "lineNumber": 123
+        },
+        {
+          "caller": "fetchSynapses",
+          "callee": "msg.includes",
+          "lineNumber": 124
+        },
+        {
+          "caller": "fetchSynapses",
+          "callee": "msg.substring",
+          "lineNumber": 127
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "vscode-extension/src/webviews/dashboardPanel.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 496,
+      "nonEmptyLines": 433,
+      "classes": [
+        {
+          "name": "DashboardPanel",
+          "startLine": 12,
+          "endLine": 496,
+          "methods": [
+            "constructor",
+            "show",
+            "updateRun",
+            "showIdle",
+            "dispose",
+            "_getHtml"
+          ],
+          "properties": [
+            "currentPanel",
+            "viewType",
+            "_panel",
+            "_disposables",
+            "_currentRun"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DashboardPanel",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this._getHtml",
+          "lineNumber": 22
+        },
+        {
+          "caller": "constructor",
+          "callee": "this._panel.onDidDispose",
+          "lineNumber": 24
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.dispose",
+          "lineNumber": 24
+        },
+        {
+          "caller": "constructor",
+          "callee": "this._panel.webview.onDidReceiveMessage",
+          "lineNumber": 26
+        },
+        {
+          "caller": "constructor",
+          "callee": "vscode.commands.executeCommand",
+          "lineNumber": 31
+        },
+        {
+          "caller": "constructor",
+          "callee": "vscode.Uri.file",
+          "lineNumber": 33
+        },
+        {
+          "caller": "constructor",
+          "callee": "vscode.commands.executeCommand",
+          "lineNumber": 38
+        },
+        {
+          "caller": "show",
+          "callee": "DashboardPanel.currentPanel._panel.reveal",
+          "lineNumber": 49
+        },
+        {
+          "caller": "show",
+          "callee": "vscode.window.createWebviewPanel",
+          "lineNumber": 53
+        },
+        {
+          "caller": "updateRun",
+          "callee": "this._panel.webview.postMessage",
+          "lineNumber": 69
+        },
+        {
+          "caller": "showIdle",
+          "callee": "this._panel.webview.postMessage",
+          "lineNumber": 74
+        },
+        {
+          "caller": "dispose",
+          "callee": "this._panel.dispose",
+          "lineNumber": 79
+        },
+        {
+          "caller": "dispose",
+          "callee": "d.dispose",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "vscode-extension/src/webviews/healthPanel.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 421,
+      "nonEmptyLines": 377,
+      "classes": [
+        {
+          "name": "HealthPanel",
+          "startLine": 16,
+          "endLine": 421,
+          "methods": [
+            "constructor",
+            "show",
+            "_loadData",
+            "dispose",
+            "_getLoadingHtml",
+            "_getErrorHtml",
+            "_getHtml",
+            "_esc"
+          ],
+          "properties": [
+            "currentPanel",
+            "viewType",
+            "_panel",
+            "_disposables"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HealthPanel",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this._panel.onDidDispose",
+          "lineNumber": 25
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.dispose",
+          "lineNumber": 25
+        },
+        {
+          "caller": "show",
+          "callee": "HealthPanel.currentPanel._panel.reveal",
+          "lineNumber": 30
+        },
+        {
+          "caller": "show",
+          "callee": "HealthPanel.currentPanel._loadData",
+          "lineNumber": 31
+        },
+        {
+          "caller": "show",
+          "callee": "vscode.window.createWebviewPanel",
+          "lineNumber": 35
+        },
+        {
+          "caller": "show",
+          "callee": "HealthPanel.currentPanel._loadData",
+          "lineNumber": 43
+        },
+        {
+          "caller": "_loadData",
+          "callee": "this._getLoadingHtml",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_loadData",
+          "callee": "runDoctor",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_loadData",
+          "callee": "this._getHtml",
+          "lineNumber": 52
+        },
+        {
+          "caller": "_loadData",
+          "callee": "String",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_loadData",
+          "callee": "this._getErrorHtml",
+          "lineNumber": 55
+        },
+        {
+          "caller": "dispose",
+          "callee": "this._panel.dispose",
+          "lineNumber": 61
+        },
+        {
+          "caller": "dispose",
+          "callee": "d.dispose",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_getErrorHtml",
+          "callee": "this._esc",
+          "lineNumber": 117
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "data.platforms\n      .map((p) => {\n        const statusColor =\n          p.status === \"healthy\"\n            ? \"#22c55e\"\n            : p.status === \"degraded\"\n              ? \"#eab308\"\n              : p.status === \"error\"\n                ? \"#ef4444\"\n                : \"#6b7280\";\n        const statusIcon =\n          p.status === \"healthy\"\n            ? \"✓\"\n            : p.status === \"degraded\"\n              ? \"⚠\"\n              : p.status === \"error\"\n                ? \"✗\"\n                : \"—\";\n\n        const checksHtml = p.checks\n          .map((c) => {\n            const chkColor =\n              c.status === \"pass\"\n                ? \"#22c55e\"\n                : c.status === \"warn\"\n                  ? \"#eab308\"\n                  : \"#ef4444\";\n            const chkIcon =\n              c.status === \"pass\" ? \"✓\" : c.status === \"warn\" ? \"⚠\" : \"✗\";\n            return `<div class=\"check-item\">\n                    <span style=\"color:${chkColor}\">${chkIcon}</span>\n                    <span>${this._esc(c.name)}: ${this._esc(c.message)}</span>\n                    ${c.suggestion ? `<div class=\"suggestion\">${this._esc(c.suggestion)}</div>` : \"\"}\n                </div>`;\n          })\n          .join(\"\");\n\n        return `<div class=\"platform-card\">\n                <div class=\"platform-header\">\n                    <span class=\"platform-name\">${this._esc(p.name)}</span>\n                    <span class=\"platform-status\" style=\"color:${statusColor}\">${statusIcon} ${this._esc(p.status)}</span>\n                </div>\n                <div class=\"platform-msg\">${this._esc(p.message)}</div>\n                ${checksHtml ? `<div class=\"checks\">${checksHtml}</div>` : \"\"}\n            </div>`;\n      })\n      .join",
+          "lineNumber": 134
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "data.platforms\n      .map",
+          "lineNumber": 134
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "p.checks\n          .map((c) => {\n            const chkColor =\n              c.status === \"pass\"\n                ? \"#22c55e\"\n                : c.status === \"warn\"\n                  ? \"#eab308\"\n                  : \"#ef4444\";\n            const chkIcon =\n              c.status === \"pass\" ? \"✓\" : c.status === \"warn\" ? \"⚠\" : \"✗\";\n            return `<div class=\"check-item\">\n                    <span style=\"color:${chkColor}\">${chkIcon}</span>\n                    <span>${this._esc(c.name)}: ${this._esc(c.message)}</span>\n                    ${c.suggestion ? `<div class=\"suggestion\">${this._esc(c.suggestion)}</div>` : \"\"}\n                </div>`;\n          })\n          .join",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "p.checks\n          .map",
+          "lineNumber": 153
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 165
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 166
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 173
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 174
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 176
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "data.issues\n            .map((i) => {\n              const color = i.status === \"fail\" ? \"#ef4444\" : \"#eab308\";\n              const icon = i.status === \"fail\" ? \"✗\" : \"⚠\";\n              return `<div class=\"issue\">\n                    <span style=\"color:${color};font-weight:bold;\">${icon}</span>\n                    <div>\n                        <strong>${this._esc(i.name)}</strong>: ${this._esc(i.message)}\n                        ${i.suggestion ? `<div class=\"suggestion\">${this._esc(i.suggestion)}</div>` : \"\"}\n                    </div>\n                </div>`;\n            })\n            .join",
+          "lineNumber": 185
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "data.issues\n            .map",
+          "lineNumber": 185
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 192
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 192
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 193
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 376
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 377
+        },
+        {
+          "caller": "_esc",
+          "callee": "s\n      .replace(/&/g, \"&amp;\")\n      .replace(/</g, \"&lt;\")\n      .replace(/>/g, \"&gt;\")\n      .replace",
+          "lineNumber": 415
+        },
+        {
+          "caller": "_esc",
+          "callee": "s\n      .replace(/&/g, \"&amp;\")\n      .replace(/</g, \"&lt;\")\n      .replace",
+          "lineNumber": 415
+        },
+        {
+          "caller": "_esc",
+          "callee": "s\n      .replace(/&/g, \"&amp;\")\n      .replace",
+          "lineNumber": 415
+        },
+        {
+          "caller": "_esc",
+          "callee": "s\n      .replace",
+          "lineNumber": 415
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "vscode-extension/src/webviews/skillDetailPanel.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 330,
+      "nonEmptyLines": 284,
+      "classes": [
+        {
+          "name": "SkillDetailPanel",
+          "startLine": 11,
+          "endLine": 330,
+          "methods": [
+            "constructor",
+            "show",
+            "dispose",
+            "_getHtml",
+            "_renderMarkdown",
+            "_esc"
+          ],
+          "properties": [
+            "viewType",
+            "panels",
+            "_panel",
+            "_disposables"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SkillDetailPanel",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this._panel.onDidDispose",
+          "lineNumber": 23
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.dispose",
+          "lineNumber": 23
+        },
+        {
+          "caller": "show",
+          "callee": "SkillDetailPanel.panels.get",
+          "lineNumber": 28
+        },
+        {
+          "caller": "show",
+          "callee": "existing._panel.reveal",
+          "lineNumber": 30
+        },
+        {
+          "caller": "show",
+          "callee": "vscode.window.createWebviewPanel",
+          "lineNumber": 34
+        },
+        {
+          "caller": "show",
+          "callee": "SkillDetailPanel.panels.set",
+          "lineNumber": 42
+        },
+        {
+          "caller": "show",
+          "callee": "getSkillInfo",
+          "lineNumber": 50
+        },
+        {
+          "caller": "show",
+          "callee": "instance._getHtml",
+          "lineNumber": 58
+        },
+        {
+          "caller": "dispose",
+          "callee": "SkillDetailPanel.panels.delete",
+          "lineNumber": 66
+        },
+        {
+          "caller": "dispose",
+          "callee": "this._panel.dispose",
+          "lineNumber": 67
+        },
+        {
+          "caller": "dispose",
+          "callee": "d.dispose",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._renderMarkdown",
+          "lineNumber": 82
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 89
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 220
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 221
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 226
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 232
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 236
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "skill.platforms.map((p) => `<span class=\"tag\">${this._esc(p)}</span>`).join",
+          "lineNumber": 240
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "skill.platforms.map",
+          "lineNumber": 240
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 240
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "skill.tags.map((t) => `<span class=\"tag\">${this._esc(t)}</span>`).join",
+          "lineNumber": 244
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "skill.tags.map",
+          "lineNumber": 244
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 244
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "triggers.map((t) => `<span class=\"tag\">${this._esc(t)}</span>`).join",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "triggers.map",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 251
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "dependencies.map((d) => `<span class=\"tag\">${this._esc(d)}</span>`).join",
+          "lineNumber": 261
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "dependencies.map",
+          "lineNumber": 261
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 261
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "this._esc",
+          "lineNumber": 281
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 284
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 290
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 293
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 294
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 295
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 298
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 299
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 302
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 303
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 305
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 308
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 312
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 313
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 314
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 315
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 316
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 317
+        },
+        {
+          "caller": "_renderMarkdown",
+          "callee": "html.replace",
+          "lineNumber": 318
+        },
+        {
+          "caller": "_esc",
+          "callee": "s\n      .replace(/&/g, \"&amp;\")\n      .replace(/</g, \"&lt;\")\n      .replace(/>/g, \"&gt;\")\n      .replace",
+          "lineNumber": 324
+        },
+        {
+          "caller": "_esc",
+          "callee": "s\n      .replace(/&/g, \"&amp;\")\n      .replace(/</g, \"&lt;\")\n      .replace",
+          "lineNumber": 324
+        },
+        {
+          "caller": "_esc",
+          "callee": "s\n      .replace(/&/g, \"&amp;\")\n      .replace",
+          "lineNumber": 324
+        },
+        {
+          "caller": "_esc",
+          "callee": "s\n      .replace",
+          "lineNumber": 324
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "vscode-extension/src/webviews/synapseDetailPanel.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 231,
+      "nonEmptyLines": 215,
+      "classes": [
+        {
+          "name": "SynapseDetailPanel",
+          "startLine": 11,
+          "endLine": 231,
+          "methods": [
+            "constructor",
+            "show",
+            "dispose",
+            "_getHtml",
+            "_esc"
+          ],
+          "properties": [
+            "viewType",
+            "panels",
+            "_panel",
+            "_disposables"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "SynapseDetailPanel",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "this._panel.onDidDispose",
+          "lineNumber": 23
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.dispose",
+          "lineNumber": 23
+        },
+        {
+          "caller": "show",
+          "callee": "SynapseDetailPanel.panels.get",
+          "lineNumber": 28
+        },
+        {
+          "caller": "show",
+          "callee": "existing._panel.reveal",
+          "lineNumber": 30
+        },
+        {
+          "caller": "show",
+          "callee": "vscode.window.createWebviewPanel",
+          "lineNumber": 34
+        },
+        {
+          "caller": "show",
+          "callee": "SynapseDetailPanel.panels.set",
+          "lineNumber": 42
+        },
+        {
+          "caller": "show",
+          "callee": "instance._getHtml",
+          "lineNumber": 44
+        },
+        {
+          "caller": "dispose",
+          "callee": "SynapseDetailPanel.panels.delete",
+          "lineNumber": 48
+        },
+        {
+          "caller": "dispose",
+          "callee": "this._panel.dispose",
+          "lineNumber": 49
+        },
+        {
+          "caller": "dispose",
+          "callee": "d.dispose",
+          "lineNumber": 51
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "syn.firing_phases\n      .map(\n        (p) => `\n        <div class=\"phase-card\">\n          <div class=\"phase-header\">\n            <span class=\"phase-name\">${this._esc(p.name)}</span>\n            <span class=\"phase-timing\">${this._esc(p.timing)}</span>\n          </div>\n          <p class=\"phase-desc\">${this._esc(p.description)}</p>\n        </div>`,\n      )\n      .join",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "syn.firing_phases\n      .map",
+          "lineNumber": 63
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 68
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 69
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "syn.tags\n      .map((t) => `<span class=\"tag\">${this._esc(t)}</span>`)\n      .join",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "syn.tags\n      .map",
+          "lineNumber": 76
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 77
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 85
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 196
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 197
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 200
+        },
+        {
+          "caller": "_getHtml",
+          "callee": "this._esc",
+          "lineNumber": 210
+        },
+        {
+          "caller": "_esc",
+          "callee": "text\n      .replace(/&/g, \"&amp;\")\n      .replace(/</g, \"&lt;\")\n      .replace(/>/g, \"&gt;\")\n      .replace",
+          "lineNumber": 225
+        },
+        {
+          "caller": "_esc",
+          "callee": "text\n      .replace(/&/g, \"&amp;\")\n      .replace(/</g, \"&lt;\")\n      .replace",
+          "lineNumber": 225
+        },
+        {
+          "caller": "_esc",
+          "callee": "text\n      .replace(/&/g, \"&amp;\")\n      .replace",
+          "lineNumber": 225
+        },
+        {
+          "caller": "_esc",
+          "callee": "text\n      .replace",
+          "lineNumber": 225
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    }
+  ]
+}

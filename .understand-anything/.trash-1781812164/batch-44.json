@@ -1,0 +1,286 @@
+{
+  "batchIndex": 44,
+  "nodes": [
+    {
+      "id": "file:scripts/build_docs.py",
+      "type": "file:",
+      "name": "build_docs.py",
+      "filePath": "scripts/build_docs.py",
+      "summary": "Large documentation build script that generates the Archon GitHub Pages site from skill manifests, agent docs, and bundle definitions.",
+      "tags": ["scripts", "documentation", "build", "github-pages", "automation"],
+      "complexity": 5
+    },
+    {
+      "id": "file:scripts/export_protocols.py",
+      "type": "file:",
+      "name": "export_protocols.py",
+      "filePath": "scripts/export_protocols.py",
+      "summary": "Script to export Archon protocol definitions and skill interfaces in structured formats for external consumption.",
+      "tags": ["scripts", "export", "protocols", "automation"],
+      "complexity": 3
+    },
+    {
+      "id": "file:scripts/generate-agent-cards.py",
+      "type": "file:",
+      "name": "generate-agent-cards.py",
+      "filePath": "scripts/generate-agent-cards.py",
+      "summary": "Script that generates A2A (Agent-to-Agent) card JSON files from Archon agent manifests using the agent_cards module.",
+      "tags": ["scripts", "agent-cards", "a2a", "generation"],
+      "complexity": 3
+    },
+    {
+      "id": "file:scripts/generate-llms-txt.py",
+      "type": "file:",
+      "name": "generate-llms-txt.py",
+      "filePath": "scripts/generate-llms-txt.py",
+      "summary": "Script that generates llms.txt files from Archon skill and agent documentation, creating machine-readable metadata for LLM consumption.",
+      "tags": ["scripts", "llms-txt", "documentation", "llm", "generation"],
+      "complexity": 4
+    },
+    {
+      "id": "document:scripts/README.md",
+      "type": "document:",
+      "name": "README.md (scripts)",
+      "filePath": "scripts/README.md",
+      "summary": "Comprehensive documentation for the scripts directory, describing each utility script's purpose, usage, and expected outputs.",
+      "tags": ["scripts", "documentation", "readme", "utilities"],
+      "complexity": 4
+    },
+    {
+      "id": "file:scripts/skill-compliance-check.py",
+      "type": "file:",
+      "name": "skill-compliance-check.py",
+      "filePath": "scripts/skill-compliance-check.py",
+      "summary": "Script that checks all Archon skill manifests and SKILL.md files for schema compliance, required fields, and style conventions.",
+      "tags": ["scripts", "compliance", "validation", "skill-manifests"],
+      "complexity": 4
+    },
+    {
+      "id": "file:scripts/test_agent_cards.py",
+      "type": "file:",
+      "name": "test_agent_cards.py",
+      "filePath": "scripts/test_agent_cards.py",
+      "summary": "Minimal test script for verifying the agent card generation module produces valid output.",
+      "tags": ["scripts", "testing", "agent-cards", "validation"],
+      "complexity": 1
+    },
+    {
+      "id": "file:scripts/test_registry.py",
+      "type": "file:",
+      "name": "test_registry.py",
+      "filePath": "scripts/test_registry.py",
+      "summary": "Minimal test script for verifying the Archon registry module loads and parses archon.yaml correctly.",
+      "tags": ["scripts", "testing", "registry", "validation"],
+      "complexity": 1
+    },
+    {
+      "id": "file:scripts/update.py",
+      "type": "file:",
+      "name": "update.py",
+      "filePath": "scripts/update.py",
+      "summary": "Script for updating installed Archon skills and agents in ~/.claude/skills/, syncing changes from the source repository.",
+      "tags": ["scripts", "update", "installation", "sync"],
+      "complexity": 4
+    },
+    {
+      "id": "file:scripts/validate.py",
+      "type": "file:",
+      "name": "validate.py",
+      "filePath": "scripts/validate.py",
+      "summary": "Large validation script for the Archon framework, checking skill manifests, agent definitions, bundle configs, and pipeline YAMLs for correctness.",
+      "tags": ["scripts", "validation", "manifests", "compliance"],
+      "complexity": 5
+    },
+    {
+      "id": "file:servers/agent-router/indexer.py",
+      "type": "file:",
+      "name": "indexer.py (agent-router)",
+      "filePath": "servers/agent-router/indexer.py",
+      "summary": "Indexer module for the agent-router MCP server, building and maintaining a searchable index of agent definitions for routing decisions.",
+      "tags": ["agent-router", "indexer", "mcp-server", "search"],
+      "complexity": 4
+    },
+    {
+      "id": "document:servers/agent-router/requirements.txt",
+      "type": "document:",
+      "name": "requirements.txt (agent-router)",
+      "filePath": "servers/agent-router/requirements.txt",
+      "summary": "Python dependency list for the agent-router MCP server.",
+      "tags": ["agent-router", "requirements", "dependencies", "python"],
+      "complexity": 1
+    },
+    {
+      "id": "file:servers/agent-router/server.py",
+      "type": "file:",
+      "name": "server.py (agent-router)",
+      "filePath": "servers/agent-router/server.py",
+      "summary": "MCP server implementation for the agent-router, exposing tools for discovering and routing to appropriate Archon agents based on task descriptions.",
+      "tags": ["agent-router", "mcp-server", "routing", "agent-discovery"],
+      "complexity": 4
+    },
+    {
+      "id": "file:servers/file-ops/server.py",
+      "type": "file:",
+      "name": "server.py (file-ops)",
+      "filePath": "servers/file-ops/server.py",
+      "summary": "MCP server implementation for file operations, providing high-performance file read/write/search tools to Claude Code via MCP protocol.",
+      "tags": ["file-ops", "mcp-server", "file-operations", "performance"],
+      "complexity": 5
+    },
+    {
+      "id": "config:servers/forge/Cargo.toml",
+      "type": "config:",
+      "name": "Cargo.toml (forge)",
+      "filePath": "servers/forge/Cargo.toml",
+      "summary": "Cargo manifest for the forge Rust MCP server, declaring dependencies for the Rust-based code generation server.",
+      "tags": ["forge", "cargo", "rust", "mcp-server"],
+      "complexity": 2
+    },
+    {
+      "id": "config:servers/forge/test-input.json",
+      "type": "config:",
+      "name": "test-input.json (forge)",
+      "filePath": "servers/forge/test-input.json",
+      "summary": "Test input fixture for the forge MCP server, providing sample request data for testing code generation endpoints.",
+      "tags": ["forge", "testing", "fixture", "json"],
+      "complexity": 1
+    },
+    {
+      "id": "file:servers/skill-router/indexer.py",
+      "type": "file:",
+      "name": "indexer.py (skill-router)",
+      "filePath": "servers/skill-router/indexer.py",
+      "summary": "Indexer module for the skill-router MCP server, building a vector-searchable index of skill manifests and descriptions for semantic skill matching.",
+      "tags": ["skill-router", "indexer", "mcp-server", "vector-search", "semantic-search"],
+      "complexity": 5
+    },
+    {
+      "id": "file:servers/skill-router/migrate.py",
+      "type": "file:",
+      "name": "migrate.py (skill-router)",
+      "filePath": "servers/skill-router/migrate.py",
+      "summary": "Migration script for the skill-router index, updating the index format when the schema changes or new skills are added.",
+      "tags": ["skill-router", "migration", "index", "database"],
+      "complexity": 4
+    },
+    {
+      "id": "document:servers/skill-router/requirements.txt",
+      "type": "document:",
+      "name": "requirements.txt (skill-router)",
+      "filePath": "servers/skill-router/requirements.txt",
+      "summary": "Python dependency list for the skill-router MCP server.",
+      "tags": ["skill-router", "requirements", "dependencies", "python"],
+      "complexity": 1
+    },
+    {
+      "id": "file:servers/skill-router/server.py",
+      "type": "file:",
+      "name": "server.py (skill-router)",
+      "filePath": "servers/skill-router/server.py",
+      "summary": "MCP server implementation for the skill-router, exposing semantic search tools to find the most relevant Archon skills for a given task.",
+      "tags": ["skill-router", "mcp-server", "semantic-search", "skill-discovery"],
+      "complexity": 4
+    },
+    {
+      "id": "config:servers/skill-router/test-init.json",
+      "type": "config:",
+      "name": "test-init.json (skill-router)",
+      "filePath": "servers/skill-router/test-init.json",
+      "summary": "Test initialization fixture for the skill-router MCP server.",
+      "tags": ["skill-router", "testing", "fixture", "json"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/_template/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (template examples)",
+      "filePath": "skills/_template/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory in git for skill templates.",
+      "tags": ["template", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/_template/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (skill template)",
+      "filePath": "skills/_template/manifest.yaml",
+      "summary": "Template manifest for Archon skills, defining the required and optional fields for skill configuration including triggers, metadata, and output schema.",
+      "tags": ["skill-template", "manifest", "yaml", "schema", "template"],
+      "complexity": 3
+    },
+    {
+      "id": "file:skills/_template/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (template overrides)",
+      "filePath": "skills/_template/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory in git for skill templates.",
+      "tags": ["template", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/_template/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (template resources)",
+      "filePath": "skills/_template/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory in git for skill templates.",
+      "tags": ["template", "placeholder", "git"],
+      "complexity": 1
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:servers/agent-router/server.py",
+      "target": "file:servers/agent-router/indexer.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:servers/skill-router/server.py",
+      "target": "file:servers/skill-router/indexer.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:servers/skill-router/migrate.py",
+      "target": "file:servers/skill-router/indexer.py",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/generate-agent-cards.py",
+      "target": "file:scripts/test_agent_cards.py",
+      "type": "tested_by",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/validate.py",
+      "target": "document:scripts/README.md",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/build_docs.py",
+      "target": "document:scripts/README.md",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "config:skills/_template/manifest.yaml",
+      "target": "file:skills/_template/examples/.gitkeep",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "config:skills/_template/manifest.yaml",
+      "target": "file:skills/_template/overrides/.gitkeep",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "config:skills/_template/manifest.yaml",
+      "target": "file:skills/_template/resources/.gitkeep",
+      "type": "contains",
+      "weight": 1.0
+    }
+  ]
+}

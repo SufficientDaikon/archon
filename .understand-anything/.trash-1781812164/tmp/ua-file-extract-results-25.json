@@ -1,0 +1,260 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "skills/eyes/resources/gemini-api-reference.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 171,
+      "nonEmptyLines": 135,
+      "sections": [
+        {
+          "heading": "Gemini API — Image Generation Quick Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Authentication",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Models",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "Aspect Ratios",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Node.js SDK",
+          "level": 2,
+          "line": 36
+        },
+        {
+          "heading": "Install",
+          "level": 3,
+          "line": 38
+        },
+        {
+          "heading": "Generate Image",
+          "level": 3,
+          "line": 44
+        },
+        {
+          "heading": "Analyze Image (Vision)",
+          "level": 3,
+          "line": 71
+        },
+        {
+          "heading": "Edit Image",
+          "level": 3,
+          "line": 91
+        },
+        {
+          "heading": "Python SDK",
+          "level": 2,
+          "line": 114
+        },
+        {
+          "heading": "Install",
+          "level": 3,
+          "line": 116
+        },
+        {
+          "heading": "Generate",
+          "level": 3,
+          "line": 122
+        },
+        {
+          "heading": "Error Handling",
+          "level": 2,
+          "line": 144
+        },
+        {
+          "heading": "Rate Limits (Free Tier)",
+          "level": 2,
+          "line": 154
+        },
+        {
+          "heading": "Tips",
+          "level": 2,
+          "line": 163
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 15
+      }
+    },
+    {
+      "path": "skills/eyes/resources/presets.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 102,
+      "nonEmptyLines": 64,
+      "sections": [
+        {
+          "heading": "Eyes — Preset Prompt Library",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Hero Backgrounds",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Dark Computational Void",
+          "level": 3,
+          "line": 9
+        },
+        {
+          "heading": "Abstract Data Flow",
+          "level": 3,
+          "line": 17
+        },
+        {
+          "heading": "Cosmic Grid",
+          "level": 3,
+          "line": 25
+        },
+        {
+          "heading": "Project Visuals",
+          "level": 2,
+          "line": 35
+        },
+        {
+          "heading": "Neural Network Monument (for AI/ML projects)",
+          "level": 3,
+          "line": 37
+        },
+        {
+          "heading": "Agent Orchestration (for multi-agent systems)",
+          "level": 3,
+          "line": 43
+        },
+        {
+          "heading": "Systems Language (for programming language projects)",
+          "level": 3,
+          "line": 49
+        },
+        {
+          "heading": "World-Themed Backgrounds",
+          "level": 2,
+          "line": 57
+        },
+        {
+          "heading": "Creative / Design World (Purple Palette)",
+          "level": 3,
+          "line": 59
+        },
+        {
+          "heading": "Business / Operator World (Amber Palette)",
+          "level": 3,
+          "line": 65
+        },
+        {
+          "heading": "Textures & Overlays",
+          "level": 2,
+          "line": 73
+        },
+        {
+          "heading": "Digital Noise Texture",
+          "level": 3,
+          "line": 75
+        },
+        {
+          "heading": "Grid Overlay",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "Usage",
+          "level": 2,
+          "line": 93
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 16
+      }
+    },
+    {
+      "path": "skills/eyes/resources/prompt-formulas.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 99,
+      "nonEmptyLines": 65,
+      "sections": [
+        {
+          "heading": "Prompt Formulas for Image Generation",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "The 5-Component Formula (Primary)",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "1. SUBJECT",
+          "level": 3,
+          "line": 7
+        },
+        {
+          "heading": "2. ACTION / STATE",
+          "level": 3,
+          "line": 14
+        },
+        {
+          "heading": "3. ENVIRONMENT",
+          "level": 3,
+          "line": 21
+        },
+        {
+          "heading": "4. COMPOSITION",
+          "level": 3,
+          "line": 28
+        },
+        {
+          "heading": "5. STYLE",
+          "level": 3,
+          "line": 50
+        },
+        {
+          "heading": "The 7-Component Formula (Extended)",
+          "level": 2,
+          "line": 64
+        },
+        {
+          "heading": "Quick Prompt Enhancers",
+          "level": 2,
+          "line": 80
+        },
+        {
+          "heading": "Anti-Patterns (What Breaks Prompts)",
+          "level": 2,
+          "line": 92
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    }
+  ]
+}

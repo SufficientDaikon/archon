@@ -1,0 +1,55 @@
+{
+  "batchIndex": 38,
+  "nodes": [
+    {
+      "id": "document:vscode-extension/CHANGELOG.md",
+      "type": "document:",
+      "name": "CHANGELOG.md",
+      "filePath": "vscode-extension/CHANGELOG.md",
+      "summary": "Changelog for the Archon VS Code extension. Documents v0.1.0 initial release (2025-01-01) with 13 commands, Skills Explorer, Agents Panel, Pipelines Panel, Bundles Panel, Health Report, Status Bar, 5 settings, and cross-editor compatibility with VS Code, Cursor, and Windsurf.",
+      "tags": ["vscode", "extension", "changelog", "releases", "archon"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:vscode-extension/README.md",
+      "type": "document:",
+      "name": "README.md",
+      "filePath": "vscode-extension/README.md",
+      "summary": "README for the Archon VS Code extension. Documents features including Skills Explorer (49+ skills), Agents Panel (8 agents), Pipeline Dashboard (5 pipelines), Bundle Management, Health Report, and Status Bar. Covers quick start, settings, and platform compatibility.",
+      "tags": ["vscode", "extension", "readme", "archon", "skills", "agents", "pipelines"],
+      "complexity": "low"
+    },
+    {
+      "id": "config:vscode-extension/package.json",
+      "type": "config:",
+      "name": "package.json",
+      "filePath": "vscode-extension/package.json",
+      "summary": "VS Code extension manifest for Archon v1.0.0. Declares extension metadata (publisher: sufficientdaikon), activation events, sidebar views (Skills Explorer, Agents, Pipelines, Bundles, Synapses), 13 contributed commands (initialize, installSkill, runPipeline, showDashboard, runDoctor, etc.), and 5 configuration settings. Requires VS Code 1.85+.",
+      "tags": ["vscode", "extension", "manifest", "package", "commands", "config", "archon"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:vscode-extension/tsconfig.json",
+      "type": "config:",
+      "name": "tsconfig.json",
+      "filePath": "vscode-extension/tsconfig.json",
+      "summary": "TypeScript compiler configuration for the Archon VS Code extension. Targets ES2022 with CommonJS modules, strict mode enabled, source maps, declaration files, and resolveJsonModule. Compiles from src/ to out/.",
+      "tags": ["typescript", "tsconfig", "vscode", "extension", "build", "compiler"],
+      "complexity": "low"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:vscode-extension/CHANGELOG.md",
+      "target": "config:vscode-extension/package.json",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:vscode-extension/README.md",
+      "target": "config:vscode-extension/package.json",
+      "type": "documents",
+      "weight": 0.5
+    }
+  ]
+}

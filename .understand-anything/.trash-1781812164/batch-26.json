@@ -1,0 +1,33 @@
+{
+  "batchIndex": 26,
+  "nodes": [
+    {
+      "id": "config:skills/fastmcp/examples/.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "filePath": "skills/fastmcp/examples/.env.example",
+      "summary": "Environment variable template for FastMCP skill examples, defining configuration variables for server name, environment, API settings (base URL, key, secret, timeout), database, caching, retry logic, OpenAPI spec URL, logging, feature flags (progress tracking, elicitation, sampling), rate limiting, and CORS.",
+      "tags": ["env", "configuration", "fastmcp", "environment-variables", "template"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:skills/fastmcp/examples/pyproject.toml",
+      "type": "config",
+      "name": "pyproject.toml",
+      "filePath": "skills/fastmcp/examples/pyproject.toml",
+      "summary": "Python project configuration for FastMCP skill examples, defining project metadata, optional dependencies, build system (setuptools), ruff linting rules, mypy type checking settings, pytest configuration, and coverage reporting.",
+      "tags": ["pyproject", "fastmcp", "python", "configuration", "tooling"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:skills/fastmcp/examples/requirements.txt",
+      "type": "document",
+      "name": "requirements.txt",
+      "filePath": "skills/fastmcp/examples/requirements.txt",
+      "summary": "Python dependency list for FastMCP skill examples, listing required packages for running the example MCP server implementations.",
+      "tags": ["requirements", "fastmcp", "dependencies", "python", "packages"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": []
+}

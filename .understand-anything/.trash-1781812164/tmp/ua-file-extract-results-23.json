@@ -1,0 +1,150 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "skills/docker-build/.skillfish.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 10,
+      "nonEmptyLines": 10,
+      "sections": [
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "owner",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "repo",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "path",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "branch",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "sha",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "source",
+          "level": 1,
+          "line": 9
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "skills/docker-build/SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 48,
+      "nonEmptyLines": 40,
+      "sections": [
+        {
+          "heading": "Docker Build with Tracking",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "Process",
+          "level": 2,
+          "line": 11
+        },
+        {
+          "heading": "Anti-Patterns (DO NOT)",
+          "level": 2,
+          "line": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    },
+    {
+      "path": "skills/docker-build/manifest.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 23,
+      "nonEmptyLines": 19,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "author",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "license",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "tags",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "triggers",
+          "level": 1,
+          "line": 14
+        },
+        {
+          "heading": "priority",
+          "level": 1,
+          "line": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    }
+  ]
+}

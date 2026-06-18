@@ -1,0 +1,210 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "batch-runs/google-adk-improvements/continue.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 134,
+      "nonEmptyLines": 99,
+      "sections": [
+        {
+          "heading": "🔄 Archon Batch SDD — Auto-Continue Prompt",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "HOW TO USE:",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "1. Start a new Copilot CLI session (or Claude Code, Cursor, etc.)",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "2. Paste this entire file as your first message",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "3. The agent will automatically:",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "- Read the state file to find the next pending plan",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "- Run the full SDD pipeline on it (spec → implement → review)",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "- Update state, commit to git, and generate a handoff if needed",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "4. When it finishes or runs low on context, start a new session and paste again",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "That's it. Just keep pasting this prompt in new sessions until all 12 plans are done.",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "Instructions",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "Step 0: Read State",
+          "level": 3,
+          "line": 20
+        },
+        {
+          "heading": "Step 1: Read the Plan",
+          "level": 3,
+          "line": 30
+        },
+        {
+          "heading": "Step 2: Specification (spec-writer)",
+          "level": 3,
+          "line": 44
+        },
+        {
+          "heading": "Step 3: Implementation (implementer)",
+          "level": 3,
+          "line": 60
+        },
+        {
+          "heading": "Step 4: Review (reviewer)",
+          "level": 3,
+          "line": 75
+        },
+        {
+          "heading": "Step 5: Commit & Update State",
+          "level": 3,
+          "line": 85
+        },
+        {
+          "heading": "Step 6: Next Plan or Handoff",
+          "level": 3,
+          "line": 103
+        },
+        {
+          "heading": "Important Context",
+          "level": 3,
+          "line": 113
+        },
+        {
+          "heading": "Sprint Order (for reference)",
+          "level": 3,
+          "line": 125
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 20
+      }
+    },
+    {
+      "path": "batch-runs/google-adk-improvements/handoff-template.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 37,
+      "nonEmptyLines": 26,
+      "sections": [
+        {
+          "heading": "🔄 Batch SDD Handoff Template",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "This file is auto-generated at session end. It captures exactly where things left off.",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "The next session reads state.yaml (source of truth), but this provides human-readable context.",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "Session Summary",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Current Status",
+          "level": 2,
+          "line": 12
+        },
+        {
+          "heading": "What Was Done This Session",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "What To Do Next",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "Notes / Issues",
+          "level": 2,
+          "line": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "batch-runs/google-adk-improvements/state.yaml",
+      "language": "yaml",
+      "fileCategory": "config",
+      "totalLines": 209,
+      "nonEmptyLines": 195,
+      "sections": [
+        {
+          "heading": "batch",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "sprints",
+          "level": 1,
+          "line": 17
+        },
+        {
+          "heading": "sessions",
+          "level": 1,
+          "line": 203
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    }
+  ]
+}

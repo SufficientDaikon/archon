@@ -1,0 +1,76 @@
+{
+  "batchIndex": 28,
+  "nodes": [
+    {
+      "id": "document:skills/github-markdown-mastery/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md",
+      "filePath": "skills/github-markdown-mastery/SKILL.md",
+      "summary": "Skill entry point for github-markdown-mastery. Documents the complete GitHub Markdown reference covering GFM syntax, Mermaid diagrams, LaTeX math, alerts, shields.io badges, dark-mode images, and 63 allowed HTML elements. Includes a quick-reference table of feature support across GitHub surfaces.",
+      "tags": ["skill", "github", "markdown", "mermaid", "badges", "documentation", "pr"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:skills/github-markdown-mastery/badges-reference.md",
+      "type": "document:",
+      "name": "badges-reference.md",
+      "filePath": "skills/github-markdown-mastery/badges-reference.md",
+      "summary": "Cheat-sheet reference for shields.io badges usable in GitHub Markdown. Covers badge URL patterns, styles, colors, logos, and common badge presets for CI, license, version, and platform indicators.",
+      "tags": ["badges", "shields.io", "github", "markdown", "reference"],
+      "complexity": "low"
+    },
+    {
+      "id": "config:skills/github-markdown-mastery/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml",
+      "filePath": "skills/github-markdown-mastery/manifest.yaml",
+      "summary": "Archon skill manifest for github-markdown-mastery v1.0.0. Declares triggers (keywords and patterns), priority P1, and on-demand resource references for badges-reference.md, mermaid-reference.md, and pr-patterns.md.",
+      "tags": ["manifest", "skill", "archon", "config", "github-markdown-mastery"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/github-markdown-mastery/mermaid-reference.md",
+      "type": "document:",
+      "name": "mermaid-reference.md",
+      "filePath": "skills/github-markdown-mastery/mermaid-reference.md",
+      "summary": "Cheat-sheet reference for Mermaid diagram syntax within GitHub Markdown. Covers flowcharts, sequence diagrams, class diagrams, state diagrams, ER diagrams, Gantt charts, and pie charts with syntax examples.",
+      "tags": ["mermaid", "diagrams", "github", "markdown", "reference", "flowchart"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:skills/github-markdown-mastery/pr-patterns.md",
+      "type": "document:",
+      "name": "pr-patterns.md",
+      "filePath": "skills/github-markdown-mastery/pr-patterns.md",
+      "summary": "Reference guide for pull request body patterns in GitHub Markdown. Documents templates, structural conventions, use of alerts, collapsible sections, diff blocks, and visual hierarchy best practices for PRs.",
+      "tags": ["pr", "pull-request", "patterns", "github", "markdown", "templates"],
+      "complexity": "medium"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:skills/github-markdown-mastery/manifest.yaml",
+      "target": "document:skills/github-markdown-mastery/SKILL.md",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "config:skills/github-markdown-mastery/manifest.yaml",
+      "target": "document:skills/github-markdown-mastery/badges-reference.md",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "config:skills/github-markdown-mastery/manifest.yaml",
+      "target": "document:skills/github-markdown-mastery/mermaid-reference.md",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "config:skills/github-markdown-mastery/manifest.yaml",
+      "target": "document:skills/github-markdown-mastery/pr-patterns.md",
+      "type": "configures",
+      "weight": 0.6
+    }
+  ]
+}

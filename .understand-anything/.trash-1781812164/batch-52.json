@@ -1,0 +1,304 @@
+{
+  "batchIndex": 52,
+  "nodes": [
+    {
+      "id": "config:skills/godot-gdscript-patterns/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (godot-gdscript-patterns)",
+      "filePath": "skills/godot-gdscript-patterns/manifest.yaml",
+      "summary": "Skill manifest for godot-gdscript-patterns, a minimal manifest defining triggers for GDScript design pattern tasks.",
+      "tags": ["godot-gdscript-patterns", "skill", "manifest", "gdscript", "design-patterns"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/godot-gdscript-patterns/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-gdscript-patterns overrides)",
+      "filePath": "skills/godot-gdscript-patterns/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the godot-gdscript-patterns skill.",
+      "tags": ["godot-gdscript-patterns", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/godot-gdscript-patterns/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-gdscript-patterns resources)",
+      "filePath": "skills/godot-gdscript-patterns/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the godot-gdscript-patterns skill.",
+      "tags": ["godot-gdscript-patterns", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/godot-gdscript-patterns/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (godot-gdscript-patterns)",
+      "filePath": "skills/godot-gdscript-patterns/SKILL.md",
+      "summary": "Large skill documentation for godot-gdscript-patterns, covering design pattern implementations in GDScript including state machines, observers, and component systems.",
+      "tags": ["godot-gdscript-patterns", "documentation", "gdscript", "design-patterns", "state-machine"],
+      "complexity": 5
+    },
+    {
+      "id": "file:skills/godot-gdscript-patterns/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-gdscript-patterns test cases)",
+      "filePath": "skills/godot-gdscript-patterns/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the godot-gdscript-patterns skill.",
+      "tags": ["godot-gdscript-patterns", "placeholder", "git", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/godot-particles/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-particles examples)",
+      "filePath": "skills/godot-particles/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory for the godot-particles skill.",
+      "tags": ["godot-particles", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/godot-particles/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (godot-particles)",
+      "filePath": "skills/godot-particles/manifest.yaml",
+      "summary": "Skill manifest for godot-particles, a minimal manifest defining triggers for Godot particle system and VFX tasks.",
+      "tags": ["godot-particles", "skill", "manifest", "godot", "particles"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/godot-particles/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-particles overrides)",
+      "filePath": "skills/godot-particles/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the godot-particles skill.",
+      "tags": ["godot-particles", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/godot-particles/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-particles resources)",
+      "filePath": "skills/godot-particles/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the godot-particles skill.",
+      "tags": ["godot-particles", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/godot-particles/resources/particle_burst_emitter.gd",
+      "type": "file:",
+      "name": "particle_burst_emitter.gd",
+      "filePath": "skills/godot-particles/resources/particle_burst_emitter.gd",
+      "summary": "GDScript resource implementing a particle burst emitter component for Godot, providing reusable VFX burst patterns.",
+      "tags": ["godot-particles", "gdscript", "particles", "vfx", "emitter"],
+      "complexity": 3
+    },
+    {
+      "id": "file:skills/godot-particles/resources/vfx_shader_manager.gd",
+      "type": "file:",
+      "name": "vfx_shader_manager.gd",
+      "filePath": "skills/godot-particles/resources/vfx_shader_manager.gd",
+      "summary": "GDScript resource implementing a VFX shader manager for coordinating particle shaders in Godot projects.",
+      "tags": ["godot-particles", "gdscript", "shaders", "vfx", "particles"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/godot-particles/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (godot-particles)",
+      "filePath": "skills/godot-particles/SKILL.md",
+      "summary": "Skill documentation for godot-particles, covering GPUParticles2D/3D setup, particle materials, custom shaders, and VFX optimization in Godot.",
+      "tags": ["godot-particles", "documentation", "godot", "particles", "vfx"],
+      "complexity": 4
+    },
+    {
+      "id": "file:skills/godot-particles/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (godot-particles test cases)",
+      "filePath": "skills/godot-particles/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the godot-particles skill.",
+      "tags": ["godot-particles", "placeholder", "git", "testing"],
+      "complexity": 1
+    },
+    {
+      "id": "config:skills/guard-chain/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (guard-chain)",
+      "filePath": "skills/guard-chain/manifest.yaml",
+      "summary": "Skill manifest for guard-chain, defining triggers for implementing guard clause and chain-of-responsibility patterns in code.",
+      "tags": ["guard-chain", "skill", "manifest", "design-patterns", "guard-clauses"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/guard-chain/resources/guard-patterns.md",
+      "type": "document:",
+      "name": "guard-patterns.md",
+      "filePath": "skills/guard-chain/resources/guard-patterns.md",
+      "summary": "Reference document defining guard clause and chain-of-responsibility patterns used by the guard-chain skill.",
+      "tags": ["guard-chain", "guard-patterns", "reference", "design-patterns"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/guard-chain/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (guard-chain)",
+      "filePath": "skills/guard-chain/SKILL.md",
+      "summary": "Skill documentation for guard-chain, covering early-return guard clauses, middleware chains, and input validation pipeline patterns.",
+      "tags": ["guard-chain", "documentation", "design-patterns", "guard-clauses", "middleware"],
+      "complexity": 3
+    },
+    {
+      "id": "config:skills/i18n-strategy/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (i18n-strategy)",
+      "filePath": "skills/i18n-strategy/manifest.yaml",
+      "summary": "Skill manifest for i18n-strategy, defining triggers for internationalization and localization strategy planning tasks.",
+      "tags": ["i18n-strategy", "skill", "manifest", "internationalization", "localization"],
+      "complexity": 3
+    },
+    {
+      "id": "document:skills/i18n-strategy/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (i18n-strategy)",
+      "filePath": "skills/i18n-strategy/SKILL.md",
+      "summary": "Skill documentation for i18n-strategy, covering internationalization architecture, translation workflows, locale detection, and RTL support strategies.",
+      "tags": ["i18n-strategy", "documentation", "internationalization", "localization", "translation"],
+      "complexity": 4
+    },
+    {
+      "id": "file:skills/implementer/examples/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (implementer examples)",
+      "filePath": "skills/implementer/examples/.gitkeep",
+      "summary": "Placeholder file to maintain the examples directory for the implementer skill.",
+      "tags": ["implementer", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/implementer/examples/tasks-template.md",
+      "type": "document:",
+      "name": "tasks-template.md",
+      "filePath": "skills/implementer/examples/tasks-template.md",
+      "summary": "Example task template for the implementer skill, providing a structured format for defining implementation tasks with acceptance criteria.",
+      "tags": ["implementer", "examples", "tasks", "template", "acceptance-criteria"],
+      "complexity": 3
+    },
+    {
+      "id": "config:skills/implementer/manifest.yaml",
+      "type": "config:",
+      "name": "manifest.yaml (implementer)",
+      "filePath": "skills/implementer/manifest.yaml",
+      "summary": "Skill manifest for implementer, a minimal manifest defining triggers for code implementation tasks.",
+      "tags": ["implementer", "skill", "manifest", "implementation", "code-generation"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/implementer/overrides/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (implementer overrides)",
+      "filePath": "skills/implementer/overrides/.gitkeep",
+      "summary": "Placeholder file to maintain the overrides directory for the implementer skill.",
+      "tags": ["implementer", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "file:skills/implementer/resources/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (implementer resources)",
+      "filePath": "skills/implementer/resources/.gitkeep",
+      "summary": "Placeholder file to maintain the resources directory for the implementer skill.",
+      "tags": ["implementer", "placeholder", "git"],
+      "complexity": 1
+    },
+    {
+      "id": "document:skills/implementer/SKILL.md",
+      "type": "document:",
+      "name": "SKILL.md (implementer)",
+      "filePath": "skills/implementer/SKILL.md",
+      "summary": "Skill documentation for implementer, providing a step-by-step workflow for reading task specs and implementing code with quality checks and test coverage.",
+      "tags": ["implementer", "documentation", "implementation", "code-generation", "workflow"],
+      "complexity": 4
+    },
+    {
+      "id": "file:skills/implementer/tests/cases/.gitkeep",
+      "type": "file:",
+      "name": ".gitkeep (implementer test cases)",
+      "filePath": "skills/implementer/tests/cases/.gitkeep",
+      "summary": "Placeholder file to maintain the test cases directory for the implementer skill.",
+      "tags": ["implementer", "placeholder", "git", "testing"],
+      "complexity": 1
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:skills/godot-gdscript-patterns/SKILL.md",
+      "target": "config:skills/godot-gdscript-patterns/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/godot-particles/SKILL.md",
+      "target": "config:skills/godot-particles/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "file:skills/godot-particles/resources/particle_burst_emitter.gd",
+      "target": "config:skills/godot-particles/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "file:skills/godot-particles/resources/vfx_shader_manager.gd",
+      "target": "config:skills/godot-particles/manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:skills/guard-chain/SKILL.md",
+      "target": "config:skills/guard-chain/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/guard-chain/resources/guard-patterns.md",
+      "target": "config:skills/guard-chain/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/i18n-strategy/SKILL.md",
+      "target": "config:skills/i18n-strategy/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/implementer/SKILL.md",
+      "target": "config:skills/implementer/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/implementer/examples/tasks-template.md",
+      "target": "config:skills/implementer/manifest.yaml",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:skills/godot-gdscript-patterns/SKILL.md",
+      "target": "document:skills/godot-gdscript-mastery/SKILL.md",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "document:skills/godot-particles/SKILL.md",
+      "target": "document:skills/godot-best-practices/SKILL.md",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "config:skills/implementer/manifest.yaml",
+      "target": "config:agents/implementer-agent/agent-manifest.yaml",
+      "type": "configures",
+      "weight": 0.6
+    }
+  ]
+}

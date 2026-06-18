@@ -1,0 +1,31 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [
+    {"path": "skills/server-component-patterns/manifest.yaml", "language": "yaml", "sizeLines": 32, "fileCategory": "config"},
+    {"path": "skills/server-component-patterns/resources/rsc-patterns.md", "language": "markdown", "sizeLines": 628, "fileCategory": "docs"},
+    {"path": "skills/server-component-patterns/SKILL.md", "language": "markdown", "sizeLines": 135, "fileCategory": "docs"},
+    {"path": "skills/singleton-patterns/manifest.yaml", "language": "yaml", "sizeLines": 11, "fileCategory": "config"},
+    {"path": "skills/singleton-patterns/SKILL.md", "language": "markdown", "sizeLines": 119, "fileCategory": "docs"},
+    {"path": "skills/skills-index/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/skills-index/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/skills-index/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/skills-index/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/skills-index/SKILL.md", "language": "markdown", "sizeLines": 110, "fileCategory": "docs"},
+    {"path": "skills/skills-index/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/spec-writer/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/spec-writer/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/spec-writer/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/spec-writer/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/spec-writer/SKILL.md", "language": "markdown", "sizeLines": 126, "fileCategory": "docs"},
+    {"path": "skills/spec-writer/tests/cases/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/structured-logging/manifest.yaml", "language": "yaml", "sizeLines": 11, "fileCategory": "config"},
+    {"path": "skills/structured-logging/SKILL.md", "language": "markdown", "sizeLines": 123, "fileCategory": "docs"},
+    {"path": "skills/subagent-driven-development/manifest.yaml", "language": "yaml", "sizeLines": 6, "fileCategory": "config"},
+    {"path": "skills/subagent-driven-development/SKILL.md", "language": "markdown", "sizeLines": 103, "fileCategory": "docs"},
+    {"path": "skills/systematic-debugging/examples/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/systematic-debugging/manifest.yaml", "language": "yaml", "sizeLines": 10, "fileCategory": "config"},
+    {"path": "skills/systematic-debugging/overrides/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"},
+    {"path": "skills/systematic-debugging/resources/.gitkeep", "language": "unknown", "sizeLines": 0, "fileCategory": "code"}
+  ],
+  "batchImportData": {}
+}

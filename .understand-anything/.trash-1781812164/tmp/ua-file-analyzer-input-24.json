@@ -1,0 +1,5 @@
+{
+  "projectRoot": "C:/Users/tahaa/Archon",
+  "batchFiles": [{"path": "skills/docker-mcp-ops/.skillfish.json", "language": "json", "sizeLines": 9, "fileCategory": "config"}, {"path": "skills/docker-mcp-ops/SKILL.md", "language": "markdown", "sizeLines": 14, "fileCategory": "docs"}, {"path": "skills/docker-mcp-ops/manifest.yaml", "language": "yaml", "sizeLines": 23, "fileCategory": "config"}],
+  "batchImportData": {"skills/docker-mcp-ops/.skillfish.json": [], "skills/docker-mcp-ops/SKILL.md": [], "skills/docker-mcp-ops/manifest.yaml": []}
+}

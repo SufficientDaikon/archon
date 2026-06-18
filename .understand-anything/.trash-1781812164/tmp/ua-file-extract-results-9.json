@@ -1,0 +1,2087 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "scripts/admin.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 424,
+      "nonEmptyLines": 331,
+      "functions": [
+        {
+          "name": "print_header",
+          "startLine": 32,
+          "endLine": 36,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "print_success",
+          "startLine": 39,
+          "endLine": 41,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "print_error",
+          "startLine": 44,
+          "endLine": 46,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "print_warning",
+          "startLine": 49,
+          "endLine": 51,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "print_info",
+          "startLine": 54,
+          "endLine": 56,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "cmd_stats",
+          "startLine": 59,
+          "endLine": 99,
+          "params": [
+            "os_sdk"
+          ]
+        },
+        {
+          "name": "cmd_errors",
+          "startLine": 102,
+          "endLine": 121,
+          "params": [
+            "os_sdk"
+          ]
+        },
+        {
+          "name": "cmd_sources",
+          "startLine": 124,
+          "endLine": 162,
+          "params": [
+            "os_sdk"
+          ]
+        },
+        {
+          "name": "cmd_sync",
+          "startLine": 165,
+          "endLine": 176,
+          "params": [
+            "os_sdk",
+            "source_id",
+            "force"
+          ]
+        },
+        {
+          "name": "cmd_report",
+          "startLine": 179,
+          "endLine": 274,
+          "params": [
+            "os_sdk",
+            "format",
+            "output"
+          ]
+        },
+        {
+          "name": "cmd_list",
+          "startLine": 277,
+          "endLine": 338,
+          "params": [
+            "os_sdk",
+            "what",
+            "tags",
+            "bundle"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 341,
+          "endLine": 420,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "Colors",
+          "startLine": 20,
+          "endLine": 29,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Colors",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "print_header",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "print_success",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "print_error",
+          "line": 44,
+          "isDefault": false
+        },
+        {
+          "name": "print_warning",
+          "line": 49,
+          "isDefault": false
+        },
+        {
+          "name": "print_info",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "cmd_stats",
+          "line": 59,
+          "isDefault": false
+        },
+        {
+          "name": "cmd_errors",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "cmd_sources",
+          "line": 124,
+          "isDefault": false
+        },
+        {
+          "name": "cmd_sync",
+          "line": 165,
+          "isDefault": false
+        },
+        {
+          "name": "cmd_report",
+          "line": 179,
+          "isDefault": false
+        },
+        {
+          "name": "cmd_list",
+          "line": 277,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 341,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "print_header",
+          "callee": "print",
+          "lineNumber": 34
+        },
+        {
+          "caller": "print_header",
+          "callee": "print",
+          "lineNumber": 35
+        },
+        {
+          "caller": "print_header",
+          "callee": "print",
+          "lineNumber": 36
+        },
+        {
+          "caller": "print_success",
+          "callee": "print",
+          "lineNumber": 41
+        },
+        {
+          "caller": "print_error",
+          "callee": "print",
+          "lineNumber": 46
+        },
+        {
+          "caller": "print_warning",
+          "callee": "print",
+          "lineNumber": 51
+        },
+        {
+          "caller": "print_info",
+          "callee": "print",
+          "lineNumber": 56
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "print_header",
+          "lineNumber": 61
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "os_sdk.health_check",
+          "lineNumber": 63
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "print",
+          "lineNumber": 65
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "print",
+          "lineNumber": 66
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "print",
+          "lineNumber": 67
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "print",
+          "lineNumber": 68
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "print",
+          "lineNumber": 70
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "print",
+          "lineNumber": 71
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "print",
+          "lineNumber": 72
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "print",
+          "lineNumber": 73
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "print",
+          "lineNumber": 74
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "print",
+          "lineNumber": 75
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "os_sdk.list_bundles",
+          "lineNumber": 78
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "print",
+          "lineNumber": 79
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "len",
+          "lineNumber": 81
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "print",
+          "lineNumber": 82
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "print",
+          "lineNumber": 84
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "os_sdk.list_skills",
+          "lineNumber": 87
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "by_priority[priority].append",
+          "lineNumber": 93
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "print",
+          "lineNumber": 95
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "len",
+          "lineNumber": 97
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "by_priority.get",
+          "lineNumber": 97
+        },
+        {
+          "caller": "cmd_stats",
+          "callee": "print",
+          "lineNumber": 99
+        },
+        {
+          "caller": "cmd_errors",
+          "callee": "print_header",
+          "lineNumber": 104
+        },
+        {
+          "caller": "cmd_errors",
+          "callee": "os_sdk.validate",
+          "lineNumber": 106
+        },
+        {
+          "caller": "cmd_errors",
+          "callee": "print_success",
+          "lineNumber": 109
+        },
+        {
+          "caller": "cmd_errors",
+          "callee": "print_info",
+          "lineNumber": 110
+        },
+        {
+          "caller": "cmd_errors",
+          "callee": "print_error",
+          "lineNumber": 112
+        },
+        {
+          "caller": "cmd_errors",
+          "callee": "len",
+          "lineNumber": 112
+        },
+        {
+          "caller": "cmd_errors",
+          "callee": "enumerate",
+          "lineNumber": 113
+        },
+        {
+          "caller": "cmd_errors",
+          "callee": "print",
+          "lineNumber": 114
+        },
+        {
+          "caller": "cmd_errors",
+          "callee": "print",
+          "lineNumber": 115
+        },
+        {
+          "caller": "cmd_errors",
+          "callee": "result.get",
+          "lineNumber": 117
+        },
+        {
+          "caller": "cmd_errors",
+          "callee": "print_warning",
+          "lineNumber": 118
+        },
+        {
+          "caller": "cmd_errors",
+          "callee": "len",
+          "lineNumber": 118
+        },
+        {
+          "caller": "cmd_errors",
+          "callee": "enumerate",
+          "lineNumber": 119
+        },
+        {
+          "caller": "cmd_errors",
+          "callee": "print",
+          "lineNumber": 120
+        },
+        {
+          "caller": "cmd_errors",
+          "callee": "print",
+          "lineNumber": 121
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "print_header",
+          "lineNumber": 126
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "sources_config.exists",
+          "lineNumber": 130
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "print_warning",
+          "lineNumber": 131
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "print_info",
+          "lineNumber": 132
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "open",
+          "lineNumber": 136
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "yaml.safe_load",
+          "lineNumber": 137
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "config.get",
+          "lineNumber": 139
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "print_warning",
+          "lineNumber": 142
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "print",
+          "lineNumber": 145
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "len",
+          "lineNumber": 145
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "print",
+          "lineNumber": 148
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "print",
+          "lineNumber": 149
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "print",
+          "lineNumber": 152
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "print",
+          "lineNumber": 153
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "source.get",
+          "lineNumber": 153
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "print",
+          "lineNumber": 155
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "print",
+          "lineNumber": 157
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "print",
+          "lineNumber": 159
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "print",
+          "lineNumber": 161
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "source.get",
+          "lineNumber": 161
+        },
+        {
+          "caller": "cmd_sources",
+          "callee": "print",
+          "lineNumber": 162
+        },
+        {
+          "caller": "cmd_sync",
+          "callee": "print_header",
+          "lineNumber": 167
+        },
+        {
+          "caller": "cmd_sync",
+          "callee": "print_info",
+          "lineNumber": 170
+        },
+        {
+          "caller": "cmd_sync",
+          "callee": "os_sdk.sync_sources",
+          "lineNumber": 173
+        },
+        {
+          "caller": "cmd_sync",
+          "callee": "print_success",
+          "lineNumber": 174
+        },
+        {
+          "caller": "cmd_sync",
+          "callee": "print_error",
+          "lineNumber": 176
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "print_header",
+          "lineNumber": 181
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "os_sdk.health_check",
+          "lineNumber": 183
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "os_sdk.list_skills",
+          "lineNumber": 184
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "os_sdk.list_bundles",
+          "lineNumber": 185
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "os_sdk.validate",
+          "lineNumber": 186
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "datetime.now().isoformat",
+          "lineNumber": 188
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "datetime.now",
+          "lineNumber": 188
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "open",
+          "lineNumber": 200
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "json.dump",
+          "lineNumber": 201
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "print_success",
+          "lineNumber": 202
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "print",
+          "lineNumber": 204
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "json.dumps",
+          "lineNumber": 204
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "report_lines.append",
+          "lineNumber": 229
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "len",
+          "lineNumber": 229
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "report_lines.append",
+          "lineNumber": 230
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "report_lines.append",
+          "lineNumber": 232
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "report_lines.append",
+          "lineNumber": 233
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "report_lines.extend",
+          "lineNumber": 235
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "len",
+          "lineNumber": 243
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "report_lines.append",
+          "lineNumber": 244
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "report_lines.extend",
+          "lineNumber": 246
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "by_priority[priority].append",
+          "lineNumber": 257
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "report_lines.append",
+          "lineNumber": 261
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "len",
+          "lineNumber": 261
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "report_lines.append",
+          "lineNumber": 262
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "report_lines.append",
+          "lineNumber": 264
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "report_lines.append",
+          "lineNumber": 265
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "\"\\n\".join",
+          "lineNumber": 267
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "open",
+          "lineNumber": 270
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "f.write",
+          "lineNumber": 271
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "print_success",
+          "lineNumber": 272
+        },
+        {
+          "caller": "cmd_report",
+          "callee": "print",
+          "lineNumber": 274
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print_header",
+          "lineNumber": 280
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "tags.split",
+          "lineNumber": 282
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "os_sdk.list_skills",
+          "lineNumber": 283
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 285
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "len",
+          "lineNumber": 285
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "skill.get",
+          "lineNumber": 289
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 292
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 294
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "', '.join",
+          "lineNumber": 297
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 298
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 299
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 300
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print_header",
+          "lineNumber": 303
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "os_sdk.list_bundles",
+          "lineNumber": 305
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 307
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "len",
+          "lineNumber": 307
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 310
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 311
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 312
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "len",
+          "lineNumber": 312
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 313
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 314
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print_header",
+          "lineNumber": 317
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "os_sdk.manifest.get",
+          "lineNumber": 319
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 321
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "len",
+          "lineNumber": 321
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 324
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 325
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print_header",
+          "lineNumber": 328
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "os_sdk.manifest.get",
+          "lineNumber": 330
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 332
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "len",
+          "lineNumber": 332
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 335
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 336
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "pipeline.get",
+          "lineNumber": 336
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 337
+        },
+        {
+          "caller": "cmd_list",
+          "callee": "print",
+          "lineNumber": 338
+        },
+        {
+          "caller": "main",
+          "callee": "argparse.ArgumentParser",
+          "lineNumber": 342
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 346
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 348
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 350
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 352
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 354
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 356
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 358
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 360
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 362
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 364
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 366
+        },
+        {
+          "caller": "main",
+          "callee": "parser.add_argument",
+          "lineNumber": 368
+        },
+        {
+          "caller": "main",
+          "callee": "parser.parse_args",
+          "lineNumber": 371
+        },
+        {
+          "caller": "main",
+          "callee": "Archon",
+          "lineNumber": 375
+        },
+        {
+          "caller": "main",
+          "callee": "print_error",
+          "lineNumber": 377
+        },
+        {
+          "caller": "main",
+          "callee": "str",
+          "lineNumber": 377
+        },
+        {
+          "caller": "main",
+          "callee": "sys.exit",
+          "lineNumber": 378
+        },
+        {
+          "caller": "main",
+          "callee": "cmd_stats",
+          "lineNumber": 384
+        },
+        {
+          "caller": "main",
+          "callee": "cmd_errors",
+          "lineNumber": 388
+        },
+        {
+          "caller": "main",
+          "callee": "cmd_sources",
+          "lineNumber": 392
+        },
+        {
+          "caller": "main",
+          "callee": "cmd_sync",
+          "lineNumber": 397
+        },
+        {
+          "caller": "main",
+          "callee": "cmd_report",
+          "lineNumber": 401
+        },
+        {
+          "caller": "main",
+          "callee": "cmd_list",
+          "lineNumber": 405
+        },
+        {
+          "caller": "main",
+          "callee": "os_sdk.validate",
+          "lineNumber": 410
+        },
+        {
+          "caller": "main",
+          "callee": "print_success",
+          "lineNumber": 412
+        },
+        {
+          "caller": "main",
+          "callee": "print_error",
+          "lineNumber": 414
+        },
+        {
+          "caller": "main",
+          "callee": "print",
+          "lineNumber": 416
+        },
+        {
+          "caller": "main",
+          "callee": "parser.print_help",
+          "lineNumber": 420
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 13,
+        "functionCount": 12,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "sdk/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 9,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "sdk/archon.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 654,
+      "nonEmptyLines": 541,
+      "functions": [
+        {
+          "name": "load_skill",
+          "startLine": 651,
+          "endLine": 654,
+          "params": [
+            "name"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Archon",
+          "startLine": 12,
+          "endLine": 647,
+          "methods": [
+            "__init__",
+            "_detect_root",
+            "_load_manifest",
+            "list_skills",
+            "list_bundles",
+            "get_skill",
+            "route",
+            "install",
+            "validate",
+            "_validate_skill",
+            "_validate_bundle",
+            "_validate_agent",
+            "sync_sources",
+            "health_check",
+            "execute_pipeline",
+            "resume_pipeline",
+            "get_pipeline_status",
+            "list_active_pipelines",
+            "cancel_pipeline",
+            "list_synapses",
+            "get_core_synapses"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Archon",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "load_skill",
+          "line": 651,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "self._detect_root",
+          "lineNumber": 34
+        },
+        {
+          "caller": "__init__",
+          "callee": "self._load_manifest",
+          "lineNumber": 35
+        },
+        {
+          "caller": "_detect_root",
+          "callee": "Path(root_path).resolve",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_detect_root",
+          "callee": "Path",
+          "lineNumber": 40
+        },
+        {
+          "caller": "_detect_root",
+          "callee": "Path(os.environ['ARCHON_ROOT']).resolve",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_detect_root",
+          "callee": "Path",
+          "lineNumber": 45
+        },
+        {
+          "caller": "_detect_root",
+          "callee": "Path.home",
+          "lineNumber": 48
+        },
+        {
+          "caller": "_detect_root",
+          "callee": "(home_install / 'archon.yaml').exists",
+          "lineNumber": 49
+        },
+        {
+          "caller": "_detect_root",
+          "callee": "Path.cwd",
+          "lineNumber": 53
+        },
+        {
+          "caller": "_detect_root",
+          "callee": "(cwd / 'archon.yaml').exists",
+          "lineNumber": 54
+        },
+        {
+          "caller": "_detect_root",
+          "callee": "(parent / 'archon.yaml').exists",
+          "lineNumber": 59
+        },
+        {
+          "caller": "_detect_root",
+          "callee": "FileNotFoundError",
+          "lineNumber": 62
+        },
+        {
+          "caller": "_load_manifest",
+          "callee": "manifest_path.exists",
+          "lineNumber": 71
+        },
+        {
+          "caller": "_load_manifest",
+          "callee": "FileNotFoundError",
+          "lineNumber": 72
+        },
+        {
+          "caller": "_load_manifest",
+          "callee": "open",
+          "lineNumber": 74
+        },
+        {
+          "caller": "_load_manifest",
+          "callee": "yaml.safe_load",
+          "lineNumber": 75
+        },
+        {
+          "caller": "list_skills",
+          "callee": "skills_dir.iterdir",
+          "lineNumber": 94
+        },
+        {
+          "caller": "list_skills",
+          "callee": "skill_dir.is_dir",
+          "lineNumber": 95
+        },
+        {
+          "caller": "list_skills",
+          "callee": "skill_dir.name.startswith",
+          "lineNumber": 95
+        },
+        {
+          "caller": "list_skills",
+          "callee": "manifest_path.exists",
+          "lineNumber": 99
+        },
+        {
+          "caller": "list_skills",
+          "callee": "open",
+          "lineNumber": 102
+        },
+        {
+          "caller": "list_skills",
+          "callee": "yaml.safe_load",
+          "lineNumber": 104
+        },
+        {
+          "caller": "list_skills",
+          "callee": "isinstance",
+          "lineNumber": 108
+        },
+        {
+          "caller": "list_skills",
+          "callee": "any",
+          "lineNumber": 112
+        },
+        {
+          "caller": "list_skills",
+          "callee": "skill_manifest.get",
+          "lineNumber": 112
+        },
+        {
+          "caller": "list_skills",
+          "callee": "skill_manifest.get",
+          "lineNumber": 115
+        },
+        {
+          "caller": "list_skills",
+          "callee": "skill_manifest.get",
+          "lineNumber": 118
+        },
+        {
+          "caller": "list_skills",
+          "callee": "skills.append",
+          "lineNumber": 121
+        },
+        {
+          "caller": "list_skills",
+          "callee": "str",
+          "lineNumber": 123
+        },
+        {
+          "caller": "list_skills",
+          "callee": "skill_dir.relative_to",
+          "lineNumber": 123
+        },
+        {
+          "caller": "list_skills",
+          "callee": "skill_manifest.get",
+          "lineNumber": 124
+        },
+        {
+          "caller": "list_skills",
+          "callee": "skill_manifest.get",
+          "lineNumber": 125
+        },
+        {
+          "caller": "list_skills",
+          "callee": "skill_manifest.get",
+          "lineNumber": 126
+        },
+        {
+          "caller": "list_skills",
+          "callee": "skill_manifest.get",
+          "lineNumber": 127
+        },
+        {
+          "caller": "list_skills",
+          "callee": "skill_manifest.get",
+          "lineNumber": 128
+        },
+        {
+          "caller": "list_skills",
+          "callee": "sorted",
+          "lineNumber": 131
+        },
+        {
+          "caller": "list_bundles",
+          "callee": "self.manifest.get",
+          "lineNumber": 142
+        },
+        {
+          "caller": "list_bundles",
+          "callee": "bundle_yaml.exists",
+          "lineNumber": 146
+        },
+        {
+          "caller": "list_bundles",
+          "callee": "open",
+          "lineNumber": 147
+        },
+        {
+          "caller": "list_bundles",
+          "callee": "yaml.safe_load",
+          "lineNumber": 148
+        },
+        {
+          "caller": "list_bundles",
+          "callee": "bundles.append",
+          "lineNumber": 152
+        },
+        {
+          "caller": "list_bundles",
+          "callee": "bundle_def.get",
+          "lineNumber": 155
+        },
+        {
+          "caller": "list_bundles",
+          "callee": "bundle_manifest.get",
+          "lineNumber": 156
+        },
+        {
+          "caller": "list_bundles",
+          "callee": "bundle_manifest.get",
+          "lineNumber": 157
+        },
+        {
+          "caller": "get_skill",
+          "callee": "skill_path.exists",
+          "lineNumber": 174
+        },
+        {
+          "caller": "get_skill",
+          "callee": "FileNotFoundError",
+          "lineNumber": 175
+        },
+        {
+          "caller": "get_skill",
+          "callee": "manifest_path.exists",
+          "lineNumber": 180
+        },
+        {
+          "caller": "get_skill",
+          "callee": "FileNotFoundError",
+          "lineNumber": 181
+        },
+        {
+          "caller": "get_skill",
+          "callee": "open",
+          "lineNumber": 183
+        },
+        {
+          "caller": "get_skill",
+          "callee": "yaml.safe_load",
+          "lineNumber": 184
+        },
+        {
+          "caller": "get_skill",
+          "callee": "skill_md_path.exists",
+          "lineNumber": 187
+        },
+        {
+          "caller": "get_skill",
+          "callee": "open",
+          "lineNumber": 188
+        },
+        {
+          "caller": "get_skill",
+          "callee": "f.read",
+          "lineNumber": 189
+        },
+        {
+          "caller": "get_skill",
+          "callee": "resources_dir.exists",
+          "lineNumber": 194
+        },
+        {
+          "caller": "get_skill",
+          "callee": "resources_dir.iterdir",
+          "lineNumber": 195
+        },
+        {
+          "caller": "get_skill",
+          "callee": "r.is_file",
+          "lineNumber": 195
+        },
+        {
+          "caller": "get_skill",
+          "callee": "str",
+          "lineNumber": 200
+        },
+        {
+          "caller": "get_skill",
+          "callee": "skill_path.relative_to",
+          "lineNumber": 200
+        },
+        {
+          "caller": "route",
+          "callee": "len",
+          "lineNumber": 215
+        },
+        {
+          "caller": "route",
+          "callee": "query.split",
+          "lineNumber": 215
+        },
+        {
+          "caller": "route",
+          "callee": "int",
+          "lineNumber": 240
+        },
+        {
+          "caller": "route",
+          "callee": "int",
+          "lineNumber": 243
+        },
+        {
+          "caller": "install",
+          "callee": "ValueError",
+          "lineNumber": 263
+        },
+        {
+          "caller": "install",
+          "callee": "next",
+          "lineNumber": 267
+        },
+        {
+          "caller": "install",
+          "callee": "self.manifest.get",
+          "lineNumber": 268
+        },
+        {
+          "caller": "install",
+          "callee": "ValueError",
+          "lineNumber": 272
+        },
+        {
+          "caller": "install",
+          "callee": "print",
+          "lineNumber": 278
+        },
+        {
+          "caller": "install",
+          "callee": "next",
+          "lineNumber": 284
+        },
+        {
+          "caller": "install",
+          "callee": "self.manifest.get",
+          "lineNumber": 285
+        },
+        {
+          "caller": "install",
+          "callee": "ValueError",
+          "lineNumber": 289
+        },
+        {
+          "caller": "install",
+          "callee": "bundle_def.get",
+          "lineNumber": 290
+        },
+        {
+          "caller": "install",
+          "callee": "ValueError",
+          "lineNumber": 294
+        },
+        {
+          "caller": "install",
+          "callee": "Path(target).expanduser",
+          "lineNumber": 297
+        },
+        {
+          "caller": "install",
+          "callee": "Path",
+          "lineNumber": 297
+        },
+        {
+          "caller": "install",
+          "callee": "target_path.mkdir",
+          "lineNumber": 298
+        },
+        {
+          "caller": "install",
+          "callee": "self.get_skill",
+          "lineNumber": 301
+        },
+        {
+          "caller": "install",
+          "callee": "skill_target.write_text",
+          "lineNumber": 305
+        },
+        {
+          "caller": "install",
+          "callee": "print",
+          "lineNumber": 306
+        },
+        {
+          "caller": "validate",
+          "callee": "target_path.exists",
+          "lineNumber": 326
+        },
+        {
+          "caller": "validate",
+          "callee": "self._validate_skill",
+          "lineNumber": 331
+        },
+        {
+          "caller": "validate",
+          "callee": "self._validate_bundle",
+          "lineNumber": 333
+        },
+        {
+          "caller": "validate",
+          "callee": "self._validate_agent",
+          "lineNumber": 335
+        },
+        {
+          "caller": "validate",
+          "callee": "print",
+          "lineNumber": 338
+        },
+        {
+          "caller": "validate",
+          "callee": "self._load_manifest",
+          "lineNumber": 342
+        },
+        {
+          "caller": "validate",
+          "callee": "print",
+          "lineNumber": 343
+        },
+        {
+          "caller": "validate",
+          "callee": "errors.append",
+          "lineNumber": 345
+        },
+        {
+          "caller": "validate",
+          "callee": "self.list_skills",
+          "lineNumber": 348
+        },
+        {
+          "caller": "validate",
+          "callee": "self._validate_skill",
+          "lineNumber": 350
+        },
+        {
+          "caller": "validate",
+          "callee": "errors.extend",
+          "lineNumber": 352
+        },
+        {
+          "caller": "validate",
+          "callee": "print",
+          "lineNumber": 354
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 354
+        },
+        {
+          "caller": "validate",
+          "callee": "len",
+          "lineNumber": 357
+        },
+        {
+          "caller": "_validate_skill",
+          "callee": "manifest_path.exists",
+          "lineNumber": 368
+        },
+        {
+          "caller": "_validate_skill",
+          "callee": "errors.append",
+          "lineNumber": 369
+        },
+        {
+          "caller": "_validate_skill",
+          "callee": "open",
+          "lineNumber": 372
+        },
+        {
+          "caller": "_validate_skill",
+          "callee": "yaml.safe_load",
+          "lineNumber": 373
+        },
+        {
+          "caller": "_validate_skill",
+          "callee": "errors.append",
+          "lineNumber": 379
+        },
+        {
+          "caller": "_validate_skill",
+          "callee": "errors.append",
+          "lineNumber": 381
+        },
+        {
+          "caller": "_validate_skill",
+          "callee": "(skill_path / 'SKILL.md').exists",
+          "lineNumber": 384
+        },
+        {
+          "caller": "_validate_skill",
+          "callee": "errors.append",
+          "lineNumber": 385
+        },
+        {
+          "caller": "_validate_skill",
+          "callee": "len",
+          "lineNumber": 387
+        },
+        {
+          "caller": "_validate_bundle",
+          "callee": "Path",
+          "lineNumber": 394
+        },
+        {
+          "caller": "_validate_bundle",
+          "callee": "yaml.safe_load",
+          "lineNumber": 396
+        },
+        {
+          "caller": "_validate_bundle",
+          "callee": "p.read_text",
+          "lineNumber": 396
+        },
+        {
+          "caller": "_validate_bundle",
+          "callee": "errors.append",
+          "lineNumber": 401
+        },
+        {
+          "caller": "_validate_bundle",
+          "callee": "data.get",
+          "lineNumber": 402
+        },
+        {
+          "caller": "_validate_bundle",
+          "callee": "isinstance",
+          "lineNumber": 403
+        },
+        {
+          "caller": "_validate_bundle",
+          "callee": "errors.append",
+          "lineNumber": 404
+        },
+        {
+          "caller": "_validate_bundle",
+          "callee": "isinstance",
+          "lineNumber": 408
+        },
+        {
+          "caller": "_validate_bundle",
+          "callee": "errors.append",
+          "lineNumber": 409
+        },
+        {
+          "caller": "_validate_bundle",
+          "callee": "ref_path.exists",
+          "lineNumber": 412
+        },
+        {
+          "caller": "_validate_bundle",
+          "callee": "errors.append",
+          "lineNumber": 413
+        },
+        {
+          "caller": "_validate_agent",
+          "callee": "Path",
+          "lineNumber": 421
+        },
+        {
+          "caller": "_validate_agent",
+          "callee": "p.is_dir",
+          "lineNumber": 422
+        },
+        {
+          "caller": "_validate_agent",
+          "callee": "yaml.safe_load",
+          "lineNumber": 425
+        },
+        {
+          "caller": "_validate_agent",
+          "callee": "p.read_text",
+          "lineNumber": 425
+        },
+        {
+          "caller": "_validate_agent",
+          "callee": "errors.append",
+          "lineNumber": 430
+        },
+        {
+          "caller": "_validate_agent",
+          "callee": "isinstance",
+          "lineNumber": 431
+        },
+        {
+          "caller": "_validate_agent",
+          "callee": "errors.append",
+          "lineNumber": 432
+        },
+        {
+          "caller": "_validate_agent",
+          "callee": "data.get",
+          "lineNumber": 433
+        },
+        {
+          "caller": "_validate_agent",
+          "callee": "isinstance",
+          "lineNumber": 436
+        },
+        {
+          "caller": "_validate_agent",
+          "callee": "target.strip",
+          "lineNumber": 436
+        },
+        {
+          "caller": "_validate_agent",
+          "callee": "errors.append",
+          "lineNumber": 437
+        },
+        {
+          "caller": "sync_sources",
+          "callee": "sources_config.exists",
+          "lineNumber": 454
+        },
+        {
+          "caller": "sync_sources",
+          "callee": "print",
+          "lineNumber": 455
+        },
+        {
+          "caller": "sync_sources",
+          "callee": "open",
+          "lineNumber": 458
+        },
+        {
+          "caller": "sync_sources",
+          "callee": "yaml.safe_load",
+          "lineNumber": 459
+        },
+        {
+          "caller": "sync_sources",
+          "callee": "config.get",
+          "lineNumber": 461
+        },
+        {
+          "caller": "sync_sources",
+          "callee": "print",
+          "lineNumber": 466
+        },
+        {
+          "caller": "sync_sources",
+          "callee": "print",
+          "lineNumber": 469
+        },
+        {
+          "caller": "health_check",
+          "callee": "self.list_skills",
+          "lineNumber": 480
+        },
+        {
+          "caller": "health_check",
+          "callee": "self.list_bundles",
+          "lineNumber": 481
+        },
+        {
+          "caller": "health_check",
+          "callee": "self.manifest.get",
+          "lineNumber": 482
+        },
+        {
+          "caller": "health_check",
+          "callee": "self.manifest.get",
+          "lineNumber": 483
+        },
+        {
+          "caller": "health_check",
+          "callee": "self.manifest.get",
+          "lineNumber": 485
+        },
+        {
+          "caller": "health_check",
+          "callee": "self.manifest.get",
+          "lineNumber": 489
+        },
+        {
+          "caller": "health_check",
+          "callee": "str",
+          "lineNumber": 490
+        },
+        {
+          "caller": "health_check",
+          "callee": "len",
+          "lineNumber": 491
+        },
+        {
+          "caller": "health_check",
+          "callee": "len",
+          "lineNumber": 492
+        },
+        {
+          "caller": "health_check",
+          "callee": "len",
+          "lineNumber": 493
+        },
+        {
+          "caller": "health_check",
+          "callee": "len",
+          "lineNumber": 494
+        },
+        {
+          "caller": "health_check",
+          "callee": "len",
+          "lineNumber": 495
+        },
+        {
+          "caller": "health_check",
+          "callee": "len",
+          "lineNumber": 496
+        },
+        {
+          "caller": "health_check",
+          "callee": "self.manifest.get",
+          "lineNumber": 496
+        },
+        {
+          "caller": "execute_pipeline",
+          "callee": "sys.path.insert",
+          "lineNumber": 518
+        },
+        {
+          "caller": "execute_pipeline",
+          "callee": "str",
+          "lineNumber": 518
+        },
+        {
+          "caller": "execute_pipeline",
+          "callee": "PipelineExecutor",
+          "lineNumber": 521
+        },
+        {
+          "caller": "execute_pipeline",
+          "callee": "Path.home",
+          "lineNumber": 523
+        },
+        {
+          "caller": "execute_pipeline",
+          "callee": "executor.load_pipeline",
+          "lineNumber": 525
+        },
+        {
+          "caller": "execute_pipeline",
+          "callee": "executor.execute",
+          "lineNumber": 526
+        },
+        {
+          "caller": "resume_pipeline",
+          "callee": "sys.path.insert",
+          "lineNumber": 538
+        },
+        {
+          "caller": "resume_pipeline",
+          "callee": "str",
+          "lineNumber": 538
+        },
+        {
+          "caller": "resume_pipeline",
+          "callee": "PipelineExecutor",
+          "lineNumber": 541
+        },
+        {
+          "caller": "resume_pipeline",
+          "callee": "executor.resume",
+          "lineNumber": 542
+        },
+        {
+          "caller": "get_pipeline_status",
+          "callee": "sys.path.insert",
+          "lineNumber": 554
+        },
+        {
+          "caller": "get_pipeline_status",
+          "callee": "str",
+          "lineNumber": 554
+        },
+        {
+          "caller": "get_pipeline_status",
+          "callee": "PipelineState.load",
+          "lineNumber": 557
+        },
+        {
+          "caller": "get_pipeline_status",
+          "callee": "state.to_dict",
+          "lineNumber": 558
+        },
+        {
+          "caller": "list_active_pipelines",
+          "callee": "Path.home",
+          "lineNumber": 567
+        },
+        {
+          "caller": "list_active_pipelines",
+          "callee": "state_dir.exists",
+          "lineNumber": 568
+        },
+        {
+          "caller": "list_active_pipelines",
+          "callee": "state_dir.glob",
+          "lineNumber": 572
+        },
+        {
+          "caller": "list_active_pipelines",
+          "callee": "open",
+          "lineNumber": 574
+        },
+        {
+          "caller": "list_active_pipelines",
+          "callee": "json.load",
+          "lineNumber": 575
+        },
+        {
+          "caller": "list_active_pipelines",
+          "callee": "data.get",
+          "lineNumber": 576
+        },
+        {
+          "caller": "list_active_pipelines",
+          "callee": "active.append",
+          "lineNumber": 578
+        },
+        {
+          "caller": "list_active_pipelines",
+          "callee": "data.get",
+          "lineNumber": 579
+        },
+        {
+          "caller": "list_active_pipelines",
+          "callee": "data.get",
+          "lineNumber": 580
+        },
+        {
+          "caller": "list_active_pipelines",
+          "callee": "data.get",
+          "lineNumber": 582
+        },
+        {
+          "caller": "list_active_pipelines",
+          "callee": "data.get",
+          "lineNumber": 583
+        },
+        {
+          "caller": "cancel_pipeline",
+          "callee": "sys.path.insert",
+          "lineNumber": 600
+        },
+        {
+          "caller": "cancel_pipeline",
+          "callee": "str",
+          "lineNumber": 600
+        },
+        {
+          "caller": "cancel_pipeline",
+          "callee": "PipelineState.load",
+          "lineNumber": 603
+        },
+        {
+          "caller": "cancel_pipeline",
+          "callee": "state.update_status",
+          "lineNumber": 605
+        },
+        {
+          "caller": "list_synapses",
+          "callee": "self.manifest.get",
+          "lineNumber": 613
+        },
+        {
+          "caller": "list_synapses",
+          "callee": "isinstance",
+          "lineNumber": 617
+        },
+        {
+          "caller": "list_synapses",
+          "callee": "s.get",
+          "lineNumber": 618
+        },
+        {
+          "caller": "list_synapses",
+          "callee": "s.get",
+          "lineNumber": 619
+        },
+        {
+          "caller": "list_synapses",
+          "callee": "manifest_path.exists",
+          "lineNumber": 625
+        },
+        {
+          "caller": "list_synapses",
+          "callee": "open",
+          "lineNumber": 627
+        },
+        {
+          "caller": "list_synapses",
+          "callee": "yaml.safe_load",
+          "lineNumber": 628
+        },
+        {
+          "caller": "list_synapses",
+          "callee": "synapses.append",
+          "lineNumber": 629
+        },
+        {
+          "caller": "list_synapses",
+          "callee": "manifest.get",
+          "lineNumber": 630
+        },
+        {
+          "caller": "list_synapses",
+          "callee": "manifest.get",
+          "lineNumber": 631
+        },
+        {
+          "caller": "list_synapses",
+          "callee": "manifest.get",
+          "lineNumber": 632
+        },
+        {
+          "caller": "list_synapses",
+          "callee": "manifest.get",
+          "lineNumber": 633
+        },
+        {
+          "caller": "list_synapses",
+          "callee": "manifest.get",
+          "lineNumber": 634
+        },
+        {
+          "caller": "list_synapses",
+          "callee": "synapses.append",
+          "lineNumber": 637
+        },
+        {
+          "caller": "list_synapses",
+          "callee": "synapses.append",
+          "lineNumber": 639
+        },
+        {
+          "caller": "get_core_synapses",
+          "callee": "self.list_synapses",
+          "lineNumber": 645
+        },
+        {
+          "caller": "get_core_synapses",
+          "callee": "s.get",
+          "lineNumber": 646
+        },
+        {
+          "caller": "load_skill",
+          "callee": "Archon",
+          "lineNumber": 653
+        },
+        {
+          "caller": "load_skill",
+          "callee": "archon_sdk.get_skill",
+          "lineNumber": 654
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    }
+  ]
+}

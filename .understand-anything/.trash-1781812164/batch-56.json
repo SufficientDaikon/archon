@@ -1,0 +1,245 @@
+{
+  "batchIndex": 56,
+  "nodes": [
+    {
+      "id": "config:skills/react-best-practices/manifest.yaml",
+      "type": "config",
+      "name": "react-best-practices manifest",
+      "filePath": "skills/react-best-practices/manifest.yaml",
+      "summary": "Skill manifest for the react-best-practices skill providing React development guidance and pattern enforcement.",
+      "tags": ["manifest", "skill", "react", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/react-best-practices/SKILL.md",
+      "type": "document",
+      "name": "react-best-practices SKILL.md",
+      "filePath": "skills/react-best-practices/SKILL.md",
+      "summary": "Skill documentation for React best practices covering hooks, component patterns, and performance optimization.",
+      "tags": ["docs", "react", "skill", "best-practices"],
+      "complexity": "low"
+    },
+    {
+      "id": "file:skills/react-best-practices/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (react-best-practices overrides)",
+      "filePath": "skills/react-best-practices/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/react-best-practices/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (react-best-practices resources)",
+      "filePath": "skills/react-best-practices/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/react-best-practices/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (react-best-practices tests)",
+      "filePath": "skills/react-best-practices/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "document:skills/README.md",
+      "type": "document",
+      "name": "skills/README.md",
+      "filePath": "skills/README.md",
+      "summary": "Index readme for the skills directory, providing an overview of available skill categories and usage guidance.",
+      "tags": ["readme", "skills", "index", "docs"],
+      "complexity": "low"
+    },
+    {
+      "id": "config:skills/receiving-code-review/manifest.yaml",
+      "type": "config",
+      "name": "receiving-code-review manifest",
+      "filePath": "skills/receiving-code-review/manifest.yaml",
+      "summary": "Minimal skill manifest for the receiving-code-review skill.",
+      "tags": ["manifest", "skill", "code-review", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/receiving-code-review/SKILL.md",
+      "type": "document",
+      "name": "receiving-code-review SKILL.md",
+      "filePath": "skills/receiving-code-review/SKILL.md",
+      "summary": "Skill documentation teaching how to receive code reviews gracefully, respond to feedback constructively, and apply suggestions effectively.",
+      "tags": ["docs", "code-review", "skill", "feedback", "collaboration"],
+      "complexity": "low"
+    },
+    {
+      "id": "config:skills/rename-project/manifest.yaml",
+      "type": "config",
+      "name": "rename-project manifest",
+      "filePath": "skills/rename-project/manifest.yaml",
+      "summary": "Skill manifest for the rename-project skill with extended configuration for project-wide renaming operations.",
+      "tags": ["manifest", "skill", "rename", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/rename-project/SKILL.md",
+      "type": "document",
+      "name": "rename-project SKILL.md",
+      "filePath": "skills/rename-project/SKILL.md",
+      "summary": "Comprehensive skill documentation for renaming projects across all files, configs, package manifests, and CI/CD references with safety checks.",
+      "tags": ["docs", "rename-project", "skill", "refactoring"],
+      "complexity": "high"
+    },
+    {
+      "id": "config:skills/requesting-code-review/manifest.yaml",
+      "type": "config",
+      "name": "requesting-code-review manifest",
+      "filePath": "skills/requesting-code-review/manifest.yaml",
+      "summary": "Minimal skill manifest for the requesting-code-review skill.",
+      "tags": ["manifest", "skill", "code-review", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/requesting-code-review/SKILL.md",
+      "type": "document",
+      "name": "requesting-code-review SKILL.md",
+      "filePath": "skills/requesting-code-review/SKILL.md",
+      "summary": "Skill documentation for preparing and submitting high-quality code review requests with clear context, scope, and reviewer guidance.",
+      "tags": ["docs", "code-review", "skill", "pr", "collaboration"],
+      "complexity": "low"
+    },
+    {
+      "id": "config:skills/research-paper-to-course/manifest.yaml",
+      "type": "config",
+      "name": "research-paper-to-course manifest",
+      "filePath": "skills/research-paper-to-course/manifest.yaml",
+      "summary": "Skill manifest for the research-paper-to-course skill converting academic papers into structured courses.",
+      "tags": ["manifest", "skill", "research", "course", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/research-paper-to-course/references/academic-elements.md",
+      "type": "document",
+      "name": "academic-elements.md",
+      "filePath": "skills/research-paper-to-course/references/academic-elements.md",
+      "summary": "Exhaustive reference for converting academic paper elements (abstracts, theorems, citations, figures) into interactive course components with pedagogical scaffolding.",
+      "tags": ["academic", "course", "elements", "reference", "research"],
+      "complexity": "high"
+    },
+    {
+      "id": "document:skills/research-paper-to-course/SKILL.md",
+      "type": "document",
+      "name": "research-paper-to-course SKILL.md",
+      "filePath": "skills/research-paper-to-course/SKILL.md",
+      "summary": "Skill documentation for transforming research papers into pedagogically structured courses with exercises, summaries, and knowledge assessments.",
+      "tags": ["docs", "research-paper-to-course", "skill", "education", "learning"],
+      "complexity": "high"
+    },
+    {
+      "id": "file:skills/reviewer/examples/report-template.html",
+      "type": "file",
+      "name": "report-template.html",
+      "filePath": "skills/reviewer/examples/report-template.html",
+      "summary": "HTML template for generating structured code review reports with findings sections, severity ratings, and remediation guidance.",
+      "tags": ["html", "template", "code-review", "report", "reviewer"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/reviewer/manifest.yaml",
+      "type": "config",
+      "name": "reviewer manifest",
+      "filePath": "skills/reviewer/manifest.yaml",
+      "summary": "Skill manifest for the reviewer skill providing code review execution and report generation.",
+      "tags": ["manifest", "skill", "reviewer", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/reviewer/SKILL.md",
+      "type": "document",
+      "name": "reviewer SKILL.md",
+      "filePath": "skills/reviewer/SKILL.md",
+      "summary": "Skill documentation for conducting thorough code reviews covering correctness, security, performance, and maintainability dimensions.",
+      "tags": ["docs", "reviewer", "skill", "code-review"],
+      "complexity": "medium"
+    },
+    {
+      "id": "file:skills/reviewer/examples/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (reviewer examples)",
+      "filePath": "skills/reviewer/examples/.gitkeep",
+      "summary": "Placeholder preserving examples directory alongside the HTML template.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/reviewer/overrides/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (reviewer overrides)",
+      "filePath": "skills/reviewer/overrides/.gitkeep",
+      "summary": "Placeholder preserving empty overrides directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/reviewer/resources/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (reviewer resources)",
+      "filePath": "skills/reviewer/resources/.gitkeep",
+      "summary": "Placeholder preserving empty resources directory.",
+      "tags": ["placeholder", "gitkeep"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "file:skills/reviewer/tests/cases/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep (reviewer tests)",
+      "filePath": "skills/reviewer/tests/cases/.gitkeep",
+      "summary": "Placeholder preserving empty test cases directory.",
+      "tags": ["placeholder", "gitkeep", "tests"],
+      "complexity": "trivial"
+    },
+    {
+      "id": "config:skills/sdk-beside-app/manifest.yaml",
+      "type": "config",
+      "name": "sdk-beside-app manifest",
+      "filePath": "skills/sdk-beside-app/manifest.yaml",
+      "summary": "Skill manifest for the sdk-beside-app skill guiding simultaneous SDK and application development.",
+      "tags": ["manifest", "skill", "sdk", "yaml", "config"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/sdk-beside-app/resources/sdk-scaffold.md",
+      "type": "document",
+      "name": "sdk-scaffold.md",
+      "filePath": "skills/sdk-beside-app/resources/sdk-scaffold.md",
+      "summary": "Reference scaffold for co-developing an SDK alongside an application, covering package structure, versioning strategy, and API surface design.",
+      "tags": ["sdk", "scaffold", "reference", "api", "packaging"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:skills/sdk-beside-app/SKILL.md",
+      "type": "document",
+      "name": "sdk-beside-app SKILL.md",
+      "filePath": "skills/sdk-beside-app/SKILL.md",
+      "summary": "Skill documentation for building an SDK alongside a companion application, covering shared code architecture and versioned API contracts.",
+      "tags": ["docs", "sdk-beside-app", "skill", "sdk", "architecture"],
+      "complexity": "medium"
+    }
+  ],
+  "edges": [
+    {"source": "config:skills/react-best-practices/manifest.yaml", "target": "document:skills/react-best-practices/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/receiving-code-review/manifest.yaml", "target": "document:skills/receiving-code-review/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/rename-project/manifest.yaml", "target": "document:skills/rename-project/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/requesting-code-review/manifest.yaml", "target": "document:skills/requesting-code-review/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/research-paper-to-course/manifest.yaml", "target": "document:skills/research-paper-to-course/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/research-paper-to-course/manifest.yaml", "target": "document:skills/research-paper-to-course/references/academic-elements.md", "type": "configures", "weight": 0.6},
+    {"source": "document:skills/research-paper-to-course/SKILL.md", "target": "document:skills/research-paper-to-course/references/academic-elements.md", "type": "documents", "weight": 0.5},
+    {"source": "config:skills/reviewer/manifest.yaml", "target": "document:skills/reviewer/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/reviewer/manifest.yaml", "target": "file:skills/reviewer/examples/report-template.html", "type": "configures", "weight": 0.6},
+    {"source": "document:skills/reviewer/SKILL.md", "target": "file:skills/reviewer/examples/report-template.html", "type": "documents", "weight": 0.5},
+    {"source": "config:skills/sdk-beside-app/manifest.yaml", "target": "document:skills/sdk-beside-app/SKILL.md", "type": "configures", "weight": 0.6},
+    {"source": "config:skills/sdk-beside-app/manifest.yaml", "target": "document:skills/sdk-beside-app/resources/sdk-scaffold.md", "type": "configures", "weight": 0.6},
+    {"source": "document:skills/sdk-beside-app/SKILL.md", "target": "document:skills/sdk-beside-app/resources/sdk-scaffold.md", "type": "documents", "weight": 0.5}
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "batchIndex": 29,
+  "nodes": [
+    {
+      "id": "document:skills/mcp-builder/resources/evaluation.md",
+      "type": "document:",
+      "name": "evaluation.md",
+      "filePath": "skills/mcp-builder/resources/evaluation.md",
+      "summary": "Comprehensive guide for creating MCP server evaluations. Covers requirements for crafting 10 read-only, independent, non-destructive question-answer pairs that require multiple tool calls to resolve. Includes output format specification in XML and purpose explanation.",
+      "tags": ["mcp", "evaluation", "testing", "qa", "llm", "tool-use"],
+      "complexity": "medium"
+    },
+    {
+      "id": "config:skills/mcp-builder/resources/example_evaluation.xml",
+      "type": "config:",
+      "name": "example_evaluation.xml",
+      "filePath": "skills/mcp-builder/resources/example_evaluation.xml",
+      "summary": "Example XML evaluation document for an MCP server. Demonstrates the qa_pair structure with question and answer elements as used in MCP server evaluation testing.",
+      "tags": ["mcp", "evaluation", "xml", "example", "qa"],
+      "complexity": "low"
+    },
+    {
+      "id": "document:skills/mcp-builder/resources/mcp_best_practices.md",
+      "type": "document:",
+      "name": "mcp_best_practices.md",
+      "filePath": "skills/mcp-builder/resources/mcp_best_practices.md",
+      "summary": "Best practices reference for building MCP servers. Covers tool design, resource structuring, error handling, security considerations, and deployment guidelines for production MCP servers.",
+      "tags": ["mcp", "best-practices", "design", "security", "tools", "resources"],
+      "complexity": "medium"
+    },
+    {
+      "id": "document:skills/mcp-builder/resources/node_mcp_server.md",
+      "type": "document:",
+      "name": "node_mcp_server.md",
+      "filePath": "skills/mcp-builder/resources/node_mcp_server.md",
+      "summary": "Comprehensive guide for building MCP servers with Node.js. Covers setup, tool definition, resource handling, prompt registration, authentication, error handling, and deployment patterns using the MCP SDK for TypeScript/JavaScript.",
+      "tags": ["mcp", "nodejs", "typescript", "javascript", "sdk", "server", "guide"],
+      "complexity": "high"
+    },
+    {
+      "id": "document:skills/mcp-builder/resources/python_mcp_server.md",
+      "type": "document:",
+      "name": "python_mcp_server.md",
+      "filePath": "skills/mcp-builder/resources/python_mcp_server.md",
+      "summary": "Comprehensive guide for building MCP servers with Python using FastMCP. Covers tool definition, resource handling, prompt creation, context access, authentication, async patterns, and deployment to FastMCP Cloud.",
+      "tags": ["mcp", "python", "fastmcp", "server", "guide", "async", "deployment"],
+      "complexity": "high"
+    },
+    {
+      "id": "document:skills/mcp-builder/resources/requirements.txt",
+      "type": "document:",
+      "name": "requirements.txt",
+      "filePath": "skills/mcp-builder/resources/requirements.txt",
+      "summary": "Python dependency requirements file for MCP builder skill resources. Lists minimal Python package requirements needed to run MCP builder examples.",
+      "tags": ["requirements", "python", "dependencies", "pip"],
+      "complexity": "low"
+    }
+  ],
+  "edges": []
+}

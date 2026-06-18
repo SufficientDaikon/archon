@@ -1,0 +1,746 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "skills/adaptive-teacher/references/adaptive-learning.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 312,
+      "nonEmptyLines": 212,
+      "sections": [
+        {
+          "heading": "Adaptive Learning Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Table of Contents",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Level Calibration Deep Dive",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "The 5-Level System",
+          "level": 3,
+          "line": 19
+        },
+        {
+          "heading": "L1 — Explorer",
+          "level": 4,
+          "line": 23
+        },
+        {
+          "heading": "L2 — Navigator",
+          "level": 4,
+          "line": 54
+        },
+        {
+          "heading": "L3 — Builder",
+          "level": 4,
+          "line": 77
+        },
+        {
+          "heading": "L4 — Architect",
+          "level": 4,
+          "line": 101
+        },
+        {
+          "heading": "L5 — Sage",
+          "level": 4,
+          "line": 125
+        },
+        {
+          "heading": "The CAMP Framework",
+          "level": 2,
+          "line": 149
+        },
+        {
+          "heading": "C — Context (Why should I care?)",
+          "level": 3,
+          "line": 151
+        },
+        {
+          "heading": "A — Anchor (The metaphor)",
+          "level": 3,
+          "line": 173
+        },
+        {
+          "heading": "M — Map (The real thing)",
+          "level": 3,
+          "line": 196
+        },
+        {
+          "heading": "P — Practice (Make them DO something)",
+          "level": 3,
+          "line": 205
+        },
+        {
+          "heading": "Continuous Recalibration",
+          "level": 2,
+          "line": 217
+        },
+        {
+          "heading": "Upgrade Signals (move learner UP one level)",
+          "level": 3,
+          "line": 219
+        },
+        {
+          "heading": "Downgrade Signals (move learner DOWN one level)",
+          "level": 3,
+          "line": 229
+        },
+        {
+          "heading": "Learning Style Detection",
+          "level": 2,
+          "line": 241
+        },
+        {
+          "heading": "Difficulty Targeting",
+          "level": 2,
+          "line": 256
+        },
+        {
+          "heading": "The 70% Rule",
+          "level": 3,
+          "line": 258
+        },
+        {
+          "heading": "Scaffolding Techniques",
+          "level": 3,
+          "line": 267
+        },
+        {
+          "heading": "Session Pacing",
+          "level": 2,
+          "line": 279
+        },
+        {
+          "heading": "Optimal Session Structure",
+          "level": 3,
+          "line": 281
+        },
+        {
+          "heading": "Pacing Signals",
+          "level": 3,
+          "line": 291
+        },
+        {
+          "heading": "Energy Management",
+          "level": 3,
+          "line": 306
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 25
+      }
+    },
+    {
+      "path": "skills/adaptive-teacher/references/arabic-translation.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 473,
+      "nonEmptyLines": 328,
+      "sections": [
+        {
+          "heading": "Egyptian Arabic Translation Guide",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Table of Contents",
+          "level": 2,
+          "line": 7
+        },
+        {
+          "heading": "Why Egyptian Arabic Is Different",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "The Golden Rules",
+          "level": 2,
+          "line": 43
+        },
+        {
+          "heading": "Rule 1: Technical Terms Stay in English",
+          "level": 3,
+          "line": 45
+        },
+        {
+          "heading": "Rule 2: Everyday Words Go Arabic",
+          "level": 3,
+          "line": 66
+        },
+        {
+          "heading": "Rule 3: Egyptian Pronunciation Spelling",
+          "level": 3,
+          "line": 76
+        },
+        {
+          "heading": "Rule 4: The \"الـ\" Prefix for English Terms",
+          "level": 3,
+          "line": 103
+        },
+        {
+          "heading": "Rule 5: Natural Sentence Flow",
+          "level": 3,
+          "line": 117
+        },
+        {
+          "heading": "Technical Term Handling",
+          "level": 2,
+          "line": 135
+        },
+        {
+          "heading": "Terms That ALWAYS Stay English",
+          "level": 3,
+          "line": 137
+        },
+        {
+          "heading": "Terms That CAN Be in Arabic (everyday concepts)",
+          "level": 3,
+          "line": 150
+        },
+        {
+          "heading": "Transliteration Rules",
+          "level": 3,
+          "line": 167
+        },
+        {
+          "heading": "Sentence Structure Patterns",
+          "level": 2,
+          "line": 181
+        },
+        {
+          "heading": "Pattern 1: Explaining What Something Does",
+          "level": 3,
+          "line": 183
+        },
+        {
+          "heading": "Pattern 2: Explaining Why",
+          "level": 3,
+          "line": 193
+        },
+        {
+          "heading": "Pattern 3: Metaphor Introduction",
+          "level": 3,
+          "line": 203
+        },
+        {
+          "heading": "Pattern 4: Step-by-Step Instructions",
+          "level": 3,
+          "line": 212
+        },
+        {
+          "heading": "Pattern 5: \"The Point Is...\"",
+          "level": 3,
+          "line": 221
+        },
+        {
+          "heading": "Common Phrases & Expressions",
+          "level": 2,
+          "line": 232
+        },
+        {
+          "heading": "Teaching Phrases",
+          "level": 3,
+          "line": 234
+        },
+        {
+          "heading": "Encouragement Phrases",
+          "level": 3,
+          "line": 259
+        },
+        {
+          "heading": "Correction Phrases (gentle)",
+          "level": 3,
+          "line": 272
+        },
+        {
+          "heading": "Tone & Cultural Notes",
+          "level": 2,
+          "line": 284
+        },
+        {
+          "heading": "Warmth Is Default",
+          "level": 3,
+          "line": 286
+        },
+        {
+          "heading": "Humor Patterns",
+          "level": 3,
+          "line": 290
+        },
+        {
+          "heading": "Don't Over-Translate",
+          "level": 3,
+          "line": 298
+        },
+        {
+          "heading": "Avoid MSA Red Flags",
+          "level": 3,
+          "line": 306
+        },
+        {
+          "heading": "RTL Layout Rules",
+          "level": 2,
+          "line": 321
+        },
+        {
+          "heading": "Text Direction",
+          "level": 3,
+          "line": 325
+        },
+        {
+          "heading": "CSS Considerations",
+          "level": 3,
+          "line": 340
+        },
+        {
+          "heading": "Font Considerations",
+          "level": 3,
+          "line": 363
+        },
+        {
+          "heading": "Common Mistakes to Avoid",
+          "level": 2,
+          "line": 386
+        },
+        {
+          "heading": "Mistake 1: Full MSA Translation",
+          "level": 3,
+          "line": 388
+        },
+        {
+          "heading": "Mistake 2: Translating Technical Terms",
+          "level": 3,
+          "line": 393
+        },
+        {
+          "heading": "Mistake 3: Overly Formal Tone",
+          "level": 3,
+          "line": 398
+        },
+        {
+          "heading": "Mistake 4: Forgetting Egyptian Verb Forms",
+          "level": 3,
+          "line": 403
+        },
+        {
+          "heading": "Mistake 5: No Code-Switching",
+          "level": 3,
+          "line": 411
+        },
+        {
+          "heading": "Mistake 6: Wrong Arabic Script for Borrowed Words",
+          "level": 3,
+          "line": 416
+        },
+        {
+          "heading": "Example Translations",
+          "level": 2,
+          "line": 423
+        },
+        {
+          "heading": "Example 1: Explaining an API",
+          "level": 3,
+          "line": 425
+        },
+        {
+          "heading": "Example 2: Debugging a Problem",
+          "level": 3,
+          "line": 435
+        },
+        {
+          "heading": "Example 3: Reverse Prompt",
+          "level": 3,
+          "line": 445
+        },
+        {
+          "heading": "Example 4: Teaching a Concept",
+          "level": 3,
+          "line": 455
+        },
+        {
+          "heading": "Example 5: Quiz Question",
+          "level": 3,
+          "line": 465
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 45
+      }
+    },
+    {
+      "path": "skills/adaptive-teacher/references/reverse-prompting.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 368,
+      "nonEmptyLines": 216,
+      "sections": [
+        {
+          "heading": "Reverse Prompting Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Table of Contents",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Why Reverse Prompting Works",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "The Science",
+          "level": 3,
+          "line": 19
+        },
+        {
+          "heading": "The Practical Benefit",
+          "level": 3,
+          "line": 29
+        },
+        {
+          "heading": "The 5 Prompt Types",
+          "level": 2,
+          "line": 35
+        },
+        {
+          "heading": "Type 1: Prediction Prompt",
+          "level": 3,
+          "line": 37
+        },
+        {
+          "heading": "Type 2: Decision Prompt",
+          "level": 3,
+          "line": 75
+        },
+        {
+          "heading": "Type 3: Debug Prompt",
+          "level": 3,
+          "line": 113
+        },
+        {
+          "heading": "Type 4: Teach-Back Prompt",
+          "level": 3,
+          "line": 151
+        },
+        {
+          "heading": "Type 5: What-If Prompt",
+          "level": 3,
+          "line": 191
+        },
+        {
+          "heading": "Escalation Protocol",
+          "level": 2,
+          "line": 233
+        },
+        {
+          "heading": "Response Handling Patterns",
+          "level": 2,
+          "line": 252
+        },
+        {
+          "heading": "The Validation Sandwich",
+          "level": 3,
+          "line": 254
+        },
+        {
+          "heading": "Handling \"I Don't Know\"",
+          "level": 3,
+          "line": 268
+        },
+        {
+          "heading": "Handling Confident Wrong Answers",
+          "level": 3,
+          "line": 278
+        },
+        {
+          "heading": "Anti-Patterns",
+          "level": 2,
+          "line": 288
+        },
+        {
+          "heading": "Things to NEVER Do in Reverse Prompting",
+          "level": 3,
+          "line": 290
+        },
+        {
+          "heading": "Advanced Techniques",
+          "level": 2,
+          "line": 306
+        },
+        {
+          "heading": "The Deliberate Pause",
+          "level": 3,
+          "line": 308
+        },
+        {
+          "heading": "The Socratic Chain",
+          "level": 3,
+          "line": 312
+        },
+        {
+          "heading": "The Misconception Plant",
+          "level": 3,
+          "line": 326
+        },
+        {
+          "heading": "The Cross-Domain Bridge",
+          "level": 3,
+          "line": 334
+        },
+        {
+          "heading": "Examples by Topic",
+          "level": 2,
+          "line": 344
+        },
+        {
+          "heading": "Teaching APIs",
+          "level": 3,
+          "line": 346
+        },
+        {
+          "heading": "Teaching Git",
+          "level": 3,
+          "line": 354
+        },
+        {
+          "heading": "Teaching Database Design",
+          "level": 3,
+          "line": 362
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 27
+      }
+    },
+    {
+      "path": "skills/adaptive-teacher/references/teaching-techniques.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 1306,
+      "nonEmptyLines": 1115,
+      "sections": [
+        {
+          "heading": "Teaching Techniques & Interactive Elements Reference",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Table of Contents",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Artifact Structure",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "HTML Shell",
+          "level": 3,
+          "line": 28
+        },
+        {
+          "heading": "Build Order",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "Adaptive Difficulty System",
+          "level": 2,
+          "line": 91
+        },
+        {
+          "heading": "Level Indicator UI",
+          "level": 3,
+          "line": 95
+        },
+        {
+          "heading": "Multi-Level Content Blocks",
+          "level": 3,
+          "line": 154
+        },
+        {
+          "heading": "JS for Level Management",
+          "level": 3,
+          "line": 175
+        },
+        {
+          "heading": "Code ↔ Plain English Translation Blocks",
+          "level": 2,
+          "line": 212
+        },
+        {
+          "heading": "HTML",
+          "level": 3,
+          "line": 216
+        },
+        {
+          "heading": "CSS",
+          "level": 3,
+          "line": 243
+        },
+        {
+          "heading": "Rules",
+          "level": 3,
+          "line": 303
+        },
+        {
+          "heading": "Reverse Prompt Pause Points",
+          "level": 2,
+          "line": 313
+        },
+        {
+          "heading": "HTML",
+          "level": 3,
+          "line": 317
+        },
+        {
+          "heading": "CSS",
+          "level": 3,
+          "line": 341
+        },
+        {
+          "heading": "JS",
+          "level": 3,
+          "line": 382
+        },
+        {
+          "heading": "Scenario-Based Quizzes",
+          "level": 2,
+          "line": 398
+        },
+        {
+          "heading": "HTML",
+          "level": 3,
+          "line": 402
+        },
+        {
+          "heading": "Quiz JS Pattern",
+          "level": 3,
+          "line": 460
+        },
+        {
+          "heading": "Quiz CSS",
+          "level": 3,
+          "line": 502
+        },
+        {
+          "heading": "Concept Animation Patterns",
+          "level": 2,
+          "line": 641
+        },
+        {
+          "heading": "Group Chat Animation",
+          "level": 3,
+          "line": 643
+        },
+        {
+          "heading": "Data Flow Animation",
+          "level": 3,
+          "line": 649
+        },
+        {
+          "heading": "Glossary Tooltip System",
+          "level": 2,
+          "line": 684
+        },
+        {
+          "heading": "Implementation",
+          "level": 3,
+          "line": 688
+        },
+        {
+          "heading": "JS Positioning",
+          "level": 3,
+          "line": 735
+        },
+        {
+          "heading": "Metaphor Callout Boxes",
+          "level": 2,
+          "line": 795
+        },
+        {
+          "heading": "Variants",
+          "level": 3,
+          "line": 814
+        },
+        {
+          "heading": "Progressive Disclosure Toggles",
+          "level": 2,
+          "line": 864
+        },
+        {
+          "heading": "Confidence Check Cards",
+          "level": 2,
+          "line": 936
+        },
+        {
+          "heading": "CSS",
+          "level": 3,
+          "line": 962
+        },
+        {
+          "heading": "JS",
+          "level": 3,
+          "line": 1013
+        },
+        {
+          "heading": "Teach-Back Challenge Blocks",
+          "level": 2,
+          "line": 1040
+        },
+        {
+          "heading": "JS",
+          "level": 3,
+          "line": 1069
+        },
+        {
+          "heading": "CSS",
+          "level": 3,
+          "line": 1093
+        },
+        {
+          "heading": "Design System Tokens",
+          "level": 2,
+          "line": 1128
+        },
+        {
+          "heading": "Arabic-Specific Design Additions",
+          "level": 2,
+          "line": 1270
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 38
+      }
+    }
+  ]
+}
