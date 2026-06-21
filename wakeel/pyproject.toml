@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wakeel"
+version = "0.1.0"
+description = "Wakeel — Archon's discipline kernel for any OpenAI-compatible LLM"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "httpx",
+    "twilio",
+    "pyyaml",
+    "python-multipart",
+]
+
+[project.scripts]
+wakeel-chat = "wakeel.chat:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/wakeel"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

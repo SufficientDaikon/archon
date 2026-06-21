@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+httpx
+twilio
+pyyaml
+python-multipart
+pytest
+pytest-asyncio
