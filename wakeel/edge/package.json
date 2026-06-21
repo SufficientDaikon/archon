@@ -1,0 +1,14 @@
+{
+  "name": "wakeel-edge",
+  "private": true,
+  "scripts": {
+    "build": "python ../scripts/build_index.py && python ../scripts/extract_synapses.py",
+    "deploy": "npm run build && wrangler deploy",
+    "dev": "DEV_SKIP_VALIDATION=1 wrangler dev"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241230.0",
+    "typescript": "^5.7.2",
+    "wrangler": "^3.99.0"
+  }
+}
