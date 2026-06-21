@@ -1,4 +1,4 @@
-import indexData from "./index.json";
+﻿import indexData from "./index.json";
 
 type SkillMeta = { filename: string; name: string };
 
@@ -27,7 +27,8 @@ function tokenize(text: string): string[] {
 }
 
 export function selectSkill(query: string, threshold = 0.3): SkillMeta | null {
-  const idx = indexData.index as Record<string, [string, number][]>;
+  // Cast through unknown: JSON import infers (string|number)[][] but runtime is [string, number][].
+  const idx = indexData.index as unknown as Record<string, [string, number][]>;
   const skills = indexData.skills as SkillMeta[];
   const terms = tokenize(query);
 
@@ -42,8 +43,10 @@ export function selectSkill(query: string, threshold = 0.3): SkillMeta | null {
     }
   }
 
+  // Find the max-scoring skill, then gate by threshold.
+  // Mirrors Python: max(scores, key=...) filtered by >= threshold.
   let best: SkillMeta | null = null;
-  let bestScore = threshold;
+  let bestScore = -1;
   for (const [filename, score] of Object.entries(scores)) {
     if (score > bestScore) {
       bestScore = score;
@@ -51,5 +54,5 @@ export function selectSkill(query: string, threshold = 0.3): SkillMeta | null {
     }
   }
 
-  return best;
+  return bestScore >= threshold ? best : null;
 }

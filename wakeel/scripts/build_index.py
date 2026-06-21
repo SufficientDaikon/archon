@@ -35,17 +35,10 @@ def main() -> None:
         sys.exit(1)
 
     # Emit only what router.ts needs: inverted index + minimal skill metadata.
-    # Drop near-zero postings (score < 0.05) and round to 2dp — reduces bundle
-    # from 1.6MB to ~925KB raw (122KB compressed) without affecting routing since
-    # the threshold is 0.3 and individual near-zero scores can't push a skill over it.
-    pruned_index = {}
-    for term, postings in idx._index.items():
-        kept = [[fn, round(sc, 2)] for fn, sc in postings if sc >= 0.05]
-        if kept:
-            pruned_index[term] = kept
-
+    # DO NOT prune or round scores — full fidelity with Python is required for
+    # routing parity. The full index is 359KB compressed, under the 1MB free limit.
     index_data = {
-        "index": pruned_index,
+        "index": idx._index,
         "skills": [{"filename": s.filename, "name": s.name} for s in idx.skills],
     }
     OUT_INDEX.parent.mkdir(parents=True, exist_ok=True)
