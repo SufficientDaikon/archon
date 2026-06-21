@@ -1,6 +1,10 @@
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+load_dotenv(Path(__file__).parents[2] / ".env", override=False)
+
 _root_env = os.environ.get("ARCHON_ROOT", "")
 ARCHON_ROOT: Path = Path(_root_env) if _root_env else Path(__file__).parents[3]
 
