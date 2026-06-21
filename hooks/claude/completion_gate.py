@@ -36,13 +36,16 @@ def main() -> None:
         print(json.dumps({}))
         return
 
+    # Already fired this session — emit nothing to avoid injection loop
+    if session.get("completion_gate_fired"):
+        print(json.dumps({}))
+        return
+
     # Quality gate checks
     passed, failures, warnings = check_quality_gates(session)
 
-    # Always persist state (even if blocking)
-    persist_and_archive(state)
-
     if not passed:
+        persist_and_archive(state)
         failure_text = "\n".join(f"  - {f}" for f in failures)
         reason = f"Archon completion gate: quality checks failed.\n{failure_text}\nPlease address these before finishing."
 
@@ -50,6 +53,10 @@ def main() -> None:
         sys.stderr.write(reason)
         sys.exit(2)
     else:
+        # Mark as fired before persisting so subsequent Stops skip injection
+        state["session"]["completion_gate_fired"] = True
+        persist_and_archive(state)
+
         # Pass with summary (include warnings as advisory context)
         summary = build_completion_summary(session, warnings)
         output = {
@@ -59,6 +66,7 @@ def main() -> None:
             }
         }
         print(json.dumps(output))
+        return
 
 
 def check_quality_gates(session: dict) -> tuple[bool, list[str], list[str]]:
