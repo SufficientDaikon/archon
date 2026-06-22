@@ -1,4 +1,4 @@
-import { complete } from "./provider";
+﻿import { complete } from "./provider";
 import { verify } from "./verify";
 import { selectSkill } from "./router";
 import { getHistory, appendTurn } from "./sessions";
@@ -6,6 +6,7 @@ import { SYNAPSES } from "./synapses";
 import type { Env } from "./index";
 
 const FALLBACK_REPLY = "النظام مزحوم دلوقتي، جرّب تاني بعد شوية.";
+const MAX_SKILL_CHARS = 6000;
 
 const PERSONA = `You are Wakeel — a disciplined, friendly assistant running on the Archon Harness.
 
@@ -63,7 +64,7 @@ export async function respond(sessionId: string, text: string, env: Env): Promis
   let skillContent = "";
   if (skill) {
     try {
-      skillContent = (await env.SKILLS.get(skill.filename)) ?? "";
+      skillContent = ((await env.SKILLS.get(skill.filename)) ?? "").slice(0, MAX_SKILL_CHARS);
     } catch (e) {
       console.warn("Skill KV load failed, continuing without skill:", e);
     }

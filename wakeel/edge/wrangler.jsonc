@@ -1,14 +1,14 @@
-{
+﻿{
   "name": "wakeel",
   "main": "src/index.ts",
   "compatibility_date": "2024-11-01",
   "kv_namespaces": [
     // Create with: wrangler kv namespace create SESSIONS
     // Then paste the id below
-    { "binding": "SESSIONS", "id": "REPLACE_WITH_SESSIONS_KV_ID" },
+    { "binding": "SESSIONS", "id": "bb99ecf1038c43478d76dfc6b4591c0b" },
     // Create with: wrangler kv namespace create SKILLS
     // Then paste the id below
-    { "binding": "SKILLS", "id": "REPLACE_WITH_SKILLS_KV_ID" }
+    { "binding": "SKILLS", "id": "60ec02bfca44463fa92f427bbce1f8a3" }
   ]
   // Secrets (set via wrangler secret put <NAME>):
   //   GEMINI_API_KEY, GROQ_API_KEY, TWILIO_ACCOUNT_SID,
