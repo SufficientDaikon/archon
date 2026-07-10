@@ -1,3 +1,7 @@
+---
+name: pr-to-course
+description: Transforms GitHub PRs into beautiful single-page interactive HTML courses that explain the problem, solution, and code changes
+---
 # PR-to-Course
 
 > Transforms any GitHub Pull Request into a beautiful, single-page interactive HTML course that teaches the problem, solution, and code changes.

@@ -1,3 +1,7 @@
+---
+name: guard-chain
+description: Layered request validation pipelines where each guard can short-circuit with a typed error response
+---
 # Guard Chain
 
 > Design layered request validation pipelines where each guard can short-circuit with a typed error response.

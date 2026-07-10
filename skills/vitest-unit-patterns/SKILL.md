@@ -1,3 +1,7 @@
+---
+name: vitest-unit-patterns
+description: Design fast isolated unit tests with Vitest including mock strategies, route handler testing, and React hook testing
+---
 # Vitest Unit Patterns
 
 > Design fast, isolated unit tests that validate business logic without network, database, or browser dependencies using Vitest.

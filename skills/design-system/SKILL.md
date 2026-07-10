@@ -1,3 +1,7 @@
+---
+name: design-system
+description: The DESIGN.md standard — Archon's design intelligence layer. Teaches agents to generate, read, and apply structured design system documents any AI can consume.
+---
 # DESIGN.md - Archon Design Intelligence
 
 ## Overview

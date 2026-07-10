@@ -1,3 +1,7 @@
+---
+name: server-component-patterns
+description: Design RSC architectures with minimal client boundaries, streaming, Suspense, and Server Actions for Next.js App Router
+---
 # Server Component Patterns
 
 > Design rendering strategies where Server Components are the default and client interactivity is pushed to the smallest possible boundary.

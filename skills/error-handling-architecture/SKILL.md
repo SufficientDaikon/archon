@@ -1,3 +1,7 @@
+---
+name: error-handling-architecture
+description: Layered error handling with error taxonomy, typed classes, React boundaries, and graceful degradation
+---
 # Error Handling Architecture
 
 > Design layered error handling where every failure mode has a defined response, every boundary catches its scope, and the system degrades gracefully.

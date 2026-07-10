@@ -115,7 +115,7 @@ function score(content: string, rules: Rule[]): QualityResult {
 ```yaml
 # quality-check.prompt.yml
 name: quality-check
-model: gpt-4o-mini
+model: claude-haiku-4-5
 messages:
   - role: system
     content: |

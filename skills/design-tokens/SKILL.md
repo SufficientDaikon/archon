@@ -1,3 +1,7 @@
+---
+name: design-tokens
+description: CSS custom property generation and management from DESIGN.md. Extracts, validates, and syncs design tokens between DESIGN.md and codebase.
+---
 # Design Tokens - CSS Custom Property Generation
 
 ## What This Skill Does

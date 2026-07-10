@@ -1,3 +1,7 @@
+---
+name: add-agent
+description: AI-assisted guide for creating specialized agent definitions with personas and skills
+---
 # Add Agent
 
 > AI-assisted guide for creating new agent definitions in the Archon framework.

@@ -1,10 +1,18 @@
 name: godot-gdscript-mastery
 version: 1.0.0
-description: "Skill: godot-gdscript-mastery"
+description: 'Expert GDScript best practices including static typing (var x: int, func returns void), signal architecture (signal up call down), unique node access (%NodeName, @onready), script structure (extends,'
 author: tahaa
 license: MIT
-tags: ["godot", "game-dev", "gdscript"]
+tags:
+- godot
+- game-dev
+- gdscript
 triggers:
-  keywords: ["GDScript", "godot", "scripting", "signals", "classes"]
+  keywords:
+  - GDScript
+  - godot
+  - scripting
+  - signals
+  - classes
   patterns: []
 priority: P2

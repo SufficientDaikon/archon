@@ -1,3 +1,7 @@
+---
+name: requesting-code-review
+description: Structured code review request process with two-stage review enforcement. Use when completing tasks, features, or before merging branches.
+---
 # Requesting Code Review — The Quality Gate
 
 > **Type:** Rigid for mandatory triggers, flexible for optional  

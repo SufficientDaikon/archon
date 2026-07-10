@@ -1,3 +1,7 @@
+---
+name: finishing-a-development-branch
+description: Structured branch completion with merge/PR/keep/discard options and cleanup. Use when implementation is complete, tests pass, and work needs to be integrated.
+---
 # Finishing a Development Branch — The Closer
 
 > **Type:** Rigid  

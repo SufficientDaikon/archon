@@ -1,3 +1,7 @@
+---
+name: verification-before-completion
+description: Prevents unverified completion claims with 5-step gate function. Use when about to claim work is done, fixed, passing, or complete.
+---
 # Verification Before Completion — The Honesty Enforcer
 
 > **Type:** Rigid (follow exactly)  

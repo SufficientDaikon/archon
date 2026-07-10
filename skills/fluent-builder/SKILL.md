@@ -1,3 +1,7 @@
+---
+name: fluent-builder
+description: Design chainable type-safe builder APIs for complex object construction
+---
 # Fluent Builder
 
 > Design chainable, type-safe builder APIs that transform complex object construction into readable method chains.

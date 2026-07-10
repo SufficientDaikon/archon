@@ -323,25 +323,75 @@ def check_trigger_uniqueness() -> List[str]:
 def validate_all_skills() -> List[ValidationResult]:
     """
     Validates all skills in the skills/ directory.
-    
+
     Returns:
         List of ValidationResult objects
     """
     results = []
     skills_dir = ARCHON_ROOT / "skills"
-    
+
     if not skills_dir.exists():
         return results
-    
+
     for skill_dir in sorted(skills_dir.iterdir()):
         if not skill_dir.is_dir():
             continue
-        
+
         manifest_path = skill_dir / "manifest.yaml"
         result = validate_skill_manifest(manifest_path)
         results.append(result)
-    
+
+    results.append(validate_registry_sync())
     return results
+
+
+def validate_registry_sync() -> ValidationResult:
+    """Self-policing registry: archon.yaml and skills/ must agree exactly.
+
+    - Every archon.yaml skills[].path must exist on disk
+    - Every skills/<dir>/ (except _-prefixed) must be registered in archon.yaml
+    - No placeholder descriptions ("Skill: <name>") in skill manifests
+    """
+    result = ValidationResult(str(ARCHON_ROOT / "archon.yaml"))
+    skills_dir = ARCHON_ROOT / "skills"
+
+    try:
+        root = yaml.safe_load((ARCHON_ROOT / "archon.yaml").read_text(encoding="utf-8"))
+    except Exception as e:
+        result.add_error(f"Failed to parse archon.yaml: {e}")
+        return result
+
+    registered = {}
+    for entry in root.get("skills", []):
+        if isinstance(entry, dict) and entry.get("path"):
+            registered[Path(entry["path"]).name] = entry
+
+    on_disk = {
+        d.name for d in skills_dir.iterdir()
+        if d.is_dir() and not d.name.startswith("_")
+    }
+
+    for name, entry in registered.items():
+        if not (ARCHON_ROOT / entry["path"]).is_dir():
+            result.add_error(f"archon.yaml registers '{name}' but {entry['path']} does not exist")
+
+    for name in sorted(on_disk - set(registered)):
+        result.add_error(f"skills/{name}/ exists on disk but is not registered in archon.yaml")
+
+    for name in sorted(on_disk & set(registered)):
+        manifest_path = skills_dir / name / "manifest.yaml"
+        if manifest_path.exists():
+            try:
+                manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8")) or {}
+                desc = str(manifest.get("description", ""))
+                if desc.startswith("Skill: "):
+                    result.add_error(f"skills/{name}: placeholder description ('{desc}')")
+                if "allowed-tools" in desc:
+                    result.add_error(f"skills/{name}: 'allowed-tools' leaked into description")
+            except yaml.YAMLError:
+                pass  # per-skill validation reports parse errors
+
+    return result
 
 
 def validate_all_bundles() -> List[ValidationResult]:

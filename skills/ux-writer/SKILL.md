@@ -1,5 +1,9 @@
 ---
 name: ux-writer
+description: UX Writer — portfolio copy, hero headlines, project descriptions, CTAs, taglines, and bio copy. Anti-slop rules, specificity tests, and voice calibration formulas.
+---
+---
+name: ux-writer
 description: UX Writer — portfolio copy, hero headlines, project descriptions, CTAs, taglines, and bio copy. Anti-slop rules, specificity tests, and voice calibration formulas for three portfolio identities: The Engineer, The Creative, The Operator.
 type: skill
 ---

@@ -1,3 +1,7 @@
+---
+name: async-side-effects
+description: Design fire-and-forget side effect pipelines with Promise.allSettled, timeout protection, and per-effect error isolation
+---
 # Async Side Effects
 
 > Design non-blocking side effect pipelines where background work never blocks the primary response and failures are isolated per-effect.

@@ -1,3 +1,7 @@
+---
+name: dispatching-parallel-agents
+description: Parallel agent dispatch for independent tasks in different subsystems. Use when 2+ independent failures or features exist that don't share state or files.
+---
 # Dispatching Parallel Agents — The Parallelizer
 
 > **Type:** Flexible  

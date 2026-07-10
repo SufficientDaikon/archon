@@ -8,7 +8,7 @@
 # <action>.prompt.yml
 name: quality-check                    # Unique identifier
 description: "Checks content quality"  # Human-readable description
-model: gpt-4o-mini                     # Default model (overridable)
+model: claude-haiku-4-5                     # Default model (overridable)
 temperature: 0.3                       # Optional (0-2)
 maxTokens: 1024                        # Optional
 
@@ -112,7 +112,7 @@ export function fillPrompt(
 ### Translation Prompt
 ```yaml
 name: translate
-model: gpt-4o-mini
+model: claude-haiku-4-5
 messages:
   - role: system
     content: "You are a professional translator. Translate accurately while preserving tone and meaning."
@@ -129,7 +129,7 @@ testData:
 ### SQL Generation Prompt
 ```yaml
 name: sql-generation
-model: gpt-4o
+model: claude-sonnet-5
 temperature: 0.1
 messages:
   - role: system

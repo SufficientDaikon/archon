@@ -1,3 +1,7 @@
+---
+name: add-adapter
+description: AI-assisted guide for creating platform adapters to transform Archon format
+---
 # Add Adapter (Deprecated)
 
 > Archon is Claude Code native and does not use platform adapters.

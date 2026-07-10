@@ -1,3 +1,7 @@
+---
+name: plugin-system
+description: Typed Map-based plugin architecture with interface contracts and config-driven activation
+---
 # Plugin System
 
 > Add a typed, Map-based plugin architecture to any TypeScript project with interface-driven contracts and config-driven activation.

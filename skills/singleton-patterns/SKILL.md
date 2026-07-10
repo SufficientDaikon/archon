@@ -1,3 +1,7 @@
+---
+name: singleton-patterns
+description: Manage module-level state in serverless environments using globalThis singletons, initialization guards, and connection pooling
+---
 # Singleton Patterns
 
 > Manage module-level state safely in serverless and edge environments using globalThis attachment, initialization guards, and connection pooling.

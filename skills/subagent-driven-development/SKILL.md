@@ -1,3 +1,7 @@
+---
+name: subagent-driven-development
+description: Execution engine that dispatches fresh subagents per task with two-stage review. Use when executing implementation plans with independent tasks and subagent support available.
+---
 # Subagent-Driven Development — The Execution Engine
 
 > **Type:** Rigid process (follow exactly)  

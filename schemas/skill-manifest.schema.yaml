@@ -51,6 +51,10 @@ optional_fields:
     allowed_values: [P1, P2, P3]
     description: "P1=MVP/core, P2=important, P3=nice-to-have"
 
+  category:
+    type: string
+    description: "Free-form grouping label (e.g. workflow, frontend, game-dev)"
+
   license:
     type: string
     default: "MIT"
@@ -124,15 +128,14 @@ optional_directories:
   - "tests/cases/"
   - "scripts/"
 
-# SKILL.md required sections
-skill_md_required_sections:
-  - "Identity" # Who is this skill? Role and persona
+# SKILL.md structure: YAML frontmatter with `name` and `description` is
+# required; the body is free-form. (A fixed section list was previously
+# "required" here but never enforced and never followed — removed.)
+skill_md_required_frontmatter:
+  - "name"
+  - "description"
+
+skill_md_recommended_sections:
   - "When to Use" # Trigger conditions and keywords
   - "Workflow" # Step-by-step process
-  - "Rules" # DO and DON'T lists
-  - "Output Format" # What the skill produces
-  - "Handoff" # What happens after the skill completes
-
-skill_md_optional_sections:
   - "Resources" # Index of available reference materials
-  - "Examples" # Sample interactions
