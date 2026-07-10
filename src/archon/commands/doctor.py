@@ -1,6 +1,14 @@
-"""``archon doctor`` — health diagnostics (US-3, FR-023 through FR-027)."""
+"""``archon doctor`` — health diagnostics (US-3, FR-023 through FR-027).
+
+``--hooks`` runs the live hook diagnostic drive (gcloud's
+``info --run-diagnostics`` analogue): every hook is executed as a subprocess
+with synthetic payloads against a throwaway ARCHON_HOME and its load-bearing
+behavior is checked PASS/FAIL.
+"""
 
 from __future__ import annotations
+
+import typer
 
 from archon.core.config import get_install_records, is_initialized
 from archon.core.platform import detect_platforms
@@ -13,6 +21,41 @@ from archon.utils.output import (
     print_json,
     print_success,
 )
+
+
+def _run_hook_diagnostics() -> None:
+    """Drive all hooks live and report PASS/FAIL; exit 1 on any failure."""
+    from archon.core.hook_diagnostics import run_diagnostics
+
+    console.print()
+    console.rule("[bold cyan]Hook Diagnostics[/bold cyan]")
+    results = run_diagnostics()
+
+    if is_json():
+        print_json(
+            json_envelope(
+                command="doctor",
+                data={
+                    "checks": [
+                        {"name": r.name, "passed": r.passed, "detail": r.detail} for r in results
+                    ],
+                    "passed": sum(r.passed for r in results),
+                    "total": len(results),
+                },
+            )
+        )
+    else:
+        for r in results:
+            icon = "[green]PASS[/green]" if r.passed else "[red]FAIL[/red]"
+            detail = f"  [dim]{r.detail}[/dim]" if r.detail else ""
+            console.print(f"  {icon}  {r.name}{detail}")
+        passed = sum(r.passed for r in results)
+        console.print()
+        console.print(f"  {passed}/{len(results)} checks passed")
+        console.print()
+
+    if any(not r.passed for r in results):
+        raise typer.Exit(1)
 
 
 def _compute_health(
@@ -45,8 +88,18 @@ def _compute_health(
     return max(0, min(100, score))
 
 
-def doctor_cmd() -> None:
+def doctor_cmd(
+    hooks: bool = typer.Option(
+        False,
+        "--hooks",
+        help="Run live hook diagnostics (drives every hook with synthetic payloads).",
+    ),
+) -> None:
     """Run health diagnostics and display a report."""
+
+    if hooks:
+        _run_hook_diagnostics()
+        return
 
     issues: list[dict] = []
 
