@@ -1,7 +1,7 @@
 # Archon — CLAUDE.md
 
 Project-level context for Claude Code. Everything below is verified against the
-code as of v1.1.0 (2026-07). If a claim here contradicts the code, the code
+code as of v1.2.0 (2026-07). If a claim here contradicts the code, the code
 wins — then fix this file.
 
 ---
@@ -49,7 +49,7 @@ archon/
 ├── agents/               # 14 agents ├── synapses/  # 5 synapse docs
 ├── bundles/              # 14 kits   ├── pipelines/ # 9 pipeline YAMLs
 ├── schemas/              # manifest schemas
-├── tests/                # pytest — 603 passing as of 2026-07-10
+├── tests/                # pytest — 655 passing as of 2026-07-10
 ├── archon.yaml           # root manifest — validate enforces sync with skills/
 └── scripts/              # validate.py (CI), normalize_skills.py (one-off)
 ```
@@ -77,8 +77,48 @@ Unaudited peripherals (present, not covered by the 1.1.0 modernization):
 | SessionEnd | — | session_end.py | archive session (covers /clear + exit) |
 | PreCompact | — | pre_compact.py | flush state before compaction |
 
-State lives at `~/.archon/archon-state.json` (`ARCHON_HOME` overrides; tests
-use this for isolation). All hooks are `python3 "$CLAUDE_PROJECT_DIR/..."`.
+State is **per project**: `<ARCHON_HOME>/projects/<slug>/state.json`, where
+`slug = sanitized-basename[:40] + "-" + sha1(resolved path)[:8]`
+(`state.project_slug`). Every hook threads the payload `cwd` into
+`load_state`/`save_state` — concurrent sessions in different repos are fully
+isolated (one repo's failing tests can never trip another repo's gate).
+`ARCHON_HOME` overrides the root (tests use this). All hooks are
+`python3 "$CLAUDE_PROJECT_DIR/..."`.
+
+### Properties (gcloud-style config)
+
+Every configurable hook knob is a `section/name` property registered in
+`hooks/claude/shared/config.py` (stdlib-only; the CLI reuses it via
+`core/hooks_bridge.py` — never duplicate the registry). Precedence:
+`ARCHON_{SECTION}_{NAME}` env var > project `.archon/config` (INI) > user
+`<ARCHON_HOME>/config` (INI) > registry default. Malformed values fall back
+to defaults — config can never crash a hook. `archon config list` shows every
+value **with its source**. Knobs: classifier tier ceilings + escalation cap,
+per-synapse injection toggles + master switch, `gate/enabled` +
+`gate/max_blocks`, `scanner/extra_allowlist`, `logging/*`.
+
+### Hook logging
+
+Every hook firing appends one JSONL record to
+`<ARCHON_HOME>/logs/hooks-YYYY.MM.DD.jsonl` via `shared/hooklog.py`
+(`write_record`). **IRON RULE: logging is fail-open** — nothing in hooklog
+may ever change a hook's exit code or stdout (contract-tested with an
+unwritable logs dir). completion_gate writes its record before `sys.exit(2)`.
+Full stripped prompts are stored only with `logging/log_prompts=true`
+(capped by `logging/prompt_max_chars`). Age cleanup (filename date,
+`logging/max_log_days`) runs only in session_boot; foreign files in logs/
+are never touched. `archon eval classifier` summarizes these records and
+replays stored untruncated prompts against the current classifier to report
+tier drift.
+
+### State-templated instructions
+
+Synapse instruction bands may carry `{state.<key>?}` placeholders (ADK-style)
+resolved by `classifier.resolve_state_placeholders` from `_STATE_PROVIDERS`
+lambdas. Resolution NEVER raises — unknown key, missing session, or provider
+exception all render empty. Live providers: `tests_failing_notice`
+(anti-rationalization complex band), `pending_todos_notice` (metacognition
+base band).
 
 Hard-won rules — do not regress:
 
@@ -144,10 +184,14 @@ Hard-won rules — do not regress:
 
 ```
 pip install -e ".[dev]"          # setup
-python3 -m pytest tests/ -q      # 603 passing (2026-07-10)
+python3 -m pytest tests/ -q      # 655 passing (2026-07-10)
 python3 scripts/validate.py --all
 ruff check . && ruff format --check .
 archon install | validate | doctor | list skills | pipeline run <name>
+archon config list|get|set|unset # properties with sources (env/project/user/default)
+archon info                      # environment report; `archon info <name>` = component
+archon doctor --hooks            # live hook diagnostics (17 checks, exit 1 on failure)
+archon eval classifier           # tier distribution + drift replay from hook logs
 ```
 
 CI (.github/workflows/ci.yml) runs on `main`: ruff + validate + pytest.
@@ -166,4 +210,12 @@ CI (.github/workflows/ci.yml) runs on `main`: ruff + validate + pytest.
    not a skill — SKILL_MATCHERS entries must name real `skills/` dirs
    (tests enforce this).
 5. tests/test_claude_hooks.py runs each hook as a subprocess with
-   `ARCHON_HOME=tmpdir` — new hooks need contract tests there.
+   `ARCHON_HOME=tmpdir` — new hooks need contract tests there, plus a
+   PASS/FAIL entry in `core/hook_diagnostics.CHECKS` (doctor --hooks;
+   tests/test_hook_diagnostics.py enforces coverage of every hook).
+6. Hook payloads must carry `cwd` — `run_hook()` in the test suite defaults
+   it to the repo root; state helpers are slug-aware
+   (`state_path(home, cwd)`).
+7. The archon rich console binds its output file at import time — CLI tests
+   assert on pure data functions (see eval_cmd.evaluate_classifier), not on
+   captured console output.

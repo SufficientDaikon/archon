@@ -13,14 +13,14 @@
 <br>
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
-[![Version](https://img.shields.io/badge/v1.1.0-stable-brightgreen?style=flat-square)]()
+[![Version](https://img.shields.io/badge/v1.2.0-stable-brightgreen?style=flat-square)]()
 [![Python](https://img.shields.io/badge/python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)]()
 ![Skills](https://img.shields.io/badge/skills-97-blue?style=flat-square)
 ![Agents](https://img.shields.io/badge/agents-14-orange?style=flat-square)
 ![Synapses](https://img.shields.io/badge/synapses-5-blueviolet?style=flat-square)
 ![Pipelines](https://img.shields.io/badge/pipelines-9-red?style=flat-square)
 ![Bundles](https://img.shields.io/badge/bundles-14-teal?style=flat-square)
-![Tests](https://img.shields.io/badge/tests-603-success?style=flat-square)
+![Tests](https://img.shields.io/badge/tests-655-success?style=flat-square)
 
 </div>
 
@@ -72,6 +72,45 @@ Beyond injection, the hooks close the loop:
 - **Guards** deny dangerous bash (force-push to main, `rm -rf /`) and secrets
   in written files before they happen.
 
+## The operational layer
+
+Borrowed from the Google Cloud SDK and ADK, adapted to a single-user harness:
+
+- **Properties** — every knob is a `section/name` property with gcloud's
+  precedence chain (`ARCHON_GATE_MAX_BLOCKS` env var > project
+  `.archon/config` > user `~/.archon/config` > default). `archon config list`
+  shows each value *with its source*:
+
+  ```bash
+  archon config set classifier/trivial_max_words 20
+  archon config set gate/enabled false --project    # per-repo override
+  ARCHON_INJECTION_ENABLED=false claude              # per-invocation
+  ```
+
+- **Per-project state** — session state lives at
+  `~/.archon/projects/<slug>/state.json`, so concurrent Claude Code sessions
+  in different repos are fully isolated (one repo's failing tests can never
+  block another repo's completion gate).
+
+- **Invocation logs** — every hook firing appends a fail-open JSONL record
+  (`~/.archon/logs/hooks-YYYY.MM.DD.jsonl`): what tier was classified, which
+  synapses fired, what the guards denied, what the gate decided.
+
+- **Diagnostics** — `archon info` prints the resolved environment (paths,
+  properties with sources, hook registrations); `archon doctor --hooks`
+  drives all 11 hooks live with synthetic payloads and reports 17 PASS/FAIL
+  checks.
+
+- **Evaluation** — `archon eval classifier` reports tier distribution and
+  synapse activation from your real usage, and (with
+  `logging/log_prompts=true`) replays stored prompts through the current
+  classifier so you can measure a threshold tuning before trusting it.
+
+- **Live-state injections** — instructions adapt to the session:
+  when tests are recorded failing, the anti-rationalization band literally
+  says *"Tests are recorded FAILING this session — fix and re-run before
+  claiming anything is done."*
+
 ## Quickstart
 
 ```bash
@@ -104,8 +143,9 @@ lifecycle ► SessionStart/End, PreCompact — state snapshot + re-injection
 Three layers:
 
 1. **Runtime hooks** (`hooks/claude/`) — the product. 11 stdlib-only Python
-   scripts registered in `.claude/settings.json`, state in
-   `~/.archon/archon-state.json`.
+   scripts registered in `.claude/settings.json`, per-project state in
+   `~/.archon/projects/<slug>/state.json`, invocation logs in
+   `~/.archon/logs/`.
 2. **Engine** (`src/archon/`) — `archon` CLI: registry, installer, validator,
    pipeline executor with post-hoc synapse validators
    (`synapse_engine_v2.build_default_engine()`, 9 checks).
@@ -118,7 +158,7 @@ Three layers:
 ## Development
 
 ```bash
-python3 -m pytest tests/ -q        # 603 tests
+python3 -m pytest tests/ -q        # 655 tests
 python3 scripts/validate.py --all  # manifests + registry sync + hook layer
 ruff check . && ruff format --check .
 ```

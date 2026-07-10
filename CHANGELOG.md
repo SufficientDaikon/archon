@@ -5,6 +5,53 @@ All notable changes to Archon will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-07-10
+
+### Operational Layer Release (ideas stolen from Google's SDKs)
+
+Design mechanics researched from the Google Cloud SDK (gcloud), the Agent
+Development Kit (ADK), and the GenAI SDK, then ported to fit a single-user
+cognitive harness.
+
+**Config properties (gcloud)**
+- Every hook knob is a `section/name` property: classifier tier ceilings,
+  per-synapse injection toggles, gate enable/max-blocks, scanner extra
+  allowlist, logging controls (18 properties, registered once in
+  `hooks/claude/shared/config.py` with help text)
+- Precedence: `ARCHON_{SECTION}_{NAME}` env > project `.archon/config` >
+  user `~/.archon/config` > default; `archon config list` shows each value
+  with its source; malformed values fall back to defaults (never crash a hook)
+- `archon config` is now a sub-app (`list/get/set/unset [--project]`).
+  BREAKING: positional `archon config KEY VALUE` → `archon config set KEY VALUE`
+
+**Per-project state (gcloud named configurations)**
+- State moves to `~/.archon/projects/<slug>/state.json` — fixes concurrent
+  sessions in different repos clobbering each other's session state and
+  misfiring the completion gate. Legacy `~/.archon/archon-state.json` is
+  abandoned in place (only last-3 session summaries lost)
+
+**Hook invocation logging (gcloud per-invocation logs)**
+- One fail-open JSONL record per hook firing in `~/.archon/logs/`:
+  tier/synapses/word-count for the router, deny/allow + findings for guards,
+  gate decisions with block counts; age-based cleanup via logging/max_log_days
+- Full stripped-prompt storage is opt-in (logging/log_prompts)
+
+**Diagnostics (gcloud info / --run-diagnostics)**
+- `archon info` (no args): environment report — version, paths, properties
+  with sources, hook registrations with script-exists checks, state + log
+  locations, registry counts
+- `archon doctor --hooks`: drives all 11 hooks live with synthetic payloads,
+  17 PASS/FAIL checks, exit 1 on failure
+
+**State-templated instructions (ADK) + eval (ADK eval)**
+- Synapse instructions support `{state.<key>?}` placeholders resolved from
+  live session state, never-throw: injections now say "Tests are recorded
+  FAILING this session" and list open todos when true
+- `archon eval classifier`: tier distribution + synapse activation from the
+  logs; drift replay of stored prompts through the current classifier
+
+Tests: 603 -> 655; ruff clean.
+
 ## [1.1.0] - 2026-07-10
 
 ### Modernization Release

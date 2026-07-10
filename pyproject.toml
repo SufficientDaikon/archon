@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "archon"
-version = "1.1.0"
+version = "1.2.0"
 description = "Archon — The Virtuoso Engine for AI Agents. Universal skills framework with enforced guardrails, cognitive synapses, and pipeline orchestration."
 readme = "README.md"
 license = {text = "MIT"}

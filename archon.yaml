@@ -2,7 +2,7 @@
 # This file registers all skills, bundles, agents, pipelines, and the Virtuoso engine.
 
 name: archon
-version: 1.1.0
+version: 1.2.0
 description: "Archon — The Virtuoso Engine for AI Agents. Universal skills framework with enforced guardrails, cognitive synapses, and pipeline orchestration."
 author: tahaa
 license: MIT
