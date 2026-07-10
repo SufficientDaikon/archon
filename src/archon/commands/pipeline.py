@@ -17,7 +17,6 @@ from archon.utils.output import (
 pipeline_app = typer.Typer(help="Run and manage pipelines.", no_args_is_help=True)
 
 ARCHON_ROOT = Path(__file__).parent.parent.parent.parent
-HOOKS_DIR = ARCHON_ROOT / "hooks"
 from archon.utils.paths import get_archon_home
 STATE_DIR = get_archon_home() / "pipeline-states"
 PIPELINES_DIR = ARCHON_ROOT / "pipelines"
@@ -25,7 +24,7 @@ PIPELINES_DIR = ARCHON_ROOT / "pipelines"
 
 def _create_executor() -> PipelineExecutor:
     """Create a PipelineExecutor with standard paths."""
-    return PipelineExecutor(hooks_dir=HOOKS_DIR, state_dir=STATE_DIR)
+    return PipelineExecutor(state_dir=STATE_DIR)
 
 
 _STATUS_ICONS = {

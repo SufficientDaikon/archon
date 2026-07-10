@@ -632,77 +632,58 @@ def validate_synapses() -> List[ValidationResult]:
 
 def validate_hooks() -> List[ValidationResult]:
     """
-    Validates the hook system.
+    Validates the Claude Code hook layer.
 
     Checks:
-      - hooks.yaml exists and is valid YAML
-      - Each referenced hook .py file exists
-      - Each hook file has an execute() function
+      - .claude/settings.json exists and is valid JSON
+      - Every hook command references a script under hooks/claude/ that exists
+      - Each hook script parses (valid Python syntax)
 
     Returns:
         List of ValidationResult objects
     """
-    results = []
-    hooks_yaml_path = ARCHON_ROOT / "hooks" / "hooks.yaml"
-    result = ValidationResult(str(hooks_yaml_path))
+    import ast
+    import json as _json
+    import re as _re
 
-    if not hooks_yaml_path.exists():
-        result.add_error("hooks/hooks.yaml not found")
-        results.append(result)
-        return results
+    settings_path = ARCHON_ROOT / ".claude" / "settings.json"
+    result = ValidationResult(str(settings_path))
+
+    if not settings_path.exists():
+        result.add_error(".claude/settings.json not found")
+        return [result]
 
     try:
-        with open(hooks_yaml_path, 'r', encoding='utf-8') as f:
-            hooks_config = yaml.safe_load(f)
+        settings = _json.loads(settings_path.read_text(encoding='utf-8'))
     except Exception as e:
-        result.add_error(f"Failed to parse hooks.yaml: {e}")
-        results.append(result)
-        return results
+        result.add_error(f"Failed to parse .claude/settings.json: {e}")
+        return [result]
 
-    if not isinstance(hooks_config, dict):
-        result.add_error("hooks.yaml is not a valid YAML mapping")
-        results.append(result)
-        return results
+    hooks_config = settings.get('hooks', {})
+    if not isinstance(hooks_config, dict) or not hooks_config:
+        result.add_error(".claude/settings.json has no 'hooks' registrations")
+        return [result]
 
-    hooks = hooks_config.get('hooks', {})
-    if not isinstance(hooks, dict):
-        result.add_error("hooks.yaml 'hooks' key must be a mapping")
-        results.append(result)
-        return results
+    for event, registrations in hooks_config.items():
+        for registration in registrations:
+            for hook in registration.get('hooks', []):
+                command = hook.get('command', '')
+                match = _re.search(r'hooks[/\\]claude[/\\](\w+\.py)', command)
+                if not match:
+                    result.add_error(
+                        f"{event}: command does not reference a hooks/claude/ script: {command}"
+                    )
+                    continue
+                script_path = ARCHON_ROOT / "hooks" / "claude" / match.group(1)
+                if not script_path.exists():
+                    result.add_error(f"{event}: hook script not found: {script_path.name}")
+                    continue
+                try:
+                    ast.parse(script_path.read_text(encoding='utf-8'))
+                except SyntaxError as e:
+                    result.add_error(f"{event}: syntax error in {script_path.name}: {e}")
 
-    import ast
-
-    for hook_name, hook_def in hooks.items():
-        if not isinstance(hook_def, dict):
-            result.add_error(f"Hook '{hook_name}': definition must be a mapping")
-            continue
-
-        handler_path_str = hook_def.get('handler')
-        if not handler_path_str:
-            result.add_error(f"Hook '{hook_name}': missing 'handler' field")
-            continue
-
-        handler_path = ARCHON_ROOT / handler_path_str
-        if not handler_path.exists():
-            result.add_error(f"Hook '{hook_name}': handler file not found: {handler_path_str}")
-            continue
-
-        # Check for execute() function via AST parsing
-        try:
-            source = handler_path.read_text(encoding='utf-8')
-            tree = ast.parse(source)
-            func_names = [
-                node.name for node in ast.walk(tree) if isinstance(node, ast.FunctionDef)
-            ]
-            if 'execute' not in func_names:
-                result.add_error(
-                    f"Hook '{hook_name}': handler {handler_path_str} missing execute() function"
-                )
-        except SyntaxError as e:
-            result.add_error(f"Hook '{hook_name}': syntax error in {handler_path_str}: {e}")
-
-    results.append(result)
-    return results
+    return [result]
 
 
 def main():

@@ -12,8 +12,6 @@ Provides PipelineExecutor class that:
 
 from __future__ import annotations
 
-import importlib.util
-import sys
 import time
 from dataclasses import dataclass, field
 from enum import Enum
@@ -121,37 +119,14 @@ class PipelineExecutor:
 
     def __init__(
         self,
-        hooks_dir: Path | None = None,
         state_dir: Path | None = None,
         simulation: bool = False,
     ):
-        self.hooks_dir = hooks_dir or ARCHON_ROOT / "hooks"
         from archon.utils.paths import get_archon_home
         self.state_dir = state_dir or get_archon_home() / "pipeline-states"
         self.state_dir.mkdir(parents=True, exist_ok=True)
         self.simulation = simulation
-
-        self._hooks: dict[str, Callable] = {}
-        self._load_hooks()
         self._synapse_engine: SynapseEngineV2 | None = None
-
-    def _load_hooks(self) -> None:
-        """Load hook handlers from hooks directory."""
-        hook_names = ["session_start", "pre_step", "post_step", "on_failure", "on_deviation"]
-        for hook_name in hook_names:
-            hook_path = self.hooks_dir / f"{hook_name}.py"
-            if hook_path.exists():
-                try:
-                    spec = importlib.util.spec_from_file_location(
-                        f"hooks.{hook_name}", hook_path
-                    )
-                    if spec and spec.loader:
-                        module = importlib.util.module_from_spec(spec)
-                        spec.loader.exec_module(module)
-                        if hasattr(module, "execute"):
-                            self._hooks[hook_name] = module.execute
-                except Exception as e:
-                    print(f"Warning: Failed to load hook '{hook_name}': {e}", file=sys.stderr)
 
     def load_pipeline(self, name: str) -> PipelineDefinition:
         """Load a pipeline definition by name."""
@@ -247,9 +222,6 @@ class PipelineExecutor:
         state._state_dir = self.state_dir
         state.save(self.state_dir)
 
-        # Fire session-start hook
-        self._fire_hook("session_start", {"pipeline": pipeline.name})
-
         # Initialise synapse engine if synapse mode is active
         if pipeline.synapse_mode != "disabled" and self._synapse_engine is None:
             self._synapse_engine = self._build_synapse_engine()
@@ -260,30 +232,6 @@ class PipelineExecutor:
         for step_index, step_config in enumerate(pipeline.steps):
             step_name = step_config.get("name", f"step-{step_index}")
             step_agent = step_config.get("agent", "unknown")
-
-            # Fire pre-step hook
-            pre_result = self._fire_hook("pre_step", {
-                "pipeline": pipeline.name,
-                "step": step_name,
-                "step_index": step_index,
-                "state": state.to_dict(),
-                "step_config": step_config,
-            })
-
-            if pre_result and pre_result.get("status") == "fail":
-                state.record_step(step_name, StepStatus.FAILED.value, {
-                    "errors": pre_result.get("errors", []),
-                    "phase": "pre-validation",
-                })
-                failure_action = self._handle_failure(
-                    step_config, step_name, pre_result.get("errors", []), 1, state
-                )
-                if failure_action == "halt":
-                    state.update_status(PipelineStatus.FAILED.value)
-                    state.save(self.state_dir)
-                    return state.to_dict()
-                elif failure_action == "skip":
-                    continue
 
             # Fire synapse pre-execution check
             if self._synapse_engine is not None:
@@ -339,21 +287,6 @@ class PipelineExecutor:
             if reloaded:
                 state.accumulated = reloaded.accumulated
                 state.deviations = reloaded.deviations
-
-            # Fire post-step hook
-            post_result = self._fire_hook("post_step", {
-                "pipeline": pipeline.name,
-                "step": step_name,
-                "step_index": step_index,
-                "state": state.to_dict(),
-                "step_config": step_config,
-                "step_result": step_result.to_dict(),
-            })
-
-            # Handle post-step validation failure
-            if post_result and post_result.get("status") == "fail":
-                step_result.status = StepStatus.FAILED
-                step_result.errors.extend(post_result.get("errors", []))
 
             # Record step result in state
             state.record_step(step_name, step_result.status.value, step_result.to_dict())
@@ -600,27 +533,18 @@ class PipelineExecutor:
         attempt: int,
         state: Any,
     ) -> str:
-        """Handle step failure using on-failure hook and policy."""
-        failure_result = self._fire_hook("on_failure", {
-            "pipeline": state.pipeline_name if hasattr(state, "pipeline_name") else "unknown",
-            "step": step_name,
-            "error": "; ".join(errors),
-            "attempt": attempt,
-            "max_retries": 3,
-            "step_config": step_config,
-        })
+        """Decide the recovery action for a failed step from its on-failure policy."""
+        # 3-Fix Escape Hatch: repeated failure signals an architecture problem,
+        # not a bug-fix problem — stop iterating and surface it.
+        if attempt >= 3:
+            return "escalate"
 
-        if failure_result:
-            return failure_result.get("action", "halt")
+        on_failure = step_config.get("on-failure", "halt")
+        if on_failure == "retry" and attempt < 3:
+            return "retry"
+        if on_failure == "loop":
+            max_iterations = step_config.get("max-iterations", 3)
+            return "loop" if attempt < max_iterations else "escalate"
+        if on_failure in ("skip", "escalate"):
+            return on_failure
         return "halt"
-
-    def _fire_hook(self, hook_name: str, context: dict[str, Any]) -> dict[str, Any] | None:
-        """Fire a hook and return its result."""
-        handler = self._hooks.get(hook_name)
-        if handler:
-            try:
-                return handler(context)
-            except Exception as e:
-                print(f"Warning: Hook '{hook_name}' failed: {e}", file=sys.stderr)
-                return None
-        return None

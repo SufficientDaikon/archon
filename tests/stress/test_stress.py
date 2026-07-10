@@ -51,7 +51,6 @@ class TestLargePipeline:
 
         with tempfile.TemporaryDirectory() as tmpdir:
             executor = PipelineExecutor(
-                hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
                 simulation=True,
             )
@@ -100,7 +99,6 @@ class TestCascadingFailures:
 
         with tempfile.TemporaryDirectory() as tmpdir:
             executor = PipelineExecutor(
-                hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
                 simulation=True,
             )

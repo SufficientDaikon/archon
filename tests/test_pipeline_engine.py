@@ -107,18 +107,16 @@ class TestPipelineExecutor:
 
         with tempfile.TemporaryDirectory() as tmpdir:
             executor = PipelineExecutor(
-                hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
                 simulation=True,
             )
-            assert executor.hooks_dir.exists()
+            assert executor.state_dir.exists()
 
     def test_load_pipeline_not_found(self):
         from archon.core.pipeline_engine import PipelineExecutor
 
         with tempfile.TemporaryDirectory() as tmpdir:
             executor = PipelineExecutor(
-                hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
                 simulation=True,
             )
@@ -131,7 +129,6 @@ class TestPipelineExecutor:
 
         with tempfile.TemporaryDirectory() as tmpdir:
             executor = PipelineExecutor(
-                hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
                 simulation=True,
             )
@@ -161,7 +158,6 @@ class TestPipelineExecutor:
 
         with tempfile.TemporaryDirectory() as tmpdir:
             executor = PipelineExecutor(
-                hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
                 simulation=True,
             )
@@ -197,7 +193,6 @@ class TestPipelineExecutor:
 
         with tempfile.TemporaryDirectory() as tmpdir:
             executor = PipelineExecutor(
-                hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
                 simulation=True,
             )
