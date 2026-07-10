@@ -1,18 +1,24 @@
 #!/usr/bin/env python3
-"""SubagentStart hook — injects role-specific context into subagents.
+"""SubagentStart/SubagentStop hook — role-scoped context + run telemetry.
 
-Fires when Claude spawns a subagent. Based on agent type, slices context
-so each agent gets only what's relevant to its role — not the full state.
+SubagentStart: based on agent type, slices context so each agent gets only
+what's relevant to its role — not the full state. (SubagentStart is not part
+of the vanilla Claude Code CLI hook set; where it never fires this script is
+simply inert.)
+
+SubagentStop: records the completed run in session state for the session
+summary — no injection.
 """
 
 import json
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 HOOK_DIR = Path(__file__).parent
 sys.path.insert(0, str(HOOK_DIR))
 
-from shared.state import load_state
+from shared.state import load_state, save_state
 
 # Agent type -> context builder mapping
 AGENT_CONTEXT = {
@@ -31,7 +37,15 @@ def main() -> None:
     except json.JSONDecodeError:
         input_data = {}
 
-    agent_type = input_data.get("agent_type", "")
+    # Payload field name varies by harness: subagent_type is the Task-tool
+    # spelling, agent_type the legacy one.
+    agent_type = input_data.get("subagent_type") or input_data.get("agent_type", "")
+    event = input_data.get("hook_event_name", "SubagentStart")
+
+    if event == "SubagentStop":
+        record_subagent_run(agent_type)
+        print(json.dumps({}))
+        return
 
     if not agent_type:
         print(json.dumps({}))
@@ -51,6 +65,19 @@ def main() -> None:
         print(json.dumps(output))
     else:
         print(json.dumps({}))
+
+
+def record_subagent_run(agent_type: str) -> None:
+    """Append a completed subagent run to session state (cheap telemetry)."""
+    state = load_state()
+    runs = state["session"].setdefault("subagent_runs", [])
+    runs.append({
+        "type": agent_type or "unknown",
+        "finished": datetime.now(timezone.utc).isoformat(),
+    })
+    # Bound the list so state stays small
+    state["session"]["subagent_runs"] = runs[-20:]
+    save_state(state)
 
 
 def build_agent_context(mode: str, state: dict) -> str:

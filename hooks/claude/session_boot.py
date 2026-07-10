@@ -14,7 +14,7 @@ from pathlib import Path
 HOOK_DIR = Path(__file__).parent
 sys.path.insert(0, str(HOOK_DIR))
 
-from shared.state import load_state, save_state, new_session_id
+from shared.state import archive_session, load_state, save_state, new_session_id
 
 # Project detection markers -> (type, framework check)
 PROJECT_MARKERS = {
@@ -48,35 +48,37 @@ def main() -> None:
         input_data = {}
 
     cwd = input_data.get("cwd", str(Path.cwd()))
+    source = input_data.get("source", "startup")
     state = load_state()
 
-    # Archive previous session if it exists
-    archive_previous_session(state)
-
-    # Detect project
-    project = detect_project(cwd)
-    state["project"] = project
-
-    # New session
-    state["session"] = {
-        "id": new_session_id(),
-        "started": datetime.now(timezone.utc).isoformat(),
-        "files_modified": [],
-        "tests_passed": None,
-        "build_passed": None,
-        "complexity_tier": "",
-        "active_skills": [],
-        "todos_completed": 0,
-        "todos_total": 0,
-    }
-
-    # Git info
-    state["git"] = get_git_summary(cwd)
-
-    save_state(state)
-
-    # Build context
-    context = build_boot_context(state)
+    if source in ("resume", "compact"):
+        # Mid-session continuation: the session's files_modified / tests_passed /
+        # todos are live gate state — wiping them here would silently disarm the
+        # completion gate. Preserve everything and re-inject a resume snapshot.
+        state["git"] = get_git_summary(cwd)
+        save_state(state)
+        context = build_resume_context(state, source)
+    else:
+        # Fresh session (startup or /clear): archive the previous one and reset.
+        archive_session(state)
+        state["project"] = detect_project(cwd)
+        state["session"] = {
+            "id": new_session_id(),
+            "started": datetime.now(timezone.utc).isoformat(),
+            "files_modified": [],
+            "tests_passed": None,
+            "build_passed": None,
+            "complexity_tier": "",
+            "active_skills": [],
+            "todos_completed": 0,
+            "todos_total": 0,
+            "todos_pending_titles": [],
+            "subagent_runs": [],
+            "gate_blocks": 0,
+        }
+        state["git"] = get_git_summary(cwd)
+        save_state(state)
+        context = build_boot_context(state)
 
     output = {
         "hookSpecificOutput": {
@@ -158,36 +160,45 @@ def get_git_summary(cwd: str) -> dict:
     return result
 
 
-def archive_previous_session(state: dict) -> None:
-    """Move current session to history. Keep last 3. Dedup prevents double-archiving."""
+def build_resume_context(state: dict, source: str) -> str:
+    """Build the mid-session re-injection block for resume/compact.
+
+    After compaction the model loses its working memory of what it touched;
+    this snapshot restores the load-bearing facts from disk state.
+    """
     session = state.get("session", {})
-    if not session.get("id"):
-        return
+    git = state.get("git", {})
 
-    summary = {
-        "id": session.get("id", ""),
-        "started": session.get("started", ""),
-        "files_modified_count": len(session.get("files_modified", [])),
-        "tests_passed": session.get("tests_passed"),
-        "build_passed": session.get("build_passed"),
-        "complexity_tier": session.get("complexity_tier", ""),
-        "todos_completed": session.get("todos_completed", 0),
-        "todos_total": session.get("todos_total", 0),
-    }
+    def fmt(value):
+        return {True: "pass", False: "FAIL", None: "unknown"}.get(value, str(value))
 
-    history = state.setdefault("history", {"last_sessions": [], "unfinished_work": []})
-    # Dedup check — completion_gate may have already archived this session
-    existing_ids = [s.get("id") for s in history.get("last_sessions", [])]
-    if summary["id"] in existing_ids:
-        return
-    history["last_sessions"].insert(0, summary)
-    history["last_sessions"] = history["last_sessions"][:3]
+    lines = [f'<archon-resume source="{source}">']
+    lines.append(
+        f'  <session tier="{session.get("complexity_tier", "")}" '
+        f'tests="{fmt(session.get("tests_passed"))}" '
+        f'build="{fmt(session.get("build_passed"))}" '
+        f'todos="{session.get("todos_completed", 0)}/{session.get("todos_total", 0)}" />'
+    )
 
-    # Track unfinished work
-    if summary["todos_total"] > 0 and summary["todos_completed"] < summary["todos_total"]:
-        unfinished = f"Session {summary['id']}: {summary['todos_total'] - summary['todos_completed']} incomplete tasks"
-        history.setdefault("unfinished_work", []).insert(0, unfinished)
-        history["unfinished_work"] = history["unfinished_work"][:5]
+    files = session.get("files_modified", [])
+    if files:
+        lines.append(f'  <files-modified count="{len(files)}">')
+        for f in files[-10:]:
+            lines.append(f'    <file>{f}</file>')
+        lines.append('  </files-modified>')
+
+    pending = session.get("todos_pending_titles", [])
+    if pending:
+        lines.append('  <pending-todos>')
+        for title in pending[:5]:
+            lines.append(f'    <todo>{title}</todo>')
+        lines.append('  </pending-todos>')
+
+    lines.append(
+        f'  <git branch="{git.get("branch", "")}" uncommitted="{git.get("uncommitted_changes", 0)}" />'
+    )
+    lines.append('</archon-resume>')
+    return "\n".join(lines)
 
 
 def build_boot_context(state: dict) -> str:

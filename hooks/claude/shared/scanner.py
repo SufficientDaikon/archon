@@ -55,10 +55,12 @@ DANGEROUS_COMMANDS = [
     (re.compile(r'\bwget\s+.*\|\s*(bash|sh|python)\b'), "piping wget to shell"),
     # Only flag DROP/TRUNCATE when piped to a DB client
     (re.compile(r'\b(DROP|TRUNCATE)\s+(TABLE|DATABASE)\b.*\|\s*(psql|mysql|sqlite3|mongosh)', re.I), "destructive SQL piped to database"),
-    (re.compile(r'\bgit\s+push\s+.*--force\s+.*(main|master)\b'), "force push to main/master"),
-    (re.compile(r'\bgit\s+push\s+-f\s+.*(main|master)\b'), "force push to main/master"),
-    # git reset --hard: only block when targeting main/master or origin
-    (re.compile(r'\bgit\s+reset\s+--hard\s+.*\b(main|master|origin)\b'), "git reset --hard targeting main/master/origin"),
+    # Force push to main/master — lookaheads so flag/branch order doesn't matter
+    # ("git push origin main --force" and "git push --force origin main" both match),
+    # with word boundaries so feature branches like fix-main-page don't false-positive.
+    (re.compile(r'\bgit\s+push\b(?=[^\n|;&]*(?:--force(?!-with-lease)|\s-f\b))(?=[^\n|;&]*(?<![-/\w])(?:main|master)(?![-\w]))'), "force push to main/master"),
+    # git reset --hard: only block when targeting main/master (incl. origin/-qualified)
+    (re.compile(r'\bgit\s+reset\s+--hard\s+(?:origin/)?(?:main|master)(?![-\w])'), "git reset --hard targeting main/master"),
     (re.compile(r':(){.*\|.*&\s*};'), "fork bomb"),
     (re.compile(r'>\s*/dev/sd[a-z]'), "writing directly to disk device"),
     (re.compile(r'\bmkfs\b'), "formatting filesystem"),

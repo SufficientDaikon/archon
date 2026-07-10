@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""PreToolUse [Write|Edit|NotebookEdit] hook — scans file content for secrets.
+"""PreToolUse [Write|Edit|MultiEdit|NotebookEdit] hook — scans content for secrets.
 
-Fires on every Write/Edit/NotebookEdit tool call. Scans content being written
-for API keys, tokens, private keys, and other secrets. Denies if found.
-Must be FAST (<100ms).
+Fires on every write-type tool call. Scans content being written for API keys,
+tokens, private keys, and other secrets. Denies if found.
 """
 
 import json
@@ -34,6 +33,12 @@ def main() -> None:
         content = tool_input.get("content", "")
     elif tool_name == "Edit":
         content = tool_input.get("new_string", "")
+    elif tool_name == "MultiEdit":
+        content = "\n".join(
+            edit.get("new_string", "")
+            for edit in tool_input.get("edits", [])
+            if isinstance(edit, dict)
+        )
     elif tool_name == "NotebookEdit":
         content = tool_input.get("new_source", "")
         file_path = file_path or tool_input.get("notebook_path", "")

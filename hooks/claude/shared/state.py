@@ -76,6 +76,9 @@ def _empty_state() -> dict[str, Any]:
             "active_skills": [],
             "todos_completed": 0,
             "todos_total": 0,
+            "todos_pending_titles": [],
+            "subagent_runs": [],
+            "gate_blocks": 0,
         },
         "history": {
             "last_sessions": [],
@@ -123,6 +126,46 @@ def append_modified_file(filepath: str) -> None:
 def new_session_id() -> str:
     """Generate a short session identifier."""
     return uuid.uuid4().hex[:12]
+
+
+def archive_session(state: dict) -> None:
+    """Move the current session summary into history. Keep last 3.
+
+    Idempotent — callers (session_boot, completion_gate, session_end) may all
+    attempt archival; the dedup check ensures one history entry per session.
+    """
+    session = state.get("session", {})
+    if not session.get("id"):
+        return
+
+    summary = {
+        "id": session.get("id", ""),
+        "started": session.get("started", ""),
+        "files_modified_count": len(session.get("files_modified", [])),
+        "tests_passed": session.get("tests_passed"),
+        "build_passed": session.get("build_passed"),
+        "complexity_tier": session.get("complexity_tier", ""),
+        "todos_completed": session.get("todos_completed", 0),
+        "todos_total": session.get("todos_total", 0),
+    }
+
+    history = state.setdefault("history", {"last_sessions": [], "unfinished_work": []})
+    existing_ids = [s.get("id") for s in history.get("last_sessions", [])]
+    if summary["id"] in existing_ids:
+        return
+    history["last_sessions"].insert(0, summary)
+    history["last_sessions"] = history["last_sessions"][:3]
+
+    # Track unfinished work so the next session boot can surface it
+    if summary["todos_total"] > 0 and summary["todos_completed"] < summary["todos_total"]:
+        pending = session.get("todos_pending_titles", [])
+        detail = f" ({'; '.join(pending[:3])})" if pending else ""
+        unfinished = (
+            f"Session {summary['id']}: "
+            f"{summary['todos_total'] - summary['todos_completed']} incomplete tasks{detail}"
+        )
+        history.setdefault("unfinished_work", []).insert(0, unfinished)
+        history["unfinished_work"] = history["unfinished_work"][:5]
 
 
 # Self-test: create scaffold if run directly
