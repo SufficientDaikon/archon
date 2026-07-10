@@ -53,6 +53,7 @@ from archon.commands.cards import cards_cmd  # noqa: E402
 from archon.commands.catalog import catalog_app  # noqa: E402
 from archon.commands.config import config_app  # noqa: E402
 from archon.commands.doctor import doctor_cmd  # noqa: E402
+from archon.commands.eval_cmd import eval_app  # noqa: E402
 from archon.commands.generate import generate_app  # noqa: E402
 from archon.commands.info import info_cmd  # noqa: E402
 from archon.commands.init_cmd import init_cmd  # noqa: E402
@@ -76,6 +77,7 @@ app.add_typer(pipeline_app, name="pipeline", help="Run and manage pipelines.")
 app.command("update", help="Check for or apply Archon updates.")(update_cmd)
 app.command("admin", help="Administration dashboard with aggregate statistics.")(admin_cmd)
 app.add_typer(config_app, name="config", help="Get or set configuration values.")
+app.add_typer(eval_app, name="eval", help="Evaluate hook-layer behavior from logs.")
 app.add_typer(generate_app, name="generate", help="Generate framework artifacts.")
 app.add_typer(catalog_app, name="catalog", help="Browse and manage MCP server integrations.")
 app.command("cards", help="View and manage agent cards.")(cards_cmd)
