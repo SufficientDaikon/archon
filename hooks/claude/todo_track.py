@@ -35,12 +35,13 @@ def main() -> None:
         if isinstance(t, dict) and t.get("status") != "completed"
     ]
 
-    state = load_state()
+    cwd = input_data.get("cwd")
+    state = load_state(cwd)
     session = state["session"]
     session["todos_total"] = len(todos)
     session["todos_completed"] = completed
     session["todos_pending_titles"] = [title for title in pending_titles if title][:5]
-    save_state(state)
+    save_state(state, cwd)
 
     print(json.dumps({}))
 

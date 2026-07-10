@@ -16,10 +16,16 @@ import pytest
 ARCHON_ROOT = Path(__file__).parent.parent
 HOOKS_DIR = ARCHON_ROOT / "hooks" / "claude"
 
+sys.path.insert(0, str(HOOKS_DIR))
+from shared.state import project_slug  # noqa: E402
+
 
 def run_hook(
     name: str, payload: dict, archon_home: Path, extra_env: dict | None = None
 ) -> subprocess.CompletedProcess:
+    # Real Claude Code hook payloads always carry cwd; tests default to the
+    # repo root so state lands in one predictable per-project slug.
+    payload = {"cwd": str(ARCHON_ROOT), **payload}
     return subprocess.run(
         [sys.executable, str(HOOKS_DIR / name)],
         input=json.dumps(payload),
@@ -30,15 +36,19 @@ def run_hook(
     )
 
 
-def read_state(archon_home: Path) -> dict:
-    return json.loads((archon_home / "archon-state.json").read_text(encoding="utf-8"))
+def state_path(archon_home: Path, cwd: str | None = None) -> Path:
+    return archon_home / "projects" / project_slug(cwd or str(ARCHON_ROOT)) / "state.json"
 
 
-def write_state(archon_home: Path, mutate) -> None:
+def read_state(archon_home: Path, cwd: str | None = None) -> dict:
+    return json.loads(state_path(archon_home, cwd).read_text(encoding="utf-8"))
+
+
+def write_state(archon_home: Path, mutate, cwd: str | None = None) -> None:
     """Seed a state file: run session_boot to scaffold, then apply mutate(state)."""
-    state = read_state(archon_home)
+    state = read_state(archon_home, cwd)
     mutate(state)
-    (archon_home / "archon-state.json").write_text(json.dumps(state), encoding="utf-8")
+    state_path(archon_home, cwd).write_text(json.dumps(state), encoding="utf-8")
 
 
 @pytest.fixture
@@ -405,11 +415,13 @@ class TestConfigProperties:
         (project_dir / ".archon" / "config").write_text(
             "[gate]\nmax_blocks = 1\n", encoding="utf-8"
         )
+        run_hook("session_boot.py", {"cwd": str(project_dir)}, home)
         write_state(
             home,
             lambda s: s["session"].update(
                 files_modified=["app.py"], tests_passed=False, gate_blocks=1
             ),
+            cwd=str(project_dir),
         )
         result = run_hook("completion_gate.py", {"cwd": str(project_dir)}, home)
         assert result.returncode == 0  # cap of 1 already reached
@@ -513,3 +525,70 @@ class TestPreCompact:
         result = run_hook("pre_compact.py", {}, home)
         assert result.returncode == 0
         assert read_state(home)["session"]["last_compacted"]
+
+
+class TestProjectIsolation:
+    """Regression: per-project state — one project's failing tests must never
+    trip another project's completion gate (the global-singleton bug)."""
+
+    def test_two_projects_have_independent_state(self, home, tmp_path):
+        proj_a = tmp_path / "alpha"
+        proj_b = tmp_path / "beta"
+        proj_a.mkdir()
+        proj_b.mkdir()
+
+        run_hook("session_boot.py", {"cwd": str(proj_a)}, home)
+        run_hook("session_boot.py", {"cwd": str(proj_b)}, home)
+        assert state_path(home, str(proj_a)) != state_path(home, str(proj_b))
+
+        # Fail tests + modify files in A only
+        run_hook(
+            "quality_write.py",
+            {"cwd": str(proj_a), "tool_input": {"file_path": "a.py"}},
+            home,
+        )
+        run_hook(
+            "quality_bash.py",
+            {
+                "cwd": str(proj_a),
+                "tool_input": {"command": "pytest tests/"},
+                "tool_response": {"exit_code": 1},
+            },
+            home,
+        )
+
+        state_a = read_state(home, str(proj_a))
+        state_b = read_state(home, str(proj_b))
+        assert state_a["session"]["tests_passed"] is False
+        assert state_a["session"]["files_modified"] == ["a.py"]
+        assert state_b["session"]["tests_passed"] is None
+        assert state_b["session"]["files_modified"] == []
+
+    def test_failing_project_does_not_block_other_project_gate(self, home, tmp_path):
+        proj_a = tmp_path / "alpha"
+        proj_b = tmp_path / "beta"
+        proj_a.mkdir()
+        proj_b.mkdir()
+        run_hook("session_boot.py", {"cwd": str(proj_a)}, home)
+        run_hook("session_boot.py", {"cwd": str(proj_b)}, home)
+        write_state(
+            home,
+            lambda s: s["session"].update(files_modified=["a.py"], tests_passed=False),
+            cwd=str(proj_a),
+        )
+
+        # A blocks; B sails through
+        result_a = run_hook("completion_gate.py", {"cwd": str(proj_a)}, home)
+        result_b = run_hook("completion_gate.py", {"cwd": str(proj_b)}, home)
+        assert result_a.returncode == 2
+        assert result_b.returncode == 0
+
+    def test_slug_is_deterministic_and_distinct(self, tmp_path):
+        one = tmp_path / "myproj"
+        two = tmp_path / "nested" / "myproj"
+        one.mkdir()
+        two.mkdir(parents=True)
+        assert project_slug(str(one)) == project_slug(str(one))
+        # same basename, different path -> different slug
+        assert project_slug(str(one)) != project_slug(str(two))
+        assert project_slug(str(one)).startswith("myproj-")

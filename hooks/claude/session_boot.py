@@ -49,14 +49,14 @@ def main() -> None:
 
     cwd = input_data.get("cwd", str(Path.cwd()))
     source = input_data.get("source", "startup")
-    state = load_state()
+    state = load_state(cwd)
 
     if source in ("resume", "compact"):
         # Mid-session continuation: the session's files_modified / tests_passed /
         # todos are live gate state — wiping them here would silently disarm the
         # completion gate. Preserve everything and re-inject a resume snapshot.
         state["git"] = get_git_summary(cwd)
-        save_state(state)
+        save_state(state, cwd)
         context = build_resume_context(state, source)
     else:
         # Fresh session (startup or /clear): archive the previous one and reset.
@@ -77,7 +77,7 @@ def main() -> None:
             "gate_blocks": 0,
         }
         state["git"] = get_git_summary(cwd)
-        save_state(state)
+        save_state(state, cwd)
         context = build_boot_context(state)
 
     output = {

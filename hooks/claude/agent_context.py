@@ -40,10 +40,11 @@ def main() -> None:
     # Payload field name varies by harness: subagent_type is the Task-tool
     # spelling, agent_type the legacy one.
     agent_type = input_data.get("subagent_type") or input_data.get("agent_type", "")
+    cwd = input_data.get("cwd")
     event = input_data.get("hook_event_name", "SubagentStart")
 
     if event == "SubagentStop":
-        record_subagent_run(agent_type)
+        record_subagent_run(agent_type, cwd)
         print(json.dumps({}))
         return
 
@@ -51,7 +52,7 @@ def main() -> None:
         print(json.dumps({}))
         return
 
-    state = load_state()
+    state = load_state(cwd)
     context_mode = AGENT_CONTEXT.get(agent_type, "code")
     context = build_agent_context(context_mode, state)
 
@@ -67,9 +68,9 @@ def main() -> None:
         print(json.dumps({}))
 
 
-def record_subagent_run(agent_type: str) -> None:
+def record_subagent_run(agent_type: str, cwd: str | None = None) -> None:
     """Append a completed subagent run to session state (cheap telemetry)."""
-    state = load_state()
+    state = load_state(cwd)
     runs = state["session"].setdefault("subagent_runs", [])
     runs.append(
         {
@@ -79,7 +80,7 @@ def record_subagent_run(agent_type: str) -> None:
     )
     # Bound the list so state stays small
     state["session"]["subagent_runs"] = runs[-20:]
-    save_state(state)
+    save_state(state, cwd)
 
 
 def build_agent_context(mode: str, state: dict) -> str:

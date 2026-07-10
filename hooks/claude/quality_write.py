@@ -27,7 +27,7 @@ def main() -> None:
     file_path = tool_input.get("file_path", "") or tool_input.get("notebook_path", "")
 
     if file_path:
-        append_modified_file(file_path)
+        append_modified_file(file_path, input_data.get("cwd"))
 
     # No context injection — pure state tracking
     print(json.dumps({}))

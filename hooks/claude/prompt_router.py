@@ -67,10 +67,10 @@ def main() -> None:
     synapse_context = build_synapse_context(_enabled_synapses(synapses, cwd), tier)
 
     # Update state
-    state = load_state()
+    state = load_state(cwd)
     state["session"]["complexity_tier"] = tier
     state["session"]["active_skills"] = skills
-    save_state(state)
+    save_state(state, cwd)
 
     # Build XML context
     context = build_route_context(tier, mode, skills, synapses, synapse_context)

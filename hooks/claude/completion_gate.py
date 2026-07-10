@@ -33,20 +33,20 @@ def main() -> None:
         input_data = {}
 
     cwd = input_data.get("cwd")
-    state = load_state()
+    state = load_state(cwd)
     session = state["session"]
     files_modified = session.get("files_modified", [])
 
     # No code modified — conversational session, no gates needed
     if not files_modified:
-        persist_and_archive(state)
+        persist_and_archive(state, cwd)
         print(json.dumps({}))
         return
 
     passed, failures = check_quality_gates(session)
 
     if passed:
-        persist_and_archive(state)
+        persist_and_archive(state, cwd)
         print(json.dumps({}))
         return
 
@@ -56,7 +56,7 @@ def main() -> None:
         sys.stderr.write(
             f"Archon completion gate (disabled by gate/enabled=false): {'; '.join(failures)}\n"
         )
-        persist_and_archive(state)
+        persist_and_archive(state, cwd)
         print(json.dumps({}))
         return
 
@@ -71,12 +71,12 @@ def main() -> None:
             f"({'; '.join(failures)}) — allowing stop after "
             f"{blocks_so_far} block(s) to avoid a loop.\n"
         )
-        persist_and_archive(state)
+        persist_and_archive(state, cwd)
         print(json.dumps({}))
         return
 
     session["gate_blocks"] = blocks_so_far + 1
-    persist_and_archive(state)
+    persist_and_archive(state, cwd)
 
     failure_text = "\n".join(f"  - {f}" for f in failures)
     reason = (
@@ -134,11 +134,11 @@ def check_quality_gates(session: dict) -> tuple[bool, list[str]]:
     return len(failures) == 0, failures
 
 
-def persist_and_archive(state: dict) -> None:
+def persist_and_archive(state: dict, cwd: str | None = None) -> None:
     """Save final state. Archive to history if session had activity."""
     if state["session"].get("files_modified"):
         archive_session(state)
-    save_state(state)
+    save_state(state, cwd)
 
 
 if __name__ == "__main__":

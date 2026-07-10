@@ -20,11 +20,16 @@ from shared.state import load_state, save_state
 
 
 def main() -> None:
-    sys.stdin.read()  # payload unused; consume to avoid broken pipe
+    raw = sys.stdin.read()
+    try:
+        input_data = json.loads(raw) if raw.strip() else {}
+    except json.JSONDecodeError:
+        input_data = {}
 
-    state = load_state()
+    cwd = input_data.get("cwd")
+    state = load_state(cwd)
     state["session"]["last_compacted"] = datetime.now(timezone.utc).isoformat()
-    save_state(state)
+    save_state(state, cwd)
 
     print(json.dumps({}))
 

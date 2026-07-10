@@ -26,6 +26,7 @@ def main() -> None:
 
     tool_input = input_data.get("tool_input", {})
     command = tool_input.get("command", "")
+    cwd = input_data.get("cwd")
 
     if not command:
         print(json.dumps({}))
@@ -41,7 +42,7 @@ def main() -> None:
         passed = exit_code == 0
 
     updated = False
-    state = load_state()
+    state = load_state(cwd)
 
     if is_test_command(command):
         state["session"]["tests_passed"] = passed
@@ -52,7 +53,7 @@ def main() -> None:
         updated = True
 
     if updated:
-        save_state(state)
+        save_state(state, cwd)
 
     print(json.dumps({}))
 

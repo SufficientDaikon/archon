@@ -1,18 +1,28 @@
-"""archon-state.json read/write — single source of truth for Claude Code hooks.
+"""Per-project session state read/write — single source of truth for hooks.
 
-Every hook imports this module. Handles first-run (no file),
-corrupt state, and version migration. Atomic writes via temp+rename.
+Every hook imports this module. State lives at
+``<ARCHON_HOME>/projects/<slug>/state.json`` where the slug is derived from
+the project path — two concurrent Claude Code sessions in different repos get
+independent state (gcloud named-configurations style), so one project's
+failing tests can never trip another project's completion gate.
+
+Handles first-run (no file), corrupt state, and version migration.
+Atomic writes via temp+rename.
 """
 
+import hashlib
 import json
 import os
+import re
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-STATE_FILE = "archon-state.json"
+STATE_FILE = "state.json"
 STATE_VERSION = "1.0.0"
+
+_SLUG_CHARS = re.compile(r"[^a-z0-9-]+")
 
 
 def _get_archon_home() -> Path:
@@ -23,13 +33,27 @@ def _get_archon_home() -> Path:
     return Path.home() / ".archon"
 
 
-def get_state_path() -> Path:
-    return _get_archon_home() / STATE_FILE
+def project_slug(cwd: str | None = None) -> str:
+    """Deterministic, human-readable project identifier.
+
+    sanitized-basename[:40] + "-" + sha1(resolved path)[:8]. Pure function of
+    the path; both hooks and tests must resolve() so symlinked tempdirs
+    (macOS /tmp) hash identically.
+    """
+    path = Path(cwd) if cwd else Path.cwd()
+    resolved = path.resolve()
+    base = _SLUG_CHARS.sub("-", resolved.name.lower()).strip("-") or "project"
+    digest = hashlib.sha1(str(resolved).encode("utf-8")).hexdigest()[:8]
+    return f"{base[:40]}-{digest}"
 
 
-def load_state() -> dict[str, Any]:
-    """Load state; return empty scaffold if missing or corrupt."""
-    path = get_state_path()
+def get_state_path(cwd: str | None = None) -> Path:
+    return _get_archon_home() / "projects" / project_slug(cwd) / STATE_FILE
+
+
+def load_state(cwd: str | None = None) -> dict[str, Any]:
+    """Load the project's state; return empty scaffold if missing or corrupt."""
+    path = get_state_path(cwd)
     if not path.exists():
         return _empty_state()
     try:
@@ -42,9 +66,9 @@ def load_state() -> dict[str, Any]:
         return _empty_state()
 
 
-def save_state(state: dict[str, Any]) -> Path:
-    """Persist state atomically (temp file + rename)."""
-    path = get_state_path()
+def save_state(state: dict[str, Any], cwd: str | None = None) -> Path:
+    """Persist the project's state atomically (temp file + rename)."""
+    path = get_state_path(cwd)
     path.parent.mkdir(parents=True, exist_ok=True)
     state["last_updated"] = datetime.now(timezone.utc).isoformat()
     tmp = path.with_suffix(".tmp")
@@ -106,20 +130,20 @@ def _migrate_state(data: dict) -> dict:
     return data
 
 
-def update_session_field(key: str, value: Any) -> None:
+def update_session_field(key: str, value: Any, cwd: str | None = None) -> None:
     """Load, update one session field, save."""
-    state = load_state()
+    state = load_state(cwd)
     state["session"][key] = value
-    save_state(state)
+    save_state(state, cwd)
 
 
-def append_modified_file(filepath: str) -> None:
+def append_modified_file(filepath: str, cwd: str | None = None) -> None:
     """Track a modified file without duplicates."""
-    state = load_state()
+    state = load_state(cwd)
     files = state["session"]["files_modified"]
     if filepath not in files:
         files.append(filepath)
-    save_state(state)
+    save_state(state, cwd)
 
 
 def new_session_id() -> str:

@@ -23,11 +23,12 @@ def main() -> None:
     except json.JSONDecodeError:
         input_data = {}
 
-    state = load_state()
+    cwd = input_data.get("cwd")
+    state = load_state(cwd)
     if state["session"].get("files_modified") or state["session"].get("todos_total"):
         archive_session(state)
     state["session"]["end_reason"] = input_data.get("reason", "")
-    save_state(state)
+    save_state(state, cwd)
 
     print(json.dumps({}))
 
