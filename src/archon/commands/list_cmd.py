@@ -2,21 +2,23 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 import typer
 
 from archon.core.registry import Registry
 from archon.utils.output import (
-    console, print_error, is_json, json_envelope, print_json, make_table,
+    console,
+    is_json,
+    json_envelope,
+    make_table,
+    print_error,
+    print_json,
 )
-
 
 COMPONENT_TYPES = ["skills", "agents", "bundles", "pipelines", "synapses"]
 
 
 def list_cmd(
-    component_type: Optional[str] = typer.Argument(
+    component_type: str | None = typer.Argument(
         None,
         help="Component type to list: skills, agents, bundles, pipelines.",
     ),
@@ -28,7 +30,7 @@ def list_cmd(
         reg.load()
     except FileNotFoundError as exc:
         print_error(str(exc))
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     # FR-030: No type → show summary
     if component_type is None:
@@ -53,6 +55,7 @@ def list_cmd(
 
 
 # ── Summary ─────────────────────────────────────────────────────
+
 
 def _show_summary(reg: Registry) -> None:
     data = {
@@ -87,26 +90,43 @@ def _show_summary(reg: Registry) -> None:
 
 # ── Skills ──────────────────────────────────────────────────────
 
+
 def _list_skills(reg: Registry) -> None:
     rows_data = []
     for sk in reg.skills:
         reg.load_skill_manifest(sk)
-        rows_data.append({
-            "name": sk.name,
-            "version": sk.version,
-            "priority": sk.priority,
-            "tags": ", ".join(sk.tags[:3]) if sk.tags else "",
-            "description": (sk.description[:60] + "…") if len(sk.description) > 60 else sk.description,
-        })
+        rows_data.append(
+            {
+                "name": sk.name,
+                "version": sk.version,
+                "priority": sk.priority,
+                "tags": ", ".join(sk.tags[:3]) if sk.tags else "",
+                "description": (sk.description[:60] + "…")
+                if len(sk.description) > 60
+                else sk.description,
+            }
+        )
 
     if is_json():
-        print_json(json_envelope(command="list", data={"type": "skills", "count": len(rows_data), "items": rows_data}))
+        print_json(
+            json_envelope(
+                command="list", data={"type": "skills", "count": len(rows_data), "items": rows_data}
+            )
+        )
         return
 
-    rows = [[r["name"], r["version"], r["priority"], r["tags"], r["description"]] for r in rows_data]
+    rows = [
+        [r["name"], r["version"], r["priority"], r["tags"], r["description"]] for r in rows_data
+    ]
     table = make_table(
         f"Skills ({len(rows)})",
-        [("Name", "bold"), ("Version", "cyan"), ("Priority", ""), ("Tags", "dim"), ("Description", "")],
+        [
+            ("Name", "bold"),
+            ("Version", "cyan"),
+            ("Priority", ""),
+            ("Tags", "dim"),
+            ("Description", ""),
+        ],
         rows,
     )
     console.print()
@@ -116,19 +136,28 @@ def _list_skills(reg: Registry) -> None:
 
 # ── Agents ──────────────────────────────────────────────────────
 
+
 def _list_agents(reg: Registry) -> None:
     rows_data = []
     for ag in reg.agents:
         reg.load_agent_manifest(ag)
-        rows_data.append({
-            "name": ag.name,
-            "version": ag.version,
-            "role": ag.role or "",
-            "description": (ag.description[:60] + "…") if len(ag.description) > 60 else ag.description,
-        })
+        rows_data.append(
+            {
+                "name": ag.name,
+                "version": ag.version,
+                "role": ag.role or "",
+                "description": (ag.description[:60] + "…")
+                if len(ag.description) > 60
+                else ag.description,
+            }
+        )
 
     if is_json():
-        print_json(json_envelope(command="list", data={"type": "agents", "count": len(rows_data), "items": rows_data}))
+        print_json(
+            json_envelope(
+                command="list", data={"type": "agents", "count": len(rows_data), "items": rows_data}
+            )
+        )
         return
 
     rows = [[r["name"], r["version"], r["role"], r["description"]] for r in rows_data]
@@ -144,20 +173,30 @@ def _list_agents(reg: Registry) -> None:
 
 # ── Bundles ─────────────────────────────────────────────────────
 
+
 def _list_bundles(reg: Registry) -> None:
     rows_data = []
     for bnd in reg.bundles:
         reg.load_bundle_manifest(bnd)
-        rows_data.append({
-            "name": bnd.name,
-            "version": bnd.version,
-            "skills_count": len(bnd.skills),
-            "skills": bnd.skills,
-            "description": (bnd.description[:60] + "…") if len(bnd.description) > 60 else bnd.description,
-        })
+        rows_data.append(
+            {
+                "name": bnd.name,
+                "version": bnd.version,
+                "skills_count": len(bnd.skills),
+                "skills": bnd.skills,
+                "description": (bnd.description[:60] + "…")
+                if len(bnd.description) > 60
+                else bnd.description,
+            }
+        )
 
     if is_json():
-        print_json(json_envelope(command="list", data={"type": "bundles", "count": len(rows_data), "items": rows_data}))
+        print_json(
+            json_envelope(
+                command="list",
+                data={"type": "bundles", "count": len(rows_data), "items": rows_data},
+            )
+        )
         return
 
     rows = [[r["name"], r["version"], str(r["skills_count"]), r["description"]] for r in rows_data]
@@ -173,26 +212,45 @@ def _list_bundles(reg: Registry) -> None:
 
 # ── Pipelines ───────────────────────────────────────────────────
 
+
 def _list_pipelines(reg: Registry) -> None:
     rows_data = []
     for pl in reg.pipelines:
         reg.load_pipeline_manifest(pl)
-        rows_data.append({
-            "name": pl.name,
-            "version": pl.version,
-            "trigger": pl.trigger,
-            "steps": len(pl.steps),
-            "description": (pl.description[:60] + "…") if len(pl.description) > 60 else pl.description,
-        })
+        rows_data.append(
+            {
+                "name": pl.name,
+                "version": pl.version,
+                "trigger": pl.trigger,
+                "steps": len(pl.steps),
+                "description": (pl.description[:60] + "…")
+                if len(pl.description) > 60
+                else pl.description,
+            }
+        )
 
     if is_json():
-        print_json(json_envelope(command="list", data={"type": "pipelines", "count": len(rows_data), "items": rows_data}))
+        print_json(
+            json_envelope(
+                command="list",
+                data={"type": "pipelines", "count": len(rows_data), "items": rows_data},
+            )
+        )
         return
 
-    rows = [[r["name"], r["version"], str(r["steps"]), r["trigger"], r["description"]] for r in rows_data]
+    rows = [
+        [r["name"], r["version"], str(r["steps"]), r["trigger"], r["description"]]
+        for r in rows_data
+    ]
     table = make_table(
         f"Pipelines ({len(rows)})",
-        [("Name", "bold"), ("Version", "cyan"), ("Steps", ""), ("Trigger", "dim"), ("Description", "")],
+        [
+            ("Name", "bold"),
+            ("Version", "cyan"),
+            ("Steps", ""),
+            ("Trigger", "dim"),
+            ("Description", ""),
+        ],
         rows,
     )
     console.print()
@@ -202,20 +260,30 @@ def _list_pipelines(reg: Registry) -> None:
 
 # ── Synapses ────────────────────────────────────────────────────
 
+
 def _list_synapses(reg: Registry) -> None:
     rows_data = []
     for syn in reg.synapses:
         reg.load_synapse_manifest(syn)
-        rows_data.append({
-            "name": syn.name,
-            "version": syn.version,
-            "type": syn.synapse_type,
-            "tags": ", ".join(syn.tags[:3]) if syn.tags else "",
-            "description": (syn.description[:60] + "\u2026") if len(syn.description) > 60 else syn.description,
-        })
+        rows_data.append(
+            {
+                "name": syn.name,
+                "version": syn.version,
+                "type": syn.synapse_type,
+                "tags": ", ".join(syn.tags[:3]) if syn.tags else "",
+                "description": (syn.description[:60] + "\u2026")
+                if len(syn.description) > 60
+                else syn.description,
+            }
+        )
 
     if is_json():
-        print_json(json_envelope(command="list", data={"type": "synapses", "count": len(rows_data), "items": rows_data}))
+        print_json(
+            json_envelope(
+                command="list",
+                data={"type": "synapses", "count": len(rows_data), "items": rows_data},
+            )
+        )
         return
 
     rows = [[r["name"], r["version"], r["type"], r["tags"], r["description"]] for r in rows_data]

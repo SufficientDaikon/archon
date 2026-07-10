@@ -10,7 +10,6 @@ All v2 behavior preserved — v3 is purely additive.
 
 from __future__ import annotations
 
-import json
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -24,9 +23,11 @@ ARCHON_ROOT = Path(__file__).parent.parent.parent.parent
 # E6-S1: Migration Runner
 # ---------------------------------------------------------------------------
 
+
 @dataclass
 class MigrationDiff:
     """A single diff item in the migration report."""
+
     category: str  # schema, module, config, test
     path: str
     change_type: str  # added, modified, removed, unchanged
@@ -48,6 +49,7 @@ class MigrationDiff:
 @dataclass
 class MigrationReport:
     """Full migration dry-run report."""
+
     diffs: list[MigrationDiff] = field(default_factory=list)
     blockers: list[str] = field(default_factory=list)
     warnings: list[str] = field(default_factory=list)
@@ -128,21 +130,25 @@ class MigrationRunner:
         for name in sorted(self.V2_SCHEMAS):
             path = schemas_dir / name
             if path.exists():
-                report.diffs.append(MigrationDiff(
-                    category="schema",
-                    path=f"schemas/{name}",
-                    change_type="unchanged",
-                    description=f"v2 schema preserved: {name}",
-                ))
+                report.diffs.append(
+                    MigrationDiff(
+                        category="schema",
+                        path=f"schemas/{name}",
+                        change_type="unchanged",
+                        description=f"v2 schema preserved: {name}",
+                    )
+                )
             else:
-                report.diffs.append(MigrationDiff(
-                    category="schema",
-                    path=f"schemas/{name}",
-                    change_type="removed",
-                    description=f"v2 schema MISSING: {name}",
-                    remediation=f"Restore {name} from v2 baseline",
-                    blocking=True,
-                ))
+                report.diffs.append(
+                    MigrationDiff(
+                        category="schema",
+                        path=f"schemas/{name}",
+                        change_type="removed",
+                        description=f"v2 schema MISSING: {name}",
+                        remediation=f"Restore {name} from v2 baseline",
+                        blocking=True,
+                    )
+                )
                 report.blockers.append(f"v2 schema removed: {name}")
 
     def _check_v3_schemas(self, root: Path, report: MigrationReport) -> None:
@@ -150,21 +156,25 @@ class MigrationRunner:
         for name in sorted(self.V3_NEW_SCHEMAS):
             path = schemas_dir / name
             if path.exists():
-                report.diffs.append(MigrationDiff(
-                    category="schema",
-                    path=f"schemas/{name}",
-                    change_type="added",
-                    description=f"v3 schema added: {name}",
-                ))
+                report.diffs.append(
+                    MigrationDiff(
+                        category="schema",
+                        path=f"schemas/{name}",
+                        change_type="added",
+                        description=f"v3 schema added: {name}",
+                    )
+                )
             else:
-                report.diffs.append(MigrationDiff(
-                    category="schema",
-                    path=f"schemas/{name}",
-                    change_type="removed",
-                    description=f"v3 schema NOT FOUND: {name}",
-                    remediation=f"Create {name} per E1 backlog",
-                    blocking=True,
-                ))
+                report.diffs.append(
+                    MigrationDiff(
+                        category="schema",
+                        path=f"schemas/{name}",
+                        change_type="removed",
+                        description=f"v3 schema NOT FOUND: {name}",
+                        remediation=f"Create {name} per E1 backlog",
+                        blocking=True,
+                    )
+                )
                 report.blockers.append(f"v3 schema missing: {name}")
 
     def _check_v3_modules(self, root: Path, report: MigrationReport) -> None:
@@ -172,21 +182,25 @@ class MigrationRunner:
         for name in sorted(self.V3_NEW_MODULES):
             path = core_dir / name
             if path.exists():
-                report.diffs.append(MigrationDiff(
-                    category="module",
-                    path=f"src/archon/core/{name}",
-                    change_type="added",
-                    description=f"v3 module added: {name}",
-                ))
+                report.diffs.append(
+                    MigrationDiff(
+                        category="module",
+                        path=f"src/archon/core/{name}",
+                        change_type="added",
+                        description=f"v3 module added: {name}",
+                    )
+                )
             else:
-                report.diffs.append(MigrationDiff(
-                    category="module",
-                    path=f"src/archon/core/{name}",
-                    change_type="removed",
-                    description=f"v3 module NOT FOUND: {name}",
-                    remediation=f"Implement {name} per backlog",
-                    blocking=True,
-                ))
+                report.diffs.append(
+                    MigrationDiff(
+                        category="module",
+                        path=f"src/archon/core/{name}",
+                        change_type="removed",
+                        description=f"v3 module NOT FOUND: {name}",
+                        remediation=f"Implement {name} per backlog",
+                        blocking=True,
+                    )
+                )
                 report.blockers.append(f"v3 module missing: {name}")
 
     def _check_v3_tests(self, root: Path, report: MigrationReport) -> None:
@@ -194,21 +208,25 @@ class MigrationRunner:
         for name in sorted(self.V3_TEST_FILES):
             path = tests_dir / name
             if path.exists():
-                report.diffs.append(MigrationDiff(
-                    category="test",
-                    path=f"tests/{name}",
-                    change_type="added",
-                    description=f"v3 test file added: {name}",
-                ))
+                report.diffs.append(
+                    MigrationDiff(
+                        category="test",
+                        path=f"tests/{name}",
+                        change_type="added",
+                        description=f"v3 test file added: {name}",
+                    )
+                )
             else:
-                report.diffs.append(MigrationDiff(
-                    category="test",
-                    path=f"tests/{name}",
-                    change_type="removed",
-                    description=f"v3 test file NOT FOUND: {name}",
-                    remediation=f"Create {name} with adequate coverage",
-                    blocking=True,
-                ))
+                report.diffs.append(
+                    MigrationDiff(
+                        category="test",
+                        path=f"tests/{name}",
+                        change_type="removed",
+                        description=f"v3 test file NOT FOUND: {name}",
+                        remediation=f"Create {name} with adequate coverage",
+                        blocking=True,
+                    )
+                )
                 report.blockers.append(f"v3 test missing: {name}")
 
     def _check_v2_modules_intact(self, root: Path, report: MigrationReport) -> None:
@@ -217,21 +235,25 @@ class MigrationRunner:
         for name in v2_modules:
             path = core_dir / name
             if path.exists():
-                report.diffs.append(MigrationDiff(
-                    category="module",
-                    path=f"src/archon/core/{name}",
-                    change_type="unchanged",
-                    description=f"v2 module preserved: {name}",
-                ))
+                report.diffs.append(
+                    MigrationDiff(
+                        category="module",
+                        path=f"src/archon/core/{name}",
+                        change_type="unchanged",
+                        description=f"v2 module preserved: {name}",
+                    )
+                )
             else:
-                report.diffs.append(MigrationDiff(
-                    category="module",
-                    path=f"src/archon/core/{name}",
-                    change_type="removed",
-                    description=f"v2 module MISSING: {name}",
-                    remediation=f"Restore {name} from v2 baseline",
-                    blocking=True,
-                ))
+                report.diffs.append(
+                    MigrationDiff(
+                        category="module",
+                        path=f"src/archon/core/{name}",
+                        change_type="removed",
+                        description=f"v2 module MISSING: {name}",
+                        remediation=f"Restore {name} from v2 baseline",
+                        blocking=True,
+                    )
+                )
                 report.blockers.append(f"v2 module removed: {name}")
 
 
@@ -239,9 +261,11 @@ class MigrationRunner:
 # E6-S2: Release Gate Validator
 # ---------------------------------------------------------------------------
 
+
 @dataclass
 class GateResult:
     """Result of a single release gate check."""
+
     gate_name: str
     gate_type: str  # hard or soft
     passed: bool
@@ -261,6 +285,7 @@ class GateResult:
 @dataclass
 class ReleaseScorecard:
     """Full release gate scorecard."""
+
     gates: list[GateResult] = field(default_factory=list)
     weighted_score: float = 0.0
     go: bool = False
@@ -322,16 +347,19 @@ class ReleaseGateValidator:
 
         schemas_dir = root / "schemas"
         v3_schemas = [
-            "session.schema.yaml", "tool-invocation.schema.yaml",
-            "permission.schema.yaml", "hook-event.schema.yaml",
-            "telemetry-envelope.schema.yaml", "context-handoff.schema.yaml",
+            "session.schema.yaml",
+            "tool-invocation.schema.yaml",
+            "permission.schema.yaml",
+            "hook-event.schema.yaml",
+            "telemetry-envelope.schema.yaml",
+            "context-handoff.schema.yaml",
         ]
         for name in v3_schemas:
             path = schemas_dir / name
             if path.exists():
                 gate.evidence.append(f"Schema present: {name}")
                 try:
-                    with open(path, "r", encoding="utf-8") as f:
+                    with open(path, encoding="utf-8") as f:
                         data = yaml.safe_load(f)
                     if data.get("version", "").startswith("3"):
                         gate.evidence.append(f"Schema version 3.x: {name}")
@@ -411,7 +439,7 @@ class ReleaseGateValidator:
         if handoff_schema.exists():
             gate.evidence.append("Context handoff schema present")
             try:
-                with open(handoff_schema, "r", encoding="utf-8") as f:
+                with open(handoff_schema, encoding="utf-8") as f:
                     data = yaml.safe_load(f)
                 required = data.get("required", [])
                 for must_have in ["pinned_constraints", "evidence_links"]:

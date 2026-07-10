@@ -1,201 +1,169 @@
 # Archon — CLAUDE.md
 
-Project-level context for Claude Code. Read this at the start of every session involving Archon code. Encodes verified facts, conventions, and hard-won lessons to prevent assumptions that cost work.
+Project-level context for Claude Code. Everything below is verified against the
+code as of v1.1.0 (2026-07). If a claim here contradicts the code, the code
+wins — then fix this file.
 
 ---
 
 ## What Archon Is
 
-Archon is a **skills framework and cognitive harness for Claude Code**. It is NOT a guardrail system or a strict execution rail. The design philosophy:
+A **cognitive harness for Claude Code**: a runtime hook layer that injects
+compact, tier-scaled discipline into every prompt, plus a skills/pipeline
+engine behind an `archon` CLI.
 
-> A harness, not a guardrail. Trust the AI to be smart enough. Help it manage knowledge, context, tools, and skills — don't dictate how to think.
+> A harness, not a guardrail. Trust the model to be smart; manage its
+> knowledge, context, and verification burden — don't dictate how to think.
 
-Two surfaces:
-1. **Runtime layer** (`hooks/claude/`) — Python scripts fired by Claude Code's hook system. Inject compact XML context into the prompt.
-2. **Skill/Agent layer** (`skills/`, `agents/`, `synapses/`) — YAML-manifest components installed into `~/.claude/skills/`.
+Two enforcement surfaces share the same 5 synapse names but are different code:
+
+1. **Hook synapses** (`hooks/claude/shared/classifier.py`) — *generative*:
+   compact instructions injected into the prompt via UserPromptSubmit.
+   The full `synapses/*/SYNAPSE.md` documents are the source material; the
+   injected text is the tier-banded distillation in `SYNAPSE_INSTRUCTIONS`.
+2. **Pipeline synapses** (`src/archon/synapses/*.py`) — *post-hoc validators*:
+   `validate(context) -> dict` checks fired by the pipeline engine between
+   steps via `synapse_engine_v2.build_default_engine()` (9 registered).
 
 ---
 
-## Directory Map (source of truth)
+## Directory Map
 
 ```
-omniskill/
-├── src/archon/           # Core Python package (CLI + engine)
-│   ├── cli.py            # Typer CLI entrypoint (python -m archon or archon)
-│   ├── commands/         # One file per CLI command (install, validate, doctor, etc.)
+archon/
+├── src/archon/           # Python package (archon CLI + engine)
+│   ├── cli.py            # Typer entrypoint
+│   ├── commands/         # one module per CLI command
 │   ├── core/
-│   │   ├── registry.py           # Parses archon.yaml → dataclasses (single source of truth)
-│   │   ├── pipeline_engine.py    # Pipeline state machine executor
-│   │   ├── pipeline_state.py     # Pipeline state persistence
-│   │   ├── policy_engine.py      # Policy evaluation
-│   │   ├── synapse_engine_v2.py  # Production synapse engine (v2 IS canon, v1 is legacy)
-│   │   ├── synapse_router.py     # Auto-selects synapse config by tier/file_ext
-│   │   ├── synapse_hardener.py   # CircuitBreaker + RetryPolicy + GracefulDegrader
-│   │   ├── skill_mcp_schema.py   # skill → MCP tool descriptor conversion
-│   │   ├── agent_cards.py        # A2A card generation
-│   │   ├── installer.py          # Installs skills → ~/.claude/skills/
-│   │   └── ...
-│   └── synapses/         # Python implementations of each synapse check
-├── sdk/archon.py         # Public SDK — ArchonSDK class, _validate_* methods
-├── hooks/claude/         # Claude Code hook scripts (runtime injection layer)
-│   ├── session_boot.py   # SessionStart: project/git state snapshot
-│   ├── prompt_router.py  # UserPromptSubmit: classify + inject route XML
-│   ├── guard_bash.py     # PreToolUse:Bash — dangerous command guard
-│   ├── guard_write.py    # PreToolUse:Write|Edit|NotebookEdit — secret scanner
-│   ├── quality_bash.py   # PostToolUse:Bash — exit code tracking into state
-│   ├── quality_write.py  # PostToolUse:Write|Edit|NotebookEdit — file tracking
-│   ├── completion_gate.py# Stop: blocks via sys.exit(2) if tests_passed=False
-│   ├── agent_context.py  # SubagentStart: role-specific context slice
-│   └── shared/
-│       ├── classifier.py # Complexity tier + synapse activation (pure regex, no LLM)
-│       ├── scanner.py    # Secret patterns + test/build command pattern lists
-│       └── state.py      # Session state JSON load/save (~/.claude/archon-state.json)
-├── skills/               # 99 skill directories (each: SKILL.md + manifest.yaml)
-├── agents/               # 14 agent directories (each: manifest.yaml + agent.md)
-├── synapses/             # 5 synapse dirs (each: SYNAPSE.md + manifest.yaml + resources/)
-├── bundles/              # 16 bundle manifest dirs
-├── pipelines/            # 9 pipeline YAML files
-├── schemas/              # JSON/YAML schemas for all manifest types
-├── tests/                # pytest suite — 583 passing as of 2026-04-25
-├── archon.yaml           # Root manifest (DO NOT edit manually — use CLI)
-└── pyproject.toml        # Python >=3.9, hatchling build, deps: typer pyyaml rich platformdirs
+│   │   ├── registry.py            # archon.yaml -> dataclasses (NOT dicts)
+│   │   ├── pipeline_engine.py     # step executor; on-failure policy inlined
+│   │   ├── synapse_engine_v2.py   # THE synapse engine (v1 deleted in 1.1.0)
+│   │   ├── synapse_router.py      # trigger x tier -> synapse ID routing
+│   │   ├── skill_mcp_schema.py    # skill -> MCP tool descriptor
+│   │   ├── agent_cards.py         # A2A card generation
+│   │   └── installer.py           # installs skills -> ~/.claude/skills/
+│   └── synapses/         # 9 dict-returning validate() modules (single impl)
+├── hooks/claude/         # Claude Code hook scripts (the product)
+│   └── shared/           # classifier.py, scanner.py, state.py
+├── skills/               # 97 skills (SKILL.md frontmatter + manifest.yaml)
+├── agents/               # 14 agents ├── synapses/  # 5 synapse docs
+├── bundles/              # 14 kits   ├── pipelines/ # 9 pipeline YAMLs
+├── schemas/              # manifest schemas
+├── tests/                # pytest — 603 passing as of 2026-07-10
+├── archon.yaml           # root manifest — validate enforces sync with skills/
+└── scripts/              # validate.py (CI), normalize_skills.py (one-off)
 ```
 
----
-
-## Critical Data Types — Do Not Guess
-
-### AgentCard (src/archon/core/registry.py)
-
-AgentCard is a **dataclass**, not a dict. The attribute is `skills_provided` (snake_case).
-
-WRONG (TypeError crash): `agent.card["skills-provided"]`
-RIGHT: `agent.card.skills_provided`
-
-All registry types (Skill, Agent, Bundle, Pipeline) are dataclasses — not dicts. Never subscript them.
-
-### _validate_* return contract (sdk/archon.py)
-
-Every _validate_* method MUST return exactly:
-
-```python
-{"valid": bool, "errors": list[str], "warnings": list[str]}
-```
-
-Missing "warnings" key breaks callers. This has been a silent regression before. Enforce it on any new validate method.
-
-### _validate_bundle specifics
-
-- Input path may be a directory — always do `p / "bundle.yaml"` if `p.is_dir()`
-- Invalid skill refs → warnings (not errors)
-- Missing file → valid=False
-- Non-mapping YAML → valid=False
+Unaudited peripherals (present, not covered by the 1.1.0 modernization):
+`vscode-extension/`, `webapp/`, `file-ops-rs/`, `virtuoso/`, `servers/`,
+`catalog/`, `batch-runs/`.
 
 ---
 
-## Hook Injection Budget (measured, not guessed)
+## The Hook Layer (hooks/claude/ + .claude/settings.json)
 
-| Hook | Trigger | Injected |
-|------|---------|----------|
-| session_boot.py | Session start (once) | ~120 tokens of project/git XML |
-| prompt_router.py | Every prompt | 20 tokens (TRIVIAL) → 400 tokens (EXPERT) |
-| guard_bash.py | Pre-Bash | 0 tokens — blocks or allows, no injection |
-| guard_write.py | Pre-Write/Edit/NotebookEdit | 0 tokens — blocks on secrets |
-| quality_bash.py | Post-Bash | Updates state.json; ~50 tokens on failure only |
-| quality_write.py | Post-Write/Edit/NotebookEdit | ~30 tokens file tracking |
-| completion_gate.py | Stop | ~50 tokens on success; sys.exit(2) on test failure |
-| agent_context.py | Per subagent | ~120 tokens role-scoped slice |
+| Event | Matcher | Script | Does |
+|---|---|---|---|
+| SessionStart | — | session_boot.py | project/git snapshot; `source`-aware: startup/clear reset the session, resume/compact PRESERVE it and inject `<archon-resume>` |
+| UserPromptSubmit | — | prompt_router.py | tier classify + `<archon-route>` + tier-banded synapse instructions |
+| PreToolUse | Bash | guard_bash.py | deny dangerous commands |
+| PreToolUse | Write\|Edit\|MultiEdit\|NotebookEdit | guard_write.py | deny secrets in written content |
+| PostToolUse | Write\|Edit\|MultiEdit\|NotebookEdit | quality_write.py | track modified files |
+| PostToolUse | Bash | quality_bash.py | record tests/build pass/fail |
+| PostToolUse | TodoWrite | todo_track.py | todo counts + pending titles |
+| Stop | — | completion_gate.py | exit 2 if tests/build confirmed failed |
+| SubagentStart | — | agent_context.py | role-scoped context slice |
+| SubagentStop | — | agent_context.py | run telemetry |
+| SessionEnd | — | session_end.py | archive session (covers /clear + exit) |
+| PreCompact | — | pre_compact.py | flush state before compaction |
 
-Max total per EXPERT prompt: ~520 tokens. This is intentional.
+State lives at `~/.archon/archon-state.json` (`ARCHON_HOME` overrides; tests
+use this for isolation). All hooks are `python3 "$CLAUDE_PROJECT_DIR/..."`.
 
-Skills and SYNAPSE.md files are NOT passively injected. They load only on explicit Skill tool invocation. The _synapses/ prefix in ~/.claude/skills/ prevents auto-listing by Claude Code.
+Hard-won rules — do not regress:
+
+- **quality_bash** trusts only `exit_code`/`exitCode`, then explicit runner
+  summaries (`N failed`, `test result: ok/FAILED`, go `ok/FAIL`). A bare
+  "error" in stdout must NEVER mark failure — passing runs print "0 errors".
+  Unknown stays `None`, and `None` never blocks the gate.
+- **completion_gate** blocks only on `tests_passed is False` or
+  `build_passed is False`. It respects `stop_hook_active` and caps at 2
+  blocks/session (`gate_blocks` in state) to avoid infinite stop loops.
+  Stop hooks cannot inject context — the pass path prints `{}` and stays silent.
+- **session_boot** must never reset the session on `source in (resume, compact)`
+  — that wipes `files_modified`/`tests_passed` and silently disarms the gate.
+- **SubagentStart is not a vanilla Claude Code CLI event.** It fires in some
+  harnesses (e.g. remote/web); elsewhere the registration is inert. The
+  payload field is `subagent_type` (with `agent_type` fallback).
+- Classifier tiers come from **noise-stripped** word counts (`strip_noise`
+  removes fenced code, tracebacks, timestamped logs, quotes). Questions
+  de-escalate one tier; ≥3 file refs or numbered steps escalate one.
+- Injection budget: TRIVIAL/SIMPLE ≈ 0 (security keyword only), MODERATE
+  ≈ 130 tokens, COMPLEX ≈ 330, EXPERT ≈ 450. Keep it under 600.
+- scanner.py's secret allowlist is deliberately narrow (fixtures/test files);
+  the force-push/reset-hard patterns are branch-name safe (`fix-main-page`
+  must not match) — extend with tests in tests/test_claude_hooks.py.
 
 ---
 
-## Synapse Activation Matrix (classifier.py)
+## Critical Data Types
 
-| Synapse | Activates at |
-|---------|-------------|
-| metacognition | MODERATE, COMPLEX, EXPERT |
-| anti-rationalization | MODERATE, COMPLEX, EXPERT |
-| sequential-thinking | COMPLEX, EXPERT |
-| security-awareness | Any tier when security/auth/vuln keywords match |
-| pattern-recognition | EXPERT only |
-
-IMPORTANT: The SYNAPSE_INSTRUCTIONS dict in classifier.py contains the actual compact text injected (~35 tokens each). The full SYNAPSE.md files are documentation only — they are NOT what gets injected into the prompt.
-
----
-
-## Pipeline Engine Rules (pipeline_engine.py)
-
-- state_vars from PipelineDefinition are seeded into state.accumulated as defaults at execute() start. Existing keys are never overwritten.
-- available-when is evaluated BEFORE every step in both execute() AND resume(). Unmet conditions → step recorded as SKIPPED.
-- resume() fires pre-step hooks, available-when, and synapse checks — identical guardrail chain as execute(). It does not bypass anything.
-- _fire_synapses() uses asyncio.run() in a daemon thread. Never use asyncio.get_event_loop() — deprecated in Python 3.10+, causes DeprecationWarning.
-
----
+- All registry types (Skill, Agent, AgentCard, Bundle, Pipeline, Synapse) in
+  `registry.py` are **dataclasses, not dicts**: `agent.card.skills_provided`,
+  never `agent.card["skills-provided"]`.
+- Pipeline synapse validators return plain dicts
+  (`{"action": "allow"|"warn"|"halt", "message": str, ...}`);
+  `synapse_engine_v2._adapt_validator` lifts them into `SynapseDecision`.
+  Absent context keys must not be judged (see metacognition's `confidence`).
+- Step `on-failure` policy (halt/skip/retry/loop/escalate + 3-fix escape
+  hatch) is implemented in `PipelineExecutor._handle_failure` — there is no
+  external hook system for pipelines anymore.
 
 ## MCP Schema Rules (skill_mcp_schema.py)
 
-- Archon skills define triggers.keywords, not input-schema. MCP synthesis generates {"prompt": string} inputSchema from keywords.
-- output-schema goes in annotations.outputSchema. NOT in inputSchema. (The inversion was a bug fixed in Phase 9.)
-- Explicit input-schema in a manifest is honored with full JSON Schema passthrough.
+- Skills define `triggers.keywords`; MCP synthesis generates a
+  `{"prompt": string}` inputSchema from them.
+- `output-schema` goes in `annotations.outputSchema`, NOT inputSchema.
+- Explicit `input-schema` in a manifest is passed through as-is.
 
 ---
 
-## Synapse Engine Version
+## Content Layer Rules
 
-synapse_engine_v2.py is the production engine. synapse_engine.py (v1) exists for legacy/compatibility but is not wired to the active pipeline. Add features only to v2. The OWASP pattern list in v2 covers A1-A10 (13 patterns). CRITICAL tier → HALT, HIGH/MEDIUM tier → WARN.
-
----
-
-## Security Scanner (scanner.py)
-
-The secret allowlist is intentionally narrow — only fixture/mock/testdata directories are exempt. Test source files (.py, .ts) are NOT exempt. Real secrets in test files should always be flagged.
-
-The hook matcher in .claude/settings.json is "Write|Edit|NotebookEdit" — the NotebookEdit is required. Do not simplify back to "Write|Edit".
+- SKILL.md must start with YAML frontmatter (`name`, `description`).
+  **manifest.yaml owns `version`** — never add version to SKILL.md frontmatter.
+- `archon.yaml` and `skills/` must agree exactly: `scripts/validate.py --all`
+  fails on unregistered dirs, missing paths, placeholder descriptions
+  (`Skill: <name>`), or `allowed-tools` leaked into a description string.
+- `scripts/normalize_skills.py` is the idempotent format migrator; run it
+  after bulk-adding skills.
 
 ---
 
-## Test Suite
-
-Run: python3 -m pytest tests/ -q
-Count: 583 passing as of 2026-04-25
-No tests exist for completion_gate.py sys.exit(2) path — be careful there.
-Tests map 1:1 to components: test_pipeline_engine.py, test_synapse_*.py, test_hooks.py, etc.
-
----
-
-## CLI Usage
+## Commands
 
 ```
-archon install              # install all components to ~/.claude/skills/
-archon validate             # validate all skills/agents/bundles
-archon doctor               # health check (missing files, schema violations)
-archon list skills          # list registered skills
-archon list agents          # list registered agents
-archon pipeline run <name>  # run a pipeline by name
+pip install -e ".[dev]"          # setup
+python3 -m pytest tests/ -q      # 603 passing (2026-07-10)
+python3 scripts/validate.py --all
+ruff check . && ruff format --check .
+archon install | validate | doctor | list skills | pipeline run <name>
 ```
+
+CI (.github/workflows/ci.yml) runs on `main`: ruff + validate + pytest.
 
 ---
 
 ## Known Gotchas
 
-1. AgentCard is not subscriptable. agent.card["key"] crashes. Use agent.card.key.
-2. available-when was a no-op before Phase 9. It is now wired. Old pipeline YAMLs that relied on it doing nothing will now skip steps.
-3. quality_bash.py used to treat the word "error" in stdout as a test failure (false positive). Fixed 2026-04-25: only exit_code/exitCode field is trusted.
-4. synapse_engine_v2.py is canon. synapse_engine.py (v1) still exists. Do not confuse them.
-5. asyncio.get_event_loop() is deprecated Python 3.10+. Use asyncio.run() in a daemon thread.
-6. validate() full scan covers skills + bundles + agents. Skills-only validation hides bundle/agent bugs.
-7. Skills in archon.yaml are not automatically installed. Run archon install to sync to ~/.claude/skills/.
-8. Platform install target is defined in archon.yaml platforms[]. Never hardcode ~/.claude/skills/ in Python code.
-
----
-
-## Files That Are Sensitive — Change With Care
-
-- hooks/claude/shared/scanner.py — SECRET_PATTERNS and the narrow allowlist are calibrated
-- src/archon/core/synapse_engine_v2.py — OWASP tier mapping (CRITICAL→HALT, HIGH/MEDIUM→WARN)
-- src/archon/core/pipeline_engine.py — resume() guardrail parity with execute() was hard-won; changes to execute() flow must mirror in resume()
-- .claude/settings.json — hook registrations; wrong matchers cause silent failures
-- hooks/claude/completion_gate.py — sys.exit(2) is intentional; only fires on confirmed test failure (tests_passed is False), not on "tests never ran"
+1. Registry dataclasses are not subscriptable.
+2. `asyncio.get_event_loop()` is banned — use `asyncio.get_running_loop()` /
+   `asyncio.run()` (see `pipeline_engine._fire_synapses`).
+3. Skills in archon.yaml are not auto-installed — `archon install` syncs to
+   `~/.claude/skills/` (target defined in archon.yaml `platforms[]`, never
+   hardcode the path in Python).
+4. The `security` keyword activates the security-awareness *synapse*; it is
+   not a skill — SKILL_MATCHERS entries must name real `skills/` dirs
+   (tests enforce this).
+5. tests/test_claude_hooks.py runs each hook as a subprocess with
+   `ARCHON_HOME=tmpdir` — new hooks need contract tests there.

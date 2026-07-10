@@ -1,10 +1,23 @@
 name: CI
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install ruff
+        run: pip install ruff
+      - name: Lint
+        run: ruff check .
+      - name: Format check
+        run: ruff format --check .
   validate:
     runs-on: ubuntu-latest
     steps:
@@ -15,6 +28,6 @@ jobs:
       - name: Install dependencies
         run: pip install -e ".[dev]"
       - name: Validate manifests
-        run: python scripts/validate.py
+        run: python scripts/validate.py --all
       - name: Run tests
         run: pytest tests/ --tb=short -q

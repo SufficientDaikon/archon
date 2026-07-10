@@ -8,7 +8,6 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any
 
-
 VALID_MODES = frozenset({"generate", "apply", "audit", "tokens", "adapt"})
 
 
@@ -21,7 +20,7 @@ class DesignSpec:
     tokens: dict[str, Any] = field(default_factory=dict)
     constraints: list[str] = field(default_factory=list)
     target: str = ""  # CSS selector, file path, or component name to apply to
-    theme: str = ""   # theme variant (light | dark | custom)
+    theme: str = ""  # theme variant (light | dark | custom)
 
     def validate(self) -> list[str]:
         """Return a list of validation error strings. Empty = valid."""

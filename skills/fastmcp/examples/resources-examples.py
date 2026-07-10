@@ -4,10 +4,11 @@ FastMCP Resources Examples
 Examples of static resources, dynamic resources, and resource templates.
 """
 
-from fastmcp import FastMCP
-from datetime import datetime
-from typing import Dict, List, Any
 import os
+from datetime import datetime
+from typing import List
+
+from fastmcp import FastMCP
 
 mcp = FastMCP("Resources Examples")
 

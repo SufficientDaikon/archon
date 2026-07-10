@@ -1,53 +1,70 @@
 """SynapseRouter - Auto-Selection Engine for Archon Synapses."""
+
 from __future__ import annotations
-import hashlib, time
-from dataclasses import dataclass, field
+
+import hashlib
+import time
+from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, List, Optional
 
 COMPLEXITY_ORDER = ["TRIVIAL", "SIMPLE", "MODERATE", "COMPLEX", "EXPERT"]
 
+
 def _tier_rank(tier):
-    try: return COMPLEXITY_ORDER.index(tier.upper())
-    except ValueError: return 1
+    try:
+        return COMPLEXITY_ORDER.index(tier.upper())
+    except ValueError:
+        return 1
+
 
 ROUTING_TABLE = {
     "pre-execution": {
-        "TRIVIAL":  [],
-        "SIMPLE":   ["anti-rationalization"],
+        "TRIVIAL": [],
+        "SIMPLE": ["anti-rationalization"],
         "MODERATE": ["anti-rationalization", "metacognition", "trust-verification"],
-        "COMPLEX":  ["anti-rationalization", "metacognition", "trust-verification", "sequential-thinking"],
-        "EXPERT":   ["anti-rationalization", "metacognition", "trust-verification", "sequential-thinking", "pattern-recognition"],
+        "COMPLEX": [
+            "anti-rationalization",
+            "metacognition",
+            "trust-verification",
+            "sequential-thinking",
+        ],
+        "EXPERT": [
+            "anti-rationalization",
+            "metacognition",
+            "trust-verification",
+            "sequential-thinking",
+            "pattern-recognition",
+        ],
     },
     "post-build": {
-        "TRIVIAL":  [],
-        "SIMPLE":   ["security-awareness"],
+        "TRIVIAL": [],
+        "SIMPLE": ["security-awareness"],
         "MODERATE": ["security-awareness", "code-quality"],
-        "COMPLEX":  ["security-awareness", "code-quality", "completeness"],
-        "EXPERT":   ["security-awareness", "code-quality", "completeness", "consistency"],
+        "COMPLEX": ["security-awareness", "code-quality", "completeness"],
+        "EXPERT": ["security-awareness", "code-quality", "completeness", "consistency"],
     },
     "post-handoff": {
-        "TRIVIAL":  [],
-        "SIMPLE":   ["completeness"],
+        "TRIVIAL": [],
+        "SIMPLE": ["completeness"],
         "MODERATE": ["completeness", "consistency"],
-        "COMPLEX":  ["completeness", "consistency", "trust-verification"],
-        "EXPERT":   ["completeness", "consistency", "trust-verification", "pattern-recognition"],
+        "COMPLEX": ["completeness", "consistency", "trust-verification"],
+        "EXPERT": ["completeness", "consistency", "trust-verification", "pattern-recognition"],
     },
     "post-cycle": {
-        "TRIVIAL":  [],
-        "SIMPLE":   [],
+        "TRIVIAL": [],
+        "SIMPLE": [],
         "MODERATE": ["pattern-recognition"],
-        "COMPLEX":  ["pattern-recognition", "metacognition"],
-        "EXPERT":   ["pattern-recognition", "metacognition", "sequential-thinking"],
+        "COMPLEX": ["pattern-recognition", "metacognition"],
+        "EXPERT": ["pattern-recognition", "metacognition", "sequential-thinking"],
     },
 }
 
 FILE_TYPE_SYNAPSES = {
-    ".py":   ["security-awareness", "code-quality"],
-    ".js":   ["security-awareness"],
-    ".ts":   ["security-awareness", "code-quality"],
-    ".jsx":  ["security-awareness"],
-    ".tsx":  ["security-awareness"],
+    ".py": ["security-awareness", "code-quality"],
+    ".js": ["security-awareness"],
+    ".ts": ["security-awareness", "code-quality"],
+    ".jsx": ["security-awareness"],
+    ".tsx": ["security-awareness"],
 }
 
 
@@ -74,7 +91,8 @@ class DecisionCache:
         if entry and (time.monotonic() - entry.timestamp) < self._ttl:
             entry.hit_count += 1
             return entry.synapses
-        if entry: del self._cache[key]
+        if entry:
+            del self._cache[key]
         return None
 
     def put(self, trigger, complexity, file_ext, synapses):
@@ -130,7 +148,7 @@ class SynapseRouter:
         tier_rank = _tier_rank(tier)
         trigger_routes = ROUTING_TABLE.get(trigger, {})
         selected = []
-        for t in COMPLEXITY_ORDER[:tier_rank + 1]:
+        for t in COMPLEXITY_ORDER[: tier_rank + 1]:
             for s in trigger_routes.get(t, []):
                 if s not in selected:
                     selected.append(s)
@@ -147,6 +165,10 @@ class SynapseRouter:
         return {
             "cache": self._cache.stats(),
             "violation_rates": self._adaptive.all_rates(),
-            "noisy_synapses": [s for s in self._adaptive._firings if self._adaptive.should_relax(s)],
-            "silent_synapses": [s for s in self._adaptive._firings if self._adaptive.should_tighten(s)],
+            "noisy_synapses": [
+                s for s in self._adaptive._firings if self._adaptive.should_relax(s)
+            ],
+            "silent_synapses": [
+                s for s in self._adaptive._firings if self._adaptive.should_tighten(s)
+            ],
         }

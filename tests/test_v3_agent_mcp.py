@@ -28,6 +28,7 @@ ARCHON_ROOT = Path(__file__).parent.parent
 # E4-S1: Agent capability profiles
 # ---------------------------------------------------------------------------
 
+
 class TestAgentCapabilityProfile:
     """Agent profiles must enforce mode constraints."""
 
@@ -74,6 +75,7 @@ class TestAgentCapabilityProfile:
 # E4-S2: Skill manifest checks and precedence
 # ---------------------------------------------------------------------------
 
+
 class TestSkillManifestChecker:
     """Manifest checker must validate and compute precedence."""
 
@@ -118,8 +120,8 @@ class TestSkillManifestChecker:
             SkillManifestCheck("bb-skill", True, [], "", 100),
         ]
         resolved = checker.resolve_conflicts(checks)
-        assert resolved[0].skill_name == "bb-skill"   # highest precedence
-        assert resolved[1].skill_name == "aa-skill"    # same tier, alphabetical
+        assert resolved[0].skill_name == "bb-skill"  # highest precedence
+        assert resolved[1].skill_name == "aa-skill"  # same tier, alphabetical
         assert resolved[2].skill_name == "mm-skill"
         assert resolved[3].skill_name == "zz-skill"
 
@@ -136,6 +138,7 @@ class TestSkillManifestChecker:
 # ---------------------------------------------------------------------------
 # E4-S3: MCP Connector Manager
 # ---------------------------------------------------------------------------
+
 
 class TestMCPConnectorManager:
     """MCP routing must be deterministic and respect trust tiers."""

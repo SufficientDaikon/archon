@@ -2,24 +2,30 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 import typer
 
 from archon.core.config import (
-    load_config, get_config_value, set_config_value,
-    VALID_KEY_NAMES, is_initialized,
+    VALID_KEY_NAMES,
+    get_config_value,
+    is_initialized,
+    load_config,
+    set_config_value,
 )
 from archon.utils.output import (
-    console, print_error, print_success, print_info,
-    is_json, json_envelope, print_json, make_table,
+    console,
+    is_json,
+    json_envelope,
+    make_table,
+    print_error,
+    print_json,
+    print_success,
 )
 from archon.utils.paths import get_config_path
 
 
 def config_cmd(
-    key: Optional[str] = typer.Argument(None, help="Configuration key to get or set."),
-    value: Optional[str] = typer.Argument(None, help="Value to set (omit to get current value)."),
+    key: str | None = typer.Argument(None, help="Configuration key to get or set."),
+    value: str | None = typer.Argument(None, help="Value to set (omit to get current value)."),
 ) -> None:
     """Get or set Archon configuration values."""
 
@@ -59,7 +65,7 @@ def config_cmd(
             val = get_config_value(key)
         except KeyError:
             print_error(f"Unknown key: {key}")
-            raise typer.Exit(1)
+            raise typer.Exit(1) from None
 
         if is_json():
             print_json(json_envelope(command="config", data={key: val}))
@@ -74,7 +80,7 @@ def config_cmd(
         path = set_config_value(key, value)
     except KeyError:
         print_error(f"Unknown key: {key}")
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     if is_json():
         print_json(json_envelope(command="config", data={key: value, "path": str(path)}))

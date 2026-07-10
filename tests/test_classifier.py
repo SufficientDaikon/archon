@@ -80,9 +80,7 @@ class TestClassifyComplexity:
         base = "update the config in these files"
         with_files = f"{base} app.py settings.py urls.py"
         tiers = ["TRIVIAL", "SIMPLE", "MODERATE", "COMPLEX", "EXPERT"]
-        assert tiers.index(classify_complexity(with_files)) > tiers.index(
-            classify_complexity(base)
-        )
+        assert tiers.index(classify_complexity(with_files)) > tiers.index(classify_complexity(base))
 
     def test_numbered_steps_escalate(self):
         prompt = "do this:\n1. add the model\n2. add the view\n3. add the tests"

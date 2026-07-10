@@ -62,14 +62,14 @@ def main() -> None:
 # runs legitimately print "0 errors" — so only explicit runner summaries count.
 _RUNNER_SUMMARIES: list[tuple[re.Pattern, str]] = [
     # pytest / jest / vitest / mocha: "3 failed", "12 passed"
-    (re.compile(r'\b(\d+)\s+failed\b', re.I), "failed_count"),
-    (re.compile(r'\b\d+\s+(?:passed|passing)\b', re.I), "passed"),
+    (re.compile(r"\b(\d+)\s+failed\b", re.I), "failed_count"),
+    (re.compile(r"\b\d+\s+(?:passed|passing)\b", re.I), "passed"),
     # cargo test: "test result: ok." / "test result: FAILED."
-    (re.compile(r'\btest result:\s*ok\b', re.I), "passed"),
-    (re.compile(r'\btest result:\s*FAILED\b', re.I), "failed"),
+    (re.compile(r"\btest result:\s*ok\b", re.I), "passed"),
+    (re.compile(r"\btest result:\s*FAILED\b", re.I), "failed"),
     # go test: leading "ok  <pkg>" / "FAIL<tab or space>"
-    (re.compile(r'^ok\s+\S+', re.M), "passed"),
-    (re.compile(r'^FAIL\s+\S+', re.M), "failed"),
+    (re.compile(r"^ok\s+\S+", re.M), "passed"),
+    (re.compile(r"^FAIL\s+\S+", re.M), "failed"),
 ]
 
 
@@ -111,7 +111,8 @@ def _extract_exit_code(tool_response) -> int | None:
                     continue
 
         text_parts = [
-            part for part in (tool_response.get("stdout"), tool_response.get("stderr"))
+            part
+            for part in (tool_response.get("stdout"), tool_response.get("stderr"))
             if isinstance(part, str)
         ]
         if text_parts:

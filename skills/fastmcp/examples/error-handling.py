@@ -4,12 +4,13 @@ FastMCP Error Handling Template
 Comprehensive error handling patterns with structured responses and retry logic.
 """
 
-from fastmcp import FastMCP
 import asyncio
-import httpx
-from enum import Enum
-from typing import Dict, Any, Optional
 from datetime import datetime
+from enum import Enum
+from typing import Any, Dict, Optional
+
+import httpx
+from fastmcp import FastMCP
 
 mcp = FastMCP("Error Handling Examples")
 

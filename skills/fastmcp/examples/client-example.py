@@ -5,8 +5,9 @@ Testing MCP servers with the FastMCP Client.
 """
 
 import asyncio
-from fastmcp import Client
 from typing import Optional
+
+from fastmcp import Client
 
 
 async def test_basic_server():

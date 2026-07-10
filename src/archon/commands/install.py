@@ -2,28 +2,36 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 import typer
 
-from archon.core.registry import Registry
 from archon.core.installer import (
     install_skill_to_platform,
     resolve_target_platforms,
 )
-from archon.core.platform import PlatformInfo
+from archon.core.registry import Registry
 from archon.utils.output import (
-    console, print_success, print_error, print_warning, print_info, print_verbose,
-    is_json, json_envelope, print_json, get_progress,
+    console,
+    get_progress,
+    is_json,
+    json_envelope,
+    print_error,
+    print_info,
+    print_json,
+    print_success,
+    print_warning,
 )
 
 
 def install_cmd(
-    skill: Optional[str] = typer.Option(None, "--skill", "-s", help="Install a specific skill."),
-    bundle: Optional[str] = typer.Option(None, "--bundle", "-b", help="Install a bundle of skills."),
-    synapse: Optional[str] = typer.Option(None, "--synapse", help="Install a specific synapse."),
-    all_flag: bool = typer.Option(False, "--all", "-a", help="Install all skills, agents, and synapses."),
-    platform: Optional[str] = typer.Option(None, "--platform", "-p", help="Target a specific platform."),
+    skill: str | None = typer.Option(None, "--skill", "-s", help="Install a specific skill."),
+    bundle: str | None = typer.Option(None, "--bundle", "-b", help="Install a bundle of skills."),
+    synapse: str | None = typer.Option(None, "--synapse", help="Install a specific synapse."),
+    all_flag: bool = typer.Option(
+        False, "--all", "-a", help="Install all skills, agents, and synapses."
+    ),
+    platform: str | None = typer.Option(
+        None, "--platform", "-p", help="Target a specific platform."
+    ),
     force: bool = typer.Option(False, "--force", "-f", help="Force reinstall even if up to date."),
 ) -> None:
     """Install skills, bundles, synapses, or agents to detected platform(s)."""
@@ -38,11 +46,13 @@ def install_cmd(
         reg.load()
     except FileNotFoundError as exc:
         print_error(str(exc))
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     targets = resolve_target_platforms(reg, platform)
     if not targets:
-        print_error("No target platforms found. Run [bold]archon init[/bold] first or use --platform.")
+        print_error(
+            "No target platforms found. Run [bold]archon init[/bold] first or use --platform."
+        )
         raise typer.Exit(1)
 
     results: list[dict] = []
@@ -57,11 +67,20 @@ def install_cmd(
                 msg += f" Did you mean: {', '.join(similar)}?"
             print_error(msg)
             if is_json():
-                print_json(json_envelope(
-                    command="install",
-                    status="error",
-                    errors=[{"code": "NOT_FOUND", "message": msg, "detail": skill, "remediation": "Run archon list skills"}],
-                ))
+                print_json(
+                    json_envelope(
+                        command="install",
+                        status="error",
+                        errors=[
+                            {
+                                "code": "NOT_FOUND",
+                                "message": msg,
+                                "detail": skill,
+                                "remediation": "Run archon list skills",
+                            }
+                        ],
+                    )
+                )
             raise typer.Exit(1)
 
         reg.load_skill_manifest(sk)
@@ -85,13 +104,17 @@ def install_cmd(
             raise typer.Exit(1)
 
         if not is_json():
-            console.print(f"\n[bold]Installing bundle:[/bold] {bnd.name} ({len(bnd.skills)} skills)")
+            console.print(
+                f"\n[bold]Installing bundle:[/bold] {bnd.name} ({len(bnd.skills)} skills)"
+            )
 
         def _install_bundle_skills():
             for skill_name in bnd.skills:
                 sk = reg.find_skill(skill_name)
                 if not sk:
-                    print_warning(f"  Skill '{skill_name}' in bundle not found in registry — skipping")
+                    print_warning(
+                        f"  Skill '{skill_name}' in bundle not found in registry — skipping"
+                    )
                     continue
                 reg.load_skill_manifest(sk)
                 for plat in targets:
@@ -102,11 +125,15 @@ def install_cmd(
             _install_bundle_skills()
         else:
             with get_progress() as progress:
-                task = progress.add_task(f"Installing {bnd.name}", total=len(bnd.skills) * len(targets))
+                task = progress.add_task(
+                    f"Installing {bnd.name}", total=len(bnd.skills) * len(targets)
+                )
                 for skill_name in bnd.skills:
                     sk = reg.find_skill(skill_name)
                     if not sk:
-                        print_warning(f"  Skill '{skill_name}' in bundle not found in registry — skipping")
+                        print_warning(
+                            f"  Skill '{skill_name}' in bundle not found in registry — skipping"
+                        )
                         progress.advance(task, len(targets))
                         continue
                     reg.load_skill_manifest(sk)
@@ -136,7 +163,9 @@ def install_cmd(
             ok = _install_synapse_to_platform(synapse_dir, syn, plat)
             results.append({"skill": syn.name, "platform": plat.id, "success": ok})
             if ok and not is_json():
-                print_success(f"Installed synapse [bold]{syn.name}[/bold] v{syn.version} → {plat.name}")
+                print_success(
+                    f"Installed synapse [bold]{syn.name}[/bold] v{syn.version} → {plat.name}"
+                )
             elif not ok and not is_json():
                 print_error(f"Failed to install synapse {syn.name} to {plat.name}")
 
@@ -144,7 +173,9 @@ def install_cmd(
     elif all_flag:
         total_tasks = len(reg.skills) * len(targets)
         if not is_json():
-            console.print(f"\n[bold]Installing all {len(reg.skills)} skills to {len(targets)} platform(s)[/bold]")
+            console.print(
+                f"\n[bold]Installing all {len(reg.skills)} skills to {len(targets)} platform(s)[/bold]"
+            )
 
         def _install_all_skills():
             for sk in reg.skills:
@@ -186,16 +217,20 @@ def install_cmd(
     if is_json():
         ok_count = sum(1 for r in results if r["success"])
         fail_count = len(results) - ok_count
-        print_json(json_envelope(
-            command="install",
-            status="success" if fail_count == 0 else "error",
-            data={
-                "installed": ok_count,
-                "failed": fail_count,
-                "results": results,
-            },
-            errors=[{"code": "INSTALL_FAILED", "message": f"{fail_count} installations failed"}] if fail_count else [],
-        ))
+        print_json(
+            json_envelope(
+                command="install",
+                status="success" if fail_count == 0 else "error",
+                data={
+                    "installed": ok_count,
+                    "failed": fail_count,
+                    "results": results,
+                },
+                errors=[{"code": "INSTALL_FAILED", "message": f"{fail_count} installations failed"}]
+                if fail_count
+                else [],
+            )
+        )
 
     # Exit with 1 if any install failed
     if any(not r["success"] for r in results):
@@ -215,12 +250,14 @@ def _install_synapse_to_platform(synapse_dir, synapse, platform) -> bool:
         src_md = synapse_dir / "SYNAPSE.md"
         if src_md.exists():
             import shutil
+
             shutil.copy2(src_md, synapse_target / "SYNAPSE.md")
 
         # Copy resources directory
         src_resources = synapse_dir / "resources"
         if src_resources.exists() and src_resources.is_dir():
             import shutil
+
             dst_resources = synapse_target / "resources"
             if dst_resources.exists():
                 shutil.rmtree(dst_resources)
@@ -242,10 +279,13 @@ def _update_synapse_index(index_path, synapse) -> None:
     if index_path.exists():
         content = index_path.read_text(encoding="utf-8")
         import re as _re
+
         for match in _re.finditer(r"^- \*\*(.+?)\*\*", content, _re.MULTILINE):
             entries[match.group(1)] = match.group(0)
 
-    entries[synapse.name] = f"- **{synapse.name}** (v{synapse.version}, {synapse.synapse_type}) — {synapse.description}"
+    entries[synapse.name] = (
+        f"- **{synapse.name}** (v{synapse.version}, {synapse.synapse_type}) — {synapse.description}"
+    )
 
     lines = [
         "# Installed Synapses Index",

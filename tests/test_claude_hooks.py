@@ -36,9 +36,7 @@ def write_state(archon_home: Path, mutate) -> None:
     """Seed a state file: run session_boot to scaffold, then apply mutate(state)."""
     state = read_state(archon_home)
     mutate(state)
-    (archon_home / "archon-state.json").write_text(
-        json.dumps(state), encoding="utf-8"
-    )
+    (archon_home / "archon-state.json").write_text(json.dumps(state), encoding="utf-8")
 
 
 @pytest.fixture
@@ -58,8 +56,9 @@ class TestSessionBoot:
         assert read_state(tmp_path)["session"]["id"]
 
     def test_startup_resets_session(self, home):
-        write_state(home, lambda s: s["session"].update(
-            files_modified=["a.py"], tests_passed=False))
+        write_state(
+            home, lambda s: s["session"].update(files_modified=["a.py"], tests_passed=False)
+        )
         run_hook("session_boot.py", {"cwd": str(ARCHON_ROOT), "source": "startup"}, home)
         session = read_state(home)["session"]
         assert session["files_modified"] == []
@@ -67,13 +66,18 @@ class TestSessionBoot:
 
     def test_compact_preserves_session(self, home):
         """Regression: compaction must NOT wipe gate state mid-session."""
-        write_state(home, lambda s: s["session"].update(
-            files_modified=["a.py", "b.py"], tests_passed=False,
-            complexity_tier="COMPLEX",
-            todos_total=3, todos_completed=1, todos_pending_titles=["finish x"]))
-        result = run_hook(
-            "session_boot.py", {"cwd": str(ARCHON_ROOT), "source": "compact"}, home
+        write_state(
+            home,
+            lambda s: s["session"].update(
+                files_modified=["a.py", "b.py"],
+                tests_passed=False,
+                complexity_tier="COMPLEX",
+                todos_total=3,
+                todos_completed=1,
+                todos_pending_titles=["finish x"],
+            ),
         )
+        result = run_hook("session_boot.py", {"cwd": str(ARCHON_ROOT), "source": "compact"}, home)
         session = read_state(home)["session"]
         assert session["files_modified"] == ["a.py", "b.py"]
         assert session["tests_passed"] is False
@@ -130,9 +134,7 @@ class TestGuardBash:
         return hso.get("permissionDecision"), hso.get("permissionDecisionReason", "")
 
     def test_blocks_rm_root(self, home):
-        result = run_hook(
-            "guard_bash.py", {"tool_input": {"command": "rm -rf " + "/"}}, home
-        )
+        result = run_hook("guard_bash.py", {"tool_input": {"command": "rm -rf " + "/"}}, home)
         decision, _ = self.deny_reason(result)
         assert decision == "deny"
 
@@ -276,37 +278,48 @@ class TestCompletionGate:
         assert json.loads(result.stdout) == {}
 
     def test_failed_tests_blocks_with_exit_2(self, home):
-        write_state(home, lambda s: s["session"].update(
-            files_modified=["app.py"], tests_passed=False))
+        write_state(
+            home, lambda s: s["session"].update(files_modified=["app.py"], tests_passed=False)
+        )
         result = run_hook("completion_gate.py", {}, home)
         assert result.returncode == 2
         assert "quality checks failed" in result.stderr
         assert read_state(home)["session"]["gate_blocks"] == 1
 
     def test_stop_hook_active_never_reblocks(self, home):
-        write_state(home, lambda s: s["session"].update(
-            files_modified=["app.py"], tests_passed=False))
+        write_state(
+            home, lambda s: s["session"].update(files_modified=["app.py"], tests_passed=False)
+        )
         result = run_hook("completion_gate.py", {"stop_hook_active": True}, home)
         assert result.returncode == 0
 
     def test_block_cap_downgrades_to_warning(self, home):
-        write_state(home, lambda s: s["session"].update(
-            files_modified=["app.py"], tests_passed=False, gate_blocks=2))
+        write_state(
+            home,
+            lambda s: s["session"].update(
+                files_modified=["app.py"], tests_passed=False, gate_blocks=2
+            ),
+        )
         result = run_hook("completion_gate.py", {}, home)
         assert result.returncode == 0
         assert "allowing stop" in result.stderr
 
     def test_passing_tests_no_dead_injection(self, home):
-        write_state(home, lambda s: s["session"].update(
-            files_modified=["app.py"], tests_passed=True))
+        write_state(
+            home, lambda s: s["session"].update(files_modified=["app.py"], tests_passed=True)
+        )
         result = run_hook("completion_gate.py", {}, home)
         assert result.returncode == 0
         # Stop hooks can't inject context — the pass path must be a bare {}
         assert json.loads(result.stdout) == {}
 
     def test_tests_never_ran_does_not_block(self, home):
-        write_state(home, lambda s: s["session"].update(
-            files_modified=["a.py", "b.py", "c.py"], tests_passed=None))
+        write_state(
+            home,
+            lambda s: s["session"].update(
+                files_modified=["a.py", "b.py", "c.py"], tests_passed=None
+            ),
+        )
         result = run_hook("completion_gate.py", {}, home)
         assert result.returncode == 0
 
@@ -365,9 +378,15 @@ class TestAgentContext:
 
 class TestSessionEnd:
     def test_archives_active_session(self, home):
-        write_state(home, lambda s: s["session"].update(
-            files_modified=["app.py"], todos_total=2, todos_completed=1,
-            todos_pending_titles=["finish y"]))
+        write_state(
+            home,
+            lambda s: s["session"].update(
+                files_modified=["app.py"],
+                todos_total=2,
+                todos_completed=1,
+                todos_pending_titles=["finish y"],
+            ),
+        )
         session_id = read_state(home)["session"]["id"]
         result = run_hook("session_end.py", {"reason": "exit"}, home)
         assert result.returncode == 0

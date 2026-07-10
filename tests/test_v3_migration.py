@@ -11,8 +11,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import pytest
-
 from archon.core.migration import (
     MigrationRunner,
     ReleaseGateValidator,
@@ -25,6 +23,7 @@ ARCHON_ROOT = Path(__file__).parent.parent
 # ---------------------------------------------------------------------------
 # E6-S1: Migration dry-run
 # ---------------------------------------------------------------------------
+
 
 class TestMigrationDryRun:
     """Migration runner must produce complete, deterministic report."""
@@ -50,7 +49,8 @@ class TestMigrationDryRun:
         runner = MigrationRunner()
         report = runner.dry_run(ARCHON_ROOT)
         v3_schema_diffs = [
-            d for d in report.diffs
+            d
+            for d in report.diffs
             if d.category == "schema" and "v3" in d.description and "added" in d.change_type
         ]
         assert len(v3_schema_diffs) == 6
@@ -59,8 +59,7 @@ class TestMigrationDryRun:
         runner = MigrationRunner()
         report = runner.dry_run(ARCHON_ROOT)
         module_diffs = [
-            d for d in report.diffs
-            if d.category == "module" and d.change_type == "added"
+            d for d in report.diffs if d.category == "module" and d.change_type == "added"
         ]
         assert len(module_diffs) == 4
 
@@ -74,8 +73,7 @@ class TestMigrationDryRun:
         runner = MigrationRunner()
         report = runner.dry_run(ARCHON_ROOT)
         v2_module_diffs = [
-            d for d in report.diffs
-            if d.category == "module" and "v2" in d.description
+            d for d in report.diffs if d.category == "module" and "v2" in d.description
         ]
         for d in v2_module_diffs:
             assert d.change_type == "unchanged", f"v2 module modified: {d.path}"
@@ -107,6 +105,7 @@ class TestMigrationDryRun:
 # E6-S2: Release gates
 # ---------------------------------------------------------------------------
 
+
 class TestReleaseGates:
     """All 6 hard gates must pass against the current codebase."""
 
@@ -114,9 +113,7 @@ class TestReleaseGates:
         validator = ReleaseGateValidator()
         scorecard = validator.validate_all(ARCHON_ROOT)
         for gate in scorecard.gates:
-            assert gate.passed, (
-                f"Gate '{gate.gate_name}' FAILED: {gate.errors}"
-            )
+            assert gate.passed, f"Gate '{gate.gate_name}' FAILED: {gate.errors}"
 
     def test_schema_and_contracts_gate(self):
         validator = ReleaseGateValidator()
@@ -162,9 +159,7 @@ class TestReleaseScorecard:
     def test_weighted_score_at_least_90(self):
         validator = ReleaseGateValidator()
         scorecard = validator.validate_all(ARCHON_ROOT)
-        assert scorecard.weighted_score >= 90.0, (
-            f"Weighted score {scorecard.weighted_score} < 90"
-        )
+        assert scorecard.weighted_score >= 90.0, f"Weighted score {scorecard.weighted_score} < 90"
 
     def test_go_recommendation(self):
         validator = ReleaseGateValidator()
@@ -188,6 +183,7 @@ class TestReleaseScorecard:
 # E6-S3: Docs readiness
 # ---------------------------------------------------------------------------
 
+
 class TestDocsReadiness:
     """Documentation and runbook artifacts must exist."""
 
@@ -200,8 +196,9 @@ class TestDocsReadiness:
     def test_schemas_have_descriptions(self):
         schemas_dir = ARCHON_ROOT / "schemas"
         import yaml
+
         for schema_path in schemas_dir.glob("*.schema.yaml"):
-            with open(schema_path, "r", encoding="utf-8") as f:
+            with open(schema_path, encoding="utf-8") as f:
                 data = yaml.safe_load(f)
             assert "description" in data or "title" in data, (
                 f"Schema {schema_path.name} has no description or title"
@@ -217,6 +214,7 @@ class TestDocsReadiness:
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
 
 def _find_gate(scorecard: ReleaseScorecard, name: str):
     for g in scorecard.gates:

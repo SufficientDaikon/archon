@@ -171,6 +171,7 @@ class TestContextHandoffSchema:
 # E1-S1 Negative fixtures — schemas must reject bad data shapes
 # ---------------------------------------------------------------------------
 
+
 class TestNegativeFixtures:
     """Schema patterns must reject invalid ID formats."""
 
@@ -203,11 +204,13 @@ class TestNegativeFixtures:
 # E1-S2: Schema lint and contradiction checker
 # ---------------------------------------------------------------------------
 
+
 class TestSchemaLint:
     """SchemaValidator must catch errors and pass clean schemas."""
 
     def test_lint_all_v3_schemas_pass(self):
         from archon.core.schema_validator import SchemaValidator
+
         validator = SchemaValidator()
         results = validator.lint_all(SCHEMAS_DIR)
         v3_results = [r for r in results if r.schema_name in V3_SCHEMAS]
@@ -217,6 +220,7 @@ class TestSchemaLint:
 
     def test_lint_catches_missing_title(self, tmp_path: Path):
         from archon.core.schema_validator import SchemaValidator
+
         bad_schema = tmp_path / "bad.schema.yaml"
         bad_schema.write_text("type: object\nversion: '1.0.0'\n", encoding="utf-8")
         validator = SchemaValidator()
@@ -226,10 +230,9 @@ class TestSchemaLint:
 
     def test_lint_catches_invalid_version(self, tmp_path: Path):
         from archon.core.schema_validator import SchemaValidator
+
         bad_schema = tmp_path / "bad.schema.yaml"
-        bad_schema.write_text(
-            "title: test\ntype: object\nversion: 'abc'\n", encoding="utf-8"
-        )
+        bad_schema.write_text("title: test\ntype: object\nversion: 'abc'\n", encoding="utf-8")
         validator = SchemaValidator()
         result = validator.lint_schema(bad_schema)
         assert not result.passed
@@ -237,6 +240,7 @@ class TestSchemaLint:
 
     def test_lint_catches_duplicate_enum(self, tmp_path: Path):
         from archon.core.schema_validator import SchemaValidator
+
         bad_schema = tmp_path / "dup.schema.yaml"
         bad_schema.write_text(
             "title: test\ntype: object\nversion: '1.0.0'\n"
@@ -250,6 +254,7 @@ class TestSchemaLint:
 
     def test_lint_catches_invalid_regex(self, tmp_path: Path):
         from archon.core.schema_validator import SchemaValidator
+
         bad_schema = tmp_path / "regex.schema.yaml"
         bad_schema.write_text(
             "title: test\ntype: object\nversion: '1.0.0'\n"
@@ -263,6 +268,7 @@ class TestSchemaLint:
 
     def test_lint_catches_unreachable_state(self, tmp_path: Path):
         from archon.core.schema_validator import SchemaValidator
+
         bad_schema = tmp_path / "state.schema.yaml"
         bad_schema.write_text(
             "title: test\ntype: object\nversion: '1.0.0'\n"
@@ -280,29 +286,34 @@ class TestSchemaLint:
 # E1-S3: v2-to-v3 compatibility diagnostics
 # ---------------------------------------------------------------------------
 
+
 class TestCompatibilityChecker:
     """CompatibilityChecker must produce deterministic report."""
 
     def test_no_v2_schemas_removed(self):
         from archon.core.schema_validator import CompatibilityChecker
+
         checker = CompatibilityChecker()
         report = checker.check(SCHEMAS_DIR)
         assert report.compatible, f"Breaking changes: {report.breaking_changes}"
 
     def test_all_v2_schemas_preserved(self):
         from archon.core.schema_validator import CompatibilityChecker
+
         checker = CompatibilityChecker()
         report = checker.check(SCHEMAS_DIR)
         assert len(report.v2_preserved) == len(V2_SCHEMAS)
 
     def test_v3_schemas_detected(self):
         from archon.core.schema_validator import CompatibilityChecker
+
         checker = CompatibilityChecker()
         report = checker.check(SCHEMAS_DIR)
         assert len(report.v3_new_schemas) == len(V3_SCHEMAS)
 
     def test_report_is_deterministic(self):
         from archon.core.schema_validator import CompatibilityChecker
+
         checker = CompatibilityChecker()
         r1 = checker.check(SCHEMAS_DIR)
         r2 = checker.check(SCHEMAS_DIR)
@@ -310,6 +321,7 @@ class TestCompatibilityChecker:
 
     def test_migration_hints_present(self):
         from archon.core.schema_validator import CompatibilityChecker
+
         checker = CompatibilityChecker()
         report = checker.check(SCHEMAS_DIR)
         assert len(report.migration_hints) > 0
@@ -317,6 +329,7 @@ class TestCompatibilityChecker:
     def test_detects_missing_v2_schema(self, tmp_path: Path):
         """If a v2 schema is removed, compatibility must report breaking."""
         from archon.core.schema_validator import CompatibilityChecker
+
         # Create dir with only some v2 schemas
         for name in ["agent-manifest.schema.yaml"]:
             (tmp_path / name).write_text("title: test\nversion: '1.0'\ntype: object\n")
@@ -330,7 +343,8 @@ class TestCompatibilityChecker:
 # Helpers
 # ---------------------------------------------------------------------------
 
+
 def _load_schema(name: str) -> dict:
     path = SCHEMAS_DIR / name
-    with open(path, "r", encoding="utf-8") as f:
+    with open(path, encoding="utf-8") as f:
         return yaml.safe_load(f)

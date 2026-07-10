@@ -10,13 +10,13 @@ Identifies recurrent issues across executions:
 Returns HALT if dangerous pattern detected.
 """
 
-from typing import Any, Dict, List
+from typing import Any
 
 
-def validate(context: Dict[str, Any]) -> Dict[str, Any]:
+def validate(context: dict[str, Any]) -> dict[str, Any]:
     """
     Detect dangerous or inefficient patterns.
-    
+
     Context expected:
     - execution_history: list - Prior executions
     - current_action: str - Proposed action
@@ -27,17 +27,16 @@ def validate(context: Dict[str, Any]) -> Dict[str, Any]:
     current_action = context.get("current_action", "")
     error_patterns = context.get("error_patterns", [])
     failure_threshold = context.get("failure_threshold", 3)
-    
+
     issues = []
-    
+
     # Check 1: Repeated error pattern
     if execution_history and error_patterns:
         similar_errors = 0
         for error_pattern in error_patterns:
             pattern_str = str(error_pattern).lower()
             matches = sum(
-                1 for exec_record in execution_history
-                if pattern_str in str(exec_record).lower()
+                1 for exec_record in execution_history if pattern_str in str(exec_record).lower()
             )
             if matches >= failure_threshold:
                 issues.append(
@@ -45,20 +44,20 @@ def validate(context: Dict[str, Any]) -> Dict[str, Any]:
                     f"(threshold: {failure_threshold})"
                 )
                 similar_errors += 1
-    
+
     # Check 2: Same action attempted too many times
     if execution_history and current_action:
         action_count = sum(
-            1 for record in execution_history
-            if pd_normalize_action(record.get("action", "")) 
-            == pd_normalize_action(current_action)
+            1
+            for record in execution_history
+            if pd_normalize_action(record.get("action", "")) == pd_normalize_action(current_action)
         )
         if action_count >= failure_threshold:
             issues.append(
                 f"LOOP_DETECTION: Attempting same action {action_count} times "
                 "(retry limit exceeded)"
             )
-    
+
     if issues:
         return {
             "action": "halt",
@@ -66,7 +65,7 @@ def validate(context: Dict[str, Any]) -> Dict[str, Any]:
             "violations": issues,
             "history_depth": len(execution_history),
         }
-    
+
     return {
         "action": "allow",
         "message": "Pattern check passed",

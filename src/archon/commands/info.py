@@ -4,11 +4,15 @@ from __future__ import annotations
 
 import typer
 
-from archon.core.registry import Registry
-from archon.core.platform import detect_platforms
 from archon.core.config import get_install_records
+from archon.core.platform import detect_platforms
+from archon.core.registry import Registry
 from archon.utils.output import (
-    console, print_error, is_json, json_envelope, print_json,
+    console,
+    is_json,
+    json_envelope,
+    print_error,
+    print_json,
 )
 
 
@@ -22,7 +26,7 @@ def info_cmd(
         reg.load()
     except FileNotFoundError as exc:
         print_error(str(exc))
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     found = reg.find_component(name)
     if not found:
@@ -152,7 +156,7 @@ def info_cmd(
 
     # Install status
     if install_status:
-        console.print(f"\n  [bold]Installation Status:[/bold]")
+        console.print("\n  [bold]Installation Status:[/bold]")
         for pid, status in install_status.items():
             icon = "✅" if "installed" in status else "❌"
             console.print(f"    {icon} {pid}: {status}")

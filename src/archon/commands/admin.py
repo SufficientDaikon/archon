@@ -4,13 +4,18 @@ from __future__ import annotations
 
 import typer
 
-from archon.core.registry import Registry
-from archon.core.platform import detect_platforms
-from archon.core.config import is_initialized, get_install_records
-from archon.utils.output import (
-    console, print_error, is_json, json_envelope, print_json, make_table,
-)
 from archon import __version__
+from archon.core.config import get_install_records, is_initialized
+from archon.core.platform import detect_platforms
+from archon.core.registry import Registry
+from archon.utils.output import (
+    console,
+    is_json,
+    json_envelope,
+    make_table,
+    print_error,
+    print_json,
+)
 
 
 def admin_cmd() -> None:
@@ -21,7 +26,7 @@ def admin_cmd() -> None:
         reg.load()
     except FileNotFoundError as exc:
         print_error(str(exc))
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     platforms = detect_platforms()
     detected = [p for p in platforms if p.detected]

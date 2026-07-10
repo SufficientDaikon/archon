@@ -6,26 +6,33 @@ Detects platforms, creates configuration, and installs the Virtuoso Engine
 
 from __future__ import annotations
 
-from pathlib import Path
-from typing import Optional
-
 import typer
 
 from archon.core.config import (
-    is_initialized, load_config, save_config, VALID_KEYS,
+    VALID_KEYS,
+    is_initialized,
+    save_config,
 )
 from archon.core.platform import detect_platforms
-from archon.core.virtuoso import install_virtuoso, get_virtuoso_xml_path
+from archon.core.virtuoso import get_virtuoso_xml_path, install_virtuoso
 from archon.utils.output import (
-    console, print_success, print_warning, print_info, print_error,
-    is_json, json_envelope, print_json,
+    console,
+    is_json,
+    json_envelope,
+    print_error,
+    print_info,
+    print_json,
+    print_success,
+    print_warning,
 )
-from archon.utils.paths import get_archon_home, get_config_path, get_archon_root
+from archon.utils.paths import get_archon_home, get_archon_root, get_config_path
 
 
 def init_cmd(
-    platform: Optional[str] = typer.Option(
-        None, "--platform", "-p",
+    platform: str | None = typer.Option(
+        None,
+        "--platform",
+        "-p",
         help="Configure for a specific platform only.",
     ),
     force: bool = typer.Option(False, "--force", "-f", help="Overwrite existing config."),
@@ -38,16 +45,20 @@ def init_cmd(
     # FR-012: Detect existing configuration
     if is_initialized() and not force:
         if is_json():
-            print_json(json_envelope(
-                command="init",
-                status="error",
-                errors=[{
-                    "code": "ALREADY_INITIALIZED",
-                    "message": f"Archon is already initialized at {home_dir}",
-                    "detail": str(config_path),
-                    "remediation": "Use --force to reinitialize.",
-                }],
-            ))
+            print_json(
+                json_envelope(
+                    command="init",
+                    status="error",
+                    errors=[
+                        {
+                            "code": "ALREADY_INITIALIZED",
+                            "message": f"Archon is already initialized at {home_dir}",
+                            "detail": str(config_path),
+                            "remediation": "Use --force to reinitialize.",
+                        }
+                    ],
+                )
+            )
             raise typer.Exit(1)
         print_warning(f"Archon is already initialized at [bold]{home_dir}[/bold]")
         print_info("Use [bold]--force[/bold] to reinitialize, or edit the config directly.")
@@ -98,19 +109,20 @@ def init_cmd(
     # ── Output ──────────────────────────────────────────────────
 
     if is_json():
-        print_json(json_envelope(
-            command="init",
-            data={
-                "home": str(home_dir),
-                "config": str(config_path),
-                "platforms_detected": [
-                    {"id": p.id, "name": p.name, "scope": p.scope}
-                    for p in detected
-                ],
-                "default_platform": cfg["default_platform"],
-                "virtuoso": virtuoso_results,
-            },
-        ))
+        print_json(
+            json_envelope(
+                command="init",
+                data={
+                    "home": str(home_dir),
+                    "config": str(config_path),
+                    "platforms_detected": [
+                        {"id": p.id, "name": p.name, "scope": p.scope} for p in detected
+                    ],
+                    "default_platform": cfg["default_platform"],
+                    "virtuoso": virtuoso_results,
+                },
+            )
+        )
         return
 
     console.print()

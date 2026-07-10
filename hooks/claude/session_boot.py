@@ -14,7 +14,7 @@ from pathlib import Path
 HOOK_DIR = Path(__file__).parent
 sys.path.insert(0, str(HOOK_DIR))
 
-from shared.state import archive_session, load_state, save_state, new_session_id
+from shared.state import archive_session, load_state, new_session_id, save_state
 
 # Project detection markers -> (type, framework check)
 PROJECT_MARKERS = {
@@ -125,24 +125,25 @@ def get_git_summary(cwd: str) -> dict:
         # Branch name
         branch = subprocess.run(
             ["git", "rev-parse", "--abbrev-ref", "HEAD"],
-            cwd=cwd, capture_output=True, text=True, timeout=3
+            cwd=cwd,
+            capture_output=True,
+            text=True,
+            timeout=3,
         )
         if branch.returncode == 0:
             result["branch"] = branch.stdout.strip()
 
         # Uncommitted changes count
         status = subprocess.run(
-            ["git", "status", "--porcelain"],
-            cwd=cwd, capture_output=True, text=True, timeout=3
+            ["git", "status", "--porcelain"], cwd=cwd, capture_output=True, text=True, timeout=3
         )
         if status.returncode == 0:
-            lines = [l for l in status.stdout.strip().splitlines() if l.strip()]
+            lines = [ln for ln in status.stdout.strip().splitlines() if ln.strip()]
             result["uncommitted_changes"] = len(lines)
 
         # Last commit SHA
         log = subprocess.run(
-            ["git", "log", "-1", "--format=%h"],
-            cwd=cwd, capture_output=True, text=True, timeout=3
+            ["git", "log", "-1", "--format=%h"], cwd=cwd, capture_output=True, text=True, timeout=3
         )
         if log.returncode == 0:
             result["last_commit"] = log.stdout.strip()
@@ -150,7 +151,10 @@ def get_git_summary(cwd: str) -> dict:
         # Unpushed commits
         unpushed = subprocess.run(
             ["git", "rev-list", "--count", "@{upstream}..HEAD"],
-            cwd=cwd, capture_output=True, text=True, timeout=3
+            cwd=cwd,
+            capture_output=True,
+            text=True,
+            timeout=3,
         )
         if unpushed.returncode == 0:
             result["unpushed_commits"] = int(unpushed.stdout.strip())
@@ -184,20 +188,20 @@ def build_resume_context(state: dict, source: str) -> str:
     if files:
         lines.append(f'  <files-modified count="{len(files)}">')
         for f in files[-10:]:
-            lines.append(f'    <file>{f}</file>')
-        lines.append('  </files-modified>')
+            lines.append(f"    <file>{f}</file>")
+        lines.append("  </files-modified>")
 
     pending = session.get("todos_pending_titles", [])
     if pending:
-        lines.append('  <pending-todos>')
+        lines.append("  <pending-todos>")
         for title in pending[:5]:
-            lines.append(f'    <todo>{title}</todo>')
-        lines.append('  </pending-todos>')
+            lines.append(f"    <todo>{title}</todo>")
+        lines.append("  </pending-todos>")
 
     lines.append(
         f'  <git branch="{git.get("branch", "")}" uncommitted="{git.get("uncommitted_changes", 0)}" />'
     )
-    lines.append('</archon-resume>')
+    lines.append("</archon-resume>")
     return "\n".join(lines)
 
 
@@ -209,27 +213,33 @@ def build_boot_context(state: dict) -> str:
     last_sessions = history.get("last_sessions", [])
     unfinished = history.get("unfinished_work", [])
 
-    lines = ['<archon-boot>']
+    lines = ["<archon-boot>"]
 
     # Project
-    lines.append(f'  <project type="{project["type"]}" name="{project["name"]}" framework="{project["framework"]}" />')
+    lines.append(
+        f'  <project type="{project["type"]}" name="{project["name"]}" framework="{project["framework"]}" />'
+    )
 
     # Git
-    lines.append(f'  <git branch="{git["branch"]}" uncommitted="{git["uncommitted_changes"]}" unpushed="{git["unpushed_commits"]}" last-commit="{git["last_commit"]}" />')
+    lines.append(
+        f'  <git branch="{git["branch"]}" uncommitted="{git["uncommitted_changes"]}" unpushed="{git["unpushed_commits"]}" last-commit="{git["last_commit"]}" />'
+    )
 
     # Previous sessions
     if last_sessions:
         prev = last_sessions[0]
-        lines.append(f'  <previous-session files="{prev["files_modified_count"]}" tests="{prev["tests_passed"]}" tier="{prev["complexity_tier"]}" />')
+        lines.append(
+            f'  <previous-session files="{prev["files_modified_count"]}" tests="{prev["tests_passed"]}" tier="{prev["complexity_tier"]}" />'
+        )
 
     # Unfinished work
     if unfinished:
         lines.append(f'  <unfinished count="{len(unfinished)}">')
         for item in unfinished[:3]:
-            lines.append(f'    <task>{item}</task>')
-        lines.append('  </unfinished>')
+            lines.append(f"    <task>{item}</task>")
+        lines.append("  </unfinished>")
 
-    lines.append('</archon-boot>')
+    lines.append("</archon-boot>")
     return "\n".join(lines)
 
 

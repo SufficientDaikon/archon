@@ -19,10 +19,10 @@ from archon.core.session_manager import (
     SessionStatus,
 )
 
-
 # ---------------------------------------------------------------------------
 # E2-S1: Client lifecycle state machine
 # ---------------------------------------------------------------------------
+
 
 class TestSessionStateMachine:
     """State machine must enforce valid transitions and reject invalid ones."""
@@ -133,6 +133,7 @@ class TestSessionStateMachine:
 # E2-S1: Recovery policies
 # ---------------------------------------------------------------------------
 
+
 class TestRecoveryPolicy:
     """Recovery must respect max_retries and stop when exhausted."""
 
@@ -178,6 +179,7 @@ class TestRecoveryPolicy:
 # ---------------------------------------------------------------------------
 # E2-S2: Session lifecycle service
 # ---------------------------------------------------------------------------
+
 
 class TestSessionLifecycle:
     """Session lifecycle: create, resume, send, abort, archive."""
@@ -250,9 +252,9 @@ class TestSessionPersistence:
         assert loaded is None
 
     def test_resume_from_disk_preserves_constraints(self, tmp_path: Path):
-        s = Session.create("test", "pipe", constraints=[
-            {"constraint": "v2 compat", "enforcement": "hard"}
-        ])
+        s = Session.create(
+            "test", "pipe", constraints=[{"constraint": "v2 compat", "enforcement": "hard"}]
+        )
         s.activate()
         s.idle()
         s.save(tmp_path)
@@ -287,6 +289,7 @@ class TestAccumulatedState:
 # ---------------------------------------------------------------------------
 # E2-S3: Correlation ID linking
 # ---------------------------------------------------------------------------
+
 
 class TestCorrelationLinking:
     """Session must link to pipeline traces via correlation ID."""
@@ -363,6 +366,7 @@ class TestEventLog:
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
 
 def _active_session() -> Session:
     """Create a session already in ACTIVE state."""

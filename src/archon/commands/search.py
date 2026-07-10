@@ -8,7 +8,13 @@ import typer
 
 from archon.core.registry import Registry
 from archon.utils.output import (
-    console, print_error, print_info, is_json, json_envelope, print_json, make_table,
+    console,
+    is_json,
+    json_envelope,
+    make_table,
+    print_error,
+    print_info,
+    print_json,
 )
 
 
@@ -63,7 +69,7 @@ def search_cmd(
         reg.load()
     except FileNotFoundError as exc:
         print_error(str(exc))
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     hits: list[dict] = []
 
@@ -72,56 +78,64 @@ def search_cmd(
         reg.load_skill_manifest(sk)
         s = _score(query, sk.name, sk.description, sk.tags)
         if s > 0:
-            hits.append({
-                "name": sk.name,
-                "type": "skill",
-                "version": sk.version,
-                "description": sk.description,
-                "tags": sk.tags,
-                "score": s,
-            })
+            hits.append(
+                {
+                    "name": sk.name,
+                    "type": "skill",
+                    "version": sk.version,
+                    "description": sk.description,
+                    "tags": sk.tags,
+                    "score": s,
+                }
+            )
 
     # Search agents
     for ag in reg.agents:
         reg.load_agent_manifest(ag)
         s = _score(query, ag.name, ag.description, [])
         if s > 0:
-            hits.append({
-                "name": ag.name,
-                "type": "agent",
-                "version": ag.version,
-                "description": ag.description,
-                "tags": [],
-                "score": s,
-            })
+            hits.append(
+                {
+                    "name": ag.name,
+                    "type": "agent",
+                    "version": ag.version,
+                    "description": ag.description,
+                    "tags": [],
+                    "score": s,
+                }
+            )
 
     # Search bundles
     for bnd in reg.bundles:
         reg.load_bundle_manifest(bnd)
         s = _score(query, bnd.name, bnd.description, bnd.skills)
         if s > 0:
-            hits.append({
-                "name": bnd.name,
-                "type": "bundle",
-                "version": bnd.version,
-                "description": bnd.description,
-                "tags": bnd.skills,
-                "score": s,
-            })
+            hits.append(
+                {
+                    "name": bnd.name,
+                    "type": "bundle",
+                    "version": bnd.version,
+                    "description": bnd.description,
+                    "tags": bnd.skills,
+                    "score": s,
+                }
+            )
 
     # Search pipelines
     for pl in reg.pipelines:
         reg.load_pipeline_manifest(pl)
         s = _score(query, pl.name, pl.description, [pl.trigger])
         if s > 0:
-            hits.append({
-                "name": pl.name,
-                "type": "pipeline",
-                "version": pl.version,
-                "description": pl.description,
-                "tags": [pl.trigger],
-                "score": s,
-            })
+            hits.append(
+                {
+                    "name": pl.name,
+                    "type": "pipeline",
+                    "version": pl.version,
+                    "description": pl.description,
+                    "tags": [pl.trigger],
+                    "score": s,
+                }
+            )
 
     # Sort by relevance (FR-032)
     hits.sort(key=lambda h: -h["score"])
@@ -130,7 +144,11 @@ def search_cmd(
         # Strip score from output
         for h in hits:
             del h["score"]
-        print_json(json_envelope(command="search", data={"query": query, "count": len(hits), "results": hits}))
+        print_json(
+            json_envelope(
+                command="search", data={"query": query, "count": len(hits), "results": hits}
+            )
+        )
         return
 
     if not hits:
@@ -138,7 +156,9 @@ def search_cmd(
         console.print("  Try a broader term, or run [bold]archon list[/bold] to browse.")
         return
 
-    console.print(f"\n[bold]Search results for[/bold] \"{query}\" ({len(hits)} match{'es' if len(hits) != 1 else ''}):\n")
+    console.print(
+        f'\n[bold]Search results for[/bold] "{query}" ({len(hits)} match{"es" if len(hits) != 1 else ""}):\n'
+    )
 
     rows = []
     for h in hits[:25]:  # Cap at 25 results

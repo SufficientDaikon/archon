@@ -12,7 +12,6 @@ Public API
 
 from __future__ import annotations
 
-import re
 from datetime import date
 from pathlib import Path
 from typing import Any
@@ -21,7 +20,6 @@ import yaml
 
 from archon.core.registry import Registry
 
-
 # ── Constants ───────────────────────────────────────────────────
 
 _DOCS_URL = "https://sufficientdaikon.github.io/archon/"
@@ -29,6 +27,7 @@ _TRUNCATE_LEN = 200
 
 
 # ── Public API ──────────────────────────────────────────────────
+
 
 def generate_concise(root: Path, registry: Registry | None = None) -> str:
     """Generate the concise ``llms.txt`` content.
@@ -45,7 +44,11 @@ def generate_concise(root: Path, registry: Registry | None = None) -> str:
     parts: list[str] = []
 
     # Header
-    parts.append(_get_header(reg.name, reg.version, reg._raw.get("description", ""), reg._raw.get("repository", "")))
+    parts.append(
+        _get_header(
+            reg.name, reg.version, reg._raw.get("description", ""), reg._raw.get("repository", "")
+        )
+    )
 
     # Skills
     parts.append("## Skills\n")
@@ -75,7 +78,9 @@ def generate_concise(root: Path, registry: Registry | None = None) -> str:
         if desc:
             parts.append(f"- [{syn.name}]({syn.path}/SYNAPSE.md): ({stype}) {desc}\n")
         else:
-            parts.append(f"- [{syn.name}]({syn.path}/SYNAPSE.md): ({stype}) No description available\n")
+            parts.append(
+                f"- [{syn.name}]({syn.path}/SYNAPSE.md): ({stype}) No description available\n"
+            )
     parts.append("\n")
 
     # Pipelines
@@ -106,7 +111,9 @@ def generate_concise(root: Path, registry: Registry | None = None) -> str:
     parts.append("## Documentation\n")
     docs_dir = root / "docs"
     if docs_dir.exists():
-        md_files = sorted(f.name for f in docs_dir.iterdir() if f.suffix == ".md" and f.name != "README.md")
+        md_files = sorted(
+            f.name for f in docs_dir.iterdir() if f.suffix == ".md" and f.name != "README.md"
+        )
         for fname in md_files:
             display = _docs_display_name(fname)
             parts.append(f"- [{display}](docs/{fname})\n")
@@ -117,8 +124,12 @@ def generate_concise(root: Path, registry: Registry | None = None) -> str:
     parts.append("\nInstall via pip:\n")
     parts.append("\n```\npip install archon\narchon init\narchon install --all\n```\n")
     parts.append("\nOr clone and install manually:\n")
-    parts.append("\n```\ngit clone https://github.com/SufficientDaikon/archon.git\ncd archon\npython scripts/install.py\n```\n")
-    parts.append("\nSupported platforms: Claude Code, Copilot CLI, Cursor, Windsurf, Antigravity.\n\n")
+    parts.append(
+        "\n```\ngit clone https://github.com/SufficientDaikon/archon.git\ncd archon\npython scripts/install.py\n```\n"
+    )
+    parts.append(
+        "\nSupported platforms: Claude Code, Copilot CLI, Cursor, Windsurf, Antigravity.\n\n"
+    )
 
     # Links
     repo_url = reg._raw.get("repository", "https://github.com/SufficientDaikon/archon")
@@ -210,7 +221,9 @@ def generate_full(root: Path, registry: Registry | None = None) -> str:
     # Documentation
     docs_dir = root / "docs"
     if docs_dir.exists():
-        md_files = sorted(f for f in docs_dir.iterdir() if f.suffix == ".md" and f.name != "README.md")
+        md_files = sorted(
+            f for f in docs_dir.iterdir() if f.suffix == ".md" and f.name != "README.md"
+        )
         for md_file in md_files:
             content, _warn = _read_file_safe(md_file)
             if content is not None:
@@ -249,7 +262,9 @@ def write_files(
     docs_dir = root / "docs"
     docs_count = 0
     if docs_dir.exists():
-        docs_count = len([f for f in docs_dir.iterdir() if f.suffix == ".md" and f.name != "README.md"])
+        docs_count = len(
+            [f for f in docs_dir.iterdir() if f.suffix == ".md" and f.name != "README.md"]
+        )
 
     stats = {
         "skills": len(reg.skills),
@@ -278,6 +293,7 @@ def write_files(
 
 
 # ── Private helpers ─────────────────────────────────────────────
+
 
 def _ensure_registry(root: Path, registry: Registry | None) -> Registry:
     """Return *registry* if provided, else create and load one."""
@@ -401,7 +417,7 @@ def _get_pipeline_chain(root: Path, pipeline: Any) -> tuple[str, str, str]:
 
     if pl_path.exists():
         try:
-            with open(pl_path, "r", encoding="utf-8") as fh:
+            with open(pl_path, encoding="utf-8") as fh:
                 data = yaml.safe_load(fh) or {}
             desc = data.get("description", "")
             steps = data.get("steps", [])
@@ -426,7 +442,7 @@ def _get_bundle_summary(root: Path, bundle: Any) -> tuple[str, list[str]]:
 
     if bundle_yaml.exists():
         try:
-            with open(bundle_yaml, "r", encoding="utf-8") as fh:
+            with open(bundle_yaml, encoding="utf-8") as fh:
                 data = yaml.safe_load(fh) or {}
             desc = data.get("description", "")
             if data.get("skills"):
@@ -442,7 +458,7 @@ def _yaml_field(path: Path, field: str) -> str:
     if not path.exists():
         return ""
     try:
-        with open(path, "r", encoding="utf-8") as fh:
+        with open(path, encoding="utf-8") as fh:
             data = yaml.safe_load(fh) or {}
         value = data.get(field, "")
         return str(value) if value else ""

@@ -13,8 +13,8 @@ from pathlib import Path
 
 import pytest
 
+from archon.core.policy_engine import PermissionRule, PolicyEngine
 from archon.core.session_manager import Session, SessionStatus
-from archon.core.policy_engine import PolicyEngine, PermissionRule
 from archon.core.telemetry import (
     ReplayHarness,
     ReplaySnapshot,
@@ -22,10 +22,10 @@ from archon.core.telemetry import (
     TelemetryEnvelope,
 )
 
-
 # ---------------------------------------------------------------------------
 # E5-S1: Telemetry envelope normalization
 # ---------------------------------------------------------------------------
+
 
 class TestTelemetryEnvelope:
     """All events must be normalized to versioned envelope."""
@@ -122,6 +122,7 @@ class TestTelemetryCollector:
 # E5-S2: Replay harness determinism and snapshot lifecycle
 # ---------------------------------------------------------------------------
 
+
 class TestReplaySnapshot:
     """Snapshots must be saveable, loadable, and have deterministic checksums."""
 
@@ -178,10 +179,12 @@ class TestReplayHarness:
     def test_different_step_count_detected(self):
         harness = ReplayHarness()
         s1 = _make_snapshot(steps=[{"name": "s1", "status": "completed"}])
-        s2 = _make_snapshot(steps=[
-            {"name": "s1", "status": "completed"},
-            {"name": "s2", "status": "completed"},
-        ])
+        s2 = _make_snapshot(
+            steps=[
+                {"name": "s1", "status": "completed"},
+                {"name": "s2", "status": "completed"},
+            ]
+        )
         result = harness.compare(s1, s2)
         assert result["deterministic"] is False
 
@@ -205,6 +208,7 @@ class TestReplayHarness:
 # ---------------------------------------------------------------------------
 # E5-S3: Stress suites for concurrency and failure injection
 # ---------------------------------------------------------------------------
+
 
 class TestStressSessionLifecycle:
     """Stress: rapid state transitions must not corrupt state."""
@@ -242,9 +246,14 @@ class TestStressPolicyEngine:
 
     def test_1000_evaluations(self):
         engine = PolicyEngine()
-        engine.add_rule(PermissionRule(
-            id="allow-all", scope="tool", trust_tier="community", action="allow",
-        ))
+        engine.add_rule(
+            PermissionRule(
+                id="allow-all",
+                scope="tool",
+                trust_tier="community",
+                action="allow",
+            )
+        )
         for i in range(1000):
             d = engine.evaluate(f"tool-{i}", f"sess-{i % 10}", "corr-x")
             assert d.is_allowed
@@ -252,9 +261,14 @@ class TestStressPolicyEngine:
 
     def test_mixed_allow_deny_pattern(self):
         engine = PolicyEngine()
-        engine.add_rule(PermissionRule(
-            id="verified-only", scope="tool", trust_tier="verified", action="allow",
-        ))
+        engine.add_rule(
+            PermissionRule(
+                id="verified-only",
+                scope="tool",
+                trust_tier="verified",
+                action="allow",
+            )
+        )
         allowed = denied = 0
         for i in range(200):
             tier = "verified" if i % 2 == 0 else "untrusted"
@@ -273,11 +287,14 @@ class TestStressTelemetry:
     def test_10000_envelopes(self):
         c = TelemetryCollector()
         for i in range(10000):
-            c.emit(TelemetryEnvelope(
-                f"event-{i % 5}", "stress",
-                session_id=f"sess-{i % 10}",
-                correlation_id=f"corr-{i % 20}",
-            ))
+            c.emit(
+                TelemetryEnvelope(
+                    f"event-{i % 5}",
+                    "stress",
+                    session_id=f"sess-{i % 10}",
+                    correlation_id=f"corr-{i % 20}",
+                )
+            )
         assert len(c.envelopes) == 10000
         # Filter must still work
         assert len(c.get_by_session("sess-0")) == 1000
@@ -308,20 +325,28 @@ class TestStressFailureInjection:
     def test_schema_validation_blocks_bad_batch(self):
         """Policy engine must block ALL bad invocations, not just some."""
         engine = PolicyEngine()
-        engine.add_rule(PermissionRule(
-            id="allow-valid", scope="tool", trust_tier="community", action="allow",
-        ))
-        engine.register_tool_schema("StrictTool", {
-            "required": ["id"],
-            "properties": {"id": {"type": "string", "pattern": "^[a-z]+$"}},
-        })
+        engine.add_rule(
+            PermissionRule(
+                id="allow-valid",
+                scope="tool",
+                trust_tier="community",
+                action="allow",
+            )
+        )
+        engine.register_tool_schema(
+            "StrictTool",
+            {
+                "required": ["id"],
+                "properties": {"id": {"type": "string", "pattern": "^[a-z]+$"}},
+            },
+        )
 
         # Every bad invocation must be denied
         bad_args = [
-            {},                      # missing required
-            {"id": 123},             # wrong type
-            {"id": "ABC"},           # bad pattern
-            {"id": "with spaces"},   # bad pattern
+            {},  # missing required
+            {"id": 123},  # wrong type
+            {"id": "ABC"},  # bad pattern
+            {"id": "with spaces"},  # bad pattern
         ]
         for args in bad_args:
             d = engine.evaluate("StrictTool", "s", "c", arguments=args)
@@ -330,6 +355,7 @@ class TestStressFailureInjection:
     def test_double_archive_rejected(self):
         """Cannot transition out of archived state."""
         from archon.core.session_manager import InvalidTransitionError
+
         s = Session.create("test", "pipe")
         s.activate()
         s.complete()
@@ -342,6 +368,7 @@ class TestStressFailureInjection:
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
 
 def _make_snapshot(
     status: str = "active",

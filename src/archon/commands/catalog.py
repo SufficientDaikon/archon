@@ -6,35 +6,31 @@ Provides subcommands: list, search, info, recommend, install, check.
 from __future__ import annotations
 
 import os
-from typing import Optional
 
 import typer
 
 from archon.core.catalog import (
-    Catalog,
-    McpServer,
     PLATFORM_CONFIGS,
     SUPPORTED_PLATFORMS,
     VALID_CATEGORIES,
+    Catalog,
     _server_to_dict,
-    generate_platform_config,
-    merge_into_config,
     check_dependencies,
     get_platform_config_path,
+    merge_into_config,
 )
-from archon.core.registry import Registry
 from archon.core.platform import get_detected_platform_ids
+from archon.core.registry import Registry
 from archon.utils.output import (
     console,
-    print_success,
-    print_error,
-    print_warning,
-    print_info,
-    print_verbose,
     is_json,
     json_envelope,
-    print_json,
     make_table,
+    print_error,
+    print_info,
+    print_json,
+    print_success,
+    print_warning,
 )
 
 # ── Typer sub-app (FR-CAT-030) ─────────────────────────────────
@@ -56,10 +52,10 @@ def _load_catalog_or_exit() -> Catalog:
         return cat
     except FileNotFoundError as exc:
         print_error(str(exc))
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
     except Exception as exc:
         print_error(f"Failed to load MCP catalog: {exc}")
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
 
 # ── catalog list (FR-CAT-031) ──────────────────────────────────
@@ -67,8 +63,10 @@ def _load_catalog_or_exit() -> Catalog:
 
 @catalog_app.command("list")
 def catalog_list_cmd(
-    category: Optional[str] = typer.Option(
-        None, "--category", "-c",
+    category: str | None = typer.Option(
+        None,
+        "--category",
+        "-c",
         help="Filter by category (core, development, database, research, design, ai, cloud, communication).",
     ),
 ) -> None:
@@ -76,19 +74,18 @@ def catalog_list_cmd(
     cat = _load_catalog_or_exit()
 
     if category and category not in VALID_CATEGORIES:
-        print_error(
-            f"Unknown category '{category}'. "
-            f"Valid: {', '.join(VALID_CATEGORIES)}"
-        )
+        print_error(f"Unknown category '{category}'. Valid: {', '.join(VALID_CATEGORIES)}")
         raise typer.Exit(1)
 
     servers = cat.list_servers(category=category)
 
     if is_json():
-        print_json(json_envelope(
-            command="catalog list",
-            data={"servers": [_server_to_dict(s) for s in servers]},
-        ))
+        print_json(
+            json_envelope(
+                command="catalog list",
+                data={"servers": [_server_to_dict(s) for s in servers]},
+            )
+        )
         return
 
     if not servers:
@@ -123,14 +120,16 @@ def catalog_search_cmd(
     results = cat.search(query)
 
     if is_json():
-        print_json(json_envelope(
-            command="catalog search",
-            data={
-                "query": query,
-                "count": len(results),
-                "servers": [_server_to_dict(s) for _, s in results],
-            },
-        ))
+        print_json(
+            json_envelope(
+                command="catalog search",
+                data={
+                    "query": query,
+                    "count": len(results),
+                    "servers": [_server_to_dict(s) for _, s in results],
+                },
+            )
+        )
         return
 
     if not results:
@@ -138,7 +137,9 @@ def catalog_search_cmd(
         console.print("  Try a broader term, or run [bold]archon catalog list[/bold] to browse.")
         return
 
-    console.print(f"\n[bold]Search results for[/bold] \"{query}\" ({len(results)} match{'es' if len(results) != 1 else ''}):\n")
+    console.print(
+        f'\n[bold]Search results for[/bold] "{query}" ({len(results)} match{"es" if len(results) != 1 else ""}):\n'
+    )
 
     rows = []
     for _, s in results[:25]:
@@ -175,10 +176,12 @@ def catalog_info_cmd(
         raise typer.Exit(1)
 
     if is_json():
-        print_json(json_envelope(
-            command="catalog info",
-            data=_server_to_dict(srv),
-        ))
+        print_json(
+            json_envelope(
+                command="catalog info",
+                data=_server_to_dict(srv),
+            )
+        )
         return
 
     # Rich output — matching info.py pattern
@@ -199,14 +202,14 @@ def catalog_info_cmd(
         console.print(f"  [bold]Docs:[/bold]        {srv.docs_url}")
 
     if srv.required_env:
-        console.print(f"\n  [bold]Required Environment Variables:[/bold]")
+        console.print("\n  [bold]Required Environment Variables:[/bold]")
         for ev in srv.required_env:
             console.print(f"    • {ev.name} — {ev.description}")
 
     if srv.recommended_for:
         rec = srv.recommended_for
         if rec.skills or rec.agents or rec.bundles:
-            console.print(f"\n  [bold]Recommended For:[/bold]")
+            console.print("\n  [bold]Recommended For:[/bold]")
             if rec.skills:
                 console.print(f"    Skills:  {', '.join(rec.skills)}")
             if rec.agents:
@@ -233,7 +236,7 @@ def catalog_recommend_cmd() -> None:
         reg.load()
     except FileNotFoundError as exc:
         print_error(str(exc))
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     result = cat.recommend(reg)
 
@@ -241,10 +244,12 @@ def catalog_recommend_cmd() -> None:
     recommended = result.get("recommended", [])
 
     if is_json():
-        print_json(json_envelope(
-            command="catalog recommend",
-            data=result,
-        ))
+        print_json(
+            json_envelope(
+                command="catalog recommend",
+                data=result,
+            )
+        )
         return
 
     if not required and not recommended:
@@ -267,7 +272,9 @@ def catalog_recommend_cmd() -> None:
             if item.get("in_catalog"):
                 console.print(f"  • {name} — {desc} (used by: {refs})")
             else:
-                console.print(f"  • {name} — [dim]not in catalog — configure manually[/dim] (used by: {refs})")
+                console.print(
+                    f"  • {name} — [dim]not in catalog — configure manually[/dim] (used by: {refs})"
+                )
         console.print()
 
     if recommended:
@@ -287,8 +294,10 @@ def catalog_recommend_cmd() -> None:
 @catalog_app.command("install")
 def catalog_install_cmd(
     server: str = typer.Argument(..., help="Server name to install (e.g., github)."),
-    platform: Optional[str] = typer.Option(
-        None, "--platform", "-p",
+    platform: str | None = typer.Option(
+        None,
+        "--platform",
+        "-p",
         help="Target platform. Defaults to claude-code.",
     ),
 ) -> None:
@@ -308,8 +317,7 @@ def catalog_install_cmd(
     if platform:
         if platform not in PLATFORM_CONFIGS:
             print_error(
-                f"Unknown platform '{platform}'. "
-                f"Supported: {', '.join(SUPPORTED_PLATFORMS)}"
+                f"Unknown platform '{platform}'. Supported: {', '.join(SUPPORTED_PLATFORMS)}"
             )
             raise typer.Exit(1)
         target_platforms = [platform]
@@ -329,39 +337,49 @@ def catalog_install_cmd(
         try:
             status = merge_into_config(srv, pid)
             config_path = get_platform_config_path(pid)
-            results.append({
-                "platform": pid,
-                "status": status,
-                "config_path": str(config_path),
-            })
+            results.append(
+                {
+                    "platform": pid,
+                    "status": status,
+                    "config_path": str(config_path),
+                }
+            )
         except ValueError as exc:
-            results.append({
-                "platform": pid,
-                "status": "error",
-                "error": str(exc),
-            })
+            results.append(
+                {
+                    "platform": pid,
+                    "status": "error",
+                    "error": str(exc),
+                }
+            )
         except PermissionError:
-            results.append({
-                "platform": pid,
-                "status": "error",
-                "error": f"Permission denied writing to {get_platform_config_path(pid)}",
-            })
+            results.append(
+                {
+                    "platform": pid,
+                    "status": "error",
+                    "error": f"Permission denied writing to {get_platform_config_path(pid)}",
+                }
+            )
         except OSError as exc:
-            results.append({
-                "platform": pid,
-                "status": "error",
-                "error": str(exc),
-            })
+            results.append(
+                {
+                    "platform": pid,
+                    "status": "error",
+                    "error": str(exc),
+                }
+            )
 
     if is_json():
-        print_json(json_envelope(
-            command="catalog install",
-            data={
-                "server": srv.name,
-                "results": results,
-                "install_command": srv.install_command,
-            },
-        ))
+        print_json(
+            json_envelope(
+                command="catalog install",
+                data={
+                    "server": srv.name,
+                    "results": results,
+                    "install_command": srv.install_command,
+                },
+            )
+        )
         return
 
     # Rich output
@@ -400,34 +418,38 @@ def catalog_check_cmd() -> None:
         reg.load()
     except FileNotFoundError as exc:
         print_error(str(exc))
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     missing = check_dependencies(cat, reg)
 
     if is_json():
-        print_json(json_envelope(
-            command="catalog check",
-            data={
-                "satisfied": len(missing) == 0,
-                "missing_count": len(missing),
-                "missing": [
-                    {
-                        "skill_name": m.skill_name,
-                        "server_name": m.server_name,
-                        "platforms_missing": m.platforms_missing,
-                        "in_catalog": m.in_catalog,
-                    }
-                    for m in missing
-                ],
-            },
-        ))
+        print_json(
+            json_envelope(
+                command="catalog check",
+                data={
+                    "satisfied": len(missing) == 0,
+                    "missing_count": len(missing),
+                    "missing": [
+                        {
+                            "skill_name": m.skill_name,
+                            "server_name": m.server_name,
+                            "platforms_missing": m.platforms_missing,
+                            "in_catalog": m.in_catalog,
+                        }
+                        for m in missing
+                    ],
+                },
+            )
+        )
         return
 
     console.print()
     if not missing:
         print_success("All MCP dependencies satisfied ✓")
     else:
-        console.print(f"[bold]MCP Dependency Audit[/bold] ({len(missing)} issue{'s' if len(missing) != 1 else ''}):\n")
+        console.print(
+            f"[bold]MCP Dependency Audit[/bold] ({len(missing)} issue{'s' if len(missing) != 1 else ''}):\n"
+        )
         for m in missing:
             platforms_str = ", ".join(m.platforms_missing)
             console.print(
@@ -437,5 +459,7 @@ def catalog_check_cmd() -> None:
             if m.in_catalog:
                 console.print(f"    → Run: archon catalog install {m.server_name}")
             else:
-                console.print(f"    → Server '{m.server_name}' is not in the catalog — configure manually.")
+                console.print(
+                    f"    → Server '{m.server_name}' is not in the catalog — configure manually."
+                )
     console.print()

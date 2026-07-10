@@ -1,20 +1,21 @@
 """pytest configuration and fixtures for Archon synapses."""
 
-import pytest
 import sys
+
+import pytest
 
 sys.path.insert(0, "C:/Users/tahaa/omniskill/src")
 
 from archon.synapses import (
     anti_rationalization,
-    security_awareness,
-    metacognition,
-    trust_verification,
-    completeness,
     code_quality,
+    completeness,
     consistency,
+    metacognition,
+    pattern_recognition,
+    security_awareness,
     sequential_thinking,
-    pattern_recognition
+    trust_verification,
 )
 
 
@@ -30,7 +31,7 @@ def all_synapses():
         "code_quality": code_quality,
         "consistency": consistency,
         "sequential_thinking": sequential_thinking,
-        "pattern_recognition": pattern_recognition
+        "pattern_recognition": pattern_recognition,
     }
 
 

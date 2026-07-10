@@ -86,11 +86,26 @@ def check_quality_gates(session: dict) -> tuple[bool, list[str]]:
 
     # Only check code files (skip markdown, configs)
     code_files = [
-        f for f in files_modified
-        if any(f.endswith(ext) for ext in (
-            ".py", ".js", ".ts", ".jsx", ".tsx", ".rs", ".go",
-            ".java", ".c", ".cpp", ".cs", ".rb", ".php",
-        ))
+        f
+        for f in files_modified
+        if any(
+            f.endswith(ext)
+            for ext in (
+                ".py",
+                ".js",
+                ".ts",
+                ".jsx",
+                ".tsx",
+                ".rs",
+                ".go",
+                ".java",
+                ".c",
+                ".cpp",
+                ".cs",
+                ".rb",
+                ".php",
+            )
+        )
     ]
 
     if not code_files:

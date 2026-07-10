@@ -10,8 +10,7 @@ Returns HALT if critical claims lack evidence.
 """
 
 import re
-from typing import Any, Dict
-
+from typing import Any
 
 # Negation markers used to detect contradictions
 _NEGATION_PATTERNS = re.compile(
@@ -26,11 +25,7 @@ _CRITICAL_PHRASES = ("must", "always", "never", "definitely", "guaranteed")
 def _extract_key_terms(text: str) -> set[str]:
     """Return a set of meaningful content words (3+ chars, alpha only)."""
     stopwords = {"the", "and", "for", "that", "this", "with", "from", "are", "was"}
-    return {
-        w.lower()
-        for w in re.findall(r"\b[a-zA-Z]{3,}\b", text)
-        if w.lower() not in stopwords
-    }
+    return {w.lower() for w in re.findall(r"\b[a-zA-Z]{3,}\b", text) if w.lower() not in stopwords}
 
 
 def _contradicts(reasoning: str, prior_text: str) -> bool:
@@ -52,7 +47,7 @@ def _contradicts(reasoning: str, prior_text: str) -> bool:
     return len(shared_terms) >= 2  # At least 2 shared terms to avoid false positives
 
 
-def validate(context: Dict[str, Any]) -> Dict[str, Any]:
+def validate(context: dict[str, Any]) -> dict[str, Any]:
     """
     Verify reasoning against available evidence.
 
@@ -108,8 +103,8 @@ def validate(context: Dict[str, Any]) -> Dict[str, Any]:
 
 
 CONTEXT_SCHEMA = {
-    "reasoning": str,      # Agent's stated reasoning/claim
-    "evidence": list,      # List of supporting evidence items
-    "prior_state": dict,   # Prior decisions and state
+    "reasoning": str,  # Agent's stated reasoning/claim
+    "evidence": list,  # List of supporting evidence items
+    "prior_state": dict,  # Prior decisions and state
     "confidence_threshold": float,  # Min confidence required (0-1)
 }

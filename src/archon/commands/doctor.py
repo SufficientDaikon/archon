@@ -2,14 +2,16 @@
 
 from __future__ import annotations
 
-import typer
-
-from archon.core.registry import Registry
+from archon.core.config import get_install_records, is_initialized
 from archon.core.platform import detect_platforms
-from archon.core.config import is_initialized, load_config, get_install_records
+from archon.core.registry import Registry
 from archon.utils.output import (
-    console, print_success, print_error, print_warning, print_info, print_verbose,
-    is_json, json_envelope, print_json, make_table,
+    console,
+    is_json,
+    json_envelope,
+    make_table,
+    print_json,
+    print_success,
 )
 
 
@@ -51,11 +53,13 @@ def doctor_cmd() -> None:
     # ── Initialization check ────────────────────────────────────
     initialized = is_initialized()
     if not initialized:
-        issues.append({
-            "severity": "error",
-            "message": "Archon is not initialized.",
-            "remediation": "Run: archon init",
-        })
+        issues.append(
+            {
+                "severity": "error",
+                "message": "Archon is not initialized.",
+                "remediation": "Run: archon init",
+            }
+        )
 
     # ── Registry check ──────────────────────────────────────────
     registry_ok = False
@@ -77,17 +81,21 @@ def doctor_cmd() -> None:
         synapses_count = len(reg.synapses)
         version = reg.version
     except FileNotFoundError:
-        issues.append({
-            "severity": "error",
-            "message": "Registry (archon.yaml) not found.",
-            "remediation": "Ensure ARCHON_ROOT is set or run from the Archon directory.",
-        })
+        issues.append(
+            {
+                "severity": "error",
+                "message": "Registry (archon.yaml) not found.",
+                "remediation": "Ensure ARCHON_ROOT is set or run from the Archon directory.",
+            }
+        )
     except Exception as exc:
-        issues.append({
-            "severity": "error",
-            "message": f"Registry error: {exc}",
-            "remediation": "Check archon.yaml for syntax errors.",
-        })
+        issues.append(
+            {
+                "severity": "error",
+                "message": f"Registry error: {exc}",
+                "remediation": "Check archon.yaml for syntax errors.",
+            }
+        )
 
     # ── Agent card checks (FR-AC-037 through FR-AC-039) ─────────
     agents_with_cards = 0
@@ -98,28 +106,34 @@ def doctor_cmd() -> None:
                 agents_with_cards += 1
         missing_cards = agents_count - agents_with_cards
         if missing_cards > 0:
-            issues.append({
-                "severity": "warning",
-                "message": f"{missing_cards} agent(s) missing card section in manifest.",
-                "remediation": "Add card: section to agent-manifest.yaml. See: archon docs agent-cards",
-            })
+            issues.append(
+                {
+                    "severity": "warning",
+                    "message": f"{missing_cards} agent(s) missing card section in manifest.",
+                    "remediation": "Add card: section to agent-manifest.yaml. See: archon docs agent-cards",
+                }
+            )
 
         # Check agent-cards.json staleness
         agent_cards_path = reg.root / "agent-cards.json"
         if agent_cards_path.exists():
             try:
                 import re as _re
+
                 from archon.core.agent_cards import generate_agent_cards
+
                 expected = generate_agent_cards(reg.root, reg)
                 actual = agent_cards_path.read_text(encoding="utf-8")
                 expected_cmp = _re.sub(r'"generated":\s*"[^"]+"', '"generated": ""', expected)
                 actual_cmp = _re.sub(r'"generated":\s*"[^"]+"', '"generated": ""', actual)
                 if expected_cmp != actual_cmp:
-                    issues.append({
-                        "severity": "info",
-                        "message": "agent-cards.json is stale.",
-                        "remediation": "Regenerate with: archon generate agent-cards",
-                    })
+                    issues.append(
+                        {
+                            "severity": "info",
+                            "message": "agent-cards.json is stale.",
+                            "remediation": "Regenerate with: archon generate agent-cards",
+                        }
+                    )
             except Exception:
                 pass  # Don't let card check break doctor
 
@@ -128,11 +142,13 @@ def doctor_cmd() -> None:
     detected = [p for p in platforms if p.detected]
 
     if not detected:
-        issues.append({
-            "severity": "warning",
-            "message": "No AI platforms detected.",
-            "remediation": "Install Claude Code and ensure ~/.claude/ exists, then run: archon init",
-        })
+        issues.append(
+            {
+                "severity": "warning",
+                "message": "No AI platforms detected.",
+                "remediation": "Install Claude Code and ensure ~/.claude/ exists, then run: archon init",
+            }
+        )
 
     # ── MCP Catalog checks (FR-CAT-040 through FR-CAT-044) ─────
     catalog_ok = False
@@ -144,6 +160,7 @@ def doctor_cmd() -> None:
     if registry_ok:
         try:
             from archon.core.catalog import Catalog, check_dependencies
+
             cat = Catalog(root=reg.root)
             cat.load()
             catalog_ok = True
@@ -160,25 +177,31 @@ def doctor_cmd() -> None:
                     "in_catalog": md.in_catalog,
                 }
                 catalog_missing_details.append(detail)
-                issues.append({
-                    "severity": "warning",
-                    "message": f"Skill '{md.skill_name}' requires MCP server '{md.server_name}' but it is not configured.",
-                    "remediation": f"Run: archon catalog install {md.server_name}",
-                })
+                issues.append(
+                    {
+                        "severity": "warning",
+                        "message": f"Skill '{md.skill_name}' requires MCP server '{md.server_name}' but it is not configured.",
+                        "remediation": f"Run: archon catalog install {md.server_name}",
+                    }
+                )
                 catalog_issue_count += 1
         except FileNotFoundError:
-            issues.append({
-                "severity": "info",
-                "message": "MCP catalog not found or invalid.",
-                "remediation": "Ensure catalog/mcp-servers.yaml exists in the Archon root.",
-            })
+            issues.append(
+                {
+                    "severity": "info",
+                    "message": "MCP catalog not found or invalid.",
+                    "remediation": "Ensure catalog/mcp-servers.yaml exists in the Archon root.",
+                }
+            )
             catalog_issue_count += 2
         except Exception:
-            issues.append({
-                "severity": "info",
-                "message": "MCP catalog not found or invalid.",
-                "remediation": "Ensure catalog/mcp-servers.yaml exists and is valid YAML.",
-            })
+            issues.append(
+                {
+                    "severity": "info",
+                    "message": "MCP catalog not found or invalid.",
+                    "remediation": "Ensure catalog/mcp-servers.yaml exists and is valid YAML.",
+                }
+            )
             catalog_issue_count += 2
 
     # Per-platform checks
@@ -192,11 +215,13 @@ def doctor_cmd() -> None:
             "installed_skills": len(p.installed_skills),
         }
         if p.detected and p.skills_target and not p.skills_target.exists():
-            issues.append({
-                "severity": "info",
-                "message": f"{p.name}: skills directory does not exist yet ({p.skills_target})",
-                "remediation": f"Run: archon install --platform {p.id} --all",
-            })
+            issues.append(
+                {
+                    "severity": "info",
+                    "message": f"{p.name}: skills directory does not exist yet ({p.skills_target})",
+                    "remediation": f"Run: archon install --platform {p.id} --all",
+                }
+            )
             status["healthy"] = False
         else:
             status["healthy"] = p.detected
@@ -216,41 +241,51 @@ def doctor_cmd() -> None:
                 virtuoso_ok = True
                 content = virtuoso_skill.read_text(encoding="utf-8")
                 import re as _re_v
+
                 ver_match = _re_v.search(r'version="([^"]+)"', content)
                 if ver_match:
                     virtuoso_version = ver_match.group(1)
             else:
-                issues.append({
-                    "severity": "warning",
-                    "message": f"Virtuoso engine not installed for {p.name}.",
-                    "remediation": "Run: archon init --force",
-                })
+                issues.append(
+                    {
+                        "severity": "warning",
+                        "message": f"Virtuoso engine not installed for {p.name}.",
+                        "remediation": "Run: archon init --force",
+                    }
+                )
 
             # Check synapses
             synapses_dir = p.skills_target / "_synapses"
             if synapses_dir.exists():
                 synapses_installed = sum(
-                    1 for d in synapses_dir.iterdir()
+                    1
+                    for d in synapses_dir.iterdir()
                     if d.is_dir() and not d.name.startswith("_") and (d / "SYNAPSE.md").exists()
                 )
             if synapses_installed < 5:
-                issues.append({
-                    "severity": "warning",
-                    "message": f"Only {synapses_installed}/5 synapses installed.",
-                    "remediation": "Run: archon init --force",
-                })
+                issues.append(
+                    {
+                        "severity": "warning",
+                        "message": f"Only {synapses_installed}/5 synapses installed.",
+                        "remediation": "Run: archon init --force",
+                    }
+                )
             break  # Only check first detected platform
 
     # Check agent-library
     from pathlib import Path as _Path
+
     agent_library = _Path.home() / ".claude" / "agent-library"
     if agent_library.exists():
-        agent_library_count = sum(1 for f in agent_library.glob("*.md") if not f.name.startswith("_"))
+        agent_library_count = sum(
+            1 for f in agent_library.glob("*.md") if not f.name.startswith("_")
+        )
 
     # Check agent-router MCP
     agent_router_ok = False
     try:
         import json as _json
+
         settings_path = _Path.home() / ".claude" / "settings.json"
         if settings_path.exists():
             settings = _json.loads(settings_path.read_text(encoding="utf-8"))
@@ -261,11 +296,13 @@ def doctor_cmd() -> None:
         pass
 
     if not agent_router_ok and agent_library_count > 0:
-        issues.append({
-            "severity": "info",
-            "message": "Agent-router MCP server not registered but agent-library exists.",
-            "remediation": "Register agent-router in ~/.claude/settings.json mcpServers.",
-        })
+        issues.append(
+            {
+                "severity": "info",
+                "message": "Agent-router MCP server not registered but agent-library exists.",
+                "remediation": "Register agent-router in ~/.claude/settings.json mcpServers.",
+            }
+        )
 
     # ── Installation records check ──────────────────────────────
     records = get_install_records()
@@ -283,39 +320,41 @@ def doctor_cmd() -> None:
 
     # ── JSON output ─────────────────────────────────────────────
     if is_json():
-        print_json(json_envelope(
-            command="doctor",
-            data={
-                "health_score": score,
-                "initialized": initialized,
-                "framework_version": version,
-                "registry": {
-                    "ok": registry_ok,
-                    "skills": skills_count,
-                    "agents": agents_count,
-                    "agents_with_cards": agents_with_cards,
-                    "bundles": bundles_count,
-                    "pipelines": pipelines_count,
-                    "synapses": synapses_count,
-                    "mcp_catalog": {
-                        "ok": catalog_ok,
-                        "entries": catalog_entries,
-                        "missing_dependencies": catalog_missing_deps,
-                        "missing_details": catalog_missing_details,
+        print_json(
+            json_envelope(
+                command="doctor",
+                data={
+                    "health_score": score,
+                    "initialized": initialized,
+                    "framework_version": version,
+                    "registry": {
+                        "ok": registry_ok,
+                        "skills": skills_count,
+                        "agents": agents_count,
+                        "agents_with_cards": agents_with_cards,
+                        "bundles": bundles_count,
+                        "pipelines": pipelines_count,
+                        "synapses": synapses_count,
+                        "mcp_catalog": {
+                            "ok": catalog_ok,
+                            "entries": catalog_entries,
+                            "missing_dependencies": catalog_missing_deps,
+                            "missing_details": catalog_missing_details,
+                        },
                     },
+                    "virtuoso": {
+                        "installed": virtuoso_ok,
+                        "version": virtuoso_version,
+                        "synapses_installed": synapses_installed,
+                        "agent_library_count": agent_library_count,
+                        "agent_router_registered": agent_router_ok,
+                    },
+                    "platforms": platform_statuses,
+                    "installed_components": total_installed,
+                    "issues": issues,
                 },
-                "virtuoso": {
-                    "installed": virtuoso_ok,
-                    "version": virtuoso_version,
-                    "synapses_installed": synapses_installed,
-                    "agent_library_count": agent_library_count,
-                    "agent_router_registered": agent_router_ok,
-                },
-                "platforms": platform_statuses,
-                "installed_components": total_installed,
-                "issues": issues,
-            },
-        ))
+            )
+        )
         return
 
     # ── Rich output ─────────────────────────────────────────────
@@ -364,7 +403,9 @@ def doctor_cmd() -> None:
     console.print(f"  Bundles:     {bundles_count}")
     console.print(f"  Pipelines:   {pipelines_count}")
     console.print(f"  Synapses:    {synapses_count}")
-    console.print(f"  MCP Catalog: {catalog_entries} server(s)" + (" ✓" if catalog_ok else " (not loaded)"))
+    console.print(
+        f"  MCP Catalog: {catalog_entries} server(s)" + (" ✓" if catalog_ok else " (not loaded)")
+    )
     console.print(f"  Installed:   {total_installed} record(s)")
     console.print()
 
@@ -376,7 +417,9 @@ def doctor_cmd() -> None:
         console.print("  ❌ Engine:       not installed")
     console.print(f"  🧠 Synapses:     {synapses_installed}/5")
     console.print(f"  📚 Agent Library: {agent_library_count} agent(s)")
-    console.print(f"  🔌 Agent Router: {'✓ registered' if agent_router_ok else '❌ not registered'}")
+    console.print(
+        f"  🔌 Agent Router: {'✓ registered' if agent_router_ok else '❌ not registered'}"
+    )
     console.print()
 
     # Issues (FR-025, FR-026)

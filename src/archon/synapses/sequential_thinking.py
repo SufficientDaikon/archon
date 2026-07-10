@@ -10,13 +10,13 @@ Ensures reasoning follows logical progression:
 Returns HALT if reasoning has critical gaps.
 """
 
-from typing import Any, Dict, List
+from typing import Any
 
 
-def validate(context: Dict[str, Any]) -> Dict[str, Any]:
+def validate(context: dict[str, Any]) -> dict[str, Any]:
     """
     Verify sequential thinking integrity.
-    
+
     Context expected:
     - steps: list - Reasoning steps in order
     - claims: list - Claims made during reasoning
@@ -27,16 +27,15 @@ def validate(context: Dict[str, Any]) -> Dict[str, Any]:
     claims = context.get("claims", [])
     evidence = context.get("evidence", [])
     dependencies = context.get("dependencies", {})
-    
+
     issues = []
-    
+
     # Check 1: Logical gaps
     if steps:
         for i, step in enumerate(steps):
-            if i > 0 and ("because" not in str(step).lower() and 
-                         "thus" not in str(step).lower()):
+            if i > 0 and ("because" not in str(step).lower() and "thus" not in str(step).lower()):
                 issues.append(f"LOGIC_GAP: Step {i} not connected to prior reasoning")
-    
+
     # Check 2: Step ordering via dependencies
     processed = set()
     for step_id, depends_on in dependencies.items():
@@ -45,10 +44,10 @@ def validate(context: Dict[str, Any]) -> Dict[str, Any]:
                 f"ORDERING: Step {step_id} requires {depends_on} but processed in wrong order"
             )
         processed.add(step_id)
-    
+
     # Check 3: Circular reasoning detection
     visited = set()
-    
+
     def has_cycle(node, path):
         if node in path:
             return True
@@ -62,16 +61,16 @@ def validate(context: Dict[str, Any]) -> Dict[str, Any]:
             if has_cycle(dep, path + [node]):
                 return True
         return False
-    
+
     for step_id in dependencies:
         if has_cycle(step_id, []):
             issues.append(f"CIRCULAR: Circular reasoning detected involving {step_id}")
             break
-    
+
     # Check 4: Claim-evidence linkage
     if claims and not evidence:
         issues.append("UNSUPPORTED: Claims made without supporting evidence")
-    
+
     if issues:
         return {
             "action": "halt",
@@ -79,7 +78,7 @@ def validate(context: Dict[str, Any]) -> Dict[str, Any]:
             "violations": issues,
             "steps_analyzed": len(steps),
         }
-    
+
     return {
         "action": "allow",
         "message": "Sequential thinking verified",

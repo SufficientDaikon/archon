@@ -10,27 +10,29 @@ import io
 import json
 import os
 import sys
-from typing import Any, Optional
+from typing import Any
 
+from rich import box
 from rich.console import Console
 from rich.panel import Panel
+from rich.progress import BarColumn, Progress, SpinnerColumn, TaskProgressColumn, TextColumn
 from rich.table import Table
-from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TaskProgressColumn
 from rich.theme import Theme
-from rich import box
 
 from archon import __version__
 
 # ── Shared console ──────────────────────────────────────────────
 
-_THEME = Theme({
-    "info": "cyan",
-    "success": "green",
-    "warning": "yellow",
-    "error": "bold red",
-    "title": "bold magenta",
-    "muted": "dim",
-})
+_THEME = Theme(
+    {
+        "info": "cyan",
+        "success": "green",
+        "warning": "yellow",
+        "error": "bold red",
+        "title": "bold magenta",
+        "muted": "dim",
+    }
+)
 
 # Respect NO_COLOR (https://no-color.org/)
 _no_color = "NO_COLOR" in os.environ
@@ -45,15 +47,23 @@ def _safe_file(stream: Any) -> Any:
         return stream
     except (UnicodeEncodeError, LookupError):
         return io.TextIOWrapper(
-            stream.buffer, encoding="utf-8", errors="replace", line_buffering=True,
+            stream.buffer,
+            encoding="utf-8",
+            errors="replace",
+            line_buffering=True,
         )
 
 
 console = Console(
-    theme=_THEME, no_color=_no_color, file=_safe_file(sys.stdout),
+    theme=_THEME,
+    no_color=_no_color,
+    file=_safe_file(sys.stdout),
 )
 err_console = Console(
-    stderr=True, theme=_THEME, no_color=_no_color, file=_safe_file(sys.stderr),
+    stderr=True,
+    theme=_THEME,
+    no_color=_no_color,
+    file=_safe_file(sys.stderr),
 )
 
 # ── Global state set by CLI callbacks ───────────────────────────
@@ -63,7 +73,9 @@ _quiet_mode: bool = False
 _verbose_mode: bool = False
 
 
-def set_output_flags(*, json_flag: bool = False, quiet: bool = False, verbose: bool = False) -> None:
+def set_output_flags(
+    *, json_flag: bool = False, quiet: bool = False, verbose: bool = False
+) -> None:
     """Set global output-mode flags (called from the CLI callback)."""
     global _json_mode, _quiet_mode, _verbose_mode
     _json_mode = json_flag
@@ -84,6 +96,7 @@ def is_verbose() -> bool:
 
 
 # ── JSON envelope ───────────────────────────────────────────────
+
 
 def json_envelope(
     *,
@@ -109,11 +122,13 @@ def json_envelope(
 def print_json(envelope: dict) -> None:
     """Print a JSON envelope to stdout (raw, no ANSI — suitable for piping)."""
     import sys
+
     sys.stdout.write(json.dumps(envelope, indent=2, default=str) + "\n")
     sys.stdout.flush()
 
 
 # ── Pretty helpers ──────────────────────────────────────────────
+
 
 def print_success(msg: str) -> None:
     if not _quiet_mode and not _json_mode:

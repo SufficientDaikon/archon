@@ -51,13 +51,17 @@ def parse_frontmatter(text: str):
         return None, text
     if not isinstance(data, dict):
         return None, text
-    return data, text[match.end():]
+    return data, text[match.end() :]
 
 
 def dump_frontmatter(data: dict) -> str:
-    return "---\n" + yaml.dump(
-        data, sort_keys=False, allow_unicode=True, width=100000, default_flow_style=False
-    ) + "---\n"
+    return (
+        "---\n"
+        + yaml.dump(
+            data, sort_keys=False, allow_unicode=True, width=100000, default_flow_style=False
+        )
+        + "---\n"
+    )
 
 
 def normalize_skill(skill_dir: Path) -> list[str]:

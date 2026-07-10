@@ -71,10 +71,12 @@ def record_subagent_run(agent_type: str) -> None:
     """Append a completed subagent run to session state (cheap telemetry)."""
     state = load_state()
     runs = state["session"].setdefault("subagent_runs", [])
-    runs.append({
-        "type": agent_type or "unknown",
-        "finished": datetime.now(timezone.utc).isoformat(),
-    })
+    runs.append(
+        {
+            "type": agent_type or "unknown",
+            "finished": datetime.now(timezone.utc).isoformat(),
+        }
+    )
     # Bound the list so state stays small
     state["session"]["subagent_runs"] = runs[-20:]
     save_state(state)
@@ -93,7 +95,7 @@ def build_agent_context(mode: str, state: dict) -> str:
             f'  <project type="{project.get("type", "")}" name="{project.get("name", "")}" '
             f'framework="{project.get("framework", "")}" />\n'
             f'  <git branch="{git.get("branch", "")}" />\n'
-            f'</archon-agent-context>'
+            f"</archon-agent-context>"
         )
 
     if mode == "code":
@@ -107,8 +109,8 @@ def build_agent_context(mode: str, state: dict) -> str:
             f'framework="{project.get("framework", "")}" />\n'
             f'  <session tier="{tier}" files-modified="{files_str}" />\n'
             f'  <git branch="{git.get("branch", "")}" uncommitted="{git.get("uncommitted_changes", 0)}" />\n'
-            f'  <directive>No shortcuts. Verify before claiming done. Deviation protocol: STOP → DOCUMENT → ASK → LOG.</directive>\n'
-            f'</archon-agent-context>'
+            f"  <directive>No shortcuts. Verify before claiming done. Deviation protocol: STOP → DOCUMENT → ASK → LOG.</directive>\n"
+            f"</archon-agent-context>"
         )
 
     return ""

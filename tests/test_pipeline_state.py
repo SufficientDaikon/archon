@@ -89,7 +89,7 @@ class TestPipelineStatePersistence:
             state = PipelineState.create("test", ".")
             state_file = state.save(Path(tmpdir))
 
-            with open(state_file, "r") as f:
+            with open(state_file) as f:
                 data = json.load(f)
 
             assert "state_id" in data

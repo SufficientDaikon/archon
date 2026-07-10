@@ -11,13 +11,13 @@ Returns HALT when the agent proceeds without appropriate planning or
 reasoning for the complexity level declared.
 """
 
-from typing import Any, Dict
+from typing import Any
 
 # Complexity tiers that require a plan before acting
 _PLAN_REQUIRED_TIERS = {"MODERATE", "COMPLEX", "EXPERT"}
 
 # Minimum reasoning length (chars) per tier — below this is shallow
-_MIN_REASONING_LENGTH: Dict[str, int] = {
+_MIN_REASONING_LENGTH: dict[str, int] = {
     "TRIVIAL": 0,
     "SIMPLE": 30,
     "MODERATE": 100,
@@ -27,12 +27,20 @@ _MIN_REASONING_LENGTH: Dict[str, int] = {
 
 # Reflection markers — at least one should appear in reasoning for COMPLEX+
 _REFLECTION_MARKERS = (
-    "because", "therefore", "however", "alternatively", "trade-off",
-    "consider", "risk", "assumption", "verify", "investigate",
+    "because",
+    "therefore",
+    "however",
+    "alternatively",
+    "trade-off",
+    "consider",
+    "risk",
+    "assumption",
+    "verify",
+    "investigate",
 )
 
 
-def validate(context: Dict[str, Any]) -> Dict[str, Any]:
+def validate(context: dict[str, Any]) -> dict[str, Any]:
     """
     Enforce metacognitive quality before execution.
 
@@ -104,9 +112,9 @@ def validate(context: Dict[str, Any]) -> Dict[str, Any]:
 
 
 CONTEXT_SCHEMA = {
-    "complexity": str,       # Task tier: TRIVIAL|SIMPLE|MODERATE|COMPLEX|EXPERT
-    "has_plan": bool,        # Whether a plan exists before acting
-    "reasoning": str,        # Agent's reasoning for the approach
-    "confidence": float,     # Agent's stated confidence (0-1)
-    "evidence_count": int,   # Supporting evidence items count
+    "complexity": str,  # Task tier: TRIVIAL|SIMPLE|MODERATE|COMPLEX|EXPERT
+    "has_plan": bool,  # Whether a plan exists before acting
+    "reasoning": str,  # Agent's reasoning for the approach
+    "confidence": float,  # Agent's stated confidence (0-1)
+    "evidence_count": int,  # Supporting evidence items count
 }

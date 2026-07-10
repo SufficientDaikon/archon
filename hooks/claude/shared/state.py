@@ -6,7 +6,6 @@ corrupt state, and version migration. Atomic writes via temp+rename.
 
 import json
 import os
-import sys
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
@@ -34,7 +33,7 @@ def load_state() -> dict[str, Any]:
     if not path.exists():
         return _empty_state()
     try:
-        with open(path, "r", encoding="utf-8") as f:
+        with open(path, encoding="utf-8") as f:
             data = json.load(f)
         if data.get("version") != STATE_VERSION:
             data = _migrate_state(data)

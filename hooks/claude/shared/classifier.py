@@ -9,10 +9,10 @@ import re
 # Tier thresholds (word count). Lowered TRIVIAL from 38 to 12 — real prompts
 # describing actual tasks are typically 10-30 words.
 TIER_THRESHOLDS = [
-    (12, "TRIVIAL"),     # one-liners, greetings, single commands
-    (60, "SIMPLE"),      # single-function tasks, clear requirements
-    (300, "MODERATE"),   # multi-file, some ambiguity
-    (1000, "COMPLEX"),   # architecture, cross-cutting
+    (12, "TRIVIAL"),  # one-liners, greetings, single commands
+    (60, "SIMPLE"),  # single-function tasks, clear requirements
+    (300, "MODERATE"),  # multi-file, some ambiguity
+    (1000, "COMPLEX"),  # architecture, cross-cutting
 ]
 DEFAULT_TIER = "EXPERT"
 TIERS = [t for _, t in TIER_THRESHOLDS] + [DEFAULT_TIER]
@@ -169,11 +169,11 @@ _FENCED_CODE = re.compile(r"```.*?```", re.S)
 _INLINE_CODE = re.compile(r"`[^`\n]+`")
 _NOISE_LINES = re.compile(
     r"^\s*(?:"
-    r"at\s+\S+"                       # JS/Java stack frames
-    r"|File \"[^\"]+\", line \d+"     # Python tracebacks
-    r"|Traceback \(most recent"       # Python traceback header
-    r"|\d{4}-\d{2}-\d{2}[T ]\d{2}:"   # timestamped log lines
-    r"|>"                             # quoted lines
+    r"at\s+\S+"  # JS/Java stack frames
+    r"|File \"[^\"]+\", line \d+"  # Python tracebacks
+    r"|Traceback \(most recent"  # Python traceback header
+    r"|\d{4}-\d{2}-\d{2}[T ]\d{2}:"  # timestamped log lines
+    r"|>"  # quoted lines
     r").*$",
     re.M,
 )

@@ -12,13 +12,13 @@ Provides PipelineExecutor class that:
 
 from __future__ import annotations
 
+import asyncio
 import time
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from enum import Enum
 from pathlib import Path
-from typing import Any, Callable
-
-import asyncio
+from typing import Any
 
 import yaml
 
@@ -50,6 +50,7 @@ class StepStatus(Enum):
 @dataclass
 class StepResult:
     """Result of executing a single pipeline step."""
+
     step_name: str
     status: StepStatus
     duration_ms: int = 0
@@ -76,6 +77,7 @@ class StepResult:
 @dataclass
 class PipelineDefinition:
     """Parsed pipeline YAML definition."""
+
     name: str
     version: str
     description: str
@@ -89,7 +91,7 @@ class PipelineDefinition:
     @classmethod
     def from_yaml(cls, path: Path) -> PipelineDefinition:
         """Load pipeline definition from YAML file."""
-        with open(path, "r", encoding="utf-8") as f:
+        with open(path, encoding="utf-8") as f:
             data = yaml.safe_load(f)
 
         return cls(
@@ -123,6 +125,7 @@ class PipelineExecutor:
         simulation: bool = False,
     ):
         from archon.utils.paths import get_archon_home
+
         self.state_dir = state_dir or get_archon_home() / "pipeline-states"
         self.state_dir.mkdir(parents=True, exist_ok=True)
         self.simulation = simulation
@@ -143,9 +146,10 @@ class PipelineExecutor:
 
         return pipeline
 
-    def _build_synapse_engine(self) -> "SynapseEngineV2":
+    def _build_synapse_engine(self) -> SynapseEngineV2:
         """Build the default SynapseEngineV2 with all synapses registered."""
         from .synapse_engine_v2 import build_default_engine
+
         return build_default_engine()
 
     def _fire_synapses(self, trigger: str, context: dict) -> list:
@@ -165,6 +169,7 @@ class PipelineExecutor:
         # A loop is already running (e.g. called from async test code):
         # execute in a separate thread with its own event loop.
         import threading
+
         results: list = []
 
         def run():
@@ -209,27 +214,33 @@ class PipelineExecutor:
         if pipeline.synapse_mode != "disabled" and self._synapse_engine is None:
             self._synapse_engine = self._build_synapse_engine()
 
-
         state.update_status(PipelineStatus.EXECUTING.value)
 
         for step_index, step_config in enumerate(pipeline.steps):
             step_name = step_config.get("name", f"step-{step_index}")
-            step_agent = step_config.get("agent", "unknown")
+            step_config.get("agent", "unknown")
 
             # Fire synapse pre-execution check
             if self._synapse_engine is not None:
-                synapse_decisions = self._fire_synapses("pre-execution", {
-                    "pipeline": pipeline.name,
-                    "step": step_name,
-                    "reasoning": step_config.get("prompt", step_config.get("description", "")),
-                    "task": step_config.get("name", ""),
-                })
+                synapse_decisions = self._fire_synapses(
+                    "pre-execution",
+                    {
+                        "pipeline": pipeline.name,
+                        "step": step_name,
+                        "reasoning": step_config.get("prompt", step_config.get("description", "")),
+                        "task": step_config.get("name", ""),
+                    },
+                )
                 blocking = [d for d in synapse_decisions if d.is_blocking]
                 if blocking:
-                    state.record_step(step_name, StepStatus.FAILED.value, {
-                        "errors": [d.message for d in blocking],
-                        "phase": "synapse-pre-execution",
-                    })
+                    state.record_step(
+                        step_name,
+                        StepStatus.FAILED.value,
+                        {
+                            "errors": [d.message for d in blocking],
+                            "phase": "synapse-pre-execution",
+                        },
+                    )
                     failure_action = self._handle_failure(
                         step_config, step_name, [d.message for d in blocking], 1, state
                     )
@@ -246,12 +257,15 @@ class PipelineExecutor:
 
             try:
                 if step_handler:
-                    step_result = step_handler(step_config, {
-                        "state": state.to_dict(),
-                        "project_dir": project_dir,
-                        "config": config,
-                        "step_index": step_index,
-                    })
+                    step_result = step_handler(
+                        step_config,
+                        {
+                            "state": state.to_dict(),
+                            "project_dir": project_dir,
+                            "config": config,
+                            "step_index": step_index,
+                        },
+                    )
                 else:
                     step_result = self._default_step_handler(step_config, state)
             except Exception as e:
@@ -266,6 +280,7 @@ class PipelineExecutor:
 
             # Reload state from disk in case step handler modified it
             from .pipeline_state import PipelineState as _PS
+
             reloaded = _PS.load(state.state_id, self.state_dir)
             if reloaded:
                 state.accumulated = reloaded.accumulated
@@ -310,6 +325,7 @@ class PipelineExecutor:
             if pattern:
                 project_dir = state.get("project_dir", ".")
                 import glob
+
                 matches = glob.glob(str(Path(project_dir) / pattern))
                 if not matches:
                     result["valid"] = False
@@ -330,7 +346,8 @@ class PipelineExecutor:
         # Find the step to resume from
         completed_steps = set(state.completed_step_names())
         remaining_steps = [
-            (i, s) for i, s in enumerate(pipeline.steps)
+            (i, s)
+            for i, s in enumerate(pipeline.steps)
             if s.get("name", f"step-{i}") not in completed_steps
         ]
 
@@ -348,11 +365,14 @@ class PipelineExecutor:
 
             try:
                 if step_handler:
-                    step_result = step_handler(step_config, {
-                        "state": state.to_dict(),
-                        "project_dir": state.project_dir,
-                        "step_index": step_index,
-                    })
+                    step_result = step_handler(
+                        step_config,
+                        {
+                            "state": state.to_dict(),
+                            "project_dir": state.project_dir,
+                            "step_index": step_index,
+                        },
+                    )
                 else:
                     step_result = self._default_step_handler(step_config, state)
             except Exception as e:
@@ -431,9 +451,7 @@ class PipelineExecutor:
             artifact_lines = []
             for prev in state.steps:
                 if prev.get("status") == "completed" and prev.get("artifacts"):
-                    artifact_lines.append(
-                        f"- {prev['step_name']}: {', '.join(prev['artifacts'])}"
-                    )
+                    artifact_lines.append(f"- {prev['step_name']}: {', '.join(prev['artifacts'])}")
             if artifact_lines:
                 prev_artifacts = "\n".join(artifact_lines)
 

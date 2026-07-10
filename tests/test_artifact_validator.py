@@ -55,11 +55,15 @@ class TestValidateSections:
 
         validator = ArtifactValidator()
         with tempfile.TemporaryDirectory() as tmpdir:
-            content = "# Introduction\n\nHello\n\n## Requirements\n\nStuff\n\n## Architecture\n\nMore"
+            content = (
+                "# Introduction\n\nHello\n\n## Requirements\n\nStuff\n\n## Architecture\n\nMore"
+            )
             filepath = str(Path(tmpdir, "spec.md"))
             Path(filepath).write_text(content)
 
-            result = validator.validate_sections(filepath, ["Introduction", "Requirements", "Architecture"])
+            result = validator.validate_sections(
+                filepath, ["Introduction", "Requirements", "Architecture"]
+            )
             assert result.passed is True
 
     def test_missing_section(self):

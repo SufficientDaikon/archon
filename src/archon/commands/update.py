@@ -2,22 +2,18 @@
 
 from __future__ import annotations
 
-import shutil
-from datetime import datetime
-from pathlib import Path
-from typing import Optional
-
 import typer
-import yaml
 
-from archon.core.registry import Registry
-from archon.core.platform import detect_platforms
 from archon.core.config import get_install_records
+from archon.core.registry import Registry
 from archon.utils.output import (
-    console, print_error, print_success, print_warning, print_info, print_verbose,
-    is_json, json_envelope, print_json,
+    console,
+    is_json,
+    json_envelope,
+    print_error,
+    print_json,
+    print_success,
 )
-from archon.utils.paths import get_archon_home
 
 
 def _parse_version(v: str) -> tuple[int, int, int]:
@@ -43,12 +39,14 @@ def _check_skill_updates(reg: Registry) -> list[dict]:
         installed_ver = record.get("version", "0.0.0")
         registry_ver = skill.version
         if _parse_version(installed_ver) < _parse_version(registry_ver):
-            updates.append({
-                "name": skill.name,
-                "platform": record.get("platform", "unknown"),
-                "installed_version": installed_ver,
-                "available_version": registry_ver,
-            })
+            updates.append(
+                {
+                    "name": skill.name,
+                    "platform": record.get("platform", "unknown"),
+                    "installed_version": installed_ver,
+                    "available_version": registry_ver,
+                }
+            )
     return updates
 
 
@@ -62,9 +60,10 @@ def update_cmd(
         reg.load()
     except FileNotFoundError as exc:
         print_error(str(exc))
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     from archon import __version__
+
     current_ver = __version__
     registry_ver = reg.version
 

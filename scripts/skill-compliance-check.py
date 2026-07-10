@@ -9,13 +9,11 @@ Usage:
     python scripts/skill-compliance-check.py [--json] [--threshold N] [--skill SKILL_NAME]
 """
 
-import os
-import sys
+import argparse
 import json
 import re
-import argparse
+import sys
 from pathlib import Path
-from typing import Optional
 
 # 9 required sections in SKILL.md
 REQUIRED_SECTIONS = [
@@ -42,7 +40,15 @@ SECTION_QUALITY_CHECKS = {
         "description": "Must have keywords and anti-patterns",
     },
     "Workflow": {
-        "must_contain_any": ["Step 1", "Step 2", "Step 3", "Phase 1", "Phase 2", "### Step", "### Phase"],
+        "must_contain_any": [
+            "Step 1",
+            "Step 2",
+            "Step 3",
+            "Phase 1",
+            "Phase 2",
+            "### Step",
+            "### Phase",
+        ],
         "description": "Must have numbered steps or phases (min 3)",
     },
     "Rules": {
@@ -65,10 +71,10 @@ GRADE_THRESHOLDS = {
 }
 
 GRADE_ICONS = {
-    "gold":   "[A]",
+    "gold": "[A]",
     "silver": "[B]",
     "bronze": "[C]",
-    "stub":   "[F]",
+    "stub": "[F]",
 }
 
 
@@ -92,7 +98,7 @@ def find_archon_root() -> Path:
     sys.exit(1)
 
 
-def get_skill_dirs(root: Path, skill_filter: Optional[str] = None) -> list[Path]:
+def get_skill_dirs(root: Path, skill_filter: str | None = None) -> list[Path]:
     """Get all skill directories, excluding _template."""
     skills_dir = root / "skills"
     dirs = []
@@ -129,7 +135,7 @@ def parse_sections(content: str) -> dict[str, str]:
     return sections
 
 
-def normalize_section_name(name: str) -> Optional[str]:
+def normalize_section_name(name: str) -> str | None:
     """Map parsed section names to required section names."""
     name_lower = name.lower().strip()
 
@@ -176,27 +182,41 @@ def check_manifest(skill_dir: Path) -> dict:
         # Count keywords
         kw_match = re.search(r"keywords:\s*\n((?:\s+-\s+.+\n)*)", content)
         if kw_match:
-            keywords = [l.strip("- \n\"'") for l in kw_match.group(1).split("\n") if l.strip().startswith("-")]
+            keywords = [
+                item.strip("- \n\"'")
+                for item in kw_match.group(1).split("\n")
+                if item.strip().startswith("-")
+            ]
             result["trigger_keywords_count"] = len(keywords)
 
         # Also check inline format: keywords: ["a", "b"]
         kw_inline = re.search(r"keywords:\s*\[(.+)\]", content)
         if kw_inline:
             items = [s.strip().strip("\"'") for s in kw_inline.group(1).split(",")]
-            result["trigger_keywords_count"] = max(result["trigger_keywords_count"], len([i for i in items if i]))
+            result["trigger_keywords_count"] = max(
+                result["trigger_keywords_count"], len([i for i in items if i])
+            )
 
         # Check patterns
         pat_match = re.search(r"patterns:\s*\n((?:\s+-\s+.+\n)*)", content)
         if pat_match:
-            patterns = [l.strip("- \n\"'") for l in pat_match.group(1).split("\n") if l.strip().startswith("-")]
+            patterns = [
+                item.strip("- \n\"'")
+                for item in pat_match.group(1).split("\n")
+                if item.strip().startswith("-")
+            ]
             result["trigger_patterns_count"] = len(patterns)
 
         pat_inline = re.search(r"patterns:\s*\[(.+)\]", content)
         if pat_inline:
             items = [s.strip().strip("\"'") for s in pat_inline.group(1).split(",")]
-            result["trigger_patterns_count"] = max(result["trigger_patterns_count"], len([i for i in items if i]))
+            result["trigger_patterns_count"] = max(
+                result["trigger_patterns_count"], len([i for i in items if i])
+            )
 
-        result["has_triggers"] = result["trigger_keywords_count"] > 0 or result["trigger_patterns_count"] > 0
+        result["has_triggers"] = (
+            result["trigger_keywords_count"] > 0 or result["trigger_patterns_count"] > 0
+        )
 
         # Check for empty triggers
         empty_kw = re.search(r"keywords:\s*\[\s*\]", content)
@@ -217,7 +237,9 @@ def check_manifest(skill_dir: Path) -> dict:
     if not result["has_triggers"]:
         result["issues"].append("Triggers empty or missing keywords")
     if result["trigger_keywords_count"] < 3:
-        result["issues"].append(f"Only {result['trigger_keywords_count']} trigger keywords (need >=3)")
+        result["issues"].append(
+            f"Only {result['trigger_keywords_count']} trigger keywords (need >=3)"
+        )
 
     return result
 
@@ -248,7 +270,7 @@ def check_skill(skill_dir: Path) -> dict:
         return result
 
     content = skill_md.read_text(encoding="utf-8", errors="replace")
-    total_lines = len(content.split("\n"))
+    len(content.split("\n"))
 
     # Parse sections
     raw_sections = parse_sections(content)
@@ -304,9 +326,11 @@ def check_skill(skill_dir: Path) -> dict:
             quality = {"present": True, "issues": []}
 
             if "min_lines" in checks:
-                line_count = len([l for l in section_text.split("\n") if l.strip()])
+                line_count = len([ln for ln in section_text.split("\n") if ln.strip()])
                 if line_count < checks["min_lines"]:
-                    quality["issues"].append(f"Only {line_count} lines (need >={checks['min_lines']})")
+                    quality["issues"].append(
+                        f"Only {line_count} lines (need >={checks['min_lines']})"
+                    )
 
             if "must_contain_any" in checks:
                 if not any(term in section_text for term in checks["must_contain_any"]):
@@ -359,7 +383,9 @@ def print_report(results: list[dict], json_output: bool = False):
         missing = ", ".join(r["sections_missing"]) if r["sections_missing"] else "—"
         if len(missing) > 40:
             missing = missing[:37] + "..."
-        print(f"{r['name']:<35} {r['score']}/{r['max_score']}    {icon} {r['grade']:<3}  {r['tier']:<6}  {missing}")
+        print(
+            f"{r['name']:<35} {r['score']}/{r['max_score']}    {icon} {r['grade']:<3}  {r['tier']:<6}  {missing}"
+        )
 
     print("-" * 90)
 
@@ -403,7 +429,9 @@ def print_report(results: list[dict], json_output: bool = False):
 def main():
     parser = argparse.ArgumentParser(description="Archon Skill Compliance Checker")
     parser.add_argument("--json", action="store_true", help="Output as JSON")
-    parser.add_argument("--threshold", type=int, default=0, help="Exit code 1 if any skill below this score")
+    parser.add_argument(
+        "--threshold", type=int, default=0, help="Exit code 1 if any skill below this score"
+    )
     parser.add_argument("--skill", type=str, default=None, help="Check a single skill by name")
     args = parser.parse_args()
 

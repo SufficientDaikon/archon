@@ -1,13 +1,20 @@
 from __future__ import annotations
-import re
+
+import asyncio
+import logging
+import threading
+from collections.abc import Callable
 from dataclasses import dataclass, field
-from enum import Enum
 from datetime import datetime, timezone
-from typing import Any, Callable, Optional
+from enum import Enum
+from typing import Any
+
+logger = logging.getLogger(__name__)
 
 
 class SynapseAction(str, Enum):
     """Actions a synapse can return."""
+
     ALLOW = "allow"
     WARN = "warn"
     HALT = "halt"
@@ -16,6 +23,7 @@ class SynapseAction(str, Enum):
 @dataclass
 class SynapseDecision:
     """Decision artifact from synapse evaluation."""
+
     synapse_name: str
     hook_name: str
     action: SynapseAction
@@ -31,6 +39,7 @@ class SynapseDecision:
 
 class SynapseHook:
     """Single trigger point with validator."""
+
     def __init__(self, name: str, trigger: str, validator: Callable, description: str = ""):
         self.name = name
         self.trigger = trigger
@@ -41,6 +50,7 @@ class SynapseHook:
 
 class Synapse:
     """Executable cognitive layer."""
+
     def __init__(self, name: str, synapse_type: str = "core"):
         self.name = name
         self.synapse_type = synapse_type
@@ -54,6 +64,7 @@ class Synapse:
 
 class SynapseEngine:
     """Orchestrates all synapses."""
+
     def __init__(self):
         self.synapses: dict[str, Synapse] = {}
         self.firing_log: list[SynapseDecision] = []
@@ -125,17 +136,21 @@ def create_default_synapses() -> dict[str, Synapse]:
         module = getattr(synapse_modules, name.replace("-", "_"))
         synapse = Synapse(name, synapse_type="core")
         for trigger in triggers:
-            synapse.register_hook(SynapseHook(
-                name=f"{name}:{trigger}",
-                trigger=trigger,
-                validator=_adapt_validator(name, f"{name}:{trigger}", module.validate),
-                description=(module.__doc__ or "").strip().splitlines()[0] if module.__doc__ else "",
-            ))
+            synapse.register_hook(
+                SynapseHook(
+                    name=f"{name}:{trigger}",
+                    trigger=trigger,
+                    validator=_adapt_validator(name, f"{name}:{trigger}", module.validate),
+                    description=(module.__doc__ or "").strip().splitlines()[0]
+                    if module.__doc__
+                    else "",
+                )
+            )
         result[name] = synapse
     return result
 
 
-def build_default_engine() -> "SynapseEngineV2":
+def build_default_engine() -> SynapseEngineV2:
     """Build a SynapseEngineV2 with every default synapse registered."""
     engine = SynapseEngineV2()
     for synapse in create_default_synapses().values():
@@ -143,17 +158,11 @@ def build_default_engine() -> "SynapseEngineV2":
     return engine
 
 
-import threading
-import asyncio
-import logging
-logger = logging.getLogger(__name__)
-
-
 class SynapseTrigger(str, Enum):
-    PRE_EXECUTION = 'pre-execution'
-    POST_BUILD = 'post-build'
-    POST_HANDOFF = 'post-handoff'
-    POST_CYCLE = 'post-cycle'
+    PRE_EXECUTION = "pre-execution"
+    POST_BUILD = "post-build"
+    POST_HANDOFF = "post-handoff"
+    POST_CYCLE = "post-cycle"
 
 
 class SynapseEngineV2(SynapseEngine):
@@ -163,10 +172,10 @@ class SynapseEngineV2(SynapseEngine):
         super().__init__()
         self._lock = threading.RLock()
         self._metrics = {
-            'total': 0,
-            'blocks': 0,
-            'by_synapse': {},
-            'by_trigger': {},
+            "total": 0,
+            "blocks": 0,
+            "by_synapse": {},
+            "by_trigger": {},
         }
 
     def register_synapse(self, synapse):
@@ -195,24 +204,24 @@ class SynapseEngineV2(SynapseEngine):
                 decisions.append(result)
                 with self._lock:
                     self.firing_log.append(result)
-                    self._metrics['total'] += 1
-                    self._metrics['by_synapse'][synapse.name] = (
-                        self._metrics['by_synapse'].get(synapse.name, 0) + 1
+                    self._metrics["total"] += 1
+                    self._metrics["by_synapse"][synapse.name] = (
+                        self._metrics["by_synapse"].get(synapse.name, 0) + 1
                     )
-                    self._metrics['by_trigger'][trigger] = (
-                        self._metrics['by_trigger'].get(trigger, 0) + 1
+                    self._metrics["by_trigger"][trigger] = (
+                        self._metrics["by_trigger"].get(trigger, 0) + 1
                     )
                     if result.is_blocking:
-                        self._metrics['blocks'] += 1
+                        self._metrics["blocks"] += 1
                 if result.is_blocking:
                     break
             except Exception as e:
                 logger.error(f"Synapse {synapse.name} failed: {e}", exc_info=True)
                 halt = SynapseDecision(
                     synapse_name=synapse.name,
-                    hook_name=getattr(hook, 'name', 'unknown'),
+                    hook_name=getattr(hook, "name", "unknown"),
                     action=SynapseAction.WARN,
-                    message=f'Synapse error (degraded): {e}',
+                    message=f"Synapse error (degraded): {e}",
                 )
                 decisions.append(halt)
                 break
@@ -220,14 +229,14 @@ class SynapseEngineV2(SynapseEngine):
 
     def get_metrics(self):
         with self._lock:
-            total = self._metrics['total']
-            blocks = self._metrics['blocks']
+            total = self._metrics["total"]
+            blocks = self._metrics["blocks"]
             return {
-                'total': total,
-                'blocks': blocks,
-                'rate': blocks / max(1, total),
-                'by_synapse': dict(self._metrics['by_synapse']),
-                'by_trigger': dict(self._metrics['by_trigger']),
+                "total": total,
+                "blocks": blocks,
+                "rate": blocks / max(1, total),
+                "by_synapse": dict(self._metrics["by_synapse"]),
+                "by_trigger": dict(self._metrics["by_trigger"]),
             }
 
 
@@ -237,9 +246,10 @@ class SynapseEngineWithRouter(SynapseEngineV2):
     def __init__(self, router=None):
         super().__init__()
         from archon.core.synapse_router import SynapseRouter
+
         self._router = router or SynapseRouter()
 
-    async def fire_trigger_auto(self, trigger, context, complexity='SIMPLE', file_path=None):
+    async def fire_trigger_auto(self, trigger, context, complexity="SIMPLE", file_path=None):
         """Fire synapses auto-selected by the router based on complexity + file type."""
         selected_ids = self._router.route(
             trigger=trigger,
@@ -271,7 +281,12 @@ class SynapseEngineWithRouter(SynapseEngineV2):
                     break
             except Exception as e:
                 logger.error(f"Synapse {synapse.name} failed: {e}", exc_info=True)
-                halt = SynapseDecision(synapse.name, getattr(hook, 'name', 'unknown'), SynapseAction.WARN, f'Synapse error (degraded): {e}')
+                halt = SynapseDecision(
+                    synapse.name,
+                    getattr(hook, "name", "unknown"),
+                    SynapseAction.WARN,
+                    f"Synapse error (degraded): {e}",
+                )
                 decisions.append(halt)
                 break
         return decisions

@@ -18,8 +18,6 @@ from enum import Enum
 from pathlib import Path
 from typing import Any
 
-import yaml
-
 ARCHON_ROOT = Path(__file__).parent.parent.parent.parent
 
 
@@ -188,18 +186,24 @@ class Session:
         """
         max_retries = self.recovery_policy.get("max_retries", 3)
         if self.recovery_attempts >= max_retries:
-            self._emit_event("recovery_exhausted", {
-                "attempts": self.recovery_attempts,
-                "max": max_retries,
-            })
+            self._emit_event(
+                "recovery_exhausted",
+                {
+                    "attempts": self.recovery_attempts,
+                    "max": max_retries,
+                },
+            )
             return False
 
         self._transition(SessionStatus.RECOVERING)
         self.recovery_attempts += 1
-        self._emit_event("recovery_attempt", {
-            "attempt": self.recovery_attempts,
-            "max": max_retries,
-        })
+        self._emit_event(
+            "recovery_attempt",
+            {
+                "attempt": self.recovery_attempts,
+                "max": max_retries,
+            },
+        )
         return True
 
     def resume(self) -> None:
@@ -213,13 +217,15 @@ class Session:
             raise InvalidTransitionError(
                 f"Cannot send in state {self._status.value} (must be active)"
             )
-        self.steps.append({
-            "name": step_name,
-            "status": result.get("status", "completed"),
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-            "correlation_id": self.correlation_id,
-            **result,
-        })
+        self.steps.append(
+            {
+                "name": step_name,
+                "status": result.get("status", "completed"),
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "correlation_id": self.correlation_id,
+                **result,
+            }
+        )
         self.updated_at = datetime.now(timezone.utc).isoformat()
         self._emit_event("step_recorded", {"step": step_name})
 
@@ -237,10 +243,13 @@ class Session:
 
     def link_pipeline_trace(self, pipeline_state_id: str) -> str:
         """Link this session to a v2 PipelineState via correlation ID."""
-        self._emit_event("pipeline_linked", {
-            "pipeline_state_id": pipeline_state_id,
-            "correlation_id": self.correlation_id,
-        })
+        self._emit_event(
+            "pipeline_linked",
+            {
+                "pipeline_state_id": pipeline_state_id,
+                "correlation_id": self.correlation_id,
+            },
+        )
         return self.correlation_id
 
     # -- Persistence --------------------------------------------------------
@@ -248,6 +257,7 @@ class Session:
     def save(self, state_dir: Path | None = None) -> Path:
         """Persist session to disk."""
         from archon.utils.paths import get_archon_home
+
         state_dir = state_dir or get_archon_home() / "sessions"
         state_dir.mkdir(parents=True, exist_ok=True)
 
@@ -262,6 +272,7 @@ class Session:
     def load(cls, session_id: str, state_dir: Path | None = None) -> Session | None:
         """Load session from disk."""
         from archon.utils.paths import get_archon_home
+
         state_dir = state_dir or get_archon_home() / "sessions"
         path = state_dir / f"{session_id}.json"
 
@@ -269,7 +280,7 @@ class Session:
             return None
 
         try:
-            with open(path, "r", encoding="utf-8") as f:
+            with open(path, encoding="utf-8") as f:
                 data = json.load(f)
             return cls(
                 session_id=data["session_id"],
@@ -330,12 +341,14 @@ class Session:
 
     def _emit_event(self, event_type: str, payload: dict[str, Any] | None = None) -> None:
         """Append event to session log."""
-        self.event_log.append({
-            "event_id": f"evt-{uuid.uuid4().hex[:8]}",
-            "event_type": event_type,
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-            "session_id": self.session_id,
-            "correlation_id": self.correlation_id,
-            "status": self._status.value,
-            "payload": payload or {},
-        })
+        self.event_log.append(
+            {
+                "event_id": f"evt-{uuid.uuid4().hex[:8]}",
+                "event_type": event_type,
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "session_id": self.session_id,
+                "correlation_id": self.correlation_id,
+                "status": self._status.value,
+                "payload": payload or {},
+            }
+        )

@@ -8,9 +8,6 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
-from typing import Optional
-
-from platformdirs import user_config_dir, user_data_dir
 
 
 def get_archon_home() -> Path:
@@ -76,13 +73,13 @@ def get_archon_root() -> Path:
     return Path.home() / "archon"
 
 
-def get_platform_target(platform_id: str) -> Optional[Path]:
+def get_platform_target(platform_id: str) -> Path | None:
     """Return the installation target directory for a given platform.
 
     These are the *default* paths. The user config may override them.
     """
     home = Path.home()
-    cwd = Path.cwd()
+    Path.cwd()
 
     targets: dict[str, Path] = {
         "claude-code": home / ".claude" / "skills",

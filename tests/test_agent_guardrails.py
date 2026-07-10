@@ -5,7 +5,6 @@ Tests that all agents (excluding _template) enforce structured guardrails
 with proper schema, severity levels, and violation handling.
 """
 
-import sys
 from pathlib import Path
 
 import pytest
@@ -17,10 +16,9 @@ VALID_SEVERITIES = {"critical", "major", "minor"}
 VALID_VIOLATIONS = {"halt", "warn", "log"}
 VALID_ENFORCEMENT = {"strict", "standard"}
 
-AGENT_DIRS = sorted([
-    d for d in (ARCHON_ROOT / "agents").iterdir()
-    if d.is_dir() and d.name != "_template"
-])
+AGENT_DIRS = sorted(
+    [d for d in (ARCHON_ROOT / "agents").iterdir() if d.is_dir() and d.name != "_template"]
+)
 AGENT_NAMES = [d.name for d in AGENT_DIRS]
 
 
@@ -44,8 +42,9 @@ class TestAgentDiscovery:
 
     @pytest.mark.parametrize("agent_dir", AGENT_DIRS, ids=AGENT_NAMES)
     def test_manifest_file_exists(self, agent_dir):
-        assert (agent_dir / "agent-manifest.yaml").exists(), \
+        assert (agent_dir / "agent-manifest.yaml").exists(), (
             f"{agent_dir.name} missing agent-manifest.yaml"
+        )
 
     @pytest.mark.parametrize("agent_dir", AGENT_DIRS, ids=AGENT_NAMES)
     def test_manifest_parses_as_dict(self, agent_dir):
@@ -62,15 +61,17 @@ class TestGuardrailEnforcement:
     @pytest.mark.parametrize("agent_dir", AGENT_DIRS, ids=AGENT_NAMES)
     def test_has_guardrail_enforcement_key(self, agent_dir):
         manifest = _load_manifest(agent_dir)
-        assert "guardrail-enforcement" in manifest, \
+        assert "guardrail-enforcement" in manifest, (
             f"{agent_dir.name} missing 'guardrail-enforcement'"
+        )
 
     @pytest.mark.parametrize("agent_dir", AGENT_DIRS, ids=AGENT_NAMES)
     def test_enforcement_is_strict_or_standard(self, agent_dir):
         manifest = _load_manifest(agent_dir)
         value = manifest["guardrail-enforcement"]
-        assert value in VALID_ENFORCEMENT, \
+        assert value in VALID_ENFORCEMENT, (
             f"{agent_dir.name} guardrail-enforcement={value!r}, expected {VALID_ENFORCEMENT}"
+        )
 
 
 # ── Guardrails Structure ──────────────────────────────────────────────────
@@ -97,14 +98,16 @@ class TestGuardrailsStructure:
     @pytest.mark.parametrize("agent_dir", AGENT_DIRS, ids=AGENT_NAMES)
     def test_must_not_is_nonempty_list(self, agent_dir):
         must_not = _load_manifest(agent_dir)["guardrails"]["must-not"]
-        assert isinstance(must_not, list) and len(must_not) > 0, \
+        assert isinstance(must_not, list) and len(must_not) > 0, (
             f"{agent_dir.name} must-not should be a non-empty list"
+        )
 
     @pytest.mark.parametrize("agent_dir", AGENT_DIRS, ids=AGENT_NAMES)
     def test_must_do_is_nonempty_list(self, agent_dir):
         must_do = _load_manifest(agent_dir)["guardrails"]["must-do"]
-        assert isinstance(must_do, list) and len(must_do) > 0, \
+        assert isinstance(must_do, list) and len(must_do) > 0, (
             f"{agent_dir.name} must-do should be a non-empty list"
+        )
 
 
 # ── Rule Schema ────────────────────────────────────────────────────────────
@@ -117,23 +120,29 @@ class TestGuardrailRuleSchema:
     def test_must_not_rules_schema(self, agent_dir):
         rules = _load_manifest(agent_dir)["guardrails"]["must-not"]
         for i, rule in enumerate(rules):
-            assert "rule" in rule and isinstance(rule["rule"], str), \
+            assert "rule" in rule and isinstance(rule["rule"], str), (
                 f"{agent_dir.name} must-not[{i}] missing or non-string 'rule'"
-            assert rule.get("severity") in VALID_SEVERITIES, \
+            )
+            assert rule.get("severity") in VALID_SEVERITIES, (
                 f"{agent_dir.name} must-not[{i}] severity={rule.get('severity')!r}"
-            assert rule.get("on-violation") in VALID_VIOLATIONS, \
+            )
+            assert rule.get("on-violation") in VALID_VIOLATIONS, (
                 f"{agent_dir.name} must-not[{i}] on-violation={rule.get('on-violation')!r}"
+            )
 
     @pytest.mark.parametrize("agent_dir", AGENT_DIRS, ids=AGENT_NAMES)
     def test_must_do_rules_schema(self, agent_dir):
         rules = _load_manifest(agent_dir)["guardrails"]["must-do"]
         for i, rule in enumerate(rules):
-            assert "rule" in rule and isinstance(rule["rule"], str), \
+            assert "rule" in rule and isinstance(rule["rule"], str), (
                 f"{agent_dir.name} must-do[{i}] missing or non-string 'rule'"
-            assert rule.get("severity") in VALID_SEVERITIES, \
+            )
+            assert rule.get("severity") in VALID_SEVERITIES, (
                 f"{agent_dir.name} must-do[{i}] severity={rule.get('severity')!r}"
-            assert rule.get("on-violation") in VALID_VIOLATIONS, \
+            )
+            assert rule.get("on-violation") in VALID_VIOLATIONS, (
                 f"{agent_dir.name} must-do[{i}] on-violation={rule.get('on-violation')!r}"
+            )
 
 
 # ── Critical Rules Policy ─────────────────────────────────────────────────

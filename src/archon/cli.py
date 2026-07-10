@@ -6,12 +6,10 @@ global flags (``--json``, ``--quiet``, ``--verbose``, ``--version``).
 
 from __future__ import annotations
 
-from typing import Optional
-
 import typer
 
-from archon import __version__, __app_name__
-from archon.utils.output import set_output_flags, console
+from archon import __app_name__, __version__
+from archon.utils.output import console, set_output_flags
 
 # ── Typer app ───────────────────────────────────────────────────
 
@@ -50,21 +48,21 @@ def main(
 
 # ── Register subcommands ────────────────────────────────────────
 
-from archon.commands.init_cmd import init_cmd          # noqa: E402
-from archon.commands.install import install_cmd        # noqa: E402
-from archon.commands.uninstall import uninstall_cmd    # noqa: E402
-from archon.commands.doctor import doctor_cmd          # noqa: E402
-from archon.commands.validate import validate_cmd      # noqa: E402
-from archon.commands.list_cmd import list_cmd          # noqa: E402
-from archon.commands.search import search_cmd          # noqa: E402
-from archon.commands.info import info_cmd              # noqa: E402
-from archon.commands.pipeline import pipeline_app      # noqa: E402
-from archon.commands.update import update_cmd          # noqa: E402
-from archon.commands.admin import admin_cmd            # noqa: E402
-from archon.commands.config import config_cmd          # noqa: E402
-from archon.commands.generate import generate_app      # noqa: E402
-from archon.commands.catalog import catalog_app        # noqa: E402
-from archon.commands.cards import cards_cmd             # noqa: E402
+from archon.commands.admin import admin_cmd  # noqa: E402
+from archon.commands.cards import cards_cmd  # noqa: E402
+from archon.commands.catalog import catalog_app  # noqa: E402
+from archon.commands.config import config_cmd  # noqa: E402
+from archon.commands.doctor import doctor_cmd  # noqa: E402
+from archon.commands.generate import generate_app  # noqa: E402
+from archon.commands.info import info_cmd  # noqa: E402
+from archon.commands.init_cmd import init_cmd  # noqa: E402
+from archon.commands.install import install_cmd  # noqa: E402
+from archon.commands.list_cmd import list_cmd  # noqa: E402
+from archon.commands.pipeline import pipeline_app  # noqa: E402
+from archon.commands.search import search_cmd  # noqa: E402
+from archon.commands.uninstall import uninstall_cmd  # noqa: E402
+from archon.commands.update import update_cmd  # noqa: E402
+from archon.commands.validate import validate_cmd  # noqa: E402
 
 app.command("init", help="Initialize Archon — detect platforms, create config.")(init_cmd)
 app.command("install", help="Install skills, bundles, or agents to platform(s).")(install_cmd)

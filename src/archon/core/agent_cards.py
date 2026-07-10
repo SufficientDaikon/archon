@@ -19,7 +19,6 @@ from typing import Any
 
 from archon.core.registry import Registry
 
-
 # ── Public API ──────────────────────────────────────────────────
 
 
@@ -86,7 +85,6 @@ def write_agent_cards(
     }
 
 
-
 def write_a2a_cards(
     root: Path,
     registry: Registry | None = None,
@@ -113,6 +111,7 @@ def write_a2a_cards(
     # Resolve base URL from environment variable or fall back to localhost.
     # Set ARCHON_A2A_BASE_URL in production deployments.
     import os
+
     base_url = os.environ.get("ARCHON_A2A_BASE_URL", "http://localhost:8000").rstrip("/")
 
     all_cards: list[dict[str, Any]] = []
@@ -123,11 +122,13 @@ def write_a2a_cards(
         if agent.card and agent.card.skills_provided:
             for sk in agent.card.skills_provided:
                 if isinstance(sk, dict):
-                    skills_provided.append({
-                        "id": sk.get("id", sk.get("name", "")),
-                        "name": sk.get("name", ""),
-                        "description": sk.get("description", ""),
-                    })
+                    skills_provided.append(
+                        {
+                            "id": sk.get("id", sk.get("name", "")),
+                            "name": sk.get("name", ""),
+                            "description": sk.get("description", ""),
+                        }
+                    )
 
         card: dict[str, Any] = {
             "schemaVersion": "0.2.1",
@@ -157,6 +158,7 @@ def write_a2a_cards(
     )
 
     return combined_path
+
 
 # ── Private helpers ─────────────────────────────────────────────
 
