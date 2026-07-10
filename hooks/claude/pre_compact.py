@@ -10,16 +10,19 @@ PreCompact output is not consumed — the re-injection happens at SessionStart.
 
 import json
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
 HOOK_DIR = Path(__file__).parent
 sys.path.insert(0, str(HOOK_DIR))
 
+from shared.hooklog import write_record
 from shared.state import load_state, save_state
 
 
 def main() -> None:
+    t0 = time.perf_counter()
     raw = sys.stdin.read()
     try:
         input_data = json.loads(raw) if raw.strip() else {}
@@ -31,6 +34,7 @@ def main() -> None:
     state["session"]["last_compacted"] = datetime.now(timezone.utc).isoformat()
     save_state(state, cwd)
 
+    write_record("pre_compact", "PreCompact", cwd, t0)
     print(json.dumps({}))
 
 

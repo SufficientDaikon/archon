@@ -8,6 +8,7 @@ enforced behavior.
 
 import json
 import sys
+import time
 from pathlib import Path
 
 HOOK_DIR = Path(__file__).parent
@@ -19,8 +20,10 @@ from shared.classifier import (
     classify_complexity,
     get_execution_mode,
     match_skills,
+    strip_noise,
 )
 from shared.config import get_property
+from shared.hooklog import write_record
 from shared.state import load_state, save_state
 
 
@@ -42,6 +45,7 @@ def _enabled_synapses(synapses: list[str], cwd: str | None) -> list[str]:
 
 
 def main() -> None:
+    t0 = time.perf_counter()
     raw = sys.stdin.read()
     try:
         input_data = json.loads(raw) if raw.strip() else {}
@@ -74,6 +78,22 @@ def main() -> None:
 
     # Build XML context
     context = build_route_context(tier, mode, skills, synapses, synapse_context)
+
+    # Log the classification (stripped prompt stored only when opted in)
+    stripped = strip_noise(prompt)
+    log_extra: dict = {
+        "tier": tier,
+        "mode": mode,
+        "skills": skills,
+        "synapses": synapses,
+        "word_count": len(stripped.split()),
+        "preview": " ".join(stripped.split())[:80],
+    }
+    if get_property("logging/log_prompts", cwd):
+        cap = get_property("logging/prompt_max_chars", cwd)
+        log_extra["stripped_prompt"] = stripped[:cap]
+        log_extra["prompt_truncated"] = len(stripped) > cap
+    write_record("prompt_router", "UserPromptSubmit", cwd, t0, **log_extra)
 
     output = {
         "hookSpecificOutput": {

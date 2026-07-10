@@ -8,15 +8,18 @@ state. No output is consumed for SessionEnd — this is bookkeeping only.
 
 import json
 import sys
+import time
 from pathlib import Path
 
 HOOK_DIR = Path(__file__).parent
 sys.path.insert(0, str(HOOK_DIR))
 
+from shared.hooklog import write_record
 from shared.state import archive_session, load_state, save_state
 
 
 def main() -> None:
+    t0 = time.perf_counter()
     raw = sys.stdin.read()
     try:
         input_data = json.loads(raw) if raw.strip() else {}
@@ -30,6 +33,7 @@ def main() -> None:
     state["session"]["end_reason"] = input_data.get("reason", "")
     save_state(state, cwd)
 
+    write_record("session_end", "SessionEnd", cwd, t0, reason=input_data.get("reason", ""))
     print(json.dumps({}))
 
 

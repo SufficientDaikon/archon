@@ -12,12 +12,14 @@ summary — no injection.
 
 import json
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
 HOOK_DIR = Path(__file__).parent
 sys.path.insert(0, str(HOOK_DIR))
 
+from shared.hooklog import write_record
 from shared.state import load_state, save_state
 
 # Agent type -> context builder mapping
@@ -31,6 +33,7 @@ AGENT_CONTEXT = {
 
 
 def main() -> None:
+    t0 = time.perf_counter()
     raw = sys.stdin.read()
     try:
         input_data = json.loads(raw) if raw.strip() else {}
@@ -45,6 +48,7 @@ def main() -> None:
 
     if event == "SubagentStop":
         record_subagent_run(agent_type, cwd)
+        write_record("agent_context", "SubagentStop", cwd, t0, agent_type=agent_type)
         print(json.dumps({}))
         return
 
@@ -55,6 +59,9 @@ def main() -> None:
     state = load_state(cwd)
     context_mode = AGENT_CONTEXT.get(agent_type, "code")
     context = build_agent_context(context_mode, state)
+    write_record(
+        "agent_context", "SubagentStart", cwd, t0, agent_type=agent_type, role=context_mode
+    )
 
     if context:
         output = {

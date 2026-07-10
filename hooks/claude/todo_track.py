@@ -8,15 +8,18 @@ next session and after compaction.
 
 import json
 import sys
+import time
 from pathlib import Path
 
 HOOK_DIR = Path(__file__).parent
 sys.path.insert(0, str(HOOK_DIR))
 
+from shared.hooklog import write_record
 from shared.state import load_state, save_state
 
 
 def main() -> None:
+    t0 = time.perf_counter()
     raw = sys.stdin.read()
     try:
         input_data = json.loads(raw) if raw.strip() else {}
@@ -43,6 +46,14 @@ def main() -> None:
     session["todos_pending_titles"] = [title for title in pending_titles if title][:5]
     save_state(state, cwd)
 
+    write_record(
+        "todo_track",
+        "PostToolUse",
+        cwd,
+        t0,
+        todos_total=len(todos),
+        todos_completed=completed,
+    )
     print(json.dumps({}))
 
 

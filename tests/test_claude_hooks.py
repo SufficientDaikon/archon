@@ -592,3 +592,98 @@ class TestProjectIsolation:
         # same basename, different path -> different slug
         assert project_slug(str(one)) != project_slug(str(two))
         assert project_slug(str(one)).startswith("myproj-")
+
+
+class TestHookLogging:
+    """Hook invocation logging: one fail-open JSONL record per firing."""
+
+    def read_log(self, home: Path) -> list[dict]:
+        logs_dir = home / "logs"
+        records = []
+        for path in sorted(logs_dir.glob("hooks-*.jsonl")):
+            for line in path.read_text(encoding="utf-8").splitlines():
+                records.append(json.loads(line))
+        return records
+
+    def test_prompt_router_writes_one_record(self, home):
+        before = len(self.read_log(home))
+        run_hook("prompt_router.py", {"prompt": "hello there friend"}, home)
+        records = self.read_log(home)
+        assert len(records) == before + 1
+        rec = records[-1]
+        assert rec["hook"] == "prompt_router"
+        assert rec["event"] == "UserPromptSubmit"
+        assert rec["tier"] == "TRIVIAL"
+        assert rec["word_count"] == 3
+        assert "hello there friend"[:80].startswith(rec["preview"][:18])
+        assert rec["project"]
+        assert rec["ok"] is True
+        assert "stripped_prompt" not in rec  # opt-in only
+
+    def test_guard_denial_recorded(self, home):
+        run_hook("guard_bash.py", {"tool_input": {"command": "rm -rf " + "/"}}, home)
+        rec = self.read_log(home)[-1]
+        assert rec["hook"] == "guard_bash"
+        assert rec["decision"] == "deny"
+        assert rec["findings"]
+
+    def test_gate_block_recorded_before_exit_2(self, home):
+        write_state(
+            home, lambda s: s["session"].update(files_modified=["a.py"], tests_passed=False)
+        )
+        result = run_hook("completion_gate.py", {}, home)
+        assert result.returncode == 2
+        rec = self.read_log(home)[-1]
+        assert rec["hook"] == "completion_gate"
+        assert rec["decision"] == "block"
+        assert rec["gate_blocks"] == 1
+
+    def test_log_prompts_opt_in_stores_truncated(self, home):
+        prompt = "refactor the module " * 40  # long enough to truncate at 100 chars
+        run_hook(
+            "prompt_router.py",
+            {"prompt": prompt},
+            home,
+            extra_env={
+                "ARCHON_LOGGING_LOG_PROMPTS": "true",
+                "ARCHON_LOGGING_PROMPT_MAX_CHARS": "100",
+            },
+        )
+        rec = self.read_log(home)[-1]
+        assert len(rec["stripped_prompt"]) == 100
+        assert rec["prompt_truncated"] is True
+
+    def test_logging_disabled_writes_nothing(self, home):
+        before = len(self.read_log(home))
+        run_hook(
+            "prompt_router.py",
+            {"prompt": "hello there"},
+            home,
+            extra_env={"ARCHON_LOGGING_ENABLED": "false"},
+        )
+        assert len(self.read_log(home)) == before
+
+    def test_unwritable_logs_dir_is_fail_open(self, home):
+        """IRON RULE: a broken logs dir must not change exit code or stdout."""
+        logs_dir = home / "logs"
+        logs_dir.mkdir(exist_ok=True)
+        logs_dir.chmod(0o000)
+        try:
+            result = run_hook("prompt_router.py", {"prompt": "hello there friend"}, home)
+            assert result.returncode == 0
+            out = json.loads(result.stdout)
+            assert "archon-route" in out["hookSpecificOutput"]["additionalContext"]
+        finally:
+            logs_dir.chmod(0o755)
+
+    def test_cleanup_deletes_old_keeps_fresh(self, home):
+        logs_dir = home / "logs"
+        logs_dir.mkdir(exist_ok=True)
+        old = logs_dir / "hooks-2020.01.01.jsonl"
+        old.write_text("{}\n", encoding="utf-8")
+        foreign = logs_dir / "notes.txt"
+        foreign.write_text("keep me", encoding="utf-8")
+        run_hook("session_boot.py", {"cwd": str(ARCHON_ROOT)}, home)
+        assert not old.exists()
+        assert foreign.exists()  # never touch foreign files
+        assert list(logs_dir.glob("hooks-*.jsonl"))  # today's log written

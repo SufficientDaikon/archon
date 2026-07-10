@@ -7,6 +7,7 @@ tokens, private keys, and other secrets. Denies if found.
 
 import json
 import sys
+import time
 from pathlib import Path
 
 HOOK_DIR = Path(__file__).parent
@@ -15,6 +16,7 @@ sys.path.insert(0, str(HOOK_DIR))
 import re
 
 from shared.config import get_property
+from shared.hooklog import write_record
 from shared.scanner import scan_for_secrets
 
 
@@ -34,6 +36,7 @@ def _extra_allowlist(cwd: str | None) -> list[re.Pattern]:
 
 
 def main() -> None:
+    t0 = time.perf_counter()
     raw = sys.stdin.read()
     try:
         input_data = json.loads(raw) if raw.strip() else {}
@@ -79,9 +82,11 @@ def main() -> None:
                 "permissionDecisionReason": reason,
             }
         }
+        write_record("guard_write", "PreToolUse", cwd, t0, decision="deny", findings=secret_types)
         print(json.dumps(output))
         sys.exit(0)
     else:
+        write_record("guard_write", "PreToolUse", cwd, t0, decision="allow")
         print(json.dumps({}))
 
 

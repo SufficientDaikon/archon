@@ -7,15 +7,18 @@ file path in archon-state.json for the completion gate to reference.
 
 import json
 import sys
+import time
 from pathlib import Path
 
 HOOK_DIR = Path(__file__).parent
 sys.path.insert(0, str(HOOK_DIR))
 
+from shared.hooklog import write_record
 from shared.state import append_modified_file
 
 
 def main() -> None:
+    t0 = time.perf_counter()
     raw = sys.stdin.read()
     try:
         input_data = json.loads(raw) if raw.strip() else {}
@@ -26,8 +29,10 @@ def main() -> None:
     # Handle both file_path (Write/Edit) and notebook_path (NotebookEdit)
     file_path = tool_input.get("file_path", "") or tool_input.get("notebook_path", "")
 
+    cwd = input_data.get("cwd")
     if file_path:
-        append_modified_file(file_path, input_data.get("cwd"))
+        append_modified_file(file_path, cwd)
+        write_record("quality_write", "PostToolUse", cwd, t0, file=file_path)
 
     # No context injection — pure state tracking
     print(json.dumps({}))

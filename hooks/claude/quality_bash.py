@@ -8,16 +8,19 @@ their pass/fail status in archon-state.json for the completion gate.
 import json
 import re
 import sys
+import time
 from pathlib import Path
 
 HOOK_DIR = Path(__file__).parent
 sys.path.insert(0, str(HOOK_DIR))
 
+from shared.hooklog import write_record
 from shared.scanner import is_build_command, is_test_command
 from shared.state import load_state, save_state
 
 
 def main() -> None:
+    t0 = time.perf_counter()
     raw = sys.stdin.read()
     try:
         input_data = json.loads(raw) if raw.strip() else {}
@@ -54,6 +57,12 @@ def main() -> None:
 
     if updated:
         save_state(state, cwd)
+        kinds = []
+        if is_test_command(command):
+            kinds.append("test")
+        if is_build_command(command):
+            kinds.append("build")
+        write_record("quality_bash", "PostToolUse", cwd, t0, kind="+".join(kinds), passed=passed)
 
     print(json.dumps({}))
 

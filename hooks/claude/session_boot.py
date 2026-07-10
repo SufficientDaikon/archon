@@ -8,12 +8,14 @@ captures git status, and injects compressed context into Claude's window.
 import json
 import subprocess
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
 HOOK_DIR = Path(__file__).parent
 sys.path.insert(0, str(HOOK_DIR))
 
+from shared.hooklog import cleanup_old_logs, write_record
 from shared.state import archive_session, load_state, new_session_id, save_state
 
 # Project detection markers -> (type, framework check)
@@ -41,6 +43,7 @@ NODE_FRAMEWORKS = {
 
 
 def main() -> None:
+    t0 = time.perf_counter()
     raw = sys.stdin.read()
     try:
         input_data = json.loads(raw) if raw.strip() else {}
@@ -79,6 +82,17 @@ def main() -> None:
         state["git"] = get_git_summary(cwd)
         save_state(state, cwd)
         context = build_boot_context(state)
+
+    cleaned = cleanup_old_logs(cwd)
+    write_record(
+        "session_boot",
+        "SessionStart",
+        cwd,
+        t0,
+        source=source,
+        project_type=state.get("project", {}).get("type", ""),
+        cleaned_logs=cleaned or None,
+    )
 
     output = {
         "hookSpecificOutput": {

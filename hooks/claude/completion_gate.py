@@ -16,16 +16,19 @@ silent by design.
 
 import json
 import sys
+import time
 from pathlib import Path
 
 HOOK_DIR = Path(__file__).parent
 sys.path.insert(0, str(HOOK_DIR))
 
 from shared.config import get_property
+from shared.hooklog import write_record
 from shared.state import archive_session, load_state, save_state
 
 
 def main() -> None:
+    t0 = time.perf_counter()
     raw = sys.stdin.read()
     try:
         input_data = json.loads(raw) if raw.strip() else {}
@@ -40,6 +43,7 @@ def main() -> None:
     # No code modified — conversational session, no gates needed
     if not files_modified:
         persist_and_archive(state, cwd)
+        write_record("completion_gate", "Stop", cwd, t0, decision="allow")
         print(json.dumps({}))
         return
 
@@ -47,6 +51,7 @@ def main() -> None:
 
     if passed:
         persist_and_archive(state, cwd)
+        write_record("completion_gate", "Stop", cwd, t0, decision="allow")
         print(json.dumps({}))
         return
 
@@ -57,6 +62,9 @@ def main() -> None:
             f"Archon completion gate (disabled by gate/enabled=false): {'; '.join(failures)}\n"
         )
         persist_and_archive(state, cwd)
+        write_record(
+            "completion_gate", "Stop", cwd, t0, decision="disabled", failures=len(failures)
+        )
         print(json.dumps({}))
         return
 
@@ -72,6 +80,15 @@ def main() -> None:
             f"{blocks_so_far} block(s) to avoid a loop.\n"
         )
         persist_and_archive(state, cwd)
+        write_record(
+            "completion_gate",
+            "Stop",
+            cwd,
+            t0,
+            decision="warn_cap",
+            gate_blocks=blocks_so_far,
+            failures=len(failures),
+        )
         print(json.dumps({}))
         return
 
@@ -84,7 +101,18 @@ def main() -> None:
         f"{failure_text}\n"
         "Please address these before finishing."
     )
-    # Exit 2 = block the stop, force Claude to continue
+    # Exit 2 = block the stop, force Claude to continue. The log record is
+    # written BEFORE exit and is fail-open — logging can never turn a block
+    # into a crash.
+    write_record(
+        "completion_gate",
+        "Stop",
+        cwd,
+        t0,
+        decision="block",
+        gate_blocks=session["gate_blocks"],
+        failures=len(failures),
+    )
     sys.stderr.write(reason)
     sys.exit(2)
 
