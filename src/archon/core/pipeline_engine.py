@@ -144,56 +144,39 @@ class PipelineExecutor:
         return pipeline
 
     def _build_synapse_engine(self) -> "SynapseEngineV2":
-        """Build a SynapseEngineV2 instance seeded with default synapses from synapse_engine."""
-        from .synapse_engine import create_default_synapses
-        from .synapse_engine_v2 import Synapse as SynapseV2, SynapseHook as SynapseHookV2
-
-        engine = SynapseEngineV2()
-        for name, syn in create_default_synapses().items():
-            new_syn = SynapseV2(name, syn.synapse_type)
-            for trigger, hook in syn.hooks.items():
-                new_syn.register_hook(
-                    SynapseHookV2(hook.name, trigger, hook.validator, hook.description)
-                )
-            try:
-                engine.register_synapse(new_syn)
-            except ValueError:
-                pass  # already registered
-        return engine
+        """Build the default SynapseEngineV2 with all synapses registered."""
+        from .synapse_engine_v2 import build_default_engine
+        return build_default_engine()
 
     def _fire_synapses(self, trigger: str, context: dict) -> list:
-        """Fire synapse engine for a given trigger. Returns blocking decisions."""
+        """Fire synapse engine for a given trigger. Returns decisions."""
         if self._synapse_engine is None:
             return []
+        coro = self._synapse_engine.fire_trigger(trigger, context)
         try:
-            loop = asyncio.get_event_loop()
-            if loop.is_running():
-                import concurrent.futures
-                import threading
-                result_container = []
-                exc_container = []
+            asyncio.get_running_loop()
+        except RuntimeError:
+            # No loop running in this thread — run the coroutine directly.
+            try:
+                return asyncio.run(coro)
+            except Exception:
+                return []
 
-                def run():
-                    import asyncio as _asyncio
-                    try:
-                        result_container.extend(
-                            _asyncio.run(self._synapse_engine.fire_trigger(trigger, context))
-                        )
-                    except Exception as e:
-                        exc_container.append(e)
+        # A loop is already running (e.g. called from async test code):
+        # execute in a separate thread with its own event loop.
+        import threading
+        results: list = []
 
-                t = threading.Thread(target=run, daemon=True)
-                t.start()
-                t.join(timeout=5)
-                if exc_container:
-                    return []
-                return result_container
-            else:
-                return loop.run_until_complete(
-                    self._synapse_engine.fire_trigger(trigger, context)
-                )
-        except Exception:
-            return []
+        def run():
+            try:
+                results.extend(asyncio.run(coro))
+            except Exception:
+                pass
+
+        t = threading.Thread(target=run, daemon=True)
+        t.start()
+        t.join(timeout=5)
+        return results
 
     def execute(
         self,

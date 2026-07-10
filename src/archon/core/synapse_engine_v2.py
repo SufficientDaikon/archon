@@ -66,126 +66,81 @@ class SynapseEngine:
         return [d for d in self.firing_log if d.action == SynapseAction.HALT]
 
 
-# Built-in Iron Laws
-IRON_LAWS = [
-    ("probably", "Remove or provide evidence"),
-    ("close enough", "Exact or not done"),
-    ("simple enough to skip", "Complexity doesn't excuse steps"),
-    ("just a", "Size doesn't predict impact"),
-    ("will add later", "Technical debt — do now"),
-]
+# Dict-validator adaptation
+#
+# The single implementation of every synapse check lives in
+# ``archon.synapses.<module>.validate(context) -> dict``. The adapter below
+# lifts those plain-dict results into SynapseDecision objects so the engine
+# can enforce them. Evidence keys vary by module (violations, vulnerabilities,
+# issues) — the adapter collects whichever is present.
+
+# Which pipeline triggers each synapse fires on, derived from the
+# SynapseRouter ROUTING_TABLE so that every routed ID actually resolves.
+_DEFAULT_TRIGGERS: dict[str, tuple[str, ...]] = {
+    "anti-rationalization": ("pre-execution",),
+    "metacognition": ("pre-execution", "post-cycle"),
+    "trust-verification": ("pre-execution", "post-handoff"),
+    "sequential-thinking": ("pre-execution", "post-cycle"),
+    "pattern-recognition": ("pre-execution", "post-handoff", "post-cycle"),
+    "security-awareness": ("post-build",),
+    "code-quality": ("post-build",),
+    "completeness": ("post-build", "post-handoff"),
+    "consistency": ("post-build", "post-handoff"),
+}
+
+_EVIDENCE_KEYS = ("violations", "vulnerabilities", "issues", "evidence")
 
 
-# Pre-compiled OWASP patterns for maximum scan speed.
-_OWASP_PATTERNS: list[tuple[re.Pattern, str, str]] = [
-    # A1 — Injection
-    (re.compile(r'\bexec\s*\(|(?<!\w)eval\s*\(', re.I), "CRITICAL", "A1-Injection: exec/eval (RCE risk)"),
-    (re.compile(r'subprocess\.(call|run|Popen)\s*\([^,)]*\+', re.I), "HIGH", "A1-Injection: dynamic subprocess call (command injection risk)"),
-    (re.compile(r'(?:query|execute|cursor\.execute)\s*\([^)]*\+[^)]*\)', re.I), "HIGH", "A1-Injection: possible SQL concatenation"),
-    # A2 — Broken Authentication
-    (re.compile(r"(?:password|passwd|pwd|secret|token|api_?key)\s*[=:]\s*[\"'][^\"']{6,}[\"']", re.I), "CRITICAL", "A2-Auth: hardcoded credential"),
-    (re.compile(r'jwt\.decode\s*\([^)]*verify\s*=\s*False', re.I), "CRITICAL", "A2-Auth: JWT signature verification disabled"),
-    # A3 — XSS
-    (re.compile(r'\.innerHTML\s*[+]?=|document\.write\s*\(', re.I), "HIGH", "A3-XSS: raw HTML injection point"),
-    (re.compile(r'dangerouslySetInnerHTML', re.I), "HIGH", "A3-XSS: React dangerouslySetInnerHTML"),
-    # A4 — Insecure Direct Object Reference (path traversal)
-    (re.compile(r'open\s*\([^)]*\+[^)]*\)|Path\s*\([^)]*\+[^)]*\)', re.I), "HIGH", "A4-IDOR: dynamic file path construction"),
-    # A5 — Security Misconfiguration
-    (re.compile(r'ssl\._create_unverified_context|verify\s*=\s*False.*requests\.|VERIFY_SSL\s*=\s*False', re.I), "HIGH", "A5-Misconfig: SSL verification disabled"),
-    (re.compile(r'DEBUG\s*=\s*True|debug\s*=\s*True', re.I), "MEDIUM", "A5-Misconfig: debug mode enabled"),
-    # A7 — Broken Access Control
-    (re.compile(r'os\.chmod\s*\([^,]+,\s*0o?777\)', re.I), "HIGH", "A7-Access: world-writable chmod 777"),
-    # A9 — Using Components with Known Vulnerabilities (pickle)
-    (re.compile(r'pickle\.loads?\s*\(', re.I), "HIGH", "A9-Deserialization: unsafe pickle deserialization"),
-    # A10 — SSRF indicators
-    (re.compile(r'requests\.(get|post|put|delete)\s*\([^)]*user[_-]?input|fetch\s*\([^)]*req\.(body|params|query)', re.I), "HIGH", "A10-SSRF: user-controlled URL in HTTP request"),
-]
+def _adapt_validator(synapse_name: str, hook_name: str, validate_fn: Callable) -> Callable:
+    """Wrap a dict-returning ``validate(context)`` into a SynapseDecision validator."""
 
-async def anti_rationalization_validator(context: dict[str, Any]) -> SynapseDecision:
-    """Detect forbidden phrases in reasoning."""
-    text = (context.get("reasoning", "") + " " + context.get("task", "")).lower()
-    violations = [rule for phrase, rule in IRON_LAWS if phrase in text]
-    
-    if violations:
+    async def validator(context: dict[str, Any]) -> SynapseDecision:
+        result = validate_fn(context)
+        try:
+            action = SynapseAction(result.get("action", "allow"))
+        except ValueError:
+            action = SynapseAction.WARN
+        evidence: list[str] = []
+        for key in _EVIDENCE_KEYS:
+            value = result.get(key)
+            if value:
+                evidence.extend(str(item) for item in value)
         return SynapseDecision(
-            synapse_name="anti-rationalization",
-            hook_name="detect-forbidden-phrases",
-            action=SynapseAction.HALT,
-            message=f"Rationalization detected: {len(violations)} Iron Law violation(s)",
-            evidence=violations,
-        )
-    return SynapseDecision(
-        synapse_name="anti-rationalization",
-        hook_name="detect-forbidden-phrases",
-        action=SynapseAction.ALLOW,
-        message="No rationalization detected",
-        evidence=[],
-    )
-
-
-async def security_awareness_validator(context: dict[str, Any]) -> SynapseDecision:
-    """Scan code for OWASP Top-10 vulnerability patterns."""
-    code = context.get("code", "") or context.get("reasoning", "") or context.get("task", "")
-    if not code:
-        return SynapseDecision(
-            synapse_name="security-awareness",
-            hook_name="scan-owasp",
-            action=SynapseAction.ALLOW,
-            message="No code content to scan",
-            evidence=[],
-        )
-
-    vulns: list[str] = []
-    critical_found = False
-    for pattern, severity, description in _OWASP_PATTERNS:
-        if pattern.search(code):
-            vulns.append(f"{severity}: {description}")
-            if severity == "CRITICAL":
-                critical_found = True
-
-    if vulns:
-        action = SynapseAction.HALT if critical_found else SynapseAction.WARN
-        return SynapseDecision(
-            synapse_name="security-awareness",
-            hook_name="scan-owasp",
+            synapse_name=synapse_name,
+            hook_name=hook_name,
             action=action,
-            message=f"OWASP scan: {len(vulns)} issue(s) found ({'HALT' if critical_found else 'WARN'})",
-            evidence=vulns,
+            message=result.get("message", ""),
+            evidence=evidence,
         )
-    return SynapseDecision(
-        synapse_name="security-awareness",
-        hook_name="scan-owasp",
-        action=SynapseAction.ALLOW,
-        message="OWASP scan: no issues detected",
-        evidence=[],
-    )
+
+    return validator
 
 
 def create_default_synapses() -> dict[str, Synapse]:
-    """Create the 5 default synapses."""
-    synapses = {}
-    
-    # Anti-Rationalization
-    ar = Synapse("anti-rationalization", synapse_type="core")
-    ar.register_hook(SynapseHook(
-        name="detect-forbidden-phrases",
-        trigger="pre-execution",
-        validator=anti_rationalization_validator,
-        description="Detect rationalization patterns",
-    ))
-    synapses["anti-rationalization"] = ar
-    
-    # Security Awareness
-    sec = Synapse("security-awareness", synapse_type="core")
-    sec.register_hook(SynapseHook(
-        name="scan-owasp",
-        trigger="post-build",
-        validator=security_awareness_validator,
-        description="Scan for OWASP Top 10",
-    ))
-    synapses["security-awareness"] = sec
-    
-    return synapses
+    """Create all default synapses, backed by the archon.synapses validators."""
+    from archon import synapses as synapse_modules
+
+    result: dict[str, Synapse] = {}
+    for name, triggers in _DEFAULT_TRIGGERS.items():
+        module = getattr(synapse_modules, name.replace("-", "_"))
+        synapse = Synapse(name, synapse_type="core")
+        for trigger in triggers:
+            synapse.register_hook(SynapseHook(
+                name=f"{name}:{trigger}",
+                trigger=trigger,
+                validator=_adapt_validator(name, f"{name}:{trigger}", module.validate),
+                description=(module.__doc__ or "").strip().splitlines()[0] if module.__doc__ else "",
+            ))
+        result[name] = synapse
+    return result
+
+
+def build_default_engine() -> "SynapseEngineV2":
+    """Build a SynapseEngineV2 with every default synapse registered."""
+    engine = SynapseEngineV2()
+    for synapse in create_default_synapses().values():
+        engine.register_synapse(synapse)
+    return engine
 
 
 import threading

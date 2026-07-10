@@ -43,10 +43,14 @@ def validate(context: Dict[str, Any]) -> Dict[str, Any]:
     - confidence: float (0-1) - Agent's stated confidence level
     - evidence_count: int - Number of evidence items supporting the approach
     """
-    complexity = context.get("complexity", "SIMPLE").upper()
+    # Callers that don't declare a tier are not judged on plan/reasoning depth —
+    # TRIVIAL applies no requirements. Judgement starts when a tier is stated.
+    complexity = context.get("complexity", "TRIVIAL").upper()
     has_plan = context.get("has_plan", False)
     reasoning = context.get("reasoning", "")
-    confidence = context.get("confidence", 1.0)
+    # Confidence is only judged when the caller explicitly states it —
+    # an absent key must not be treated as a 100%-confident claim.
+    confidence = context.get("confidence")
     evidence_count = context.get("evidence_count", 0)
 
     issues = []
@@ -76,7 +80,7 @@ def validate(context: Dict[str, Any]) -> Dict[str, Any]:
             )
 
     # Check 4: Confidence calibration — high confidence needs evidence
-    if confidence > 0.9 and evidence_count == 0:
+    if confidence is not None and confidence > 0.9 and evidence_count == 0:
         issues.append(
             f"OVERCONFIDENT: Stated confidence {confidence:.0%} with no evidence items. "
             "Either lower confidence or supply evidence."
