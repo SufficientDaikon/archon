@@ -104,7 +104,7 @@ SYNAPSE_INSTRUCTIONS: dict[str, dict[str, str]] = {
         "base": (
             "PLAN before executing: rate complexity 1-5; list Know / Don't Know / "
             "Assuming; define exit criteria. Tag key claims HIGH (verified), "
-            "MEDIUM (inferred), LOW (assumed)."
+            "MEDIUM (inferred), LOW (assumed).{state.pending_todos_notice?}"
         ),
         "complex": (
             "ESCAPE HATCH: after 3 failed attempts at the same subtask with the same "
@@ -128,7 +128,7 @@ SYNAPSE_INSTRUCTIONS: dict[str, dict[str, str]] = {
             "IRON LAWS: a task is done only when its verification command has been run "
             "this session and passed. Do not narrow the spec to fit the code — 'out of "
             "scope' is decided by the spec, not by difficulty. Partial completion must "
-            "be reported as partial."
+            "be reported as partial.{state.tests_failing_notice?}"
         ),
     },
     "sequential-thinking": {
@@ -161,6 +161,43 @@ _TIER_BANDS = {
     "COMPLEX": ("base", "complex"),
     "EXPERT": ("base", "complex", "expert"),
 }
+
+# --- State-templated placeholders (ADK-style {key?} injection) --------------
+# Instruction strings may carry `{state.<key>?}` placeholders. Each key maps
+# to a provider computing its text from the live session dict — conditionality
+# lives in the provider, and anything unknown or failing renders as "" (the
+# GenAI-SDK never-throw principle): a template can never break an injection.
+_STATE_PLACEHOLDER = re.compile(r"\{state\.([a-z_]+)\?\}")
+
+_STATE_PROVIDERS: dict[str, object] = {
+    "tests_failing_notice": lambda session: (
+        " Tests are recorded FAILING this session — fix and re-run them before "
+        "claiming anything is done."
+        if session.get("tests_passed") is False
+        else ""
+    ),
+    "pending_todos_notice": lambda session: (
+        " Open todos: " + "; ".join(session.get("todos_pending_titles", [])[:3]) + "."
+        if session.get("todos_pending_titles")
+        else ""
+    ),
+}
+
+
+def resolve_state_placeholders(text: str, session: dict | None) -> str:
+    """Resolve `{state.<key>?}` placeholders from session state. Never raises."""
+
+    def substitute(match: re.Match) -> str:
+        provider = _STATE_PROVIDERS.get(match.group(1))
+        if provider is None or session is None:
+            return ""
+        try:
+            return str(provider(session))
+        except Exception:
+            return ""
+
+    return _STATE_PLACEHOLDER.sub(substitute, text)
+
 
 # --- Noise stripping ------------------------------------------------------
 # Pasted code, logs, and tracebacks inflate word counts and push terse-but-hard
@@ -276,12 +313,16 @@ def active_synapses(tier: str, prompt: str) -> list[str]:
     return sorted(set(active))
 
 
-def build_synapse_context(synapses: list[str], tier: str) -> str:
+def build_synapse_context(synapses: list[str], tier: str, session: dict | None = None) -> str:
     """Build tier-banded synapse instructions for additionalContext.
 
     MODERATE injects the base band; COMPLEX adds the complex band; EXPERT adds
     all three. TRIVIAL/SIMPLE inject nothing except keyword-triggered synapses
     (security-awareness) — low tiers must stay near-zero overhead.
+
+    When a session dict is provided, `{state.<key>?}` placeholders in the
+    instructions resolve against it (e.g. a live tests-failing notice);
+    without one they render empty.
     """
     if tier in ("TRIVIAL", "SIMPLE"):
         synapses = [s for s in synapses if s == "security-awareness"]
@@ -293,6 +334,7 @@ def build_synapse_context(synapses: list[str], tier: str) -> str:
     for synapse in synapses:
         instructions = SYNAPSE_INSTRUCTIONS.get(synapse, {})
         text = " ".join(instructions[band] for band in bands if band in instructions)
+        text = resolve_state_placeholders(text, session)
         if text:
             lines.append(f"  <{synapse}>{text}</{synapse}>")
 

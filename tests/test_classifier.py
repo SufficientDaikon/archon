@@ -138,3 +138,55 @@ class TestSynapseContext:
         syn = active_synapses("EXPERT", "refactor the authentication implementation")
         ctx = build_synapse_context(syn, "EXPERT")
         assert len(ctx.split()) * 1.4 < 600
+
+
+class TestStatePlaceholders:
+    """ADK-style {state.<key>?} templating — never raises, degrades to empty."""
+
+    def test_tests_failing_notice_renders_when_failing(self):
+        from shared.classifier import resolve_state_placeholders
+
+        text = "IRON LAWS.{state.tests_failing_notice?}"
+        out = resolve_state_placeholders(text, {"tests_passed": False})
+        assert "FAILING" in out
+
+    def test_notice_absent_when_passing_or_unknown(self):
+        from shared.classifier import resolve_state_placeholders
+
+        text = "IRON LAWS.{state.tests_failing_notice?}"
+        assert resolve_state_placeholders(text, {"tests_passed": True}) == "IRON LAWS."
+        assert resolve_state_placeholders(text, {"tests_passed": None}) == "IRON LAWS."
+        assert resolve_state_placeholders(text, None) == "IRON LAWS."
+
+    def test_pending_todos_notice(self):
+        from shared.classifier import resolve_state_placeholders
+
+        text = "PLAN.{state.pending_todos_notice?}"
+        out = resolve_state_placeholders(text, {"todos_pending_titles": ["ship it", "docs"]})
+        assert "ship it" in out and "docs" in out
+
+    def test_unknown_key_renders_empty(self):
+        from shared.classifier import resolve_state_placeholders
+
+        assert resolve_state_placeholders("x{state.nope?}y", {"a": 1}) == "xy"
+
+    def test_provider_exception_renders_empty(self):
+        from shared.classifier import _STATE_PROVIDERS, resolve_state_placeholders
+
+        _STATE_PROVIDERS["boom"] = lambda session: 1 / 0
+        try:
+            assert resolve_state_placeholders("x{state.boom?}y", {}) == "xy"
+        finally:
+            del _STATE_PROVIDERS["boom"]
+
+    def test_build_context_without_session_unchanged(self):
+        # 2-arg call keeps working; placeholders render empty
+        syn = active_synapses("COMPLEX", "refactor the module")
+        ctx = build_synapse_context(syn, "COMPLEX")
+        assert "IRON LAWS" in ctx
+        assert "{state." not in ctx
+
+    def test_build_context_with_failing_session(self):
+        syn = active_synapses("COMPLEX", "refactor the module")
+        ctx = build_synapse_context(syn, "COMPLEX", {"tests_passed": False})
+        assert "Tests are recorded FAILING" in ctx

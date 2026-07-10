@@ -68,10 +68,15 @@ def main() -> None:
     skills = match_skills(prompt)
     mode = get_execution_mode(tier)
     synapses = active_synapses(tier, prompt)
-    synapse_context = build_synapse_context(_enabled_synapses(synapses, cwd), tier)
+
+    # Session state feeds {state.*?} placeholders in the instructions
+    # (e.g. a live tests-failing notice), so load before building context.
+    state = load_state(cwd)
+    synapse_context = build_synapse_context(
+        _enabled_synapses(synapses, cwd), tier, state["session"]
+    )
 
     # Update state
-    state = load_state(cwd)
     state["session"]["complexity_tier"] = tier
     state["session"]["active_skills"] = skills
     save_state(state, cwd)

@@ -687,3 +687,25 @@ class TestHookLogging:
         assert not old.exists()
         assert foreign.exists()  # never touch foreign files
         assert list(logs_dir.glob("hooks-*.jsonl"))  # today's log written
+
+
+class TestStateTemplatedInjection:
+    """The router weaves live session state into the injected instructions."""
+
+    COMPLEX_PROMPT = (
+        "refactor the authentication pipeline architecture end to end and migrate "
+        "the distributed session store, then rewrite the authorization middleware "
+        "for the production deployment with full test coverage across services"
+    )
+
+    def test_failing_tests_notice_injected_at_complex(self, home):
+        write_state(home, lambda s: s["session"].update(tests_passed=False))
+        result = run_hook("prompt_router.py", {"prompt": self.COMPLEX_PROMPT}, home)
+        context = json.loads(result.stdout)["hookSpecificOutput"]["additionalContext"]
+        assert "Tests are recorded FAILING" in context
+
+    def test_no_notice_when_tests_unknown(self, home):
+        result = run_hook("prompt_router.py", {"prompt": self.COMPLEX_PROMPT}, home)
+        context = json.loads(result.stdout)["hookSpecificOutput"]["additionalContext"]
+        assert "Tests are recorded FAILING" not in context
+        assert "{state." not in context
