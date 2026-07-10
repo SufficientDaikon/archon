@@ -202,24 +202,37 @@ def strip_noise(prompt: str) -> str:
     return text
 
 
-def classify_complexity(prompt: str) -> str:
-    """Classify prompt into TRIVIAL->EXPERT tier. Pure heuristic, no LLM."""
+def classify_complexity(
+    prompt: str,
+    thresholds: list[tuple[int, str]] | None = None,
+    max_escalation: int | None = None,
+) -> str:
+    """Classify prompt into TRIVIAL->EXPERT tier. Pure heuristic, no LLM.
+
+    Pure function: config-driven overrides arrive as arguments (prompt_router
+    reads the properties and passes them); the module constants are defaults.
+    """
+    if thresholds is None:
+        thresholds = TIER_THRESHOLDS
+    if max_escalation is None:
+        max_escalation = MAX_ESCALATION
+
     stripped = strip_noise(prompt)
     word_count = len(stripped.split())
 
     # Base tier from word count of the actual request (noise removed)
-    tier_idx = len(TIER_THRESHOLDS)  # default to EXPERT
-    for i, (threshold, _) in enumerate(TIER_THRESHOLDS):
+    tier_idx = len(thresholds)  # default to EXPERT
+    for i, (threshold, _) in enumerate(thresholds):
         if word_count <= threshold:
             tier_idx = i
             break
 
-    # Escalate from keyword patterns (capped at MAX_ESCALATION)
+    # Escalate from keyword patterns (capped at max_escalation)
     escalation = 0
     for pattern, bump in ESCALATION_PATTERNS:
         if pattern.search(stripped):
             escalation += bump
-    tier_idx += min(escalation, MAX_ESCALATION)
+    tier_idx += min(escalation, max_escalation)
 
     # Structural escalation: many files named or an explicit multi-step list
     file_refs = set(_FILE_PATH.findall(stripped))

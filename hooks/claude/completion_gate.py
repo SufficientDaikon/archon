@@ -21,9 +21,8 @@ from pathlib import Path
 HOOK_DIR = Path(__file__).parent
 sys.path.insert(0, str(HOOK_DIR))
 
+from shared.config import get_property
 from shared.state import archive_session, load_state, save_state
-
-MAX_GATE_BLOCKS = 2
 
 
 def main() -> None:
@@ -33,6 +32,7 @@ def main() -> None:
     except json.JSONDecodeError:
         input_data = {}
 
+    cwd = input_data.get("cwd")
     state = load_state()
     session = state["session"]
     files_modified = session.get("files_modified", [])
@@ -50,12 +50,22 @@ def main() -> None:
         print(json.dumps({}))
         return
 
+    # Gate disabled by config: warn on stderr but never block. State is
+    # still persisted and archived — disabling the gate must not lose data.
+    if not get_property("gate/enabled", cwd):
+        sys.stderr.write(
+            f"Archon completion gate (disabled by gate/enabled=false): {'; '.join(failures)}\n"
+        )
+        persist_and_archive(state)
+        print(json.dumps({}))
+        return
+
     # stop_hook_active means a Stop hook already blocked this stop once —
     # blocking again would loop forever.
     already_blocking = bool(input_data.get("stop_hook_active"))
     blocks_so_far = session.get("gate_blocks", 0)
 
-    if already_blocking or blocks_so_far >= MAX_GATE_BLOCKS:
+    if already_blocking or blocks_so_far >= get_property("gate/max_blocks", cwd):
         sys.stderr.write(
             "Archon completion gate: quality checks still failing "
             f"({'; '.join(failures)}) — allowing stop after "

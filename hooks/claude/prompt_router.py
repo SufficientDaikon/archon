@@ -20,7 +20,25 @@ from shared.classifier import (
     get_execution_mode,
     match_skills,
 )
+from shared.config import get_property
 from shared.state import load_state, save_state
+
+
+def _classifier_thresholds(cwd: str | None) -> list[tuple[int, str]]:
+    """Tier thresholds from properties (defaults match the classifier constants)."""
+    return [
+        (get_property("classifier/trivial_max_words", cwd), "TRIVIAL"),
+        (get_property("classifier/simple_max_words", cwd), "SIMPLE"),
+        (get_property("classifier/moderate_max_words", cwd), "MODERATE"),
+        (get_property("classifier/complex_max_words", cwd), "COMPLEX"),
+    ]
+
+
+def _enabled_synapses(synapses: list[str], cwd: str | None) -> list[str]:
+    """Filter active synapses through the injection/* toggles."""
+    if not get_property("injection/enabled", cwd):
+        return []
+    return [s for s in synapses if get_property(f"injection/{s.replace('-', '_')}", cwd)]
 
 
 def main() -> None:
@@ -35,12 +53,18 @@ def main() -> None:
         print(json.dumps({}))
         return
 
+    cwd = input_data.get("cwd")
+
     # Classify
-    tier = classify_complexity(prompt)
+    tier = classify_complexity(
+        prompt,
+        thresholds=_classifier_thresholds(cwd),
+        max_escalation=get_property("classifier/max_escalation", cwd),
+    )
     skills = match_skills(prompt)
     mode = get_execution_mode(tier)
     synapses = active_synapses(tier, prompt)
-    synapse_context = build_synapse_context(synapses, tier)
+    synapse_context = build_synapse_context(_enabled_synapses(synapses, cwd), tier)
 
     # Update state
     state = load_state()

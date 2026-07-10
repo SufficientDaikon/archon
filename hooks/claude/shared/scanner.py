@@ -144,11 +144,22 @@ BUILD_PATTERNS = [
 ]
 
 
-def scan_for_secrets(content: str, file_path: str = "") -> list[dict[str, str]]:
-    """Scan content for secret patterns. Returns list of findings."""
+def scan_for_secrets(
+    content: str,
+    file_path: str = "",
+    extra_allowlist: list[re.Pattern] | None = None,
+) -> list[dict[str, str]]:
+    """Scan content for secret patterns. Returns list of findings.
+
+    extra_allowlist: additional compiled file-path patterns to exempt
+    (sourced from the scanner/extra_allowlist property by guard_write).
+    """
     # Skip allowlisted files
     if file_path:
         for pattern in SECRET_ALLOWLIST_PATTERNS:
+            if pattern.search(file_path):
+                return []
+        for pattern in extra_allowlist or []:
             if pattern.search(file_path):
                 return []
 

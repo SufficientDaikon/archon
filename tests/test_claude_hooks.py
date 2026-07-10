@@ -17,14 +17,16 @@ ARCHON_ROOT = Path(__file__).parent.parent
 HOOKS_DIR = ARCHON_ROOT / "hooks" / "claude"
 
 
-def run_hook(name: str, payload: dict, archon_home: Path) -> subprocess.CompletedProcess:
+def run_hook(
+    name: str, payload: dict, archon_home: Path, extra_env: dict | None = None
+) -> subprocess.CompletedProcess:
     return subprocess.run(
         [sys.executable, str(HOOKS_DIR / name)],
         input=json.dumps(payload),
         capture_output=True,
         text=True,
         timeout=30,
-        env={**os.environ, "ARCHON_HOME": str(archon_home)},
+        env={**os.environ, "ARCHON_HOME": str(archon_home), **(extra_env or {})},
     )
 
 
@@ -322,6 +324,116 @@ class TestCompletionGate:
         )
         result = run_hook("completion_gate.py", {}, home)
         assert result.returncode == 0
+
+
+class TestConfigProperties:
+    """Config-driven hook behavior (env > project > user > default)."""
+
+    def test_gate_disabled_by_env_never_blocks(self, home):
+        write_state(
+            home, lambda s: s["session"].update(files_modified=["app.py"], tests_passed=False)
+        )
+        result = run_hook(
+            "completion_gate.py", {}, home, extra_env={"ARCHON_GATE_ENABLED": "false"}
+        )
+        assert result.returncode == 0
+        assert "disabled by gate/enabled" in result.stderr
+        # disabling the gate must not lose data: session was still archived
+        state = read_state(home)
+        assert state["history"]["last_sessions"]
+
+    def test_gate_max_blocks_env_caps_at_one(self, home):
+        write_state(
+            home,
+            lambda s: s["session"].update(
+                files_modified=["app.py"], tests_passed=False, gate_blocks=1
+            ),
+        )
+        result = run_hook("completion_gate.py", {}, home, extra_env={"ARCHON_GATE_MAX_BLOCKS": "1"})
+        assert result.returncode == 0
+        assert "allowing stop" in result.stderr
+
+    def test_classifier_threshold_env_shifts_tier(self, home):
+        # 3-word prompt: default TRIVIAL; with trivial ceiling 1 it lands SIMPLE
+        result = run_hook(
+            "prompt_router.py",
+            {"prompt": "hello there friend"},
+            home,
+            extra_env={"ARCHON_CLASSIFIER_TRIVIAL_MAX_WORDS": "1"},
+        )
+        context = json.loads(result.stdout)["hookSpecificOutput"]["additionalContext"]
+        assert 'tier="SIMPLE"' in context
+
+    def test_injection_master_switch_suppresses_instructions(self, home):
+        prompt = (
+            "refactor the payment reconciliation module so retries are idempotent, "
+            "update the ledger writer accordingly, and make sure error paths roll "
+            "back partial writes cleanly across both services involved here today"
+        )
+        result = run_hook(
+            "prompt_router.py",
+            {"prompt": prompt},
+            home,
+            extra_env={"ARCHON_INJECTION_ENABLED": "false"},
+        )
+        context = json.loads(result.stdout)["hookSpecificOutput"]["additionalContext"]
+        # Route tag still emitted, instruction block suppressed
+        assert "<archon-route" in context
+        assert "NO UNVERIFIED CLAIMS" not in context
+
+    def test_injection_single_synapse_toggle(self, home):
+        prompt = (
+            "refactor the payment reconciliation module so retries are idempotent, "
+            "update the ledger writer accordingly, and make sure error paths roll "
+            "back partial writes cleanly across both services involved here today"
+        )
+        result = run_hook(
+            "prompt_router.py",
+            {"prompt": prompt},
+            home,
+            extra_env={"ARCHON_INJECTION_ANTI_RATIONALIZATION": "false"},
+        )
+        context = json.loads(result.stdout)["hookSpecificOutput"]["additionalContext"]
+        assert "NO UNVERIFIED CLAIMS" not in context
+        assert "PLAN before executing" in context
+
+    def test_project_config_beats_user_config(self, home, tmp_path):
+        # user file says gate max_blocks 5; project file says 1 -> project wins
+        (home / "config").write_text("[gate]\nmax_blocks = 5\n", encoding="utf-8")
+        project_dir = tmp_path / "proj"
+        (project_dir / ".archon").mkdir(parents=True)
+        (project_dir / ".archon" / "config").write_text(
+            "[gate]\nmax_blocks = 1\n", encoding="utf-8"
+        )
+        write_state(
+            home,
+            lambda s: s["session"].update(
+                files_modified=["app.py"], tests_passed=False, gate_blocks=1
+            ),
+        )
+        result = run_hook("completion_gate.py", {"cwd": str(project_dir)}, home)
+        assert result.returncode == 0  # cap of 1 already reached
+        assert "allowing stop" in result.stderr
+
+    def test_scanner_extra_allowlist(self, home):
+        payload = {
+            "tool_name": "Write",
+            "tool_input": {
+                "file_path": "/app/golden/sample.py",
+                "content": 'api_key = "sk-ant-abc123def456ghi789jkl"',
+            },
+        }
+        # Denied by default
+        result = run_hook("guard_write.py", payload, home)
+        assert json.loads(result.stdout)["hookSpecificOutput"]["permissionDecision"] == "deny"
+        # Allowed when the path matches the extra allowlist
+        result = run_hook(
+            "guard_write.py",
+            payload,
+            home,
+            extra_env={"ARCHON_SCANNER_EXTRA_ALLOWLIST": r"/golden/"},
+        )
+        assert json.loads(result.stdout) == {}
 
 
 class TestTodoTrack:
