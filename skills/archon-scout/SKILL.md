@@ -1,5 +1,9 @@
 ---
 name: archon-scout
+description: Scout Intelligence Pipeline — deep multi-source research with parallel web fetching, evidence validation, and synthesis into actionable briefs.
+---
+---
+name: archon-scout
 description: Scout Intelligence Pipeline — deep multi-source research with parallel web fetching, evidence validation, and synthesis into actionable briefs. Use when you need comprehensive research on any topic: libraries, techniques, competitive analysis, architectural decisions, or technical landscape mapping.
 ---
 

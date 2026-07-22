@@ -68,9 +68,6 @@ required_fields:
           type: boolean
           default: false
           description: "When true, captures synapse REFLECT output as a step artifact"
-        available-when:
-          type: string
-          description: "Condition expression — step only executes when this evaluates to true. Supports ${var} references."
         output-key:
           type: string
           description: "Pipeline state key to write this step's output into for downstream reference."

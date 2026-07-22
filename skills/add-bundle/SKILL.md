@@ -1,3 +1,7 @@
+---
+name: add-bundle
+description: AI-assisted guide for creating new skill bundles with shared resources
+---
 # Add Bundle
 
 > AI-assisted guide for creating new skill bundles in the Archon framework.

@@ -1,3 +1,7 @@
+---
+name: docker-production-build
+description: Build minimal secure production Docker images with multi-stage builds, standalone output, and process management
+---
 # Docker Production Build
 
 > Build minimal, secure, production-ready Docker images using multi-stage builds, standalone output, and process management.

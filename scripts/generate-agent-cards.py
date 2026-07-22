@@ -40,7 +40,7 @@ def _fallback_generate(root: Path, registry: dict) -> str:
         manifest: dict = {}
         if manifest_file.exists():
             try:
-                with open(manifest_file, "r", encoding="utf-8") as fh:
+                with open(manifest_file, encoding="utf-8") as fh:
                     manifest = yaml.safe_load(fh) or {}
             except Exception:
                 pass
@@ -58,14 +58,16 @@ def _fallback_generate(root: Path, registry: dict) -> str:
                 "quality-metrics": card_data.get("quality-metrics"),
             }
 
-        agents_data.append({
-            "name": agent_name,
-            "version": manifest.get("version", "0.0.0"),
-            "role": manifest.get("role", ""),
-            "description": manifest.get("description", ""),
-            "path": agent_path,
-            "card": card_out,
-        })
+        agents_data.append(
+            {
+                "name": agent_name,
+                "version": manifest.get("version", "0.0.0"),
+                "role": manifest.get("role", ""),
+                "description": manifest.get("description", ""),
+                "path": agent_path,
+                "card": card_out,
+            }
+        )
 
     index = {
         "$schema": "archon-agent-cards-v1",
@@ -79,15 +81,21 @@ def _fallback_generate(root: Path, registry: dict) -> str:
 
 # ── Main ────────────────────────────────────────────────────────
 
+
 def main() -> int:
     """Entry point."""
     parser = argparse.ArgumentParser(description="Generate agent-cards.json for Archon")
-    parser.add_argument("--output", type=str, default=None, help="Output directory (default: repo root)")
+    parser.add_argument(
+        "--output", type=str, default=None, help="Output directory (default: repo root)"
+    )
     args = parser.parse_args()
 
     root = ARCHON_ROOT
     if not (root / "archon.yaml").exists():
-        print(f"Error: archon.yaml not found at {root}. Run this script from the Archon repository root.", file=sys.stderr)
+        print(
+            f"Error: archon.yaml not found at {root}. Run this script from the Archon repository root.",
+            file=sys.stderr,
+        )
         return 1
 
     output_dir = Path(args.output) if args.output else root
@@ -101,10 +109,11 @@ def main() -> int:
     # Try the archon package first
     try:
         from archon.core.agent_cards import write_agent_cards as _write
+
         result = _write(root, output_dir=output_dir)
     except ImportError:
         # Fallback: self-contained implementation
-        with open(root / "archon.yaml", "r", encoding="utf-8") as fh:
+        with open(root / "archon.yaml", encoding="utf-8") as fh:
             registry = yaml.safe_load(fh) or {}
 
         content = _fallback_generate(root, registry)
@@ -122,7 +131,7 @@ def main() -> int:
 
     # Print summary
     size_kb = result["size"] / 1024
-    print(f"\n✅ agent-cards.json generation complete\n")
+    print("\n✅ agent-cards.json generation complete\n")
     print(f"  📄 {result['path']}  ({size_kb:.1f} KB)")
     print(f"  🤖 Agents: {result['agent_count']}")
     print(f"  ⏱️  Time: {elapsed:.2f}s\n")

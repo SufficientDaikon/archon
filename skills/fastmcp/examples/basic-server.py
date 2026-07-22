@@ -4,11 +4,11 @@ Basic FastMCP Server Template
 A minimal working FastMCP server with essential patterns.
 """
 
-from fastmcp import FastMCP
-import os
 
 # Load environment variables (optional)
 from dotenv import load_dotenv
+from fastmcp import FastMCP
+
 load_dotenv()
 
 # ============================================================================

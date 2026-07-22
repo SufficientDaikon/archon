@@ -1,3 +1,7 @@
+---
+name: archon-adversarial-review
+description: Spawn independent Opus sub-agent to stress-test Archon's architecture against its own principles
+---
 # Archon Adversarial Review
 
 > Spawn an independent Opus sub-agent to stress-test Archon's architecture, hooks, synapses, and framework evolution decisions against its own design principles.

@@ -1,3 +1,7 @@
+---
+name: test-driven-development
+description: Red-green-refactor TDD enforcement for all code production. Use when implementing features, fixing bugs, or writing any production code.
+---
 # Test-Driven Development — The Iron Law
 
 > **Type:** Rigid (NO exceptions)  

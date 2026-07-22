@@ -1,3 +1,7 @@
+---
+name: lazy-import-patterns
+description: Design dynamic import strategies for optional heavy dependencies with feature guards and graceful degradation
+---
 # Lazy Import Patterns
 
 > Design import strategies that keep bundles small by loading optional dependencies only when they're actually needed.

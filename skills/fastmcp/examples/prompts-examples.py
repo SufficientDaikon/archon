@@ -4,8 +4,8 @@ FastMCP Prompts Examples
 Examples of pre-configured prompts for LLMs.
 """
 
+
 from fastmcp import FastMCP
-from datetime import datetime
 
 mcp = FastMCP("Prompts Examples")
 

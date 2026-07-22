@@ -1,3 +1,7 @@
+---
+name: content-quality-gate
+description: Two-tier content validation with rule-based checks and optional AI-powered analysis
+---
 # Content Quality Gate
 
 > Automated content validation combining fast rule-based checks with optional AI-powered analysis.

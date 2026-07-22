@@ -1,3 +1,7 @@
+---
+name: content-moderation-pipeline
+description: Design content moderation pipelines combining duplicate detection, quality scoring, user flagging, and soft deletion cascades
+---
 # Content Moderation Pipeline
 
 > Design moderation systems that combine duplicate detection, quality scoring, user flagging, and soft deletion into a unified trust-and-safety pipeline.

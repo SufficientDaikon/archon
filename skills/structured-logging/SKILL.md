@@ -1,3 +1,7 @@
+---
+name: structured-logging
+description: Design structured JSON logging with Pino, request correlation, environment-aware formatting, and sensitive data redaction
+---
 # Structured Logging
 
 > Design structured logging systems where every log line is machine-parseable, contextually rich, and environment-aware.

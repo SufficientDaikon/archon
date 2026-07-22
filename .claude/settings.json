@@ -5,8 +5,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python hooks/claude/session_boot.py",
-            "timeout": 5
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/hooks/claude/session_boot.py\"",
+            "timeout": 10
           }
         ]
       }
@@ -16,8 +16,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python hooks/claude/prompt_router.py",
-            "timeout": 2
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/hooks/claude/prompt_router.py\"",
+            "timeout": 5
           }
         ]
       }
@@ -28,30 +28,30 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python hooks/claude/guard_bash.py",
-            "timeout": 1
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/hooks/claude/guard_bash.py\"",
+            "timeout": 5
           }
         ]
       },
       {
-        "matcher": "Write|Edit",
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit",
         "hooks": [
           {
             "type": "command",
-            "command": "python hooks/claude/guard_write.py",
-            "timeout": 1
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/hooks/claude/guard_write.py\"",
+            "timeout": 5
           }
         ]
       }
     ],
     "PostToolUse": [
       {
-        "matcher": "Write|Edit",
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit",
         "hooks": [
           {
             "type": "command",
-            "command": "python hooks/claude/quality_write.py",
-            "timeout": 1
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/hooks/claude/quality_write.py\"",
+            "timeout": 5
           }
         ]
       },
@@ -60,8 +60,18 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python hooks/claude/quality_bash.py",
-            "timeout": 1
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/hooks/claude/quality_bash.py\"",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "TodoWrite",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/hooks/claude/todo_track.py\"",
+            "timeout": 5
           }
         ]
       }
@@ -71,8 +81,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python hooks/claude/completion_gate.py",
-            "timeout": 5
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/hooks/claude/completion_gate.py\"",
+            "timeout": 10
           }
         ]
       }
@@ -82,8 +92,41 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python hooks/claude/agent_context.py",
-            "timeout": 2
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/hooks/claude/agent_context.py\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/hooks/claude/agent_context.py\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/hooks/claude/session_end.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/hooks/claude/pre_compact.py\"",
+            "timeout": 5
           }
         ]
       }

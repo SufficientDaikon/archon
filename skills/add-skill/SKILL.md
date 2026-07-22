@@ -1,3 +1,7 @@
+---
+name: add-skill
+description: AI-assisted guide for creating new Archon skills from templates
+---
 # Add Skill
 
 > AI-assisted guide for creating new skills in the Archon framework.

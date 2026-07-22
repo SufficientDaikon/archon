@@ -106,7 +106,7 @@ def load_all_skill_manifests(root: Path) -> list[dict[str, Any]]:
     try:
         import yaml
     except ImportError:
-        raise RuntimeError("PyYAML is required to load skill manifests")
+        raise RuntimeError("PyYAML is required to load skill manifests") from None
 
     manifests = []
     skills_dir = root / "skills"

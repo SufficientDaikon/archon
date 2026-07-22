@@ -36,7 +36,7 @@ def _yaml_field(path: Path, field: str) -> str:
     if not path.exists():
         return ""
     try:
-        with open(path, "r", encoding="utf-8") as fh:
+        with open(path, encoding="utf-8") as fh:
             data = yaml.safe_load(fh) or {}
         value = data.get(field, "")
         return str(value) if value else ""
@@ -111,7 +111,9 @@ def _get_agent_summary(root: Path, entry: dict) -> tuple[str, str]:
 def _get_synapse_summary(root: Path, entry: dict) -> tuple[str, str]:
     """Extract (type, description) for a synapse."""
     syn_path = entry.get("path", f"synapses/{entry['name']}")
-    stype = _yaml_field(root / syn_path / "manifest.yaml", "synapse-type") or entry.get("type", "core")
+    stype = _yaml_field(root / syn_path / "manifest.yaml", "synapse-type") or entry.get(
+        "type", "core"
+    )
     desc = _yaml_field(root / syn_path / "manifest.yaml", "description")
     if not desc:
         syn_md = root / syn_path / "SYNAPSE.md"
@@ -132,7 +134,7 @@ def _get_pipeline_chain(root: Path, entry: dict) -> tuple[str, str, str]:
     chain = ""
     if pl_path.exists():
         try:
-            with open(pl_path, "r", encoding="utf-8") as fh:
+            with open(pl_path, encoding="utf-8") as fh:
                 data = yaml.safe_load(fh) or {}
             desc = data.get("description", "")
             steps = data.get("steps", [])
@@ -156,7 +158,7 @@ def _get_bundle_summary(root: Path, entry: dict) -> tuple[str, list[str]]:
     skills: list[str] = entry.get("skills", [])
     if bundle_yaml.exists():
         try:
-            with open(bundle_yaml, "r", encoding="utf-8") as fh:
+            with open(bundle_yaml, encoding="utf-8") as fh:
                 data = yaml.safe_load(fh) or {}
             desc = data.get("description", "")
             if data.get("skills"):
@@ -221,7 +223,9 @@ def _fallback_generate_concise(root: Path, registry: dict) -> str:
         if desc:
             parts.append(f"- [{entry['name']}]({path}/SYNAPSE.md): ({stype}) {desc}\n")
         else:
-            parts.append(f"- [{entry['name']}]({path}/SYNAPSE.md): ({stype}) No description available\n")
+            parts.append(
+                f"- [{entry['name']}]({path}/SYNAPSE.md): ({stype}) No description available\n"
+            )
     parts.append("\n")
 
     # Pipelines
@@ -252,7 +256,9 @@ def _fallback_generate_concise(root: Path, registry: dict) -> str:
     parts.append("## Documentation\n")
     docs_dir = root / "docs"
     if docs_dir.exists():
-        md_files = sorted(f.name for f in docs_dir.iterdir() if f.suffix == ".md" and f.name != "README.md")
+        md_files = sorted(
+            f.name for f in docs_dir.iterdir() if f.suffix == ".md" and f.name != "README.md"
+        )
         for fname in md_files:
             display = _docs_display_name(fname)
             parts.append(f"- [{display}](docs/{fname})\n")
@@ -263,8 +269,12 @@ def _fallback_generate_concise(root: Path, registry: dict) -> str:
     parts.append("\nInstall via pip:\n")
     parts.append("\n```\npip install archon\narchon init\narchon install --all\n```\n")
     parts.append("\nOr clone and install manually:\n")
-    parts.append("\n```\ngit clone https://github.com/SufficientDaikon/archon.git\ncd archon\npython scripts/install.py\n```\n")
-    parts.append("\nSupported platforms: Claude Code, Copilot CLI, Cursor, Windsurf, Antigravity.\n\n")
+    parts.append(
+        "\n```\ngit clone https://github.com/SufficientDaikon/archon.git\ncd archon\npython scripts/install.py\n```\n"
+    )
+    parts.append(
+        "\nSupported platforms: Claude Code, Copilot CLI, Cursor, Windsurf, Antigravity.\n\n"
+    )
 
     # Links
     repo_url = registry.get("repository", "https://github.com/SufficientDaikon/archon")
@@ -349,7 +359,9 @@ def _fallback_generate_full(root: Path, registry: dict) -> str:
     # Documentation
     docs_dir = root / "docs"
     if docs_dir.exists():
-        md_files = sorted(f for f in docs_dir.iterdir() if f.suffix == ".md" and f.name != "README.md")
+        md_files = sorted(
+            f for f in docs_dir.iterdir() if f.suffix == ".md" and f.name != "README.md"
+        )
         for md_file in md_files:
             content = _read_file_safe(md_file)
             if content is not None:
@@ -362,17 +374,23 @@ def _fallback_generate_full(root: Path, registry: dict) -> str:
 
 # ── Main ────────────────────────────────────────────────────────
 
+
 def main() -> int:
     """Entry point."""
     parser = argparse.ArgumentParser(description="Generate llms.txt for Archon")
-    parser.add_argument("--output", type=str, default=None, help="Output directory (default: repo root)")
+    parser.add_argument(
+        "--output", type=str, default=None, help="Output directory (default: repo root)"
+    )
     parser.add_argument("--concise", action="store_true", help="Generate only llms.txt")
     parser.add_argument("--full", action="store_true", help="Generate only llms-full.txt")
     args = parser.parse_args()
 
     root = ARCHON_ROOT
     if not (root / "archon.yaml").exists():
-        print(f"Error: archon.yaml not found at {root}. Run this script from the Archon repository root.", file=sys.stderr)
+        print(
+            f"Error: archon.yaml not found at {root}. Run this script from the Archon repository root.",
+            file=sys.stderr,
+        )
         return 1
 
     # Determine what to generate
@@ -394,10 +412,11 @@ def main() -> int:
     # Try the archon package first
     try:
         from archon.core.llms_txt import write_files as _write_files
+
         result = _write_files(root, output_dir=output_dir, concise=gen_concise, full=gen_full)
     except ImportError:
         # Fallback: self-contained implementation
-        with open(root / "archon.yaml", "r", encoding="utf-8") as fh:
+        with open(root / "archon.yaml", encoding="utf-8") as fh:
             registry = yaml.safe_load(fh) or {}
 
         result = {"concise": None, "full": None, "stats": {}, "warnings": []}
@@ -410,7 +429,9 @@ def main() -> int:
         docs_dir = root / "docs"
         docs_count = 0
         if docs_dir.exists():
-            docs_count = len([f for f in docs_dir.iterdir() if f.suffix == ".md" and f.name != "README.md"])
+            docs_count = len(
+                [f for f in docs_dir.iterdir() if f.suffix == ".md" and f.name != "README.md"]
+            )
 
         result["stats"] = {
             "skills": len(skills),
@@ -437,7 +458,9 @@ def main() -> int:
 
     # Print summary
     stats = result.get("stats", {})
-    total_components = sum(stats.get(k, 0) for k in ("skills", "agents", "synapses", "pipelines", "bundles"))
+    total_components = sum(
+        stats.get(k, 0) for k in ("skills", "agents", "synapses", "pipelines", "bundles")
+    )
 
     print("\n✅ llms.txt generation complete\n")
     print("Files generated:")
@@ -452,9 +475,11 @@ def main() -> int:
 
     print(f"\nComponents: {total_components} total", end="")
     if stats:
-        print(f" ({stats.get('skills', 0)} skills, {stats.get('agents', 0)} agents, "
-              f"{stats.get('synapses', 0)} synapses, {stats.get('pipelines', 0)} pipelines, "
-              f"{stats.get('bundles', 0)} bundles)")
+        print(
+            f" ({stats.get('skills', 0)} skills, {stats.get('agents', 0)} agents, "
+            f"{stats.get('synapses', 0)} synapses, {stats.get('pipelines', 0)} pipelines, "
+            f"{stats.get('bundles', 0)} bundles)"
+        )
     else:
         print()
 

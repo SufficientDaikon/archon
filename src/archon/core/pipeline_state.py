@@ -71,6 +71,7 @@ class PipelineState:
     def load(cls, state_id: str, state_dir: Path | None = None) -> PipelineState | None:
         """Load pipeline state from disk."""
         from archon.utils.paths import get_archon_home
+
         state_dir = state_dir or get_archon_home() / "pipeline-states"
         state_file = state_dir / f"{state_id}.json"
 
@@ -78,7 +79,7 @@ class PipelineState:
             return None
 
         try:
-            with open(state_file, "r", encoding="utf-8") as f:
+            with open(state_file, encoding="utf-8") as f:
                 data = json.load(f)
 
             return cls(
@@ -97,6 +98,7 @@ class PipelineState:
     def save(self, state_dir: Path | None = None) -> Path:
         """Persist state to disk as JSON."""
         from archon.utils.paths import get_archon_home
+
         state_dir = state_dir or self._state_dir or get_archon_home() / "pipeline-states"
         self._state_dir = state_dir
         state_dir.mkdir(parents=True, exist_ok=True)
@@ -185,18 +187,17 @@ class PipelineState:
 
     def add_context_brief(self, brief: str) -> None:
         """Add a context brief from curation step."""
-        self.accumulated["context_briefs"].append({
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-            "brief": brief,
-        })
+        self.accumulated["context_briefs"].append(
+            {
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "brief": brief,
+            }
+        )
         self.save()
 
     def completed_step_names(self) -> list[str]:
         """Get list of completed step names."""
-        return [
-            s["name"] for s in self.steps
-            if s.get("status") == "completed"
-        ]
+        return [s["name"] for s in self.steps if s.get("status") == "completed"]
 
     def current_step(self) -> str | None:
         """Get the name of the currently running step."""

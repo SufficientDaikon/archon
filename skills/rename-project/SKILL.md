@@ -1,3 +1,7 @@
+---
+name: rename-project
+description: Complete guide for forking and renaming Archon for custom use
+---
 # Rename Project
 
 > Complete guide for forking and renaming Archon for custom use.

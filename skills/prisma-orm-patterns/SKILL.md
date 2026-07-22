@@ -1,3 +1,7 @@
+---
+name: prisma-orm-patterns
+description: Database schema design, query optimization, and ORM configuration with Prisma for production applications
+---
 # Prisma ORM Patterns
 
 > Design database schemas, query patterns, and ORM configurations that are correct at the schema level, performant at the query level, and resilient at the connection level.

@@ -1,3 +1,7 @@
+---
+name: receiving-code-review
+description: Protocol for responding to code review feedback without performative agreement. Use when receiving review feedback before implementing any suggestions.
+---
 # Receiving Code Review — The Response Protocol
 
 > **Type:** Rigid  

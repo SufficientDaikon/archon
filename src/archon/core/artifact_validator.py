@@ -20,6 +20,7 @@ from typing import Any
 @dataclass
 class ValidationResult:
     """Result of artifact validation."""
+
     passed: bool
     checks: list[dict[str, Any]] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
@@ -67,9 +68,7 @@ class ArtifactValidator:
         result.checks.append(check)
         return result
 
-    def validate_sections(
-        self, filepath: str, required_sections: list[str]
-    ) -> ValidationResult:
+    def validate_sections(self, filepath: str, required_sections: list[str]) -> ValidationResult:
         """Check that a markdown file contains required section headings."""
         result = ValidationResult(passed=True)
         path = Path(filepath)
@@ -123,9 +122,7 @@ class ArtifactValidator:
         result.checks.append(check)
         return result
 
-    def validate_min_content(
-        self, filepath: str, min_words: int
-    ) -> ValidationResult:
+    def validate_min_content(self, filepath: str, min_words: int) -> ValidationResult:
         """Check that a file has minimum word count."""
         result = ValidationResult(passed=True)
         path = Path(filepath)
@@ -165,9 +162,7 @@ class ArtifactValidator:
         result.checks.append(check)
         return result
 
-    def validate_schema(
-        self, filepath: str, schema_path: str
-    ) -> ValidationResult:
+    def validate_schema(self, filepath: str, schema_path: str) -> ValidationResult:
         """Validate a YAML/JSON file against a schema."""
         import yaml
 
@@ -195,14 +190,15 @@ class ArtifactValidator:
             return result
 
         try:
-            with open(path, "r", encoding="utf-8") as f:
+            with open(path, encoding="utf-8") as f:
                 if filepath.endswith(".json"):
                     import json
+
                     data = json.load(f)
                 else:
                     data = yaml.safe_load(f)
 
-            with open(s_path, "r", encoding="utf-8") as f:
+            with open(s_path, encoding="utf-8") as f:
                 schema = yaml.safe_load(f)
 
             # Basic structural validation (required fields)
@@ -226,9 +222,7 @@ class ArtifactValidator:
         result.checks.append(check)
         return result
 
-    def validate_compliance_score(
-        self, score: float, threshold: float
-    ) -> ValidationResult:
+    def validate_compliance_score(self, score: float, threshold: float) -> ValidationResult:
         """Check if a compliance score meets the threshold."""
         result = ValidationResult(passed=True)
 
@@ -240,9 +234,7 @@ class ArtifactValidator:
 
         if score < threshold:
             result.passed = False
-            result.errors.append(
-                f"Compliance score {score:.1f}% below threshold {threshold:.1f}%"
-            )
+            result.errors.append(f"Compliance score {score:.1f}% below threshold {threshold:.1f}%")
             check["status"] = "fail"
         else:
             check["status"] = "pass"

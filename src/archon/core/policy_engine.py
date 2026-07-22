@@ -13,14 +13,13 @@ from __future__ import annotations
 
 import re
 import uuid
-from datetime import datetime, timezone
 from dataclasses import dataclass, field
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-import yaml
 import platformdirs
-import json as _json
+import yaml
 
 _AUDIT_DIR = Path(platformdirs.user_data_dir("archon"))
 
@@ -30,6 +29,7 @@ ARCHON_ROOT = Path(__file__).parent.parent.parent.parent
 @dataclass
 class PolicyDecision:
     """Immutable policy decision artifact."""
+
     decision_id: str
     action: str  # allow, deny, escalate
     rationale: str
@@ -63,6 +63,7 @@ class PolicyDecision:
 @dataclass
 class PermissionRule:
     """A single permission rule from the permission schema."""
+
     id: str
     scope: str  # tool, hook, agent, mcp, pipeline, file_system
     trust_tier: str  # builtin, verified, community, untrusted
@@ -95,7 +96,7 @@ class PolicyEngine:
 
     def load_rules_from_schema(self, schema_path: Path) -> int:
         """Load permission rules from a permission schema YAML file."""
-        with open(schema_path, "r", encoding="utf-8") as f:
+        with open(schema_path, encoding="utf-8") as f:
             data = yaml.safe_load(f)
 
         count = 0
@@ -166,17 +167,17 @@ class PolicyEngine:
 
             # Check trust tier precedence
             tier_match = self._check_trust_tier(rule.trust_tier, trust_tier)
-            conditions_evaluated.append({
-                "rule_id": rule.id,
-                "scope_match": True,
-                "tier_match": tier_match,
-            })
+            conditions_evaluated.append(
+                {
+                    "rule_id": rule.id,
+                    "scope_match": True,
+                    "tier_match": tier_match,
+                }
+            )
 
             if tier_match:
                 # Evaluate conditions
-                conditions_pass = self._evaluate_conditions(
-                    rule.conditions, arguments, context
-                )
+                conditions_pass = self._evaluate_conditions(rule.conditions, arguments, context)
                 conditions_evaluated[-1]["conditions_pass"] = conditions_pass
 
                 if conditions_pass:
@@ -184,7 +185,7 @@ class PolicyEngine:
                         decision_id=decision_id,
                         action=rule.action if rule.action != "prompt" else "escalate",
                         rationale=f"Rule {rule.id} matched: scope={rule.scope}, "
-                                  f"tier={rule.trust_tier}, action={rule.action}",
+                        f"tier={rule.trust_tier}, action={rule.action}",
                         policy_id=rule.id,
                         tool_name=tool_name,
                         session_id=session_id,
@@ -228,9 +229,7 @@ class PolicyEngine:
 
     # -- Internal -----------------------------------------------------------
 
-    def _validate_tool_args(
-        self, tool_name: str, arguments: dict[str, Any]
-    ) -> list[str]:
+    def _validate_tool_args(self, tool_name: str, arguments: dict[str, Any]) -> list[str]:
         """Validate tool arguments against registered schema."""
         schema = self._schemas.get(tool_name)
         if not schema:
@@ -251,9 +250,13 @@ class PolicyEngine:
 
             expected_type = prop_schema.get("type", "")
             if expected_type == "string" and not isinstance(arg_value, str):
-                errors.append(f"Argument '{arg_name}' must be string, got {type(arg_value).__name__}")
+                errors.append(
+                    f"Argument '{arg_name}' must be string, got {type(arg_value).__name__}"
+                )
             elif expected_type == "integer" and not isinstance(arg_value, int):
-                errors.append(f"Argument '{arg_name}' must be integer, got {type(arg_value).__name__}")
+                errors.append(
+                    f"Argument '{arg_name}' must be integer, got {type(arg_value).__name__}"
+                )
 
             pattern = prop_schema.get("pattern", "")
             if pattern and isinstance(arg_value, str):
@@ -317,13 +320,12 @@ class PolicyEngine:
         try:
             import json
             from pathlib import Path
+
             import platformdirs
+
             audit_dir = Path(platformdirs.user_data_dir("archon"))
             audit_dir.mkdir(parents=True, exist_ok=True)
-            entry = {
-                k: v for k, v in decision.__dict__.items()
-                if not k.startswith("_")
-            }
+            entry = {k: v for k, v in decision.__dict__.items() if not k.startswith("_")}
             with open(audit_dir / "audit.jsonl", "a", encoding="utf-8") as f:
                 f.write(json.dumps(entry, default=str) + "\n")
         except Exception:
@@ -334,14 +336,15 @@ class PolicyEngine:
 # SYNAPSE INTEGRATION
 # ─────────────────────────────────────────────────────────────────────────────
 
+
 class PolicyEngineWithSynapses(PolicyEngine):
     """Policy engine extended with synapse firing."""
-    
+
     def __init__(self, rules: list[PermissionRule] | None = None, synapse_engine=None):
         super().__init__(rules)
         self.synapse_engine = synapse_engine
         self.synapse_decisions: list = []
-    
+
     def evaluate_with_synapses(
         self,
         tool_name: str,
@@ -355,11 +358,11 @@ class PolicyEngineWithSynapses(PolicyEngine):
         """
         Evaluate tool invocation through BOTH policy engine AND synapses.
         Returns (policy_decision, synapse_decisions).
-        
+
         If any synapse HALTS, return HALT regardless of policy decision.
         """
         synapse_decisions = []
-        
+
         # Fire synapses first (they block harder)
         if self.synapse_engine and synapse_context:
             synapse_decisions = self._fire_synapses(synapse_context)
@@ -378,7 +381,7 @@ class PolicyEngineWithSynapses(PolicyEngine):
                     conditions_evaluated=[{"synapses_fired": len(synapse_decisions)}],
                 )
                 return policy_decision, synapse_decisions
-        
+
         # Then evaluate policy
         policy_decision = self.evaluate(
             tool_name,
@@ -388,9 +391,9 @@ class PolicyEngineWithSynapses(PolicyEngine):
             trust_tier,
             context,
         )
-        
+
         return policy_decision, synapse_decisions
-    
+
     def _fire_synapses(self, context: dict[str, Any]) -> list:
         """Fire all registered synapses for the context."""
         if not self.synapse_engine:
@@ -403,11 +406,13 @@ class PolicyEngineWithSynapses(PolicyEngine):
             """Run an async coroutine from a sync context via a daemon thread."""
             container = [None]
             exc_container = [None]
+
             def _target():
                 try:
                     container[0] = asyncio.run(coro)
                 except Exception as e:
                     exc_container[0] = e
+
             t = threading.Thread(target=_target, daemon=True)
             t.start()
             t.join(timeout=10.0)
@@ -420,16 +425,18 @@ class PolicyEngineWithSynapses(PolicyEngine):
             for hook in synapse.hooks.values():
                 try:
                     result = hook.validator(context)
-                    if hasattr(result, '__await__'):
+                    if hasattr(result, "__await__"):
                         result = _run_async(result)
                     if result is None:
                         continue
-                    decisions.append({
-                        "synapse": synapse.name,
-                        "hook": hook.name,
-                        "action": result.action.value if hasattr(result, 'action') else "allow",
-                        "message": result.message if hasattr(result, 'message') else "",
-                    })
+                    decisions.append(
+                        {
+                            "synapse": synapse.name,
+                            "hook": hook.name,
+                            "action": result.action.value if hasattr(result, "action") else "allow",
+                            "message": result.message if hasattr(result, "message") else "",
+                        }
+                    )
                 except Exception:
                     pass
 

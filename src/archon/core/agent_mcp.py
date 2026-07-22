@@ -9,7 +9,6 @@ E4-S3: MCP connector manager with trust tiers and health policy.
 from __future__ import annotations
 
 import hashlib
-import json
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -23,9 +22,11 @@ ARCHON_ROOT = Path(__file__).parent.parent.parent.parent
 # E4-S1: Agent Capability Profiles
 # ---------------------------------------------------------------------------
 
+
 @dataclass
 class AgentCapabilityProfile:
     """Runtime profile for an agent's capabilities and mode constraints."""
+
     agent_name: str
     modes: list[str]  # e.g., ["plan", "implement", "review"]
     skills: list[str]  # skill IDs this agent can invoke
@@ -35,7 +36,7 @@ class AgentCapabilityProfile:
 
     @classmethod
     def from_manifest(cls, manifest_path: Path) -> AgentCapabilityProfile:
-        with open(manifest_path, "r", encoding="utf-8") as f:
+        with open(manifest_path, encoding="utf-8") as f:
             data = yaml.safe_load(f)
         return cls(
             agent_name=data.get("name", manifest_path.parent.name),
@@ -64,9 +65,11 @@ class AgentCapabilityProfile:
 # E4-S2: Skill Manifest Checker
 # ---------------------------------------------------------------------------
 
+
 @dataclass
 class SkillManifestCheck:
     """Result of checking a skill manifest."""
+
     skill_name: str
     valid: bool = True
     errors: list[str] = field(default_factory=list)
@@ -107,7 +110,7 @@ class SkillManifestChecker:
         result = SkillManifestCheck(skill_name=manifest_path.parent.name)
 
         try:
-            with open(manifest_path, "r", encoding="utf-8") as f:
+            with open(manifest_path, encoding="utf-8") as f:
                 raw = f.read()
                 data = yaml.safe_load(raw)
         except Exception as e:
@@ -154,9 +157,11 @@ class SkillManifestChecker:
 # E4-S3: MCP Connector Manager
 # ---------------------------------------------------------------------------
 
+
 @dataclass
 class MCPConnector:
     """A single MCP server connector."""
+
     name: str
     uri: str
     trust_tier: str  # builtin, verified, community, untrusted

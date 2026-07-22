@@ -9,7 +9,6 @@ from __future__ import annotations
 import json
 import os
 import re
-import tempfile
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -18,20 +17,28 @@ import yaml
 
 from archon.utils.paths import get_archon_root
 
-
 # ── Data classes ────────────────────────────────────────────────
 
 
-VALID_CATEGORIES: list[str] = sorted([
-    "core", "development", "database", "research",
-    "design", "ai", "cloud", "communication",
-])
+VALID_CATEGORIES: list[str] = sorted(
+    [
+        "core",
+        "development",
+        "database",
+        "research",
+        "design",
+        "ai",
+        "cloud",
+        "communication",
+    ]
+)
 """Sorted list of allowed MCP server categories."""
 
 
 @dataclass
 class EnvVar:
     """An environment variable required by an MCP server."""
+
     name: str
     description: str
 
@@ -39,6 +46,7 @@ class EnvVar:
 @dataclass
 class RecommendedFor:
     """Which Archon components benefit from an MCP server."""
+
     skills: list[str] = field(default_factory=list)
     agents: list[str] = field(default_factory=list)
     bundles: list[str] = field(default_factory=list)
@@ -47,6 +55,7 @@ class RecommendedFor:
 @dataclass
 class McpServer:
     """A single MCP server catalog entry (FR-CAT-002 through FR-CAT-004)."""
+
     name: str
     package: str
     category: str
@@ -63,6 +72,7 @@ class McpServer:
 @dataclass
 class MissingDependency:
     """A skill's MCP dependency that is not configured on a platform."""
+
     skill_name: str
     server_name: str
     platforms_missing: list[str] = field(default_factory=list)
@@ -102,7 +112,7 @@ class Catalog:
                 "Ensure you are running from the Archon root or set ARCHON_ROOT."
             )
 
-        with open(catalog_path, "r", encoding="utf-8") as fh:
+        with open(catalog_path, encoding="utf-8") as fh:
             raw = yaml.safe_load(fh) or {}
 
         seen_names: set[str] = set()
@@ -117,10 +127,12 @@ class Catalog:
             env_list: list[EnvVar] = []
             for ev in entry.get("required-env", []):
                 if isinstance(ev, dict):
-                    env_list.append(EnvVar(
-                        name=ev.get("name", ""),
-                        description=ev.get("description", ""),
-                    ))
+                    env_list.append(
+                        EnvVar(
+                            name=ev.get("name", ""),
+                            description=ev.get("description", ""),
+                        )
+                    )
 
             # Parse recommended-for
             rec_data = entry.get("recommended-for")
@@ -291,11 +303,13 @@ class Catalog:
         # Cross-reference against catalog
         for dep_name, skill_names in dep_to_skills.items():
             server = self.find_server(dep_name)
-            required.append({
-                "server": _server_to_dict(server) if server else {"name": dep_name},
-                "referenced_by": skill_names,
-                "in_catalog": server is not None,
-            })
+            required.append(
+                {
+                    "server": _server_to_dict(server) if server else {"name": dep_name},
+                    "referenced_by": skill_names,
+                    "in_catalog": server is not None,
+                }
+            )
 
         # (b) Check recommended-for on catalog entries
         recommended: list[dict] = []
@@ -319,11 +333,13 @@ class Catalog:
                     refs.append(bn)
 
             if refs:
-                recommended.append({
-                    "server": _server_to_dict(server),
-                    "referenced_by": refs,
-                    "in_catalog": True,
-                })
+                recommended.append(
+                    {
+                        "server": _server_to_dict(server),
+                        "referenced_by": refs,
+                        "in_catalog": True,
+                    }
+                )
 
         return {"required": required, "recommended": recommended}
 
@@ -340,8 +356,7 @@ def get_platform_config_path(platform_id: str) -> Path:
     cfg = PLATFORM_CONFIGS.get(platform_id)
     if not cfg:
         raise ValueError(
-            f"Unknown platform '{platform_id}'. "
-            f"Supported: {', '.join(SUPPORTED_PLATFORMS)}"
+            f"Unknown platform '{platform_id}'. Supported: {', '.join(SUPPORTED_PLATFORMS)}"
         )
     raw_path = cfg["path"]
     if raw_path.startswith("~"):
@@ -400,13 +415,12 @@ def read_platform_config(platform_id: str, config_path: Path | None = None) -> d
         return {root_key: {}}
 
     try:
-        with open(path, "r", encoding="utf-8") as fh:
+        with open(path, encoding="utf-8") as fh:
             data = json.load(fh)
     except json.JSONDecodeError:
         raise ValueError(
-            f"Existing config at {path} is not valid JSON. "
-            "Fix it manually or delete it."
-        )
+            f"Existing config at {path} is not valid JSON. Fix it manually or delete it."
+        ) from None
 
     if root_key not in data:
         data[root_key] = {}
@@ -501,17 +515,18 @@ def check_dependencies(
         deps = manifest.get("mcp-dependencies", [])
         for dep in deps:
             platforms_missing = [
-                pid for pid in mcp_platforms
-                if dep not in platform_servers.get(pid, set())
+                pid for pid in mcp_platforms if dep not in platform_servers.get(pid, set())
             ]
             if platforms_missing:
                 in_cat = catalog.find_server(dep) is not None
-                missing.append(MissingDependency(
-                    skill_name=skill.name,
-                    server_name=dep,
-                    platforms_missing=platforms_missing,
-                    in_catalog=in_cat,
-                ))
+                missing.append(
+                    MissingDependency(
+                        skill_name=skill.name,
+                        server_name=dep,
+                        platforms_missing=platforms_missing,
+                        in_catalog=in_cat,
+                    )
+                )
 
     return missing
 
@@ -532,8 +547,7 @@ def _server_to_dict(server: McpServer) -> dict[str, Any]:
     }
     if server.required_env:
         d["required_env"] = [
-            {"name": ev.name, "description": ev.description}
-            for ev in server.required_env
+            {"name": ev.name, "description": ev.description} for ev in server.required_env
         ]
     if server.recommended_for:
         d["recommended_for"] = {

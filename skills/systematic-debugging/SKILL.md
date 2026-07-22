@@ -1,9 +1,7 @@
 ---
 name: systematic-debugging
 description: Four-phase debugging framework that ensures root cause investigation before attempting fixes. Never jump to solutions. Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes.
-version: 2.1.0
 ---
-
 # Systematic Debugging
 
 ## Overview

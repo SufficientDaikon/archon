@@ -1,3 +1,7 @@
+---
+name: brainstorming
+description: Design-first collaborative workflow for features and components. Use when creating features, building components, adding functionality, or any creative work before implementation.
+---
 # Brainstorming — Design Before Code
 
 > **Type:** Rigid process (follow exactly)  

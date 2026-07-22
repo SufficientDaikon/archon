@@ -1,3 +1,7 @@
+---
+name: complexity-router
+description: Intelligent task classification and routing engine for optimal model/agent selection
+---
 # Complexity Router
 
 > Intelligent task classification and routing engine that analyzes complexity and dispatches to optimal model/agent combinations.

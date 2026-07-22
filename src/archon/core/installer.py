@@ -7,15 +7,13 @@ and installation recording (FR-013 through FR-022, FR-060, FR-066).
 from __future__ import annotations
 
 import shutil
-from pathlib import Path
-from typing import Optional
 
 import yaml
 
-from archon.core.registry import Registry, Skill, Agent, Bundle
-from archon.core.platform import PlatformInfo, detect_platforms, get_platform_info
-from archon.core.config import record_install, get_install_records, remove_install_record
-from archon.utils.output import print_success, print_error, print_warning, print_verbose
+from archon.core.config import record_install, remove_install_record
+from archon.core.platform import PlatformInfo, detect_platforms
+from archon.core.registry import Registry, Skill
+from archon.utils.output import print_error, print_verbose, print_warning
 
 
 def _sanitize_path(name: str) -> str:
@@ -55,14 +53,18 @@ def install_skill_to_platform(
         installed_manifest = target_dir / "manifest.yaml"
         if installed_manifest.exists():
             try:
-                with open(installed_manifest, "r", encoding="utf-8") as fh:
+                with open(installed_manifest, encoding="utf-8") as fh:
                     existing = yaml.safe_load(fh) or {}
                 if existing.get("version") == skill.version:
-                    print_verbose(f"  {skill.name} already installed at v{skill.version} on {platform.id} — skipped")
+                    print_verbose(
+                        f"  {skill.name} already installed at v{skill.version} on {platform.id} — skipped"
+                    )
                     return True
                 else:
                     old_ver = existing.get("version", "unknown")
-                    print_verbose(f"  Upgrading {skill.name} {old_ver} → {skill.version} on {platform.id}")
+                    print_verbose(
+                        f"  Upgrading {skill.name} {old_ver} → {skill.version} on {platform.id}"
+                    )
             except Exception:
                 pass
         # Remove old version for upgrade

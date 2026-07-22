@@ -2,26 +2,21 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 import typer
 
 from archon.core.registry import Registry
 from archon.utils.output import (
     console,
-    print_success,
-    print_error,
-    print_warning,
-    print_info,
-    print_verbose,
     is_json,
     json_envelope,
-    print_json,
-    make_table,
     make_panel,
+    make_table,
+    print_error,
+    print_info,
+    print_json,
+    print_success,
 )
 from archon.utils.paths import get_archon_root
-
 
 # ── Capability badge mapping ────────────────────────────────────
 
@@ -43,7 +38,13 @@ _COST_TIER_STYLES: dict[str, str] = {
 # ── Validation logic ────────────────────────────────────────────
 
 _ALLOWED_COST_TIERS = {"fast", "standard", "premium"}
-_REQUIRED_CAPABILITIES = {"streaming", "multi-turn", "file-output", "self-evaluation", "context-aware"}
+_REQUIRED_CAPABILITIES = {
+    "streaming",
+    "multi-turn",
+    "file-output",
+    "self-evaluation",
+    "context-aware",
+}
 
 
 def _validate_card(agent_name: str, card_data: dict | None) -> list[str]:
@@ -59,37 +60,49 @@ def _validate_card(agent_name: str, card_data: dict | None) -> list[str]:
     if caps is None:
         errors.append(f"{agent_name}: card.capabilities: required field missing")
     elif not isinstance(caps, dict):
-        errors.append(f"{agent_name}: card.capabilities: expected object, got {type(caps).__name__}")
+        errors.append(
+            f"{agent_name}: card.capabilities: expected object, got {type(caps).__name__}"
+        )
     else:
         for cap_name in _REQUIRED_CAPABILITIES:
             if cap_name not in caps:
                 errors.append(f"{agent_name}: card.capabilities.{cap_name}: required field missing")
             elif not isinstance(caps[cap_name], bool):
-                errors.append(f"{agent_name}: card.capabilities.{cap_name}: expected boolean, got {type(caps[cap_name]).__name__}")
+                errors.append(
+                    f"{agent_name}: card.capabilities.{cap_name}: expected boolean, got {type(caps[cap_name]).__name__}"
+                )
 
     # Skills provided
     skills = card_data.get("skills-provided")
     if skills is None:
         errors.append(f"{agent_name}: card.skills-provided: required field missing")
     elif not isinstance(skills, list):
-        errors.append(f"{agent_name}: card.skills-provided: expected list, got {type(skills).__name__}")
+        errors.append(
+            f"{agent_name}: card.skills-provided: expected list, got {type(skills).__name__}"
+        )
     elif len(skills) < 1:
         errors.append(f"{agent_name}: card.skills-provided: 0 items < minimum 1")
     else:
         for i, skill in enumerate(skills):
             if not isinstance(skill, dict):
-                errors.append(f"{agent_name}: card.skills-provided[{i}]: expected object, got {type(skill).__name__}")
+                errors.append(
+                    f"{agent_name}: card.skills-provided[{i}]: expected object, got {type(skill).__name__}"
+                )
                 continue
             for req_field in ("id", "name", "description"):
                 if req_field not in skill:
-                    errors.append(f"{agent_name}: card.skills-provided[{i}].{req_field}: required field missing")
+                    errors.append(
+                        f"{agent_name}: card.skills-provided[{i}].{req_field}: required field missing"
+                    )
 
     # Input modes
     in_modes = card_data.get("input-modes")
     if in_modes is None:
         errors.append(f"{agent_name}: card.input-modes: required field missing")
     elif not isinstance(in_modes, list):
-        errors.append(f"{agent_name}: card.input-modes: expected list, got {type(in_modes).__name__}")
+        errors.append(
+            f"{agent_name}: card.input-modes: expected list, got {type(in_modes).__name__}"
+        )
     elif len(in_modes) < 1:
         errors.append(f"{agent_name}: card.input-modes: 0 items < minimum 1")
 
@@ -98,7 +111,9 @@ def _validate_card(agent_name: str, card_data: dict | None) -> list[str]:
     if out_modes is None:
         errors.append(f"{agent_name}: card.output-modes: required field missing")
     elif not isinstance(out_modes, list):
-        errors.append(f"{agent_name}: card.output-modes: expected list, got {type(out_modes).__name__}")
+        errors.append(
+            f"{agent_name}: card.output-modes: expected list, got {type(out_modes).__name__}"
+        )
     elif len(out_modes) < 1:
         errors.append(f"{agent_name}: card.output-modes: 0 items < minimum 1")
 
@@ -107,25 +122,37 @@ def _validate_card(agent_name: str, card_data: dict | None) -> list[str]:
     if cost_tier is None:
         errors.append(f"{agent_name}: card.cost-tier: required field missing")
     elif cost_tier not in _ALLOWED_COST_TIERS:
-        errors.append(f"{agent_name}: card.cost-tier: '{cost_tier}' not in allowed values [fast, standard, premium]")
+        errors.append(
+            f"{agent_name}: card.cost-tier: '{cost_tier}' not in allowed values [fast, standard, premium]"
+        )
 
     # Avg tokens
     avg_tokens = card_data.get("avg-tokens")
     if avg_tokens is None:
         errors.append(f"{agent_name}: card.avg-tokens: required field missing")
     elif not isinstance(avg_tokens, dict):
-        errors.append(f"{agent_name}: card.avg-tokens: expected object, got {type(avg_tokens).__name__}")
+        errors.append(
+            f"{agent_name}: card.avg-tokens: expected object, got {type(avg_tokens).__name__}"
+        )
     else:
         for token_field in ("input", "output"):
             val = avg_tokens.get(token_field)
             if val is None:
-                errors.append(f"{agent_name}: card.avg-tokens.{token_field}: required field missing")
+                errors.append(
+                    f"{agent_name}: card.avg-tokens.{token_field}: required field missing"
+                )
             elif isinstance(val, bool):
-                errors.append(f"{agent_name}: card.avg-tokens.{token_field}: expected integer, got boolean")
+                errors.append(
+                    f"{agent_name}: card.avg-tokens.{token_field}: expected integer, got boolean"
+                )
             elif isinstance(val, float):
-                errors.append(f"{agent_name}: card.avg-tokens.{token_field}: expected integer, got float")
+                errors.append(
+                    f"{agent_name}: card.avg-tokens.{token_field}: expected integer, got float"
+                )
             elif not isinstance(val, int):
-                errors.append(f"{agent_name}: card.avg-tokens.{token_field}: expected integer, got {type(val).__name__}")
+                errors.append(
+                    f"{agent_name}: card.avg-tokens.{token_field}: expected integer, got {type(val).__name__}"
+                )
             elif val < 0:
                 errors.append(f"{agent_name}: card.avg-tokens.{token_field}: must be ≥ 0")
 
@@ -136,17 +163,27 @@ def _validate_card(agent_name: str, card_data: dict | None) -> list[str]:
             if float_field in qm:
                 fv = qm[float_field]
                 if not isinstance(fv, (int, float)):
-                    errors.append(f"{agent_name}: card.quality-metrics.{float_field}: expected float, got {type(fv).__name__}")
+                    errors.append(
+                        f"{agent_name}: card.quality-metrics.{float_field}: expected float, got {type(fv).__name__}"
+                    )
                 elif fv < 0.0:
-                    errors.append(f"{agent_name}: card.quality-metrics.{float_field}: {fv} below minimum 0.0")
+                    errors.append(
+                        f"{agent_name}: card.quality-metrics.{float_field}: {fv} below minimum 0.0"
+                    )
                 elif fv > 1.0:
-                    errors.append(f"{agent_name}: card.quality-metrics.{float_field}: {fv} exceeds maximum 1.0")
+                    errors.append(
+                        f"{agent_name}: card.quality-metrics.{float_field}: {fv} exceeds maximum 1.0"
+                    )
         if "eval-count" in qm:
             ec = qm["eval-count"]
             if isinstance(ec, bool):
-                errors.append(f"{agent_name}: card.quality-metrics.eval-count: expected integer, got boolean")
+                errors.append(
+                    f"{agent_name}: card.quality-metrics.eval-count: expected integer, got boolean"
+                )
             elif not isinstance(ec, int):
-                errors.append(f"{agent_name}: card.quality-metrics.eval-count: expected integer, got {type(ec).__name__}")
+                errors.append(
+                    f"{agent_name}: card.quality-metrics.eval-count: expected integer, got {type(ec).__name__}"
+                )
             elif ec < 0:
                 errors.append(f"{agent_name}: card.quality-metrics.eval-count: must be ≥ 0")
 
@@ -154,6 +191,7 @@ def _validate_card(agent_name: str, card_data: dict | None) -> list[str]:
 
 
 # ── Display helpers ─────────────────────────────────────────────
+
 
 def _badges_str(capabilities: dict[str, bool]) -> str:
     """Build a string of emoji badges for true capabilities."""
@@ -234,11 +272,15 @@ def _show_detail_panel(agent_obj: object, reg: Registry) -> None:
 
         # Cost tier
         tier_style = _COST_TIER_STYLES.get(card.cost_tier, "")
-        lines.append(f"[bold cyan]Cost Tier:[/bold cyan] [{tier_style}]{card.cost_tier}[/{tier_style}]")
+        lines.append(
+            f"[bold cyan]Cost Tier:[/bold cyan] [{tier_style}]{card.cost_tier}[/{tier_style}]"
+        )
 
         # Avg tokens
         if card.avg_tokens:
-            lines.append(f"[bold cyan]Avg Tokens:[/bold cyan] input={card.avg_tokens.get('input', '?')}, output={card.avg_tokens.get('output', '?')}")
+            lines.append(
+                f"[bold cyan]Avg Tokens:[/bold cyan] input={card.avg_tokens.get('input', '?')}, output={card.avg_tokens.get('output', '?')}"
+            )
         lines.append("")
 
         # Quality metrics
@@ -270,9 +312,12 @@ def _show_detail_panel(agent_obj: object, reg: Registry) -> None:
 
 # ── Main command ────────────────────────────────────────────────
 
+
 def cards_cmd(
-    agent_name: Optional[str] = typer.Argument(None, help="Agent name to show details for."),
-    validate: bool = typer.Option(False, "--validate", help="Validate all agent cards against the schema."),
+    agent_name: str | None = typer.Argument(None, help="Agent name to show details for."),
+    validate: bool = typer.Option(
+        False, "--validate", help="Validate all agent cards against the schema."
+    ),
     json_export: bool = typer.Option(False, "--json", help="Output agent cards as JSON."),
 ) -> None:
     """View and manage agent cards — capability metadata for every agent."""
@@ -283,12 +328,10 @@ def cards_cmd(
         reg.load()
     except FileNotFoundError as exc:
         print_error(str(exc))
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     # ── Validate mode ───────────────────────────────────────────
     if validate:
-        import yaml as _yaml
-
         all_errors: list[str] = []
         agent_results: list[dict] = []
 
@@ -299,9 +342,17 @@ def cards_cmd(
 
             if card_data is None or (isinstance(card_data, dict) and not card_data):
                 if is_json() or json_export:
-                    agent_results.append({"name": agent.name, "status": "warning", "issues": ["card section missing (recommended)"]})
+                    agent_results.append(
+                        {
+                            "name": agent.name,
+                            "status": "warning",
+                            "issues": ["card section missing (recommended)"],
+                        }
+                    )
                 else:
-                    console.print(f"  [yellow]⚠[/yellow] {agent.name}: card section missing (recommended)")
+                    console.print(
+                        f"  [yellow]⚠[/yellow] {agent.name}: card section missing (recommended)"
+                    )
                 continue
 
             errors = _validate_card(agent.name, card_data)
@@ -320,11 +371,13 @@ def cards_cmd(
                     console.print(f"  [green]✓[/green] {agent.name}")
 
         if is_json() or json_export:
-            print_json(json_envelope(
-                command="cards --validate",
-                status="error" if all_errors else "success",
-                data={"results": agent_results, "total_errors": len(all_errors)},
-            ))
+            print_json(
+                json_envelope(
+                    command="cards --validate",
+                    status="error" if all_errors else "success",
+                    data={"results": agent_results, "total_errors": len(all_errors)},
+                )
+            )
         else:
             console.print()
             if all_errors:
@@ -353,13 +406,15 @@ def cards_cmd(
                     "avg-tokens": agent.card.avg_tokens,
                     "quality-metrics": agent.card.quality_metrics,
                 }
-            cards_data.append({
-                "name": agent.name,
-                "version": agent.version,
-                "role": agent.role,
-                "description": agent.description,
-                "card": card_dict,
-            })
+            cards_data.append(
+                {
+                    "name": agent.name,
+                    "version": agent.version,
+                    "role": agent.role,
+                    "description": agent.description,
+                    "card": card_dict,
+                }
+            )
 
         if agent_name:
             # Single agent JSON
@@ -369,11 +424,13 @@ def cards_cmd(
                     found = c
                     break
             if found is None:
-                print_json(json_envelope(
-                    command="cards",
-                    status="error",
-                    errors=[{"message": f"Agent not found: {agent_name}"}],
-                ))
+                print_json(
+                    json_envelope(
+                        command="cards",
+                        status="error",
+                        errors=[{"message": f"Agent not found: {agent_name}"}],
+                    )
+                )
                 raise typer.Exit(1)
             print_json(json_envelope(command="cards", data={"card": found}))
         else:

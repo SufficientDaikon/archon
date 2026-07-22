@@ -8,7 +8,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Optional
 
 
 @dataclass
@@ -18,8 +17,8 @@ class PlatformInfo:
     id: str
     name: str
     detected: bool = False
-    marker_path: Optional[Path] = None
-    skills_target: Optional[Path] = None
+    marker_path: Path | None = None
+    skills_target: Path | None = None
     scope: str = "global"  # "global" or "project"
     installed_skills: list[str] = field(default_factory=list)
 
@@ -51,7 +50,7 @@ def detect_platforms(cwd: Path | None = None) -> list[PlatformInfo]:
 
     for pdef in PLATFORM_DEFS:
         detected = False
-        marker_path: Optional[Path] = None
+        marker_path: Path | None = None
 
         # Check home-directory markers
         for marker in pdef["markers_home"]:
@@ -71,7 +70,7 @@ def detect_platforms(cwd: Path | None = None) -> list[PlatformInfo]:
                     break
 
         # Determine skills target
-        skills_target: Optional[Path] = None
+        skills_target: Path | None = None
         if pdef["skills_dir"]:
             if pdef["scope"] == "global":
                 skills_target = home / pdef["skills_dir"]
@@ -88,15 +87,17 @@ def detect_platforms(cwd: Path | None = None) -> list[PlatformInfo]:
                 elif item.suffix in (".md", ".mdc"):
                     installed.append(item.stem)
 
-        results.append(PlatformInfo(
-            id=pdef["id"],
-            name=pdef["name"],
-            detected=detected,
-            marker_path=marker_path,
-            skills_target=skills_target,
-            scope=pdef["scope"],
-            installed_skills=installed,
-        ))
+        results.append(
+            PlatformInfo(
+                id=pdef["id"],
+                name=pdef["name"],
+                detected=detected,
+                marker_path=marker_path,
+                skills_target=skills_target,
+                scope=pdef["scope"],
+                installed_skills=installed,
+            )
+        )
 
     return results
 

@@ -42,7 +42,7 @@ def main() -> int:
         sys.path.insert(0, str(src))
 
     try:
-        from archon.core.agent_cards import write_agent_cards, write_a2a_cards
+        from archon.core.agent_cards import write_a2a_cards, write_agent_cards
         from archon.core.skill_mcp_schema import write_mcp_tools_manifest
     except ImportError as e:
         print(f"ERROR: Cannot import Archon core modules: {e}", file=sys.stderr)
@@ -62,7 +62,7 @@ def main() -> int:
     # 2. .well-known/agent.json (A2A)
     try:
         a2a_path = write_a2a_cards(root)
-        count = len(__import__('json').loads(a2a_path.read_text()))
+        count = len(__import__("json").loads(a2a_path.read_text()))
         print(f"  .well-known/agent.json  {count} agents")
     except Exception as e:
         errors.append(f".well-known/agent.json: {e}")
@@ -71,7 +71,7 @@ def main() -> int:
     # 3. mcp-tools.json
     try:
         mcp_path = write_mcp_tools_manifest(root)
-        data = __import__('json').loads(mcp_path.read_text())
+        data = __import__("json").loads(mcp_path.read_text())
         count = len(data.get("tools", []))
         print(f"  mcp-tools.json       {count} tools  ({mcp_path.stat().st_size:,} bytes)")
     except Exception as e:

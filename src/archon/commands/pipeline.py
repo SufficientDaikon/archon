@@ -3,29 +3,33 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Optional
 
 import typer
 
-from archon.core.pipeline_engine import PipelineExecutor, PipelineStatus, StepStatus
+from archon.core.pipeline_engine import PipelineExecutor, PipelineStatus
 from archon.core.pipeline_state import PipelineState
 from archon.utils.output import (
-    console, print_error, print_success, print_warning, print_info,
-    is_json, json_envelope, print_json,
+    console,
+    is_json,
+    json_envelope,
+    print_error,
+    print_info,
+    print_json,
+    print_success,
+    print_warning,
 )
+from archon.utils.paths import get_archon_home
 
 pipeline_app = typer.Typer(help="Run and manage pipelines.", no_args_is_help=True)
 
 ARCHON_ROOT = Path(__file__).parent.parent.parent.parent
-HOOKS_DIR = ARCHON_ROOT / "hooks"
-from archon.utils.paths import get_archon_home
 STATE_DIR = get_archon_home() / "pipeline-states"
 PIPELINES_DIR = ARCHON_ROOT / "pipelines"
 
 
 def _create_executor() -> PipelineExecutor:
     """Create a PipelineExecutor with standard paths."""
-    return PipelineExecutor(hooks_dir=HOOKS_DIR, state_dir=STATE_DIR)
+    return PipelineExecutor(state_dir=STATE_DIR)
 
 
 _STATUS_ICONS = {
@@ -69,9 +73,7 @@ def _print_state_detail(state: PipelineState) -> None:
     if state.deviations:
         console.print(f"  Deviations ({len(state.deviations)}):")
         for dev in state.deviations:
-            console.print(
-                f"    ⚠️  [{dev.get('severity', '?')}] {dev.get('description', '?')}"
-            )
+            console.print(f"    ⚠️  [{dev.get('severity', '?')}] {dev.get('description', '?')}")
 
 
 # ---------------------------------------------------------------------------
@@ -94,7 +96,7 @@ def pipeline_run(
         pipeline = executor.load_pipeline(name)
     except (FileNotFoundError, ValueError) as exc:
         print_error(str(exc))
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     step_count = len(pipeline.steps)
 
@@ -113,8 +115,7 @@ def pipeline_run(
 
         if not is_json():
             console.print(
-                f"  [bold]Phase {step_index + 1}/{step_count}:[/bold] "
-                f"{step_name} -> {step_agent}"
+                f"  [bold]Phase {step_index + 1}/{step_count}:[/bold] {step_name} -> {step_agent}"
             )
 
         # Build a lightweight state proxy from context for the real handler
@@ -148,7 +149,7 @@ def pipeline_run(
         )
     except Exception as exc:
         print_error(f"Pipeline execution failed: {exc}")
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     state_id = final_state.get("state_id", "unknown")
     status = final_state.get("status", "unknown")
@@ -177,7 +178,7 @@ def pipeline_run(
 
 @pipeline_app.command("status")
 def pipeline_status(
-    state_id: Optional[str] = typer.Argument(None, help="Pipeline state ID to inspect."),
+    state_id: str | None = typer.Argument(None, help="Pipeline state ID to inspect."),
 ) -> None:
     """Show pipeline execution status by loading PipelineState."""
     STATE_DIR.mkdir(parents=True, exist_ok=True)
@@ -198,16 +199,16 @@ def pipeline_status(
             print_info("No pipeline runs found.")
             raise typer.Exit(0)
         states = [
-            s
-            for sf in state_files
-            if (s := PipelineState.load(sf.stem, STATE_DIR)) is not None
+            s for sf in state_files if (s := PipelineState.load(sf.stem, STATE_DIR)) is not None
         ]
 
     if is_json():
-        print_json(json_envelope(
-            command="pipeline status",
-            data={"runs": [s.to_dict() for s in states]},
-        ))
+        print_json(
+            json_envelope(
+                command="pipeline status",
+                data={"runs": [s.to_dict() for s in states]},
+            )
+        )
         return
 
     for state in states:
@@ -252,10 +253,10 @@ def pipeline_resume(
         final_state = executor.resume(state_id)
     except (FileNotFoundError, ValueError) as exc:
         print_error(str(exc))
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
     except Exception as exc:
         print_error(f"Resume failed: {exc}")
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     status = final_state.get("status", "unknown")
 
@@ -299,16 +300,16 @@ def pipeline_list() -> None:
         raise typer.Exit(0)
 
     entries: list[PipelineState] = [
-        s
-        for sf in state_files
-        if (s := PipelineState.load(sf.stem, STATE_DIR)) is not None
+        s for sf in state_files if (s := PipelineState.load(sf.stem, STATE_DIR)) is not None
     ]
 
     if is_json():
-        print_json(json_envelope(
-            command="pipeline list",
-            data={"pipelines": [s.to_dict() for s in entries]},
-        ))
+        print_json(
+            json_envelope(
+                command="pipeline list",
+                data={"pipelines": [s.to_dict() for s in entries]},
+            )
+        )
         return
 
     console.print()

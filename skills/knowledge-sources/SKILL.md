@@ -1,3 +1,7 @@
+---
+name: knowledge-sources
+description: Pluggable knowledge base manager for syncing and searching external content sources
+---
 # Knowledge Sources
 
 > Pluggable knowledge base manager that syncs, indexes, and searches external content sources.

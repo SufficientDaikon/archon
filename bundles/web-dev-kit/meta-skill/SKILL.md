@@ -55,7 +55,7 @@ Routes full-stack web development requests to the appropriate specialized skill,
 
 ---
 
-### 3. React Component Patterns → **react-best-practices**
+### 3. React Component Patterns → **vercel-react-best-practices**
 
 **Trigger keywords:** React hooks, useState, useEffect, useContext, custom hooks, component lifecycle, state management, props, composition, component patterns
 
@@ -128,20 +128,20 @@ Routes full-stack web development requests to the appropriate specialized skill,
 
 ### Full-Stack Feature Development
 1. **backend-development** → Design API endpoints and schema
-2. **react-best-practices** → Implement React components
+2. **vercel-react-best-practices** → Implement React components
 3. **vercel-react-best-practices** → Optimize data fetching
 4. **frontend-design** → Polish UI and styling
 5. **web-design-guidelines** → Final compliance review
 
 ### React App Performance Audit
 1. **vercel-react-best-practices** → Identify performance bottlenecks
-2. **react-best-practices** → Refactor component patterns
+2. **vercel-react-best-practices** → Refactor component patterns
 3. **web-design-guidelines** → Review for UX impact
 
 ### New Web Application
 1. **backend-development** → API and database architecture
 2. **frontend-design** → UI design and component creation
-3. **react-best-practices** → React implementation
+3. **vercel-react-best-practices** → React implementation
 4. **vercel-react-best-practices** → Next.js optimization
 5. **web-design-guidelines** → Accessibility audit
 
@@ -159,7 +159,7 @@ Is the request about...
 │  └─ vercel-react-best-practices
 │
 ├─ REACT HOOKS, STATE, PATTERNS?
-│  └─ react-best-practices
+│  └─ vercel-react-best-practices
 │
 ├─ UI REVIEW, AUDIT, ACCESSIBILITY?
 │  └─ web-design-guidelines
@@ -174,7 +174,7 @@ Is the request about...
 
 ### Frontend Layer
 - **Visual/Design** → frontend-design
-- **React Patterns** → react-best-practices  
+- **React Patterns** → vercel-react-best-practices  
 - **Next.js Optimization** → vercel-react-best-practices
 - **Compliance** → web-design-guidelines
 
@@ -187,8 +187,8 @@ Is the request about...
 
 | Technology | Primary Skill | Secondary Skill |
 |-----------|---------------|-----------------|
-| **Next.js 13/14** | vercel-react-best-practices | react-best-practices |
-| **React Hooks** | react-best-practices | vercel-react-best-practices |
+| **Next.js 13/14** | vercel-react-best-practices | vercel-react-best-practices |
+| **React Hooks** | vercel-react-best-practices | vercel-react-best-practices |
 | **HTML/CSS/Tailwind** | frontend-design | web-design-guidelines |
 | **REST APIs** | backend-development | - |
 | **GraphQL** | backend-development | - |
@@ -201,11 +201,11 @@ Is the request about...
 
 | Task Category | Primary | Secondary | Tertiary |
 |--------------|---------|-----------|----------|
-| **New Feature** | frontend-design | backend-development | react-best-practices |
-| **Performance** | vercel-react-best-practices | react-best-practices | backend-development |
-| **Code Review** | web-design-guidelines | react-best-practices | vercel-react-best-practices |
+| **New Feature** | frontend-design | backend-development | vercel-react-best-practices |
+| **Performance** | vercel-react-best-practices | vercel-react-best-practices | backend-development |
+| **Code Review** | web-design-guidelines | vercel-react-best-practices | vercel-react-best-practices |
 | **API Design** | backend-development | - | - |
-| **React Refactor** | react-best-practices | vercel-react-best-practices | web-design-guidelines |
+| **React Refactor** | vercel-react-best-practices | vercel-react-best-practices | web-design-guidelines |
 | **Styling** | frontend-design | web-design-guidelines | - |
 
 ---
@@ -224,12 +224,12 @@ Before routing, ask:
 
 3. **Is performance the primary concern?**
    - Yes + Next.js → vercel-react-best-practices
-   - Yes + React → react-best-practices
+   - Yes + React → vercel-react-best-practices
    - No → Continue to Q4
 
 4. **Is this about design/styling or logic/patterns?**
    - Design/styling → frontend-design
-   - Logic/patterns → react-best-practices
+   - Logic/patterns → vercel-react-best-practices
 
 ---
 
@@ -239,10 +239,10 @@ Before routing, ask:
 |--------------|-----------|-----------|
 | "Build a landing page" | frontend-design | New UI creation |
 | "Optimize Next.js SSR" | vercel-react-best-practices | Next.js performance |
-| "Create a custom useAuth hook" | react-best-practices | React hook pattern |
+| "Create a custom useAuth hook" | vercel-react-best-practices | React hook pattern |
 | "Review accessibility" | web-design-guidelines | UI compliance audit |
 | "Design user API" | backend-development | Backend/API design |
-| "Fix useEffect issues" | react-best-practices | React pattern issue |
+| "Fix useEffect issues" | vercel-react-best-practices | React pattern issue |
 | "Create hero section" | frontend-design | UI component creation |
 | "Reduce bundle size" | vercel-react-best-practices | Performance optimization |
 | "Database schema for blog" | backend-development | Backend architecture |
@@ -257,7 +257,7 @@ Auto-detect framework from context:
   → Prefer vercel-react-best-practices for optimization tasks
 
 - **React detected** (src/components/, package.json with "react")
-  → Use react-best-practices for component patterns
+  → Use vercel-react-best-practices for component patterns
 
 - **Backend files detected** (routes/, api/, models/, schema/)
   → Route backend concerns to backend-development
@@ -296,7 +296,7 @@ Auto-detect framework from context:
 Before marking work complete:
 
 1. **Creation phase**: frontend-design or backend-development
-2. **Optimization phase**: vercel-react-best-practices or react-best-practices
+2. **Optimization phase**: vercel-react-best-practices or vercel-react-best-practices
 3. **Review phase**: web-design-guidelines
 4. **All phases pass**: Ship it ✅
 
@@ -307,6 +307,6 @@ Before marking work complete:
 - **New UI** → Always start with frontend-design for visual quality
 - **Existing UI** → Always audit with web-design-guidelines
 - **Next.js** → Default to vercel-react-best-practices for perf questions
-- **React (non-Next)** → Use react-best-practices
+- **React (non-Next)** → Use vercel-react-best-practices
 - **Backend** → Exclusively backend-development
 - **Full-stack** → Chain backend → frontend → optimization → review

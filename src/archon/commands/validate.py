@@ -4,20 +4,21 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
-from typing import Optional
 
 import typer
 import yaml
 
-from archon.core.registry import Registry
 from archon.utils.output import (
-    console, print_success, print_error, print_warning, print_info, print_verbose,
-    is_json, json_envelope, print_json,
+    console,
+    is_json,
+    json_envelope,
+    print_error,
+    print_json,
 )
 from archon.utils.paths import get_archon_root
 
-
 # ── Validation helpers ──────────────────────────────────────────
+
 
 def _validate_field(field_name: str, value, schema: dict) -> list[str]:
     """Validate a single field against its schema. Returns list of error strings."""
@@ -59,13 +60,21 @@ def _validate_field(field_name: str, value, schema: dict) -> list[str]:
             if child_name not in value:
                 errors.append(f"{field_name}.{child_name}: required field missing")
             else:
-                errors.extend(_validate_field(f"{field_name}.{child_name}", value[child_name], child_schema))
+                errors.extend(
+                    _validate_field(f"{field_name}.{child_name}", value[child_name], child_schema)
+                )
 
     return errors
 
 
 _ALLOWED_COST_TIERS = {"fast", "standard", "premium"}
-_REQUIRED_CAPABILITIES = {"streaming", "multi-turn", "file-output", "self-evaluation", "context-aware"}
+_REQUIRED_CAPABILITIES = {
+    "streaming",
+    "multi-turn",
+    "file-output",
+    "self-evaluation",
+    "context-aware",
+}
 
 
 def _validate_card_section(agent_name: str, card_data: dict) -> list[str]:
@@ -75,7 +84,7 @@ def _validate_card_section(agent_name: str, card_data: dict) -> list[str]:
     # Capabilities
     caps = card_data.get("capabilities")
     if caps is None:
-        errors.append(f"card.capabilities: required field missing")
+        errors.append("card.capabilities: required field missing")
     elif not isinstance(caps, dict):
         errors.append(f"card.capabilities: expected object, got {type(caps).__name__}")
     else:
@@ -83,20 +92,24 @@ def _validate_card_section(agent_name: str, card_data: dict) -> list[str]:
             if cap_name not in caps:
                 errors.append(f"card.capabilities.{cap_name}: required field missing")
             elif not isinstance(caps[cap_name], bool):
-                errors.append(f"card.capabilities.{cap_name}: expected boolean, got {type(caps[cap_name]).__name__}")
+                errors.append(
+                    f"card.capabilities.{cap_name}: expected boolean, got {type(caps[cap_name]).__name__}"
+                )
 
     # Skills provided
     skills = card_data.get("skills-provided")
     if skills is None:
-        errors.append(f"card.skills-provided: required field missing")
+        errors.append("card.skills-provided: required field missing")
     elif not isinstance(skills, list):
         errors.append(f"card.skills-provided: expected list, got {type(skills).__name__}")
     elif len(skills) < 1:
-        errors.append(f"card.skills-provided: 0 items < minimum 1")
+        errors.append("card.skills-provided: 0 items < minimum 1")
     else:
         for i, skill in enumerate(skills):
             if not isinstance(skill, dict):
-                errors.append(f"card.skills-provided[{i}]: expected object, got {type(skill).__name__}")
+                errors.append(
+                    f"card.skills-provided[{i}]: expected object, got {type(skill).__name__}"
+                )
                 continue
             for req_field in ("id", "name", "description"):
                 if req_field not in skill:
@@ -105,32 +118,34 @@ def _validate_card_section(agent_name: str, card_data: dict) -> list[str]:
     # Input modes
     in_modes = card_data.get("input-modes")
     if in_modes is None:
-        errors.append(f"card.input-modes: required field missing")
+        errors.append("card.input-modes: required field missing")
     elif not isinstance(in_modes, list):
         errors.append(f"card.input-modes: expected list, got {type(in_modes).__name__}")
     elif len(in_modes) < 1:
-        errors.append(f"card.input-modes: 0 items < minimum 1")
+        errors.append("card.input-modes: 0 items < minimum 1")
 
     # Output modes
     out_modes = card_data.get("output-modes")
     if out_modes is None:
-        errors.append(f"card.output-modes: required field missing")
+        errors.append("card.output-modes: required field missing")
     elif not isinstance(out_modes, list):
         errors.append(f"card.output-modes: expected list, got {type(out_modes).__name__}")
     elif len(out_modes) < 1:
-        errors.append(f"card.output-modes: 0 items < minimum 1")
+        errors.append("card.output-modes: 0 items < minimum 1")
 
     # Cost tier
     cost_tier = card_data.get("cost-tier")
     if cost_tier is None:
-        errors.append(f"card.cost-tier: required field missing")
+        errors.append("card.cost-tier: required field missing")
     elif cost_tier not in _ALLOWED_COST_TIERS:
-        errors.append(f"card.cost-tier: '{cost_tier}' not in allowed values [fast, standard, premium]")
+        errors.append(
+            f"card.cost-tier: '{cost_tier}' not in allowed values [fast, standard, premium]"
+        )
 
     # Avg tokens
     avg_tokens = card_data.get("avg-tokens")
     if avg_tokens is None:
-        errors.append(f"card.avg-tokens: required field missing")
+        errors.append("card.avg-tokens: required field missing")
     elif not isinstance(avg_tokens, dict):
         errors.append(f"card.avg-tokens: expected object, got {type(avg_tokens).__name__}")
     else:
@@ -143,7 +158,9 @@ def _validate_card_section(agent_name: str, card_data: dict) -> list[str]:
             elif isinstance(val, float):
                 errors.append(f"card.avg-tokens.{token_field}: expected integer, got float")
             elif not isinstance(val, int):
-                errors.append(f"card.avg-tokens.{token_field}: expected integer, got {type(val).__name__}")
+                errors.append(
+                    f"card.avg-tokens.{token_field}: expected integer, got {type(val).__name__}"
+                )
             elif val < 0:
                 errors.append(f"card.avg-tokens.{token_field}: must be ≥ 0")
 
@@ -154,7 +171,9 @@ def _validate_card_section(agent_name: str, card_data: dict) -> list[str]:
             if float_field in qm:
                 fv = qm[float_field]
                 if not isinstance(fv, (int, float)):
-                    errors.append(f"card.quality-metrics.{float_field}: expected float, got {type(fv).__name__}")
+                    errors.append(
+                        f"card.quality-metrics.{float_field}: expected float, got {type(fv).__name__}"
+                    )
                 elif fv < 0.0:
                     errors.append(f"card.quality-metrics.{float_field}: {fv} below minimum 0.0")
                 elif fv > 1.0:
@@ -162,18 +181,25 @@ def _validate_card_section(agent_name: str, card_data: dict) -> list[str]:
         if "eval-count" in qm:
             ec = qm["eval-count"]
             if isinstance(ec, bool):
-                errors.append(f"card.quality-metrics.eval-count: expected integer, got boolean")
+                errors.append("card.quality-metrics.eval-count: expected integer, got boolean")
             elif not isinstance(ec, int):
-                errors.append(f"card.quality-metrics.eval-count: expected integer, got {type(ec).__name__}")
+                errors.append(
+                    f"card.quality-metrics.eval-count: expected integer, got {type(ec).__name__}"
+                )
             elif ec < 0:
-                errors.append(f"card.quality-metrics.eval-count: must be ≥ 0")
+                errors.append("card.quality-metrics.eval-count: must be ≥ 0")
 
     return errors
 
 
 def _validate_skill(skill_dir: Path, root: Path) -> dict:
     """Validate a single skill directory. Returns a result dict."""
-    result = {"path": str(skill_dir.relative_to(root)), "errors": [], "warnings": [], "status": "passed"}
+    result = {
+        "path": str(skill_dir.relative_to(root)),
+        "errors": [],
+        "warnings": [],
+        "status": "passed",
+    }
 
     manifest_path = skill_dir / "manifest.yaml"
     skill_md_path = skill_dir / "SKILL.md"
@@ -186,7 +212,7 @@ def _validate_skill(skill_dir: Path, root: Path) -> dict:
 
     # Parse manifest
     try:
-        with open(manifest_path, "r", encoding="utf-8") as fh:
+        with open(manifest_path, encoding="utf-8") as fh:
             manifest = yaml.safe_load(fh) or {}
     except Exception as exc:
         result["errors"].append(f"YAML parse error: {exc}")
@@ -196,17 +222,21 @@ def _validate_skill(skill_dir: Path, root: Path) -> dict:
     # Load schema
     schema_path = root / "schemas" / "skill-manifest.schema.yaml"
     if schema_path.exists():
-        with open(schema_path, "r", encoding="utf-8") as fh:
+        with open(schema_path, encoding="utf-8") as fh:
             schema = yaml.safe_load(fh) or {}
 
         for field_name, field_schema in schema.get("required_fields", {}).items():
             if field_name not in manifest:
                 result["errors"].append(f"Required field missing: {field_name}")
             else:
-                result["errors"].extend(_validate_field(field_name, manifest[field_name], field_schema))
+                result["errors"].extend(
+                    _validate_field(field_name, manifest[field_name], field_schema)
+                )
 
         # Extra fields warning
-        known = set(schema.get("required_fields", {}).keys()) | set(schema.get("optional_fields", {}).keys())
+        known = set(schema.get("required_fields", {}).keys()) | set(
+            schema.get("optional_fields", {}).keys()
+        )
         for key in manifest:
             if key not in known:
                 result["warnings"].append(f"Unknown field: {key}")
@@ -226,7 +256,7 @@ def _validate_skill(skill_dir: Path, root: Path) -> dict:
             content = ""
 
         if schema_path.exists():
-            with open(schema_path, "r", encoding="utf-8") as fh:
+            with open(schema_path, encoding="utf-8") as fh:
                 schema = yaml.safe_load(fh) or {}
             for section in schema.get("skill_md_required_sections", []):
                 pattern = rf"(?i)^#+\s*{re.escape(section)}"
@@ -246,7 +276,12 @@ def _validate_skill(skill_dir: Path, root: Path) -> dict:
 
 def _validate_agent(agent_dir: Path, root: Path) -> dict:
     """Validate a single agent directory."""
-    result = {"path": str(agent_dir.relative_to(root)), "errors": [], "warnings": [], "status": "passed"}
+    result = {
+        "path": str(agent_dir.relative_to(root)),
+        "errors": [],
+        "warnings": [],
+        "status": "passed",
+    }
 
     manifest_path = agent_dir / "agent-manifest.yaml"
     agent_md_path = agent_dir / "AGENT.md"
@@ -257,7 +292,7 @@ def _validate_agent(agent_dir: Path, root: Path) -> dict:
         return result
 
     try:
-        with open(manifest_path, "r", encoding="utf-8") as fh:
+        with open(manifest_path, encoding="utf-8") as fh:
             manifest = yaml.safe_load(fh) or {}
     except Exception as exc:
         result["errors"].append(f"YAML parse error: {exc}")
@@ -267,13 +302,15 @@ def _validate_agent(agent_dir: Path, root: Path) -> dict:
     # Schema validation
     schema_path = root / "schemas" / "agent-manifest.schema.yaml"
     if schema_path.exists():
-        with open(schema_path, "r", encoding="utf-8") as fh:
+        with open(schema_path, encoding="utf-8") as fh:
             schema = yaml.safe_load(fh) or {}
         for field_name, field_schema in schema.get("required_fields", {}).items():
             if field_name not in manifest:
                 result["errors"].append(f"Required field missing: {field_name}")
             else:
-                result["errors"].extend(_validate_field(field_name, manifest[field_name], field_schema))
+                result["errors"].extend(
+                    _validate_field(field_name, manifest[field_name], field_schema)
+                )
 
     # Card validation (FR-AC-033 through FR-AC-035)
     card_data = manifest.get("card")
@@ -296,7 +333,12 @@ def _validate_agent(agent_dir: Path, root: Path) -> dict:
 
 def _validate_bundle(bundle_dir: Path, root: Path) -> dict:
     """Validate a single bundle directory."""
-    result = {"path": str(bundle_dir.relative_to(root)), "errors": [], "warnings": [], "status": "passed"}
+    result = {
+        "path": str(bundle_dir.relative_to(root)),
+        "errors": [],
+        "warnings": [],
+        "status": "passed",
+    }
 
     manifest_path = bundle_dir / "bundle.yaml"
     if not manifest_path.exists():
@@ -305,7 +347,7 @@ def _validate_bundle(bundle_dir: Path, root: Path) -> dict:
         return result
 
     try:
-        with open(manifest_path, "r", encoding="utf-8") as fh:
+        with open(manifest_path, encoding="utf-8") as fh:
             manifest = yaml.safe_load(fh) or {}
     except Exception as exc:
         result["errors"].append(f"YAML parse error: {exc}")
@@ -315,13 +357,15 @@ def _validate_bundle(bundle_dir: Path, root: Path) -> dict:
     # Schema validation
     schema_path = root / "schemas" / "bundle-manifest.schema.yaml"
     if schema_path.exists():
-        with open(schema_path, "r", encoding="utf-8") as fh:
+        with open(schema_path, encoding="utf-8") as fh:
             schema = yaml.safe_load(fh) or {}
         for field_name, field_schema in schema.get("required_fields", {}).items():
             if field_name not in manifest:
                 result["errors"].append(f"Required field missing: {field_name}")
             else:
-                result["errors"].extend(_validate_field(field_name, manifest[field_name], field_schema))
+                result["errors"].extend(
+                    _validate_field(field_name, manifest[field_name], field_schema)
+                )
 
     # Check skill references (FR-036)
     skills_dir = root / "skills"
@@ -338,7 +382,12 @@ def _validate_bundle(bundle_dir: Path, root: Path) -> dict:
 
 def _validate_synapse(synapse_dir: Path, root: Path) -> dict:
     """Validate a single synapse directory."""
-    result = {"path": str(synapse_dir.relative_to(root)), "errors": [], "warnings": [], "status": "passed"}
+    result = {
+        "path": str(synapse_dir.relative_to(root)),
+        "errors": [],
+        "warnings": [],
+        "status": "passed",
+    }
 
     manifest_path = synapse_dir / "manifest.yaml"
     synapse_md_path = synapse_dir / "SYNAPSE.md"
@@ -349,7 +398,7 @@ def _validate_synapse(synapse_dir: Path, root: Path) -> dict:
         return result
 
     try:
-        with open(manifest_path, "r", encoding="utf-8") as fh:
+        with open(manifest_path, encoding="utf-8") as fh:
             manifest = yaml.safe_load(fh) or {}
     except Exception as exc:
         result["errors"].append(f"YAML parse error: {exc}")
@@ -359,13 +408,15 @@ def _validate_synapse(synapse_dir: Path, root: Path) -> dict:
     # Schema validation
     schema_path = root / "schemas" / "synapse-manifest.schema.yaml"
     if schema_path.exists():
-        with open(schema_path, "r", encoding="utf-8") as fh:
+        with open(schema_path, encoding="utf-8") as fh:
             schema = yaml.safe_load(fh) or {}
         for field_name, field_schema in schema.get("required_fields", {}).items():
             if field_name not in manifest:
                 result["errors"].append(f"Required field missing: {field_name}")
             else:
-                result["errors"].extend(_validate_field(field_name, manifest[field_name], field_schema))
+                result["errors"].extend(
+                    _validate_field(field_name, manifest[field_name], field_schema)
+                )
 
     # Validate SYNAPSE.md
     if not synapse_md_path.exists():
@@ -377,12 +428,14 @@ def _validate_synapse(synapse_dir: Path, root: Path) -> dict:
             content = ""
 
         if schema_path.exists():
-            with open(schema_path, "r", encoding="utf-8") as fh:
+            with open(schema_path, encoding="utf-8") as fh:
                 schema = yaml.safe_load(fh) or {}
             for section in schema.get("synapse_md_required_sections", []):
                 pattern = rf"(?i)^#+\s*{re.escape(section)}"
                 if not re.search(pattern, content, re.MULTILINE):
-                    result["warnings"].append(f"SYNAPSE.md: missing recommended section '{section}'")
+                    result["warnings"].append(
+                        f"SYNAPSE.md: missing recommended section '{section}'"
+                    )
 
         if not content.strip():
             result["errors"].append("SYNAPSE.md is empty")
@@ -402,7 +455,16 @@ def _validate_synapse(synapse_dir: Path, root: Path) -> dict:
 
 # ── Catalog validation (FR-CAT-061) ────────────────────────────
 
-_CATALOG_VALID_CATEGORIES = {"core", "development", "database", "research", "design", "ai", "cloud", "communication"}
+_CATALOG_VALID_CATEGORIES = {
+    "core",
+    "development",
+    "database",
+    "research",
+    "design",
+    "ai",
+    "cloud",
+    "communication",
+}
 _KEBAB_PATTERN = re.compile(r"^[a-z][a-z0-9-]*$")
 
 
@@ -418,7 +480,7 @@ def _validate_catalog(root: Path) -> dict:
         return result
 
     try:
-        with open(catalog_path, "r", encoding="utf-8") as fh:
+        with open(catalog_path, encoding="utf-8") as fh:
             data = yaml.safe_load(fh) or {}
     except Exception as exc:
         result["errors"].append(f"YAML parse error: {exc}")
@@ -512,7 +574,9 @@ def _validate_catalog(root: Path) -> dict:
                         if "name" not in ev:
                             result["errors"].append(f"{prefix}.required-env[{j}]: missing 'name'")
                         if "description" not in ev:
-                            result["errors"].append(f"{prefix}.required-env[{j}]: missing 'description'")
+                            result["errors"].append(
+                                f"{prefix}.required-env[{j}]: missing 'description'"
+                            )
 
         # Optional: server-type
         stype = entry.get("server-type")
@@ -528,10 +592,17 @@ def _validate_catalog(root: Path) -> dict:
 
 # ── Command ─────────────────────────────────────────────────────
 
+
 def validate_cmd(
-    path: Optional[str] = typer.Argument(None, help="Path to a skill/agent/bundle directory to validate."),
-    check_llms_txt: bool = typer.Option(False, "--check-llms-txt", help="Check if llms.txt files are up to date."),
-    check_agent_cards: bool = typer.Option(False, "--check-agent-cards", help="Check if agent-cards.json is up to date."),
+    path: str | None = typer.Argument(
+        None, help="Path to a skill/agent/bundle directory to validate."
+    ),
+    check_llms_txt: bool = typer.Option(
+        False, "--check-llms-txt", help="Check if llms.txt files are up to date."
+    ),
+    check_agent_cards: bool = typer.Option(
+        False, "--check-agent-cards", help="Check if agent-cards.json is up to date."
+    ),
 ) -> None:
     """Validate manifests, SKILL.md / AGENT.md, and dependency references."""
 
@@ -603,17 +674,19 @@ def validate_cmd(
     failed = [r for r in results if r["status"] == "failed"]
 
     if is_json():
-        print_json(json_envelope(
-            command="validate",
-            status="success" if not failed else "error",
-            data={
-                "total": len(results),
-                "passed": len(passed),
-                "warnings": len(warnings),
-                "failed": len(failed),
-                "results": results,
-            },
-        ))
+        print_json(
+            json_envelope(
+                command="validate",
+                status="success" if not failed else "error",
+                data={
+                    "total": len(results),
+                    "passed": len(passed),
+                    "warnings": len(warnings),
+                    "failed": len(failed),
+                    "results": results,
+                },
+            )
+        )
         if failed:
             raise typer.Exit(2)
         return
@@ -657,14 +730,20 @@ def validate_cmd(
             file_path = root / filename
             if not file_path.exists():
                 if not is_json():
-                    console.print(f"  [yellow]⚠[/yellow] {filename} not found — generate with: archon generate llms-txt")
+                    console.print(
+                        f"  [yellow]⚠[/yellow] {filename} not found — generate with: archon generate llms-txt"
+                    )
             else:
                 expected = gen_fn(root)
                 actual = file_path.read_text(encoding="utf-8")
                 # For llms-full.txt, ignore the Generated: date line
                 if filename == "llms-full.txt":
-                    expected_cmp = re.sub(r"^- Generated: .+$", "", expected, count=1, flags=re.MULTILINE)
-                    actual_cmp = re.sub(r"^- Generated: .+$", "", actual, count=1, flags=re.MULTILINE)
+                    expected_cmp = re.sub(
+                        r"^- Generated: .+$", "", expected, count=1, flags=re.MULTILINE
+                    )
+                    actual_cmp = re.sub(
+                        r"^- Generated: .+$", "", actual, count=1, flags=re.MULTILINE
+                    )
                 else:
                     expected_cmp = expected
                     actual_cmp = actual
@@ -674,7 +753,9 @@ def validate_cmd(
                         console.print(f"  [green]✓[/green] {filename} is up to date")
                 else:
                     if not is_json():
-                        console.print(f"  [yellow]⚠[/yellow] {filename} is stale — regenerate with: archon generate llms-txt")
+                        console.print(
+                            f"  [yellow]⚠[/yellow] {filename} is stale — regenerate with: archon generate llms-txt"
+                        )
 
         if not is_json():
             console.print()
@@ -690,7 +771,9 @@ def validate_cmd(
         file_path = root / "agent-cards.json"
         if not file_path.exists():
             if not is_json():
-                console.print(f"  [yellow]⚠[/yellow] agent-cards.json not found — generate with: archon generate agent-cards")
+                console.print(
+                    "  [yellow]⚠[/yellow] agent-cards.json not found — generate with: archon generate agent-cards"
+                )
         else:
             expected = generate_agent_cards(root)
             actual = file_path.read_text(encoding="utf-8")
@@ -700,10 +783,12 @@ def validate_cmd(
 
             if expected_cmp == actual_cmp:
                 if not is_json():
-                    console.print(f"  [green]✓[/green] agent-cards.json is up to date")
+                    console.print("  [green]✓[/green] agent-cards.json is up to date")
             else:
                 if not is_json():
-                    console.print(f"  [yellow]⚠[/yellow] agent-cards.json is stale — regenerate with: archon generate agent-cards")
+                    console.print(
+                        "  [yellow]⚠[/yellow] agent-cards.json is stale — regenerate with: archon generate agent-cards"
+                    )
 
         if not is_json():
             console.print()

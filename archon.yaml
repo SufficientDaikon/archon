@@ -2,7 +2,7 @@
 # This file registers all skills, bundles, agents, pipelines, and the Virtuoso engine.
 
 name: archon
-version: 1.0.0
+version: 1.2.0
 description: "Archon — The Virtuoso Engine for AI Agents. Universal skills framework with enforced guardrails, cognitive synapses, and pipeline orchestration."
 author: tahaa
 license: MIT
@@ -12,7 +12,6 @@ repository: https://github.com/SufficientDaikon/archon
 virtuoso:
   version: 1.0.0
   path: virtuoso/virtuoso.xml
-  model_floor: opus-4.6
   description: "The cognitive kernel that enforces reasoning quality through 5 synapses, the Virtuoso execution loop, and model-aware scaffolding."
 
 # All registered skills (alphabetical)
@@ -118,26 +117,10 @@ skills:
     path: skills/docker-build
     version: 1.0.0
     tags: [docker, containerization, devops, ci-cd]
-  - name: docker-mcp-ops
-    path: skills/docker-mcp-ops
-    version: 1.0.0
-    tags: [docker, mcp, container-ops, devops]
   - name: django-expert
     path: skills/django-expert
     version: 1.0.0
     tags: [django, python, backend]
-  - name: django-framework
-    path: skills/django-framework
-    version: 1.0.0
-    tags: [django, python, backend]
-  - name: django-orm-patterns
-    path: skills/django-orm-patterns
-    version: 1.0.0
-    tags: [django, python, orm, database]
-  - name: django-rest-framework
-    path: skills/django-rest-framework
-    version: 1.0.0
-    tags: [django, python, rest, api]
   - name: dispatching-parallel-agents
     path: skills/dispatching-parallel-agents
     version: 1.0.0
@@ -284,10 +267,6 @@ skills:
     path: skills/qa-test-planner
     version: 1.0.0
     tags: [testing, qa, test-planning]
-  - name: react-best-practices
-    path: skills/react-best-practices
-    version: 1.0.0
-    tags: [react, frontend, web]
   - name: receiving-code-review
     path: skills/receiving-code-review
     version: 1.0.0
@@ -448,7 +427,6 @@ bundles:
     skills:
       [
         frontend-design,
-        react-best-practices,
         vercel-react-best-practices,
         server-component-patterns,
         web-design-guidelines,
@@ -470,16 +448,6 @@ bundles:
         ux-test-suite,
         wireframing,
         info-architecture,
-      ]
-
-  - name: django-kit
-    path: bundles/django-kit
-    skills:
-      [
-        django-expert,
-        django-framework,
-        django-orm-patterns,
-        django-rest-framework,
       ]
 
   - name: sdd-kit
@@ -563,7 +531,6 @@ bundles:
       [
         docker-production-build,
         docker-build,
-        docker-mcp-ops,
         structured-logging,
       ]
 

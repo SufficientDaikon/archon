@@ -1,3 +1,7 @@
+---
+name: using-superpowers
+description: Meta-gatekeeper that forces skill checking before every agent response. Use when starting any task, responding to any message, or when unsure which skill applies.
+---
 # Using Archon — The Gatekeeper
 
 > **Type:** Meta-process (always active)  

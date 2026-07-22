@@ -1,3 +1,7 @@
+---
+name: template-variables
+description: Multi-format template variable detection, normalization, and compilation
+---
 # Template Variables
 
 > Multi-format template variable detection, normalization, and compilation for text templates.

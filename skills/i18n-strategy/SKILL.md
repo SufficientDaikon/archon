@@ -1,3 +1,7 @@
+---
+name: i18n-strategy
+description: Design internationalization systems with namespace-driven translations, ICU format, locale routing, and type-safe keys
+---
 # i18n Strategy
 
 > Design internationalization systems where zero user-facing strings are hardcoded and locale switching is seamless across server and client components.

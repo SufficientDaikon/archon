@@ -4,14 +4,15 @@ FastMCP API Client Pattern
 Manual API integration with connection pooling, caching, and retry logic.
 """
 
-from fastmcp import FastMCP
-import httpx
+import asyncio
 import os
 import time
-import asyncio
-from typing import Optional, Any, Dict
 from datetime import datetime
+from typing import Any, Dict, Optional
+
+import httpx
 from dotenv import load_dotenv
+from fastmcp import FastMCP
 
 load_dotenv()
 

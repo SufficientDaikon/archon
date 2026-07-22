@@ -8,7 +8,7 @@ to verify subcommand structure and command behaviour without executing pipelines
 import sys
 import tempfile
 from pathlib import Path
-from unittest.mock import patch, MagicMock
+from unittest.mock import MagicMock, patch
 
 import pytest
 
@@ -18,10 +18,10 @@ sys.path.insert(0, str(ARCHON_ROOT / "src"))
 from typer.testing import CliRunner
 
 from archon.commands.pipeline import (
-    pipeline_app,
-    _create_executor,
-    STATE_DIR,
     PIPELINES_DIR,
+    STATE_DIR,
+    _create_executor,
+    pipeline_app,
 )
 
 runner = CliRunner()
@@ -72,7 +72,7 @@ class TestPipelineRun:
         )
         mock_create.return_value = mock_executor
 
-        result = runner.invoke(pipeline_app, ["run", "sdd-pipeline"])
+        runner.invoke(pipeline_app, ["run", "sdd-pipeline"])
         mock_executor.load_pipeline.assert_called_once_with("sdd-pipeline")
         mock_executor.execute.assert_called_once()
 
@@ -117,7 +117,7 @@ class TestPipelineList:
             mock_state_cls.load.return_value = mock_state
 
             with patch("archon.commands.pipeline.STATE_DIR", tmp):
-                result = runner.invoke(pipeline_app, ["list"])
+                runner.invoke(pipeline_app, ["list"])
                 assert mock_state_cls.load.call_count >= 1
 
 

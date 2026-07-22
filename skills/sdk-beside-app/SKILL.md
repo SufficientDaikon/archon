@@ -1,3 +1,7 @@
+---
+name: sdk-beside-app
+description: Extract core logic from a web app into a standalone publishable npm package with CLI
+---
 # SDK Beside App
 
 > Extract reusable core logic from a web application into a standalone, publishable npm package with CLI and sub-path exports.

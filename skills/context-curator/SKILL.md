@@ -1,3 +1,7 @@
+---
+name: context-curator
+description: Context curation for multi-agent pipeline handoffs with summarization, filtering, chunking, state management, handoff validation, and budget tracking.
+---
 # Context Curator
 
 > Universal context curation for multi-agent pipeline handoffs with validation, budget tracking, and smart filtering.

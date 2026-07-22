@@ -1,3 +1,7 @@
+---
+name: writing-plans
+description: TDD-sized task breakdown for implementation plans. Use when you have a spec or requirements for a multi-step task, before touching any code.
+---
 # Writing Plans — TDD-Sized Task Breakdown
 
 > **Type:** Rigid process (follow structure exactly)  

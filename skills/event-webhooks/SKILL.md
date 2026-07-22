@@ -1,3 +1,7 @@
+---
+name: event-webhooks
+description: Event-driven webhook dispatch with template payloads, SSRF protection, and parallel delivery
+---
 # Event Webhooks
 
 > Configurable webhook dispatch with template payloads, SSRF protection, and reliable parallel delivery.

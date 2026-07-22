@@ -1,3 +1,7 @@
+---
+name: white-label-config
+description: Typed defineConfig() pattern with branding, feature flags, and runtime env overrides
+---
 # White-Label Config
 
 > Transform any application into a customizable, self-hostable product with typed configuration, feature flags, and runtime env overrides.

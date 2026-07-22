@@ -107,18 +107,16 @@ class TestPipelineExecutor:
 
         with tempfile.TemporaryDirectory() as tmpdir:
             executor = PipelineExecutor(
-                hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
                 simulation=True,
             )
-            assert executor.hooks_dir.exists()
+            assert executor.state_dir.exists()
 
     def test_load_pipeline_not_found(self):
         from archon.core.pipeline_engine import PipelineExecutor
 
         with tempfile.TemporaryDirectory() as tmpdir:
             executor = PipelineExecutor(
-                hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
                 simulation=True,
             )
@@ -131,7 +129,6 @@ class TestPipelineExecutor:
 
         with tempfile.TemporaryDirectory() as tmpdir:
             executor = PipelineExecutor(
-                hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
                 simulation=True,
             )
@@ -145,7 +142,9 @@ class TestPipelineExecutor:
     def test_execute_with_custom_handler(self):
         """Execute pipeline with custom step handler."""
         from archon.core.pipeline_engine import (
-            PipelineExecutor, StepResult, StepStatus,
+            PipelineExecutor,
+            StepResult,
+            StepStatus,
         )
 
         executed_steps = []
@@ -161,14 +160,11 @@ class TestPipelineExecutor:
 
         with tempfile.TemporaryDirectory() as tmpdir:
             executor = PipelineExecutor(
-                hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
                 simulation=True,
             )
             pipeline = executor.load_pipeline("sdd-pipeline")
-            result = executor.execute(
-                pipeline, project_dir=tmpdir, step_handler=custom_handler
-            )
+            result = executor.execute(pipeline, project_dir=tmpdir, step_handler=custom_handler)
 
             assert result["status"] == "completed"
             assert len(executed_steps) == len(pipeline.steps)
@@ -176,7 +172,9 @@ class TestPipelineExecutor:
     def test_execute_with_failing_step(self):
         """Pipeline halts on step failure."""
         from archon.core.pipeline_engine import (
-            PipelineExecutor, StepResult, StepStatus,
+            PipelineExecutor,
+            StepResult,
+            StepStatus,
         )
 
         call_count = 0
@@ -197,14 +195,11 @@ class TestPipelineExecutor:
 
         with tempfile.TemporaryDirectory() as tmpdir:
             executor = PipelineExecutor(
-                hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
                 simulation=True,
             )
             pipeline = executor.load_pipeline("sdd-pipeline")
-            result = executor.execute(
-                pipeline, project_dir=tmpdir, step_handler=failing_handler
-            )
+            result = executor.execute(pipeline, project_dir=tmpdir, step_handler=failing_handler)
 
             # Should have failed or escalated depending on retry policy
             assert result["status"] in ("failed", "completed")

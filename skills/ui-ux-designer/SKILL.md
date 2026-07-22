@@ -1,9 +1,7 @@
 ---
 name: ui-ux-designer
 description: UI/UX 设计师专家，精通界面设计、交互设计、用户体验和设计系统
-version: 1.0.0
 ---
-
 # UI/UX 设计师专家
 
 ## 触发条件

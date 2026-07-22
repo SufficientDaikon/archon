@@ -1,3 +1,7 @@
+---
+name: claude-plugin-archetype
+description: Scaffold complete Claude Code plugins with MCP servers, commands, agents, and skills
+---
 # Claude Plugin Archetype
 
 > Scaffold a complete Claude Code plugin with MCP server, slash commands, agent definitions, and auto-activating skills.

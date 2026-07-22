@@ -8,7 +8,6 @@ Tests extreme conditions:
 - Empty/malformed artifacts
 """
 
-import json
 import sys
 import tempfile
 from pathlib import Path
@@ -25,7 +24,10 @@ class TestLargePipeline:
     def test_20_step_pipeline(self):
         """Execute a synthetic 20-step pipeline."""
         from archon.core.pipeline_engine import (
-            PipelineExecutor, PipelineDefinition, StepResult, StepStatus,
+            PipelineDefinition,
+            PipelineExecutor,
+            StepResult,
+            StepStatus,
         )
 
         steps = [
@@ -51,7 +53,6 @@ class TestLargePipeline:
 
         with tempfile.TemporaryDirectory() as tmpdir:
             executor = PipelineExecutor(
-                hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
                 simulation=True,
             )
@@ -67,13 +68,13 @@ class TestCascadingFailures:
     def test_failure_at_step_5_halts(self):
         """Pipeline halts at step 5 when using halt policy."""
         from archon.core.pipeline_engine import (
-            PipelineExecutor, PipelineDefinition, StepResult, StepStatus,
+            PipelineDefinition,
+            PipelineExecutor,
+            StepResult,
+            StepStatus,
         )
 
-        steps = [
-            {"name": f"step-{i}", "agent": "test", "on-failure": "halt"}
-            for i in range(10)
-        ]
+        steps = [{"name": f"step-{i}", "agent": "test", "on-failure": "halt"} for i in range(10)]
         pipeline = PipelineDefinition(
             name="cascade-test",
             version="1.0.0",
@@ -100,13 +101,10 @@ class TestCascadingFailures:
 
         with tempfile.TemporaryDirectory() as tmpdir:
             executor = PipelineExecutor(
-                hooks_dir=ARCHON_ROOT / "hooks",
                 state_dir=Path(tmpdir),
                 simulation=True,
             )
-            result = executor.execute(
-                pipeline, project_dir=tmpdir, step_handler=failing_at_5
-            )
+            result = executor.execute(pipeline, project_dir=tmpdir, step_handler=failing_at_5)
 
             assert result["status"] == "failed"
             # Should have stopped — not all 10 executed
@@ -216,9 +214,9 @@ class TestHealthScoreEdgeCases:
         from archon.core.pipeline_state import PipelineState
 
         state = PipelineState("test", "test", ".")
-        state.record_deviation("Critical", "critical")   # -20
-        state.record_deviation("Major", "major")           # -10
-        state.record_deviation("Minor", "minor")           # -5
+        state.record_deviation("Critical", "critical")  # -20
+        state.record_deviation("Major", "major")  # -10
+        state.record_deviation("Minor", "minor")  # -5
         assert state.get_health_score() == 65
 
     def test_failed_steps_reduce_health(self):

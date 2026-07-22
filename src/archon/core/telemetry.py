@@ -107,7 +107,10 @@ class TelemetryCollector:
             payload=decision_dict,
             correlation_id=decision_dict.get("correlation_id", ""),
             session_id=decision_dict.get("session_id", ""),
-            tags={"action": decision_dict.get("action", ""), "tool": decision_dict.get("tool_name", "")},
+            tags={
+                "action": decision_dict.get("action", ""),
+                "tool": decision_dict.get("tool_name", ""),
+            },
             retention_class="audit",
         )
         return self.emit(envelope)
@@ -185,7 +188,7 @@ class ReplaySnapshot:
         if not path.exists():
             return None
         try:
-            with open(path, "r", encoding="utf-8") as f:
+            with open(path, encoding="utf-8") as f:
                 data = json.load(f)
             return cls(
                 snapshot_id=data["snapshot_id"],
@@ -207,6 +210,7 @@ class ReplayHarness:
 
     def __init__(self, snapshots_dir: Path | None = None):
         from archon.utils.paths import get_archon_home
+
         self.snapshots_dir = snapshots_dir or get_archon_home() / "snapshots"
 
     def capture(
@@ -242,9 +246,7 @@ class ReplayHarness:
 
         return result
 
-    def _diff_snapshots(
-        self, baseline: ReplaySnapshot, current: ReplaySnapshot
-    ) -> list[str]:
+    def _diff_snapshots(self, baseline: ReplaySnapshot, current: ReplaySnapshot) -> list[str]:
         diffs = []
         if baseline.session_dict.get("status") != current.session_dict.get("status"):
             diffs.append(

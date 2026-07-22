@@ -1,3 +1,7 @@
+---
+name: yaml-prompt-library
+description: YAML-based prompt storage with structured messages, variables, and test data
+---
 # YAML Prompt Library
 
 > Store reusable AI prompts as YAML files with structured messages, variables, and test data for version-controlled prompt engineering.
@@ -43,8 +47,8 @@ Do NOT use this skill when:
 3. Returns ready-to-send messages array
 
 ### Step 4: Add Model Override
-1. Allow runtime model switch via parameter: `loadPrompt("quality-check", { model: "gpt-4o" })`
-2. Allow env var override: `PROMPT_MODEL_OVERRIDE=gpt-4o`
+1. Allow runtime model switch via parameter: `loadPrompt("quality-check", { model: "claude-sonnet-5" })`
+2. Allow env var override: `PROMPT_MODEL_OVERRIDE=claude-sonnet-5`
 3. Priority: parameter > env var > YAML file
 
 ### Step 5: Create Test Runner

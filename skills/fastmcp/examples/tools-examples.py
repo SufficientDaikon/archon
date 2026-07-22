@@ -4,11 +4,12 @@ FastMCP Tools Examples
 Comprehensive examples of tool patterns: sync, async, validation, error handling.
 """
 
-from fastmcp import FastMCP, Context
-from pydantic import BaseModel, Field, validator
-from typing import Optional, List, Dict, Any
-from datetime import datetime
 import asyncio
+from datetime import datetime
+from typing import Any, Dict, List, Optional
+
+from fastmcp import Context, FastMCP
+from pydantic import BaseModel, Field, validator
 
 mcp = FastMCP("Tools Examples")
 

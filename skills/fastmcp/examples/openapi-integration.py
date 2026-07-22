@@ -4,11 +4,12 @@ FastMCP OpenAPI Integration Template
 Auto-generate MCP server from OpenAPI/Swagger specification.
 """
 
-from fastmcp import FastMCP
-from fastmcp.server.openapi import RouteMap, MCPType
-import httpx
 import os
+
+import httpx
 from dotenv import load_dotenv
+from fastmcp import FastMCP
+from fastmcp.server.openapi import MCPType, RouteMap
 
 load_dotenv()
 
@@ -121,7 +122,7 @@ if spec:
         route_maps=route_maps
     )
 
-    print(f"✅ Generated MCP server from OpenAPI spec")
+    print("✅ Generated MCP server from OpenAPI spec")
     print(f"   Base URL: {API_BASE_URL}")
 
 else:

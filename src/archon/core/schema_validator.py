@@ -20,6 +20,7 @@ import yaml
 @dataclass
 class SchemaLintResult:
     """Result of schema linting."""
+
     schema_name: str
     passed: bool = True
     errors: list[str] = field(default_factory=list)
@@ -55,7 +56,7 @@ class SchemaValidator:
         result = SchemaLintResult(schema_name=schema_path.name)
 
         try:
-            with open(schema_path, "r", encoding="utf-8") as f:
+            with open(schema_path, encoding="utf-8") as f:
                 schema = yaml.safe_load(f)
         except Exception as e:
             result.passed = False
@@ -78,7 +79,9 @@ class SchemaValidator:
         result.checks_run += 1
         version = schema.get("version", "")
         if version and not re.match(r"^\d+\.\d+\.\d+$", str(version)):
-            result.errors.append(f"Invalid version format: '{version}' (expected MAJOR.MINOR.PATCH)")
+            result.errors.append(
+                f"Invalid version format: '{version}' (expected MAJOR.MINOR.PATCH)"
+            )
             result.passed = False
 
         # Check properties for enum duplicates
@@ -223,9 +226,7 @@ class SchemaValidator:
                 dont_phrases = {p.strip() for p in dont_text.split(",") if p.strip()}
                 overlap = do_phrases & dont_phrases
                 if overlap:
-                    result.errors.append(
-                        f"Prompt '{pid}' has contradictory DO/DON'T: {overlap}"
-                    )
+                    result.errors.append(f"Prompt '{pid}' has contradictory DO/DON'T: {overlap}")
                     result.passed = False
 
         return result
@@ -242,6 +243,7 @@ class CompatibilityChecker:
     @dataclass
     class CompatReport:
         """Compatibility analysis report."""
+
         v2_schemas: list[str] = field(default_factory=list)
         v3_new_schemas: list[str] = field(default_factory=list)
         v2_preserved: list[str] = field(default_factory=list)
@@ -304,7 +306,7 @@ class CompatibilityChecker:
         for name in report.v2_preserved:
             path = schemas_dir / name
             try:
-                with open(path, "r", encoding="utf-8") as f:
+                with open(path, encoding="utf-8") as f:
                     data = yaml.safe_load(f)
                 version = str(data.get("version", data.get("schema_version", "1.0")))
                 if version.startswith("3"):
@@ -322,8 +324,6 @@ class CompatibilityChecker:
                     f"New v3 schema '{v3_name}' — no v2 equivalent, additive change"
                 )
             else:
-                report.migration_hints.append(
-                    f"Expected v3 schema '{v3_name}' not yet created"
-                )
+                report.migration_hints.append(f"Expected v3 schema '{v3_name}' not yet created")
 
         return report

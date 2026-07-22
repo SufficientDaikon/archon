@@ -2,22 +2,26 @@
 
 from __future__ import annotations
 
-from typing import Optional
-
 import typer
 
+from archon.core.installer import resolve_target_platforms, uninstall_skill_from_platform
 from archon.core.registry import Registry
-from archon.core.installer import uninstall_skill_from_platform, resolve_target_platforms
-from archon.core.config import get_install_records
 from archon.utils.output import (
-    console, print_success, print_error, print_warning, print_info,
-    is_json, json_envelope, print_json,
+    console,
+    is_json,
+    json_envelope,
+    print_error,
+    print_info,
+    print_json,
+    print_success,
 )
 
 
 def uninstall_cmd(
     component: str = typer.Argument(..., help="Name of skill, agent, or bundle to uninstall."),
-    platform: Optional[str] = typer.Option(None, "--platform", "-p", help="Target a specific platform."),
+    platform: str | None = typer.Option(
+        None, "--platform", "-p", help="Target a specific platform."
+    ),
     force: bool = typer.Option(False, "--force", "-f", help="Skip confirmation prompts."),
 ) -> None:
     """Remove installed components from platform(s)."""
@@ -27,7 +31,7 @@ def uninstall_cmd(
         reg.load()
     except FileNotFoundError as exc:
         print_error(str(exc))
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     targets = resolve_target_platforms(reg, platform)
     if not targets:
@@ -64,18 +68,22 @@ def uninstall_cmd(
     if removed_count == 0:
         # FR-020: idempotent
         if is_json():
-            print_json(json_envelope(
-                command="uninstall",
-                data={"removed": 0, "message": f"'{component}' is not installed."},
-            ))
+            print_json(
+                json_envelope(
+                    command="uninstall",
+                    data={"removed": 0, "message": f"'{component}' is not installed."},
+                )
+            )
         else:
             print_info(f"'{component}' is not installed on any target platform.")
         return
 
     if is_json():
-        print_json(json_envelope(
-            command="uninstall",
-            data={"removed": removed_count, "results": results},
-        ))
+        print_json(
+            json_envelope(
+                command="uninstall",
+                data={"removed": removed_count, "results": results},
+            )
+        )
     else:
         console.print(f"\n  Removed {removed_count} component(s).")

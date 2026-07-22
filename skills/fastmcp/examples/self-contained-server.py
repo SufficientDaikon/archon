@@ -5,14 +5,15 @@ Production pattern with all utilities in one file.
 Avoids circular import issues common in cloud deployment.
 """
 
-from fastmcp import FastMCP, Context
+import asyncio
 import os
 import time
-import asyncio
-import httpx
-from typing import Dict, Any, Optional, List
 from datetime import datetime
+from typing import Any, Dict, List, Optional
+
+import httpx
 from dotenv import load_dotenv
+from fastmcp import Context, FastMCP
 
 load_dotenv()
 

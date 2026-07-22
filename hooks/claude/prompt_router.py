@@ -8,6 +8,7 @@ enforced behavior.
 
 import json
 import sys
+import time
 from pathlib import Path
 
 HOOK_DIR = Path(__file__).parent
@@ -19,11 +20,32 @@ from shared.classifier import (
     classify_complexity,
     get_execution_mode,
     match_skills,
+    strip_noise,
 )
+from shared.config import get_property
+from shared.hooklog import write_record
 from shared.state import load_state, save_state
 
 
+def _classifier_thresholds(cwd: str | None) -> list[tuple[int, str]]:
+    """Tier thresholds from properties (defaults match the classifier constants)."""
+    return [
+        (get_property("classifier/trivial_max_words", cwd), "TRIVIAL"),
+        (get_property("classifier/simple_max_words", cwd), "SIMPLE"),
+        (get_property("classifier/moderate_max_words", cwd), "MODERATE"),
+        (get_property("classifier/complex_max_words", cwd), "COMPLEX"),
+    ]
+
+
+def _enabled_synapses(synapses: list[str], cwd: str | None) -> list[str]:
+    """Filter active synapses through the injection/* toggles."""
+    if not get_property("injection/enabled", cwd):
+        return []
+    return [s for s in synapses if get_property(f"injection/{s.replace('-', '_')}", cwd)]
+
+
 def main() -> None:
+    t0 = time.perf_counter()
     raw = sys.stdin.read()
     try:
         input_data = json.loads(raw) if raw.strip() else {}
@@ -35,21 +57,48 @@ def main() -> None:
         print(json.dumps({}))
         return
 
+    cwd = input_data.get("cwd")
+
     # Classify
-    tier = classify_complexity(prompt)
+    tier = classify_complexity(
+        prompt,
+        thresholds=_classifier_thresholds(cwd),
+        max_escalation=get_property("classifier/max_escalation", cwd),
+    )
     skills = match_skills(prompt)
     mode = get_execution_mode(tier)
     synapses = active_synapses(tier, prompt)
-    synapse_context = build_synapse_context(synapses, tier)
+
+    # Session state feeds {state.*?} placeholders in the instructions
+    # (e.g. a live tests-failing notice), so load before building context.
+    state = load_state(cwd)
+    synapse_context = build_synapse_context(
+        _enabled_synapses(synapses, cwd), tier, state["session"]
+    )
 
     # Update state
-    state = load_state()
     state["session"]["complexity_tier"] = tier
     state["session"]["active_skills"] = skills
-    save_state(state)
+    save_state(state, cwd)
 
     # Build XML context
     context = build_route_context(tier, mode, skills, synapses, synapse_context)
+
+    # Log the classification (stripped prompt stored only when opted in)
+    stripped = strip_noise(prompt)
+    log_extra: dict = {
+        "tier": tier,
+        "mode": mode,
+        "skills": skills,
+        "synapses": synapses,
+        "word_count": len(stripped.split()),
+        "preview": " ".join(stripped.split())[:80],
+    }
+    if get_property("logging/log_prompts", cwd):
+        cap = get_property("logging/prompt_max_chars", cwd)
+        log_extra["stripped_prompt"] = stripped[:cap]
+        log_extra["prompt_truncated"] = len(stripped) > cap
+    write_record("prompt_router", "UserPromptSubmit", cwd, t0, **log_extra)
 
     output = {
         "hookSpecificOutput": {

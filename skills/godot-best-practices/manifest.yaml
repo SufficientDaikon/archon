@@ -1,10 +1,18 @@
 name: godot-best-practices
 version: 1.0.0
-description: "Skill: godot-best-practices"
+description: Guide AI agents through Godot 4.x GDScript coding best practices including scene organization, signals, resources, state machines, and performance optimization.
 author: tahaa
 license: MIT
-tags: ["godot", "game-dev", "gdscript"]
+tags:
+- godot
+- game-dev
+- gdscript
 triggers:
-  keywords: ["godot", "game", "GDScript", "nodes", "scenes"]
+  keywords:
+  - godot
+  - game
+  - GDScript
+  - nodes
+  - scenes
   patterns: []
 priority: P2

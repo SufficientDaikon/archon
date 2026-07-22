@@ -4,21 +4,20 @@ from __future__ import annotations
 
 import time
 from pathlib import Path
-from typing import Optional
 
 import typer
 
-from archon.core.registry import Registry
 from archon.core.llms_txt import write_files
+from archon.core.registry import Registry
 from archon.utils.output import (
     console,
-    print_success,
-    print_error,
-    print_info,
-    print_verbose,
     is_json,
     json_envelope,
+    print_error,
+    print_info,
     print_json,
+    print_success,
+    print_verbose,
 )
 from archon.utils.paths import get_archon_root
 
@@ -27,9 +26,13 @@ generate_app = typer.Typer(help="Generate framework artifacts.", no_args_is_help
 
 @generate_app.command("llms-txt")
 def llms_txt_cmd(
-    concise: bool = typer.Option(False, "--concise", help="Generate only llms.txt (concise index)."),
+    concise: bool = typer.Option(
+        False, "--concise", help="Generate only llms.txt (concise index)."
+    ),
     full: bool = typer.Option(False, "--full", help="Generate only llms-full.txt (complete dump)."),
-    output: Optional[str] = typer.Option(None, "--output", "-o", help="Output directory (default: repo root)."),
+    output: str | None = typer.Option(
+        None, "--output", "-o", help="Output directory (default: repo root)."
+    ),
 ) -> None:
     """Generate llms.txt and/or llms-full.txt for LLM consumption."""
 
@@ -40,7 +43,7 @@ def llms_txt_cmd(
         reg.load()
     except FileNotFoundError as exc:
         print_error(str(exc))
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     # Determine what to generate
     gen_concise = True
@@ -86,10 +89,10 @@ def llms_txt_cmd(
         )
     except PermissionError as exc:
         print_error(f"Permission denied: {exc}")
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
     except OSError as exc:
         print_error(str(exc))
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     elapsed = time.time() - start
 
@@ -103,13 +106,15 @@ def llms_txt_cmd(
             info = result["full"]
             files_generated.append({"path": str(info["path"]), "size_bytes": info["size"]})
 
-        print_json(json_envelope(
-            command="generate llms-txt",
-            data={
-                "files_generated": files_generated,
-                "stats": result["stats"],
-            },
-        ))
+        print_json(
+            json_envelope(
+                command="generate llms-txt",
+                data={
+                    "files_generated": files_generated,
+                    "stats": result["stats"],
+                },
+            )
+        )
         return
 
     # Rich output
@@ -143,7 +148,9 @@ def llms_txt_cmd(
 
 @generate_app.command("agent-cards")
 def agent_cards_cmd(
-    output: Optional[str] = typer.Option(None, "--output", "-o", help="Output directory (default: repo root)."),
+    output: str | None = typer.Option(
+        None, "--output", "-o", help="Output directory (default: repo root)."
+    ),
 ) -> None:
     """Generate agent-cards.json — machine-readable agent card index."""
 
@@ -156,7 +163,7 @@ def agent_cards_cmd(
         reg.load()
     except FileNotFoundError as exc:
         print_error(str(exc))
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     # Resolve output dir
     output_dir: Path | None = None
@@ -178,22 +185,26 @@ def agent_cards_cmd(
         result = write_agent_cards(root=root, output_dir=output_dir, registry=reg)
     except PermissionError as exc:
         print_error(f"Permission denied: {exc}")
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
     except OSError as exc:
         print_error(str(exc))
-        raise typer.Exit(1)
+        raise typer.Exit(1) from None
 
     elapsed = time.time() - start
 
     # JSON output mode
     if is_json():
-        print_json(json_envelope(
-            command="generate agent-cards",
-            data={
-                "files_generated": [{"path": str(result["path"]), "size_bytes": result["size"]}],
-                "stats": {"agents": result["agent_count"]},
-            },
-        ))
+        print_json(
+            json_envelope(
+                command="generate agent-cards",
+                data={
+                    "files_generated": [
+                        {"path": str(result["path"]), "size_bytes": result["size"]}
+                    ],
+                    "stats": {"agents": result["agent_count"]},
+                },
+            )
+        )
         return
 
     # Rich output

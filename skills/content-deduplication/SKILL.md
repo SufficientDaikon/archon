@@ -1,3 +1,7 @@
+---
+name: content-deduplication
+description: Text similarity detection and deduplication with normalization and configurable thresholds
+---
 # Content Deduplication
 
 > Text similarity detection and deduplication using normalization, fingerprinting, and configurable similarity thresholds.

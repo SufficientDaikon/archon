@@ -1,151 +1,172 @@
 #!/usr/bin/env python3
 """Stop hook — completion gate that enforces quality before session ends.
 
-Fires when Claude stops responding. Checks if tests/build passed when code
-was modified. Blocks completion (exit 2) if quality gates fail. Persists
-final session state for next-session continuity.
+Fires when Claude stops responding. Blocks completion (exit 2) if code was
+modified and tests or build are known to have failed. Persists final session
+state for next-session continuity.
 
-This is the most valuable single hook — it prevents declaring "done" when
-things are broken.
+Loop protection: respects stop_hook_active (never re-block a stop that a Stop
+hook already blocked) and caps blocks at 2 per session — after that the gate
+downgrades to a stderr warning so a persistently failing session can still end.
+
+Note: Stop hooks cannot inject context (additionalContext is not consumed for
+Stop) — the only mechanisms that work are exit 2 + stderr, so the pass path is
+silent by design.
 """
 
 import json
 import sys
+import time
 from pathlib import Path
 
 HOOK_DIR = Path(__file__).parent
 sys.path.insert(0, str(HOOK_DIR))
 
-from shared.state import load_state, save_state
+from shared.config import get_property
+from shared.hooklog import write_record
+from shared.state import archive_session, load_state, save_state
 
 
 def main() -> None:
+    t0 = time.perf_counter()
     raw = sys.stdin.read()
     try:
         input_data = json.loads(raw) if raw.strip() else {}
     except json.JSONDecodeError:
         input_data = {}
 
-    state = load_state()
+    cwd = input_data.get("cwd")
+    state = load_state(cwd)
     session = state["session"]
     files_modified = session.get("files_modified", [])
 
     # No code modified — conversational session, no gates needed
     if not files_modified:
-        persist_and_archive(state)
+        persist_and_archive(state, cwd)
+        write_record("completion_gate", "Stop", cwd, t0, decision="allow")
         print(json.dumps({}))
         return
 
-    # Quality gate checks
-    passed, failures, warnings = check_quality_gates(session)
+    passed, failures = check_quality_gates(session)
 
-    # Always persist state (even if blocking)
-    persist_and_archive(state)
+    if passed:
+        persist_and_archive(state, cwd)
+        write_record("completion_gate", "Stop", cwd, t0, decision="allow")
+        print(json.dumps({}))
+        return
 
-    if not passed:
-        failure_text = "\n".join(f"  - {f}" for f in failures)
-        reason = f"Archon completion gate: quality checks failed.\n{failure_text}\nPlease address these before finishing."
+    # Gate disabled by config: warn on stderr but never block. State is
+    # still persisted and archived — disabling the gate must not lose data.
+    if not get_property("gate/enabled", cwd):
+        sys.stderr.write(
+            f"Archon completion gate (disabled by gate/enabled=false): {'; '.join(failures)}\n"
+        )
+        persist_and_archive(state, cwd)
+        write_record(
+            "completion_gate", "Stop", cwd, t0, decision="disabled", failures=len(failures)
+        )
+        print(json.dumps({}))
+        return
 
-        # Exit 2 = block the stop, force Claude to continue
-        sys.stderr.write(reason)
-        sys.exit(2)
-    else:
-        # Pass with summary (include warnings as advisory context)
-        summary = build_completion_summary(session, warnings)
-        output = {
-            "hookSpecificOutput": {
-                "hookEventName": "Stop",
-                "additionalContext": summary,
-            }
-        }
-        print(json.dumps(output))
+    # stop_hook_active means a Stop hook already blocked this stop once —
+    # blocking again would loop forever.
+    already_blocking = bool(input_data.get("stop_hook_active"))
+    blocks_so_far = session.get("gate_blocks", 0)
+
+    if already_blocking or blocks_so_far >= get_property("gate/max_blocks", cwd):
+        sys.stderr.write(
+            "Archon completion gate: quality checks still failing "
+            f"({'; '.join(failures)}) — allowing stop after "
+            f"{blocks_so_far} block(s) to avoid a loop.\n"
+        )
+        persist_and_archive(state, cwd)
+        write_record(
+            "completion_gate",
+            "Stop",
+            cwd,
+            t0,
+            decision="warn_cap",
+            gate_blocks=blocks_so_far,
+            failures=len(failures),
+        )
+        print(json.dumps({}))
+        return
+
+    session["gate_blocks"] = blocks_so_far + 1
+    persist_and_archive(state, cwd)
+
+    failure_text = "\n".join(f"  - {f}" for f in failures)
+    reason = (
+        "Archon completion gate: quality checks failed.\n"
+        f"{failure_text}\n"
+        "Please address these before finishing."
+    )
+    # Exit 2 = block the stop, force Claude to continue. The log record is
+    # written BEFORE exit and is fail-open — logging can never turn a block
+    # into a crash.
+    write_record(
+        "completion_gate",
+        "Stop",
+        cwd,
+        t0,
+        decision="block",
+        gate_blocks=session["gate_blocks"],
+        failures=len(failures),
+    )
+    sys.stderr.write(reason)
+    sys.exit(2)
 
 
-def check_quality_gates(session: dict) -> tuple[bool, list[str], list[str]]:
-    """Check quality gates. Returns (passed, [blocking failures], [advisory warnings])."""
+def check_quality_gates(session: dict) -> tuple[bool, list[str]]:
+    """Check quality gates. Returns (passed, [blocking failures])."""
     failures = []
-    warnings = []
     files_modified = session.get("files_modified", [])
 
     # Only check code files (skip markdown, configs)
     code_files = [
-        f for f in files_modified
-        if any(f.endswith(ext) for ext in (
-            ".py", ".js", ".ts", ".jsx", ".tsx", ".rs", ".go",
-            ".java", ".c", ".cpp", ".cs", ".rb", ".php",
-        ))
+        f
+        for f in files_modified
+        if any(
+            f.endswith(ext)
+            for ext in (
+                ".py",
+                ".js",
+                ".ts",
+                ".jsx",
+                ".tsx",
+                ".rs",
+                ".go",
+                ".java",
+                ".c",
+                ".cpp",
+                ".cs",
+                ".rb",
+                ".php",
+            )
+        )
     ]
 
     if not code_files:
-        return True, [], []
+        return True, []
 
-    tests_passed = session.get("tests_passed")
-    build_passed = session.get("build_passed")
+    # Block only on confirmed failure — "tests never ran" is not a failure.
+    if session.get("tests_passed") is False:
+        failures.append(
+            f"Tests FAILED. {len(code_files)} code file(s) were modified — tests must pass."
+        )
+    if session.get("build_passed") is False:
+        failures.append(
+            f"Build FAILED. {len(code_files)} code file(s) were modified — build must pass."
+        )
 
-    # Block: tests explicitly failed
-    if tests_passed is False:
-        failures.append(f"Tests FAILED. {len(code_files)} code file(s) were modified — tests must pass.")
-
-    # Block: build explicitly failed
-    if build_passed is False:
-        failures.append(f"Build FAILED. {len(code_files)} code file(s) were modified — build must pass.")
-
-    # Warn (don't block): tests were never run on substantial changes
-    if tests_passed is None and len(code_files) >= 3:
-        warnings.append(f"Tests were NEVER RUN this session. {len(code_files)} code files modified — consider running tests.")
-
-    return len(failures) == 0, failures, warnings
+    return len(failures) == 0, failures
 
 
-def persist_and_archive(state: dict) -> None:
+def persist_and_archive(state: dict, cwd: str | None = None) -> None:
     """Save final state. Archive to history if session had activity."""
-    session = state["session"]
-
-    if session.get("files_modified"):
-        # Build session summary for history
-        summary = {
-            "id": session.get("id", ""),
-            "started": session.get("started", ""),
-            "files_modified_count": len(session.get("files_modified", [])),
-            "tests_passed": session.get("tests_passed"),
-            "build_passed": session.get("build_passed"),
-            "complexity_tier": session.get("complexity_tier", ""),
-            "todos_completed": session.get("todos_completed", 0),
-            "todos_total": session.get("todos_total", 0),
-        }
-
-        history = state.setdefault("history", {"last_sessions": [], "unfinished_work": []})
-        # Dedup check — don't double-archive if session_boot already did it
-        existing_ids = [s.get("id") for s in history.get("last_sessions", [])]
-        if summary["id"] and summary["id"] not in existing_ids:
-            history["last_sessions"].insert(0, summary)
-            history["last_sessions"] = history["last_sessions"][:3]
-
-    save_state(state)
-
-
-def build_completion_summary(session: dict, warnings: list[str]) -> str:
-    """Build a brief completion summary."""
-    files_count = len(session.get("files_modified", []))
-    tests = session.get("tests_passed")
-    build = session.get("build_passed")
-    tier = session.get("complexity_tier", "N/A")
-
-    parts = [f'<archon-completion tier="{tier}" files="{files_count}"']
-    if tests is not None:
-        parts.append(f' tests="{"pass" if tests else "fail"}"')
-    if build is not None:
-        parts.append(f' build="{"pass" if build else "fail"}"')
-    parts.append(" />")
-
-    result = "".join(parts)
-
-    # Append warnings as advisory context
-    if warnings:
-        warning_lines = "\n".join(f"  - {w}" for w in warnings)
-        result += f"\n<archon-warnings>\n{warning_lines}\n</archon-warnings>"
-
-    return result
+    if state["session"].get("files_modified"):
+        archive_session(state)
+    save_state(state, cwd)
 
 
 if __name__ == "__main__":

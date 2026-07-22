@@ -5,7 +5,6 @@ Converts Markdown docs to beautiful HTML with Mermaid diagram rendering.
 ASCII art diagrams are automatically detected and replaced with Mermaid.js diagrams.
 """
 
-import re
 import os
 import sys
 from pathlib import Path
@@ -48,7 +47,6 @@ MERMAID_MAPS = {
     style L2 fill:#FF9800,color:#fff,stroke:#E65100
     style L1 fill:#9C27B0,color:#fff,stroke:#6A1B9A
     style L0 fill:#F44336,color:#fff,stroke:#C62828""",
-
     ("architecture.md", 1): """flowchart TD
     A["🚀 session_start hook"] --> B["Load core synapses"]
     B --> B1["anti-rationalization.md"]
@@ -66,7 +64,6 @@ MERMAID_MAPS = {
     style C fill:#FF9800,color:#fff
     style D fill:#FF9800,color:#fff
     style E fill:#FF9800,color:#fff""",
-
     ("architecture.md", 2): """flowchart TD
     U["👤 User Request"] --> AG["🤖 Agent\\n(guardrails active)"]
     AG --> S1["Skill A\\n(focused capability)"]
@@ -82,7 +79,6 @@ MERMAID_MAPS = {
     style S2 fill:#FF9800,color:#fff
     style S3 fill:#FF9800,color:#fff
     style O fill:#4CAF50,color:#fff""",
-
     ("architecture.md", 3): """stateDiagram-v2
     [*] --> pending
     pending --> validating : validate
@@ -97,7 +93,6 @@ MERMAID_MAPS = {
         [*] --> step_loop
         step_loop --> step_loop : next step
     }""",
-
     ("architecture.md", 4): """flowchart TD
     U["👤 User: build feature X"] --> L0["Layer 0: Bootstrap fires"]
     L0 --> L3["Layer 3: Pipeline selects sdd-pipeline"]
@@ -127,7 +122,6 @@ MERMAID_MAPS = {
     style SWA fill:#4CAF50,color:#fff
     style IMA fill:#4CAF50,color:#fff
     style RVA fill:#4CAF50,color:#fff""",
-
     # pipeline-orchestration.md — 1 diagram (the curation flow)
     ("pipeline-orchestration.md", 0): """flowchart TD
     SW["📝 spec-writer"] -->|"full spec ~3000 words"| CC1["🔄 context-curator"]
@@ -142,7 +136,6 @@ MERMAID_MAPS = {
     style CC2 fill:#00BCD4,color:#fff
     style RV fill:#4CAF50,color:#fff
     style RP fill:#607D8B,color:#fff""",
-
     # sequential-thinking.md — 2 diagrams
     ("sequential-thinking.md", 0): """flowchart LR
     D["🔍 DECOMPOSE"] --> R["🧠 REASON"]
@@ -153,7 +146,6 @@ MERMAID_MAPS = {
     style R fill:#FF9800,color:#fff
     style V fill:#4CAF50,color:#fff
     style S fill:#9C27B0,color:#fff""",
-
     ("sequential-thinking.md", 1): """flowchart LR
     DT["🔎 DETECT"] --> HY["💡 HYPOTHESIZE"]
     HY --> EN["📋 ENUMERATE"]
@@ -166,7 +158,6 @@ MERMAID_MAPS = {
     style EN fill:#2196F3,color:#fff
     style VR fill:#4CAF50,color:#fff
     style CO fill:#9C27B0,color:#fff""",
-
     # guardrails.md — 1 diagram (quick reference hierarchy)
     ("guardrails.md", 0): """flowchart TD
     SYS["🛡️ System Level\\n10 Iron Laws (always on)"] --> AGT["🤖 Agent Level\\nagent-manifest.yaml guardrails"]
@@ -193,7 +184,7 @@ def is_ascii_art_block(code_content: str) -> bool:
     # Check for arrow-based flow diagrams (→, ►, ->, -->)
     if "→" in code_content and code_content.count("→") >= 2:
         return True
-    if ("──►" in code_content or "──>" in code_content):
+    if "──►" in code_content or "──>" in code_content:
         return True
     if "│" in code_content and ("├" in code_content or "└" in code_content):
         return True
@@ -232,7 +223,9 @@ def preprocess_markdown(content: str, filename: str) -> str:
                     result.append(f'<div class="mermaid">\n{mermaid_code}\n</div>\n')
                     # Also keep original as collapsed detail
                     escaped = block_content.replace("<", "&lt;").replace(">", "&gt;")
-                    result.append(f'<details class="ascii-original"><summary>View original ASCII</summary><pre><code>{escaped}</code></pre></details>')
+                    result.append(
+                        f'<details class="ascii-original"><summary>View original ASCII</summary><pre><code>{escaped}</code></pre></details>'
+                    )
                 else:
                     # No mermaid mapping, keep as styled pre block
                     escaped = block_content.replace("<", "&lt;").replace(">", "&gt;")
@@ -731,21 +724,21 @@ def md_to_html(md_content: str, filename: str) -> str:
 
     # Convert MD → HTML
     extensions = [
-        'tables',
-        'fenced_code',
-        'codehilite',
+        "tables",
+        "fenced_code",
+        "codehilite",
         TocExtension(permalink=False, toc_depth=3),
-        'attr_list',
-        'md_in_html',
+        "attr_list",
+        "md_in_html",
     ]
     extension_configs = {
-        'codehilite': {'css_class': 'highlight', 'guess_lang': False},
+        "codehilite": {"css_class": "highlight", "guess_lang": False},
     }
     html = markdown.markdown(
         processed,
         extensions=extensions,
         extension_configs=extension_configs,
-        output_format='html5',
+        output_format="html5",
     )
     return html
 
@@ -1086,7 +1079,7 @@ def build_all():
     for md_file in doc_files:
         filename = md_file.name
         content = md_file.read_text(encoding="utf-8")
-        title = get_title(content, filename)
+        get_title(content, filename)
 
         # Generate output filename
         out_name = md_file.stem.replace("_", "-").title() + ".html"
@@ -1102,7 +1095,7 @@ def build_all():
     # Write index page
     index_path = HTML_DIR / "index.html"
     index_path.write_text(INDEX_CONTENT, encoding="utf-8")
-    print(f"  ✅ index.html (documentation home)")
+    print("  ✅ index.html (documentation home)")
 
     # Also copy to root for GitHub Pages compatibility
     root_index = ROOT / "index.html"

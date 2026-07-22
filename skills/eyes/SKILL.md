@@ -1,3 +1,7 @@
+---
+name: eyes
+description: Visual intelligence synapse — gives any agent the ability to see, generate, edit, and reason about images using Google Gemini
+---
 # Eyes — Visual Intelligence Synapse
 
 > Give any AI agent the ability to see, generate, edit, and reason about images using Google Gemini.

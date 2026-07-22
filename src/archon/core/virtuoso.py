@@ -8,11 +8,9 @@ from __future__ import annotations
 
 import shutil
 from pathlib import Path
-from typing import Optional
 
-from archon.utils.output import print_success, print_error, print_info, print_verbose
+from archon.utils.output import print_error, print_info, print_success, print_verbose
 from archon.utils.paths import get_archon_root
-
 
 VIRTUOSO_DIR = "virtuoso"
 VIRTUOSO_XML = "virtuoso.xml"
@@ -32,13 +30,13 @@ CLAUDE_MD_BLOCK = """\
 """
 
 
-def get_virtuoso_xml_path(archon_root: Optional[Path] = None) -> Path:
+def get_virtuoso_xml_path(archon_root: Path | None = None) -> Path:
     """Return the path to virtuoso.xml in the Archon repo."""
     root = archon_root or get_archon_root()
     return root / VIRTUOSO_DIR / VIRTUOSO_XML
 
 
-def build_virtuoso_skill(archon_root: Optional[Path] = None) -> str:
+def build_virtuoso_skill(archon_root: Path | None = None) -> str:
     """Read virtuoso.xml and wrap it in SKILL.md format.
 
     Returns the full SKILL.md content string.
@@ -152,7 +150,8 @@ def _rebuild_synapse_index(synapses_dir: Path) -> None:
         "# Installed Synapses Index\n\n"
         "> Core synapses are enforced through the Virtuoso Engine (skills/virtuoso/SKILL.md).\n"
         "> These reference files provide the full specification for each synapse.\n\n"
-        + "\n".join(entries) + "\n"
+        + "\n".join(entries)
+        + "\n"
     )
     (synapses_dir / "_synapses-index.md").write_text(index_content, encoding="utf-8")
 

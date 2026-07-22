@@ -1,3 +1,7 @@
+---
+name: using-git-worktrees
+description: Git worktree isolation for feature development. Use when starting feature work, experiments, or any multi-file changes that need workspace isolation.
+---
 # Using Git Worktrees — The Isolator
 
 > **Type:** Rigid  

@@ -9,14 +9,14 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 import yaml
 
 from archon.utils.paths import get_archon_root
 
-
 # ── Data classes ────────────────────────────────────────────────
+
 
 @dataclass
 class Skill:
@@ -36,6 +36,7 @@ class Skill:
 @dataclass
 class AgentCard:
     """Machine-readable metadata card for an agent."""
+
     capabilities: dict[str, bool] = field(default_factory=dict)
     skills_provided: list[dict] = field(default_factory=list)
     input_modes: list[str] = field(default_factory=list)
@@ -92,6 +93,7 @@ class Synapse:
 
 # ── Registry class ──────────────────────────────────────────────
 
+
 class Registry:
     """Loads and caches the Archon root manifest and component manifests."""
 
@@ -120,7 +122,7 @@ class Registry:
                 "or run from inside the archon repository."
             )
 
-        with open(registry_path, "r", encoding="utf-8") as fh:
+        with open(registry_path, encoding="utf-8") as fh:
             self._raw = yaml.safe_load(fh) or {}
 
         self.name = self._raw.get("name", "archon")
@@ -128,45 +130,55 @@ class Registry:
 
         # Skills
         for entry in self._raw.get("skills", []):
-            self.skills.append(Skill(
-                name=entry["name"],
-                path=entry.get("path", f"skills/{entry['name']}"),
-                version=entry.get("version", "1.0.0"),
-                tags=entry.get("tags", []),
-                priority=entry.get("priority", "P2"),
-            ))
+            self.skills.append(
+                Skill(
+                    name=entry["name"],
+                    path=entry.get("path", f"skills/{entry['name']}"),
+                    version=entry.get("version", "1.0.0"),
+                    tags=entry.get("tags", []),
+                    priority=entry.get("priority", "P2"),
+                )
+            )
 
         # Agents
         for entry in self._raw.get("agents", []):
-            self.agents.append(Agent(
-                name=entry["name"],
-                path=entry.get("path", f"agents/{entry['name']}"),
-            ))
+            self.agents.append(
+                Agent(
+                    name=entry["name"],
+                    path=entry.get("path", f"agents/{entry['name']}"),
+                )
+            )
 
         # Bundles
         for entry in self._raw.get("bundles", []):
-            self.bundles.append(Bundle(
-                name=entry["name"],
-                path=entry.get("path", f"bundles/{entry['name']}"),
-                skills=entry.get("skills", []),
-            ))
+            self.bundles.append(
+                Bundle(
+                    name=entry["name"],
+                    path=entry.get("path", f"bundles/{entry['name']}"),
+                    skills=entry.get("skills", []),
+                )
+            )
 
         # Pipelines
         for entry in self._raw.get("pipelines", []):
-            self.pipelines.append(Pipeline(
-                name=entry["name"],
-                path=entry.get("path", ""),
-                trigger=entry.get("trigger", ""),
-            ))
+            self.pipelines.append(
+                Pipeline(
+                    name=entry["name"],
+                    path=entry.get("path", ""),
+                    trigger=entry.get("trigger", ""),
+                )
+            )
 
         # Synapses
         for entry in self._raw.get("synapses", []):
-            self.synapses.append(Synapse(
-                name=entry["name"],
-                path=entry.get("path", f"synapses/{entry['name']}"),
-                version=entry.get("version", "1.0.0"),
-                synapse_type=entry.get("type", "core"),
-            ))
+            self.synapses.append(
+                Synapse(
+                    name=entry["name"],
+                    path=entry.get("path", f"synapses/{entry['name']}"),
+                    version=entry.get("version", "1.0.0"),
+                    synapse_type=entry.get("type", "core"),
+                )
+            )
 
         # Platforms
         self.platforms_config = self._raw.get("platforms", [])
@@ -274,7 +286,7 @@ class Registry:
         manifest_path = self.root / skill.path / "manifest.yaml"
         if manifest_path.exists():
             try:
-                with open(manifest_path, "r", encoding="utf-8") as fh:
+                with open(manifest_path, encoding="utf-8") as fh:
                     skill._manifest = yaml.safe_load(fh) or {}
             except Exception:
                 skill._manifest = {}
@@ -295,7 +307,7 @@ class Registry:
         manifest_path = self.root / agent.path / "agent-manifest.yaml"
         if manifest_path.exists():
             try:
-                with open(manifest_path, "r", encoding="utf-8") as fh:
+                with open(manifest_path, encoding="utf-8") as fh:
                     agent._manifest = yaml.safe_load(fh) or {}
             except Exception:
                 agent._manifest = {}
@@ -324,7 +336,7 @@ class Registry:
         manifest_path = self.root / bundle.path / "bundle.yaml"
         if manifest_path.exists():
             try:
-                with open(manifest_path, "r", encoding="utf-8") as fh:
+                with open(manifest_path, encoding="utf-8") as fh:
                     bundle._manifest = yaml.safe_load(fh) or {}
             except Exception:
                 bundle._manifest = {}
@@ -340,7 +352,7 @@ class Registry:
         manifest_path = self.root / pipeline.path
         if manifest_path.exists():
             try:
-                with open(manifest_path, "r", encoding="utf-8") as fh:
+                with open(manifest_path, encoding="utf-8") as fh:
                     pipeline._manifest = yaml.safe_load(fh) or {}
             except Exception:
                 pipeline._manifest = {}
@@ -358,7 +370,7 @@ class Registry:
         manifest_path = self.root / synapse.path / "manifest.yaml"
         if manifest_path.exists():
             try:
-                with open(manifest_path, "r", encoding="utf-8") as fh:
+                with open(manifest_path, encoding="utf-8") as fh:
                     synapse._manifest = yaml.safe_load(fh) or {}
             except Exception:
                 synapse._manifest = {}

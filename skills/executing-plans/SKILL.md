@@ -1,3 +1,7 @@
+---
+name: executing-plans
+description: Single-session plan execution fallback when subagents unavailable. Use when executing implementation plans without subagent support.
+---
 # Executing Plans — Single-Session Fallback
 
 > **Type:** Rigid process  
