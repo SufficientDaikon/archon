@@ -1,110 +1,51 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/ARCHON-The_Virtuoso_Engine-00F0FF?style=for-the-badge&labelColor=0e0e0e">
-  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/ARCHON-The_Virtuoso_Engine-0969DA?style=for-the-badge&labelColor=f6f8fa">
-  <img alt="Archon" src="https://img.shields.io/badge/ARCHON-The_Virtuoso_Engine-00F0FF?style=for-the-badge&labelColor=0e0e0e">
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/ARCHON-Agent_discipline_for_Claude_Code-00F0FF?style=for-the-badge&labelColor=0e0e0e">
+  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/ARCHON-Agent_discipline_for_Claude_Code-0969DA?style=for-the-badge&labelColor=f6f8fa">
+  <img alt="Archon" src="https://img.shields.io/badge/ARCHON-Agent_discipline_for_Claude_Code-00F0FF?style=for-the-badge&labelColor=0e0e0e">
 </picture>
 
-<br><br>
+<br>
 
-**The cognitive kernel for Claude Code.**
+**Claude Code is smart. It is also perfectly willing to skip your test suite.**
+
+Archon keeps it honest: skills for what the agent knows,
+guardrails for what it's never allowed to do, and pipelines that survive interruptions.
 
 <br>
 
 [![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![Version](https://img.shields.io/badge/v1.0.0-stable-brightgreen?style=flat-square)]()
 [![Python](https://img.shields.io/badge/python-3.9+-3776AB?style=flat-square&logo=python&logoColor=white)]()
-![Skills](https://img.shields.io/badge/skills-99-blue?style=flat-square)
-![Agents](https://img.shields.io/badge/agents-17-orange?style=flat-square)
-![Synapses](https://img.shields.io/badge/synapses-12-blueviolet?style=flat-square)
+![Skills](https://img.shields.io/badge/skills-96-blue?style=flat-square)
+![Agents](https://img.shields.io/badge/agents-14-orange?style=flat-square)
+![Synapses](https://img.shields.io/badge/synapses-5-blueviolet?style=flat-square)
 ![Pipelines](https://img.shields.io/badge/pipelines-8-red?style=flat-square)
-![Bundles](https://img.shields.io/badge/bundles-16-teal?style=flat-square)
-![Tests](https://img.shields.io/badge/tests-362-success?style=flat-square)
+![Bundles](https://img.shields.io/badge/bundles-15-teal?style=flat-square)
+![Tests](https://img.shields.io/badge/tests-437-success?style=flat-square)
 
 <br>
 
-[![Claude Code](https://img.shields.io/badge/Claude_Code-native-f97316?style=flat-square&logo=anthropic&logoColor=white)]()
-[![VS Code Extension](https://img.shields.io/badge/VS_Code-extension-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white)]()
-
-<br>
-
-[Quick Start](#-quick-start) · [Architecture](#-architecture) · [Skills](#-skills--bundles) · [Agents](#-agents) · [Synapses](#-cognitive-synapses) · [Pipelines](#-pipelines) · [Docs](#-documentation)
+[Why Archon](#why-archon-exists) · [Quick Start](#-quick-start) · [Architecture](#-architecture) · [Synapses](#-cognitive-synapses) · [Agents](#-agents) · [Pipelines](#-pipelines) · [Docs](#-docs)
 
 </div>
 
 ---
 
----
+## Why Archon exists
 
-## 🚀 What's New in v1.0.0
+Framework discussion usually centers on plumbing — tool calling, memory, chains. That's not where agents actually fail. Left unsupervised, an agent will:
 
-**Production-Ready Release** — Everything is hardened for real-world agent discipline.
+- ignore a failing check and "come back to it later"
+- declare a feature done without running the reviewer
+- invent context instead of admitting uncertainty
+- refactor things you never asked it to touch
 
-### Core Engine Upgrades
-
-- **Synapse Engine v2** — Production-hardened async trigger firing with formal decision types (halt/warn/allow)
-- **All 12 synapses fully operational** — metacognition, anti-rationalization, sequential thinking, pattern recognition, security awareness, code quality, completeness, consistency, trust verification, and MCPs
-- **Wired into pipeline execution** — Synapses fire on `pre-execution` triggers; blocking decisions halt pipelines with explicit error messages
-- **CI/pytest now enforced** — All 362 tests run on every commit (previously unguarded)
-
-### New Capabilities
-
-- **3 MCP servers** — File-ops (Python), Forge (Python), and skill-router (Rust) for external service integration
-- **Trust verification enhanced** — Contradiction detection now analyzes negations + shared term heuristics
-- **Metacognition synapse** — Full 4-check validator: plan requirement, reasoning depth, reflection markers, confidence calibration
-
-### Quality Assurance
-
-✅ 362 pytest test cases  
-✅ Test suite protected by CI  
-✅ All synapses have dedicated tests  
-✅ .gitignore enforces clean build artifacts  
-✅ Production checklist complete  
-
----
-
----
-
-## Release Status: v1.0.0 Production Ready
-
-All core systems hardened and tested:
-- Synapse Engine v2 with async trigger firing
-- 362 test suite protected by CI
-- All 12 cognitive synapses fully wired and tested
-- 3 MCP servers (file-ops, forge, skill-router)
-- Trust verification with contradiction detection
-- Metacognition synapse: 4-check validator (plan, reasoning, reflection, confidence)
-- File-ops Rust daemon with rate limiting + metrics
-
-**Status**: Production grade. Launch ready.
-
-## The Problem
-
----
-
-## Release Status: v1.0.0 Production Ready
-
-All core systems hardened and tested:
-- Synapse Engine v2 with async trigger firing
-- 362 test suite protected by CI
-- All 12 cognitive synapses fully wired and tested
-- 3 MCP servers (file-ops, forge, skill-router)
-- Trust verification with contradiction detection
-- Metacognition synapse: 4-check validator (plan, reasoning, reflection, confidence)
-- File-ops Rust daemon with rate limiting + metrics
-
-**Status**: Production grade. Launch ready.
-
-## The Problem
-
-Most AI agent frameworks give you plumbing — tool calling, memory, chains. None of them address the real failure mode: **agents that guess, rationalize, and skip steps.**
-
-Archon is the first framework that treats agent discipline as a first-class concern. It ships 98 skills as a native Claude Code plugin, but the real value is what happens _between_ skills: cognitive synapses that force structured reasoning, guardrails with Iron Laws agents cannot talk their way out of, and resumable pipelines that recover from failure instead of crashing.
+LangChain can't stop this, because it manages LLM calls, not behavior. Archon exists specifically to stop it. It's a native Claude Code plugin that wraps every task in enforcement: structured reasoning before action, rules the agent cannot argue its way out of, and multi-step workflows that checkpoint their state so a crash costs you nothing.
 
 > [!IMPORTANT]
-> Archon is not another LangChain. It does not manage LLM calls, memory, or tool routing.
-> It manages **what agents know** (skills), **how agents think** (synapses), and **what agents must never do** (guardrails).
+> Archon is not an orchestrator. It does not manage LLM calls, memory, or tool routing. It manages **what agents know** (skills), **how they reason** (synapses), and **what they must never do** (guardrails).
 
 ---
 
@@ -114,39 +55,35 @@ Archon is the first framework that treats agent discipline as a first-class conc
 git clone https://github.com/SufficientDaikon/archon.git
 cd archon
 pip install -e .
+
+archon init                # set up Claude Code integration
+archon doctor              # verify the install
+archon install --all       # deploy all 96 skills (or --bundle godot-kit / --skill backend-development)
 ```
 
-```bash
-archon init                                   # Initialize Archon for Claude Code
-archon doctor                                 # Verify everything works
-archon install --all                          # Deploy all 98 skills
-archon install --bundle godot-kit             # Just one domain
-archon install --skill backend-development    # Just one skill
-```
-
-Run a full pipeline:
+Run a pipeline:
 
 ```bash
 archon pipeline run sdd-pipeline --project ./myapp
 ```
 
 > [!TIP]
-> `archon doctor` validates your environment, checks skill integrity, and reports any manifest issues — run it after every install.
+> Run `archon doctor` after installing — it validates your environment, checks skill integrity, and reports manifest issues.
 
 ---
 
 ## 🏗 Architecture
 
-Archon uses a strict 6-layer architecture. Each layer builds on the one below. No shortcuts, no bypasses.
+Six layers. Each builds only on the one below it.
 
 ```mermaid
 graph TD
-    RT["🔒 Runtime Contracts<br><sub>Session state · Policy engine · Telemetry · MCP trust</sub>"]
-    GH["⚙️ Guardrails & Hooks<br><sub>5 lifecycle hooks · Iron Laws · Deviation protocol</sub>"]
+    RT["🔒 Runtime Contracts<br><sub>Session state · Policy engine · Telemetry</sub>"]
+    GH["⚙️ Guardrails & Hooks<br><sub>11 lifecycle hooks · Iron Laws · Deviation protocol</sub>"]
     PO["🔄 Pipelines & Orchestration<br><sub>8 resumable workflows · Failure recovery · Context curation</sub>"]
-    SC["🧠 Synapses & Cognition<br><sub>12 cognitive synapses · Structured reasoning · Confidence tagging</sub>"]
-    AP["🤖 Agents & Personas<br><sub>17 agents · Skill bindings · Handoff contracts · Quality gates</sub>"]
-    SK["📚 Skills & Knowledge<br><sub>99 skills · 16 bundles · Prompt library · Knowledge sources</sub>"]
+    SC["🧠 Synapses & Cognition<br><sub>5 cognitive synapses · Structured reasoning · Confidence tagging</sub>"]
+    AP["🤖 Agents & Personas<br><sub>14 agents · Skill bindings · Handoff contracts · Quality gates</sub>"]
+    SK["📚 Skills & Knowledge<br><sub>96 skills · 15 bundles · Prompt library · Knowledge sources</sub>"]
 
     RT --> GH --> PO --> SC --> AP --> SK
 
@@ -163,30 +100,32 @@ graph TD
 
 ```
 archon/
-├── skills/          98 skills (SKILL.md + manifest.yaml + resources/)
-├── bundles/         16 domain bundles (bundle.yaml + conflict resolution)
-├── agents/          17 agent definitions (AGENT.md + agent-manifest.yaml)
-├── pipelines/       8 multi-agent workflows (resumable YAML)
-├── synapses/        12 cognitive synapses (SYNAPSE.md + manifest.yaml)
-├── hooks/           5 lifecycle hooks
-├── src/             Core engine (session, policy, telemetry, replay)
-├── sdk/             Python SDK
-├── mcp-servers/     MCP server integrations
-├── vscode/          VS Code extension
-├── webapp/          Web application
-├── schemas/         15 validation schemas
-└── tests/           513 automated tests
+├── agents/            14 agents (AGENT.md + agent-manifest.yaml)
+├── skills/            96 skills (SKILL.md + manifest.yaml)
+├── bundles/           15 domain bundles (bundle.yaml + conflict resolution)
+├── synapses/          5 cognitive synapses (SYNAPSE.md + manifest.yaml)
+├── pipelines/         8 resumable multi-agent workflows
+├── schemas/           15 validation schemas
+├── hooks/             11 Claude Code lifecycle hooks
+├── src/               Core engine — session state, policy engine, telemetry, replay
+├── sdk/               Python SDK
+├── servers/           MCP server integrations
+├── file-ops-rs/       Rust file-ops daemon (rate limiting + metrics)
+├── tests/             437 tests across 28 files
+└── vscode-extension/  Skill browser, pipeline visualization
 ```
+
+Plus `docs/`, `prompts/`, `scripts/`, `catalog/`, `webapp/`, and supporting tooling.
 
 </details>
 
-Skills are installed directly into `~/.claude/skills/` and are immediately available to Claude Code sessions. The built-in VS Code extension provides skill browsing, pipeline visualization, and agent card inspection without leaving your editor.
+Skills install into `~/.claude/skills/` and are immediately available to Claude Code sessions. The bundled VS Code extension adds skill browsing, pipeline visualization, and agent card inspection.
 
 ---
 
 ## 🧠 Cognitive Synapses
 
-This is what makes Archon different. Synapses don't add knowledge — they shape **how agents reason**. Core synapses fire automatically. Agents cannot opt out.
+Synapses change how the agent thinks, not what it knows. When triggered, they inject required phases into the reasoning process — and agents cannot opt out.
 
 ```mermaid
 flowchart LR
@@ -204,31 +143,31 @@ flowchart LR
     style PR fill:#2d1b69,stroke:#c084fc,color:#fff
 ```
 
-| Synapse                  | Type | Phases                                                                                 | Purpose                                                               |
-| :----------------------- | :--- | :------------------------------------------------------------------------------------- | :-------------------------------------------------------------------- |
-| **Metacognition**        | Core | <kbd>PLAN</kbd> → <kbd>MONITOR</kbd> → <kbd>REFLECT</kbd>                              | Agents plan before acting, tag confidence levels, reflect on outcomes |
-| **Anti-Rationalization** | Core | <kbd>DETECT</kbd> → <kbd>CHALLENGE</kbd> → <kbd>ENFORCE</kbd>                          | 10 Iron Laws prevent agents from making excuses to skip steps         |
-| **Sequential Thinking**  | Core | <kbd>DECOMPOSE</kbd> → <kbd>REASON</kbd> → <kbd>VALIDATE</kbd> → <kbd>SYNTHESIZE</kbd> | Forces step-by-step decomposition instead of "just do it"             |
-| **Pattern Recognition**  | Core | <kbd>DETECT</kbd> → <kbd>SUGGEST</kbd> → <kbd>APPLY</kbd>                              | Surfaces matching skills for detected code/design patterns            |
-| **Security Awareness**   | Core | <kbd>SCAN</kbd> → <kbd>FLAG</kbd>                                                      | Injects OWASP security checks during every code task                  |
+| Synapse | Phases | Purpose |
+| :--- | :--- | :--- |
+| **Metacognition** | <kbd>PLAN</kbd> → <kbd>MONITOR</kbd> → <kbd>REFLECT</kbd> | Plan before acting, tag confidence, reflect on outcomes |
+| **Anti-Rationalization** | <kbd>DETECT</kbd> → <kbd>CHALLENGE</kbd> → <kbd>ENFORCE</kbd> | Enforces the 10 Iron Laws — no talking your way past requirements |
+| **Sequential Thinking** | <kbd>DECOMPOSE</kbd> → <kbd>REASON</kbd> → <kbd>VALIDATE</kbd> → <kbd>SYNTHESIZE</kbd> | Step-by-step decomposition instead of "just do it" |
+| **Pattern Recognition** | <kbd>DETECT</kbd> → <kbd>SUGGEST</kbd> → <kbd>APPLY</kbd> | Surfaces matching skills for detected code/design patterns |
+| **Security Awareness** | <kbd>SCAN</kbd> → <kbd>FLAG</kbd> | Injects OWASP checks into every code task |
 
 <details>
 <summary><strong>The 10 Iron Laws of Anti-Rationalization</strong></summary>
 
-An agent under Archon's guardrails **cannot**:
+An agent under Archon **cannot**:
 
 1. Skip a required step by claiming "it's obvious"
 2. Omit tests by saying "the code is simple enough"
 3. Ignore a failing check by promising to "fix it later"
-4. Substitute a quick fix for a proper investigation
-5. Claim something is "out of scope" without citing the spec
+4. Substitute a quick fix for proper investigation
+5. Declare something "out of scope" without citing the spec
 6. Override a guardrail by asserting expertise
 7. Merge work that violates a quality gate
 8. Produce output without tagging its confidence level
 9. Skip context curation between pipeline phases
-10. Self-assess as "done" without running the reviewer
+10. Mark work "done" without passing review
 
-Violations trigger the **Deviation Protocol**: halt → explain → get explicit override or fix.
+Violating one triggers the **Deviation Protocol**: halt, explain, get explicit override from the operator — or fix it.
 
 </details>
 
@@ -236,54 +175,49 @@ Violations trigger the **Deviation Protocol**: halt → explain → get explicit
 
 ## 📚 Skills & Bundles
 
-98 skills organized into 16 domain bundles. Each skill follows a standardized format: `SKILL.md` (instructions) + `manifest.yaml` (metadata) + optional `resources/` and `references/`.
+Every skill follows the same anatomy: `SKILL.md` (instructions), `manifest.yaml` (metadata + trigger patterns), optional `resources/`. Most skills ship grouped into domain bundles — some intentionally shared across kits (e.g., `guard-chain` powers both security-kit and web-dev-kit) — and the rest are installed individually.
 
 <details open>
-<summary><strong>All 16 Bundles</strong></summary>
+<summary><strong>All 15 bundles</strong></summary>
 
-| Bundle                                                                         | Skills | Domain              | Key Capabilities                                           |
-| :----------------------------------------------------------------------------- | :----: | :------------------ | :--------------------------------------------------------- |
-| ![](https://img.shields.io/badge/-godot--kit-4c8cbf?style=flat-square)         |   5    | Godot 4 / GDScript  | Best practices, debugging, particles, patterns, meta-skill |
-| ![](https://img.shields.io/badge/-web--dev--kit-e44d26?style=flat-square)      |   10   | Frontend / Backend  | React, RSC, i18n, backend APIs, Vercel patterns            |
-| ![](https://img.shields.io/badge/-ux--design--kit-ff69b4?style=flat-square)    |   7    | UX Design Pipeline  | Research → wireframe → visual → interaction → test         |
-| ![](https://img.shields.io/badge/-django--kit-092e20?style=flat-square)        |   4    | Django / Python     | Framework, ORM, REST APIs, expert patterns                 |
-| ![](https://img.shields.io/badge/-sdd--kit-6366f1?style=flat-square)           |   6    | Spec-Driven Dev     | Spec → implement → review → debug lifecycle                |
-| ![](https://img.shields.io/badge/-testing--kit-15803d?style=flat-square)       |   5    | Quality Assurance   | Unit, E2E, QA planning, debugging, webapp testing          |
-| ![](https://img.shields.io/badge/-mobile--kit-06b6d4?style=flat-square)        |   2    | Mobile Apps         | Mobile design doctrine, Capacitor best practices           |
-| ![](https://img.shields.io/badge/-meta--kit-8b5cf6?style=flat-square)          |   5    | Skill Authoring     | Create, discover, package, index, and upgrade skills       |
-| ![](https://img.shields.io/badge/-prompts--chat--kit-f59e0b?style=flat-square) |   17   | Plugin System       | Prompts, quality gates, webhooks, SDK, Claude plugins      |
-| ![](https://img.shields.io/badge/-security--kit-dc2626?style=flat-square)      |   4    | AppSec              | Guard chain, webhooks, error handling, logging             |
-| ![](https://img.shields.io/badge/-data--layer--kit-0284c7?style=flat-square)   |   4    | Data & ORM          | Prisma, singletons, deduplication patterns                 |
-| ![](https://img.shields.io/badge/-devops--kit-64748b?style=flat-square)        |   4    | Infrastructure      | Docker, container ops, structured logging                  |
-| ![](https://img.shields.io/badge/-windows--kit-0078d4?style=flat-square)       |   3    | Windows Admin       | Crash debugging, network optimization, registry            |
-| ![](https://img.shields.io/badge/-orchestration--kit-7c3aed?style=flat-square) |   3    | Agent Orchestration | Complexity routing, context curation, deep research        |
-| ![](https://img.shields.io/badge/-github--kit-333?style=flat-square)           |   2    | GitHub Workflow     | Markdown mastery, PR quality enforcement                   |
-| ![](https://img.shields.io/badge/-teaching--kit-059669?style=flat-square)      |   4    | Education           | Adaptive teaching, codebase/paper/PR → interactive courses |
+| Bundle | Skills | Domain |
+| :--- | :---: | :--- |
+| ![](https://img.shields.io/badge/-godot--kit-4c8cbf?style=flat-square) | 5 | Godot 4 / GDScript — best practices, debugging, particles, game patterns |
+| ![](https://img.shields.io/badge/-web--dev--kit-e44d26?style=flat-square) | 9 | React, Next.js, RSC, i18n, backend APIs, Vercel performance patterns |
+| ![](https://img.shields.io/badge/-ux--design--kit-ff69b4?style=flat-square) | 7 | Full UX lifecycle — research → IA → wireframe → visual → interaction → usability |
+| ![](https://img.shields.io/badge/-sdd--kit-6366f1?style=flat-square) | 6 | Spec-driven development — spec → implement → review → design handoff |
+| ![](https://img.shields.io/badge/-meta--kit-8b5cf6?style=flat-square) | 5 | Authoring, discovering, packaging, and upgrading skills + prompt engineering |
+| ![](https://img.shields.io/badge/-prompts--chat--kit-f59e0b?style=flat-square) | 10 | Patterns extracted from the prompts.chat codebase — plugins, quality gates, white-labeling, SDKs |
+| ![](https://img.shields.io/badge/-teaching--kit-059669?style=flat-square) | 4 | Courses from codebases, papers, and PRs — ADHD-friendly, anti-fabrication guardrails |
+| ![](https://img.shields.io/badge/-testing--kit-15803d?style=flat-square) | 5 | Vitest units, E2E, QA planning, webapp automation, systematic debugging |
+| ![](https://img.shields.io/badge/-security--kit-dc2626?style=flat-square) | 4 | Guard chains, SSRF-safe webhooks, error architecture, structured logging |
+| ![](https://img.shields.io/badge/-data--layer--kit-0284c7?style=flat-square) | 4 | Prisma ORM, connection singletons, content dedup, API patterns on top |
+| ![](https://img.shields.io/badge/-devops--kit-64748b?style=flat-square) | 2 | Docker production builds, observability via Pino |
+| ![](https://img.shields.io/badge/-orchestration--kit-7c3aed?style=flat-square) | 3 | Complexity routing, context-window management, evidence-based research |
+| ![](https://img.shields.io/badge/-github--kit-333?style=flat-square) | 2 | Markdown/GFM mastery, PR quality auditing |
+| ![](https://img.shields.io/badge/-windows--kit-0078d4?style=flat-square) | 3 | BSOD crash debugging, network tuning, registry management via PowerShell |
+| ![](https://img.shields.io/badge/-mobile--kit-06b6d4?style=flat-square) | 2 | Mobile-first design doctrine, Capacitor best practices |
+
+*Bundles cover 71 skills; the remaining ~25 install standalone via `archon install --skill`.*
 
 </details>
 
 <details>
 <summary><strong>Skill anatomy</strong></summary>
 
-Every skill follows this structure:
-
 ```
 skills/backend-development/
-├── SKILL.md           # Full instructions the agent follows
+├── SKILL.md           # Instructions the agent follows
 ├── manifest.yaml      # Metadata: name, version, tags, triggers
-└── resources/         # Templates, schemas, reference docs
+└── resources/
     ├── api-template.md
     └── db-patterns.md
 ```
-
-The `manifest.yaml` declares everything the framework needs:
 
 ```yaml
 name: backend-development
 version: 1.0.0
 description: "Backend API design, database architecture, microservices"
-author: tahaa
-license: MIT
 tags: [backend, api, database, architecture]
 triggers:
   - pattern: "design.*api"
@@ -297,29 +231,45 @@ priority: P1
 
 ## 🤖 Agents
 
-17 agents with formal personas, strict guardrail enforcement, skill bindings, and handoff contracts. Every agent operates under all 12 cognitive synapses.
+Each agent is a formal persona with skill bindings, guardrail exposure, and structured handoff contracts. Every agent operates under all five synapses.
 
-| Agent                        | Role                    | Skills                                                                       | Specialty                                                                                   |
-| :--------------------------- | :---------------------- | :--------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------ |
-| `spec-writer-agent`          | Specification Architect | spec-writer, prompt-architect                                                | Transforms ideas into implementable specs                                                   |
-| `implementer-agent`          | Implementation Engineer | implementer                                                                  | Builds from specs with test-driven discipline                                               |
-| `reviewer-agent`             | Compliance Reviewer     | reviewer                                                                     | Verifies implementation against spec                                                        |
-| `debugger-agent`             | Debug Investigator      | systematic-debugging                                                         | Root-cause analysis, never guess-and-check                                                  |
-| `context-curator-agent`      | Context Architect       | context-curator                                                              | Manages context windows between pipeline phases                                             |
-| `dissector-agent`            | Codebase Analyst        | knowledge-sources                                                            | Reverse-engineers codebases into skills                                                     |
-| `ux-research-agent`          | UX Researcher           | ux-research                                                                  | Personas, journey maps, competitive analysis                                                |
-| `ui-design-agent`            | Visual Designer         | ui-visual-design, frontend-design                                            | Design systems, component libraries, hero sections                                          |
-| `qa-master-agent`            | QA Engineer             | e2e-testing, qa-test-planner                                                 | Test plans, regression suites, bug reports                                                  |
-| `security-reviewer-agent`    | Security Auditor        | guard-chain, error-handling                                                  | OWASP review, threat modeling, secure patterns                                              |
-| `university-professor-agent` | Adaptive Professor      | adaptive-teacher, codebase-to-course, research-paper-to-course, pr-to-course | Harvard/MIT-caliber teaching with ADHD-friendly pedagogy and anti-hallucination logic gates |
+| Agent | Role | What it does |
+| :--- | :--- | :--- |
+| `spec-writer-agent` | Specification Architect | Turns ambiguous ideas into specs with testable acceptance criteria |
+| `implementer-agent` | Implementation Engineer | Executes specs section-by-section with TDD precision |
+| `reviewer-agent` | Compliance Reviewer | Evidence-based verification of implementation against spec |
+| `debugger-agent` | Debug Investigator | Four-phase root-cause framework — investigation before fixes |
+| `context-curator-agent` | Context Architect | Distills artifacts into role-aware briefs; every handoff gets what it needs, nothing more |
+| `design-agent` | Unified Design Architect | Generates, applies, and audits `DESIGN.md` — one agent covering the entire design lifecycle |
+| `dissector-agent` | Codebase Reverse Engineer | 13-phase analysis producing architecture maps, pattern catalogs, and API references |
+| `prompt-architect-agent` | Prompt Structure Designer | Designs skill prompt frameworks with trigger patterns and structural scaffolding |
+| `skill-validator-agent` | Skill Quality Validator | Schema gate for contributions: manifest completeness, structure, trigger coverage |
+| `qa-master-agent` | QA Engineer | E2E suites, test plans, systematic webapp validation |
+| `security-reviewer-agent` | Security Reviewer | OWASP Top 10 audits, injection vectors, insecure-pattern detection |
+| `ux-research-agent` | UX Researcher | Personas, journey mapping, competitive analysis |
+| `ux-lifecycle-master-agent` | UX Pipeline Orchestrator | Drives the full UX pipeline, enforcing phase gates and design continuity |
+| `university-professor-agent` | Adaptive University Professor | Turns codebases, papers, and PRs into interactive courses |
 
 > [!NOTE]
-> The `university-professor-agent` includes 5 anti-hallucination logic gates (Source Verification, Confidence Rating, Numerical Accuracy, Claim Strength, Feynman Gate) that block the agent from ever guessing or fabricating information during teaching.
+> `design-agent` (v2.0.0) replaced four separate design agents — ui-design, wireframe, design-handoff, and design-review — consolidating their capabilities as loadable skills. One agent, fewer handoffs, no dropped context.
 
 <details>
-<summary><strong>Agent handoff protocol</strong></summary>
+<summary><strong>The professor's anti-hallucination gates</strong></summary>
 
-Agents don't "call" each other — they hand off through a structured contract:
+The `university-professor-agent` refuses to answer through five sequential gates:
+
+1. **Source Verification** — no claim without a source
+2. **Confidence Rating** — uncertainty stated explicitly
+3. **Numerical Accuracy** — numbers re-checked against source
+4. **Claim Strength** — strong conclusions require strong evidence
+5. **Feynman Gate** — if it can't explain it simply, it flags a knowledge gap instead of bluffing
+
+</details>
+
+<details>
+<summary><strong>Handoff protocol</strong></summary>
+
+Agents don't call each other — they hand off through structured contracts. Every handoff declares the artifact type, confidence level, and exactly what context was included/excluded:
 
 ```mermaid
 sequenceDiagram
@@ -337,56 +287,43 @@ sequenceDiagram
     R->>S: Pass: verified implementation
 ```
 
-Every handoff includes: artifact type, confidence level, and a manifest of what was included/excluded.
-
 </details>
 
 ---
 
 ## 🔄 Pipelines
 
-8 resumable multi-agent pipelines. If interrupted mid-execution, they save state and continue from the last completed step. No lost work, no manual restarts.
-
-```mermaid
-flowchart LR
-    subgraph sdd ["SDD Pipeline"]
-        direction LR
-        SP[Spec Writer] --> CC1[Context Curator] --> IM[Implementer] --> CC2[Context Curator] --> RV[Reviewer]
-    end
-
-    subgraph ux ["UX Pipeline"]
-        direction LR
-        UR[UX Research] --> WF[Wireframe] --> VD[Visual Design] --> DR[Design Review] --> HO[Handoff]
-    end
-
-    style sdd fill:#0e1525,stroke:#6366f1,color:#e0e0e0
-    style ux fill:#0e1525,stroke:#ff69b4,color:#e0e0e0
-```
-
-| Pipeline               | Trigger                          | Agent Flow                                       |
-| :--------------------- | :------------------------------- | :----------------------------------------------- |
-| **sdd-pipeline**       | "build feature X from scratch"   | spec → curate → implement → curate → review      |
-| **ux-pipeline**        | "design feature X"               | research → wireframe → visual → review → handoff |
-| **debug-pipeline**     | "fix bug X"                      | debug → curate → implement → test → review       |
-| **skill-factory**      | "create a new skill for X"       | prompt → spec → implement → validate → review    |
-| **full-product**       | "build product X end-to-end"     | ux-pipeline → sdd-pipeline → testing             |
-| **dissect-to-skill**   | "dissect codebase X into skills" | dissect → diff → specify → implement → validate  |
-| **skill-upgrade**      | "upgrade skill X"                | assess → specify → rewrite → verify              |
-| **batch-sdd-pipeline** | "batch process multiple specs"   | queue → sdd-pipeline × N → aggregate             |
-
-<details>
-<summary><strong>Failure recovery</strong></summary>
-
-When a pipeline step fails:
-
-1. **State is saved** — which step, what artifacts were produced, what context was active
-2. **Failure is classified** — transient (retry), permanent (escalate), or quality (fix + retry)
-3. **Recovery runs** — the failed step re-executes with the failure context injected
-4. **Max 3 retries** — after which the pipeline halts and surfaces the exact failure to the operator
+Eight multi-agent workflows, all resumable. If a pipeline dies mid-run it saves state — completed steps stay done, and you resume from where it stopped:
 
 ```bash
 archon pipeline resume sdd-pipeline --session abc123
 ```
+
+<details open>
+<summary><strong>Available pipelines</strong></summary>
+
+| Pipeline | You say | Flow |
+| :--- | :--- | :--- |
+| **sdd-pipeline** | "build feature X from scratch" | spec → curate → implement → curate → review |
+| **ux-pipeline** | "design feature X" | research → wireframe → visual → review → handoff |
+| **debug-pipeline** | "fix bug X" | debug → curate → implement → test → review |
+| **skill-factory** | "create a new skill for X" | prompt → spec → implement → validate → review |
+| **full-product** | "build product X end-to-end" | ux-pipeline → sdd-pipeline → testing |
+| **dissect-to-skill** | "dissect codebase X into skills" | dissect → diff → specify → implement → validate |
+| **skill-upgrade** | "upgrade skill X" | assess → specify → rewrite → verify |
+| **batch-sdd-pipeline** | "batch process multiple specs" | queue → sdd-pipeline × N → aggregate |
+
+</details>
+
+<details>
+<summary><strong>Failure recovery</strong></summary>
+
+When a step fails:
+
+1. State is saved — step, artifacts produced, active context
+2. The failure is classified: transient (retry), permanent (escalate), or quality (fix + retry)
+3. Recovery reruns the failed step with the failure context injected
+4. After 3 retries the pipeline halts and surfaces the exact failure
 
 </details>
 
@@ -394,42 +331,50 @@ archon pipeline resume sdd-pipeline --session abc123
 
 ## 🔒 Guardrails
 
-Guardrails are not suggestions. They are enforcement mechanisms that agents **cannot bypass, disable, or rationalize away.**
+Guardrails aren't suggestions. Agents cannot bypass, disable, or argue their way around them.
 
 <dl>
   <dt><strong>Iron Laws</strong></dt>
-  <dd>10 inviolable rules enforced by the Anti-Rationalization synapse. Violations trigger automatic halt + deviation protocol.</dd>
+  <dd>Ten rules enforced by the Anti-Rationalization synapse. Violations halt the run and open the deviation protocol.</dd>
 
-  <dt><strong>Lifecycle Hooks</strong></dt>
-  <dd>5 hooks that fire at key moments: pre-execution, post-execution, pre-handoff, post-handoff, on-failure. Each can block, warn, or transform.</dd>
+  <dt><strong>Lifecycle hooks</strong></dt>
+  <dd>Eleven hooks fire at key moments across execution, handoff, and failure paths. Each can block, warn, or transform.</dd>
 
-  <dt><strong>Confidence Tagging</strong></dt>
-  <dd>Every agent output is tagged with a confidence level. Agents cannot self-assess as HIGH without meeting specific evidence thresholds.</dd>
+  <dt><strong>Confidence tagging</strong></dt>
+  <dd>Every output carries a confidence level gated by evidence thresholds. Saying "HIGH" isn't enough — you have to earn it.</dd>
 
-  <dt><strong>Deviation Protocol</strong></dt>
-  <dd>When an agent wants to skip a step or override a guardrail: halt → explain deviation → receive explicit override from operator or fix the issue. No silent skips.</dd>
+  <dt><strong>Deviation protocol</strong></dt>
+  <dd>To skip a step, the agent must halt, explain why, and receive explicit override from the operator. There is no silent path.</dd>
 
-  <dt><strong>Quality Gates</strong></dt>
-  <dd>Pipeline phases cannot hand off to the next agent until the quality gate passes. Spec must be complete. Implementation must match spec. Review must confirm compliance.</dd>
+  <dt><strong>Quality gates</strong></dt>
+  <dd>A phase can't hand off until its gate passes: spec complete, implementation matches spec, review confirms compliance.</dd>
 </dl>
 
 ---
 
-## 📖 Documentation
+## How it compares
 
-| Guide                                            | Description                                             |
-| :----------------------------------------------- | :------------------------------------------------------ |
-| [Getting Started](docs/getting-started.md)       | Installation, setup, first skill                        |
-| [Creating Skills](docs/creating-skills.md)       | Skill anatomy, `SKILL.md` authoring, manifest reference |
-| [Creating Bundles](docs/creating-bundles.md)     | Domain kits with conflict resolution routing            |
-| [Creating Agents](docs/creating-agents.md)       | Personas, skill bindings, guardrails, handoff protocols |
-| [Creating Pipelines](docs/creating-pipelines.md) | Multi-agent workflows with branching + failure recovery |
-| [Creating Synapses](docs/creating-synapses.md)   | Custom cognitive capabilities                           |
-| [Architecture](docs/architecture.md)             | 6-layer design, data flow, validation schemas           |
-| [Guardrails](docs/guardrails.md)                 | Iron Laws, deviation protocol, confidence tagging       |
-| [CLI Guide](docs/cli-guide.md)                   | Full command reference                                  |
-| [VS Code Extension](docs/vscode-extension.md)    | Extension setup, skill browser, pipeline visualization  |
-| [FAQ](docs/faq.md)                               | Common questions                                        |
+LangChain, CrewAI, and AutoGen orchestrate LLM calls — routing, memory, chains. Archon operates at a different layer: it constrains agent *behavior*. The two compose — Archon guardrails work inside agents built on any orchestration framework.
+
+Short version: **they decide which model to call; Archon decides whether the agent is allowed to skip the tests.**
+
+---
+
+## 📖 Docs
+
+| Guide | Covers |
+| :--- | :--- |
+| [Getting Started](docs/getting-started.md) | Installation, setup, first skill |
+| [Creating Skills](docs/creating-skills.md) | SKILL.md authoring, manifest reference |
+| [Creating Bundles](docs/creating-bundles.md) | Domain kits, conflict-resolution routing |
+| [Creating Agents](docs/creating-agents.md) | Personas, bindings, handoff protocols |
+| [Creating Pipelines](docs/creating-pipelines.md) | Workflows, branching, failure recovery |
+| [Creating Synapses](docs/creating-synapses.md) | Custom cognitive capabilities |
+| [Architecture](docs/architecture.md) | 6-layer design, data flow, schemas |
+| [Guardrails](docs/guardrails.md) | Iron Laws, deviation protocol, confidence tagging |
+| [CLI Guide](docs/cli-guide.md) | Full command reference |
+| [VS Code Extension](docs/vscode-extension.md) | Skill browser, pipeline visualization |
+| [FAQ](docs/faq.md) | Common questions |
 
 ---
 
@@ -438,54 +383,35 @@ Guardrails are not suggestions. They are enforcement mechanisms that agents **ca
 <details>
 <summary><strong>All commands</strong></summary>
 
-| Command                          | Description                                                |
-| :------------------------------- | :--------------------------------------------------------- |
-| `archon init`                    | Initialize Archon for Claude Code                          |
-| `archon doctor`                  | Validate environment and skill integrity                   |
-| `archon install --all`           | Install all 98 skills                                      |
-| `archon install --bundle <name>` | Install a domain bundle                                    |
-| `archon install --skill <name>`  | Install a single skill                                     |
-| `archon search <query>`          | Search skills by name, tag, or domain                      |
-| `archon info <skill>`            | Show skill details and manifest                            |
-| `archon validate`                | Validate all manifests and skill structures                |
-| `archon pipeline run <name>`     | Execute a multi-agent pipeline                             |
-| `archon pipeline resume <name>`  | Resume an interrupted pipeline                             |
-| `archon pipeline list`           | List available pipelines                                   |
-| `archon admin stats`             | Show framework statistics                                  |
-| `archon cards <agent>`           | Display an agent's card (capabilities, skills, guardrails) |
+| Command | Description |
+| :--- | :--- |
+| `archon init` | Initialize Archon for Claude Code |
+| `archon doctor` | Validate environment and skill integrity |
+| `archon install --all` | Install all skills |
+| `archon install --bundle <name>` | Install a domain bundle |
+| `archon install --skill <name>` | Install a single skill |
+| `archon search <query>` | Search skills by name, tag, or domain |
+| `archon info <skill>` | Show skill details and manifest |
+| `archon validate` | Validate all manifests and structures |
+| `archon pipeline run <name>` | Execute a pipeline |
+| `archon pipeline resume <name>` | Resume an interrupted pipeline |
+| `archon pipeline list` | List available pipelines |
+| `archon admin stats` | Show framework statistics |
+| `archon cards <agent>` | Display an agent card |
 
 </details>
 
 ---
 
-## Comparison
-
-| Capability               | LangChain | CrewAI  | AutoGen |       <mark>Archon</mark>       |
-| :----------------------- | :-------: | :-----: | :-----: | :-----------------------------: |
-| Native Claude Code plugin |     —     |    —    |    —    |    ✅ Built for Claude Code     |
-| VS Code extension        |     —     |    —    |    —    |   ✅ Skill browser + pipeline   |
-| Cognitive synapses       |     —     |    —    |    —    |          ✅ 5 synapses          |
-| Anti-rationalization     |     —     |    —    |    —    |         ✅ 10 Iron Laws         |
-| Resumable pipelines      |     —     | Partial | Partial |     ✅ Full state recovery      |
-| Guardrail enforcement    |  Partial  | Partial |    —    |      ✅ Cannot be bypassed      |
-| Agent handoff contracts  |     —     |  Basic  |  Basic  |       ✅ Formal protocol        |
-| Confidence tagging       |     —     |    —    |    —    |         ✅ Every output         |
-| Skill validation schemas |     —     |    —    |    —    |          ✅ 15 schemas          |
-| Domain bundles           |     —     |    —    |    —    |          ✅ 16 bundles          |
-| Built-in teaching agent  |     —     |    —    |    —    | ✅ ADHD-friendly, 5 logic gates |
-
-> [!CAUTION]
-> Archon is **not** a replacement for LangChain/CrewAI/AutoGen. Those frameworks manage LLM orchestration (tool calling, memory, chains). Archon manages **agent discipline** (skills, reasoning, guardrails). They are complementary — you can use Archon skills inside agents built with any orchestration framework.
-
----
-
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on adding skills, bundles, agents, pipelines, synapses, and hooks.
+See [CONTRIBUTING.md](CONTRIBUTING.md). Adding skills, bundles, agents, pipelines, synapses, or hooks all follow the same rule:
 
 ```bash
-archon validate  # Run before submitting — all manifests must pass
+archon validate  # must pass before submitting
 ```
+
+The [`skill-validator-agent`](#-agents) acts as the automated quality gate for new skills — submit and it checks manifest completeness, structure, and trigger coverage for you.
 
 ---
 
@@ -493,6 +419,6 @@ archon validate  # Run before submitting — all manifests must pass
 
 **MIT License** · Built by [Ahmed Taha](https://github.com/SufficientDaikon)
 
-<sub>98 skills · 17 agents · 5 synapses · 8 pipelines · 16 bundles · 513 tests · Claude Code native</sub>
+<sub>For everyone tired of typing "actually run the tests."</sub>
 
 </div>
